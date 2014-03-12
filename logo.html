@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Logo concepts</title><link rel="stylesheet" href="http://oslc.github.io/redesign/css/oslc.css"><script src="http://oslc.github.io/redesign/js/lib/modernizr.js"></script><script>// add .mustard/.no-mustard css classes
+Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window );
+
+Modernizr.load([{
+  test: Modernizr.mustard,
+  yep: 'http://oslc.github.io/redesign/css/oslc_enhanced.css'
+}]);
+
+/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon(["http://oslc.github.io/redesign/icons/output/icons.data.svg.css", "http://oslc.github.io/redesign/icons/output/icons.data.png.css", "http://oslc.github.io/redesign/icons/output/icons.fallback.css"]);
+</script></head><body><header class="banner"><div class="flag"><div class="image"><button title="Main menu" role="button" aria-label="Toggle Navigation" data-toggle-class="primary-nav-is-open" data-toggle-target="body" class="navburger mustard-only"><span class="navburger-line top"></span><span class="navburger-line middle"></span><span class="navburger-line bottom"></span></button></div><div class="body"><a href="http://oslc.github.io/redesign/" class="flag image-link"><div class="image"><i class="icon block grunticon-logo-small autosize"></i></div><div class="body"><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon block grunticon-wordmark-small autosize ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></div></a></div></div></header><div class="sticky-footer-body off-canvas-wrap">     <nav class="nav"><div class="menu primary"><div class="item flush desk-up"><a href="http://oslc.github.io/redesign/" class="image-link"><i class="icon block grunticon-logo-med autosize"></i><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon grunticon-wordmark-med autosize ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></a></div><ul class="items"><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/">OSLC Public Redesign</a></li><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/wireframes.html">Redesign direction</a></li><li role="presentation" class="item current"><a href="http://oslc.github.io/redesign/logo.html">Logo concepts</a></li><li role="presentation" class="item"><a href="http://open-services.net/">open-services.net</a></li></ul></div></nav><main class="main"><div class="card"><header class="header"><h1 class="title">Logo concepts</h1></header><section class="content"><div class="copy"><p>Here&#39;s the OSLC logo from early 2011:</p>
+<p><img src="./images/logos/logo-2011.png" alt="OSLC aperture logo from early 2011"></p>
+<p>I&#39;m not sure what was going on with the gray-to-color gradients there. <em>Blech</em>. Here it is after I touched up the colors:</p>
+<p><img src="./images/logos/logo-2011-color-adjusted.png" alt="OSLC aperture logo from early 2011"></p>
+<p>This &quot;aperture&quot; mark has served as our logo for several years now, and its colors have informed the design of our website for as long as I&#39;ve been working on it.</p>
+<h2>Problems</h2>
+<p>As a reusable logo, the aperture mark has some issues:</p>
+<p>First, it&#39;s oddly shaped: tilted forward and taller than it is wide, it fits poorly in almost every box I&#39;ve tried to put it in. It&#39;s never been the best for for social media sites that generally assume your avatar will be closer to a 1:1 aspect ratio. (Before you ask, all of my attempts to convert the same general idea to a 1:1 circle have gone poorly.)</p>
+<p>Next, between the gradated colors and the delicate points of the curves, it loses clarity at small sizes. </p>
+<p>Here it is at 32 pixels: <img src="./images/logos/OSLC_32.gif" alt="OSLC aperture logo at 32px">. </p>
+<p>At that size, the blades are kind of chunky and are <em>this</em> close to bleeding into each other. It gets worse as you go smaller; however, to be fair, many logos don&#39;t stand up to extreme resizing.</p>
+<p>Finally, I&#39;ve never had a good way to use it over non-white backgrounds. You really need a stroke or background color or shadow around the blades to keep the logo separated from the background, but the blades are so close together that strokes smash into each other, which I&#39;m demonstrating with exaggerated effect here:</p>
+<p><img src="./images/logos/logo-2011-bad-stroke.png" alt="OSLC aperture logo over blue with impacted strokes"></p>
+<p>You <em>can</em> put a background behind the entire mark as I did with a variation for <a href="http://eclipse.org/lyo/">Eclipse Lyo</a>: </p>
+<p><img src="./images/logos/oslc-lyo-logo.png" alt="OSLC aperture logo with the Lyo lion"></p>
+<p>That sort of works, but I think it emphasizes the overall oddness of the mark&#39;s shape and, ironically, makes the logo look less than &ldquo;open&rdquo;.</p>
+<h2>A new #idea</h2>
+<p>Given all these issues I was having with the aperture mark, I wanted to see if I could do better.</p>
+<p>After a few rounds of sketching, I zeroed in on this basic concept:</p>
+<p><img src="./images/logos/oslc-hash-gray.png" alt="OSLC &#39;#&#39; logo"></p>
+<p>Here in the same colors as our current logo:</p>
+<p><img src="./images/logos/oslc-hash-color.png" alt="OSLC &#39;#&#39; logo in red, green, purple, and blue"></p>
+<p>And in a more vibrant palette that I&#39;ve become fond of (ie, I don&#39;t care for purple): </p>
+<p><img src="./images/logos/oslc-hash-more-colors.png" alt="OSLC &#39;#&#39; logo in orange-red, gold, blue, and green"></p>
+<p>Here&#39;s what I like about it:</p>
+<ul>
+<li>the &#39;woven&#39; design reflects our community goal of not only integrating software, but also bringing together folks from many disciplines to do so;</li>
+<li>but it&#39;s not a &quot;tight&quot; weave, which jives with our goal of building loose connections</li>
+<li>our work is &quot;inspired by the web&quot;, and the slanted lines (&quot;<strong>//</strong>&quot;) remind me of those in web protocols (&quot;http:<strong>//</strong>&quot;), and vocabularies and schemas often have a hash &quot;#&quot; in their URIs;</li>
+<li>like all the cool kids, we&#39;re already using &quot;#OSLC&quot; on Twitter</li>
+</ul>
+<p>And here&#39;s what still worries me:</p>
+<ul>
+<li>4 colors, while not exactly excessive, is still a lot of colors for a logo and makes it more complex to reproduce accurately.</li>
+<li>We&#39;re still using small gaps between shapes, which means I&#39;ll have to do a lot of pixel-level adjustments to make sure the details hold up when it&#39;s small. However, it does hold up reasonably well with no special effort: <img src="./images/logos/oslc-hash-tiny.png" alt="OSLC &#39;#&#39; logo at 32px wide"></li>
+<li>It will also require adjustments at larger sizes: I&#39;ve found that when it gets too large it looks less like a weave and more like a bunch of floating rectangles. I don&#39;t think this is insurmountable, but it&#39;s an issue.</li>
+<li>As with the aperture mark, the complexity of the shape and variety of colors work against you when you need to put the logo on anything other than a white background. I&#39;ve stuck it on dark gray below to demonstrate how the colors, which work well on white, start to look out of place on anything else. We&#39;ll either have to be really careful, or we&#39;ll have to come up with endless variations that work with different backgrounds.</li>
+</ul>
+<p><img src="./images/logos/oslc-hash-on-gray.png" alt="OSLC &#39;#&quot; logo on dark gray"></p>
+<p>Best of luck to whoever has to find 5 colors that play nice together. Four is brutal enough.</p>
+<p>Finally, while I&#39;m fond of the <em>implied</em> depth, the logo is a bit flat. No doubt some will want to jazz it up, as some chuckleheads in the office did on my whiteboard with an extra-3D, extra-textured, extra-<a href="http://www.hrwiki.org/w/images/thumb/f/f7/Arrowed_Full.png/180px-Arrowed_Full.png">arrowed</a> version:</p>
+<p><img src="./images/logos/oslc-fancy-hash.jpg" alt="OSLC &#39;#&#39; logo with extra arrows, 3d shapes, and textures"></p>
+<p>Har har, guys.</p>
+<h2>A loopier option</h2>
+<p>Although I like the concept of the &quot;#&quot; mark above, I still wanted to see if I could get to an even simpler shape that might be easier to work with.</p>
+<p>After another few rounds of sketches, I started to like the idea of a single line as an abstract way to represent a connection – between ideas, people, software, whatever – along with an open loop to make the connection with style. Here&#39;s a first pass:</p>
+<p><img src="./images/logos/oslc-loop-early.png" alt="OSLC &quot;loop&quot; logo concept: an early version in gray"></p>
+<p>Oh, duh: it&#39;s a <strong>giant &quot;O&quot;</strong>. This could work!</p>
+<p>Here&#39;s the current version after I beefed it up, paid closer attention to the proportions, and added color: </p>
+<p><img src="./images/logos/oslc-loop-v2.png" alt="OSLC &#39;loop&#39; logo concept, version 2"></p>
+<p>Much better.</p>
+<p>One of the more charming aspects of this concept is how well it works with any color, which means this logo will be <strong>flexible enough to use almost anywhere</strong>:</p>
+<p><img src="./images/logos/oslc-loops-4-colors.png" alt="OSLC &#39;loop&#39; logo 4 times in 4 colors"></p>
+<p>It&#39;s also <strong>simple and clear</strong> enough to work well at both very large and very small sizes:</p>
+<p><img src="./images/logos/oslc-loop-big-and-small.png" alt="OSLC &#39;loop&#39; logo both big and small"></p>
+<p>In a happy accident, the proportions are awful close to the capital &quot;O&quot; in Avenir Next Bold, so the choice of font for a wordmark is pretty easy:</p>
+<p><img src="./images/logos/oslc-loop-with-words.png" alt="&#39;loop&#39; logo concept with &#39;OSLC: Inspired by the web&#39; text"></p>
+<p>All told, although I&#39;m fond of the &quot;#&quot; concept, I also like the loop concept and I think that it&#39;ll be <strong>easier to use</strong> and <strong>more flexible</strong> in the future. So I think overall it&#39;s the better match.</p>
+</div></section></div><a role="button" aria-label="Toggle Navigation" data-toggle-class="primary-nav-is-open" data-toggle-target="body" class="close-off-canvas"></a></main></div><footer class="footer"><p>All content <a href="http://creativecommons.org/licenses/by/3.0/us/")>Creative Commons Attribution 3.0 US</a> except where noted otherwise</p><p><a href="https://github.com/OSLC/redesign">Github</a> <a href="https://github.com/OSLC/redesign/issues">Issues</a> <a href="http://open-services.net">OSLC Home</a></p></footer></body><script>window.site_url = 'http://oslc.github.io/redesign/';</script><script src="http://oslc.github.io/redesign/js/oslc.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24416914-4', 'oslc.github.io');
+ga('send', 'pageview');
+</script></html>
