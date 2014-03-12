@@ -1,3 +1,8 @@
+<div class="notice">
+  <div class="header"><div class="title">Got some thoughts on these?</div></div>
+  <div class="content">Share your thoughts <a href="https://github.com/OSLC/redesign/issues/2">in the open issue about a new design system</a>.</div>
+</div>
+
 Here's some rough interface sketches that should illustrate the direction I'm headed with this redesign.
 
 Here's the first pass, with most of the basics:

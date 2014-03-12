@@ -1,4 +1,9 @@
-Here's the OSLC logo from early 2011:
+<div class="notice">
+  <div class="header"><div class="title">Got some thoughts on this?</div></div>
+  <div class="content">Share your thoughts <a href="https://github.com/OSLC/redesign/issues/1">in the open issue about a new logo</a>.</div>
+</div>
+
+First up, some background: here's the OSLC logo from early 2011:
 
 ![OSLC aperture logo from early 2011](./images/logos/logo-2011.png)
 
