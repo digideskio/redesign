@@ -1,0 +1,50 @@
+.copy {
+
+  /* 
+   * For Hand sizes, bump headings down a level 
+   */
+  > h6 {
+    @include respond-to(hand-only) {
+      @include text-size-s;
+//      line-height: $font-size-l / $font-size-s;
+    }
+  }
+
+  > h5 {
+    @include respond-to(hand-only) {
+      @include text-size-m;
+    }
+  }
+
+  > h4 {
+    @include respond-to(hand-only) {
+      @include text-size-l;
+    }
+  }
+
+  > h3 {
+    @include respond-to(hand-only) {
+      @include text-size-xl;
+    }
+  }
+
+  > h2 {
+    @include respond-to(hand-only) { 
+      @include text-size-xxl;
+    }
+  }
+
+  > h1 {
+    @include respond-to(hand-only) {
+      @include text-size-xxxl;
+    }
+  }
+  
+  > .godzilla {
+    @include respond-to(hand-only) {
+      @include text-size-xxxxl;
+    }
+  }
+
+}
+

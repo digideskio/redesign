@@ -1,0 +1,88 @@
+- var site_url = environment == "production" ? 'http://oslc.github.io/redesign/' : '/';
+doctype
+html.no-js(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title #{ title || 'Learn to develop OSLC applications'}
+
+    link(rel="stylesheet" href="#{ site_url }css/oslc.css")
+
+    script(src="#{ site_url }js/lib/modernizr.js")
+    
+    script.
+      // add .mustard/.no-mustard css classes
+      Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window );
+      
+      Modernizr.load([{
+        test: Modernizr.mustard,
+        yep: '#{ site_url }css/oslc_enhanced.css'
+      }]);
+      
+      /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+      window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+      grunticon(["#{site_url}icons/output/icons.data.svg.css", "#{site_url}icons/output/icons.data.png.css", "#{site_url}icons/output/icons.fallback.css"]);
+    
+  body
+    header.banner
+      .flag
+        .image
+          button.navburger.mustard-only(title="Main menu", role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
+            span.navburger-line.top
+            span.navburger-line.middle
+            span.navburger-line.bottom
+        .body
+          a.flag.image-link(href="#{ site_url }")
+            .image
+              i.icon.block.grunticon-logo-small.autosize
+            .body
+              span.logo-text
+                abbr.icon.block.grunticon-wordmark-small.autosize.ir(title="#{ org_name }")
+                  | #{ org_abbr }
+                span.project-name #{ site_name }
+
+    .sticky-footer-body.off-canvas-wrap      
+      nav.nav
+        .menu.primary
+          .item.flush.desk-up
+            a.image-link(href="#{ site_url }")
+              i.icon.block.grunticon-logo-med.autosize
+              span.logo-text
+                abbr.icon.grunticon-wordmark-med.autosize.ir(title="#{ org_name }")
+                  | #{ org_abbr }
+                span.project-name #{ site_name }
+          ul.items
+            - var $i = 1;
+            for page, slug in public._data
+              if page.draft!=='true' || environment==='development'
+                li(class='item #{ current.source === slug ? "current" : "" }' role="presentation")
+                  a(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '.html') }") #{ page.title }
+            li.item(role="presentation")
+              a(href="http://open-services.net/") open-services.net
+      main.main
+        .card
+          header.header
+            h1.title #{ title }
+          section.content
+            div.copy
+              != yield
+            
+        a.close-off-canvas(role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
+    footer.footer
+      p
+       | All content <a href="http://creativecommons.org/licenses/by/3.0/us/")>Creative Commons Attribution 3.0 US</a> except where noted otherwise
+      p
+       | <a href="https://github.com/OSLC/redesign">Github</a> <a href="https://github.com/OSLC/redesign/issues">Issues</a> <a href="http://open-services.net">OSLC Home</a>
+  script.
+    window.site_url = '#{site_url}';
+  script(src="#{ site_url }js/oslc.js")
+  if (environment == "production")
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-24416914-3', 'oslc.github.io');
+      ga('send', 'pageview');

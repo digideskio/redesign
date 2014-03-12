@@ -1,0 +1,52 @@
+%card-basis {
+  background-color: $card-bg;
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  border-top-width: 3px;
+  border-top-style: solid;
+  background-clip: padding-box;
+  box-shadow: 7px 7px 0 $card-shadow-color;
+
+  // Smaller shadows as you get more nested
+  & & {
+    box-shadow: 5px 5px 0 $card-shadow-color;
+  }
+  
+  & & & {
+    box-shadow: 3px 3px 0 $card-shadow-color;
+  }
+  
+  > .header {
+    border-radius: 1px 1px 0 0;
+    border-radius: 1px 1px 0 0;
+    background-clip: padding-box;
+    @include rem(padding, 10px $card-padding-sides 11px);    
+
+    > .title {
+      margin: 0;
+      color: #fff;
+    }
+  }
+  
+  > .content {
+    @include rem(padding, 16px $card-padding-sides 8px);
+  }
+
+}
+
+.card {
+  @extend %card-basis;
+  max-width: 50em;
+  border-top-color: palette(blue, mid-dark);
+
+  > .header {
+    background-color: palette(blue);
+
+    > .title {
+      @extend %text-size-xxl;
+      line-height: 1.05;
+    }
+
+  }
+    
+}

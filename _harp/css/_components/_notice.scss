@@ -1,0 +1,17 @@
+.notice {
+  @extend %card-basis;
+  border-top-color: #757575;
+  
+  .header {
+    background-color: #999;
+    
+    > .title {
+      @include text-size-m;
+    }
+  }
+  
+  .copy > & {
+    margin-bottom: 1em;
+  }
+  
+}

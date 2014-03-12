@@ -1,0 +1,60 @@
+
+.grunticon-logo-med {
+  background-image: url('png/logo-med.png');
+  @include icon;
+  
+  &.autosize {
+    height: 209px;
+    width: 250px;
+  }
+  
+  &.intrinsic {
+    padding-top: 209px / 250px * 100%;
+  }
+}
+
+
+.grunticon-logo-small {
+  background-image: url('png/logo-small.png');
+  @include icon;
+  
+  &.autosize {
+    height: 48px;
+    width: 58px;
+  }
+  
+  &.intrinsic {
+    padding-top: 48px / 58px * 100%;
+  }
+}
+
+
+.grunticon-wordmark-med {
+  background-image: url('png/wordmark-med.png');
+  @include icon;
+  
+  &.autosize {
+    height: 29px;
+    width: 114px;
+  }
+  
+  &.intrinsic {
+    padding-top: 29px / 114px * 100%;
+  }
+}
+
+
+.grunticon-wordmark-small {
+  background-image: url('png/wordmark-small.png');
+  @include icon;
+  
+  &.autosize {
+    height: 18px;
+    width: 66px;
+  }
+  
+  &.intrinsic {
+    padding-top: 18px / 66px * 100%;
+  }
+}
+

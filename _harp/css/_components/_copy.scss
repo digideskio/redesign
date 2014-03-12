@@ -1,0 +1,118 @@
+/*
+ * Body Copy
+ */
+
+.copy {
+  line-height: $copy-line-height-knee-up;
+  
+  // Eliminate possible top margin
+  > *:first-child {
+    margin-top: 0;
+  }
+  
+  // Eliminate possible bottom margin on last child
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    font-weight: 500; // semibold
+    margin-top: .71em;
+    margin-bottom: .6em;
+    
+    //
+    // Inline subheads
+    // use <small> in the heading. Done!
+    //
+    > small {
+      color: #777;
+      vertical-align: baseline;
+      font-size: 0.7071em;
+    }
+  }
+  
+  //
+  // BASIC HEADINGS
+  //
+  > h6 {
+    @extend %text-size-m;
+  }
+  
+  > h5 {
+    @extend %text-size-l;
+  }
+  
+  > h4 {
+    @extend %text-size-xl;
+  }
+  
+  > h3 {
+    @extend %text-size-xxl;
+  }
+  
+  > h2 {
+    @extend %text-size-xxxl;
+  }
+  
+  > h1 {
+    @extend %text-size-xxxxl;
+  }
+  
+  > .godzilla {
+    @extend %text-size-xxxxxl;
+  }
+      
+  > table {
+    @extend %copy-margins;
+    @extend %table;
+  }
+  
+  > .fluid-video {
+    @extend %copy-margins;
+  }
+  
+  //
+  // ORDERED & UNORDERED LISTS
+  // 
+  // Careful! Don't want to get too specific with these.
+  //
+  > ul,
+  > ol {
+    // keep this to direct children only
+    @extend %copy-margins;
+    
+    // reduce the default indentation
+    @include rem(padding-left, 24px);
+
+    // affects all children ol/ul
+    ol, ul {
+      @include rem(padding-left, 24px);
+    }
+  } 
+
+  // some extra spacing between list items
+  // be careful here, this selector might come back to bite you
+  li { 
+     @include rem(margin-bottom, 6px); 
+     @include rem(margin-top, 6px); 
+  }
+  
+  > p {
+    @extend %copy-margins;
+  }
+   
+  // may also regret this one
+  a {
+    color: palette(blue, dark);
+  }
+  
+  img {
+    border: 4px solid palette(gray, x-light);
+  }
+}

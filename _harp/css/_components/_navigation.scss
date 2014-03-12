@@ -1,0 +1,80 @@
+body {
+  
+}
+
+.banner,
+.footer { 
+  background-color: $header-and-nav-bg; 
+  @include rem(padding, 4px 8px 5px);
+}
+
+.banner {
+  border-top: 3px solid palette(gold, light);
+  
+  .logo {
+    width: 58px;
+    height: 55px;
+    background-size: contain;
+  }
+  
+  .logo-text { 
+    @include rem(margin-left, 10px);
+  }
+  
+  .project-name {
+    @include rem(margin-top, 2px);
+  }
+}
+
+.logo-text {
+  display: block;
+  color: palette(gray, mid-dark);
+}
+
+.project-name { @extend %block; }
+
+abbr.grunticon-wordmark-small,
+abbr.grunticon-wordmark-med {
+  border-bottom: 0 !important;
+}
+
+.menu {
+  
+  .items {
+    @extend %list-reset;
+  }
+  
+  .item {
+    background-color: $header-and-nav-bg;
+    @include rem(padding, 8px 16px); 
+    border-bottom: 1px solid palette(gray, light);
+    
+    &.flush { 
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  li.item {
+    padding: 0;
+
+    > a {
+      display: block;
+      @include rem(padding, 8px 16px); 
+      text-decoration: none;
+    }
+  }
+
+  .current a,
+  .item a:hover,
+  a.current,
+  a.item:hover {
+    background-color: $main-menu-current-item-bg;
+  }
+  
+}
+
+.main {
+  @include rem(padding, 16px 8px);
+  background-color: $main-menu-current-item-bg;
+}

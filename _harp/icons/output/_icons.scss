@@ -1,0 +1,12 @@
+@mixin icon {
+  background-repeat: no-repeat;
+}
+
+%icon {
+  @include icon;
+}
+
+.intrinsic {
+  -webkit-background-size: contain;
+  background-size: contain;
+}

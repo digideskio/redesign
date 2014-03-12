@@ -1,0 +1,101 @@
+/*
+ * The ever-important clearfix
+ */
+%clearfix {
+  @include clearfix;
+}
+
+/*
+ * Floats
+ */
+%left { float:left; }
+%right { float: right; }
+
+
+/*
+ * Positioning
+ */
+%pos-rel { position: relative; }
+%pos-abs { position: absolute; }
+
+
+/*
+ * Positioning
+ */
+%block { display: block; }
+%inline-block { @include inline-block; }
+
+/*
+ * Reset UL/OLs
+ */
+%list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+ * Prevent flicker on transitions on mobile webkit
+ */
+@mixin prevent-flicker {
+  -webkit-backface-visibility: hidden;
+}
+%prevent-flicker {
+  @include prevent-flicker;
+}
+
+/*
+ * SVG Icons
+ */
+%icon {
+  @extend %inline-block;
+
+  &.block {
+    @extend %block;
+  }
+}
+
+/* 
+ * Latest hotness in image replacement
+ * http://www.sitepoint.com/new-css-image-replacement-technique/
+ * 
+ * Shoves text out of the element's visible frame with less rendering work than -9999px
+ * Still need additional classes to provide width/height and the background image
+ */
+%ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+%visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  
+  /*
+   * Extends the .visuallyhidden class to allow the element to be focusable
+   * when navigated to via the keyboard: h5bp.com/p
+   */
+  
+  &.focusable:active,
+  &.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;  
+  }
+}
