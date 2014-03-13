@@ -9,11 +9,23 @@
   },
   "wireframes": {
     "title": "Redesign direction",
-    "date": "2014 March 11"
+    "date": "2014 March 11",
+    "issues": [
+      {
+        "title": "Investigate a more modular and flexible layout system",
+        "url": "https://github.com/OSLC/redesign/issues/2"
+      }
+    ]
   },
   "logo": {
     "title": "Logo concepts",
-    "date": "2014 March 12"
+    "date": "2014 March 12",
+    "issues": [
+      {
+        "title": "Investigate a simpler logo",
+        "url": "https://github.com/OSLC/redesign/issues/1"
+      }
+    ]
   },
   "navigation": {
     "title": "Primary navigation",

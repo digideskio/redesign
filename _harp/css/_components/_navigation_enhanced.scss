@@ -90,34 +90,14 @@
   transition: all .5s $ease-out-cubic;
   // delay while the elements slide out
   transition-delay: $item-slide-duration * $total-items;
-  
-  // fun!
-  @for $i from 1 through $total-items {
-    .items > .item:nth-child(#{$total-items + 1 - $i}) {
-      transition-delay: $i * $item-slide-duration;
-    }
-  }
-  
-  .item {
-    transition-property: all;
-    transition-duration: .33s;
-    transition-timing-function: $ease-out-cubic;
-    
-    // slide them off-canvas
-    transform: translate( -100% );
-    
-    @include respond-to(knee-up) {
-      transform: none;
-    }
-  }
-        
+          
   @include respond-to(knee-up) {
     max-height: none !important;
     
     // needs a width
     width: $main-menu-width;
     
-    // remove from box model, take up full height
+    // remove from flow, take up full height
     position: absolute;
     top: 0;
     bottom: 0;
@@ -125,7 +105,7 @@
     background-color: $header-and-nav-bg;
     
     // handle the possibility that the content isn't big enough for the nav
-    overflow-y: auto; 
+    overflow: auto; 
     
     transition-delay: 0s;
     transition-duration: $main-menu-slide-duration;
@@ -145,18 +125,44 @@
     @include rem(margin-bottom, $font-size-xs);
   }
   
+    // fun!
+  @for $i from 1 through $total-items {
+    .items > .item:nth-child(#{$total-items + 1 - $i}) {
+      transition-delay: $i * $item-slide-duration;
+
+      @include respond-to(desk-up) {
+        transition: none;
+      }
+
+    }
+  }
+    
 }
 
-.primary {
-  
-  @include respond-to( desk-up ) {
-    border-top: 3px solid palette(gold, light);
-  }
+.menu {
 
   .item {
+    transition-property: all;
+    transition-duration: .33s;
+    transition-timing-function: $ease-out-cubic;
+    
+    // slide them off-canvas
+    transform: translate( -100% );
+    
+    @include respond-to(knee-up) {
+      transform: none;
+    }
+
     > a {
-      transition: all .2s $ease-out-cubic;
-    }  
+      transition: background-color .2s $ease-out-cubic;
+    }
+
+  }
+
+  &.primary {
+    @include respond-to( desk-up ) {
+      border-top: 3px solid palette(gold, light);
+    }
   }
 }
 
@@ -235,6 +241,7 @@
   }
   
   .close-off-canvas {
+    cursor: pointer;
     @include respond-to(knee-only) {
       // expand to full size
       bottom: 0;

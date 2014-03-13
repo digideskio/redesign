@@ -61,13 +61,25 @@ html.no-js(lang="en")
             li.item(role="presentation")
               a(href="http://open-services.net/") open-services.net
       main.main
-        .card
-          header.header
-            h1.title #{ title }
-          section.content
-            div.copy
-              != yield
-            
+        .grid
+          .column.hand-12.desk-9
+            .card.primary
+              header.header
+                h1.title #{ title }
+              section.content
+                div.copy
+                  != yield
+          if issues
+            aside.column.hand-12.desk-3
+              .card.secondary
+                header.header
+                  h3.title Related issues
+                section.content
+                  ul.links
+                    for issue in issues
+                      li.item
+                        a(href="#{ issue.url }") #{issue.title}
+        
         a.close-off-canvas(role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
     footer.footer
       p
