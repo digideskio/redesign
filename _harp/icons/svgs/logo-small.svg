@@ -5,12 +5,10 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="logo-small" sketch:type="MSArtboardGroup">
-            <g id="Major-6th-oval" sketch:type="MSLayerGroup">
-                <path d="M29,48 C42.2548347,48 53,37.2548347 53,24 C53,10.7451653 42.2548347,0 29,0 C15.7451653,0 5,10.7451653 5,24 C5,37.2548347 15.7451653,48 29,48 Z M29.5,39 C37.5081293,39 44,32.5081293 44,24.5 C44,16.4918707 37.5081293,10 29.5,10 C21.4918707,10 15,16.4918707 15,24.5 C15,32.5081293 21.4918707,39 29.5,39 Z" id="Oval-3" fill="#53C2D2" sketch:type="MSShapeGroup"></path>
-                <rect id="Rectangle-2" fill="#53C2D2" sketch:type="MSShapeGroup" x="0" y="0" width="58" height="10"></rect>
-                <path d="M29,10 L47.9982742,10 C47.9988495,10.0007841 41.1812575,17 41.1812575,17 C38.6692788,12.8007873 34.1533568,10 29,10 Z" id="Shadow" fill-opacity="0.12" fill="#000000" sketch:type="MSShapeGroup"></path>
-                <path d="M9,10 C12.2060026,5.21302575 16.8995742,1.62657261 22.3652219,0 L29,0 C21.2850267,0 14.4342345,3.92684188 10.125292,10 L9,10 Z" id="16px-highlight" fill-opacity="0.45" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
-            </g>
+            <rect id="Rectangle-2" fill="#54BCD2" sketch:type="MSShapeGroup" x="0" y="0" width="58" height="9.48571429"></rect>
+            <path d="M29,48 C42.2548347,48 53,37.2548347 53,24 C53,10.7451653 42.2548347,0 29,0 C15.7451653,0 5,10.7451653 5,24 C5,37.2548347 15.7451653,48 29,48 Z M29,38.4230769 C36.9656458,38.4230769 43.4230769,31.9656458 43.4230769,24 C43.4230769,16.0343542 36.9656458,9.57692308 29,9.57692308 C21.0343542,9.57692308 14.5769231,16.0343542 14.5769231,24 C14.5769231,31.9656458 21.0343542,38.4230769 29,38.4230769 Z" id="Oval-3" fill="#54BCD2" sketch:type="MSShapeGroup"></path>
+            <path d="M28.5,9.5 L48.4981833,9.5 C48.4987889,9.50078408 41.3223763,16.5 41.3223763,16.5 C38.6781883,12.3007873 33.9245861,9.5 28.5,9.5 Z" id="Shadow" fill-opacity="0.12" fill="#000000" sketch:type="MSShapeGroup"></path>
+            <path d="M8,10 L9.45319669,10 C13.9155731,3.92684188 21.01031,8.56075585e-16 29,8.56075585e-16 L21.3038474,8.56075585e-16 C15.8628904,1.75319794 11.204351,5.31601209 8,10 Z" id="20px-highlight" fill-opacity="0.45" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>

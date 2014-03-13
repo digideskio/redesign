@@ -3,6 +3,10 @@
     "title": "OSLC Public Redesign",
     "date": "2014 March 10"
   },
+  "why": {
+    "title": "Why redesign?",
+    "date": "2014 March 10"
+  },
   "wireframes": {
     "title": "Redesign direction",
     "date": "2014 March 11"
@@ -13,7 +17,7 @@
   },
   "navigation": {
     "title": "Primary navigation",
-    "date": "2014 March 11",
+    "date": "2014 March 14",
     "draft": "true"
   }
 }
