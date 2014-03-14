@@ -1,6 +1,9 @@
 .card {
-
+  
+  
   &.primary {
+
+    // Bump up the title text size of the primary card a bit on larger screens
     > .header > .title {
       @include respond-to(desk-up) {
         @include text-size-xxxl;

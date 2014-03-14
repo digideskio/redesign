@@ -27,11 +27,12 @@
     > .title {
       margin: 0;
       color: #fff;
+      font-weight: bold;
     }
   }
   
   > .content {
-    @include rem(padding, 16px $card-padding-sides 8px);
+    @include rem(padding, 12px $card-padding-sides);
   }
 
 }
