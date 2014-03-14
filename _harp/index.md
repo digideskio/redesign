@@ -25,4 +25,4 @@ In ["Designing in the Open"](http://bradfrostweb.com/blog/post/designing-in-the-
 
 Count me in.
 
-Want to weigh in? [Open issues](https://github.com/OSLC/redesign/issues) or I'm [@leereamsnyder on Twitter](https://twitter.com/leereamsnyder).
+Want to weigh in? [Open issues](https://github.com/OSLC/redesign/issues) or follow [@oslcnews on Twitter](https://twitter.com/oslcnews).
