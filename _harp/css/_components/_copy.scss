@@ -121,6 +121,18 @@
   }
   
   img {
-    border: 4px solid palette(gray, x-light);
+    border: 2px solid palette(gray, light);
   }
+  
+  a {
+    img {
+      border-color: palette(blue,mid-dark);
+      transition: border-color .2s $ease-out-cubic;
+    }
+    
+    &:hover img {
+      border-color: palette(blue);
+    }
+  }
+  
 }
