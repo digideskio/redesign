@@ -112,27 +112,62 @@
     margin-left: 0;
     border-left: 3px solid palette(gray,light);
     font-style: italic;
-    padding: 1px 0 1px 1em; // any padding top/bottom will prevent margin collapse, which is what we want
+    padding-left: 1em;
   }
    
-  // may also regret this one
-  a {
-    color: palette(blue, dark);
-  }
-  
   img {
     border: 2px solid palette(gray, light);
   }
   
+  // may also regret this one
   a {
+    color: palette(blue, mid-dark);
+    transition: color .2s $ease-out-cubic;
+    
     img {
-      border-color: palette(blue,mid-dark);
+      border-color: palette(blue, mid-dark);
       transition: border-color .2s $ease-out-cubic;
     }
     
-    &:hover img {
-      border-color: palette(blue);
+    &:visited {
+      color: desaturate( palette(blue, mid-dark), 70%);
+      
+      img { border-color: desaturate( palette(blue, mid-dark), 70%); }
+    }
+    
+    &:hover, 
+    &:focus {
+      color: palette(blue);
+      
+      img { border-color: palette(blue); }
+    }
+    
+    &:active {
+      color: palette(blue, mid-light); 
+      
+      img { border-color: palette(blue, mid-light); }
     }
   }
+    
+  
+  // www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/
+  pre, code, tt {
+    font-family: monospace;
+    white-space: pre; 
+    white-space: pre-wrap; 
+    
+    // These last two make sure things that aren't very word-like, like URLs, break
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: tint( palette(gold, x-light), 25% );
+  }
+  
+  pre {
+    @extend %copy-margins;
+    overflow: auto;
+    @include rem(padding, 8px);
+    border-top: solid 2px palette(gold, light);
+  }
+
   
 }

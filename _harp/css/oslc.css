@@ -1,5 +1,5 @@
 .copy > table, .copy > .fluid-video, .copy > ul,
-.copy > ol, .copy > p, .copy > blockquote {
+.copy > ol, .copy > p, .copy > blockquote, .copy pre {
   margin-bottom: 1em;
   margin-top: 0; }
 
@@ -1816,17 +1816,41 @@ abbr.grunticon-wordmark-med {
     margin-left: 0;
     border-left: 3px solid #cccccc;
     font-style: italic;
-    padding: 1px 0 1px 1em; }
-  .copy a {
-    color: #00668f; }
+    padding-left: 1em; }
   .copy img {
     border: 2px solid #cccccc; }
-  .copy a img {
-    border-color: #0083a3;
-    -webkit-transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
-  .copy a:hover img {
-    border-color: #00a7bd; }
+  .copy a {
+    color: #0083a3;
+    -webkit-transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .copy a img {
+      border-color: #0083a3;
+      -webkit-transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .copy a:visited {
+      color: #39606a; }
+      .copy a:visited img {
+        border-color: #39606a; }
+    .copy a:hover, .copy a:focus {
+      color: #00a7bd; }
+      .copy a:hover img, .copy a:focus img {
+        border-color: #00a7bd; }
+    .copy a:active {
+      color: #51c1d2; }
+      .copy a:active img {
+        border-color: #51c1d2; }
+  .copy pre, .copy code, .copy tt {
+    font-family: monospace;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: #fff8eb; }
+  .copy pre {
+    overflow: auto;
+    padding: 8px;
+    padding: 0.5rem;
+    border-top: solid 2px #ffe2b3; }
 
 .links .item {
   margin-bottom: 8px;

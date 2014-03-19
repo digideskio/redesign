@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mobile-first design</title><link rel="stylesheet" href="http://oslc.github.io/redesign/css/oslc.css"><script src="http://oslc.github.io/redesign/js/lib/modernizr.js"></script><script>// add .mustard/.no-mustard css classes
+Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window );
+
+Modernizr.load([{
+  test: Modernizr.mustard,
+  yep: 'http://oslc.github.io/redesign/css/oslc_enhanced.css'
+}]);
+
+/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon(["http://oslc.github.io/redesign/icons/output/icons.data.svg.css", "http://oslc.github.io/redesign/icons/output/icons.data.png.css", "http://oslc.github.io/redesign/icons/output/icons.fallback.css"]);
+</script></head><body><header class="banner"><div class="flag"><div class="image"><button title="Main menu" role="button" aria-label="Toggle Navigation" data-toggle-class="primary-nav-is-open" data-toggle-target="body" class="navburger mustard-only"><span class="navburger-line top"></span><span class="navburger-line middle"></span><span class="navburger-line bottom"></span></button></div><div class="body"><a href="http://oslc.github.io/redesign/" class="flag image-link"><div class="image"><i class="icon block grunticon-logo-small autosize"></i></div><div class="body"><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon block grunticon-wordmark-small autosize ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></div></a></div></div></header><div class="sticky-footer-body off-canvas-wrap">     <nav class="nav"><div class="menu primary"><div class="item flush desk-up"><a href="http://oslc.github.io/redesign/" class="image-link"><i class="icon block grunticon-logo-med autosize"></i><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon grunticon-wordmark-med autosize ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></a></div><ul class="items"><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/">OSLC Public Redesign</a></li><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/why.html">Why redesign?</a></li><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/wireframes.html">Redesign direction</a></li><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/logo.html">Logo concepts</a></li><li role="presentation" class="item current"><a href="http://oslc.github.io/redesign/mobile-first.html">Mobile-first design</a></li><li role="presentation" class="item"><a href="http://open-services.net/">open-services.net</a></li></ul></div></nav><main class="main"><div class="grid"><div class="column hand-12 desk-9"><div class="card primary"><header class="header"><h1 class="title">Mobile-first design</h1></header><section class="content"><div class="copy"><p>In <a href="./why.html">discussing why I wanted to redesign</a> I noted a few important goals (paraphrased):</p>
+<blockquote>
+<ul>
+<li>have a simpler, more flexible design;</li>
+<li>implement that design with a more flexible, modular code base;</li>
+<li>improve the site&#39;s overall accessibility and make better use of progressive enhancement to make sure anyone that needs our content can get it;</li>
+<li>make the site faster;</li>
+</ul>
+</blockquote>
+<p>I believe the best way to meet these goals is to design with a <em>mobile-first design</em> with a <em>progressive enhancement architecture</em>. </p>
+<h2>Mobile first</h2>
+<p>In 2009, <a href="http://www.lukew.com/ff/entry.asp?933">Luke Wroblewski laid out the big arguments</a> for starting with a small-screen design:</p>
+<ol>
+<li>Internet usage on mobile devices is growing at an insane pace, and mobile devices allow you to reach more people &mdash; if not now, then soon;</li>
+<li>With a smaller screen, mobile forces you to focus on the most important content and interactions;</li>
+<li>Mobile devices have unique capabilities (geolocation, touch inputs, etc.)</li>
+</ol>
+<p>Given that our current site has a lot of excess content and functionality, I&#39;m particularly interested in point #2, upon which Luke expanded in <a href="http://www.lukew.com/ff/entry.asp?1117">a later post</a>. First, on how it helps you focus:</p>
+<blockquote>
+<p>Losing 80% of your screen space forces you to focus. You need to make sure that what stays on the screen is the most important set of features for your customers and your business. There simply isn&#39;t room for any interface debris or content of questionable value. You need to know what matters most. In order to do that you need to really know your customers and your business. Which is good design 101. Designing for mobile forces you to get there -like it or not.</p>
+</blockquote>
+<p>And how it can be liberating: </p>
+<blockquote>
+<p>The onset of many networked consumer devices with different capabilities and limitations has begun to open a lot of people&#39;s eyes to the fact that Web sites don&#39;t have to look and act the same in every browser. In fact, they shouldn&#39;t. Designing for mobile first establishes that up front. How you present your key actions and information on mobile is likely to be different than the desktop. And that&#39;s ok.</p>
+</blockquote>
+<p>Brad Frost <a href="http://bradfrostweb.com/blog/web/mobile-first-responsive-web-design/">summarizes it another way</a>:</p>
+<blockquote>
+<p>The mobile web is far more restrictive, eclectic and unstable than other contexts. The mobile context is hazy. Is the user on the go or on the couch? Are they on WiFi or EDGE? By first creating an experience that prioritizes a worst-case mobile scenario, you ensure that your users will be able to accomplish their goals despite a lot of factors working against them. <strong>In short, if you can support the mobile web, you can support anything.</strong></p>
+</blockquote>
+<p>Design for flexibility and performance? Cut the cruft? Reach more people? Sign me up!</p>
+<p>(There&#39;s lots more. LukeW literally <a href="http://www.abookapart.com/products/mobile-first">wrote the book</a> on the subject.)</p>
+<h2>Progressive Enhancement architecture</h2>
+<p>The idea that we&#39;re starting with a mobile layout and <em>assuming</em> that&#39;s the worst case (Even if that&#39;s not entirely fair; I&#39;d say that Android Chrome and iOS Safari are among the most advanced browsers <em>ever</em>.) leads naturally to using progressive enhancement to add on the useful bells and whistles when a browser supports it. </p>
+<p>From The Filament Group&#39;s excellent book, <a href="http://www.peachpit.com/articles/article.aspx?p=1586457"><em>Designing With Progressive Enhancement</em></a>: </p>
+<blockquote>
+<p>&hellip;the bottom line is that people use a wide range of browsers, platforms, and devices in their daily lives, and they expect their favorite websites and applications to work seamlessly across the lot. Building sites that work only in a handful of specific browsers isn’t a realistic approach when facing this increasingly complex universe of devices, especially when progressive enhancement provides a way to build sites that will work anywhere, for everyone.</p>
+</blockquote>
+<p>They round up the following benefits to using progressive enhancement (<a href="http://www.peachpit.com/articles/article.aspx?p=1586457&amp;seqNum=3">among others</a>):</p>
+<ul>
+<li>It allows for universal access.</li>
+<li>It promotes coding clarity: thinking from the bottom up encourages cleaner and more modular code.</li>
+<li>It keeps things centralized and simple, allowing organizations to maintain a single, unified codebase</li>
+</ul>
+<p>Again, these line up well with my stated goals for the redesign.</p>
+<h2>A brief case study: this site&#39;s primary navigation</h2>
+<p>When I <a href="./wireframes.html">posted some rough wireframes</a>, I noted:</p>
+<blockquote>
+<p>These are obviously just a rough framework; and the devil, as always, will be in the details of the implementation.</p>
+</blockquote>
+<p>When it comes to mobile-first design with progressive enhancement, there are <em>a lot</em> of details.</p>
+<p>Here&#39;s the wireframe I posted with the primary navigation on the left-hand side (<strong>#1</strong>).</p>
+<p><a href="./images/wireframes/basics.png"><img src="./images/wireframes/basics.png" alt="Basic page elements, including the main menu on the left-hand side and related elements"></a></p>
+<p>That&#39;s for a desktop-sized wide screen though. How do we flip that, starting with the small-screen experience and working up to the desktop-sized layout?</p>
+<p>At its core, a navigation area is </p>
+<ul>
+<li>a list of links</li>
+<li>often there are logos</li>
+<li>often there&#39;s a primary action or two like search or logging in</li>
+</ul>
+<p>Ya know &mdash; <em>navigation</em> stuff. </p>
+<p>Of course, there&#39;s a huge variety of ways to do that. Brad Frost has handy collections of responsive navigation patterns, both <a href="http://bradfrostweb.com/blog/web/responsive-nav-patterns/">basic</a> and <a href="http://bradfrostweb.com/blog/web/complex-navigation-patterns-for-responsive-design/">more complex</a> that&#39;s worth exploring.</p>
+<h3>Level 1: No Script</h3>
+<p>The base experience is as simple as it gets: a list of links at the top of the page.</p>
+<p><img src="./images/navigation/menu-level-1.png" alt="A simple list of navigation links underneath the site logo"></p>
+<p>This is more-or-less a &quot;do-nothing&quot; solution that also happens to be bulletproof. </p>
+<p>This also expands in width naturally, so it&#39;ll still function perfectly well (if ungainly) if something goes wrong with the JavaScript on a larger screen. </p>
+<h3>Level 2: Adding some moves</h3>
+<p>One issue with the &quot;do-nothing&quot; approach is that it quickly takes up a huge amount of vertical space as you add more links.</p>
+<p>A few ways you can work around that:</p>
+<ul>
+<li>have a visible skip-to-main-content link right at the top of the page</li>
+<li>move the navigation to the bottom of the page and have a &quot;skip&quot; link to that</li>
+</ul>
+<p>I may still do either of those eventually. </p>
+<p>Another option is introducing a toggle that uses JavaScript to collapse the navigation.</p>
+<p><img src="./images/navigation/menu-level-2a.gif" alt="Click a button and the navigation collapses or expands"></p>
+<p>That works! But we can also add a bunch of animations to make it even more fun:</p>
+<p><img src="./images/navigation/menu-level-2b.gif" alt="Click a button and the navigation items slide in from the left"></p>
+<h3>Level 3: larger tablet-ish screens</h3>
+<p>As the screen gets wider, the single-column list of links starts looking kind of junky. </p>
+<p>I could make the menu items move into multiple columns. But I think it makes sense to start moving toward our eventual sidebar navigation; however it&#39;s too narrow to have it visible permanently.</p>
+<p>We&#39;ve already introduced a toggle navigation for the smaller screen, so we can adjust that to slide the whole menu bar in from the left, in a variation of the very popular &quot;off-canvas navigation&quot; pattern:</p>
+<p><img src="./images/navigation/menu-level-3.gif" alt="On a wider screen, the entire navigation slides in from the left"></p>
+<p>(Psst these .gifs are made with <a href="http://www.cockos.com/licecap/">LICEcap</a>, which is awesome.)</p>
+<h3>Level 4: even larger desktop-ish screens</h3>
+<p>Once the screen gets quite a bit wider, I think we&#39;ve got room for the primary navigation to stick around permanently in the sidebar. When the window gets wide enough, we hide the menu toggle, lose the header, and bump the main content over to make room for the menu:</p>
+<p><img src="./images/navigation/menu-level-4.gif" alt="The header disappears and the sidebar slides in"></p>
+<p>Now we&#39;re finally close to where I wanted to be with my initial wireframes. </p>
+<h2>Worth it</h2>
+<p>If what I&#39;ve described above sounds like a lot more work than just making a simple navigation sidebar, well, you&#39;re right! But along the way I&#39;ve built a useful and (hopefully) delightful menu that is accessible to pretty much everyone and usable on an enormous range of devices.</p>
+<p>So, sure, it&#39;s more work and a lot of testing. But given the results, what&#39;s not to like?</p>
+<h2>Aside: &quot;Cutting the mustard&quot; and Modernizr</h2>
+<p>The web team at the BBC have <a href="http://responsivenews.co.uk/post/18948466399/cutting-the-mustard">a great JavaScript snippet that they call &quot;cutting the mustard&quot;</a> that can clarify if a browser is reasonably modern or not:</p>
+<pre><code>if(&#39;querySelector&#39; in document
+  &amp;&amp; &#39;localStorage&#39; in window
+  &amp;&amp; &#39;addEventListener&#39; in window) {
+    // bootstrap the javascript application
+}</code></pre>
+<p>I&#39;m using that here along with the <a href="http://modernizr.com/">Modernizr feature-detecting framework</a>. Every page gets some baseline styles and the following JavaScript:</p>
+<pre><code>&lt;script src=&quot;/path/to/modernizr.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+Modernizr.addTest( &#39;mustard&#39;, &#39;querySelector&#39; in document &amp;&amp; &#39;localStorage&#39; in window &amp;&amp; &#39;addEventListener&#39; in window );
+&lt;/script&gt;</code></pre>
+<p>That adds a <code>Modernizr.mustard</code> property with the results of the test. It also adds a class to the <code>html</code> element of <code>class=&quot;mustard&quot;</code> if the browser is fairly recent (IE9+, Chrome, Safari, Firefox, etc) or <code>class=&quot;no-mustard&quot;</code> otherwise.</p>
+<p>That gives you a lot of power using CSS alone to beef up any part of your site:</p>
+<pre><code>.navigation {
+  /* basic styles */
+}
+
+.mustard .navigation {
+  /* fancy, possibly JavaScript-dependent styles */
+}</code></pre>
+<p>However, I&#39;m choosing to break out those enhanced styles into their own <code>.css</code> file and <a href="http://modernizr.com/docs/#load">use Modernizr&#39;s <code>load()</code> method</a> to inject that file if the browser &#39;cuts the mustard&#39;:</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/basic-styles.css&quot; /&gt;
+&lt;script&gt;
+Modernizr.load([{
+  test: Modernizr.mustard,
+  yep: [&#39;path/to/fancy-styles.css&#39;, &#39;/path/to/more-fancy-scripts.js&#39;]
+}]);
+&lt;/script&gt;</code></pre>
+<p>That makes the initial page load super quick and also keeps scripts and styles small for the older, wheezier browsers. Then we add the fancy stuff only when the browser supports it.</p>
+<p>Speaking of browsers, here&#39;s what I regularly have open on my Mac while building this stuff:</p>
+<ul>
+<li><strong>Firefox 3.0</strong>: This relatively ancient browser fails to cut the mustard, doesn&#39;t support CSS animations or transforms or gradients, doesn&#39;t do border radius (without <code>-moz</code> prefix, at least), and doesn&#39;t support media queries. In short, it&#39;s almost Internet Explorer 8 without having to run a virtual machine. If it works here, I&#39;m probably OK.</li>
+<li><a href="https://itunes.apple.com/us/app/duo/id777886035?mt=12"><strong>Duo</strong></a>: I should really have a phone and a tablet running the site all the time, but this app lets you have two small Webkit browsers side-by-side, so it&#39;s handy for working on the phone-ish and tablet-ish sized layouts</li>
+<li><strong>Chrome</strong>: It&#39;s got the best debugging tools and is pretty much as advanced as it gets</li>
+<li><strong>Firefox (current)</strong>: CSS preprocessors and <a href="https://github.com/ai/autoprefixer">tools like Autoprefixer</a> smooth over many browser inconsistencies already, but Firefox&#39;s layout engine is, in general, vastly less forgiving of CSS screw-ups than Chrome/Safari/Opera, so it&#39;s useful to check that everything is up to snuff here.</li>
+</ul>
+</div></section></div></div><aside class="column hand-12 desk-3"><div class="card secondary"><header class="header"><h3 class="title">Related issues</h3></header><section class="content"><ul class="links"><li class="item"><a href="https://github.com/OSLC/redesign/issues/4">Create flexible, responsive main menu bar</a></li></ul></section></div></aside></div><a role="button" aria-label="Toggle Navigation" data-toggle-class="primary-nav-is-open" data-toggle-target="body" class="close-off-canvas"></a></main></div><footer class="footer"><p>All content <a href="http://creativecommons.org/licenses/by/3.0/us/")>Creative Commons Attribution 3.0 US</a> except where noted otherwise</p><p><a href="https://github.com/OSLC/redesign">Github</a> <a href="https://github.com/OSLC/redesign/issues">Issues</a> <a href="http://open-services.net">OSLC Home</a></p></footer></body><script>window.site_url = 'http://oslc.github.io/redesign/';</script><script src="http://oslc.github.io/redesign/js/oslc.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24416914-4', 'oslc.github.io');
+ga('send', 'pageview');
+</script></html>

@@ -14,6 +14,10 @@
       {
         "title": "Investigate a more modular and flexible layout system",
         "url": "https://github.com/OSLC/redesign/issues/2"
+      },
+      {
+        "title": "Create flexible, responsive main menu bar",
+        "url": "https://github.com/OSLC/redesign/issues/4"
       }
     ]
   },
@@ -27,9 +31,15 @@
       }
     ]
   },
-  "navigation": {
-    "title": "Primary navigation",
-    "date": "2014 March 14",
-    "draft": "true"
+  "mobile-first": {
+    "title": "Mobile-first design",
+    "date": "2014 March 18",
+    "issues": [
+      {
+        "title": "Create flexible, responsive main menu bar",
+        "url": "https://github.com/OSLC/redesign/issues/4"
+      }
+    ]
+
   }
 }

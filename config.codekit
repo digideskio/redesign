@@ -1737,6 +1737,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
+	"\/_harp\/images\/navigation\/menu-level-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30746,
+		"inputAbbreviatedPath": "\/_harp\/images\/navigation\/menu-level-1.png",
+		"outputAbbreviatedPath": "\/_harp\/images\/navigation\/menu-level-1.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
 	"\/_harp\/images\/oslc-home-2011.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1939,15 +1949,15 @@
 		"outputAbbreviatedPath": "\/_harp\/logo.html",
 		"outputPathIsSetByUser": 0
 		},
-	"\/_harp\/navigation.md": {
+	"\/_harp\/mobile-first.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 1,
 		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/_harp\/navigation.md",
-		"outputAbbreviatedPath": "\/_harp\/navigation.html",
+		"inputAbbreviatedPath": "\/_harp\/mobile-first.md",
+		"outputAbbreviatedPath": "\/_harp\/mobile-first.html",
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/node_modules\/grunt-autoprefixer\/node_modules\/autoprefixer\/ChangeLog.md": {
@@ -20972,14 +20982,6 @@
 		"outputAbbreviatedPath": "\/_harp\/wireframes.html",
 		"outputPathIsSetByUser": 0
 		},
-	"\/css\/oslc_enhanced.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/oslc_enhanced.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
 	"\/icons\/output\/icons.data.png.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -21202,6 +21204,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/navigation\/menu-level-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30746,
+		"inputAbbreviatedPath": "\/images\/navigation\/menu-level-1.png",
+		"outputAbbreviatedPath": "\/images\/navigation\/menu-level-1.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
 	"\/images\/oslc-home-2011.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -21395,6 +21407,14 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/logo.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
+	"\/mobile-first.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/mobile-first.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},

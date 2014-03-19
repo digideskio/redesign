@@ -5,6 +5,7 @@ I'm taking another whack at the website for the [Open Services for Lifecycle Col
 - [The need for a redesign](./why.html)
 - [Sketches and wireframes](./wireframes.html)
 - [Concepts for a new logo](./logo.html)
+- [The main menu in a mobile-first world](./mobile-first.html)
 
 I'm going have discussions for all the big things in [Github Issues](https://github.com/OSLC/redesign/issues) so you all can have your say.
 
