@@ -2,8 +2,43 @@
  * Body Copy
  */
 
+//--- Stock link color 
+
+%copy-links {
+  a {
+    color: palette(blue, mid-dark);
+    transition: color .2s $ease-out-cubic;
+    
+    img {
+      border-color: palette(blue, mid-dark);
+      transition: border-color .2s $ease-out-cubic;
+    }
+    
+    &:visited {
+      color: desaturate( palette(blue, mid-dark), 70%);
+      
+      img { border-color: desaturate( palette(blue, mid-dark), 70%); }
+    }
+    
+    &:hover, 
+    &:focus {
+      color: palette(blue);
+      
+      img { border-color: palette(blue); }
+    }
+    
+    &:active {
+      color: palette(blue, mid-light); 
+      
+      img { border-color: palette(blue, mid-light); }
+    }
+  }
+}
+
 .copy {
   line-height: $copy-line-height-knee-up;
+  
+  @extend %copy-links;
   
   // Eliminate possible top margin
   > *:first-child {
@@ -94,6 +129,7 @@
     ol, ul {
       @include rem(padding-left, 24px);
     }
+    
   } 
 
   // some extra spacing between list items
@@ -102,7 +138,7 @@
      @include rem(margin-bottom, 6px); 
      @include rem(margin-top, 6px); 
   }
-  
+    
   > p {
     @extend %copy-margins;
   }
@@ -118,37 +154,7 @@
   img {
     border: 2px solid palette(gray, light);
   }
-  
-  // may also regret this one
-  a {
-    color: palette(blue, mid-dark);
-    transition: color .2s $ease-out-cubic;
-    
-    img {
-      border-color: palette(blue, mid-dark);
-      transition: border-color .2s $ease-out-cubic;
-    }
-    
-    &:visited {
-      color: desaturate( palette(blue, mid-dark), 70%);
       
-      img { border-color: desaturate( palette(blue, mid-dark), 70%); }
-    }
-    
-    &:hover, 
-    &:focus {
-      color: palette(blue);
-      
-      img { border-color: palette(blue); }
-    }
-    
-    &:active {
-      color: palette(blue, mid-light); 
-      
-      img { border-color: palette(blue, mid-light); }
-    }
-  }
-    
   
   // www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/
   pre, code, tt {
