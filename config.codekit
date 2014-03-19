@@ -21026,7 +21026,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 7914,
+		"initialSize": 7784,
 		"inputAbbreviatedPath": "\/icons\/output\/png\/logo-med.png",
 		"outputAbbreviatedPath": "\/icons\/output\/png\/logo-med.png",
 		"outputPathIsSetByUser": 0,
@@ -21036,7 +21036,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1769,
+		"initialSize": 1818,
 		"inputAbbreviatedPath": "\/icons\/output\/png\/logo-small.png",
 		"outputAbbreviatedPath": "\/icons\/output\/png\/logo-small.png",
 		"outputPathIsSetByUser": 0,
@@ -21061,14 +21061,6 @@
 		"outputAbbreviatedPath": "\/icons\/output\/png\/wordmark-small.png",
 		"outputPathIsSetByUser": 0,
 		"processed": 1
-		},
-	"\/icons\/output\/preview.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/icons\/output\/preview.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
 		},
 	"\/images\/logos\/logo-2011-bad-stroke.png": {
 		"fileType": 32768,

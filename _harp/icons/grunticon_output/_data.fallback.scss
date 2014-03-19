@@ -19,12 +19,12 @@
   @include icon;
   
   &.autosize {
-    height: 48px;
-    width: 58px;
+    height: 50px;
+    width: 60px;
   }
   
   &.intrinsic {
-    padding-top: 48px / 58px * 100%;
+    padding-top: 50px / 60px * 100%;
   }
 }
 

@@ -5,10 +5,12 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="logo-med" sketch:type="MSArtboardGroup">
-            <rect id="Rectangle-2" fill="#54BCD2" sketch:type="MSShapeGroup" x="0" y="0" width="250" height="41.5"></rect>
-            <path d="M125,208 C182.437617,208 229,161.437617 229,104 C229,46.5623832 182.437617,0 125,0 C67.5623832,0 21,46.5623832 21,104 C21,161.437617 67.5623832,208 125,208 Z M125,166.5 C159.517799,166.5 187.5,138.517799 187.5,104 C187.5,69.4822014 159.517799,41.5 125,41.5 C90.4822014,41.5 62.5,69.4822014 62.5,104 C62.5,138.517799 90.4822014,166.5 125,166.5 Z" id="Oval-3" fill="#54BCD2" sketch:type="MSShapeGroup"></path>
-            <path d="M125,41.5 L208.192443,41.5 C208.194962,41.503338 178.341086,71.3 178.341086,71.3 C167.341263,53.4233519 147.566278,41.5 125,41.5 Z" id="Shadow" fill-opacity="0.12" fill="#000000" sketch:type="MSShapeGroup"></path>
-            <path d="M38.4000015,42 C53.3953918,21.0365543 75.6507216,5.76904511 101.41926,0 L124.400002,0 C90.5151256,0 60.4258131,16.4927359 41.5005395,42 L38.4000015,42 Z" id="10px-highlight" fill-opacity="0.45" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <g id="Group" sketch:type="MSLayerGroup">
+                <path d="M125,208 C182.437617,208 229,161.437617 229,104 C229,46.5623832 182.437617,0 125,0 C67.5623832,0 21,46.5623832 21,104 C21,161.437617 67.5623832,208 125,208 Z M125,166.5 C159.517799,166.5 187.5,138.517799 187.5,104 C187.5,69.4822014 159.517799,41.5 125,41.5 C90.4822014,41.5 62.5,69.4822014 62.5,104 C62.5,138.517799 90.4822014,166.5 125,166.5 Z" id="Oval-3" fill="#54BCD2" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-2" fill="#54BCD2" sketch:type="MSShapeGroup" x="0" y="0" width="250" height="41.5"></rect>
+                <path d="M125,41.5 L208.132412,41.5 C208.134929,41.5033433 178.302595,71.3473988 178.302595,71.3473988 C167.31071,53.4423167 147.549995,41.5 125,41.5 Z" id="Shadow" fill-opacity="0.12" fill="#000000" sketch:type="MSShapeGroup"></path>
+                <path d="M38.7999992,41.5 C53.8375269,20.7861191 76.1553948,5.700366 101.996344,0 L125.041662,0 C91.0615683,0 60.8877039,16.2963938 41.9092498,41.5 L38.7999992,41.5 Z" id="10px-highlight" fill-opacity="0.45" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            </g>
         </g>
     </g>
 </svg>
