@@ -69,6 +69,8 @@
 
 /* 
  * Screen-Reader only
+ * Extension of HTML5 Boilerplate .visuallyhidden
+ * Add .focusable if it should become visible on focus/active
  */
 
 .sr-only { @extend %visuallyhidden; }
