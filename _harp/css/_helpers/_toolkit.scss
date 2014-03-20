@@ -65,3 +65,10 @@
  * Grunticon helper class
  */
 .icon { @extend %icon; }
+
+
+/* 
+ * Screen-Reader only
+ */
+
+.sr-only { @extend %visuallyhidden; }

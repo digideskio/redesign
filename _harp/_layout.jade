@@ -25,7 +25,9 @@ html.no-js(lang="en")
       grunticon(["#{site_url}icons/output/icons.data.svg.css", "#{site_url}icons/output/icons.data.png.css", "#{site_url}icons/output/icons.fallback.css"]);
     
   body
-    header.banner.knee-down
+    div
+      a.sr-only.focusable(href="#main") Skip to main content
+    header.banner.knee-down(role="banner")
       .flag
         .image
           button.navburger(title="Main menu", role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
@@ -43,7 +45,7 @@ html.no-js(lang="en")
                 span.project-name #{ site_name }
 
     .sticky-footer-body.off-canvas-wrap      
-      main#main.main
+      main#main.main(role="main")
         .grid
           .column.hand-12.desk-9
             .card.primary
@@ -65,7 +67,7 @@ html.no-js(lang="en")
         
         a.close-off-canvas(role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
         
-      nav#nav.nav
+      nav#nav.nav(role="navigation")
         .menu.primary
           .item.flush.desk-up
             a.image-link(href="#{ site_url }")
@@ -83,7 +85,7 @@ html.no-js(lang="en")
             li.item(role="presentation")
               a(href="http://open-services.net/") open-services.net
 
-    footer.footer
+    footer.footer(role="contentinfo")
       p
        | All content <a href="http://creativecommons.org/licenses/by/3.0/us/")>Creative Commons Attribution 3.0 US</a> except where noted otherwise
       p

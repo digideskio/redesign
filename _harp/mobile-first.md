@@ -92,7 +92,7 @@ A few ways you can work around that:
 - have a visible skip-to-main-content link right at the top of the page
 - move the navigation to the bottom of the page and have a "skip" link to that
 
-I may still do either of those eventually. 
+~~I may still do either of those eventually.~~ UPDATED: I now put the navigation below the content and move it back up via script. Change sets: [With the big change](https://github.com/OSLC/redesign/commit/560444c52636d7203ac2ee86088c137db46da796) 
 
 Another option is introducing a toggle that uses JavaScript to collapse the navigation.
 
