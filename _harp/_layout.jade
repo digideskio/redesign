@@ -25,10 +25,10 @@ html.no-js(lang="en")
       grunticon(["#{site_url}icons/output/icons.data.svg.css", "#{site_url}icons/output/icons.data.png.css", "#{site_url}icons/output/icons.fallback.css"]);
     
   body
-    header.banner
+    header.banner.knee-down
       .flag
         .image
-          button.navburger.mustard-only(title="Main menu", role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
+          button.navburger(title="Main menu", role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
             span.navburger-line.top
             span.navburger-line.middle
             span.navburger-line.bottom
@@ -43,24 +43,7 @@ html.no-js(lang="en")
                 span.project-name #{ site_name }
 
     .sticky-footer-body.off-canvas-wrap      
-      nav.nav
-        .menu.primary
-          .item.flush.desk-up
-            a.image-link(href="#{ site_url }")
-              i.icon.block.grunticon-logo-med.autosize
-              span.logo-text
-                abbr.icon.grunticon-wordmark-med.autosize.ir(title="#{ org_name }")
-                  | #{ org_abbr }
-                span.project-name #{ site_name }
-          ul.items
-            - var $i = 1;
-            for page, slug in public._data
-              if page.draft!=='true' || environment==='development'
-                li(class='item #{ current.source === slug ? "current" : "" }' role="presentation")
-                  a(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '.html') }") #{ page.title }
-            li.item(role="presentation")
-              a(href="http://open-services.net/") open-services.net
-      main.main
+      main#main.main
         .grid
           .column.hand-12.desk-9
             .card.primary
@@ -81,6 +64,25 @@ html.no-js(lang="en")
                         a(href="#{ issue.url }") #{issue.title}
         
         a.close-off-canvas(role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
+        
+      nav#nav.nav
+        .menu.primary
+          .item.flush.desk-up
+            a.image-link(href="#{ site_url }")
+              i.icon.block.grunticon-logo-med.autosize
+              span.logo-text
+                abbr.icon.grunticon-wordmark-med.autosize.ir(title="#{ org_name }")
+                  | #{ org_abbr }
+                span.project-name #{ site_name }
+          ul.items
+            - var $i = 1;
+            for page, slug in public._data
+              if page.draft!=='true' || environment==='development'
+                li(class='item #{ current.source === slug ? "current" : "" }' role="presentation")
+                  a(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '.html') }") #{ page.title }
+            li.item(role="presentation")
+              a(href="http://open-services.net/") open-services.net
+
     footer.footer
       p
        | All content <a href="http://creativecommons.org/licenses/by/3.0/us/")>Creative Commons Attribution 3.0 US</a> except where noted otherwise

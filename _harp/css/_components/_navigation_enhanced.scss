@@ -61,19 +61,6 @@
 
 }
 
-.banner {
-  transition: all .4s ease-in-out;
-  overflow: hidden;
-  max-height: 100px;
-
-  @include respond-to(desk-up) {
-    max-height: 0;
-    opacity: 0;
-    padding: 0;
-    border: 0;
-  }
-}
-
 // This wraps the moving pieces to hide their movement
 .off-canvas-wrap {
   @include respond-to(knee-up) {

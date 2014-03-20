@@ -1,10 +1,11 @@
 window.site_url = window.site_url || '/';
 
+
 /**
  * Cut the mustard
  */
 if( 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window ) {
-
+  
   /* Catch console.log errors. You are welcome. */
   if (! window.console) {
     window.console = {
@@ -14,6 +15,8 @@ if( 'querySelector' in document && 'localStorage' in window && 'addEventListener
   
   var OSLC = {
     init: function() {
+    
+      $('#nav').insertBefore('#main');
       
       //
       // SUPER SIMPLE CLASS TOGGLER
