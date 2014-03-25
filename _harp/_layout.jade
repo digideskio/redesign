@@ -30,7 +30,14 @@ html.no-js(lang="en")
     header.banner.knee-down(role="banner")
       .flag
         .image
-          button.navburger(title="Main menu", role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
+          a.btn(href="#nav", role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body") 
+            i.navburger
+              span.navburger-line.top
+              span.navburger-line.middle
+              span.navburger-line.bottom
+            span.text 
+              | Menu
+          //button.navburger(title="Main menu", role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")
             span.navburger-line.top
             span.navburger-line.middle
             span.navburger-line.bottom

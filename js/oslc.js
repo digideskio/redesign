@@ -1,10 +1,11 @@
 window.site_url = window.site_url || '/';
 
+
 /**
  * Cut the mustard
  */
 if( 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window ) {
-
+  
   /* Catch console.log errors. You are welcome. */
   if (! window.console) {
     window.console = {
@@ -14,6 +15,8 @@ if( 'querySelector' in document && 'localStorage' in window && 'addEventListener
   
   var OSLC = {
     init: function() {
+    
+      $('#nav').insertBefore('#main');
       
       //
       // SUPER SIMPLE CLASS TOGGLER
@@ -22,13 +25,15 @@ if( 'querySelector' in document && 'localStorage' in window && 'addEventListener
       // Set the target with a CSS selector data-toggle-target="%selector string%"
       // 
       
-      $(document).on('click', '[data-toggle-class]', function(){
+      $(document).on('click', '[data-toggle-class]', function(evt){
         
         var $el = $(this);
         var toggleClass = $el.attr('data-toggle-class');
         var toggleTarget = $el.attr('data-toggle-target');
         
         toggleTarget && $( toggleTarget ).toggleClass( toggleClass );
+        
+        evt.preventDefault();
       });
     
     

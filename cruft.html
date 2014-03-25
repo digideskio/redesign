@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Technical debt</title><link rel="stylesheet" href="http://oslc.github.io/redesign/css/oslc.css"><script src="http://oslc.github.io/redesign/js/lib/modernizr.js"></script><script>// add .mustard/.no-mustard css classes
+Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window );
+
+Modernizr.load([{
+  test: Modernizr.mustard,
+  yep: 'http://oslc.github.io/redesign/css/oslc_enhanced.css'
+}]);
+
+/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon(["http://oslc.github.io/redesign/icons/output/icons.data.svg.css", "http://oslc.github.io/redesign/icons/output/icons.data.png.css", "http://oslc.github.io/redesign/icons/output/icons.fallback.css"]);
+</script></head><body><div><a href="#main" class="sr-only focusable">Skip to main content</a></div><header role="banner" class="banner knee-down"><div class="flag"><div class="image"><a href="#nav" role="button" aria-label="Toggle Navigation" data-toggle-class="primary-nav-is-open" data-toggle-target="body" class="btn"> <i class="navburger"><span class="navburger-line top"></span><span class="navburger-line middle"></span><span class="navburger-line bottom"></span></i><span class="text"> 
+Menu</span></a><!--button.navburger(title="Main menu", role="button", aria-label="Toggle Navigation", data-toggle-class="primary-nav-is-open", data-toggle-target="body")<span class="navburger-line top"></span><span class="navburger-line middle"></span><span class="navburger-line bottom"></span>--></div><div class="body"><a href="http://oslc.github.io/redesign/" class="flag image-link"><div class="image"><i class="icon block grunticon-logo-small autosize"></i></div><div class="body"><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon block grunticon-wordmark-small autosize ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></div></a></div></div></header><div class="sticky-footer-body off-canvas-wrap">     <main id="main" role="main" class="main"><div class="grid"><div class="column hand-12 desk-9"><div class="card primary"><header class="header"><h1 class="title">Technical debt</h1></header><section class="content"><div class="copy"><p>While discussing <a href="./mobile-first.html">why I thought a <em>mobile-first</em> architecture</a> would be a good idea, I said that <a href="http://open-services.net">the current OSLC site</a> has a lot of &quot;excess functionality&quot;.</p>
+<p>Here&#39;s what I mean by that.</p>
+<p>I went through our site&#39;s current templates, CSS, and script files and here&#39;s all the various bits of layout/functionality that I found:</p>
+<h2>tl;dr: It&#39;s too much</h2>
+<p>The only somewhat consistent page elements are the title, breadcrumbs, and the footer. </p>
+<p>I guess that&#39;s something.</p>
+<p>Otherwise there are a lot of different treatments for similar data, functionality that could be reused but isn&#39;t, or places where a more flexible solution could cover many use cases.</p>
+<p>That isn&#39;t to say some variety isn&#39;t justified. I don&#39;t see anything wrong with the home page having a special layout. And different types of data often require different treatments.</p>
+<p>Still, this is a lot to maintain.</p>
+<h2>Menus</h2>
+<ul>
+<li><strong>Main menu</strong>: Logo/Name/Home link, App links (Wiki, Forum, Mailing lists), page links, login/register area (folds down, except on the Forum where there&#39;s a dropdown???)</li>
+<li><strong>Tutorial</strong>: Hierarchy of pages in the current tutorial; expands/collapses</li>
+<li><a href="http://open-services.net/forums/">Forums</a>: Mark all read, view latest posts, private messages, <a href="http://open-services.net/forums/member/profile/">control panel</a></li>
+<li><strong>Wiki sidebar</strong>: Create page, search, links, autocomplete page titles</li>
+<li><strong>Wiki page controls</strong>: edit, history, links</li>
+<li><strong>Footer</strong>: social links, content info, license, etc</li>
+</ul>
+<h2>Different lists of child pages</h2>
+<ul>
+<li><a href="http://open-services.net/blog/">Blog posts</a>: data, link/title, summary, RSS, Twitter roll. Reused for <a href="http://open-services.net/blog/tag/community/">tagged lists</a></li>
+<li><a href="http://open-services.net/resources/">Resources</a>: link/titles and truncated description from all resource categories, featurettes with icons</li>
+<li><a href="http://open-services.net/resources/videos/">Resource categories</a>: link/titles, descriptions</li>
+<li><a href="http://open-services.net/resources/presentations/">Presentations</a>: dates, link/titles, flagged if upcoming</li>
+<li><a href="http://open-services.net/workgroups/">Workgroups</a>: currently a table of descriptions and category/labels</li>
+<li><a href="http://open-services.net/resources/tutorials/integrating-products-with-oslc/">Tutorials</a>: multi-page table of contents in the sidebar</li>
+<li><a href="http://open-services.net/specifications/">Specifications</a>: table-like layout, headings, links/titles, progress bars, states</li>
+<li><a href="http://open-services.net/software/">Software</a>: massive table, related specifications</li>
+<li><a href="http://open-services.net/organizations/">Organizations</a>: Just a list, 3-columns</li>
+<li><a href="http://open-services.net/wiki/">Wikis</a>: table with links/titles, categories, some have labels, link to years-old legacy wiki</li>
+<li><a href="http://open-services.net/forums/">Forums</a>: I can&#39;t even&hellip; tables, mostly</li>
+<li><a href="http://open-services.net/forums/viewforum/19/">Forum topics</a>: slightly different tables, search, subscriptions</li>
+<li><a href="http://open-services.net/legal-agreements/">Legal agreements</a>: separated Members Agreement from technical workgroup WPAs, login/register area, buttons, tables</li>
+</ul>
+<h2>Distinctly different page layouts</h2>
+<ul>
+<li><a href="http://open-services.net/">Home page</a> only:<ul>
+<li>Introductory &quot;hero&quot; area</li>
+<li>&quot;What&#39;s new&quot; area</li>
+<li>&quot;About Us&quot; modules with image, heading, text</li>
+</ul>
+</li>
+<li><a href="http://open-services.net/blog/dont-get-stressed-talking-about-integrations/">Blog post</a> only:<ul>
+<li>Centered content column</li>
+<li>author + date metadata</li>
+<li>&quot;About this post&quot; block with more metadata, related links</li>
+<li>older/newer post blocks</li>
+</ul>
+</li>
+<li><a href="http://open-services.net/resources/presentations/oslc-community-update-and-an-introduction-to-promcode/">Resource</a><ul>
+<li>Video and presenters (sometimes)</li>
+<li>Related elements in the sidebar</li>
+</ul>
+</li>
+<li><a href="http://open-services.net/participate/">Participate</a><ul>
+<li>3-column layout</li>
+<li>3 tabbed sub-areas</li>
+</ul>
+</li>
+<li><a href="http://open-services.net/workgroups/ccm-tc/">A workgroup</a><ul>
+<li>Important links horizontal strip</li>
+<li>labels</li>
+<li>precursors</li>
+<li>&quot;Ghost town&quot; block for deprecated groups</li>
+<li>Members tab</li>
+<li>Around the site tab (related elements)</li>
+<li>Charter tab (sometimes)</li>
+<li>Join a user group via AJAX request</li>
+</ul>
+</li>
+<li><a href="http://open-services.net/participate/faq/">FAQ</a><ul>
+<li>Summary/details accordions</li>
+<li>Also no one reads it</li>
+</ul>
+</li>
+<li><a href="http://open-services.net/software/context-sdm/">Software</a><ul>
+<li>Mega tables!</li>
+<li>Warning boxes</li>
+</ul>
+</li>
+<li>Legal documents and agreements<ul>
+<li>Mashed up charters, legal documents, and forms into a mega document</li>
+<li>Validated-up-the-wazoo forms</li>
+<li>Multi-step toggles to even see WPAs </li>
+</ul>
+</li>
+</ul>
+<h2>JavaScript modules</h2>
+<h4>Still probably useful</h4>
+<ul>
+<li>Popover/tooltips</li>
+<li>Click-this-to-show-that toggles</li>
+<li>Autocomplete / Dropdown (basically a <code>&lt;datalist&gt;</code> polyfill)</li>
+<li>Accordions / <code>&lt;summary&gt;</code>/<code>&lt;details&gt;</code> polyfill</li>
+<li>Responsive videos (force to fit flexible containers)</li>
+<li>Table of Contents generator</li>
+<li>Markdown editor and preview</li>
+<li>Button helpers (disable, loading, etc)</li>
+</ul>
+<h4>Used in just one place <small>(and that&#39;s ok)</small></h4>
+<ul>
+<li>Join a user group script</li>
+</ul>
+<h4>Used in just one place <small>(less OK)</small></h4>
+<ul>
+<li>Tutorial navigation expand/collapse</li>
+<li>HTML5 <code>pushState</code> high-speed loading on Tutorials (that I can&#39;t reuse anywhere else because it&#39;s tied very closely to the tutorial layout and menu)</li>
+<li>Custom extensions to markdown preview and editor (I should just defer to the server-side rendering)</li>
+</ul>
+<h4>Probably less useful in a mobile-first world</h4>
+<ul>
+<li>Tabs</li>
+<li>Modal dialogs</li>
+<li>Adjustments to make super-giant tables in specification docs fit</li>
+<li>Expand/collapse forum tables</li>
+</ul>
+<h4>Can probably tone down or eliminate</h4>
+<ul>
+<li>Client-side form validation (esp. lots of custom adjustments for legal agreements)</li>
+<li>client-side framework to fire all this stuff at the appropriate times (let the server handle it)</li>
+</ul>
+<h4>Out of use</h4>
+<ul>
+<li>Video lightbox</li>
+<li>SVG animation framework (out of use; used to be on the old &quot;About&quot; page)</li>
+<li>Table sorting (this broke at some point and I never fixed it!)</li>
+</ul>
+</div></section></div></div></div><a role="button" aria-label="Toggle Navigation" data-toggle-class="primary-nav-is-open" data-toggle-target="body" class="close-off-canvas"></a></main><nav id="nav" role="navigation" class="nav"><div class="menu primary"><div class="item flush desk-up"><a href="http://oslc.github.io/redesign/" class="image-link"><i class="icon block grunticon-logo-med autosize"></i><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon grunticon-wordmark-med autosize ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></a></div><ul class="items"><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/">OSLC Public Redesign</a></li><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/why.html">Why redesign?</a></li><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/wireframes.html">Redesign direction</a></li><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/logo.html">Logo concepts</a></li><li role="presentation" class="item "><a href="http://oslc.github.io/redesign/mobile-first.html">Mobile-first design</a></li><li role="presentation" class="item current"><a href="http://oslc.github.io/redesign/cruft.html">Technical debt</a></li><li role="presentation" class="item"><a href="http://open-services.net/">open-services.net</a></li></ul></div></nav></div><footer role="contentinfo" class="footer"><p>All content <a href="http://creativecommons.org/licenses/by/3.0/us/")>Creative Commons Attribution 3.0 US</a> except where noted otherwise</p><p><a href="https://github.com/OSLC/redesign">Github</a> <a href="https://github.com/OSLC/redesign/issues">Issues</a> <a href="http://open-services.net">OSLC Home</a></p></footer></body><script>window.site_url = 'http://oslc.github.io/redesign/';</script><script src="http://oslc.github.io/redesign/js/oslc.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24416914-4', 'oslc.github.io');
+ga('send', 'pageview');
+</script></html>

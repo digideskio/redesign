@@ -10,9 +10,6 @@
 /*
  * Positioning
  */
-.navburger {
-  position: relative; }
-
 .close-off-canvas {
   position: absolute; }
 
@@ -25,7 +22,7 @@
 /*
  * Prevent flicker on transitions on mobile webkit
  */
-.navburger-line, .nav, .main {
+.nav, .main {
   -webkit-backface-visibility: hidden; }
 
 /*
@@ -598,61 +595,6 @@
   .workstation-only,
   .workstation-down {
     display: none !important; } }
-.navburger {
-  display: block;
-  padding: 20px 10px;
-  padding: 1.25rem 0.625rem;
-  background: white;
-  border: 0;
-  opacity: .75;
-  -webkit-transition: opacity 0.15s ease-in-out;
-  transition: opacity 0.15s ease-in-out; }
-  .navburger:hover {
-    opacity: 1; }
-
-.navburger-line, .navburger-line.top, .navburger-line.bottom {
-  display: block;
-  background: #ccc;
-  border-radius: 3px;
-  height: 5.71429px;
-  height: 0.35714rem;
-  width: 40px;
-  width: 2.5rem;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transition: all 0.15s cubic-bezier(0, 0, 0.7, 1.9);
-  transition: all 0.15s cubic-bezier(0, 0, 0.7, 1.9); }
-
-.navburger-line.middle {
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out; }
-.navburger-line.top, .navburger-line.bottom {
-  position: absolute;
-  content: '';
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-  -webkit-transform-origin: 2.85714px center;
-  -ms-transform-origin: 2.85714px center;
-  transform-origin: 2.85714px center; }
-.navburger-line.top {
-  top: 10px;
-  top: 0.625rem; }
-.navburger-line.bottom {
-  bottom: 10px;
-  bottom: 0.625rem; }
-
-.primary-nav-is-open .navburger > .middle {
-  opacity: 0; }
-.primary-nav-is-open .navburger > .top {
-  -webkit-transform: translateZ(0) rotate(37deg);
-  -ms-transform: translateZ(0) rotate(37deg);
-  transform: translateZ(0) rotate(37deg); }
-.primary-nav-is-open .navburger > .bottom {
-  -webkit-transform: translateZ(0) rotate(-37deg);
-  -ms-transform: translateZ(0) rotate(-37deg);
-  transform: translateZ(0) rotate(-37deg); }
-
 @media only screen and (min-width: 40.0625em) {
   .off-canvas-wrap {
     -webkit-backface-visibility: hidden;

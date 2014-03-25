@@ -23,7 +23,7 @@
 /*
  * Positioning
  */
-.pos-rel {
+.pos-rel, .navburger {
   position: relative; }
 
 .pos-abs {
@@ -777,53 +777,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 8.33333%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 8.33333%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 8.33333%; }
 
 .hand-2 {
@@ -842,53 +798,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 16.66667%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 16.66667%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 16.66667%; }
 
 .hand-3 {
@@ -907,53 +819,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 25%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 25%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 25%; }
 
 .hand-4 {
@@ -972,53 +840,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 33.33333%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 33.33333%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 33.33333%; }
 
 .hand-5 {
@@ -1037,53 +861,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 41.66667%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 41.66667%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 41.66667%; }
 
 .hand-6 {
@@ -1102,53 +882,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 50%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 50%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 50%; }
 
 .hand-7 {
@@ -1167,53 +903,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 58.33333%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 58.33333%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 58.33333%; }
 
 .hand-8 {
@@ -1232,53 +924,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 66.66667%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 66.66667%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 66.66667%; }
 
 .hand-9 {
@@ -1297,53 +945,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 75%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 75%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 75%; }
 
 .hand-10 {
@@ -1362,53 +966,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 83.33333%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 83.33333%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 83.33333%; }
 
 .hand-11 {
@@ -1427,53 +987,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 91.66667%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 91.66667%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 91.66667%; }
 
 .hand-12 {
@@ -1492,53 +1008,9 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -webkit-flex: 0 0 100%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -moz-box-flex: 0;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     -ms-flex: 0 0 100%;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
     flex: 0 0 100%; }
 
 @media only screen and (max-width: 40em) {
@@ -1697,6 +1169,15 @@ html {
 
 .banner {
   border-top: 3px solid #ffe2b3; }
+  .banner .btn {
+    margin-right: 8px;
+    margin-right: 0.5rem; }
+    .banner .btn > .text {
+      font-size: 11px;
+      display: block;
+      text-align: center;
+      margin-top: 3px;
+      margin-top: 0.1875rem; }
   .banner .logo {
     width: 58px;
     height: 55px;
@@ -1887,3 +1368,79 @@ abbr.grunticon-wordmark-med {
   line-height: 1.3; }
   .links .item:last-child {
     margin-bottom: 0; }
+
+.btn {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none !important;
+  white-space: nowrap;
+  line-height: 1;
+  padding: .375em .5em .375em;
+  border-radius: 4px;
+  -webkit-transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.15s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.btn {
+  color: #fff;
+  background-color: #cccccc;
+  border-bottom: 3px solid #aaaaaa; }
+  .btn:hover, .btn:focus {
+    background-color: #c1c1c1; }
+  .btn:active, .btn[active] {
+    border-bottom-width: 1px; }
+  .btn > .text {
+    vertical-align: middle; }
+
+.navburger {
+  display: block;
+  height: 20px;
+  width: 28px; }
+
+.navburger-line {
+  display: block;
+  background: #fff;
+  border-radius: 3px;
+  height: 4px;
+  width: 28px;
+  position: absolute;
+  left: 0;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s; }
+  .navburger-line.middle {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out; }
+  .navburger-line.top, .navburger-line.bottom {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-origin: 0 center;
+    -ms-transform-origin: 0 center;
+    transform-origin: 0 center;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: cubic-bezier(0, 0, 0.7, 1.9);
+    transition-timing-function: cubic-bezier(0, 0, 0.7, 1.9); }
+  .navburger-line.top {
+    top: 0; }
+  .navburger-line.middle {
+    top: 8px; }
+  .navburger-line.bottom {
+    bottom: 0; }
+
+.primary-nav-is-open .navburger > .middle {
+  opacity: 0; }
+.primary-nav-is-open .navburger > .top {
+  -webkit-transform: translate3d(2px, 0, 0) rotate(35deg);
+  -ms-transform: translate3d(2px, 0, 0) rotate(35deg);
+  transform: translate3d(2px, 0, 0) rotate(35deg); }
+.primary-nav-is-open .navburger > .bottom {
+  -webkit-transform: translate3d(2px, 0, 0) rotate(-35deg);
+  -ms-transform: translate3d(2px, 0, 0) rotate(-35deg);
+  transform: translate3d(2px, 0, 0) rotate(-35deg); }

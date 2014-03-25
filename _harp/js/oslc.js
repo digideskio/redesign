@@ -25,13 +25,15 @@ if( 'querySelector' in document && 'localStorage' in window && 'addEventListener
       // Set the target with a CSS selector data-toggle-target="%selector string%"
       // 
       
-      $(document).on('click', '[data-toggle-class]', function(){
+      $(document).on('click', '[data-toggle-class]', function(evt){
         
         var $el = $(this);
         var toggleClass = $el.attr('data-toggle-class');
         var toggleTarget = $el.attr('data-toggle-target');
         
         toggleTarget && $( toggleTarget ).toggleClass( toggleClass );
+        
+        evt.preventDefault();
       });
     
     

@@ -11,6 +11,17 @@ body {
 .banner {
   border-top: 3px solid palette(gold, light);
   
+  .btn {
+    @include rem(margin-right, 8px);
+    
+    > .text {
+      font-size: $font-size-xs;
+      display: block;
+      text-align: center;
+      @include rem(margin-top, 3px);
+    }
+  }
+  
   .logo {
     width: 58px;
     height: 55px;

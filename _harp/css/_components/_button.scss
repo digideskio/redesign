@@ -1,0 +1,42 @@
+%btn {
+  @include inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+
+  text-decoration: none !important;
+  
+  white-space: nowrap;
+  
+  // FF doesn't let you do line-height on <input>
+  // So the easiest way to handle these is with padding
+  line-height: 1; 
+  padding: .375em .5em .375em;
+  
+  border-radius: 4px;
+  transition: all .15s $ease-out-cubic;
+    
+}
+
+.btn {
+  @extend %btn;
+  
+  color: #fff;
+  background-color: palette(gray,light);
+  
+  border-bottom: 3px solid palette(gray, mid-light);
+
+  &:hover,
+  &:focus {
+    background-color: shade( palette(gray, light), 5% );
+  }
+  
+  // "pressed" animation when active
+  &:active,
+  &[active] {
+    border-bottom-width: 1px;
+  }
+
+  > .text {
+    vertical-align: middle;
+  } 
+}
