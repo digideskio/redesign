@@ -2,11 +2,24 @@
   "index": {
     "title": "Posts"
   },
-  
+  "main-menus": {
+    "title": "Responsive primary menus",
+    "date": "2014 April 15",
+    "draft": true,
+    "issues": [
+      {
+        "title": "Create flexible, responsive main menu bar",
+        "url": "https://github.com/OSLC/redesign/issues/4"
+      },
+      {
+        "title": "Investigate a more modular and flexible layout system",
+        "url": "https://github.com/OSLC/redesign/issues/2"
+      }
+    ]
+  },
   "cruft": {
     "title": "Technical debt",
     "date": "2014 March 20",
-    "draft": true
   },
   
   "mobile-first": {

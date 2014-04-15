@@ -14,7 +14,7 @@ Otherwise there are a lot of different treatments for similar data, functionalit
 
 That isn't to say some variety isn't justified. I don't see anything wrong with the home page having a special layout. And different types of data often require different treatments.
 
-Still, this is a lot to maintain.
+Still, this is a lot to maintain. **We can make do with less**, I imagine.
 
 
 ## Menus
@@ -126,4 +126,3 @@ Still, this is a lot to maintain.
 - Video lightbox
 - SVG animation framework (out of use; used to be on the old "About" page)
 - Table sorting (this broke at some point and I never fixed it!)
-
