@@ -10,9 +10,5 @@
     @include respond-to( hand-only ) {
       .heading { display: none; }
     } 
-  
-    @include respond-to( desk-up ) {
-      border-top: 3px solid palette(red);
-    }
   }
 }
