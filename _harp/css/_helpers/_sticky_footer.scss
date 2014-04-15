@@ -21,22 +21,26 @@ html { height: 100%; }
 	flex: 1 0 auto;
 }
 
-body {
-  // http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
-  @extend %sticky-footer-flexcolumns;
-  min-height: 100%;
-}
+.flexbox {
+  body {
+    // http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+    @extend %sticky-footer-flexcolumns;
+    min-height: 100%;
+  }
 
-// Additional markup for sticky footer. 
-// This is the element that Will expand to body height. 
-// Must be a direct child of <body>
+  // Additional markup for sticky footer. 
+  // This is the element that Will expand to body height. 
+  // Must be a direct child of <body>
 
-.sticky-footer-body {
-  @extend %sticky-footer-body-elements;
+  .sticky-footer-body {
+    @extend %sticky-footer-body-elements;
 
-  // last touch: this makes sure the next child also grows
-  // this is because the wraps for the off-canvas use absolute positioning
-  @extend %sticky-footer-flexcolumns;
-}
+    // last touch: this makes sure the next child also grows
+    // this is because the wraps for the off-canvas use absolute positioning
+    @extend %sticky-footer-flexcolumns;
+  }
 
-.main { @extend %sticky-footer-body-elements; }
+  .main { @extend %sticky-footer-body-elements; }
+
+} 
+

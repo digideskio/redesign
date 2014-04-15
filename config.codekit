@@ -1981,6 +1981,30 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
+	"\/_harp\/javascript\/mustard.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/javascript\/mustard.md",
+		"outputAbbreviatedPath": "\/_harp\/javascript\/mustard.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/javascript\/utilities.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/javascript\/utilities.md",
+		"outputAbbreviatedPath": "\/_harp\/javascript\/utilities.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/js\/_libraries.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -2475,6 +2499,18 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/posts\/logo.md",
 		"outputAbbreviatedPath": "\/_harp\/posts\/logo.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/posts\/main-menus.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/posts\/main-menus.md",
+		"outputAbbreviatedPath": "\/_harp\/posts\/main-menus.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
