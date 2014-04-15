@@ -1,0 +1,17 @@
+{
+  "index": {
+    "title": "Tests"
+  },
+  "grid": {
+    "title": "Grid layout",
+    "description" : "Stress test of the grid module"
+  },
+  "copy": {
+    "title": "Body copy",
+    "description": "Testing how the main page content looks"
+  },
+  "fluid-vids": {
+    "title": "Fluid videos",
+    "description": "Testing my script to make sure videos do not escape their parent container"
+  }
+}

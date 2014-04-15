@@ -121,19 +121,19 @@ p now add .workstation-# classes
     
 h2 nested
 
-p should just work
+p add <code>.pulled</code> to nested <code>.grid</code> rows to bring the margins back into line
 
 .grid.test
   .column.hand-6
     p 1 of 2
-    .grid
+    .grid.pulled
       .column.hand-6
         p 1 of 2
       .column.hand-6 
         p 1 of 2
   .column.hand-6
     p 1 of 2
-    .grid
+    .grid.pulled
       .column.hand-6
         p 1 of 2
       .column.hand-6
@@ -149,7 +149,7 @@ p because sometimes you don't want to deal with the neg margins and gutters
     p 1 of 2
 
 h2 collapsed and nested
-p sorry! gotta put <code>.collapsed</code> on every nested <code>.grid</code>
+p sorry! gotta put <code>.collapsed</code> on every nested <code>.grid</code> too
 p otherwise <abbr title="Cascading Style Sheets">CSS</abbr> inheritance get out of control quickly
 .grid.test.collapsed
   .column.hand-6
