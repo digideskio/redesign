@@ -1,11 +1,3 @@
-/* 
-  Catch console.log errors. You are welcome. 
-*/
-if (! window.console) {
-  window.console = {
-    log: function () {}
-  };
-}
 
 $.fn.toggleAria = function( attr ) {
   

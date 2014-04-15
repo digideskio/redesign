@@ -1,3 +1,12 @@
+/* 
+  Catch console.log errors. You are welcome. 
+*/
+if (! window.console) {
+  window.console = {
+    log: function () {}
+  };
+}
+
 window.site_url = window.site_url || '/';
 
 Modernizr.load({
