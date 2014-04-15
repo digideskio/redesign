@@ -8,7 +8,6 @@
             | #{ org_abbr }
           span.project-name #{ site_name }
     ul.items
-      - var $i = 1;
       for page, slug in public._data
         if page.draft!=='true' || environment==='development'
           li(class='#{ current.path[0] === slug ? "current" : "" }' role="presentation")
