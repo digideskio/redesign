@@ -122,18 +122,6 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
-	"\/_harp\/cruft.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/_harp\/cruft.md",
-		"outputAbbreviatedPath": "\/_harp\/cruft.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/_harp\/css\/_base\/_reset.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -1696,28 +1684,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/icons\/_grunticon\/png\/carousel-main.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 602,
-		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/carousel-main.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/carousel-main.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/_grunticon\/png\/carousel-wiki.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3762,
-		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/carousel-wiki.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/carousel-wiki.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/_harp\/icons\/_grunticon\/png\/logo-med.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1905,28 +1871,6 @@
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
-		},
-	"\/_harp\/icons\/output\/png\/carousel-main.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 340,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/carousel-main.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/carousel-main.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/output\/png\/carousel-wiki.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2066,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/carousel-wiki.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/carousel-wiki.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
 		},
 	"\/_harp\/icons\/output\/png\/logo-med.png": {
 		"fileType": 32768,
@@ -2477,27 +2421,74 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/logo.md": {
+	"\/_harp\/posts\/cruft.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 1,
 		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/_harp\/logo.md",
-		"outputAbbreviatedPath": "\/_harp\/logo.html",
+		"inputAbbreviatedPath": "\/_harp\/posts\/cruft.md",
+		"outputAbbreviatedPath": "\/_harp\/posts\/cruft.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/_harp\/mobile-first.md": {
+	"\/_harp\/posts\/index.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/posts\/index.jade",
+		"outputAbbreviatedPath": "\/_harp\/posts\/index.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/posts\/logo.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
 		"ignore": 1,
 		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/_harp\/mobile-first.md",
-		"outputAbbreviatedPath": "\/_harp\/mobile-first.html",
+		"inputAbbreviatedPath": "\/_harp\/posts\/logo.md",
+		"outputAbbreviatedPath": "\/_harp\/posts\/logo.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/posts\/mobile-first.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/posts\/mobile-first.md",
+		"outputAbbreviatedPath": "\/_harp\/posts\/mobile-first.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/posts\/why.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/posts\/why.md",
+		"outputAbbreviatedPath": "\/_harp\/posts\/why.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/posts\/wireframes.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/posts\/wireframes.md",
+		"outputAbbreviatedPath": "\/_harp\/posts\/wireframes.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
@@ -2546,30 +2537,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
-		},
-	"\/_harp\/why.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/_harp\/why.md",
-		"outputAbbreviatedPath": "\/_harp\/why.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/_harp\/wireframes.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/_harp\/wireframes.md",
-		"outputAbbreviatedPath": "\/_harp\/wireframes.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/cruft.html": {
 		"fileType": 8192,

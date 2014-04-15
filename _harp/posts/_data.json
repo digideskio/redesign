@@ -1,0 +1,51 @@
+{
+  "index": {
+    "title": "Posts"
+  },
+  
+  "cruft": {
+    "title": "Technical debt",
+    "date": "2014 March 20",
+    "draft": true
+  },
+  
+  "mobile-first": {
+    "title": "Mobile-first design",
+    "date": "2014 March 18",
+    "issues": [
+      {
+        "title": "Create flexible, responsive main menu bar",
+        "url": "https://github.com/OSLC/redesign/issues/4"
+      }
+    ]
+
+  },
+  "logo": {
+    "title": "Logo concepts",
+    "date": "2014 March 12",
+    "issues": [
+      {
+        "title": "Investigate a simpler logo",
+        "url": "https://github.com/OSLC/redesign/issues/1"
+      }
+    ]
+  },
+  "wireframes": {
+    "title": "Redesign direction",
+    "date": "2014 March 11",
+    "issues": [
+      {
+        "title": "Investigate a more modular and flexible layout system",
+        "url": "https://github.com/OSLC/redesign/issues/2"
+      },
+      {
+        "title": "Create flexible, responsive main menu bar",
+        "url": "https://github.com/OSLC/redesign/issues/4"
+      }
+    ]
+  },
+  "why": {
+    "title": "Why redesign?",
+    "date": "2014 March 10"
+  }
+}
