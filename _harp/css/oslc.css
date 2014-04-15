@@ -1366,10 +1366,10 @@ abbr.grunticon-wordmark-med {
     font-family: monospace;
     white-space: pre;
     white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-all;
     background-color: #fff8eb; }
   .copy pre {
+    word-wrap: break-word;
+    word-break: break-all;
     overflow: auto;
     padding: 8px;
     padding: 0.5rem;

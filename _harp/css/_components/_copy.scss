@@ -162,13 +162,14 @@
     white-space: pre; 
     white-space: pre-wrap; 
     
-    // These last two make sure things that aren't very word-like, like URLs, break
-    word-wrap: break-word;
-    word-break: break-all;
     background-color: tint( palette(gold, x-light), 25% );
   }
   
   pre {
+    // These last two make sure things that aren't very word-like, like URLs, break
+    word-wrap: break-word;
+    word-break: break-all;
+    
     @extend %copy-margins;
     overflow: auto;
     @include rem(padding, 8px);
