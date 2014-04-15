@@ -5,6 +5,12 @@
   "posts": {
     "title": "Posts"  
   },
+  "components": {
+    "title": "Components"
+  },
+  "javascript": {
+    "title": "JavaScript"
+  },
   "tests": {
     "title": "Tests"
   }
