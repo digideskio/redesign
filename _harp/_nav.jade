@@ -1,0 +1,27 @@
+if has_secondary
+  - var root = current.path[0]
+  - var data = public[ root ]._data
+  nav#nav.nav.has-secondary(role="navigation",data-whirligig)
+    .controls.hand-only.mustard-only
+      .tabs
+        a.tab(href="#main_menu") Main
+        a.tab.active(href="#secondary_menu") #{ data.index.title }
+    .window
+      .panels
+        != partial('_menu_primary', {site_url: site_url})
+        
+        .panel#secondary_menu
+          .menu.secondary.inverted
+            ul.items
+              for page, slug in data
+                if slug === 'index'
+                  li(role="presentation")
+                    span.item.heading #{page.title}
+                else 
+                  if page.draft!=='true' || environment==='development'
+                    li(class=' #{ current.source === slug ? "current" : "" }' role="presentation")
+                      a.item(href="#{ site_url }#{ root + '/' + slug + '.html' }") #{ page.title }
+else 
+  nav#nav.nav(role="navigation")
+    .panels
+      != partial('_menu_primary', {site_url: site_url})

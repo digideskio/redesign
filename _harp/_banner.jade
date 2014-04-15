@@ -1,0 +1,24 @@
+div
+  a.sr-only.focusable(href="#main") Skip to main content
+header.banner.knee-down(role="banner")
+  .flag
+    .image
+      a#navToggle.btn(href="#nav", role="button", aria-label="Toggle Navigation") 
+        //i.navburger
+          div.navburger-line.top
+          div.navburger-line.middle
+          div.navburger-line.bottom
+        span.swapper
+          i.icon.autosize.grunticon-navtoggle-menu
+          i.mustard-only.icon.autosize.grunticon-navtoggle-close
+        span.text 
+          | Menu
+    .body
+      a.flag.image-link(href="#{ site_url }")
+        .image
+          i.icon.block.grunticon-logo-small.autosize
+        .body
+          span.logo-text
+            abbr.icon.block.grunticon-wordmark-small.autosize.ir(title="#{ org_name }")
+              | #{ org_abbr }
+            span.project-name #{ site_name }

@@ -1,0 +1,21 @@
+main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
+  .grid
+    .column.hand-12.workstation-9
+      .card.primary
+        header.header
+          h1.title #{ title }
+        section.content
+          div.copy
+            != yield
+    if issues
+      aside.column.hand-12.workstation-3
+        .card.secondary
+          header.header
+            h3.title Related issues
+          section.content
+            ul.links
+              for issue in issues
+                li.item
+                  a(href="#{ issue.url }") #{issue.title}
+  
+  a.close-nav(role="button", aria-label="Toggle Navigation")
