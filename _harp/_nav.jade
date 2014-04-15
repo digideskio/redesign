@@ -20,7 +20,7 @@ if has_secondary
                 else 
                   if page.draft!=='true' || environment==='development'
                     li(class=' #{ current.source === slug ? "current" : "" }' role="presentation")
-                      a.item(href="#{ site_url }#{ root + '/' + slug + '.html' }") #{ page.title }
+                      a.item(href="#{ site_url }#{ root + '/' + slug + '.html' }") #{ page.menu_title || page.title }
 else 
   nav#nav.nav(role="navigation")
     .panels

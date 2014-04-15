@@ -11,6 +11,6 @@
       for page, slug in public._data
         if page.draft!=='true' || environment==='development'
           li(class='#{ current.path[0] === slug ? "current" : "" }' role="presentation")
-            a.item(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '/') }") #{ page.title }
+            a.item(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '/') }") #{ page.menu_title || page.title }
       li.item(role="presentation")
         a.item(href="http://open-services.net/") open-services.net
