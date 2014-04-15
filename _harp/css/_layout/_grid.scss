@@ -54,29 +54,22 @@
    *  - negative margins are aggressively weird
    *  - b/c of negative margins you cannot apply a background color to the .grid object
    *    or cells directly
+   *  - this can make the layout 
    */   
-  @include rem( margin-left, -$gutter/2 );
-  @include rem( margin-right, -$gutter/2 );
+  &.pulled {
+    @include rem( margin-left, -$gutter/2 );
+    @include rem( margin-right, -$gutter/2 );
+  }
+  
 
   /* 
    * Double gutters
    */
-  &.relaxed {
+  &.relaxed.pulled {
     @include rem( margin-left, -$gutter );
     @include rem( margin-right, -$gutter );
   }
   
-  /* 
-   * For when the gutters get too weird to deal with
-   * This will remove all negative margins and gutters
-   * 
-   * To keep this reasonable, you'll need to also put .collapsed
-   * on any nested .grid objects
-   */
-  &.collapsed {
-    margin-left: 0;
-    margin-right: 0;
-  }
       
 }
 
