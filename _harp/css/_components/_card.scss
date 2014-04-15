@@ -69,3 +69,10 @@
   }
   
 }
+
+
+.cards {
+  .card {
+    @include rem(margin-bottom, 24px);
+  }
+}
