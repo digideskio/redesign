@@ -8,18 +8,18 @@
     "draft": true,
     "issues": [
       {
-        "title": "Create flexible, responsive main menu bar",
-        "url": "https://github.com/OSLC/redesign/issues/4"
+        "title": "Some site areas require a sub-menu",
+        "url": "https://github.com/OSLC/redesign/issues/3"
       },
       {
-        "title": "Investigate a more modular and flexible layout system",
-        "url": "https://github.com/OSLC/redesign/issues/2"
+        "title": "Create flexible, responsive main menu bar",
+        "url": "https://github.com/OSLC/redesign/issues/4"
       }
     ]
   },
   "cruft": {
     "title": "Technical debt",
-    "date": "2014 March 20",
+    "date": "2014 March 20"
   },
   
   "mobile-first": {
