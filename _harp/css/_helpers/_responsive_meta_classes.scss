@@ -1,0 +1,15 @@
+/*
+ * Outputs media queries in font-family declaration
+ * 
+ * 'font-family' is the only place you can put free-entry text and have it still be valid
+ * So we can access it with JavaScript and 'read' the media queries
+ * 
+ */
+
+@each $name, $query in $mediaqueries {
+
+  meta.#{$namespace}-mq-#{$name} {
+    font-family: "/#{$query}/";
+  }
+
+}

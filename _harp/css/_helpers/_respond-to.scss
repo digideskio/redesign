@@ -31,26 +31,36 @@ $neckbeard-range: ( 1921/16 * 1em ); // 1921px
 
 /**
  * Set up some Media Queries
+ * And get them in a SASS map (3.3+) for easy reference
  */
+
+// these two get repeated
 $screen: "only screen" !default;
-
-$landscape: "#{$screen} and (orientation: landscape)" !default;
-$portrait: "#{$screen} and (orientation: portrait)" !default;
-
-$hand-up: $screen !default;
-$hand-only: "#{$screen} and (max-width: #{upper-bound($hand-range)})" !default;
-
-$knee-up: "#{$screen} and (min-width:#{lower-bound($knee-range)})";
-$knee-only: "#{$screen} and (min-width:#{lower-bound($knee-range)}) and (max-width:#{upper-bound($knee-range)})" !default;
-
-$desk-up: "#{$screen} and (min-width:#{lower-bound($desk-range)})" !default;
-$desk-only: "#{$screen} and (min-width:#{lower-bound($desk-range)}) and (max-width:#{upper-bound($desk-range)})" !default;
-
-$workstation-up: "#{$screen} and (min-width:#{lower-bound($workstation-range)})" !default;
-$workstation-only: "#{$screen} and (min-width:#{lower-bound($workstation-range)}) and (max-width:#{upper-bound($workstation-range)})" !default;
-
 $neckbeard-up: "#{$screen} and (min-width:#{lower-bound($neckbeard-range)})" !default;
-$neckbeard-only: $neckbeard-up;
+
+
+$mediaqueries: (
+  screen: $screen,
+
+  landscape: "#{$screen} and (orientation: landscape)",
+  portrait: "#{$screen} and (orientation: portrait)",
+
+  hand-up: $screen,
+  hand-only: "#{$screen} and (max-width: #{upper-bound($hand-range)})",
+
+  knee-up: "#{$screen} and (min-width:#{lower-bound($knee-range)})",
+  knee-only: "#{$screen} and (min-width:#{lower-bound($knee-range)}) and (max-width:#{upper-bound($knee-range)})",
+  knee-down: "#{$screen} and (max-width:#{upper-bound($knee-range)})",
+
+  desk-up: "#{$screen} and (min-width:#{lower-bound($desk-range)})",
+  desk-only: "#{$screen} and (min-width:#{lower-bound($desk-range)}) and (max-width:#{upper-bound($desk-range)})",
+
+  workstation-up: "#{$screen} and (min-width:#{lower-bound($workstation-range)})",
+  workstation-only: "#{$screen} and (min-width:#{lower-bound($workstation-range)}) and (max-width:#{upper-bound($workstation-range)})",
+
+  neckbeard-up: $neckbeard-up,
+  neckbeard-only: $neckbeard-up
+);
 
 
 /**
@@ -60,61 +70,15 @@ $neckbeard-only: $neckbeard-up;
  * See:
  *  - http://css-tricks.com/media-queries-sass-3-2-and-codekit/
  *  - http://jeffcroft.com/blog/2012/mar/02/implementing-responsive-design/
+ *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
  */
 @mixin respond-to($point) {
 
-  @if $point == landscape {
-    @media #{$landscape} { @content; }
-  }
-
-  @if $point == portrait {
-    @media #{$portrait} { @content; }
-  }
-  
-  @if $point == hand-up {
-    @media #{$hand-up} { @content; }
-  }
-
-  @if $point == hand-only {
-    @media #{$hand-only} { @content; }
-  }
-  
-  @if $point == knee-up {
-    @media #{$knee-up} { @content }
-  }
-  
-  @if $point == knee-only {
-    @media #{$knee-only} { @content; }
-  }
-  
-  @if $point == desk-up {
-    @media #{$desk-up} { @content; }
-  }
-  
-  @if $point == desk-only {
-    @media #{$desk-only} { @content; }
-  }
-
-  @if $point == workstation-up {
-    @media #{$workstation-up} { @content; }
-  }
-  
-  @if $point == workstation-only {
-    @media #{$workstation-only} { @content; }
-  }
-
-  @if $point == neckbeard-up {
-    @media #{$neckbeard-up} { @content; }
-  }
-  
-  @if $point == neckbeard-only {
-    @media #{$neckbeard-only} { @content; }
-  }
-  
-  // alternate syntax for Bourbon HiDPI
+  // alternate syntax for Bourbon HiDPI mixin
   @if $point == retina {
     @include hidpi(1.3) { @content };
+  } @else {
+    @media #{map-get($mediaqueries, $point)} { @content }
   }
 
 }
-
