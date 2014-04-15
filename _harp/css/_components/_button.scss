@@ -10,33 +10,82 @@
   // FF doesn't let you do line-height on <input>
   // So the easiest way to handle these is with padding
   line-height: 1; 
-  padding: .375em .5em .375em;
+  padding: .3125em .5em .3125em;
   
   border-radius: 4px;
-  transition: all .15s $ease-out-cubic;
-    
+      
+}
+
+// Easily define button colors. 
+// Sets border-bottom (shade) and hover (tint) colors based on the input base color
+@mixin oslc-button-color ($btn-color: palette(gray,light) ) {
+
+  background-color: $btn-color;
+  
+  border-bottom-color: shade($btn-color, 20%);
+  
+  &:hover,
+  &:focus {
+    background-color: tint($btn-color, 28%);
+  }
+
 }
 
 .btn {
   @extend %btn;
   
   color: #fff;
-  background-color: palette(gray,light);
-  
-  border-bottom: 3px solid palette(gray, mid-light);
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
 
-  &:hover,
-  &:focus {
-    background-color: shade( palette(gray, light), 5% );
-  }
-  
+  @include oslc-button-color;
+
   // "pressed" animation when active
   &:active,
   &[active] {
-    border-bottom-width: 1px;
+    border-bottom: 0;
   }
 
   > .text {
     vertical-align: middle;
   } 
+}
+
+// With box shadows, you can do this without figuring out more colors
+.boxshadow .btn {
+  @extend %prevent-flicker;  
+
+  /* 
+   OMG this was driving me NUTS
+    So here's the story: a "click" event requires a mouseDown AND mouseUp
+    If you transform an element so that you mousedown in one element
+      and mouseup in another, "click" doesn't fire.
+      
+    This prevents that 'glitch' by telling child elements to send pointer events to the parent
+    (You could also change your event handlers to mousedown)
+    
+    Solution and explanation here: http://stackoverflow.com/questions/15786891/browser-sometimes-ignores-a-jquery-click-event-during-a-css3-transform
+   */
+  > * {
+    pointer-events: none;
+  }
+
+  border-bottom: 0;
+  
+  padding: .3125em .5em .375em;
+  box-shadow: 0 .15em .15em hsla(0,0%,0%,.1),
+              inset 0 -.1875em 0 hsla(0,0%,0%,.20);
+  transition-duration: .1s;
+  transition-timing-function: $ease-out-cubic;
+  transition-property: background-color, transform, padding, margin;
+
+  // "pressed" animation when active
+  &:active,
+  &[active] {
+    box-shadow: 0 .15em .15em hsla(0,0%,0%,.1);
+    padding-bottom: .1875em;
+    margin-bottom: .1875em;
+    transform: translate(0,.1875em);
+  }
+  
 }
