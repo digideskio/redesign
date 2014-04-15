@@ -5,7 +5,7 @@
   "main-menus": {
     "title": "Responsive primary menus",
     "date": "2014 April 15",
-    "draft": true,
+    "description": "How I'm currently adding the secondary menu to the main menu.",
     "issues": [
       {
         "title": "Some site areas require a sub-menu",
@@ -18,12 +18,15 @@
     ]
   },
   "cruft": {
-    "title": "Technical debt",
-    "date": "2014 March 20"
+    "title": "All the technical debt at the current OSLC site",
+    "menu_title": "Too many modules",
+    "date": "2014 March 20",
+    "description": "A list of most of the (excessive) functionality at the current open-services.net site."
   },
   
   "mobile-first": {
     "title": "Mobile-first design",
+    "description": "Executing primary navigation in a mobile-first world.",
     "date": "2014 March 18",
     "issues": [
       {
@@ -36,6 +39,7 @@
   "logo": {
     "title": "Logo concepts",
     "date": "2014 March 12",
+    "description": "My current thoughts on an updated logo.",
     "issues": [
       {
         "title": "Investigate a simpler logo",
@@ -44,8 +48,10 @@
     ]
   },
   "wireframes": {
-    "title": "Redesign direction",
+    "menu_title": "Initial wireframes",
+    "title": "Redesign direction and wireframes",
     "date": "2014 March 11",
+    "description": "Can there be one layout to rule them all?",
     "issues": [
       {
         "title": "Investigate a more modular and flexible layout system",
@@ -59,6 +65,7 @@
   },
   "why": {
     "title": "Why redesign?",
-    "date": "2014 March 10"
+    "date": "2014 March 10",
+    "description": "Who messed everything up? Oh, right. I did."
   }
 }

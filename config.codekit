@@ -1986,8 +1986,8 @@
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/javascript\/mustard.md",
 		"outputAbbreviatedPath": "\/_harp\/javascript\/mustard.html",
 		"outputPathIsOutsideProject": 0,
@@ -1998,8 +1998,8 @@
 		"enableSmartyPants": 1,
 		"expandTabs": 1,
 		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/javascript\/utilities.md",
 		"outputAbbreviatedPath": "\/_harp\/javascript\/utilities.html",
 		"outputPathIsOutsideProject": 0,
@@ -2235,7 +2235,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/logo-2011-bad-stroke.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/logo-2011-color-adjusted.png": {
 		"fileType": 32768,
@@ -2246,7 +2246,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/logo-2011-color-adjusted.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/logo-2011.png": {
 		"fileType": 32768,
@@ -2257,7 +2257,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/logo-2011.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-fancy-hash.jpg": {
 		"fileType": 16384,
@@ -2268,7 +2268,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-fancy-hash.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-hash-color.png": {
 		"fileType": 32768,
@@ -2279,7 +2279,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-hash-color.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-hash-gray.png": {
 		"fileType": 32768,
@@ -2290,7 +2290,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-hash-gray.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-hash-more-colors.png": {
 		"fileType": 32768,
@@ -2301,7 +2301,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-hash-more-colors.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-hash-on-gray.png": {
 		"fileType": 32768,
@@ -2312,7 +2312,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-hash-on-gray.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-hash-tiny.png": {
 		"fileType": 32768,
@@ -2323,7 +2323,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-hash-tiny.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-loop-big-and-small.png": {
 		"fileType": 32768,
@@ -2334,7 +2334,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-loop-big-and-small.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-loop-early.png": {
 		"fileType": 32768,
@@ -2345,7 +2345,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-loop-early.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-loop-v2.png": {
 		"fileType": 32768,
@@ -2356,7 +2356,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-loop-v2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-loop-with-words.png": {
 		"fileType": 32768,
@@ -2367,7 +2367,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-loop-with-words.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-loops-4-colors.png": {
 		"fileType": 32768,
@@ -2378,7 +2378,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-loops-4-colors.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/logos\/oslc-lyo-logo.png": {
 		"fileType": 32768,
@@ -2389,7 +2389,51 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/logos\/oslc-lyo-logo.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/navigation-part-two\/desk-menu-double.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 74286,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/navigation-part-two\/desk-menu-double.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/navigation-part-two\/desk-menu-double.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/navigation-part-two\/desk-menu-single.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 55146,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/navigation-part-two\/desk-menu-single.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/navigation-part-two\/desk-menu-single.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/navigation-part-two\/menu-noscript-redux-links.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29847,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/navigation-part-two\/menu-noscript-redux-links.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/navigation-part-two\/menu-noscript-redux-links.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/navigation-part-two\/menu-noscript-redux.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46012,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/navigation-part-two\/menu-noscript-redux.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/navigation-part-two\/menu-noscript-redux.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/navigation\/menu-level-1.png": {
 		"fileType": 32768,
@@ -2411,7 +2455,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/oslc-home-2011.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/oslc-home-march-2014.png": {
 		"fileType": 32768,
@@ -2422,7 +2466,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/oslc-home-march-2014.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/wireframes\/bare-listing.png": {
 		"fileType": 32768,
@@ -2433,7 +2477,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/wireframes\/bare-listing.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/wireframes\/basics.png": {
 		"fileType": 32768,
@@ -2444,7 +2488,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/wireframes\/basics.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/wireframes\/listing.png": {
 		"fileType": 32768,
@@ -2455,7 +2499,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/wireframes\/listing.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/wireframes\/software.png": {
 		"fileType": 32768,
@@ -2466,7 +2510,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/wireframes\/software.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/images\/wireframes\/submenu.png": {
 		"fileType": 32768,
@@ -2477,7 +2521,7 @@
 		"outputAbbreviatedPath": "\/_harp\/posts\/images\/wireframes\/submenu.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/_harp\/posts\/index.jade": {
 		"compileDebug": 1,

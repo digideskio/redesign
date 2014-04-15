@@ -6,7 +6,8 @@
           h1.title #{ page.title }
         section.content
           div.copy
-            p #{page.description}
+            if page.description
+              p #{page.description}
             p 
               a(href="#{site_url + listing_root + '/' + slug + '.html'}") Read more
   
