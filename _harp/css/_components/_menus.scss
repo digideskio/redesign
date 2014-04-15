@@ -1,0 +1,68 @@
+.menu {
+  
+  .items {
+    @extend %list-reset;
+  }
+  
+  .item {
+    @include rem(padding, 11px 16px);
+    display: block;
+    text-decoration: none;
+    color: palette(gray, dark);
+    
+    &.flush { 
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+  }
+  
+  li.item {
+    padding: 0;
+  }
+
+  a, 
+  .item { 
+    transition: background-color .2s $ease-out-cubic; 
+  }
+
+  .current a,
+  .item a:hover,
+  .item a:focus,
+  a.current,
+  a.item:hover,
+  a.item:focus {
+    background-color: palette(gray,x-light);    
+  }
+  
+  &.primary {
+    background-color: $header-and-nav-bg;
+  }
+  
+  .heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &.inverted {
+    background-color: palette(gray,mid-dark);
+    
+    .item { color: palette(gray,x-light); }
+
+    .current a,
+    .item a:hover,
+    .item a:focus,
+    a.current,
+    a.item:hover,
+    a.item:focus {
+      background-color: palette(gray,dark);
+    }
+    
+    .heading {
+      border-bottom: 1px solid palette(red,mid-light);
+    }
+  } 
+  
+  
+}
+
