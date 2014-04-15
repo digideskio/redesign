@@ -1,5 +1,11 @@
 /** 
  * Contains enhanced styling for browsers that "cut the mustard"
+ * If a browser is seeing this file, you can safely assume JS is in place.
+ * 
+ * Other things that are almost definitely around:
+ *   - Transforms
+ *   - Opacity
+ *   - 
  */
 
 
@@ -12,7 +18,17 @@
 @import 'imports';
 
 
+//
+// Responsive meta classes
+//
+// These are useful for JavaScript
+//
+@import '_helpers/responsive_meta_classes';
+
+
 @import '_layout/grid_enhanced';
+@import '_components/carousel';
 @import '_components/navigation_enhanced';
+@import '_components/menus_enhanced';
 @import '_components/card_enhanced';
 @import '_components/copy_enhanced';

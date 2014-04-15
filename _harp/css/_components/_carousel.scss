@@ -1,0 +1,114 @@
+@include respond-to(hand-only) {
+
+  .window { overflow: hidden; }
+
+  // Aligning panels with inline-block makes for easy math
+  // You don't need to calculate the width of the container
+  // Sliding it around is all multiples of 100%
+  .panels {
+    // this is what lines the children tabs in a row without collapsing. Un-do w/ white-space:normal
+    white-space: nowrap; 
+    // with "rem", you maintain ability to resize fonts. Older browsers will ignore this
+    font-size: 0rem; 
+    // there's a webkit bug that ignores font-size on some inline-block elements. This covers that
+    letter-spacing: -1em; 
+    //And this covers the remaining browsers that don't understand "rem" units
+    word-spacing: -1em;
+  
+    position: relative;
+    transition: left .4s $ease-out-cubic;
+  
+    .csstransforms & {
+      position: static;
+      transition-property: transform;
+    }
+  
+  }
+
+  .panel {
+    @include inline-block;
+    vertical-align: top;
+
+    width: 100%;
+
+    // Re-instate text wrapping (which is inherited from parents)
+    white-space: normal; 
+
+    // Un-do the font size and spacing shennanigans on the parent
+    font-size: 1rem;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+}
+
+.controls {
+  background-color: palette(gray, light);
+  @include rem( padding, 8px );
+  text-align: center;
+}
+
+.tabs {
+  @extend %inline-block;
+  background-color: tint( palette(gray, x-light), 40%);
+  position: relative;
+  
+  &, & > .indicator {
+    border-radius: 24px;
+  }
+}
+
+.tab {
+  @extend %inline-block;
+  @include rem( padding, 8px 24px );
+
+  position: relative;
+  z-index: 1;
+
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  color: palette(gray, mid-dark);
+  transition: color .2s $ease-out-cubic;
+  
+  &:first-child {
+    @include rem(padding-right, 20px);
+  }
+  
+  &+& {
+    @include rem( padding-left, 20px);
+  }
+  
+  &:hover,
+  &:focus {
+    color: palette( blue );
+  }
+  
+  &.active {
+    color: #fff !important;
+    cursor: default;
+  }
+}
+
+.tabs .indicator {
+  @extend %block;
+  box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 0;
+  background-color: palette(blue, mid-light);
+  @include rem( padding, 0 24px );
+  
+  transition-property: transform, width;
+  transition-duration: .3s, .12s;
+  transition-timing-function: $ease-out-cubic;
+  
+  // pop it smaller while moving
+  // will pop back up to the calculated width after shrinking
+  &.moving {
+    width: 8px !important;
+    transition-duration: .3s, .04s;
+  }
+}

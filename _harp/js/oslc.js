@@ -1,82 +1,22 @@
 window.site_url = window.site_url || '/';
 
-
-/**
- * Cut the mustard
- */
-if( 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window ) {
-  
-  /* Catch console.log errors. You are welcome. */
-  if (! window.console) {
-    window.console = {
-      log: function () {}
-    };
-  }
-  
-  var OSLC = {
-    init: function() {
-    
-      $('#nav').insertBefore('#main');
-      
-      //
-      // SUPER SIMPLE CLASS TOGGLER
-      // 
-      // On an element, add data-toggle-class="%class string%"
-      // Set the target with a CSS selector data-toggle-target="%selector string%"
-      // 
-      
-      $(document).on('click', '[data-toggle-class]', function(evt){
-        
-        var $el = $(this);
-        var toggleClass = $el.attr('data-toggle-class');
-        var toggleTarget = $el.attr('data-toggle-target');
-        
-        toggleTarget && $( toggleTarget ).toggleClass( toggleClass );
-        
-        evt.preventDefault();
-      });
-    
-    
-      this.makeFluidVideos();
-    
-    },
-    
-    //
-    // FLUID VIDEOS
-    // 
-    // Wraps youtube/vimeo iframes in a div.fluid-video class
-    // 
-    makeFluidVideos: function() {
-      
-      var fluidVidTemplate = _.template('<div class="fluid-video" <%= style %> ><%= video %></div>');
-
-      $('iframe[src*="youtube"], iframe[src*="vimeo"]')
-        .not('.no-resize')
-        .each( function(i, vid) {
-        
-          // Replace the videos HTML with the new template
-          vid.outerHTML = fluidVidTemplate( {
-            style: 'style="padding-bottom: ' + ( vid.height / vid.width * 100 ) + '%;"',
-            video: vid.outerHTML
-          } );
-        
-        });
-      
-    }
-  };
+Modernizr.load({
+  // Cut the mustard
+  test: ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window),
   
   //
-  // Load libraries, and then run OSLC.init()
-  // Libraries include:
+  // Load oslc_enhanced 
+  //
+  // Includes libraries:
   //  - jQuery ($)
   //  - lodash (_)
+  //  - Vein CSS injection (vein)
   //
-  Modernizr.load({
-    load: window.site_url + 'js/libraries.js',
-    // must .bind to own object, as this will get called in the window context
-    complete: function(){
-      _.bind(OSLC.init, OSLC)();
-    }
-  });
-
-}
+  yep: [
+    window.site_url + 'js/libraries.js',
+    window.site_url + 'js/build/oslc_enhanced.min.js'
+  ],
+  callback: function(url) {
+    console.log(url + ' loaded');
+  }
+});

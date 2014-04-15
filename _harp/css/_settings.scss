@@ -1,5 +1,4 @@
-//$prefix-for-mozilla:   false;
-//$prefix-for-opera:     false;
+$namespace: 'oslc';
 
 $base-color: #333;
 
@@ -41,11 +40,12 @@ $navburger-size: 20px;
 $navburger-transition-time: .15s;
 $navburger-rotation: 35deg;
 
-$main-menu-width: 250px;
+$main-menu-width: 216px;
+$secondary-menu-width: 180px;
+$both-menus-width: $main-menu-width + $secondary-menu-width;
 $main-menu-slide-duration: .2s;
 $total-items: 7;
 $item-slide-duration: 0.04s;
-$main-menu-current-item-bg: #ebebeb;
 
 
 //

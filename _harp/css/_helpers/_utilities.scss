@@ -55,6 +55,16 @@
   }
 }
 
+
+%featurette {
+  text-align: center;
+  
+  > .text {
+    display: block;
+  }
+}
+
+
 /* 
  * Latest hotness in image replacement
  * http://www.sitepoint.com/new-css-image-replacement-technique/

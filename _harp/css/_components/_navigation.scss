@@ -1,7 +1,3 @@
-body {
-  
-}
-
 .banner,
 .footer { 
   background-color: $header-and-nav-bg; 
@@ -12,20 +8,16 @@ body {
   border-top: 3px solid palette(gold, light);
   
   .btn {
-    @include rem(margin-right, 8px);
+    @extend %featurette;
     
     > .text {
       font-size: $font-size-xs;
-      display: block;
-      text-align: center;
       @include rem(margin-top, 3px);
     }
   }
   
-  .logo {
-    width: 58px;
-    height: 55px;
-    background-size: contain;
+  .image-link {
+    @include rem(margin-left, 8px);
   }
   
   .logo-text { 
@@ -49,47 +41,10 @@ abbr.grunticon-wordmark-med {
   border-bottom: 0 !important;
 }
 
-.menu {
-  
-  .items {
-    @extend %list-reset;
-  }
-  
-  .item {
-    background-color: $header-and-nav-bg;
-    @include rem(padding, 8px 16px); 
-    border-bottom: 1px solid palette(gray, light);
-    
-    &.flush { 
-      padding-left: 0;
-      padding-right: 0;
-    }
-    
-    a {
-      color: palette(gray, dark);
-    }
-  }
-  
-  li.item {
-    padding: 0;
-
-    > a {
-      display: block;
-      @include rem(padding, 8px 16px); 
-      text-decoration: none;
-    }
-  }
-
-  .current a,
-  .item a:hover,
-  a.current,
-  a.item:hover {
-    background-color: $main-menu-current-item-bg;
-  }
-  
-}
 
 .main {
-  @include rem(padding, 16px 8px);
-  background-color: $main-menu-current-item-bg;
+  @include rem(padding-top, 16px);
+  @include rem(padding-bottom, 16px);
+  
+  background-color: palette(gray,x-light);
 }
