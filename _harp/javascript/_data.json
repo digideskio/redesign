@@ -1,5 +1,11 @@
 {
   "index": {
     "title": "JavaScript modules"
+  },
+  "mustard": {
+    "title": "Cutting the mustard"
+  },
+  "utilities": {
+    "title": "Utilities"    
   }
 }
