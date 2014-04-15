@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Responsive primary menus</title><link rel="stylesheet" href="http://oslc.github.io/redesign/css/oslc.css"/><script src="http://oslc.github.io/redesign/js/lib/modernizr.js"></script><script>// add .mustard/.no-mustard css classes
+Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window );
+
+Modernizr.load([{
+  test: Modernizr.mustard,
+  yep: 'http://oslc.github.io/redesign/css/oslc_enhanced.css'
+}]);
+
+/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon(["http://oslc.github.io/redesign/icons/output/icons.data.svg.css", "http://oslc.github.io/redesign/icons/output/icons.data.png.css", "http://oslc.github.io/redesign/icons/output/icons.fallback.css"]);</script></head><body><div><a href="#main" class="sr-only focusable">Skip to main content</a></div><header role="banner" class="banner knee-down"><div class="flag"><div class="image"><a id="navToggle" href="#nav" role="button" aria-label="Toggle Navigation" class="btn"> <!--i.navburger<div class="navburger-line top"></div><div class="navburger-line middle"></div><div class="navburger-line bottom"></div>--><span class="swapper"><i class="icon autosize grunticon-navtoggle-menu"></i><i class="mustard-only icon autosize grunticon-navtoggle-close"></i></span><span class="text"> 
+Menu</span></a></div><div class="body"><a href="http://oslc.github.io/redesign/" class="flag image-link"><div class="image"><i class="icon block grunticon-logo-small autosize"></i></div><div class="body"><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon block grunticon-wordmark-small autosize ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></div></a></div></div></header><div class="sticky-footer-body off-canvas-wrap"><main id="main" role="main" class="main has-secondary"><div class="grid"><div class="column hand-12 workstation-9"><div class="card primary"><header class="header"><h1 class="title">Responsive primary menus</h1></header><section class="content"><div class="copy"><p>Since I <a href="./mobile-first.html">last discussed the primary navigation</a>, I&#39;ve made some changes and enhancements to the menu system:</p>
+<ul>
+<li>By default, the markup is now &quot;content-first&quot;, with the navigation below the page&#39;s main content.</li>
+<li>I&#39;ve replaced the &quot;hamburger&quot; navigation icon with a proper button that says &quot;Menu&quot;</li>
+<li>I&#39;ve added some functionality to handle sub-navigation in a reasonable amount of space on smaller screens.</li>
+</ul>
+<p>Read on for more details.</p>
+<h3>No script.</h3>
+<p>I previously thought it best to just have all the links at the top of the page:</p>
+<p><img src="./images/navigation/menu-level-1.png" alt="A simple list of navigation links underneath the site logo"></p>
+<p>That&#39;s a good default, but with a bunch of primary links, we&#39;ve pushed the actual page content way, way down. Possibly off-screen. And we haven&#39;t even added the secondary menu.</p>
+<p>I think the simplest, idiot-proof solution then is to have the default markup have the navigation links below the page content. Here that is in Firefox 3, my outdated testing browser of choice:</p>
+<p><img src="./images/navigation-part-two/menu-noscript-redux.png" alt="The site banner and main content immediately below."></p>
+<p>In this case, the &quot;Menu&quot; link is just a jump link to <code>#nav</code>, which is below the content:</p>
+<p><img src="./images/navigation-part-two/menu-noscript-redux-links.png" alt="The site banner and main content immediately below."></p>
+<p>Not the prettiest, but it&#39;s totally accessible and it works.</p>
+<h2>Started from the bottom, now we&#39;re here</h2>
+<p>With the worst-case scenario out of the way, we can start to get flashier.</p>
+<p>First, I move the <code>#nav</code> block above the content. There&#39;s no reliable way to change markup order with CSS, so that&#39;s gotta be JavaScript:</p>
+<pre><code>$(&#39;#nav&#39;).insertBefore(&#39;#main&#39;);</code></pre>
+<p>But I don&#39;t want it taking up all that space, so I position the navigation absolutely and slide the main content over it. Then the <strong>Menu</strong> button slides the content down to reveal the menu:</p>
+<p><img src="./images/navigation-part-two/hand-menu-one-level.gif" alt="Click on &#39;Menu&#39; and the content slides down to reveal the navigation underneath"></p>
+<p>Beyond that, the main menu behaves as it did before. For tablet-size screens, we slide everything in from the left:</p>
+<p><img src="./images/navigation-part-two/knee-menu-one-level.gif" alt="Navigation slides in from the left"></p>
+<p>And on a larger screen, the menu becomes a persistent sidebar:</p>
+<p><img src="./images/navigation-part-two/desk-menu-single.png" alt="Persistent sidebar navigation on larger screens"></p>
+<h4>Protip #1: smooth animations</h4>
+<p>Sliding around <code>#main</code> like that is potentially a huge number of pixels for the browser to shove around, so I&#39;m trying to make sure it moves as smoothly as possible. To do that, I&#39;m animating the CSS <code>transform: translate(Xpx, Ypx)</code> property. <a href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/">Browsers can only smoothly animate 4 things:</a> translated position, scale, rotation, and opacity.</p>
+<p>This results in a much smoother animation than either animating the CSS <code>top</code> value for <code>#main</code> or (worse) animating the <code>height</code> property of <code>#nav</code> to shove <code>#main</code> down, which I was doing earlier.</p>
+<h4>Protip #2: pointer events on translated buttons</h4>
+<p>So here&#39;s something that was driving me bonkers for a while. When you clicked on some areas of the <strong>Menu</strong> button, nothing would happen:</p>
+<p><img src="./images/navigation-part-two/hand-menu-pointer-events.gif" alt="Clicking on certain parts of the menu button does nothing"></p>
+<p>So what&#39;s happening is I&#39;m <code>translate()</code>ing the button down to make it look like it&#39;s being physically clicked. I also have some script that waits for you to click that button, and then opens up the navigation:</p>
+<pre><code>$(&#39;#navToggle&#39;).on(&#39;click&#39;, toggleNavigation);</code></pre>
+<p>The problem is, for the browser to register a <code>click</code> event, you have to <code>mousedown</code> <em>and</em> <code>mouseup</code> on the same element. With the translation, sometimes that doesn&#39;t happen. In the animation above, I believe I&#39;m getting the <code>mousedown</code> on the button, but the <code>mouseup</code> is on the icon, which is a child element of the button. So no <code>click</code> event triggers.</p>
+<p>The solution is in the obscure CSS property <code>pointer-events</code>. When set to <code>none</code>, any mouse events on an element will get passed up to the parent. So I&#39;ve got buttons with this CSS:</p>
+<pre><code>.btn &gt; * { pointer-events: none; }</code></pre>
+<p>And that seems to resolve the issue.</p>
+<h2>Adding the secondary menu</h2>
+<p>In my <a href="./wireframes.html">initial wireframes</a>, I planned on there having to be a secondary navigation menu for some areas of the site. That&#39;s easy enough to do with large screens: just add more sidebar!</p>
+<p><img src="./images/navigation-part-two/desk-menu-double.png" alt="Persistent sidebar navigation with secondary menu larger screens"></p>
+<p>Pretty easy to deal with the tablet layout, too. We&#39;re already sliding it out of the way, so just slide it some more.</p>
+<p><img src="./images/navigation-part-two/knee-menu-two-levels.gif" alt="Persistent sidebar navigation with secondary menu larger screens"></p>
+<p>But what about small screens?</p>
+<ul>
+<li><strong>Stack &#39;em vertically?</strong> Nah, that takes up way too much vertical space.</li>
+<li><strong>Keep &#39;em side-by-side?</strong> Nah, there&#39;s not enough room. It looks super cramped.</li>
+<li><strong>Don&#39;t bother with subnavigation?</strong> Nope, important controls will probably end up there</li>
+<li><strong><a href="http://bradfrostweb.com/blog/web/complex-navigation-patterns-for-responsive-design/#ol-left-to-right">Left-to-right drilldowns</a>?</strong> Not a great fit for my needs; if you&#39;re deep in the site, do you start all the way to the right?</li>
+<li><strong>What about <a href="http://bradfrostweb.com/blog/web/complex-navigation-patterns-for-responsive-design/#multi-toggle">accordions/toggles</a>?</strong> That could work, but that seems excessive to need to expand only two levels</li>
+</ul>
+<p>So my priorities were:</p>
+<ul>
+<li>obvious controls</li>
+<li>relatively equal treatment of the primary and secondary menu</li>
+<li>a sensible way to highlight the secondary menu when the nav first opens</li>
+</ul>
+<p>I found some inspiration in the so-called <a href="http://bradfrostweb.com/blog/web/complex-navigation-patterns-for-responsive-design/#carousel-plus">&quot;Carousel+&quot; pattern for complex responsive designs</a> and in the <a href="http://enyojs.com/mochi/Mochi%20tabs%20comps.png">&quot;tabs&quot;</a> concept from the <a href="https://github.com/enyojs/mochi/wiki">gorgeous, abandoned redesign of webOS</a>. Here&#39;s where I am right now:</p>
+<p><img src="./images/navigation-part-two/hand-menu-two-levels.gif" alt="Persistent sidebar navigation with secondary menu larger screens"></p>
+<p>So you have a tab/carousel/thing that lets you go between the main and secondary menus. The menus have titles to improve clarity. We open to the secondary menu by default. And it&#39;s all nicely animated. Not too shabby.</p>
+</div></section></div></div><aside class="column hand-12 workstation-3"><div class="card secondary"><header class="header"><h3 class="title">Related issues</h3></header><section class="content"><ul class="links"><li class="item"><a href="https://github.com/OSLC/redesign/issues/3">Some site areas require a sub-menu</a></li><li class="item"><a href="https://github.com/OSLC/redesign/issues/4">Create flexible, responsive main menu bar</a></li></ul></section></div></aside></div><a role="button" aria-label="Toggle Navigation" class="close-nav"></a></main><nav id="nav" role="navigation" data-whirligig="data-whirligig" class="nav has-secondary"><div class="controls hand-only mustard-only"><div class="tabs"><a href="#main_menu" class="tab">Main</a><a href="#secondary_menu" class="tab active">Posts</a></div></div><div class="window"><div class="panels"><div id="main_menu" class="panel"><div class="menu primary"><div class="item flush desk-up"><a href="http://oslc.github.io/redesign/" class="image-link"><i class="icon block grunticon-logo-med autosize"></i><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon grunticon-wordmark-med autosize ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></a></div><ul class="items"><li role="presentation"><a href="http://oslc.github.io/redesign/" class="item">OSLC Public Redesign</a></li><li role="presentation" class="current"><a href="http://oslc.github.io/redesign/posts/" class="item">Posts</a></li><li role="presentation"><a href="http://oslc.github.io/redesign/components/" class="item">Components</a></li><li role="presentation"><a href="http://oslc.github.io/redesign/javascript/" class="item">JavaScript</a></li><li role="presentation"><a href="http://oslc.github.io/redesign/tests/" class="item">Tests</a></li><li role="presentation" class="item"><a href="http://open-services.net/" class="item">open-services.net</a></li></ul></div></div><div id="secondary_menu" class="panel"><div class="menu secondary inverted"><ul class="items"><li role="presentation"><span class="item heading">Posts</span></li><li role="presentation" class=" current"><a href="http://oslc.github.io/redesign/posts/main-menus.html" class="item">Responsive primary menus</a></li><li role="presentation" class=" "><a href="http://oslc.github.io/redesign/posts/cruft.html" class="item">Too many modules</a></li><li role="presentation" class=" "><a href="http://oslc.github.io/redesign/posts/mobile-first.html" class="item">Mobile-first design</a></li><li role="presentation" class=" "><a href="http://oslc.github.io/redesign/posts/logo.html" class="item">Logo concepts</a></li><li role="presentation" class=" "><a href="http://oslc.github.io/redesign/posts/wireframes.html" class="item">Initial wireframes</a></li><li role="presentation" class=" "><a href="http://oslc.github.io/redesign/posts/why.html" class="item">Why redesign?</a></li></ul></div></div></div></div></nav></div><footer role="contentinfo" class="footer"><p>All content <a href="http://creativecommons.org/licenses/by/3.0/us/")>Creative Commons Attribution 3.0 US</a> except where noted otherwise</p><p><a href="https://github.com/OSLC/redesign">Github</a> <a href="https://github.com/OSLC/redesign/issues">Issues</a> <a href="http://open-services.net">OSLC Home</a></p></footer></body><script>window.site_url = 'http://oslc.github.io/redesign/';</script><script src="http://oslc.github.io/redesign/js/oslc.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24416914-4', 'oslc.github.io');
+ga('send', 'pageview');
+</script></html>

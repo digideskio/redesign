@@ -5,7 +5,7 @@ if has_secondary
     .controls.hand-only.mustard-only
       .tabs
         a.tab(href="#main_menu") Main
-        a.tab.active(href="#secondary_menu") #{ data.index.title }
+        a.tab.active(href="#secondary_menu") #{ data && data.index.title }
     .window
       .panels
         != partial('_menu_primary', {site_url: site_url})
@@ -13,14 +13,15 @@ if has_secondary
         .panel#secondary_menu
           .menu.secondary.inverted
             ul.items
-              for page, slug in data
-                if slug === 'index'
-                  li(role="presentation")
-                    span.item.heading #{page.title}
-                else 
-                  if page.draft!=='true' || environment==='development'
-                    li(class=' #{ current.source === slug ? "current" : "" }' role="presentation")
-                      a.item(href="#{ site_url }#{ root + '/' + slug + '.html' }") #{ page.menu_title || page.title }
+              if data
+                for page, slug in data
+                  if slug === 'index'
+                    li(role="presentation")
+                      span.item.heading #{page.title}
+                  else 
+                    if page.draft!=='true' || environment==='development'
+                      li(class=' #{ current.source === slug ? "current" : "" }' role="presentation")
+                        a.item(href="#{ site_url }#{ root + '/' + slug + '.html' }") #{ page.menu_title || page.title }
 else 
   nav#nav.nav(role="navigation")
     .panels
