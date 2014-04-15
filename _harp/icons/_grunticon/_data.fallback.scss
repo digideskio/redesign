@@ -1,15 +1,45 @@
 
+.grunticon-carousel-main {
+  background-image: url('png/carousel-main.png');
+  @include icon;
+  
+  &.autosize {
+    height: 120px;
+    width: 60px;
+  }
+  
+  &.intrinsic {
+    padding-top: 120px / 60px * 100%;
+  }
+}
+
+
+.grunticon-carousel-wiki {
+  background-image: url('png/carousel-wiki.png');
+  @include icon;
+  
+  &.autosize {
+    height: 120px;
+    width: 60px;
+  }
+  
+  &.intrinsic {
+    padding-top: 120px / 60px * 100%;
+  }
+}
+
+
 .grunticon-logo-med {
   background-image: url('png/logo-med.png');
   @include icon;
   
   &.autosize {
-    height: 208px;
-    width: 250px;
+    height: 180px;
+    width: 216px;
   }
   
   &.intrinsic {
-    padding-top: 208px / 250px * 100%;
+    padding-top: 180px / 216px * 100%;
   }
 }
 
@@ -29,17 +59,47 @@
 }
 
 
+.grunticon-navtoggle-close {
+  background-image: url('png/navtoggle-close.png');
+  @include icon;
+  
+  &.autosize {
+    height: 25px;
+    width: 28px;
+  }
+  
+  &.intrinsic {
+    padding-top: 25px / 28px * 100%;
+  }
+}
+
+
+.grunticon-navtoggle-menu {
+  background-image: url('png/navtoggle-menu.png');
+  @include icon;
+  
+  &.autosize {
+    height: 25px;
+    width: 28px;
+  }
+  
+  &.intrinsic {
+    padding-top: 25px / 28px * 100%;
+  }
+}
+
+
 .grunticon-wordmark-med {
   background-image: url('png/wordmark-med.png');
   @include icon;
   
   &.autosize {
-    height: 29px;
-    width: 114px;
+    height: 26px;
+    width: 100px;
   }
   
   &.intrinsic {
-    padding-top: 29px / 114px * 100%;
+    padding-top: 26px / 100px * 100%;
   }
 }
 

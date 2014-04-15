@@ -111,7 +111,11 @@ module.exports = function(grunt) {
         },
         grunticon: {
           files: 'icons/_svgs/*.svg',
-          tasks: ['svgmin', 'grunticon:foo', 'copy:grunticonToSass', 'imagemin:grunticon', 'sass:grunticon']
+          tasks: ['svgmin', 'grunticon:foo', 'copy:grunticonToSass', 'imagemin:grunticon']
+        },
+        grunticon_sass: {
+          files: 'icons/_grunticon/*.scss',
+          tasks: ['sass:grunticon']
         }
       }
     });
@@ -128,6 +132,6 @@ module.exports = function(grunt) {
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['autoprefixer', 'svgmin', 'grunticon:foo', 'copy:grunticonToSass']);
-    grunt.registerTask('default', ['cssmin', 'svgmin', 'grunticon:foo', 'copy:grunticonToSass', 'imagemin:grunticon', 'sass:grunticon']);
+    grunt.registerTask('default', ['cssmin', 'svgmin', 'grunticon:foo', 'copy:grunticonToSass', 'imagemin:grunticon', 'sass']);
 
 };

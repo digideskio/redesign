@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "16877",
+"creatorBuild": "16895",
 "files": {
 	"\/404.html": {
 		"fileType": 8192,
@@ -8,6 +8,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/404.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/404.md": {
@@ -19,7 +20,52 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/404.md",
 		"outputAbbreviatedPath": "\/_harp\/404.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_banner.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_banner.jade",
+		"outputAbbreviatedPath": "\/_harp\/_banner.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/_enhance.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_enhance.jade",
+		"outputAbbreviatedPath": "\/_harp\/_enhance.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/_footer.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_footer.jade",
+		"outputAbbreviatedPath": "\/_harp\/_footer.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/_head.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_head.jade",
+		"outputAbbreviatedPath": "\/_harp\/_head.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
 		},
 	"\/_harp\/_layout.jade": {
 		"compileDebug": 1,
@@ -28,6 +74,51 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/_layout.jade",
 		"outputAbbreviatedPath": "\/_harp\/_layout.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/_listing.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_listing.jade",
+		"outputAbbreviatedPath": "\/_harp\/_listing.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/_main.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_main.jade",
+		"outputAbbreviatedPath": "\/_harp\/_main.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/_menu_primary.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_menu_primary.jade",
+		"outputAbbreviatedPath": "\/_harp\/_menu_primary.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/_nav.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_nav.jade",
+		"outputAbbreviatedPath": "\/_harp\/_nav.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
@@ -40,6 +131,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/cruft.md",
 		"outputAbbreviatedPath": "\/_harp\/cruft.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/css\/_base\/_reset.scss": {
@@ -51,6 +143,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_base\/_reset.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_reset.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -66,6 +159,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_base\/_typography.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_typography.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -81,6 +175,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_button.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_button.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -96,6 +191,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_card.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_card.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -111,6 +207,23 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_card_enhanced.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_card_enhanced.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_harp\/css\/_components\/_carousel.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_carousel.scss",
+		"outputAbbreviatedPath": "\/_harp\/css\/css\/_carousel.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -126,6 +239,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_copy.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_copy.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -141,6 +255,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_copy_enhanced.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_copy_enhanced.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -156,6 +271,39 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_lists.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_lists.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_harp\/css\/_components\/_menus.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_menus.scss",
+		"outputAbbreviatedPath": "\/_harp\/css\/css\/_menus.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_harp\/css\/_components\/_menus_enhanced.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_menus_enhanced.scss",
+		"outputAbbreviatedPath": "\/_harp\/css\/css\/_menus_enhanced.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -167,10 +315,11 @@
 		"debugStyle": 0,
 		"decimalPrecision": 5,
 		"fileType": 4,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_navburger.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_navburger.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -186,6 +335,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_navigation.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_navigation.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -201,6 +351,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_navigation_enhanced.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_navigation_enhanced.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -216,6 +367,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_notice.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_notice.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -231,6 +383,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_helpers\/_colors.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_colors.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -246,6 +399,23 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_helpers\/_respond-to.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_respond-to.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_harp\/css\/_helpers\/_responsive_meta_classes.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/css\/_helpers\/_responsive_meta_classes.scss",
+		"outputAbbreviatedPath": "\/_harp\/css\/css\/_responsive_meta_classes.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -261,6 +431,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_helpers\/_sticky_footer.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_sticky_footer.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -276,6 +447,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_helpers\/_tables.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_tables.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -291,6 +463,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_helpers\/_toolkit.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_toolkit.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -306,6 +479,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_helpers\/_utilities.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_utilities.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -321,6 +495,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_imports.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_imports.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -336,6 +511,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_layout\/_grid.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_grid.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -351,6 +527,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_layout\/_grid_enhanced.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_grid_enhanced.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -366,6 +543,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_layout\/_media.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_media.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -381,6 +559,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/_bourbon-deprecated-upcoming.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/css\/_bourbon-deprecated-upcoming.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -396,6 +575,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/_bourbon.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/css\/_bourbon.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -411,6 +591,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_button.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_button.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -426,6 +607,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_clearfix.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_clearfix.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -441,6 +623,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_directional-values.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_directional-values.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -456,6 +639,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_ellipsis.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_ellipsis.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -471,6 +655,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_font-family.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_font-family.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -486,6 +671,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_hide-text.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_hide-text.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -501,6 +687,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_html5-input-types.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_html5-input-types.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -516,6 +703,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_position.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_position.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -531,6 +719,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_prefixer.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_prefixer.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -546,6 +735,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_rem.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_rem.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -561,6 +751,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_retina-image.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_retina-image.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -576,6 +767,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_size.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_size.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -591,6 +783,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_timing-functions.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_timing-functions.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -606,6 +799,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/addons\/_triangle.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_triangle.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -621,6 +815,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_animation.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_animation.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -636,6 +831,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_appearance.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_appearance.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -651,6 +847,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_backface-visibility.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_backface-visibility.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -666,6 +863,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_background-image.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_background-image.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -681,6 +879,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_background.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_background.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -696,6 +895,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_border-image.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_border-image.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -711,6 +911,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_border-radius.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_border-radius.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -726,6 +927,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_box-sizing.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_box-sizing.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -741,6 +943,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_calc.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_calc.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -756,6 +959,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_columns.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_columns.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -771,6 +975,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_flex-box.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_flex-box.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -786,6 +991,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_font-face.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_font-face.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -801,6 +1007,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_hidpi-media-query.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_hidpi-media-query.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -816,6 +1023,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_hyphens.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_hyphens.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -831,6 +1039,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_image-rendering.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_image-rendering.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -846,6 +1055,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_inline-block.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_inline-block.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -861,6 +1071,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_keyframes.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_keyframes.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -876,6 +1087,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_linear-gradient.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_linear-gradient.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -891,6 +1103,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_perspective.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_perspective.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -906,6 +1119,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_placeholder.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_placeholder.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -921,6 +1135,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_radial-gradient.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_radial-gradient.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -936,6 +1151,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_transform.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_transform.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -951,6 +1167,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_transition.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_transition.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -966,6 +1183,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css3\/_user-select.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_user-select.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -981,6 +1199,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_assign.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_assign.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -996,6 +1215,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_flex-grid.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_flex-grid.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1011,6 +1231,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_golden-ratio.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_golden-ratio.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1026,6 +1247,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_grid-width.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_grid-width.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1041,6 +1263,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_linear-gradient.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_linear-gradient.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1056,6 +1279,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_modular-scale.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_modular-scale.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1071,6 +1295,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_px-to-em.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_px-to-em.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1086,6 +1311,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_radial-gradient.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_radial-gradient.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1101,6 +1327,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_strip-units.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_strip-units.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1116,6 +1343,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_tint-shade.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_tint-shade.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1131,6 +1359,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_transition-property-name.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_transition-property-name.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1146,6 +1375,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/functions\/_unpack.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_unpack.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1161,6 +1391,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/helpers\/_gradient-positions-parser.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_gradient-positions-parser.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1176,6 +1407,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/helpers\/_linear-positions-parser.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_linear-positions-parser.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1191,6 +1423,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/helpers\/_radial-arg-parser.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_radial-arg-parser.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1206,6 +1439,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/helpers\/_radial-positions-parser.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_radial-positions-parser.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1221,6 +1455,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/helpers\/_render-gradients.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_render-gradients.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1236,6 +1471,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/helpers\/_shape-size-stripper.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_shape-size-stripper.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1251,6 +1487,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/settings\/_prefixer.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_prefixer.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1266,6 +1503,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/settings\/_px-to-em.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_lib\/_bourbon\/css\/_px-to-em.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1281,6 +1519,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_flexbox.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_flexbox.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1296,6 +1535,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_lib\/_rem.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/css\/_rem.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1311,6 +1551,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/css\/_oslc.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/oslc.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 1,
@@ -1326,6 +1567,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/css\/_oslc_enhanced.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/oslc_enhanced.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 1,
@@ -1341,6 +1583,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/_settings.scss",
 		"outputAbbreviatedPath": "\/_harp\/css\/_settings.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1353,6 +1596,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/oslc.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/css\/oslc.min.css": {
@@ -1361,6 +1605,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/oslc.min.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/css\/oslc_enhanced.css": {
@@ -1369,6 +1614,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/oslc_enhanced.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/css\/oslc_enhanced.min.css": {
@@ -1377,6 +1623,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/oslc_enhanced.min.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/Gruntfile.js": {
@@ -1385,6 +1632,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/Gruntfile.js",
 		"outputAbbreviatedPath": "\/_harp\/min\/Gruntfile-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -1398,6 +1646,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/_data.fallback.scss",
 		"outputAbbreviatedPath": "\/_harp\/icons\/css\/_data.fallback.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1413,6 +1662,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/_data.png.scss",
 		"outputAbbreviatedPath": "\/_harp\/icons\/css\/_data.png.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1428,6 +1678,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/_data.svg.scss",
 		"outputAbbreviatedPath": "\/_harp\/icons\/css\/_data.svg.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1436,13 +1687,36 @@
 		},
 	"\/_harp\/icons\/_grunticon\/grunticon.loader.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/grunticon.loader.js",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/min\/grunticon.loader-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/icons\/_grunticon\/png\/carousel-main.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 602,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/carousel-main.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/carousel-main.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/_grunticon\/png\/carousel-wiki.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3762,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/carousel-wiki.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/carousel-wiki.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/_harp\/icons\/_grunticon\/png\/logo-med.png": {
 		"fileType": 32768,
@@ -1451,6 +1725,7 @@
 		"initialSize": 7784,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/logo-med.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/logo-med.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1461,6 +1736,29 @@
 		"initialSize": 1818,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/logo-small.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/logo-small.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/_grunticon\/png\/navtoggle-close.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 522,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/navtoggle-close.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/navtoggle-close.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/_grunticon\/png\/navtoggle-menu.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 366,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/navtoggle-menu.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/navtoggle-menu.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1471,6 +1769,7 @@
 		"initialSize": 2558,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/wordmark-med.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/wordmark-med.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1481,6 +1780,7 @@
 		"initialSize": 1602,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/wordmark-small.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/wordmark-small.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1490,6 +1790,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/preview.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/icons\/_svgs\/oslc-icons-source.sketch\/QuickLook\/Preview.png": {
@@ -1499,6 +1800,7 @@
 		"initialSize": 15159,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_svgs\/oslc-icons-source.sketch\/QuickLook\/Preview.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_svgs\/oslc-icons-source.sketch\/QuickLook\/Preview.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1509,6 +1811,7 @@
 		"initialSize": 31056,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_svgs\/oslc-icons-source.sketch\/QuickLook\/Thumbnail.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_svgs\/oslc-icons-source.sketch\/QuickLook\/Thumbnail.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1521,6 +1824,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/_icons.scss",
 		"outputAbbreviatedPath": "\/_harp\/icons\/css\/_icons.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
@@ -1533,6 +1837,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/icons.data.png.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/icons\/output\/icons.data.png.scss": {
@@ -1544,6 +1849,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/icons.data.png.scss",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/icons.data.png.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 3,
 		"shouldRunAutoprefixer": 0,
@@ -1556,6 +1862,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/icons.data.svg.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/icons\/output\/icons.data.svg.scss": {
@@ -1567,6 +1874,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/icons.data.svg.scss",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/icons.data.svg.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 3,
 		"shouldRunAutoprefixer": 0,
@@ -1579,6 +1887,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/icons.fallback.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/icons\/output\/icons.fallback.scss": {
@@ -1590,11 +1899,34 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/icons.fallback.scss",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/icons.fallback.css",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 3,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
+		},
+	"\/_harp\/icons\/output\/png\/carousel-main.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 340,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/carousel-main.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/carousel-main.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/carousel-wiki.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2066,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/carousel-wiki.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/carousel-wiki.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/_harp\/icons\/output\/png\/logo-med.png": {
 		"fileType": 32768,
@@ -1603,6 +1935,7 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-med.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-med.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1613,6 +1946,29 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-small.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-small.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/navtoggle-close.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 485,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-close.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-close.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/navtoggle-menu.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 329,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-menu.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-menu.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1623,6 +1979,7 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-med.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-med.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1633,6 +1990,7 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-small.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-small.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -1642,6 +2000,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/preview.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/images\/logos\/logo-2011-bad-stroke.png": {
@@ -1651,6 +2010,7 @@
 		"initialSize": 23305,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/logo-2011-bad-stroke.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/logo-2011-bad-stroke.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1661,6 +2021,7 @@
 		"initialSize": 31669,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/logo-2011-color-adjusted.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/logo-2011-color-adjusted.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1671,6 +2032,7 @@
 		"initialSize": 60241,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/logo-2011.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/logo-2011.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1681,6 +2043,7 @@
 		"initialSize": 49661,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-fancy-hash.jpg",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-fancy-hash.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1691,6 +2054,7 @@
 		"initialSize": 11405,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-color.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-color.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1701,6 +2065,7 @@
 		"initialSize": 12533,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-gray.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-gray.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1711,6 +2076,7 @@
 		"initialSize": 14756,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-more-colors.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-more-colors.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1721,6 +2087,7 @@
 		"initialSize": 7932,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-on-gray.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-on-gray.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1731,6 +2098,7 @@
 		"initialSize": 7752,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-tiny.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-hash-tiny.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1741,6 +2109,7 @@
 		"initialSize": 38744,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loop-big-and-small.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loop-big-and-small.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1751,6 +2120,7 @@
 		"initialSize": 15475,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loop-early.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loop-early.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1761,6 +2131,7 @@
 		"initialSize": 6834,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loop-v2.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loop-v2.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1771,6 +2142,7 @@
 		"initialSize": 16470,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loop-with-words.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loop-with-words.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1781,6 +2153,7 @@
 		"initialSize": 81088,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loops-4-colors.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-loops-4-colors.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1791,6 +2164,7 @@
 		"initialSize": 24703,
 		"inputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-lyo-logo.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/logos\/oslc-lyo-logo.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1801,6 +2175,7 @@
 		"initialSize": 30746,
 		"inputAbbreviatedPath": "\/_harp\/images\/navigation\/menu-level-1.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/navigation\/menu-level-1.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1811,6 +2186,7 @@
 		"initialSize": 207542,
 		"inputAbbreviatedPath": "\/_harp\/images\/oslc-home-2011.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/oslc-home-2011.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1821,6 +2197,7 @@
 		"initialSize": 186643,
 		"inputAbbreviatedPath": "\/_harp\/images\/oslc-home-march-2014.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/oslc-home-march-2014.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1831,6 +2208,7 @@
 		"initialSize": 105113,
 		"inputAbbreviatedPath": "\/_harp\/images\/wireframes\/bare-listing.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/wireframes\/bare-listing.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1841,6 +2219,7 @@
 		"initialSize": 62228,
 		"inputAbbreviatedPath": "\/_harp\/images\/wireframes\/basics.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/wireframes\/basics.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1851,6 +2230,7 @@
 		"initialSize": 80842,
 		"inputAbbreviatedPath": "\/_harp\/images\/wireframes\/listing.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/wireframes\/listing.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1861,6 +2241,7 @@
 		"initialSize": 84736,
 		"inputAbbreviatedPath": "\/_harp\/images\/wireframes\/software.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/wireframes\/software.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1871,6 +2252,7 @@
 		"initialSize": 50593,
 		"inputAbbreviatedPath": "\/_harp\/images\/wireframes\/submenu.png",
 		"outputAbbreviatedPath": "\/_harp\/images\/wireframes\/submenu.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -1883,34 +2265,60 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/index.md",
 		"outputAbbreviatedPath": "\/_harp\/index.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/js\/_libraries.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/js\/_libraries.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/libraries.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/build\/oslc.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/js\/build\/oslc.min.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/build\/min\/oslc.min-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/build\/oslc_enhanced.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/js\/build\/oslc_enhanced.min.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/build\/min\/oslc_enhanced.min-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/js\/lib\/$.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/$.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/$-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/js\/lib\/delegate.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/delegate.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/delegate-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -1921,6 +2329,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/jquery-2.1.0.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/jquery-2.1.0-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -1931,39 +2340,54 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/lodash.compat.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/lodash.compat-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/js\/lib\/modernizr.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/modernizr.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/modernizr-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/js\/lib\/polyfills\/classlist.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/polyfills\/classlist.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/polyfills\/min\/classlist-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/js\/lib\/underscore.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/underscore.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/underscore-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/lib\/vein.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/js\/lib\/vein.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/vein-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/js\/libraries.js": {
 		"fileType": 64,
@@ -1971,28 +2395,64 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/js\/libraries.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/min\/libraries-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/js\/min\/oslc-ck.js": {
+	"\/_harp\/js\/modules\/oslc.doubtfire.js": {
 		"fileType": 64,
 		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/js\/min\/oslc-ck.js",
-		"outputAbbreviatedPath": "\/_harp\/js\/min\/min\/oslc-ck-ck.js",
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/js\/modules\/oslc.doubtfire.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/modules\/min\/oslc.doubtfire-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/js\/oslc-ck.js": {
+	"\/_harp\/js\/modules\/oslc.fluidvideos.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/js\/oslc-ck.js",
-		"outputAbbreviatedPath": "\/_harp\/js\/min\/oslc-ck-ck.js",
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/js\/modules\/oslc.fluidvideos.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/modules\/min\/oslc.fluidvideos-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/modules\/oslc.sextant.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/js\/modules\/oslc.sextant.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/modules\/min\/oslc.sextant-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/modules\/oslc.toggler.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/js\/modules\/oslc.toggler.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/modules\/min\/oslc.toggler-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/modules\/oslc.whirligig.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/js\/modules\/oslc.whirligig.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/modules\/min\/oslc.whirligig-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/js\/oslc.js": {
@@ -2000,8 +2460,20 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/js\/oslc.js",
-		"outputAbbreviatedPath": "\/_harp\/js\/min\/oslc-ck.js",
-		"outputPathIsSetByUser": 0,
+		"outputAbbreviatedPath": "\/_harp\/js\/build\/oslc.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/oslc_enhanced.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/js\/oslc_enhanced.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/build\/oslc_enhanced.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
@@ -2014,6 +2486,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/logo.md",
 		"outputAbbreviatedPath": "\/_harp\/logo.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/mobile-first.md": {
@@ -2025,6 +2498,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/mobile-first.md",
 		"outputAbbreviatedPath": "\/_harp\/mobile-first.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/tests\/copy.md": {
@@ -2036,6 +2510,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/tests\/copy.md",
 		"outputAbbreviatedPath": "\/_harp\/tests\/copy.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/tests\/fluid-vids.md": {
@@ -2047,6 +2522,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/tests\/fluid-vids.md",
 		"outputAbbreviatedPath": "\/_harp\/tests\/fluid-vids.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/tests\/grid.jade": {
@@ -2056,6 +2532,18 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/tests\/grid.jade",
 		"outputAbbreviatedPath": "\/_harp\/tests\/grid.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/tests\/index.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/tests\/index.jade",
+		"outputAbbreviatedPath": "\/_harp\/tests\/index.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
@@ -2068,6 +2556,7 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/why.md",
 		"outputAbbreviatedPath": "\/_harp\/why.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/_harp\/wireframes.md": {
@@ -2079,6 +2568,16 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/wireframes.md",
 		"outputAbbreviatedPath": "\/_harp\/wireframes.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/cruft.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/cruft.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/css\/oslc.css": {
@@ -2087,6 +2586,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/css\/oslc.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/css\/oslc_enhanced.css": {
@@ -2095,6 +2595,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/css\/oslc_enhanced.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/icons\/output\/icons.data.png.css": {
@@ -2103,6 +2604,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/icons\/output\/icons.data.png.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/icons\/output\/icons.data.svg.css": {
@@ -2111,6 +2613,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/icons\/output\/icons.data.svg.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/icons\/output\/icons.fallback.css": {
@@ -2119,6 +2622,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/icons\/output\/icons.fallback.css",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/icons\/output\/png\/logo-med.png": {
@@ -2128,6 +2632,7 @@
 		"initialSize": 7784,
 		"inputAbbreviatedPath": "\/icons\/output\/png\/logo-med.png",
 		"outputAbbreviatedPath": "\/icons\/output\/png\/logo-med.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -2138,6 +2643,7 @@
 		"initialSize": 1818,
 		"inputAbbreviatedPath": "\/icons\/output\/png\/logo-small.png",
 		"outputAbbreviatedPath": "\/icons\/output\/png\/logo-small.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -2148,6 +2654,7 @@
 		"initialSize": 2558,
 		"inputAbbreviatedPath": "\/icons\/output\/png\/wordmark-med.png",
 		"outputAbbreviatedPath": "\/icons\/output\/png\/wordmark-med.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -2158,6 +2665,7 @@
 		"initialSize": 1602,
 		"inputAbbreviatedPath": "\/icons\/output\/png\/wordmark-small.png",
 		"outputAbbreviatedPath": "\/icons\/output\/png\/wordmark-small.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -2168,6 +2676,7 @@
 		"initialSize": 18692,
 		"inputAbbreviatedPath": "\/images\/logos\/logo-2011-bad-stroke.png",
 		"outputAbbreviatedPath": "\/images\/logos\/logo-2011-bad-stroke.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2178,6 +2687,7 @@
 		"initialSize": 25187,
 		"inputAbbreviatedPath": "\/images\/logos\/logo-2011-color-adjusted.png",
 		"outputAbbreviatedPath": "\/images\/logos\/logo-2011-color-adjusted.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2188,6 +2698,7 @@
 		"initialSize": 46722,
 		"inputAbbreviatedPath": "\/images\/logos\/logo-2011.png",
 		"outputAbbreviatedPath": "\/images\/logos\/logo-2011.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2198,6 +2709,7 @@
 		"initialSize": 43424,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-fancy-hash.jpg",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-fancy-hash.jpg",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2208,6 +2720,7 @@
 		"initialSize": 9456,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-hash-color.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-hash-color.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2218,6 +2731,7 @@
 		"initialSize": 10259,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-hash-gray.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-hash-gray.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2228,6 +2742,7 @@
 		"initialSize": 12427,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-hash-more-colors.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-hash-more-colors.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2238,6 +2753,7 @@
 		"initialSize": 6779,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-hash-on-gray.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-hash-on-gray.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2248,6 +2764,7 @@
 		"initialSize": 7592,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-hash-tiny.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-hash-tiny.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2258,6 +2775,7 @@
 		"initialSize": 29170,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-loop-big-and-small.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-loop-big-and-small.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2268,6 +2786,7 @@
 		"initialSize": 13047,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-loop-early.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-loop-early.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2278,6 +2797,7 @@
 		"initialSize": 4984,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-loop-v2.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-loop-v2.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2288,6 +2808,7 @@
 		"initialSize": 12301,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-loop-with-words.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-loop-with-words.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2298,6 +2819,7 @@
 		"initialSize": 55275,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-loops-4-colors.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-loops-4-colors.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2308,6 +2830,7 @@
 		"initialSize": 18757,
 		"inputAbbreviatedPath": "\/images\/logos\/oslc-lyo-logo.png",
 		"outputAbbreviatedPath": "\/images\/logos\/oslc-lyo-logo.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2318,6 +2841,7 @@
 		"initialSize": 30746,
 		"inputAbbreviatedPath": "\/images\/navigation\/menu-level-1.png",
 		"outputAbbreviatedPath": "\/images\/navigation\/menu-level-1.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
@@ -2328,6 +2852,7 @@
 		"initialSize": 160983,
 		"inputAbbreviatedPath": "\/images\/oslc-home-2011.png",
 		"outputAbbreviatedPath": "\/images\/oslc-home-2011.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2338,6 +2863,7 @@
 		"initialSize": 149779,
 		"inputAbbreviatedPath": "\/images\/oslc-home-march-2014.png",
 		"outputAbbreviatedPath": "\/images\/oslc-home-march-2014.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2348,6 +2874,7 @@
 		"initialSize": 67462,
 		"inputAbbreviatedPath": "\/images\/wireframes\/bare-listing.png",
 		"outputAbbreviatedPath": "\/images\/wireframes\/bare-listing.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2358,6 +2885,7 @@
 		"initialSize": 49257,
 		"inputAbbreviatedPath": "\/images\/wireframes\/basics.png",
 		"outputAbbreviatedPath": "\/images\/wireframes\/basics.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2368,6 +2896,7 @@
 		"initialSize": 65114,
 		"inputAbbreviatedPath": "\/images\/wireframes\/listing.png",
 		"outputAbbreviatedPath": "\/images\/wireframes\/listing.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2378,6 +2907,7 @@
 		"initialSize": 62247,
 		"inputAbbreviatedPath": "\/images\/wireframes\/software.png",
 		"outputAbbreviatedPath": "\/images\/wireframes\/software.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2388,6 +2918,7 @@
 		"initialSize": 41726,
 		"inputAbbreviatedPath": "\/images\/wireframes\/submenu.png",
 		"outputAbbreviatedPath": "\/images\/wireframes\/submenu.png",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -2397,6 +2928,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/js\/_libraries.js": {
@@ -2405,6 +2937,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/_libraries.js",
 		"outputAbbreviatedPath": "\/js\/min\/_libraries-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2415,6 +2948,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib\/$.js",
 		"outputAbbreviatedPath": "\/js\/lib\/min\/$-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2425,6 +2959,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib\/delegate.js",
 		"outputAbbreviatedPath": "\/js\/lib\/min\/delegate-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2435,6 +2970,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib\/jquery-2.1.0.js",
 		"outputAbbreviatedPath": "\/js\/lib\/min\/jquery-2.1.0-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2445,6 +2981,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib\/lodash.compat.js",
 		"outputAbbreviatedPath": "\/js\/lib\/min\/lodash.compat-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2455,6 +2992,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib\/modernizr.js",
 		"outputAbbreviatedPath": "\/js\/lib\/min\/modernizr-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2465,6 +3003,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib\/polyfills\/classlist.js",
 		"outputAbbreviatedPath": "\/js\/lib\/polyfills\/min\/classlist-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2475,6 +3014,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/lib\/underscore.js",
 		"outputAbbreviatedPath": "\/js\/lib\/min\/underscore-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2485,6 +3025,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/libraries.js",
 		"outputAbbreviatedPath": "\/js\/min\/libraries-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2495,6 +3036,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/oslc-ck.js",
 		"outputAbbreviatedPath": "\/js\/min\/oslc-ck-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2505,6 +3047,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/oslc.js",
 		"outputAbbreviatedPath": "\/js\/min\/oslc-ck.js",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -2515,6 +3058,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/logo.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/mobile-first.html": {
@@ -2523,6 +3067,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/mobile-first.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/navigation.html": {
@@ -2531,6 +3076,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/navigation.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/README.md": {
@@ -2542,6 +3088,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/README.md",
 		"outputAbbreviatedPath": "\/README.html",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/why.html": {
@@ -2550,6 +3097,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/why.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
 	"\/wireframes.html": {
@@ -2558,6 +3106,7 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wireframes.html",
 		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		}
 	},
@@ -2577,6 +3126,44 @@
 			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/lodash.compat.js",
 			"position": 1,
 			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/vein.js",
+			"position": 2,
+			"type": 0
+			}
+		],
+	"\/_harp\/js\/oslc_enhanced.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.toggler.js",
+			"position": 0,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.fluidvideos.js",
+			"position": 1,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.sextant.js",
+			"position": 2,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.whirligig.js",
+			"position": 3,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.doubtfire.js",
+			"position": 4,
+			"type": 1
 			}
 		]
 	},
@@ -2727,7 +3314,7 @@
 	"javascriptOutputStyle": 1,
 	"javascriptOutputSuffix": "-ck",
 	"javascriptSyntaxCheckerStyle": 1,
-	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr",
+	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,
@@ -3156,7 +3743,7 @@
 	"sassUseLibsass": 0,
 	"shouldRunAutoprefixer": 0,
 	"shouldRunBless": 0,
-	"skippedItemsString": ".svn, .git, .hg, log, _logs, _cache, cache, logs, node_modules",
+	"skippedItemsString": "_cache, logs, _logs, cache, .git, log, node_modules, .svn, .hg",
 	"slimAutoOutputPathRelativePath": "",
 	"slimAutoOutputPathReplace1": "",
 	"slimAutoOutputPathReplace2": "",
