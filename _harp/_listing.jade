@@ -1,13 +1,12 @@
 .cards
   for page, slug in public[listing_root]._data
+    - var url = site_url + listing_root + '/' + slug + '.html'
     if slug !== 'index'
       .card
         header.header
-          h1.title #{ page.title }
+          h1.title 
+            a(href="#{url}") #{ page.title }
         section.content
           div.copy
             if page.description
               p #{page.description}
-            p 
-              a(href="#{site_url + listing_root + '/' + slug + '.html'}") Read more
-  
