@@ -926,20 +926,6 @@ meta.oslc-mq-neckbeard-only {
   .menu.secondary .heading {
     display: none; } }
 
-.card {
-  border: none;
-  -webkit-box-shadow: 0 2px 4px #aaaaaa;
-  box-shadow: 0 2px 4px #aaaaaa; }
-  .card .card {
-    -webkit-box-shadow: 0 1px 2px #aaaaaa;
-    box-shadow: 0 1px 2px #aaaaaa; }
-
-.cssgradients .card .header > .title > a {
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%);
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(7.5%, rgba(0, 131, 163, 0.4)), color-stop(13%, rgba(0, 131, 163, 0.4)), to(rgba(255, 255, 255, 0)));
-  background-image: linear-gradient(to top,rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%); }
 @media only screen and (min-width: 64.0625em) {
   .card.primary > .header > .title {
     font-size: 32px;

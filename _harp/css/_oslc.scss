@@ -50,6 +50,18 @@ html {
 
 
 //
+// Cards
+//
+@import '_components/card';
+
+
+//
+// Notices
+//
+@import '_components/notice';
+
+
+//
 // Body Copy
 //
 @import '_components/copy';
@@ -66,14 +78,4 @@ html {
 //
 @import '_components/button';
 
-
-//
-// Cards
-//
-@import '_components/card';
-
-
-//
-// Notices
-//
-@import '_components/notice';
+// @import '_components/navburger';

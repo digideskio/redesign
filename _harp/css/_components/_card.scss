@@ -1,32 +1,34 @@
 %card-basis {
   background-color: $card-bg;
-  border-radius: 4px;
+  border-radius: 3px;
   border: 1px solid #d9d9d9;
-  border-top: none;
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-top-color: #757575;
   background-clip: padding-box;
+  box-shadow: 7px 7px 0 $card-shadow-color;
+
+  // Smaller shadows as you get more nested
+  & & {
+    box-shadow: 5px 5px 0 $card-shadow-color;
+  }
+  
+  & & & {
+    box-shadow: 3px 3px 0 $card-shadow-color;
+  }
   
   > .header {
-    border-radius: 3px 3px 0 0;
-    border-top-width: 3px;
-    border-top-style: solid;
-    border-top-color: palette(gray, mid-dark);
-    border-bottom: 1px solid palette(gray, light);
-    @include rem(padding, 10px $card-padding-sides 11px);
-    
+    background-color: palette(gray);
+    border-radius: 1px 1px 0 0;
+    border-radius: 1px 1px 0 0;
+    background-clip: padding-box;
+    @include rem(padding, 10px $card-padding-sides 11px);    
 
     > .title {
       margin: 0;
+      color: #fff;
       font-weight: bold;
       line-height: 1.1;
-      color: palette(gray, mid-dark);
-      
-      a {
-        color: palette(blue, mid-dark);
-      
-        &:hover, &:focus {
-          color: palette(blue);
-        }
-      }
     }
   }
   
@@ -44,11 +46,17 @@
   }
   
   &.primary {
+    border-top-color: palette(blue, mid-dark);
     @include rem(margin-bottom, $font-size-l);
 
-    > .header > .title {
-      @extend %text-size-xxl;
-      line-height: 1.05;
+    > .header {
+      background-color: palette(blue);
+
+      > .title {
+        @extend %text-size-xxl;
+        line-height: 1.05;
+      }
+
     }
   }
   
