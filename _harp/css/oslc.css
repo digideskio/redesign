@@ -108,7 +108,7 @@
   font-size: 1rem;
   line-height: 1.1875; }
 
-.card > .header > .title, .copy > h5 {
+.copy > h5, .card > .header > .title {
   font-size: 19px;
   font-size: 1.1875rem;
   line-height: 1.21053; }
@@ -118,7 +118,7 @@
   font-size: 1.4375rem;
   line-height: 1.17391; }
 
-.card.primary > .header > .title, .copy > h3 {
+.copy > h3, .card.primary > .header > .title {
   font-size: 27px;
   font-size: 1.6875rem;
   line-height: 1.18519; }
@@ -1235,64 +1235,6 @@ abbr.grunticon-wordmark-med {
   .menu.inverted .heading {
     border-bottom: 1px solid #ee7e7c; }
 
-.card, .notice {
-  background-color: white;
-  border-radius: 3px;
-  border: 1px solid #d9d9d9;
-  border-top-width: 3px;
-  border-top-style: solid;
-  border-top-color: #757575;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  -webkit-box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.1); }
-  .card .card, .notice .card, .card .notice, .notice .notice {
-    -webkit-box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1); }
-  .card .card .card, .notice .card .card, .card .notice .card, .notice .notice .card, .card .card .notice, .notice .card .notice, .card .notice .notice, .notice .notice .notice {
-    -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1); }
-  .card > .header, .notice > .header {
-    background-color: #999999;
-    border-radius: 1px 1px 0 0;
-    border-radius: 1px 1px 0 0;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    padding: 10px 16px 11px;
-    padding: 0.625rem 1rem 0.6875rem; }
-    .card > .header > .title, .notice > .header > .title {
-      margin: 0;
-      color: #fff;
-      font-weight: bold;
-      line-height: 1.1; }
-  .card > .content, .notice > .content {
-    padding: 12px 16px;
-    padding: 0.75rem 1rem; }
-
-.card.primary {
-  border-top-color: #0083a3;
-  margin-bottom: 19px;
-  margin-bottom: 1.1875rem; }
-  .card.primary > .header {
-    background-color: #00a7bd; }
-    .card.primary > .header > .title {
-      line-height: 1.05; }
-.card.secondary {
-  border-top-color: #dc3235; }
-  .card.secondary > .header {
-    background-color: #e85b59; }
-
-.cards .card {
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
-
-.notice .header > .title {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.1875; }
-.copy > .notice {
-  margin-bottom: 1em; }
-
 /*
  * Body Copy
  */
@@ -1441,3 +1383,52 @@ abbr.grunticon-wordmark-med {
     -webkit-transform: translate(0, 0.1875em);
     -ms-transform: translate(0, 0.1875em);
     transform: translate(0, 0.1875em); }
+
+.card, .notice {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  border-top: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box; }
+  .card > .header, .notice > .header {
+    border-radius: 3px 3px 0 0;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #666666;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 16px 11px;
+    padding: 0.625rem 1rem 0.6875rem; }
+    .card > .header > .title, .notice > .header > .title {
+      margin: 0;
+      font-weight: bold;
+      line-height: 1.1;
+      color: #666666; }
+      .card > .header > .title a, .notice > .header > .title a {
+        color: #0083a3; }
+        .card > .header > .title a:hover, .notice > .header > .title a:hover, .card > .header > .title a:focus, .notice > .header > .title a:focus {
+          color: #00a7bd; }
+  .card > .content, .notice > .content {
+    padding: 12px 16px;
+    padding: 0.75rem 1rem; }
+
+.card.primary {
+  margin-bottom: 19px;
+  margin-bottom: 1.1875rem; }
+  .card.primary > .header > .title {
+    line-height: 1.05; }
+.card.secondary {
+  border-top-color: #dc3235; }
+  .card.secondary > .header {
+    background-color: #e85b59; }
+
+.cards .card {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+.notice .header > .title {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.1875; }
+.copy > .notice {
+  margin-bottom: 1em; }
