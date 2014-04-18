@@ -1424,10 +1424,6 @@ abbr.grunticon-wordmark-med {
   margin-bottom: 1.1875rem; }
   .card.primary > .header > .title {
     line-height: 1.05; }
-.card.secondary {
-  border-top-color: #dc3235; }
-  .card.secondary > .header {
-    background-color: #e85b59; }
 
 .card > .cards {
   background-color: #f1f1f1; }
