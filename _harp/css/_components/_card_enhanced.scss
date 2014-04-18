@@ -30,7 +30,8 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
       rgba(255,255,255,0) 7.5%, 
       transparentize(palette(blue, mid-dark), .6) 7.5%, 
       transparentize(palette(blue, mid-dark), .6) 13%, 
-      rgba(255,255,255,0) 13%);
+      rgba(255,255,255,0) 13%,
+      rgba(255,255,255,0) 100%);
   }
 
   }

@@ -940,9 +940,9 @@ meta.oslc-mq-neckbeard-only {
 .cssgradients .card .header > .title > a {
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0);
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%);
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(7.5%, rgba(0, 131, 163, 0.4)), color-stop(13%, rgba(0, 131, 163, 0.4)), to(rgba(255, 255, 255, 0)));
-  background-image: linear-gradient(to top,rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%); }
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(7.5%, rgba(0, 131, 163, 0.4)), color-stop(13%, rgba(0, 131, 163, 0.4)), color-stop(13%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to top,rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%, rgba(255, 255, 255, 0) 100%); }
 @media only screen and (min-width: 64.0625em) {
   .card.primary > .header > .title {
     font-size: 32px;
