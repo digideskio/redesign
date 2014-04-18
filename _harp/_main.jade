@@ -3,6 +3,8 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
     .column.hand-12.workstation-9
       .card.primary
         header.header
+          if date
+            time(datetime="#{ new Date(date) }") #{date}
           h1.title #{ title }
         section(class="content #{is_listing ? 'cards' : '' }")
           if is_listing
