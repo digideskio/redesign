@@ -1,6 +1,59 @@
 $namespace: 'oslc';
 
-$base-color: #333;
+//
+// Color definitions
+//
+// Access with function palette($color,$tone)
+//   eg background-color: palette(gold, light);  
+//
+$palettes: (
+  blue: (
+    x-light: hsl(186, 55%, 90%),
+    light: hsl(187, 58%, 68%),
+    mid-light: hsl(188, 59%, 57%),
+    base: hsl(187, 100%, 37%),
+    mid-dark: hsl(192, 100%, 32%),
+    dark: hsl(197, 100%, 28%),
+    x-dark: hsl(207, 100%, 23%)
+  ),
+  gold: (
+    x-light: hsl(39, 100%, 95%),
+    light: hsl(37, 100%, 85%),
+    mid-light: hsl(37, 100%, 80%),
+    base: hsl(36, 100%, 72%),
+    mid-dark: hsl(33, 100%, 62%),
+    dark: hsl(25, 100%, 59%),
+    x-dark: hsl(19, 100%, 57%)
+  ),
+  gray: (
+    x-light: #ebebeb,
+    light: #ccc,
+    mid-light: #aaa,
+    base: #999,
+    mid-dark: #666,
+    dark: #444,
+    x-dark: #222
+  ),
+  green: (
+    x-light: hsl(165, 60%, 92%),
+    light: hsl(168, 60%, 76%),
+    mid-light: hsl(168, 61%, 67%),
+    base: hsl(168, 61%, 51%),
+    mid-dark: hsl(167, 100%, 37%),
+    dark: hsl(157, 100%, 30%),
+    x-dark: hsl(147, 100%, 25%)
+  ),
+  red: (
+    x-light: hsl(4, 79%, 93%),
+    light: hsl(1, 77%, 78%),
+    mid-light:hsl(1, 77%, 71%),
+    base: hsl(1, 76%, 63%),
+    mid-dark: hsl(359, 71%, 53%),
+    dark: hsl(353, 98%, 42%),
+    x-dark: hsl(357, 100%, 33%)
+  ),
+  
+);
 
 
 //
@@ -47,6 +100,7 @@ $main-menu-slide-duration: .2s;
 $total-items: 7;
 $item-slide-duration: 0.04s;
 
+$main-bg-color: shade( palette(gray,x-light), 8% );
 
 //
 // Cards

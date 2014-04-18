@@ -32,7 +32,7 @@
   a.current,
   a.item:hover,
   a.item:focus {
-    background-color: palette(gray,x-light);    
+    background-color: $main-bg-color;    
   }
   
   &.primary {

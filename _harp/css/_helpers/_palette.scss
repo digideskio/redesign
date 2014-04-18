@@ -1,0 +1,11 @@
+/*
+ * Nice color palette helper
+ *
+ * See http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ *
+ */
+
+// requires a $palettes SASS map (so SASS 3.3+)
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}

@@ -46,5 +46,5 @@ abbr.grunticon-wordmark-med {
   @include rem(padding-top, 16px);
   @include rem(padding-bottom, 16px);
   
-  background-color: palette(gray,x-light);
+  background-color: $main-bg-color;
 }

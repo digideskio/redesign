@@ -1,3 +1,9 @@
+/*
+ * Nice color palette helper
+ *
+ * See http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ *
+ */
 .copy > table, .copy > .fluid-video, .copy > ul,
 .copy > ol, .copy > p, .copy > blockquote, .copy pre {
   margin-bottom: 1em;
@@ -103,6 +109,11 @@
 /*
  * Text size mixins / placeholders
  */
+.card > .header > time {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1.23077; }
+
 .copy > h6 {
   font-size: 16px;
   font-size: 1rem;
@@ -138,12 +149,6 @@
   font-size: 3rem;
   line-height: 1.05; }
 
-/*
- * Nice color palette helper
- *
- * See http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
- *
- */
 .copy > table {
   width: 100%;
   padding: 0;
@@ -1192,7 +1197,7 @@ abbr.grunticon-wordmark-med {
   padding-top: 1rem;
   padding-bottom: 16px;
   padding-bottom: 1rem;
-  background-color: #ebebeb; }
+  background-color: #d8d8d8; }
 
 .menu .item {
   padding: 11px 16px;
@@ -1215,7 +1220,7 @@ abbr.grunticon-wordmark-med {
 .menu a.current,
 .menu a.item:hover,
 .menu a.item:focus {
-  background-color: #ebebeb; }
+  background-color: #d8d8d8; }
 .menu.primary {
   background-color: white; }
 .menu .heading {
@@ -1412,6 +1417,8 @@ abbr.grunticon-wordmark-med {
     padding: 12px 16px;
     padding: 0.75rem 1rem; }
 
+.card > .header > time {
+  color: #666666; }
 .card.primary {
   margin-bottom: 19px;
   margin-bottom: 1.1875rem; }
@@ -1421,6 +1428,9 @@ abbr.grunticon-wordmark-med {
   border-top-color: #dc3235; }
   .card.secondary > .header {
     background-color: #e85b59; }
+
+.card > .cards {
+  background-color: #f1f1f1; }
 
 .cards .card {
   margin-bottom: 24px;

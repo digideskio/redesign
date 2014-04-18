@@ -1,4 +1,12 @@
 //
+// Helpers written by others
+//
+
+@import '_helpers/palette'; // this is first so you can do color manipulations in _settings
+@import '_lib/_bourbon/bourbon';
+
+
+//
 // Settings
 //
 
@@ -6,21 +14,13 @@
 
 
 //
-// Helpers written by others
-//
-
-@import '_lib/_bourbon/bourbon';
-@import '_lib/_rem';
-
-
-//
-// My helpers
+// Helpers
 //
 // Define functions or placeholders but do not output styles
 //
 
+@import '_lib/_rem'; // goes here as it depends on a base font-size variable
 @import '_helpers/utilities';
 @import '_base/typography';
-@import '_helpers/colors';
 @import '_helpers/tables';
 @import '_helpers/respond-to'; // define responsive breakpoints and respond-to mixin

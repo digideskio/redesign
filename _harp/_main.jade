@@ -4,9 +4,12 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
       .card.primary
         header.header
           h1.title #{ title }
-        section.content
-          div.copy
+        section(class="content #{is_listing ? 'cards' : '' }")
+          if is_listing
             != yield
+          else
+            div.copy
+              != yield
     if issues
       aside.column.hand-12.workstation-3
         .card.secondary

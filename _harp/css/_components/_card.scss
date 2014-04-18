@@ -13,7 +13,6 @@
     border-bottom: 1px solid palette(gray, light);
     @include rem(padding, 10px $card-padding-sides 11px);
     
-
     > .title {
       margin: 0;
       font-weight: bold;
@@ -39,8 +38,15 @@
 .card {
   @extend %card-basis;
   
-  > .header > .title {
-    @extend %text-size-l;
+  > .header {
+    > .title {
+      @extend %text-size-l;
+    }
+    
+    > time {
+    @extend %text-size-s;
+    color: palette(gray, mid-dark);
+    }
   }
   
   &.primary {
@@ -62,6 +68,9 @@
   
 }
 
+.card > .cards {
+  background-color: tint( palette(gray,x-light), 30% );
+}
 
 .cards {
   .card {

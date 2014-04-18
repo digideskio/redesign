@@ -8,15 +8,15 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
 
 %card-basis {
   border: none;
-  box-shadow: 0 2px 4px palette(gray, mid-light);
-  
+  //box-shadow: 0 2px 5px palette(gray, mid-light);
+  box-shadow: 8px 8px 0 $card-shadow-color;
   
   & & {
-    box-shadow: 0 1px 2px palette(gray, mid-light);
+    //box-shadow: 0 1px 3px palette(gray, mid-light);
+    box-shadow: 5px 5px 0 $card-shadow-color;
   }
   
-  & & & {
-  }
+  & & & { box-shadow: 3px 3px 0 $card-shadow-color; }
 }
 
 .card {

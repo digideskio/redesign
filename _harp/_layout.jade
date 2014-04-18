@@ -9,7 +9,7 @@ html.no-js(lang="en")
     
     .sticky-footer-body.off-canvas-wrap
 
-      != partial('_main', {site_url: site_url, has_secondary: current.path.length > 1})
+      != partial('_main', {site_url: site_url, has_secondary: current.path.length > 1, is_listing: (current.path.length === 2 && current.path[1] === 'index')})
       
       != partial('_nav', {site_url: site_url, has_secondary: current.path.length > 1})
       
