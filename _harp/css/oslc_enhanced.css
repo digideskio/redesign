@@ -749,6 +749,76 @@ meta.oslc-mq-neckbeard-only {
     -webkit-transition-duration: .3s, .04s;
     transition-duration: .3s, .04s; }
 
+@media only screen and (min-width: 64.0625em) {
+  .menu.primary {
+    border-top: 3px solid #ffe2b3; } }
+@media only screen and (max-width: 40em) {
+  .menu.secondary .heading {
+    display: none; } }
+
+.card {
+  border: none;
+  -webkit-box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1); }
+  .card .card {
+    -webkit-box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1); }
+  .card .card .card {
+    -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1); }
+
+.cssgradients .card .header > .title > a {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%, rgba(255, 255, 255, 0) 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(7.5%, rgba(0, 131, 163, 0.4)), color-stop(13%, rgba(0, 131, 163, 0.4)), color-stop(13%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to top,rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%, rgba(255, 255, 255, 0) 100%); }
+@media only screen and (min-width: 64.0625em) {
+  .card.primary > .header > .title {
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 1.1875; } }
+
+.copy {
+  /* 
+   * For Hand sizes, bump headings down a level 
+   */ }
+  @media only screen and (max-width: 40em) {
+    .copy > h6 {
+      font-size: 13px;
+      font-size: 0.8125rem;
+      line-height: 1.23077; } }
+  @media only screen and (max-width: 40em) {
+    .copy > h5 {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.1875; } }
+  @media only screen and (max-width: 40em) {
+    .copy > h4 {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.21053; } }
+  @media only screen and (max-width: 40em) {
+    .copy > h3 {
+      font-size: 23px;
+      font-size: 1.4375rem;
+      line-height: 1.17391; } }
+  @media only screen and (max-width: 40em) {
+    .copy > h2 {
+      font-size: 27px;
+      font-size: 1.6875rem;
+      line-height: 1.18519; } }
+  @media only screen and (max-width: 40em) {
+    .copy > h1 {
+      font-size: 32px;
+      font-size: 2rem;
+      line-height: 1.1875; } }
+  @media only screen and (max-width: 40em) {
+    .copy > .godzilla {
+      font-size: 38px;
+      font-size: 2.375rem;
+      line-height: 1.26316; } }
+
 .off-canvas-wrap {
   /*
   .flexbox & {
@@ -956,73 +1026,3 @@ meta.oslc-mq-neckbeard-only {
         -webkit-transform: scale(1);
         -ms-transform: scale(1);
         transform: scale(1); } }
-
-@media only screen and (min-width: 64.0625em) {
-  .menu.primary {
-    border-top: 3px solid #ffe2b3; } }
-@media only screen and (max-width: 40em) {
-  .menu.secondary .heading {
-    display: none; } }
-
-.card {
-  border: none;
-  -webkit-box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1); }
-  .card .card {
-    -webkit-box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1); }
-  .card .card .card {
-    -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1); }
-
-.cssgradients .card .header > .title > a {
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
-  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%, rgba(255, 255, 255, 0) 100%);
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(7.5%, rgba(0, 131, 163, 0.4)), color-stop(13%, rgba(0, 131, 163, 0.4)), color-stop(13%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
-  background-image: linear-gradient(to top,rgba(255, 255, 255, 0) 7.5%, rgba(0, 131, 163, 0.4) 7.5%, rgba(0, 131, 163, 0.4) 13%, rgba(255, 255, 255, 0) 13%, rgba(255, 255, 255, 0) 100%); }
-@media only screen and (min-width: 64.0625em) {
-  .card.primary > .header > .title {
-    font-size: 32px;
-    font-size: 2rem;
-    line-height: 1.1875; } }
-
-.copy {
-  /* 
-   * For Hand sizes, bump headings down a level 
-   */ }
-  @media only screen and (max-width: 40em) {
-    .copy > h6 {
-      font-size: 13px;
-      font-size: 0.8125rem;
-      line-height: 1.23077; } }
-  @media only screen and (max-width: 40em) {
-    .copy > h5 {
-      font-size: 16px;
-      font-size: 1rem;
-      line-height: 1.1875; } }
-  @media only screen and (max-width: 40em) {
-    .copy > h4 {
-      font-size: 19px;
-      font-size: 1.1875rem;
-      line-height: 1.21053; } }
-  @media only screen and (max-width: 40em) {
-    .copy > h3 {
-      font-size: 23px;
-      font-size: 1.4375rem;
-      line-height: 1.17391; } }
-  @media only screen and (max-width: 40em) {
-    .copy > h2 {
-      font-size: 27px;
-      font-size: 1.6875rem;
-      line-height: 1.18519; } }
-  @media only screen and (max-width: 40em) {
-    .copy > h1 {
-      font-size: 32px;
-      font-size: 2rem;
-      line-height: 1.1875; } }
-  @media only screen and (max-width: 40em) {
-    .copy > .godzilla {
-      font-size: 38px;
-      font-size: 2.375rem;
-      line-height: 1.26316; } }

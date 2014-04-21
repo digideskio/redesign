@@ -38,12 +38,6 @@ html {
 
 
 //
-// Header / Navigation
-//
-@import '_components/navigation';
-
-
-//
 // Menus
 //
 @import '_components/menus';
@@ -77,3 +71,9 @@ html {
 // Notices
 //
 @import '_components/notice';
+
+
+//
+// Primary page layout
+//
+@import '_layout/scaffolding';

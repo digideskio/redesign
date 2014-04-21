@@ -38,7 +38,7 @@
 /*
  * Blocks
  */
-.block.icon, .project-name, .links .item {
+.block.icon, .links .item, .project-name {
   display: block; }
 
 .icon {
@@ -1162,43 +1162,6 @@ html {
 .sticky-footer-body {
   background-color: #444; }
 
-.banner,
-.footer {
-  background-color: white;
-  padding: 4px 8px 5px;
-  padding: 0.25rem 0.5rem 0.3125rem; }
-
-.banner {
-  border-top: 3px solid #ffe2b3; }
-  .banner .btn > .text {
-    font-size: 11px;
-    margin-top: 3px;
-    margin-top: 0.1875rem; }
-  .banner .image-link {
-    margin-left: 8px;
-    margin-left: 0.5rem; }
-  .banner .logo-text {
-    margin-left: 10px;
-    margin-left: 0.625rem; }
-  .banner .project-name {
-    margin-top: 2px;
-    margin-top: 0.125rem; }
-
-.logo-text {
-  display: block;
-  color: #666666; }
-
-abbr.grunticon-wordmark-small,
-abbr.grunticon-wordmark-med {
-  border-bottom: 0 !important; }
-
-.main {
-  padding-top: 16px;
-  padding-top: 1rem;
-  padding-bottom: 16px;
-  padding-bottom: 1rem;
-  background-color: #d8d8d8; }
-
 .menu .item {
   padding: 11px 16px;
   padding: 0.6875rem 1rem;
@@ -1438,3 +1401,40 @@ abbr.grunticon-wordmark-med {
   line-height: 1.1875; }
 .copy > .notice {
   margin-bottom: 1em; }
+
+.banner,
+.footer {
+  background-color: white;
+  padding: 4px 8px 5px;
+  padding: 0.25rem 0.5rem 0.3125rem; }
+
+.banner {
+  border-top: 3px solid #ffe2b3; }
+  .banner .btn > .text {
+    font-size: 11px;
+    margin-top: 3px;
+    margin-top: 0.1875rem; }
+  .banner .image-link {
+    margin-left: 8px;
+    margin-left: 0.5rem; }
+  .banner .logo-text {
+    margin-left: 10px;
+    margin-left: 0.625rem; }
+  .banner .project-name {
+    margin-top: 2px;
+    margin-top: 0.125rem; }
+
+.logo-text {
+  display: block;
+  color: #666666; }
+
+abbr.grunticon-wordmark-small,
+abbr.grunticon-wordmark-med {
+  border-bottom: 0 !important; }
+
+.main {
+  padding-top: 16px;
+  padding-top: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem;
+  background-color: #d8d8d8; }
