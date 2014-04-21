@@ -802,7 +802,17 @@ meta.oslc-mq-neckbeard-only {
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
     -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s; }
+    transition-duration: 0.2s;
+    /*
+    .flexbox & {
+      position: static;
+      display: flex;
+    }
+    
+    .flexbox & .window {
+      display: flex;
+    }
+    */ }
     .nav.has-secondary {
       width: 396px; }
     .nav .panels {
@@ -813,12 +823,25 @@ meta.oslc-mq-neckbeard-only {
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0; }
+      bottom: 0;
+      /*
+      .flexbox & {
+        position: static;
+        display: flex;
+        flex: 1;
+      }
+      */ }
     .nav .panel {
       position: absolute;
       top: 0;
       bottom: 0;
-      z-index: 1; } }
+      z-index: 1;
+      /*
+      .flexbox & {
+        position: static;
+        flex: 1;
+      }
+      */ } }
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   .nav {
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -890,10 +913,23 @@ meta.oslc-mq-neckbeard-only {
       padding-left: 0.5rem;
       padding-right: 8px;
       padding-right: 0.5rem;
-      margin-left: 216px; }
+      margin-left: 216px;
+      /*
+      .flexbox & {
+        margin-left: 0 !important;
+        flex: 1;
+      }
+      */ }
       .main.has-secondary {
         margin-left: 396px; } }
 
+/*
+.flexbox .off-canvas-wrap {
+  @include respond-to(knee-up) {
+    flex-direction: row;
+  }
+}
+*/
 .close-nav {
   top: 0;
   right: 0;
