@@ -5,31 +5,39 @@
     @include prevent-flicker;
     position: relative;
     overflow: hidden;
-  }	  
+  }
+  
+  /*
+  .flexbox & {
+    @include respond-to(knee-up) {
+      flex-direction: row;
+    }
+  }
+  */
+}
+
+.swapper {
+  display: block;
+  width: 28px;
+  height: 25px;
+  margin: 0 auto;
+  position: relative;
+
+  > .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-timing-function: cubic-bezier(0,0,.7,1.9);
+    transition-duration: $navburger-transition-time;
+    transition-property: opacity, transform;
+    transform-origin: 50% 50%;
+
+  }
+  
 }
 
 .banner .btn {
   
-  > .swapper {
-    display: block;
-    width: 28px;
-    height: 25px;
-    margin: 0 auto;
-    position: relative;
-
-    > .icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition-timing-function: cubic-bezier(0,0,.7,1.9);
-      transition-duration: $navburger-transition-time;
-      transition-property: opacity, transform;
-      transform-origin: 50% 50%;
-  
-    }
-    
-  }
-
   &.nav-is-open .icon:first-child,
   .icon:last-child {
     opacity: 0;
@@ -222,14 +230,6 @@
   }
 
 }
-
-/*
-.flexbox .off-canvas-wrap {
-  @include respond-to(knee-up) {
-    flex-direction: row;
-  }
-}
-*/
 
 .close-nav {
   @extend %pos-abs;

@@ -749,19 +749,27 @@ meta.oslc-mq-neckbeard-only {
     -webkit-transition-duration: .3s, .04s;
     transition-duration: .3s, .04s; }
 
-@media only screen and (min-width: 40.0625em) {
-  .off-canvas-wrap {
-    -webkit-backface-visibility: hidden;
-    position: relative;
-    overflow: hidden; } }
+.off-canvas-wrap {
+  /*
+  .flexbox & {
+    @include respond-to(knee-up) {
+      flex-direction: row;
+    }
+  }
+  */ }
+  @media only screen and (min-width: 40.0625em) {
+    .off-canvas-wrap {
+      -webkit-backface-visibility: hidden;
+      position: relative;
+      overflow: hidden; } }
 
-.banner .btn > .swapper {
+.swapper {
   display: block;
   width: 28px;
   height: 25px;
   margin: 0 auto;
   position: relative; }
-  .banner .btn > .swapper > .icon {
+  .swapper > .icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -774,6 +782,7 @@ meta.oslc-mq-neckbeard-only {
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%; }
+
 .banner .btn.nav-is-open .icon:first-child,
 .banner .btn .icon:last-child {
   opacity: 0;
@@ -923,13 +932,6 @@ meta.oslc-mq-neckbeard-only {
       .main.has-secondary {
         margin-left: 396px; } }
 
-/*
-.flexbox .off-canvas-wrap {
-  @include respond-to(knee-up) {
-    flex-direction: row;
-  }
-}
-*/
 .close-nav {
   top: 0;
   right: 0;
