@@ -1,12 +1,14 @@
+$card-border-radius: 4px;
+
 %card-basis {
   background-color: $card-bg;
-  border-radius: 4px;
+  border-radius: $card-border-radius;
   border: 1px solid #d9d9d9;
   border-top: none;
   background-clip: padding-box;
   
   > .header {
-    border-radius: 3px 3px 0 0;
+    border-radius: $card-border-radius $card-border-radius 0 0;
     border-top-width: 3px;
     border-top-style: solid;
     border-top-color: palette(gray, mid-dark);
@@ -22,6 +24,10 @@
       a {
         color: palette(blue, mid-dark);
       
+        &:visited {
+          color: palette(gray, mid-dark);
+        }
+        
         &:hover, &:focus {
           color: palette(blue);
         }
@@ -29,8 +35,8 @@
     }
   }
   
-  > .content {
-    @include rem(padding, 12px $card-padding-sides);
+  .content {
+    @include rem(padding, $font-size-s $card-padding-sides);
   }
 
 }
@@ -42,11 +48,29 @@
     > .title {
       @extend %text-size-l;
     }
-    
-    > time {
+  }
+  
+  > .footer {
+    color: palette(gray);
     @extend %text-size-s;
-    color: palette(gray, mid-dark);
+    line-height: 1;
+    @include rem(padding, 0 $card-padding-sides);
+    border-bottom: 1px solid palette(gray, light);
+    
+    .tags, .meta {
+      margin-top: 8px;
     }
+    
+    .meta {
+      @extend %inline-block;
+      @extend %copy-links;
+      margin-bottom: 8px;
+    }
+  }
+  
+  > .navigation {
+    background-color: tint(palette(gray, x-light), 60%);
+    border-radius: 0 0 $card-border-radius $card-border-radius;
   }
   
   &.primary {
@@ -56,24 +80,16 @@
       @extend %text-size-xxl;
       line-height: 1.05;
     }
-  }
-  
-  &.secondary {
-    //border-top-color: palette(red, mid-dark);
     
-    > .header {
-      //background-color: palette(red);
-    }
+    .relationships { @include rem(padding, 13px 0); }
   }
   
-}
-
-.card > .cards {
-  background-color: tint( palette(gray,x-light), 30% );
 }
 
 .cards {
+  background-color: tint( palette(gray,x-light), 30% );
+
   .card {
-    @include rem(margin-bottom, 24px);
+    @include rem(margin-bottom, $font-size-xl);
   }
 }

@@ -7,13 +7,19 @@
 // 
 
 // https://github.com/stubbornella/oocss/blob/master/core/module/mod.css
-.body, .media { overflow:hidden; *overflow:visible; zoom:1; }	
+.body, 
+.media,
+.no-display-table .flag { 
+  overflow:hidden; 
+  *overflow:visible; 
+  zoom:1; 
+}	
 
 //	https://github.com/stubbornella/oocss/tree/master/core/media
-.media{
+.media, 
+.no-display-table .flag {
  .image { float:left; }
- &.reversed .image { float:right; }
-  
+ &.reversed .image { float:right; }  
 }
 
 
@@ -25,10 +31,7 @@
 // Requires display-table, so we're at IE8+
 //
 
-// fallback
-.no-display-table .flag {
-  @extend .media;
-}
+// fallback to .media (above)
 
 .flag {
   display: table;

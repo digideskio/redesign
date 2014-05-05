@@ -1,26 +1,85 @@
+- var needs_sidebar = issues || workgroups || organizations
 main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
-  .grid
-    .column.hand-12.workstation-9
-      .card.primary
-        header.header
-          if date
-            time(datetime="#{ new Date(date) }") #{date}
-          h1.title #{ title }
-        section(class="content #{is_listing ? 'cards' : '' }")
-          if is_listing
+  .card.primary
+    header.header
+      if breadcrumbs
+        div.breadcrumbs
+          for crumb, idx in breadcrumbs
+            a.breadcrumb(href="#") #{crumb}
+            &nbsp;/&nbsp;
+      h1.title #{ title }
+    if date || tags
+      footer.footer
+        .grid.pulled.middle
+          .column.hand-full.knee-minor
+            span.meta
+              time(datetime="#{ new Date(date) }") #{date}
+              |  by 
+              a(href="#") #{author}
+          if tags
+            .column.hand-full.knee-major
+              .tags
+                for tag, idx in tags
+                  a.tag(href="#") #{tag}
+    .grid
+      section(class="content #{is_listing ? 'cards' : '' } column hand-full #{needs_sidebar ? 'workstation-major' : ''}")
+        if is_listing
+          != yield
+        else
+          div.copy
             != yield
-          else
-            div.copy
-              != yield
-    if issues
-      aside.column.hand-12.workstation-3
-        .card.secondary
-          header.header
-            h3.title Related issues
-          section.content
-            ul.links
-              for issue in issues
-                li.item
-                  a(href="#{ issue.url }") #{issue.title}
-  
+      if needs_sidebar
+        aside.column.hand-full.workstation-minor.cards.relationships
+          .grid
+            if issues
+              .column.hand-full.knee-half.workstation-full
+                .card
+                  header.header
+                    h3.title Related issues
+                  section.content
+                    ul.links
+                      for issue in issues
+                        li.item
+                          a(href="#{ issue.url }") #{issue.title}
+            if workgroups
+              .column.hand-full.knee-half.workstation-full
+                .card
+                  header.header
+                    h3.title Workgroups
+                  section.content
+                    ul.links
+                      for workgroup in workgroups
+                        li.item
+                          a(href="#") #{workgroup}
+            if organizations
+              .column.hand-full.knee-half.workstation-full
+                .card
+                  header.header
+                    h3.title Organizations
+                  section.content
+                    ul.links
+                      for org in organizations
+                        li.item
+                          a(href="#") #{org}
+    if next || previous
+      nav(class="navigation")
+        .grid.collapsed.blocks
+          if previous
+            .column.hand-full.knee-half
+              a.sequence.prev(href="#") 
+                .flag
+                  .image
+                    i.icon.grunticon-previous.block.autosize
+                  .body
+                    span.label Older
+                    span.title #{previous}
+          if next
+            .column.hand-full.knee-half
+              a.sequence.next(href="#") 
+                .flag.reversed
+                  .body
+                    span.label Newer
+                    span.title #{next}
+                  .image
+                    i.icon.grunticon-next.block.autosize  
   a.close-nav(role="button", aria-label="Toggle Navigation")

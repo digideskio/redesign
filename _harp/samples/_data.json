@@ -1,0 +1,36 @@
+{
+  "index": {
+    "title": "Sample pages"
+  },
+  "news": {
+    "layout": "_news",
+    "menu_title": "News post",
+    "breadcrumbs": [
+      "Home", "News"
+    ],
+    "title": "[Sample news post] Brace Yourself: OSLC Steering Committee Elections Are Coming",
+    "date": "2014 April 2",
+    "tags": [
+      "alm",
+      "community",
+      "conferences",
+      "eclipse",
+      "linked data",
+      "mobile"
+    ],
+    "workgroups": [
+      "Core",
+      "Change Management",
+      "Mobility"
+    ],
+    "organizations": [
+      "IBM",
+      "PointSource",
+      "TaskTop"
+    ],
+    "author": "Sean Kennedy",
+    "next": "Neither Proprietary Data Formats nor International Travel are barriers to OSLC",
+    "previous": "OSLC Enables Integration for Mobility and Lean Software Lifecycles"
+  }
+
+}

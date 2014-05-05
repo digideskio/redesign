@@ -56,9 +56,27 @@ html {
 
 
 //
+// Breadcrumbs
+//
+@import '_components/breadcrumbs';
+
+
+//
 // Buttons
 //
 @import '_components/button';
+
+
+//
+// Tags / Labels
+//
+@import '_components/tags';
+
+
+//
+// Previous / Next sequences
+//
+@import '_components/sequence';
 
 
 //

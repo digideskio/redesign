@@ -43,8 +43,7 @@ abbr.grunticon-wordmark-med {
 
 
 .main {
-  @include rem(padding-top, 16px);
-  @include rem(padding-bottom, 16px);
+  @include rem(padding, $font-size-m);
   
   background-color: $main-bg-color;
 }

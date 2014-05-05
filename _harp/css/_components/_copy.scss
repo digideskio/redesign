@@ -9,28 +9,40 @@
     color: palette(blue, mid-dark);
     transition: color .2s $ease-out-cubic;
     
-    img {
-      border-color: palette(blue, mid-dark);
-      transition: border-color .2s $ease-out-cubic;
-    }
-    
     &:visited {
       color: desaturate( palette(blue, mid-dark), 70%);
-      
-      img { border-color: desaturate( palette(blue, mid-dark), 70%); }
     }
     
     &:hover, 
     &:focus {
       color: palette(blue);
-      
-      img { border-color: palette(blue); }
     }
     
     &:active {
       color: palette(blue, mid-light); 
-      
-      img { border-color: palette(blue, mid-light); }
+    }
+  }
+}
+
+//--- Stock link colors around linked images
+// Keep this separate so you can extend %copy-links without all the image requirements
+%copy-linked-images {
+  a {
+    img {
+      border-color: palette(blue, mid-dark);
+      transition: border-color .2s $ease-out-cubic;   
+    }
+    
+    &:visited img {
+      border-color: desaturate( palette(blue, mid-dark), 70%);
+    }
+    
+    &:hover, &:focus {
+      img { border-color: palette(blue); }
+    }
+    
+    &:active img {
+      border-color: palette(blue, mid-light);
     }
   }
 }
@@ -39,6 +51,7 @@
   line-height: $copy-line-height-knee-up;
   
   @extend %copy-links;
+  @extend %copy-linked-images;
   
   // Eliminate possible top margin
   > *:first-child {

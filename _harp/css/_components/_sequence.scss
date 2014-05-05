@@ -1,0 +1,26 @@
+.sequence {
+  @extend %block;
+  padding: 1em $card-padding-sides;
+  text-decoration: none;
+  transition: background-color .25s $ease-out-cubic;
+  
+  &:hover,
+  &:focus {
+    background-color: tint(palette(blue,x-light),50%);
+  }
+  
+  &.prev .body {
+    padding-left: 8px;  
+  }
+  
+  &.next .body {
+    padding-right: 8px;
+  }
+  
+  .label {
+    @extend %block;
+    @extend %text-size-s;
+    font-weight: bold;
+    color: palette(gray,dark);
+  }
+}

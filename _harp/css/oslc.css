@@ -6,7 +6,7 @@
  */
 .copy > table, .copy > .fluid-video, .copy > ul,
 .copy > ol, .copy > p, .copy > blockquote, .copy pre {
-  margin-bottom: 1em;
+  margin-bottom: 1.4375em;
   margin-top: 0; }
 
 /*
@@ -38,10 +38,10 @@
 /*
  * Blocks
  */
-.block.icon, .links .item, .project-name {
+.block.icon, .links .item, .sequence, .sequence .label, .project-name {
   display: block; }
 
-.icon {
+.icon, .tag, .card > .footer .meta {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -109,7 +109,7 @@
 /*
  * Text size mixins / placeholders
  */
-.card > .header > time {
+.breadcrumbs, .sequence .label, .card > .footer {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
@@ -686,6 +686,12 @@ img {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
+    .flexbox .grid.middle {
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -moz-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
   .grid.pulled {
     margin-left: -16px;
     margin-left: -1rem;
@@ -765,9 +771,9 @@ img {
  * "Hand" classes
  * We're "mobile first" so these are phone-up
  */
-.hand-1 {
-  width: 8.33333%; }
-  .flexbox .hand-1 {
+.hand-full {
+  width: 100%; }
+  .flexbox .hand-full {
     width: auto;
     /**
      * see: 
@@ -781,98 +787,14 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 8.33333%;
+    -webkit-flex: 0 0 100%;
     -moz-box-flex: 0;
-    -ms-flex: 0 0 8.33333%;
-    flex: 0 0 8.33333%; }
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%; }
 
-.hand-2 {
-  width: 16.66667%; }
-  .flexbox .hand-2 {
-    width: auto;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 16.66667%;
-    -moz-box-flex: 0;
-    -ms-flex: 0 0 16.66667%;
-    flex: 0 0 16.66667%; }
-
-.hand-3 {
-  width: 25%; }
-  .flexbox .hand-3 {
-    width: auto;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 25%;
-    -moz-box-flex: 0;
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%; }
-
-.hand-4 {
-  width: 33.33333%; }
-  .flexbox .hand-4 {
-    width: auto;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 33.33333%;
-    -moz-box-flex: 0;
-    -ms-flex: 0 0 33.33333%;
-    flex: 0 0 33.33333%; }
-
-.hand-5 {
-  width: 41.66667%; }
-  .flexbox .hand-5 {
-    width: auto;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 41.66667%;
-    -moz-box-flex: 0;
-    -ms-flex: 0 0 41.66667%;
-    flex: 0 0 41.66667%; }
-
-.hand-6 {
+.hand-half {
   width: 50%; }
-  .flexbox .hand-6 {
+  .flexbox .hand-half {
     width: auto;
     /**
      * see: 
@@ -891,9 +813,9 @@ img {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%; }
 
-.hand-7 {
-  width: 58.33333%; }
-  .flexbox .hand-7 {
+.hand-major {
+  width: 70.72%; }
+  .flexbox .hand-major {
     width: auto;
     /**
      * see: 
@@ -907,14 +829,14 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 58.33333%;
+    -webkit-flex: 0 0 70.72%;
     -moz-box-flex: 0;
-    -ms-flex: 0 0 58.33333%;
-    flex: 0 0 58.33333%; }
+    -ms-flex: 0 0 70.72%;
+    flex: 0 0 70.72%; }
 
-.hand-8 {
-  width: 66.66667%; }
-  .flexbox .hand-8 {
+.hand-minor {
+  width: 29.28%; }
+  .flexbox .hand-minor {
     width: auto;
     /**
      * see: 
@@ -928,94 +850,10 @@ img {
      *   - basis: defines (starting) width of the element (takes a standard width value)
     **/
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 66.66667%;
+    -webkit-flex: 0 0 29.28%;
     -moz-box-flex: 0;
-    -ms-flex: 0 0 66.66667%;
-    flex: 0 0 66.66667%; }
-
-.hand-9 {
-  width: 75%; }
-  .flexbox .hand-9 {
-    width: auto;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 75%;
-    -moz-box-flex: 0;
-    -ms-flex: 0 0 75%;
-    flex: 0 0 75%; }
-
-.hand-10 {
-  width: 83.33333%; }
-  .flexbox .hand-10 {
-    width: auto;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 83.33333%;
-    -moz-box-flex: 0;
-    -ms-flex: 0 0 83.33333%;
-    flex: 0 0 83.33333%; }
-
-.hand-11 {
-  width: 91.66667%; }
-  .flexbox .hand-11 {
-    width: auto;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 91.66667%;
-    -moz-box-flex: 0;
-    -ms-flex: 0 0 91.66667%;
-    flex: 0 0 91.66667%; }
-
-.hand-12 {
-  width: 100%; }
-  .flexbox .hand-12 {
-    width: auto;
-    /**
-     * see: 
-     *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-     *   - http://www.w3.org/TR/css3-flexbox/#flex
-     *   - https://github.com/zeMirco/flexbox-grid
-     * 
-     * flex shorthand (flex-grow, flex-shrink, flex-basis):
-     *   - grow: 0 means it won't grow if there's free space
-     *   - shrink: 0 means it won't shrink to fit in a row
-     *   - basis: defines (starting) width of the element (takes a standard width value)
-    **/
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 100%;
-    -moz-box-flex: 0;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%; }
+    -ms-flex: 0 0 29.28%;
+    flex: 0 0 29.28%; }
 
 @media only screen and (max-width: 40em) {
   .knee-up,
@@ -1047,14 +885,18 @@ img {
 /**
  * OOCSS Media and Module groups 
  */
-.body, .media, .no-display-table .flag {
+.body,
+.media,
+.no-display-table .flag {
   overflow: hidden;
   *overflow: visible;
   zoom: 1; }
 
-.media .image, .no-display-table .flag .image {
+.media .image,
+.no-display-table .flag .image {
   float: left; }
-.media.reversed .image, .no-display-table .reversed.flag .image {
+.media.reversed .image,
+.no-display-table .flag.reversed .image {
   float: right; }
 
 .flag {
@@ -1073,36 +915,32 @@ img {
     vertical-align: bottom; }
 
 .flexbox .body,
-.flexbox .media,
-.flexbox .no-display-table .flag,
-.no-display-table .flexbox .flag {
+.flexbox .media {
   overflow: visible; }
-.flexbox .media, .flexbox .no-display-table .flag, .no-display-table .flexbox .flag, .flexbox .flag {
+.flexbox .media, .flexbox .flag {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex; }
-  .flexbox .media > .image, .flexbox .no-display-table .flag > .image, .no-display-table .flexbox .flag > .image,
-  .flexbox .media > .body,
-  .flexbox .no-display-table .flag > .body,
-  .no-display-table .flexbox .flag > .body, .flexbox .flag > .image,
+  .flexbox .media > .image,
+  .flexbox .media > .body, .flexbox .flag > .image,
   .flexbox .flag > .body {
     width: auto; }
-  .flexbox .media > .body, .flexbox .no-display-table .flag > .body, .no-display-table .flexbox .flag > .body, .flexbox .flag > .body {
+  .flexbox .media > .body, .flexbox .flag > .body {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -moz-box-flex: 1;
     -ms-flex: 1;
     flex: 1; }
-  .flexbox .media.reversed > .image, .flexbox .no-display-table .reversed.flag > .image, .no-display-table .flexbox .reversed.flag > .image, .flexbox .flag.reversed > .image {
+  .flexbox .media.reversed > .image, .flexbox .flag.reversed > .image {
     float: none;
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -moz-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1; }
-.flexbox .media, .flexbox .no-display-table .flag, .no-display-table .flexbox .flag {
+.flexbox .media {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
   -moz-box-align: start;
@@ -1206,26 +1044,27 @@ html {
 /*
  * Body Copy
  */
-.copy a, .links a {
+.copy a, .links a, .breadcrumbs a, .card > .footer .meta a {
   color: #0083a3;
   -webkit-transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
-  .copy a img, .links a img {
-    border-color: #0083a3;
-    -webkit-transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
-  .copy a:visited, .links a:visited {
+  .copy a:visited, .links a:visited, .breadcrumbs a:visited, .card > .footer .meta a:visited {
     color: #39606a; }
-    .copy a:visited img, .links a:visited img {
-      border-color: #39606a; }
-  .copy a:hover, .links a:hover, .copy a:focus, .links a:focus {
+  .copy a:hover, .links a:hover, .breadcrumbs a:hover, .card > .footer .meta a:hover, .copy a:focus, .links a:focus, .breadcrumbs a:focus, .card > .footer .meta a:focus {
     color: #00a7bd; }
-    .copy a:hover img, .links a:hover img, .copy a:focus img, .links a:focus img {
-      border-color: #00a7bd; }
-  .copy a:active, .links a:active {
+  .copy a:active, .links a:active, .breadcrumbs a:active, .card > .footer .meta a:active {
     color: #51c1d2; }
-    .copy a:active img, .links a:active img {
-      border-color: #51c1d2; }
+
+.copy a img {
+  border-color: #0083a3;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
+.copy a:visited img {
+  border-color: #39606a; }
+.copy a:hover img, .copy a:focus img {
+  border-color: #00a7bd; }
+.copy a:active img {
+  border-color: #51c1d2; }
 
 .copy {
   line-height: 1.4375; }
@@ -1292,6 +1131,11 @@ html {
   .links .item:last-child {
     margin-bottom: 0; }
 
+.breadcrumbs {
+  padding-top: 2px; }
+  .breadcrumbs a {
+    text-decoration: none; }
+
 .btn {
   display: inline-block;
   vertical-align: baseline;
@@ -1352,6 +1196,36 @@ html {
     -ms-transform: translate(0, 0.1875em);
     transform: translate(0, 0.1875em); }
 
+.tag {
+  padding: 8px;
+  background-color: #0083a3;
+  -webkit-transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  color: #fff;
+  text-decoration: none;
+  margin-right: 5px; }
+  .tag:hover, .tag:focus {
+    background-color: #00a7bd; }
+  .tag:last-child {
+    margin-right: 0; }
+  .tag + .tag {
+    margin-bottom: 8px; }
+
+.sequence {
+  padding: 1em 16px;
+  text-decoration: none;
+  -webkit-transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .sequence:hover, .sequence:focus {
+    background-color: #ebf8f9; }
+  .sequence.prev .body {
+    padding-left: 8px; }
+  .sequence.next .body {
+    padding-right: 8px; }
+  .sequence .label {
+    font-weight: bold;
+    color: #444444; }
+
 .card, .notice {
   background-color: white;
   border-radius: 4px;
@@ -1360,7 +1234,7 @@ html {
   -webkit-background-clip: padding-box;
   background-clip: padding-box; }
   .card > .header, .notice > .header {
-    border-radius: 3px 3px 0 0;
+    border-radius: 4px 4px 0 0;
     border-top-width: 3px;
     border-top-style: solid;
     border-top-color: #666666;
@@ -1374,26 +1248,41 @@ html {
       color: #666666; }
       .card > .header > .title a, .notice > .header > .title a {
         color: #0083a3; }
+        .card > .header > .title a:visited, .notice > .header > .title a:visited {
+          color: #666666; }
         .card > .header > .title a:hover, .notice > .header > .title a:hover, .card > .header > .title a:focus, .notice > .header > .title a:focus {
           color: #00a7bd; }
-  .card > .content, .notice > .content {
-    padding: 12px 16px;
-    padding: 0.75rem 1rem; }
+  .card .content, .notice .content {
+    padding: 13px 16px;
+    padding: 0.8125rem 1rem; }
 
-.card > .header > time {
-  color: #666666; }
+.card > .footer {
+  color: #999999;
+  line-height: 1;
+  padding: 0 16px;
+  padding: 0 1rem;
+  border-bottom: 1px solid #cccccc; }
+  .card > .footer .tags, .card > .footer .meta {
+    margin-top: 8px; }
+  .card > .footer .meta {
+    margin-bottom: 8px; }
+.card > .navigation {
+  background-color: #f7f7f7;
+  border-radius: 0 0 4px 4px; }
 .card.primary {
   margin-bottom: 19px;
   margin-bottom: 1.1875rem; }
   .card.primary > .header > .title {
     line-height: 1.05; }
+  .card.primary .relationships {
+    padding: 13px 0;
+    padding: 0.8125rem 0; }
 
-.card > .cards {
+.cards {
   background-color: #f1f1f1; }
-
-.cards .card {
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  .cards .card {
+    margin-bottom: 23px;
+    margin-bottom: 1.4375rem; }
 
 .notice .header > .title {
   font-size: 16px;
@@ -1433,8 +1322,6 @@ abbr.grunticon-wordmark-med {
   border-bottom: 0 !important; }
 
 .main {
-  padding-top: 16px;
-  padding-top: 1rem;
-  padding-bottom: 16px;
-  padding-bottom: 1rem;
+  padding: 16px;
+  padding: 1rem;
   background-color: #d8d8d8; }

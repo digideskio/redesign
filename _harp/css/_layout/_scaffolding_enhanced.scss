@@ -212,8 +212,8 @@
 
   @include respond-to(desk-up) {
 
-    @include rem(padding-left, 8px);
-    @include rem(padding-right, 8px);
+    @include rem(padding-left, $font-size-l);
+    @include rem(padding-right, $font-size-l);
     
     margin-left: $main-menu-width;
     &.has-secondary {

@@ -1,0 +1,11 @@
+.breadcrumbs {
+  @extend %text-size-s;  
+  @extend %copy-links;
+
+  padding-top: 2px;
+
+  a {
+    text-decoration: none;
+  }
+  
+}

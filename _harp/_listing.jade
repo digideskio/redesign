@@ -3,10 +3,12 @@ for page, slug in public[listing_root]._data
   if slug !== 'index'
     .card
       header.header
-        if page.date
-          time(datetime="#{ new Date(page.date) }") #{page.date}
         h1.title 
           a(href="#{url}",rel="bookmark") #{ page.title }
+      if page.date
+        footer.footer
+          span.meta
+            time(datetime="#{ new Date(page.date) }") #{page.date}
       section.content
         div.copy
           if page.description

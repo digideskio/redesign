@@ -81,6 +81,12 @@ $base-font-size: $font-size-m;
 //
 
 $grid-total-columns: 12;
+$grid-ratios: (
+  full: 100%,
+  half: 50%,
+  major: 70.72%,
+  minor: 29.28%
+);
 $grid-gutter: 2 * $base-font-size;
 
 
@@ -107,7 +113,7 @@ $main-bg-color: shade( palette(gray,x-light), 8% );
 // 
 
 $card-bg: #fff;
-$card-padding-sides: 16px;
+$card-padding-sides: $base-font-size;
 $card-shadow-color: rgba(0,0,0,.10);
 
 
@@ -124,4 +130,4 @@ $table-border-color: #ccc;
 
 $copy-line-height-hand: 1.4615; // 19px/13px
 $copy-line-height-knee-up: 1.4375; // 23px/16px
-%copy-margins { margin-bottom: 1em; margin-top: 0; }
+%copy-margins { margin-bottom: $copy-line-height-knee-up + 0em; margin-top: 0; }

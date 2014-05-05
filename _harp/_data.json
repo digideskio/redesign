@@ -14,5 +14,8 @@
   },
   "tests": {
     "title": "Tests"
+  },
+  "samples": {
+    "title": "Sample pages"
   }
 }

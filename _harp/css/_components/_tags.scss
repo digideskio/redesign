@@ -1,0 +1,18 @@
+.tag {
+  @extend %inline-block;
+  padding: 8px;
+  background-color: palette(blue, mid-dark);
+  transition: background-color .25s $ease-out-cubic;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 5px;
+  
+  &:hover, &:focus {
+    background-color: palette(blue);
+  }
+
+  &:last-child { margin-right: 0; }
+  
+  &+& { margin-bottom: 8px; }
+  
+}
