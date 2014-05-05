@@ -3,15 +3,14 @@
  */
 @include respond-to( knee-up ) {
 
-  @for $i from 1 through $grid-total-columns {
-    $width: $i / $grid-total-columns * 100%;
+  @each $name, $size in $grid-ratios {
   
-    .knee-#{$i} {
-      width: $width;
+    .knee-#{$name} {
+      width: $size;
     
       .flexbox & { 
         width: auto;
-        flex: 0 0 $width;
+        flex: 0 0 $size;
       }
   
     }
@@ -38,15 +37,14 @@
  */
 @include respond-to( desk-up ) {
 
-  @for $i from 1 through $grid-total-columns {
-    $width: $i / $grid-total-columns * 100%;
-  
-    .desk-#{$i} {
-      width: $width;
+  @each $name, $size in $grid-ratios {
+
+    .desk-#{$name} {
+      width: $size;
     
       .flexbox & { 
         width: auto;
-        flex: 0 0 $width;
+        flex: 0 0 $size;
       }
   
     }
@@ -74,15 +72,14 @@
  */
 @include respond-to( workstation-up ) {
 
-  @for $i from 1 through $grid-total-columns {
-    $width: $i / $grid-total-columns * 100%;
-  
-    .workstation-#{$i} {
-      width: $width;
+  @each $name, $size in $grid-ratios {
+
+    .workstation-#{$name} {
+      width: $size;
     
       .flexbox & { 
         width: auto;
-        flex: 0 0 $width;
+        flex: 0 0 $size;
       }
   
     }
@@ -110,15 +107,14 @@
  */
 @include respond-to( neckbeard-up ) {
 
-  @for $i from 1 through $grid-total-columns {
-    $width: $i / $grid-total-columns * 100%;
+  @each $name, $size in $grid-ratios {
   
-    .neckbeard-#{$i} {
-      width: $width;
+    .neckbeard-#{$name} {
+      width: $size;
     
       .flexbox & { 
         width: auto;
-        flex: 0 0 $width;
+        flex: 0 0 $size;
       }
   
     }

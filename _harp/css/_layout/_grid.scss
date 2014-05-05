@@ -38,6 +38,10 @@
     // Allow flex children to wrap if they get too big (like inline-block)
     // FF 22-27 doesn't support flex-wrap
     flex-wrap: wrap;
+    
+    &.middle {
+      align-items: center;
+    }
   }
   
   /* 
@@ -174,11 +178,10 @@
  * "Hand" classes
  * We're "mobile first" so these are phone-up
  */
-@for $i from 1 through $grid-total-columns {
-  $width: $i / $grid-total-columns * 100%;
+@each $name, $size in $grid-ratios {
   
-  .hand-#{$i} {
-    width: $width;
+  .hand-#{$name} {
+    width: $size;
     
     .flexbox & { 
       width: auto;
@@ -193,7 +196,7 @@
        *   - shrink: 0 means it won't shrink to fit in a row
        *   - basis: defines (starting) width of the element (takes a standard width value)
       **/
-      flex: 0 0 $width;
+      flex: 0 0 $size;
     }
   }
 
