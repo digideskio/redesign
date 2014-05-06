@@ -1244,7 +1244,7 @@ html {
     .card > .header > .title, .notice > .header > .title {
       margin: 0;
       font-weight: bold;
-      line-height: 1.1;
+      line-height: 1.25;
       color: #666666; }
       .card > .header > .title a, .notice > .header > .title a {
         color: #0083a3; }

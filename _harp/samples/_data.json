@@ -31,6 +31,42 @@
     "author": "Sean Kennedy",
     "next": "Neither Proprietary Data Formats nor International Travel are barriers to OSLC",
     "previous": "OSLC Enables Integration for Mobility and Lean Software Lifecycles"
+  },
+  "news-listing": {
+    "title": "News listing"
+  },
+  "resource": {
+    "title": "Resource"
+  },
+  "resources": {
+    "title": "All resources"
+  },
+  "tutorial": {
+    "title": "Tutorial"
+  },
+  "workgroup": {
+    "title": "Workgroup"
+  },
+  "workgroups": {
+    "title": "All Workgroups"
+  },
+  "specification": {
+    "title": "Specification"
+  },
+  "specifications": {
+    "title": "All Specs"
+  },
+  "software": {
+    "title": "Software"
+  },
+  "software-all": {
+    "title": "All software"
+  },
+  "wiki": {
+    "title": "Wiki page"
+  },
+  "wpa": {
+    "title": "Workgroup Participation Agreement"
   }
 
 }

@@ -29,16 +29,27 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
     }
   }
   
-  > .header > .title > a {
+  .title > a {
     .cssgradients & {
       text-decoration: none;
       @include linear-gradient( 
         to top, 
-        rgba(255,255,255,0) 2%, 
-        transparentize(palette(blue, mid-dark), .6) 2%, 
-        transparentize(palette(blue, mid-dark), .6) 7%, 
-        rgba(255,255,255,0) 7%,
+        rgba(255,255,255,0) 0%, 
+        transparentize(palette(gray, mid-dark), .6) 0%, 
+        transparentize(palette(gray, mid-dark), .6) 5%, 
+        rgba(255,255,255,0) 5%,
         rgba(255,255,255,0) 100%);
+    }
+    
+    .cssgradients &:hover,
+    .cssgradients &:focus {
+      @include linear-gradient( 
+          to top,
+          rgba(255,255,255,0) 0%,
+          transparentize(palette(blue), .6) 0%,
+          transparentize(palette(blue), .6) 5%,
+          rgba(255,255,255,0) 5%,
+          rgba(255,255,255,0) 100%);
     }
 
   }
