@@ -2013,6 +2013,138 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_harp\/icons\/output\/png\/logo-med.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6786,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-med.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-med.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/logo-small.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1818,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-small.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-small.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/navtoggle-close.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 445,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-close.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-close.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/navtoggle-menu.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 608,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-menu.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-menu.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/next.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1116,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/next.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/next.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/pagination-first.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 808,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/pagination-first.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/pagination-first.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/pagination-last.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 811,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/pagination-last.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/pagination-last.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/pagination-next.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 874,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/pagination-next.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/pagination-next.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/pagination-previous.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 884,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/pagination-previous.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/pagination-previous.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/previous.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1083,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/previous.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/previous.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/wordmark-med.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2261,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-med.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-med.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/wordmark-small.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1602,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-small.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-small.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/icons\/output\/preview.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -2510,6 +2642,94 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
+	"\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 55352,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-1.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46660,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-2.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 44228,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-3.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/cards-with-flexbox-3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/news-and-listings\/cards-without-flexbox.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46672,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/cards-without-flexbox.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/cards-without-flexbox.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/news-and-listings\/pagination-with-flexbox.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13185,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/pagination-with-flexbox.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/pagination-with-flexbox.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/news-and-listings\/pagination-without-flexbox.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13197,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/pagination-without-flexbox.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/pagination-without-flexbox.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/news-and-listings\/previous-next-sequence.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21263,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/previous-next-sequence.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/previous-next-sequence.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/_harp\/posts\/images\/news-and-listings\/sample-card-listing.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28271,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/sample-card-listing.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/news-and-listings\/sample-card-listing.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
 	"\/_harp\/posts\/images\/oslc-home-2011.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2631,6 +2851,18 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/posts\/mobile-first.md",
 		"outputAbbreviatedPath": "\/_harp\/posts\/mobile-first.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/posts\/news-and-listings.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/posts\/news-and-listings.md",
+		"outputAbbreviatedPath": "\/_harp\/posts\/news-and-listings.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},

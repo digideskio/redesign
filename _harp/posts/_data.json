@@ -2,6 +2,26 @@
   "index": {
     "title": "Posts"
   },
+  "news-and-listings": {
+    "title": "Samples: news post and news listings",
+    "date": "2014 May 12",
+    "description": "Something!",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    },
+    "issues": [
+      {
+        "title": "Create sample OSLC News update page",
+        "url": "https://github.com/OSLC/redesign/issues/5"
+      },
+      {
+        "title": "Create sample OSLC news listing",
+        "url": "https://github.com/OSLC/redesign/issues/6"
+      }
+    ]
+  
+  },
   "main-menus": {
     "title": "Responsive primary menus",
     "date": "2014 April 15",
