@@ -5,7 +5,7 @@
   "news-and-listings": {
     "title": "Samples: news post and news listings",
     "date": "2014 May 12",
-    "description": "Something!",
+    "description": "New styles for news and listings, plus an ode to CSS Flexbox.",
     "author": {
       "name": "Lee Reamsnyder",
       "url": "http://leereamsnyder.com"
