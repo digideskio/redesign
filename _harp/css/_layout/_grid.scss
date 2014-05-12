@@ -97,7 +97,7 @@
    * obviously that's not how it'll work out for the inline-block fallback
    */
   .flexbox & {
-    flex: 1;
+    flex: 1 1 auto;
   }
   
 
@@ -185,18 +185,27 @@
     
     .flexbox & { 
       width: auto;
-      /**
+      /*
        * see: 
        *   - http://philipwalton.github.io/solved-by-flexbox/demos/grids/
        *   - http://www.w3.org/TR/css3-flexbox/#flex
        *   - https://github.com/zeMirco/flexbox-grid
        * 
-       * flex shorthand (flex-grow, flex-shrink, flex-basis):
-       *   - grow: 0 means it won't grow if there's free space
-       *   - shrink: 0 means it won't shrink to fit in a row
-       *   - basis: defines (starting) width of the element (takes a standard width value)
+       * we're already setting flex-grow and flex-shrink
       **/
-      flex: 0 0 $size;
+      flex-basis: $size;
+      
+      /*
+       *   - http://stackoverflow.com/questions/19316449/ie10-flexbox-widths-include-padding-causing-overflow-box-sizing-border-box-do
+       *  - http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly
+       * 
+       * IE10/11 have a rendering bug where flex items do not 
+       * respect box-sizing: border-box!
+       *
+       * Using max-width to keep the size under control fixes it, 
+       * at the cost of the ability to flex-grow (which we don't need)
+       */
+      max-width: $size;
     }
   }
 

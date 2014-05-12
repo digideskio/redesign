@@ -62,7 +62,7 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
       flex-direction: column;
     
       > .content {
-        flex: 1;
+        flex: 1 0 auto;
       }
     }
   }

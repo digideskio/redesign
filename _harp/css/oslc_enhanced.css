@@ -138,41 +138,37 @@ meta.oslc-mq-neckbeard-only {
     width: 100%; }
     .flexbox .knee-full {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 100%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 100%;
-      flex: 0 0 100%; }
+      max-width: 100%;
+      -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
 
   .knee-half {
     width: 50%; }
     .flexbox .knee-half {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 50%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 50%;
-      flex: 0 0 50%; }
+      max-width: 50%;
+      -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%; }
 
   .knee-major {
     width: 70.72%; }
     .flexbox .knee-major {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 70.72%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 70.72%;
-      flex: 0 0 70.72%; }
+      max-width: 70.72%;
+      -webkit-flex-basis: 70.72%;
+      -ms-flex-preferred-size: 70.72%;
+      flex-basis: 70.72%; }
 
   .knee-minor {
     width: 29.28%; }
     .flexbox .knee-minor {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 29.28%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 29.28%;
-      flex: 0 0 29.28%; } }
+      max-width: 29.28%;
+      -webkit-flex-basis: 29.28%;
+      -ms-flex-preferred-size: 29.28%;
+      flex-basis: 29.28%; } }
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   .hand-only,
   .hand-down,
@@ -191,41 +187,37 @@ meta.oslc-mq-neckbeard-only {
     width: 100%; }
     .flexbox .desk-full {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 100%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 100%;
-      flex: 0 0 100%; }
+      max-width: 100%;
+      -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
 
   .desk-half {
     width: 50%; }
     .flexbox .desk-half {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 50%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 50%;
-      flex: 0 0 50%; }
+      max-width: 50%;
+      -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%; }
 
   .desk-major {
     width: 70.72%; }
     .flexbox .desk-major {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 70.72%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 70.72%;
-      flex: 0 0 70.72%; }
+      max-width: 70.72%;
+      -webkit-flex-basis: 70.72%;
+      -ms-flex-preferred-size: 70.72%;
+      flex-basis: 70.72%; }
 
   .desk-minor {
     width: 29.28%; }
     .flexbox .desk-minor {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 29.28%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 29.28%;
-      flex: 0 0 29.28%; } }
+      max-width: 29.28%;
+      -webkit-flex-basis: 29.28%;
+      -ms-flex-preferred-size: 29.28%;
+      flex-basis: 29.28%; } }
 @media only screen and (min-width: 64.0625em) and (max-width: 90em) {
   .hand-only,
   .hand-down,
@@ -244,41 +236,37 @@ meta.oslc-mq-neckbeard-only {
     width: 100%; }
     .flexbox .workstation-full {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 100%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 100%;
-      flex: 0 0 100%; }
+      max-width: 100%;
+      -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
 
   .workstation-half {
     width: 50%; }
     .flexbox .workstation-half {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 50%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 50%;
-      flex: 0 0 50%; }
+      max-width: 50%;
+      -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%; }
 
   .workstation-major {
     width: 70.72%; }
     .flexbox .workstation-major {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 70.72%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 70.72%;
-      flex: 0 0 70.72%; }
+      max-width: 70.72%;
+      -webkit-flex-basis: 70.72%;
+      -ms-flex-preferred-size: 70.72%;
+      flex-basis: 70.72%; }
 
   .workstation-minor {
     width: 29.28%; }
     .flexbox .workstation-minor {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 29.28%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 29.28%;
-      flex: 0 0 29.28%; } }
+      max-width: 29.28%;
+      -webkit-flex-basis: 29.28%;
+      -ms-flex-preferred-size: 29.28%;
+      flex-basis: 29.28%; } }
 @media only screen and (min-width: 90.0625em) and (max-width: 120em) {
   .hand-only,
   .hand-down,
@@ -297,41 +285,37 @@ meta.oslc-mq-neckbeard-only {
     width: 100%; }
     .flexbox .neckbeard-full {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 100%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 100%;
-      flex: 0 0 100%; }
+      max-width: 100%;
+      -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
 
   .neckbeard-half {
     width: 50%; }
     .flexbox .neckbeard-half {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 50%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 50%;
-      flex: 0 0 50%; }
+      max-width: 50%;
+      -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%; }
 
   .neckbeard-major {
     width: 70.72%; }
     .flexbox .neckbeard-major {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 70.72%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 70.72%;
-      flex: 0 0 70.72%; }
+      max-width: 70.72%;
+      -webkit-flex-basis: 70.72%;
+      -ms-flex-preferred-size: 70.72%;
+      flex-basis: 70.72%; }
 
   .neckbeard-minor {
     width: 29.28%; }
     .flexbox .neckbeard-minor {
       width: auto;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 29.28%;
-      -moz-box-flex: 0;
-      -ms-flex: 0 0 29.28%;
-      flex: 0 0 29.28%; } }
+      max-width: 29.28%;
+      -webkit-flex-basis: 29.28%;
+      -ms-flex-preferred-size: 29.28%;
+      flex-basis: 29.28%; } }
 @media only screen and (min-width: 120.0625em) {
   .hand-only,
   .hand-down,
@@ -482,10 +466,10 @@ meta.oslc-mq-neckbeard-only {
       flex-direction: column; }
       .flexbox .cards .card > .content {
         -webkit-box-flex: 1;
-        -webkit-flex: 1;
+        -webkit-flex: 1 0 auto;
         -moz-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1; } }
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto; } }
 .copy {
   /* 
    * For Hand sizes, bump headings down a level 
