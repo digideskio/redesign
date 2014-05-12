@@ -1,5 +1,5 @@
 .banner,
-.footer { 
+.footer[role="contentinfo"] { 
   background-color: $header-and-nav-bg; 
   @include rem(padding, 4px 8px 5px);
 }
@@ -43,7 +43,7 @@ abbr.grunticon-wordmark-med {
 
 
 .main {
-  @include rem(padding, $font-size-m);
+  @include rem(padding, $font-size-s);
   
   background-color: $main-bg-color;
 }

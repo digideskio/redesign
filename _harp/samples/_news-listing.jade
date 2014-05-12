@@ -1,0 +1,19 @@
+- var site_url = environment == "production" ? 'http://oslc.github.io/redesign/' : '/';
+doctype
+html.no-js(lang="en")
+  head
+    != partial('../_head', {site_url: site_url})
+    
+  body
+    != partial('../_banner', {site_url: site_url})
+    
+    .sticky-footer-body.off-canvas-wrap
+
+      != partial('../_main', {site_url: site_url, has_secondary: false, is_listing: true})
+      
+      != partial('../_nav', {site_url: site_url, has_secondary: false})
+      
+      
+    != partial('../_footer', {site_url: site_url})
+
+  != partial('../_enhance', {site_url: site_url})

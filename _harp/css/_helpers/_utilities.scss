@@ -49,6 +49,8 @@
  */
 %icon {
   @extend %inline-block;
+  // eliminates additional vertical spacing due to baseline alignment
+  vertical-align: top;
 
   &.block {
     @extend %block;

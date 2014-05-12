@@ -357,6 +357,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_harp\/css\/_components\/_pagination.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/css\/_components\/_pagination.scss",
+		"outputAbbreviatedPath": "\/_harp\/css\/css\/_pagination.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_harp\/css\/_components\/_sequence.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -1798,6 +1814,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/icons\/_grunticon\/png\/pagination-first.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 604,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/pagination-first.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/pagination-first.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/_grunticon\/png\/pagination-last.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 595,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/pagination-last.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/pagination-last.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/_grunticon\/png\/pagination-next.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 658,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/pagination-next.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/pagination-next.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/_grunticon\/png\/pagination-previous.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 664,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/pagination-previous.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/pagination-previous.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/icons\/_grunticon\/png\/previous.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1952,94 +2012,6 @@
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
-		},
-	"\/_harp\/icons\/output\/png\/logo-med.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-med.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-med.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/output\/png\/logo-small.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-small.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/logo-small.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/output\/png\/navtoggle-close.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 485,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-close.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-close.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/output\/png\/navtoggle-menu.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 329,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-menu.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/navtoggle-menu.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/output\/png\/next.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1357,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/next.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/next.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/output\/png\/previous.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1285,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/previous.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/previous.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/output\/png\/wordmark-med.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-med.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-med.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/icons\/output\/png\/wordmark-small.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-small.png",
-		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/wordmark-small.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
 		},
 	"\/_harp\/icons\/output\/preview.html": {
 		"fileType": 8192,
@@ -2686,6 +2658,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/samples\/_news-listing.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/samples\/_news-listing.jade",
+		"outputAbbreviatedPath": "\/_harp\/samples\/_news-listing.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
 	"\/_harp\/samples\/_news.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -2704,6 +2687,17 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/samples\/index.jade",
 		"outputAbbreviatedPath": "\/_harp\/samples\/index.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
+	"\/_harp\/samples\/news-listing.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/samples\/news-listing.jade",
+		"outputAbbreviatedPath": "\/_harp\/samples\/news-listing.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0

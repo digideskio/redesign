@@ -20,17 +20,17 @@ $card-border-radius: 4px;
       font-weight: bold;
       line-height: 1.25;
       color: palette(gray, mid-dark);
+    }
+
+    a {
+      color: palette(blue, mid-dark);
+    
+      &:visited {
+        color: palette(gray, mid-dark);
+      }
       
-      a {
-        color: palette(blue, mid-dark);
-      
-        &:visited {
-          color: palette(gray, mid-dark);
-        }
-        
-        &:hover, &:focus {
-          color: palette(blue);
-        }
+      &:hover, &:focus {
+        color: palette(blue);
       }
     }
   }
@@ -50,27 +50,31 @@ $card-border-radius: 4px;
     }
   }
   
-  > .footer {
-    color: palette(gray);
-    @extend %text-size-s;
+  > .deck {
+    color: palette(gray, mid-dark);
     line-height: 1;
     @include rem(padding, 0 $card-padding-sides);
-    border-bottom: 1px solid palette(gray, light);
-    
-    .tags, .meta {
-      margin-top: 8px;
-    }
-    
-    .meta {
-      @extend %inline-block;
-      @extend %copy-links;
-      margin-bottom: 8px;
-    }
+    border-bottom: 1px solid palette(gray, light);    
   }
   
-  > .navigation {
+  > .footer {
     background-color: tint(palette(gray, x-light), 60%);
     border-radius: 0 0 $card-border-radius $card-border-radius;
+    
+    .byline { margin-left: $card-padding-sides; }
+    
+    .tags { margin-right: $card-padding-sides; }
+  }
+
+  .tags, .byline {
+    margin-top: 8px;
+  }
+  
+  .byline {
+    @extend %inline-block;
+    @extend %copy-links;
+    @extend %text-size-s;
+    margin-bottom: 8px;
   }
   
   &.primary {
@@ -90,6 +94,6 @@ $card-border-radius: 4px;
   background-color: tint( palette(gray,x-light), 30% );
 
   .card {
-    @include rem(margin-bottom, $font-size-xl);
+    @include rem(margin-bottom, $font-size-xxl);
   }
 }

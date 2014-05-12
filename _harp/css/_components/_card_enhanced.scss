@@ -40,18 +40,6 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
         rgba(255,255,255,0) 5%,
         rgba(255,255,255,0) 100%);
     }
-    
-    .cssgradients &:hover,
-    .cssgradients &:focus {
-      @include linear-gradient( 
-          to top,
-          rgba(255,255,255,0) 0%,
-          transparentize(palette(blue), .6) 0%,
-          transparentize(palette(blue), .6) 5%,
-          rgba(255,255,255,0) 5%,
-          rgba(255,255,255,0) 100%);
-    }
-
   }
   
   &.primary {
@@ -60,6 +48,21 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
     > .header > .title {
       @include respond-to(desk-up) {
         @include text-size-xxxl;
+      }
+    }
+  }
+}
+
+@include respond-to(desk-up) {
+  .cards .card {
+    @include rem(margin-bottom, $font-size-xxxxxl);
+    
+    .flexbox & {
+      display: flex;
+      flex-direction: column;
+    
+      > .content {
+        flex: 1;
       }
     }
   }

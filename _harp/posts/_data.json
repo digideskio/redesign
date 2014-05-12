@@ -6,6 +6,10 @@
     "title": "Responsive primary menus",
     "date": "2014 April 15",
     "description": "How I'm currently adding the secondary menu to the main menu.",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    },
     "issues": [
       {
         "title": "Some site areas require a sub-menu",
@@ -21,12 +25,20 @@
     "title": "All the technical debt at the current OSLC site",
     "menu_title": "Too many modules",
     "date": "2014 March 20",
-    "description": "A list of most of the (excessive) functionality at the current open-services.net site."
+    "description": "A list of most of the (excessive) functionality at the current open-services.net site.",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    }
   },
   "mobile-first": {
     "title": "Mobile-first design",
     "description": "Executing primary navigation in a mobile-first world.",
     "date": "2014 March 18",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    },
     "issues": [
       {
         "title": "Create flexible, responsive main menu bar",
@@ -38,6 +50,10 @@
   "logo": {
     "title": "Logo concepts",
     "date": "2014 March 12",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    },
     "description": "My current thoughts on an updated logo.",
     "issues": [
       {
@@ -49,6 +65,10 @@
   "wireframes": {
     "menu_title": "Initial wireframes",
     "title": "Redesign direction and wireframes",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    },
     "date": "2014 March 11",
     "description": "Can there be one layout to rule them all?",
     "issues": [
@@ -65,6 +85,10 @@
   "why": {
     "title": "Why redesign?",
     "date": "2014 March 10",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    },    
     "description": "Who messed everything up? Oh, right. I did."
   }
 }

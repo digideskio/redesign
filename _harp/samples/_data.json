@@ -33,7 +33,112 @@
     "previous": "OSLC Enables Integration for Mobility and Lean Software Lifecycles"
   },
   "news-listing": {
-    "title": "News listing"
+    "layout": "_news-listing",
+    "menu_title": "News listing",
+    "title": "[Sample] Latest news",
+    "faux_paginate": "true",
+    "posts": [
+      {
+        "title": "Brace Yourself: OSLC Steering Committee Elections Are Coming",
+        "url": "http://open-services.net/blog/brace-yourself-oslc-steering-committee-elections-are-coming",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        },
+        "date": "2014 April 11",
+        "desc": "This June, three OSLC Steering Committee seats are up for election. Prepare to participate in the elections to influence the future of OSLC."
+      },
+      {
+        "title": "Neither Proprietary Data Formats nor International Travel are barriers to OSLC",
+        "url": "http://open-services.net/blog/neither-proprietary-data-formats-nor-international-travel-are-barriers-to-o",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        },
+        "date": "2014 April 3",
+        "desc": "OSLC news for the ALM Forum attendee newsletter for April 3: the OSLC International Speakers Bureau takes the stage."
+      },
+      {
+        "title": "OSLC Enables Integration for Mobility and Lean Software Lifecycles",
+        "url": "http://open-services.net/blog/oslc-enables-integration-for-mobility-and-lean-software-lifecycles",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        },
+        "date": "2014 April 2",
+        "desc": "Yesterday (April Fool's Day) OSLC didn't fool around putting two talks 'in the books' and having a good BoF discussion. Things keep rolling today with talks about Mobile and Lean."
+      },
+      {
+        "title": "OSLC Standardization underway for Automation and Project Management of Contracted Delivery at OASIS",
+        "url": "http://open-services.net/blog/oslc-standardization-underway-for-automation-and-project-management-of-cont",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        },
+        "date": "2014 April 1",
+        "desc": "Two new OSLC Technical Committees, both addressing critical themes for today's delivery organizations, but from very different perspectives, have their first meetings."
+      },
+      {
+        "title": "Connect with OSLC at the ALM Forum",
+        "url": "http://open-services.net/blog/connect-with-oslc-at-the-alm-forum",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        },
+        "date": "2014 March 24",
+        "desc": "We’re just days away from the ALM Forum in Seattle (it runs April 1-3), and the first ever “OSLC Connect” event is taking place as part of it. If you haven’t registered yet, but can attend, don’t miss out on using the OSLC discount code (learn more)."
+      },
+      {
+        "title": "Don’t get stressed talking about integrations",
+        "url": "http://open-services.net/blog/dont-get-stressed-talking-about-integrations",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        },
+        "date": "2014 March 17",
+        "desc": "Join the OSLC leaders for an “Integration Happy Hour” March 31 from 4:30-6:30 PM at the ALM Forum in Seattle."
+      },
+      {
+        "title": "Follow along as we redesign in public",
+        "url": "http://open-services.net/blog/follow-along-as-we-redesign-in-public",
+        "author": {
+          "name": "Lee Reamsnyder",
+          "url": "http://leereamsnyder.com"
+        },
+        "date": "2014 March 14",
+        "desc": "I'm exploring an updated design for this site, and I’m doing so in public. This'll be fun."
+      },
+      {
+        "title": "Eclipse Lyo 2.1 released, and other news you need to know",
+        "url": "http://open-services.net/blog/eclipse-lyo-2.1-released-and-other-news-you-need-to-know",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        },
+        "date": "2014 March 11",
+        "desc": "Eclipse Lyo 2.1 is now available! In addition to the many improvements to what was available in Lyo 2.0, a Hudson CI adapter for OSLC Automation has been added to this release."
+      },
+      {
+        "title": "Two new OSLC Technical Committees form and Call for Participation",
+        "url": "http://open-services.net/blog/two-new-oslc-technical-committees-for-and-call-for-participation",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        },
+        "date": "2014 February 24",
+        "desc": "OSLC Automation and OSLC PROMCODE."
+      },
+      {
+        "title": "Getting Started Developing OSLC Applications is now at Github",
+        "url": "http://open-services.net/blog/oslc-developers-guide-now-at-github",
+        "author": {
+          "name": "Lee Reamsnyder",
+          "url": "http://leereamsnyder.com"
+        },
+        "date": "2014 February 14",
+        "desc": "You'll now find our guide 'Get started with developing OSLC applications' at its new home at Github."
+      }
+    ]
   },
   "resource": {
     "title": "Resource"

@@ -1,0 +1,49 @@
+.pagination {
+  list-style: none;
+  margin: 0;
+  @include rem(padding, 0 $card-padding-sides 5px);
+  @extend %copy-links;
+
+  .flexbox & {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  > li {
+    @extend %inline-block;
+    vertical-align: top;
+    line-height: 20px; // height of the icons. Annoying to have to set it here
+  }
+  
+  a { text-decoration: none; }
+  
+  a, .item {
+    @extend %block;
+    padding: .5em .8125em;
+  }
+  
+  > li:first-child a { padding-left: 0; }
+  > li:last-child a { padding-right: 0; }
+  
+  // the active one (not a link)
+  .item {
+    border-top: 2px solid palette(gray, dark);
+    padding-top: .375em;
+    
+    .boxshadow & {
+      border-top: none;
+      padding-top: .5em;
+      box-shadow: inset 0 3px 0 palette(gray,dark);
+    }
+  }
+  
+  .previous, .first {
+    .icon { margin-right: 5px; }
+  }
+  
+  .next, .last {
+    .icon { margin-left: 5px; }
+  }
+  
+
+}

@@ -1,5 +1,6 @@
 .tag {
   @extend %inline-block;
+  @extend %text-size-s;
   padding: 8px;
   background-color: palette(blue, mid-dark);
   transition: background-color .25s $ease-out-cubic;
