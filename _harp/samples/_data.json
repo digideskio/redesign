@@ -28,7 +28,10 @@
       "PointSource",
       "TaskTop"
     ],
-    "author": "Sean Kennedy",
+    "author": {
+      "name": "Sean Kennedy",
+      "url": "#"
+    },    
     "next": "Neither Proprietary Data Formats nor International Travel are barriers to OSLC",
     "previous": "OSLC Enables Integration for Mobility and Lean Software Lifecycles"
   },
