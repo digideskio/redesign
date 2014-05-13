@@ -1,7 +1,7 @@
 Lately I've been refining the main page layout and CSS modules to support news posts and listings of pages. You can see them in action here:
 
-- [Sample news posts](../../samples/news.html)
-- [Sample news listing](../../samples/news-listing.html)
+- [Sample news posts](../samples/news.html)
+- [Sample news listing](../samples/news-listing.html)
 
 These have forced some refinements and additions:
 
@@ -46,6 +46,8 @@ Flexbox is also great for making elements be equal size when they normally would
 
 ![Two cards in a horizontal row; they are not the same height](./images/news-and-listings/cards-without-flexbox.png)
 
+I could figure out how to equalize their heights with JavaScript, but it wouldn't be simple; you can't just apply equal `height` or `min-height` to the cards, nor can you just match up the heights of the middle `.content` blocks as the headers or footers can be variable heights. Flexbox lets you do all this without, ya know, *math*.
+
 I'm already using [flexbox for the grid layout](http://philipwalton.github.io/solved-by-flexbox/demos/grids/), and the default behavior for `display: flex` items is to grow in height to fill the container. The trick here is to specify *how* those elements should grow.
 
 First, we set the `.card` to be a flexbox container:
@@ -73,12 +75,14 @@ Anyway, that change gives us this:
 
 ![Two cards in a horizontal row; they ARE the same height but the cards have grown from the bottom, which looks strange](./images/news-and-listings/cards-with-flexbox-2.png)
 
-Close, but the left-hand card has grown indiscriminately from the bottom, below the `.footer` element. What we really want is this:
+Close, but the left-hand card has grown indiscriminately from the bottom, below the `.footer` element. This is why you can't just apply `min-height` to the cards. 
+
+This is the behavior we really want:
 
 - `.header` and `.footer` should be as big as they need to be
 - `.content` (the middle portion) should be as big as it needs to be *and* it should expand to fill out the box if needed.
 
-For `.header` and `.footer`, we're describing the default behavior of flex items. As for `.content`, flexbox makes this absurdly easy:
+For `.header` and `.footer`, we're describing the default behavior of flex items, so we don't have to do anything. As for `.content`, flexbox makes this absurdly easy:
 
 ```
 .card > .content {
@@ -86,7 +90,7 @@ For `.header` and `.footer`, we're describing the default behavior of flex items
 }
 ```
 
-This says, "`.content` should be allowed to grow if needed". (I could have just gone with `flex-grow: 1`, but the `flex` shorthand also works.) You can do fun stuff with relative proportions of flex items with different `flex-grow` values on the items, but all that's needed here is to say that one element should be allowed to get larger.
+Yeah, that's it! This says, "`.content` should be allowed to grow if needed". (I could have just gone with `flex-grow: 1`, but the `flex` shorthand also works.) You can do fun stuff with relative proportions of flex items with different `flex-grow` values on the items, but all that's needed here is to say that one element should be allowed to get larger.
 
 ![Two cards in a horizontal row; they ARE the same height and the middle content area has expanded as needed](./images/news-and-listings/cards-with-flexbox-3.png)
 
@@ -98,7 +102,7 @@ A few more tips if you're hankering to give it a try:
 - The ideas for flexbox have been around for a while, but implementations have varied wildly. I recommend only working with the "modern" syntax. You can see the differences in syntax in [this article on CSS Tricks](http://css-tricks.com/using-flexbox/).
 - Because of those syntax differences and the need for browser prefixes, look into [Autoprefixer](https://github.com/ai/autoprefixer), aka *[the best thing ever](http://css-tricks.com/autoprefixer/)*, which will flesh out all the differences for you. You just write `display: flex` and autoprefixer spits out `display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex;` to cover everything. It's awesome.
 - I strongly recommend also using [Modernizr](http://www.modernizr.com/) to test for Flexbox support and use the positive `.flexbox` class to scope its effects (like `.flexbox .card > .content { flex: 1 }`). The Flexbox test will tell you if the browser is using the modern syntax or the hybrid (IE10) syntax, but will fail for older browsers that only do the legacy syntax.
-- If you're supporting IE10 and its 'tweener' syntax, test carefully. For example, I've found I often have to explicitly declare `flex-basis` for IE10 when you wouldn't for other browsers. 
-- IE10 and 11 have a bug where sizing a box with `flex-basis` and using `box-sizing:border-box` will not work as expected. Using `max-width` or `calc()` [might be what you need to fix it](http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly).
+- If you're supporting IE10 and its 'tweener' syntax, test carefully. For example, I've found I often have to explicitly declare `flex-basis` (which becomes `-ms-preferred-size`) for IE10 when you wouldn't for other browsers. 
+- IE10 and 11 have a bug where sizing a box with `flex-basis` and using `box-sizing:border-box` will not work as expected. Basically, padding and borders on flex items will break the layout. Using `max-width` or the even cooler `calc()` function [might be what you need to fix it](http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly).
 
 Have fun!

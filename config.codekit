@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "16903",
+"creatorBuild": "16921",
 "files": {
 	"\/404.html": {
 		"fileType": 8192,
@@ -3090,6 +3090,72 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/icons\/output\/png\/next.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1116,
+		"inputAbbreviatedPath": "\/icons\/output\/png\/next.png",
+		"outputAbbreviatedPath": "\/icons\/output\/png\/next.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/icons\/output\/png\/pagination-first.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 808,
+		"inputAbbreviatedPath": "\/icons\/output\/png\/pagination-first.png",
+		"outputAbbreviatedPath": "\/icons\/output\/png\/pagination-first.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/icons\/output\/png\/pagination-last.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 811,
+		"inputAbbreviatedPath": "\/icons\/output\/png\/pagination-last.png",
+		"outputAbbreviatedPath": "\/icons\/output\/png\/pagination-last.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/icons\/output\/png\/pagination-next.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 874,
+		"inputAbbreviatedPath": "\/icons\/output\/png\/pagination-next.png",
+		"outputAbbreviatedPath": "\/icons\/output\/png\/pagination-next.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/icons\/output\/png\/pagination-previous.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 884,
+		"inputAbbreviatedPath": "\/icons\/output\/png\/pagination-previous.png",
+		"outputAbbreviatedPath": "\/icons\/output\/png\/pagination-previous.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/icons\/output\/png\/previous.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1083,
+		"inputAbbreviatedPath": "\/icons\/output\/png\/previous.png",
+		"outputAbbreviatedPath": "\/icons\/output\/png\/previous.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/icons\/output\/png\/wordmark-med.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3562,6 +3628,94 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/posts\/images\/news-and-listings\/cards-with-flexbox-1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 36188,
+		"inputAbbreviatedPath": "\/posts\/images\/news-and-listings\/cards-with-flexbox-1.png",
+		"outputAbbreviatedPath": "\/posts\/images\/news-and-listings\/cards-with-flexbox-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/news-and-listings\/cards-with-flexbox-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31119,
+		"inputAbbreviatedPath": "\/posts\/images\/news-and-listings\/cards-with-flexbox-2.png",
+		"outputAbbreviatedPath": "\/posts\/images\/news-and-listings\/cards-with-flexbox-2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/news-and-listings\/cards-with-flexbox-3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29335,
+		"inputAbbreviatedPath": "\/posts\/images\/news-and-listings\/cards-with-flexbox-3.png",
+		"outputAbbreviatedPath": "\/posts\/images\/news-and-listings\/cards-with-flexbox-3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/news-and-listings\/cards-without-flexbox.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31056,
+		"inputAbbreviatedPath": "\/posts\/images\/news-and-listings\/cards-without-flexbox.png",
+		"outputAbbreviatedPath": "\/posts\/images\/news-and-listings\/cards-without-flexbox.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/news-and-listings\/pagination-with-flexbox.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10181,
+		"inputAbbreviatedPath": "\/posts\/images\/news-and-listings\/pagination-with-flexbox.png",
+		"outputAbbreviatedPath": "\/posts\/images\/news-and-listings\/pagination-with-flexbox.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/news-and-listings\/pagination-without-flexbox.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10189,
+		"inputAbbreviatedPath": "\/posts\/images\/news-and-listings\/pagination-without-flexbox.png",
+		"outputAbbreviatedPath": "\/posts\/images\/news-and-listings\/pagination-without-flexbox.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/news-and-listings\/previous-next-sequence.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16530,
+		"inputAbbreviatedPath": "\/posts\/images\/news-and-listings\/previous-next-sequence.png",
+		"outputAbbreviatedPath": "\/posts\/images\/news-and-listings\/previous-next-sequence.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/news-and-listings\/sample-card-listing.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19547,
+		"inputAbbreviatedPath": "\/posts\/images\/news-and-listings\/sample-card-listing.png",
+		"outputAbbreviatedPath": "\/posts\/images\/news-and-listings\/sample-card-listing.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/posts\/images\/oslc-home-2011.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3675,6 +3829,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/posts\/news-and-listings.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/posts\/news-and-listings.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/posts\/why.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3702,6 +3865,33 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/README.md",
 		"outputAbbreviatedPath": "\/README.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/samples\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/samples\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/samples\/news-listing.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/samples\/news-listing.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/samples\/news.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/samples\/news.html",
+		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
@@ -3870,6 +4060,14 @@
 			"active": 1,
 			"flagValue": -1
 			},
+		"no_debugger": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_empty_functions": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"no_empty_param_list": {
 			"active": 0,
 			"flagValue": -1
@@ -3879,6 +4077,10 @@
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_interpolation_in_single_quotes": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -3904,6 +4106,10 @@
 			},
 		"no_trailing_whitespace": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"no_unnecessary_double_quotes": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"non_empty_constructor_needs_parens": {
@@ -4024,10 +4230,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"gcl": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"globalstrict": {
 			"active": 0,
 			"flagValue": -1
@@ -4140,10 +4342,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"onevar": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"phantom": {
 			"active": 0,
 			"flagValue": -1
@@ -4180,10 +4378,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"smarttabs": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"strict": {
 			"active": 0,
 			"flagValue": -1
@@ -4196,10 +4390,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"trailing": {
-			"active": 1,
-			"flagValue": -1
-			},
 		"typed": {
 			"active": 0,
 			"flagValue": -1
@@ -4210,10 +4400,6 @@
 			},
 		"unused": {
 			"active": 1,
-			"flagValue": -1
-			},
-		"white": {
-			"active": 0,
 			"flagValue": -1
 			},
 		"withstmt": {
