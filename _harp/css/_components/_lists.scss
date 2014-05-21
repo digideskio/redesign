@@ -4,12 +4,16 @@
   
   .item {
     @extend %block;
-    @include rem(margin-bottom, 10px);
+    @include rem(margin-bottom, 8px);
     line-height: 1.3;
     
     &:last-child {
       margin-bottom: 0;
     }
+  }
+  
+  &.tightened .item {
+    @include rem(margin-bottom, 5px);
   }
   
 }

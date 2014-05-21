@@ -1,9 +1,8 @@
-- var needs_sidebar = issues || workgroups || organizations
 main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
   .card.primary
     header.header
       if breadcrumbs
-        div.breadcrumbs
+        .breadcrumbs
           for crumb, idx in breadcrumbs
             a.breadcrumb(href="#") #{crumb}
             &nbsp;/&nbsp;
@@ -17,51 +16,52 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
               if author
                 |  by 
                 a(href="#{author.url}") #{author.name}
-          if tags
+          if tags || channel
             .column.hand-full.knee-major
               .tags
-                for tag, idx in tags
-                  a.tag(href="#") #{tag}
+                if tags
+                  for tag, idx in tags
+                    a.tag(href="#") #{tag}
+                if channel
+                  a.tag(href="#") 
+                    .flag
+                      .image
+                        i.icon.autosize(class="#{'grunticon-channel-' + channel.toLowerCase()}")
+                      .body #{channel}
     .grid
-      section(class="content #{is_listing ? 'cards' : '' } column hand-full #{needs_sidebar ? 'workstation-major' : ''}")
+      section(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
         if is_listing
           != yield
         else
-          div.copy
+          if meta_before_body
+            ul.slats
+              for links, name in meta_before_body
+                li.slat 
+                  .flag
+                    .image
+                      i.icon.autosize(class="#{'grunticon-meta-' + name.toLowerCase()}")
+                    .body 
+                      if name !== 'Link'
+                        .header #{name}                    
+                      ul.links.tightened
+                        for link in links
+                          li.item
+                            a(href="#{link.url || '#'}") #{link.title || link}
+          .copy
             != yield
-      if needs_sidebar
+      if relationships
         aside.column.hand-full.workstation-minor.cards.relationships
-          .grid
-            if issues
+          .grid.blocks
+            for items, relationship in relationships
               .column.hand-full.knee-half.workstation-full
                 .card
                   header.header
-                    h3.title Related issues
+                    h3.title Related #{relationship}
                   section.content
                     ul.links
-                      for issue in issues
+                      for item in items
                         li.item
-                          a(href="#{ issue.url }") #{issue.title}
-            if workgroups
-              .column.hand-full.knee-half.workstation-full
-                .card
-                  header.header
-                    h3.title Workgroups
-                  section.content
-                    ul.links
-                      for workgroup in workgroups
-                        li.item
-                          a(href="#") #{workgroup}
-            if organizations
-              .column.hand-full.knee-half.workstation-full
-                .card
-                  header.header
-                    h3.title Organizations
-                  section.content
-                    ul.links
-                      for org in organizations
-                        li.item
-                          a(href="#") #{org}
+                          a(href="#{item.url || '#'}") #{item.title || item}
     if next || previous || faux_paginate
       nav.footer
         if faux_paginate

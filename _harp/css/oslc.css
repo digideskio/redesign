@@ -51,7 +51,7 @@
 /*
  * Reset UL/OLs
  */
-.menu .items, .links {
+.menu .items, .links, .slats {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -112,7 +112,7 @@
 /*
  * Text size mixins / placeholders
  */
-.breadcrumbs, .tag, .sequence .label, .card .byline {
+.breadcrumbs, .tag, .sequence .label, .card .byline, .slat {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
@@ -749,6 +749,8 @@ img {
     -moz-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto; }
+    .flexbox .column:last-child {
+      max-width: none; }
   .relaxed > .column {
     padding-left: 32px;
     padding-left: 2rem;
@@ -794,10 +796,10 @@ img {
      *  - http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly
      * 
      * IE10/11 have a rendering bug where flex items do not 
-     * respect box-sizing: border-box!
+     * respect box-sizing: border-box; BOOOOOO!
      *
      * Using max-width to keep the size under control fixes it, 
-     * at the cost of the ability to flex-grow (which we don't need)
+     * at the cost of the ability to flex-grow (which we mostly don't need)
      */
     max-width: 100%; }
 
@@ -821,10 +823,10 @@ img {
      *  - http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly
      * 
      * IE10/11 have a rendering bug where flex items do not 
-     * respect box-sizing: border-box!
+     * respect box-sizing: border-box; BOOOOOO!
      *
      * Using max-width to keep the size under control fixes it, 
-     * at the cost of the ability to flex-grow (which we don't need)
+     * at the cost of the ability to flex-grow (which we mostly don't need)
      */
     max-width: 50%; }
 
@@ -848,10 +850,10 @@ img {
      *  - http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly
      * 
      * IE10/11 have a rendering bug where flex items do not 
-     * respect box-sizing: border-box!
+     * respect box-sizing: border-box; BOOOOOO!
      *
      * Using max-width to keep the size under control fixes it, 
-     * at the cost of the ability to flex-grow (which we don't need)
+     * at the cost of the ability to flex-grow (which we mostly don't need)
      */
     max-width: 70.72%; }
 
@@ -875,10 +877,10 @@ img {
      *  - http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly
      * 
      * IE10/11 have a rendering bug where flex items do not 
-     * respect box-sizing: border-box!
+     * respect box-sizing: border-box; BOOOOOO!
      *
      * Using max-width to keep the size under control fixes it, 
-     * at the cost of the ability to flex-grow (which we don't need)
+     * at the cost of the ability to flex-grow (which we mostly don't need)
      */
     max-width: 29.28%; }
 
@@ -1152,11 +1154,14 @@ html {
     border-top: solid 2px #ffe2b3; }
 
 .links .item {
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
+  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   line-height: 1.3; }
   .links .item:last-child {
     margin-bottom: 0; }
+.links.tightened .item {
+  margin-bottom: 5px;
+  margin-bottom: 0.3125rem; }
 
 .breadcrumbs {
   padding-top: 2px; }
@@ -1224,19 +1229,26 @@ html {
     transform: translate(0, 0.1875em); }
 
 .tag {
+  line-height: 1;
   padding: 8px;
   background-color: #0083a3;
-  -webkit-transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
   color: #fff;
   text-decoration: none;
-  margin-right: 5px; }
-  .tag:hover, .tag:focus {
-    background-color: #00a7bd; }
+  margin-right: 5px;
+  margin-bottom: 8px; }
   .tag:last-child {
     margin-right: 0; }
-  .tag + .tag {
-    margin-bottom: 8px; }
+  .tag .image {
+    padding-right: 5px;
+    padding-right: 0.3125rem; }
+  .no-flexbox .tag {
+    display: table; }
+
+a.tag {
+  -webkit-transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  a.tag:hover, a.tag:focus {
+    background-color: #00a7bd; }
 
 .sequence {
   padding: 1em 16px;
@@ -1338,8 +1350,6 @@ html {
     margin-right: 16px; }
 .card .tags, .card .byline {
   margin-top: 8px; }
-.card .byline {
-  margin-bottom: 8px; }
 .card.primary {
   margin-bottom: 19px;
   margin-bottom: 1.1875rem; }
@@ -1361,6 +1371,23 @@ html {
   line-height: 1.1875; }
 .copy > .notice {
   margin-bottom: 1em; }
+
+.slats {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
+.slat {
+  padding: 8px 11px;
+  padding: 0.5rem 0.6875rem; }
+  .slat + .slat {
+    border-top: 1px solid #cccccc; }
+  .slat .image {
+    padding-right: 8px;
+    padding-right: 0.5rem; }
+  .slat .header {
+    margin-bottom: .2em;
+    font-weight: bold;
+    color: #666666; }
 
 .banner,
 .footer[role="contentinfo"] {

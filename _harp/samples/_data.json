@@ -18,16 +18,18 @@
       "linked data",
       "mobile"
     ],
-    "workgroups": [
-      "Core",
-      "Change Management",
-      "Mobility"
-    ],
-    "organizations": [
-      "IBM",
-      "PointSource",
-      "TaskTop"
-    ],
+    "relationships": {
+      "Workgroups": [
+        "Core",
+        "Change Management",
+        "Mobility"
+      ],
+      "Organizations": [
+        "IBM",
+        "PointSource",
+        "TaskTop"
+      ]
+    },
     "author": {
       "name": "Sean Kennedy",
       "url": "#"
@@ -144,7 +146,39 @@
     ]
   },
   "resource": {
-    "title": "Resource"
+    "layout": "_news",
+    "channel": "Presentation",
+    "date": "2014 February 19",
+    "menu_title": "Resource",
+    "title": "[Sample resource] OSLC Community Update and An Introduction to PROMCODE",
+    "relationships": {
+      "Workgroups": [
+        "Change Management",
+        "Core",
+        "Core Technical Community"
+      ],
+      "Organizations": [
+        "Fujitsu Limited",
+        "IBM"
+      ],
+      "Blog posts": [
+        {
+          "title": "Upcoming presentation: Community Update and An Introduction to PROMCODE",
+          "url": "http://open-services.net/blog/upcoming-presentation-community-update-and-an-introduction-to-promcode"
+        }
+      ]
+    },
+    "action": "https://www.youtube.com/watch?v=FK1v8nBHAOU",
+    "meta_before_body": {
+      "Link": [
+        {
+        "title": "At youtube.com",
+        "url": "https://www.youtube.com/watch?v=FK1v8nBHAOU"
+        }
+      ],
+      "Presenters": [ "Mikio", "Sean Kennedy"],
+      "Downloads": ["Community Update slides (.ppt)", "PROMCODE slides (.pdf)"]
+    }
   },
   "resources": {
     "title": "All resources"

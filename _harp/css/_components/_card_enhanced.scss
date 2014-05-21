@@ -42,6 +42,12 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
     }
   }
   
+  .byline {
+    @include respond-to(knee-up) {
+      margin-bottom: 8px;
+    }
+  }
+  
   &.primary {
 
     // Bump up the title text size of the primary card a bit on larger screens

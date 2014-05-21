@@ -1,4 +1,124 @@
 
+.grunticon-channel-article {
+  background-image: url('png/channel-article.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-channel-podcast {
+  background-image: url('png/channel-podcast.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-channel-presentation {
+  background-image: url('png/channel-presentation.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-channel-tool {
+  background-image: url('png/channel-tool.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-channel-tutorial {
+  background-image: url('png/channel-tutorial.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-channel-video {
+  background-image: url('png/channel-video.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-channel-website {
+  background-image: url('png/channel-website.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-channel-whitepaper {
+  background-image: url('png/channel-whitepaper.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-logo-med {
   background-image: url('png/logo-med.png');
   @include icon;
@@ -25,6 +145,51 @@
   
   &.intrinsic {
     padding-top: 50px / 60px * 100%;
+  }
+}
+
+
+.grunticon-meta-downloads {
+  background-image: url('png/meta-downloads.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-link {
+  background-image: url('png/meta-link.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-presenters {
+  background-image: url('png/meta-presenters.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
   }
 }
 

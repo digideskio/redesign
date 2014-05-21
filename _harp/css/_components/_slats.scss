@@ -1,0 +1,23 @@
+.slats {
+  @extend %list-reset;
+  @include rem(margin-bottom, $font-size-m);
+}
+
+.slat {
+  @include rem(padding, 8px $font-size-xs);
+  @extend %text-size-s;
+  
+  &+& {
+    border-top: 1px solid palette(gray,light);
+  }
+  
+  .image {
+    @include rem(padding-right, 8px );
+  }
+  
+  .header {
+    margin-bottom: .2em;
+    font-weight: bold;
+    color: palette(gray, mid-dark);
+  }
+}

@@ -98,6 +98,12 @@
    */
   .flexbox & {
     flex: 1 1 auto;
+    
+    // Allow the last child to expand
+    // Overrides max-width necessary for IE10/IE11
+    &:last-child {
+      max-width: none;
+    }
   }
   
 
@@ -200,10 +206,10 @@
        *  - http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly
        * 
        * IE10/11 have a rendering bug where flex items do not 
-       * respect box-sizing: border-box!
+       * respect box-sizing: border-box; BOOOOOO!
        *
        * Using max-width to keep the size under control fixes it, 
-       * at the cost of the ability to flex-grow (which we don't need)
+       * at the cost of the ability to flex-grow (which we mostly don't need)
        */
       max-width: $size;
     }

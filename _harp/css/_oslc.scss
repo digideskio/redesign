@@ -37,67 +37,15 @@ html {
 }
 
 
-//
-// Menus
-//
 @import '_components/menus';
-
-
-//
-// Body Copy
-//
 @import '_components/copy';
-
-
-//
-// Lists
-//
 @import '_components/lists';
-
-
-//
-// Breadcrumbs
-//
 @import '_components/breadcrumbs';
-
-
-//
-// Buttons
-//
 @import '_components/button';
-
-
-//
-// Tags / Labels
-//
 @import '_components/tags';
-
-
-//
-// Previous / Next sequences
-//
 @import '_components/sequence';
-
-
-//
-// Pagination
-//
 @import '_components/pagination';
-
-
-//
-// Cards
-//
 @import '_components/card';
-
-
-//
-// Notices
-//
 @import '_components/notice';
-
-
-//
-// Primary page layout
-//
+@import '_components/slats';
 @import '_layout/scaffolding';

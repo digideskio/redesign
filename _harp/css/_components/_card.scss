@@ -74,7 +74,6 @@ $card-border-radius: 4px;
     @extend %inline-block;
     @extend %copy-links;
     @extend %text-size-s;
-    margin-bottom: 8px;
   }
   
   &.primary {
