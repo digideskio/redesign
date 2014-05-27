@@ -1,0 +1,20 @@
+ul.slats
+  for links, name in meta_block
+    li.slat 
+      if name !== 'Link'
+        .flag
+          .image
+            i.icon.autosize(class="#{'grunticon-meta-' + name.toLowerCase()}")
+          .body 
+            .header #{name}                    
+            ul.links.tightened
+              for link in links
+                li.item
+                  a(href="#{link.url || '#'}") #{link.title || link}
+      else
+        for link in links
+          a.action(href="#{link.url || '#'}") 
+            .flag.reversed
+              .body #{link.title || link}
+              .image
+                i.icon.autosize.grunticon-action-outgoing

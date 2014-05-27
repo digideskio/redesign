@@ -57,6 +57,22 @@ $card-border-radius: 4px;
     border-bottom: 1px solid palette(gray, light);    
   }
   
+  .tags, .byline {
+    margin-top: 8px;
+  }
+    
+  .byline {
+    @extend %inline-block;
+    @extend %copy-links;
+    @extend %text-size-s;
+  }
+  
+  // vertical-align: middle (see .tag) isn't really perfectly centered. This is.
+  .flexbox & .tags {
+    display: flex;
+    align-items: center;
+  }
+  
   > .footer {
     background-color: tint(palette(gray, x-light), 60%);
     border-radius: 0 0 $card-border-radius $card-border-radius;
@@ -69,15 +85,6 @@ $card-border-radius: 4px;
     .tags { margin-right: $card-padding-sides; }
   }
 
-  .tags, .byline {
-    margin-top: 8px;
-  }
-  
-  .byline {
-    @extend %inline-block;
-    @extend %copy-links;
-    @extend %text-size-s;
-  }
   
   &.primary {
     @include rem(margin-bottom, $font-size-l);

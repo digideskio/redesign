@@ -28,35 +28,17 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                       .image
                         i.icon.autosize(class="#{'grunticon-channel-' + channel.toLowerCase()}")
                       .body #{channel}
-                span.tag.info Upcoming 
     .grid
       section(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
         if is_listing
           != yield
         else
           if meta_before_body
-            ul.slats
-              for links, name in meta_before_body
-                li.slat 
-                  if name !== 'Link'
-                    .flag
-                      .image
-                        i.icon.autosize(class="#{'grunticon-meta-' + name.toLowerCase()}")
-                      .body 
-                        .header #{name}                    
-                        ul.links.tightened
-                          for link in links
-                            li.item
-                              a(href="#{link.url || '#'}") #{link.title || link}
-                  else
-                    for link in links
-                      a.action(href="#{link.url || '#'}") 
-                        .flag.reversed
-                          .body #{link.title || link}
-                          .image
-                            i.icon.autosize.grunticon-action-outgoing
+            != partial('_slats', {meta_block : meta_before_body})
           .copy
             != yield
+          if meta_after_body
+            != partial('_slats', {meta_block : meta_after_body})
       if relationships
         aside.column.hand-full.workstation-minor.cards.relationships
           .grid.blocks

@@ -3,6 +3,8 @@
   @include rem(margin-bottom, $font-size-m);
 }
 
+.copy + .slats { margin-top: $font-size-xs; }
+
 .slat {
   @include rem(padding, 8px $font-size-xs);
   @extend %text-size-s;
