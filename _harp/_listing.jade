@@ -1,7 +1,7 @@
 .grid.pulled.blocks
   for page, slug in public[listing_root]._data
     - var url = site_url + listing_root + '/' + slug + '.html'
-    if slug !== 'index'
+    if slug !== 'index' && ! page.draft
       .column.hand-full.desk-half
         .card
           header.header

@@ -19,7 +19,7 @@ if has_secondary
                     li(role="presentation")
                       span.item.heading #{page.title}
                   else 
-                    if page.draft!=='true' || environment==='development'
+                    if page.draft !== 'true' || environment === 'development'
                       li(class=' #{ current.source === slug ? "current" : "" }' role="presentation")
                         a.item(href="#{ site_url }#{ root + '/' + slug + '.html' }") #{ page.menu_title || page.title }
 else 

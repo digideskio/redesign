@@ -181,34 +181,44 @@
     }
   },
   "resources": {
-    "title": "All resources"
+    "title": "All resources",
+    "draft": "true"
   },
   "tutorial": {
-    "title": "Tutorial"
+    "title": "Tutorial",
+    "draft": "true"
   },
   "workgroup": {
-    "title": "Workgroup"
+    "title": "Workgroup",
+    "draft": "true"
   },
   "workgroups": {
-    "title": "All Workgroups"
+    "title": "All Workgroups",
+    "draft": "true"
   },
   "specification": {
-    "title": "Specification"
+    "title": "Specification",
+    "draft": "true"
   },
   "specifications": {
-    "title": "All Specs"
+    "title": "All Specs",
+    "draft": "true"
   },
   "software": {
-    "title": "Software"
+    "title": "Software",
+    "draft": "true"
   },
   "software-all": {
-    "title": "All software"
+    "title": "All software",
+    "draft": "true"
   },
   "wiki": {
-    "title": "Wiki page"
+    "title": "Wiki page",
+    "draft": "true"
   },
   "wpa": {
-    "title": "Workgroup Participation Agreement"
+    "title": "Workgroup Participation Agreement",
+    "draft": "true"
   }
 
 }
