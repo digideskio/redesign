@@ -61,7 +61,10 @@ $card-border-radius: 4px;
     background-color: tint(palette(gray, x-light), 60%);
     border-radius: 0 0 $card-border-radius $card-border-radius;
     
-    .byline { margin-left: $card-padding-sides; }
+    .byline { 
+      margin-left: $card-padding-sides;
+      margin-bottom: 8px;
+    }
     
     .tags { margin-right: $card-padding-sides; }
   }

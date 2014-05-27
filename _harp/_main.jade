@@ -28,6 +28,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                       .image
                         i.icon.autosize(class="#{'grunticon-channel-' + channel.toLowerCase()}")
                       .body #{channel}
+                span.tag.info Upcoming 
     .grid
       section(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
         if is_listing

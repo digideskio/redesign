@@ -109,6 +109,6 @@
   .reversed .image { padding-left: 5px; }
   
   .no-flexbox.flexboxlegacy & {
-    display:table;
+    display:inline-table;
   }
 }

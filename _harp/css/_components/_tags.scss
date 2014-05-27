@@ -1,11 +1,12 @@
 .tag {
   @extend %inline-block;
+  vertical-align: middle;
   @extend %text-size-s;
   line-height: 1;
   padding: 8px;
-  background-color: palette(blue, mid-dark);
   
   color: #fff;
+  background-color: palette(gray,mid-dark);
   text-decoration: none;
   margin-right: 5px;
   margin-bottom: 8px;
@@ -19,11 +20,21 @@
   // Fix for older Safar/iOS
   // particularly when the tag contains a .flag object
   .no-flexbox & {
-    display: table;
+    display: inline-table;
   }
+  
+  &.success { background-color: palette(green, mid-dark); }
+  
+  &.info { background-color: palette(blue, mid-light); }
+  
+  &.warning { background-color: palette(gold, dark); }
+  
+  &.danger { background-color: palette(red, mid-dark); }
+  
 }
 
 a.tag {
+  background-color: palette(blue, mid-dark);
   transition: background-color .25s $ease-out-cubic;
   
   &:hover, &:focus {
@@ -31,4 +42,3 @@ a.tag {
   }
 
 }
-
