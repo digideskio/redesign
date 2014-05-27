@@ -1,4 +1,19 @@
 
+.grunticon-action-outgoing {
+  background-image: url('png/action-outgoing.png');
+  @include icon;
+  
+  &.autosize {
+    height: 20px;
+    width: 20px;
+  }
+  
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-channel-article {
   background-image: url('png/channel-article.png');
   @include icon;

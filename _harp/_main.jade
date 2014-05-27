@@ -37,16 +37,23 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
             ul.slats
               for links, name in meta_before_body
                 li.slat 
-                  .flag
-                    .image
-                      i.icon.autosize(class="#{'grunticon-meta-' + name.toLowerCase()}")
-                    .body 
-                      if name !== 'Link'
+                  if name !== 'Link'
+                    .flag
+                      .image
+                        i.icon.autosize(class="#{'grunticon-meta-' + name.toLowerCase()}")
+                      .body 
                         .header #{name}                    
-                      ul.links.tightened
-                        for link in links
-                          li.item
-                            a(href="#{link.url || '#'}") #{link.title || link}
+                        ul.links.tightened
+                          for link in links
+                            li.item
+                              a(href="#{link.url || '#'}") #{link.title || link}
+                  else
+                    for link in links
+                      a.action(href="#{link.url || '#'}") 
+                        .flag.reversed
+                          .body #{link.title || link}
+                          .image
+                            i.icon.autosize.grunticon-action-outgoing
           .copy
             != yield
       if relationships

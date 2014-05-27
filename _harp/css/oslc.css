@@ -1168,7 +1168,7 @@ html {
   .breadcrumbs a {
     text-decoration: none; }
 
-.btn {
+.btn, .action {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -1187,15 +1187,7 @@ html {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   background-color: #cccccc;
-  border-bottom-color: #a3a3a3; }
-  .btn:hover, .btn:focus {
-    background-color: #dadada; }
-  .btn:active, .btn[active] {
-    border-bottom: 0; }
-  .btn > .text {
-    vertical-align: middle; }
-
-.boxshadow .btn {
+  border-bottom-color: #a3a3a3;
   /* 
    OMG this was driving me NUTS
     So here's the story: a "click" event requires a mouseDown AND mouseUp
@@ -1206,7 +1198,17 @@ html {
     (You could also change your event handlers to mousedown)
     
     Solution and explanation here: http://stackoverflow.com/questions/15786891/browser-sometimes-ignores-a-jquery-click-event-during-a-css3-transform
-   */
+   */ }
+  .btn:hover, .btn:focus {
+    background-color: #dadada; }
+  .btn:active, .btn[active] {
+    border-bottom: 0; }
+  .btn > .text {
+    vertical-align: middle; }
+  .btn > * {
+    pointer-events: none; }
+
+.boxshadow .btn {
   border-bottom: 0;
   padding: .3125em .5em .375em;
   -webkit-box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1), inset 0 -0.1875em 0 rgba(0, 0, 0, 0.2);
@@ -1217,8 +1219,6 @@ html {
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transition-property: background-color, -webkit-transform, padding, margin;
   transition-property: background-color, transform, padding, margin; }
-  .boxshadow .btn > * {
-    pointer-events: none; }
   .boxshadow .btn:active, .boxshadow .btn[active] {
     -webkit-box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1);
     box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1);
@@ -1227,6 +1227,21 @@ html {
     -webkit-transform: translate(0, 0.1875em);
     -ms-transform: translate(0, 0.1875em);
     transform: translate(0, 0.1875em); }
+
+.action {
+  border: 3px solid;
+  padding: .6em;
+  color: #0083a3;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .action:hover, .action:focus {
+    border-color: #51c1d2; }
+  .action:active {
+    border-color: #7ed2dd; }
+  .action .reversed .image {
+    padding-left: 5px; }
+  .no-flexbox.flexboxlegacy .action {
+    display: table; }
 
 .tag {
   line-height: 1;
@@ -1381,7 +1396,7 @@ a.tag {
   padding: 0.5rem 0.6875rem; }
   .slat + .slat {
     border-top: 1px solid #cccccc; }
-  .slat .image {
+  .slat > .flag > .image {
     padding-right: 8px;
     padding-right: 0.5rem; }
   .slat .header {

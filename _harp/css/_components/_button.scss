@@ -49,11 +49,6 @@
   > .text {
     vertical-align: middle;
   } 
-}
-
-// With box shadows, you can do this without figuring out more colors
-.boxshadow .btn {
-  @extend %prevent-flicker;  
 
   /* 
    OMG this was driving me NUTS
@@ -69,6 +64,12 @@
   > * {
     pointer-events: none;
   }
+
+}
+
+// With box shadows, you can do this without figuring out more colors
+.boxshadow .btn {
+  @extend %prevent-flicker;  
 
   border-bottom: 0;
   
@@ -88,4 +89,26 @@
     transform: translate(0,.1875em);
   }
   
+}
+
+.action {
+  @extend %btn;
+  border: 3px solid;
+  padding: .6em;
+  
+  color: palette(blue, mid-dark);
+  
+  transition: border-color .2s $ease-out-cubic;
+  
+  &:hover, &:focus {
+    border-color: palette(blue, mid-light);
+  }
+  
+  &:active { border-color: palette(blue,light); }
+  
+  .reversed .image { padding-left: 5px; }
+  
+  .no-flexbox.flexboxlegacy & {
+    display:table;
+  }
 }
