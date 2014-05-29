@@ -1786,6 +1786,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/icons\/_grunticon\/min\/grunticon.loader-ck.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/min\/grunticon.loader-ck.js",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/min\/min\/grunticon.loader-ck-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/icons\/_grunticon\/png\/action-outgoing.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2035,6 +2046,17 @@
 		"initialSize": 595,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/tag-favorite.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/tag-favorite.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/_grunticon\/png\/tag-upcoming.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 745,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/tag-upcoming.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/tag-upcoming.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2432,6 +2454,17 @@
 		"initialSize": 414,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/tag-favorite.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/tag-favorite.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/tag-upcoming.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 510,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/tag-upcoming.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/tag-upcoming.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

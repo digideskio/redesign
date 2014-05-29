@@ -275,6 +275,18 @@
 }
 
 
+.grunticon-tag-upcoming {
+  background-image: url('png/tag-upcoming.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-wordmark-med {
   background-image: url('png/wordmark-med.png');
   @include icon;
