@@ -26,7 +26,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                   a.tag(href="#") 
                     .flag
                       .image
-                        i.icon.autosize(class="#{'grunticon-channel-' + channel.toLowerCase()}")
+                        i.icon(class="#{'grunticon-channel-' + channel.toLowerCase()}")
                       .body #{channel}
     .grid
       section(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
@@ -60,13 +60,13 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
               a(href="#")
                 .flag
                   .image
-                    i.icon.grunticon-pagination-first.autosize
+                    i.icon.grunticon-pagination-first
                   .body First
             li.previous.knee-up
               a(href="#")
                 .flag
                   .image
-                    i.icon.grunticon-pagination-previous.autosize
+                    i.icon.grunticon-pagination-previous
                   .body Previous
             li.page.knee-up
               a(href="#") 5
@@ -83,13 +83,13 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                 .flag.reversed
                   .body Next
                   .image
-                    i.icon.grunticon-pagination-next.autosize
+                    i.icon.grunticon-pagination-next
             li.last
               a(href="#")
                 .flag.reversed
                   .body Last
                   .image
-                    i.icon.grunticon-pagination-last.autosize
+                    i.icon.grunticon-pagination-last
 
         if next || previous
           .grid.collapsed.blocks
@@ -98,7 +98,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                 a.sequence.prev(href="#") 
                   .flag
                     .image
-                      i.icon.grunticon-previous.block.autosize
+                      i.icon.grunticon-previous
                     .body
                       span.label Older
                       span.title #{previous}
@@ -110,5 +110,5 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                       span.label Newer
                       span.title #{next}
                     .image
-                      i.icon.grunticon-next.block.autosize  
+                      i.icon.grunticon-next
   a.close-nav(role="button", aria-label="Toggle Navigation")

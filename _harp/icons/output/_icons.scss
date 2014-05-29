@@ -9,4 +9,6 @@
 .intrinsic {
   -webkit-background-size: contain;
   background-size: contain;
+  // set width explicitly, height will follow
+  height: 0 !important; 
 }

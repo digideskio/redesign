@@ -2,12 +2,9 @@
 {{prefix}}{{name}} {
   background-image: url('{{datauri}}');
   @include icon;
-  
-  &.autosize {
-    height: {{height}};
-    width: {{width}};
-  }
-  
+  height: {{height}};
+  width: {{width}};
+    
   &.intrinsic {
     padding-top: {{height}} / {{width}} * 100%;
   }

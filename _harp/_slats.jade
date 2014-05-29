@@ -4,7 +4,7 @@ ul.slats
       if name !== 'Link'
         .flag
           .image
-            i.icon.autosize(class="#{'grunticon-meta-' + name.toLowerCase()}")
+            i.icon(class="#{'grunticon-meta-' + name.toLowerCase()}")
           .body 
             .header #{name}                    
             ul.links.tightened
@@ -17,4 +17,4 @@ ul.slats
             .flag.reversed
               .body #{link.title || link}
               .image
-                i.icon.autosize.grunticon-action-outgoing
+                i.icon.grunticon-action-outgoing
