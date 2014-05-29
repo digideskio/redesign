@@ -4,16 +4,19 @@
     "menu_title": "Home"
   },
   "posts": {
-    "title": "Posts"  
+    "title": "Posts"
   },
   "components": {
-    "title": "Components"
+    "title": "Components",
+    "draft": "true"
   },
   "javascript": {
-    "title": "JavaScript"
+    "title": "JavaScript",
+    "draft": "true"
   },
   "tests": {
-    "title": "Tests"
+    "title": "Tests",
+    "draft": "true"
   },
   "samples": {
     "title": "Sample pages"

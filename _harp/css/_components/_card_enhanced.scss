@@ -48,6 +48,21 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
     }
   }
   
+  .footer {
+    .flexbox & {
+      display: flex;
+      align-items: center;
+      //flex-wrap: wrap;
+      
+      .byline { flex: 1 0 auto; }
+      
+      .tags {
+        display: inline-flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  
   &.primary {
 
     // Bump up the title text size of the primary card a bit on larger screens

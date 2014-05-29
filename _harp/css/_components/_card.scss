@@ -82,9 +82,14 @@ $card-border-radius: 4px;
       margin-bottom: 8px;
     }
     
-    .tags { margin-right: $card-padding-sides; }
+    .tags { 
+      @extend %inline-block;
+      vertical-align: middle;
+      @include rem(margin-left, $font-size-xs);
+      @include rem(margin-right, $card-padding-sides);
+    }
+    
   }
-
   
   &.primary {
     @include rem(margin-bottom, $font-size-l);
