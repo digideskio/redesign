@@ -10,8 +10,11 @@ var Bartender = _.create(OSLC, {
   
   state: {
     filter: "All",
-    sort: 'order',
-    direction: 'asc'
+    sort: {
+      on: 'order',
+      direction: 'asc',
+      label: 'Original order'
+    }
   },
   
   init: function(){
@@ -71,18 +74,21 @@ var Bartender = _.create(OSLC, {
           easing: 'easeOutCubic'
         });
         
-      $('#filterBody').html( $('#filterBody').data('text') + ( bartender.state.filter === 'All' ? '' : ': <span id="activeFilter">'+bartender.state.filter+'</span>' ) );
+      // Add current sort status to the menu item
+      $('#filterBody').html( $('#filterBody').data('text') + ( bartender.state.filter === 'All' ? '' : ': <span class="activeFilter">'+bartender.state.filter+'</span>' ) );
       
     // --- Sort --- //
       
       // update the menu
       $(this.els.sortMenu.content).find('.item')
         .removeClass('current')
-        .filter('[data-sort="'+this.state.sort+'"][data-order="'+this.state.direction+'"]')
+        .filter(_.template('[data-sort="<%= on %>"][data-direction="<%= direction %>"]', this.state.sort))
         .addClass('current');
         
       // reorder
-      $cols.tsort({data:this.state.sort, order: this.state.direction});
+      $cols.tsort({data:this.state.sort.on, order: this.state.sort.direction});
+      
+      $('#sortBody').html( $('#sortBody').data('text') + ( bartender.state.sort.label === 'Original order' ? '' : ': <span class="activeFilter">'+bartender.state.sort.label+'</span>' ) );
   },
   
   bindings: function(){
@@ -106,8 +112,11 @@ var Bartender = _.create(OSLC, {
         
         if ($el.hasClass('current')) {return;}
         
-        bartender.state.sort = $el.data('sort');
-        bartender.state.direction = $el.data('order');
+        bartender.state.sort = {
+          on: $el.data('sort'),
+          direction: $el.data('direction'),
+          label: $el.text()
+        };        
         bartender.update();
       });
 
@@ -190,25 +199,25 @@ var Bartender = _.create(OSLC, {
         {
           text: "Newest",
           sort: 'date',
-          order: 'desc',
+          direction: 'desc',
           classes: ''
         },
         {
           text: "Oldest",
           sort: 'date',
-          order: 'asc',
+          direction: 'asc',
           classes: ''
         },
         {
-          text: "Original Order",
+          text: "Original order",
           sort: 'order',
-          order: 'asc',
+          direction: 'asc',
           classes: 'current'
         }
       ],
       dropContent = $('<div>')
         .addClass('menu')
-        .append( _.reduce(sorters,this.templateFold('<a class="item <%= classes %>" href="#" data-sort="<%= sort %>" data-order="<%= order %>"><%= text %></a>'),'') );
+        .append( _.reduce(sorters,this.templateFold('<a class="item <%= classes %>" href="#" data-sort="<%= sort %>" data-direction="<%= direction %>"><%= text %></a>'),'') );
       
         
     // store the original order of the card columns

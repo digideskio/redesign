@@ -63,7 +63,7 @@
 /*
  * Text size mixins / placeholders
  */
-#activeFilter, .drop-element.drop-theme-oslc .drop-content .count {
+.activeFilter, .drop-element.drop-theme-oslc .drop-content .count {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
@@ -456,7 +456,7 @@ meta.oslc-mq-neckbeard-only {
     -ms-flex-align: center;
     align-items: center; }
 
-#activeFilter {
+.activeFilter {
   color: #ffa83d; }
 
 .card {

@@ -33,7 +33,7 @@
   
 }
 
-#activeFilter {
+.activeFilter {
   color: palette(gold,mid-dark);  
   @extend %text-size-s;
 }
