@@ -100,7 +100,7 @@ var Sextant = _.create( OSLC, {
       selector[ mq ] = ['#main.' +  this.classes.open]; // stupid syntax tricks
       var height = explicit_height || this.els.nav.outerHeight() + 'px';
       var prop = Modernizr.csstransforms ? Modernizr.prefixed('transform') : 'top';
-      prop = prop.replace(/([A-Z])/g, function(str,m1){ return '-' + m1.toLowerCase(); }).replace(/^ms-/,'-ms-');
+      prop = this.dasherize(prop);
       var property = {};
       property[ prop ] = Modernizr.csstransforms ? 'translate(0,'+ height +')' : height;
       

@@ -113,3 +113,28 @@
   }
   
 }
+
+//
+// Fix for older Safar/iOS when something contains a .flag object
+//
+@mixin fixFlagContainer($inline:false) {
+  .no-flexbox.flexboxlegacy &,
+  .no-js & {
+    @if $inline == false {
+      display: table;
+    } @else {
+      display: inline-table;
+    }
+    
+  }
+}
+
+%fixFlagContainer {
+  @include fixFlagContainer();
+}
+.hasFlag { @extend %fixFlagContainer; }
+
+%fixFlagContainerInline {
+  @include fixFlagContainer(true);
+}
+.hasFlagInline { @extend %fixFlagContainerInline; }

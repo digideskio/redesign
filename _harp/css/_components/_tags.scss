@@ -1,5 +1,6 @@
 .tag {
   @extend %inline-block;
+  @extend %fixFlagContainerInline;
   vertical-align: middle;
   @extend %text-size-s;
   line-height: 1;
@@ -9,18 +10,11 @@
   background-color: palette(gray,mid-dark);
   text-decoration: none;
   margin-right: 5px;
-  margin-bottom: 8px;
   
   &:last-child { margin-right: 0; }
   
   .image {
     @include rem(padding-right, 5px );
-  }
-  
-  // Fix for older Safar/iOS
-  // particularly when the tag contains a .flag object
-  .no-flexbox & {
-    display: inline-table;
   }
   
   &.success { background-color: palette(green, mid-dark); }

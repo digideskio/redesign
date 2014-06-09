@@ -1,7 +1,7 @@
 .grid.pulled.blocks
   for post in posts
-    .column.hand-full.desk-half
-      .card(data-date="#{Date.parse( new Date(post.date) )}")
+    .column.hand-full.desk-half(data-date="#{Date.parse( new Date(post.date) )}")
+      .card
         header.header
           h1.title 
             a(href="#{post.url}",rel="bookmark") #{ post.title }

@@ -28,10 +28,13 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                       .image
                         i.icon(class="#{'grunticon-channel-' + channel.toLowerCase()}")
                       .body #{channel}
+    if has_menu
+      .menu#bartender.horizontal(data-bartender="filter,sort")
     .grid
       section(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
         if is_listing
-          != yield
+          .listing
+            != yield
         else
           if meta_before_body
             != partial('_slats', {meta_block : meta_before_body})

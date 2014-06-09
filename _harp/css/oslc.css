@@ -41,7 +41,7 @@
 .block.icon, .links .item, .sequence, .sequence .label, .pagination a, .pagination .item, .project-name {
   display: block; }
 
-.icon, .tag, .pagination > li, .card .byline, .card > .footer .tags {
+.icon, .menu.horizontal .item, .tag, .pagination > li, .card .byline, .card > .footer .tags {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -676,9 +676,6 @@ img {
    *  - b/c of negative margins you cannot apply a background color to the .grid object
    *    or cells directly
    *  - this can make the layout 
-   */
-  /* 
-   * Double gutters
    */ }
   .flexbox .grid {
     display: -webkit-box;
@@ -748,9 +745,14 @@ img {
     -webkit-flex: 1 1 auto;
     -moz-box-flex: 1;
     -ms-flex: 1 1 auto;
-    flex: 1 1 auto; }
-    .flexbox .column:last-child {
-      max-width: none; }
+    flex: 1 1 auto;
+    /*
+     // Commented out: in IE the last item ALWAYS grew, instead of only sometimes
+     // which busted the layout
+    &:last-child {
+      max-width: none;
+    }
+    */ }
   .relaxed > .column {
     padding-left: 32px;
     padding-left: 2rem;
@@ -988,6 +990,12 @@ img {
     -ms-flex-align: end;
     align-items: flex-end; }
 
+.no-flexbox.flexboxlegacy .hasFlag, .no-js .hasFlag {
+  display: table; }
+
+.no-flexbox.flexboxlegacy .hasFlagInline, .no-flexbox.flexboxlegacy .action, .no-flexbox.flexboxlegacy .tag, .no-js .hasFlagInline, .no-js .action, .no-js .tag {
+  display: inline-table; }
+
 /*
  * Sticky Footer with no restrictions on the size of the footer area like traditional solutions
  * 
@@ -1028,47 +1036,6 @@ html {
 
 .sticky-footer-body {
   background-color: #444; }
-
-.menu .item {
-  padding: 11px 16px;
-  padding: 0.6875rem 1rem;
-  display: block;
-  text-decoration: none;
-  color: #444444; }
-  .menu .item.flush {
-    padding-left: 0;
-    padding-right: 0; }
-.menu li.item {
-  padding: 0; }
-.menu a,
-.menu .item {
-  -webkit-transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
-.menu .current a,
-.menu .item a:hover,
-.menu .item a:focus,
-.menu a.current,
-.menu a.item:hover,
-.menu a.item:focus {
-  background-color: #d8d8d8; }
-.menu.primary {
-  background-color: white; }
-.menu .heading {
-  text-transform: uppercase;
-  letter-spacing: 1px; }
-.menu.inverted {
-  background-color: #666666; }
-  .menu.inverted .item {
-    color: #ebebeb; }
-  .menu.inverted .current a,
-  .menu.inverted .item a:hover,
-  .menu.inverted .item a:focus,
-  .menu.inverted a.current,
-  .menu.inverted a.item:hover,
-  .menu.inverted a.item:focus {
-    background-color: #444444; }
-  .menu.inverted .heading {
-    border-bottom: 1px solid #ee7e7c; }
 
 /*
  * Body Copy
@@ -1152,6 +1119,55 @@ html {
     padding: 8px;
     padding: 0.5rem;
     border-top: solid 2px #ffe2b3; }
+
+.menu .item {
+  padding: 11px 16px;
+  padding: 0.6875rem 1rem;
+  display: block;
+  color: #444444; }
+  .menu .item.flush {
+    padding-left: 0;
+    padding-right: 0; }
+.menu.tensed .item {
+  padding: 8px 11px;
+  padding: 0.5rem 0.6875rem; }
+.menu a,
+.menu .item {
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
+.menu .current a,
+.menu .item a:hover,
+.menu .item a:focus,
+.menu a.current,
+.menu a.item:hover,
+.menu a.item:focus {
+  background-color: #d8d8d8; }
+.menu.primary {
+  background-color: white; }
+.menu .heading {
+  font-size: 94%;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+.menu.inverted {
+  background-color: #666666; }
+  .menu.inverted .item {
+    color: #ebebeb; }
+  .menu.inverted .current a,
+  .menu.inverted .item a:hover,
+  .menu.inverted .item a:focus,
+  .menu.inverted a.current,
+  .menu.inverted a.item:hover,
+  .menu.inverted a.item:focus {
+    background-color: #444444; }
+  .menu.inverted .heading {
+    border-bottom: 1px solid #ee7e7c; }
+.menu.horizontal .item {
+  vertical-align: middle; }
+.menu.horizontal a.item:hover, .menu.horizontal a.item:focus {
+  background-color: #ebebeb; }
+.menu .image {
+  padding-right: 3px; }
 
 .links .item {
   margin-bottom: 8px;
@@ -1240,8 +1256,6 @@ html {
     border-color: #7ed2dd; }
   .action .reversed .image {
     padding-left: 5px; }
-  .no-flexbox.flexboxlegacy .action {
-    display: inline-table; }
 
 .tag {
   vertical-align: middle;
@@ -1250,15 +1264,12 @@ html {
   color: #fff;
   background-color: #666666;
   text-decoration: none;
-  margin-right: 5px;
-  margin-bottom: 8px; }
+  margin-right: 5px; }
   .tag:last-child {
     margin-right: 0; }
   .tag .image {
     padding-right: 5px;
     padding-right: 0.3125rem; }
-  .no-flexbox .tag {
-    display: inline-table; }
   .tag.success {
     background-color: #00bd94; }
   .tag.info {
@@ -1368,6 +1379,8 @@ a.tag {
   border-bottom: 1px solid #cccccc; }
 .card .tags, .card .byline {
   margin-top: 8px; }
+.card .tag {
+  margin-bottom: 8px; }
 .flexbox .card .tags {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1379,12 +1392,13 @@ a.tag {
   -moz-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+.card .menu {
+  background-color: #f7f7f7; }
 .card > .footer {
   background-color: #f7f7f7;
   border-radius: 0 0 4px 4px; }
   .card > .footer .byline {
-    margin-left: 16px;
-    margin-bottom: 8px; }
+    margin-left: 16px; }
   .card > .footer .tags {
     vertical-align: middle;
     margin-left: 11px;

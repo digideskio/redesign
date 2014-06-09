@@ -66,9 +66,6 @@
   }
   
 
-  /* 
-   * Double gutters
-   */
   &.relaxed.pulled {
     @include rem( margin-left, -$gutter );
     @include rem( margin-right, -$gutter );
@@ -101,29 +98,24 @@
     
     // Allow the last child to expand
     // Overrides max-width necessary for IE10/IE11
+    /*
+     // Commented out: in IE the last item ALWAYS grew, instead of only sometimes
+     // which busted the layout
     &:last-child {
       max-width: none;
     }
+    */
   }
   
 
-  //
-  // Standard 
-  //
   @include rem( padding-left, $gutter/2 );
   @include rem( padding-right, $gutter/2 );
   
-  //
-  // Relaxed
-  //  
   .relaxed > & {
     @include rem( padding-left, $gutter );
     @include rem( padding-right, $gutter );
   }
   
-  //
-  // Collapsed
-  //
   .collapsed > & {
     padding-left: 0;
     padding-right: 0;

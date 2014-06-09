@@ -13,6 +13,18 @@ $.fn.toggleAria = function( attr ) {
 
 
 var OSLC = {
+  dasherize: function(str){
+    // via http://modernizr.com/docs/#prefixed
+    return _.dasherize(str).replace(/^ms-/,'-ms-');
+  },
+  funcFold: function(func) { 
+    // pass a function (eg compiled _.template) that expects one argument
+    // this returns an iterator for use with _.reduce(Right)
+    return function(sum, el) { return sum+func(el); };
+  },
+  templateFold: function(templateStr) {
+    return function(sum, el) { return sum+_.template(templateStr,el); };
+  },
   mediaQueries: {},
   modules: {},
   

@@ -78,7 +78,7 @@ module.exports = function(grunt) {
       imagemin: {
         grunticon: {
           options: {
-            cache: false
+            cache: true
           },
           files: [{
             expand: true,

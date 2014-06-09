@@ -7,7 +7,6 @@
   .item {
     @include rem(padding, 11px 16px);
     display: block;
-    text-decoration: none;
     color: palette(gray, dark);
     
     &.flush { 
@@ -17,12 +16,13 @@
     
   }
   
-  li.item {
-    padding: 0;
+  &.tensed .item {
+    @include rem(padding, 8px 11px);
   }
 
   a, 
-  .item { 
+  .item {
+    text-decoration: none;
     transition: background-color .2s $ease-out-cubic; 
   }
 
@@ -40,6 +40,7 @@
   }
   
   .heading {
+    font-size: 94%; // 15/16. Looks a bit nicer.
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -63,6 +64,26 @@
     }
   } 
   
+  &.horizontal {
+    .item {
+      @extend %inline-block;
+      vertical-align: middle;
+    }
+    
+    a.item {
+      &:hover,
+      &:focus {
+        background-color: palette(gray, x-light);
+      }
+    }
+    
+    .current { }
+    
+  }
+  
+  .image { padding-right: 3px; }
   
 }
 
+.card .menu {
+}
