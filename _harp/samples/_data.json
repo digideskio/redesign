@@ -191,7 +191,11 @@
         "date": "2013 December 20",
         "channel_tag": "Tutorial",
         "desc": "This tutorial explains how to integrate tools with OSLC. The tutorial uses examples, starting with simple ones and building to more advanced topics such as implementing an OSLC Provider.",
-        "featured": "true"
+        "featured": "true",
+        "author": {
+          "name": "Lee Reamsnyder",
+          "url": "#"
+        }
       },
       {
         "title": "OSLC Primer",
@@ -199,7 +203,11 @@
         "date": "2012 January 10",
         "channel_tag": "Tutorial",
         "desc": "A primer for technical leaders who want to understand the concepts and goals of OSLC and its relationship to other standards for evaluation, as well as potential OSLC implementers who want a general overview of the OSLC concepts and an understanding of the thinking and use-cases that led to their definition.",
-        "featured": "true"
+        "featured": "true",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        }
       },
       {
         "title": "Getting Started with Developing OSLC Applications",
@@ -207,7 +215,11 @@
         "date": "2014 January 15",
         "channel_tag": "Website",
         "desc": "An overview for adding OSLC support to your software.",
-        "featured": "true"
+        "featured": "true",
+        "author": {
+          "name": "Steve Speicher",
+          "url": "#"
+        }
       },
       {
         "title": "Eclipse Lyo",
@@ -215,7 +227,11 @@
         "date": "2012 September 25",
         "channel_tag": "Tool",
         "desc": "The Eclipse Lyo project focuses on providing an SDK to help the Eclipse community to adopt OSLC specifications and build OSLC-compliant tools. The source code is available in a Git repository.",
-        "featured": "true"
+        "featured": "true",
+        "author": {
+          "name": "Lee Reamsnyder",
+          "url": "#"
+        }
       },
       {
         "title": "OSLC Community Update and An Introduction to PROMCODE",
@@ -223,56 +239,88 @@
         "date": "2014 August 10",
         "channel_tag": "Presentation",
         "desc": "Sean Kennedy will provide a quick update on the status of the OSLC Community, including the new Technical Committees at OASIS and the upcoming OSLC Connect event at the ALM Forum.",
-        "upcoming": "true"
+        "upcoming": "true",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        }
       },
       {
         "title": "Reducing system integration costs with OSLC and data federation",
         "url": "http://open-services.net/resources/presentations/reducing-system-integration-costs-with-oslc-and-data-federation/",
         "date": "2013 August 1",
         "channel_tag": "Presentation",
-        "desc": "In this session we will discuss how organizations can save time and money when integrating applications through data federation and OSLC."
+        "desc": "In this session we will discuss how organizations can save time and money when integrating applications through data federation and OSLC.",
+        "author": {
+          "name": "Steve Speicher",
+          "url": "#"
+        }
       },
       {
         "title": "OSLC4Net",
         "url": "http://oslc4net.codeplex.com/",
         "date": "2013 July 26",
         "channel_tag": "Tool",
-        "desc": "OSLC4Net is an SDK and sample applications to help the .NET community to adopt OSLC (Open Services for Lifecycle Collaboration) and build OSLC-compliant tools."
+        "desc": "OSLC4Net is an SDK and sample applications to help the .NET community to adopt OSLC (Open Services for Lifecycle Collaboration) and build OSLC-compliant tools.",
+        "author": {
+          "name": "Sam Padgett",
+          "url": "#"
+        }
       },
       {
         "title": "Build your own ServiceProvider (with preview!) in no time",
         "url": "http://open-services.net/resources/videos/ibm-pulse-2013-tech-talk-a-business-perspective-on-the-case-for-oslc/",
         "date": "2013 March 21",
         "channel_tag": "Video",
-        "desc": "Dibbe Edwards of IBM and Andreas Keis of EADS discuss the benefits of OSLC in this presentation from IBM Pulse 2013."
+        "desc": "Dibbe Edwards of IBM and Andreas Keis of EADS discuss the benefits of OSLC in this presentation from IBM Pulse 2013.",
+        "author": {
+          "name": "Lee Reamsnyder",
+          "url": "#"
+        }
       },
       {
         "title": "Introduction to Linked Data Concepts and OSLC",
         "url": "http://open-services.net/resources/videos/introduction-to-linked-data-concepts-and-oslc/",
         "date": "2013 March 11",
         "channel_tag": "Video",
-        "desc": "An example-packed introduction to linked data concepts and how they apply to Open Services for Lifecycle Collaboration."
+        "desc": "An example-packed introduction to linked data concepts and how they apply to Open Services for Lifecycle Collaboration.",
+        "author": {
+          "name": "Sean Kennedy",
+          "url": "#"
+        }
       },
       {
         "title": "Build your own ServiceProvider (with preview!) in no time",
         "url": "http://open-services.net/resources/articles/build-your-own-serviceprovider-with-preview-in-no-time/",
         "date": "2012 November 14",
         "channel_tag": "Article",
-        "desc": "Vijay Kalangumvathakkal of IBM Tivoli provides two sample web modules to help you set up OSLC ServiceProviders and try out UI Previews."
+        "desc": "Vijay Kalangumvathakkal of IBM Tivoli provides two sample web modules to help you set up OSLC ServiceProviders and try out UI Previews.",
+        "author": {
+          "name": "Steve Speicher",
+          "url": "#"
+        }
       },
       {
         "title": "OSLC Enablement Roadmap",
         "url": "http://open-services.net/resources/whitepapers/oslc-enablement-roadmap/",
         "date": "2012 October 13",
         "channel_tag": "Whitepaper",
-        "desc": "This document has a collection of links to resources (and a recommended order to follow them) to help you get up to speed with OSLC."
+        "desc": "This document has a collection of links to resources (and a recommended order to follow them) to help you get up to speed with OSLC.",
+        "author": {
+          "name": "Lee Reamsnyder",
+          "url": "#"
+        }
       },
       {
         "title": "Getting Excited for Eclipse Lyo 1.0",
         "url": "http://open-services.net/resources/podcasts/getting-excited-for-eclipse-lyo-10/",
         "date": "2012 August 29",
         "channel_tag": "Podcast",
-        "desc": "Sean Kennedy interviews Kartik Kanakasabesan about why he's excited about the Eclipse Lyo 1.0 Official Release. Learn about what Eclipse Lyo provides and why this matters to you."
+        "desc": "Sean Kennedy interviews Kartik Kanakasabesan about why he's excited about the Eclipse Lyo 1.0 Official Release. Learn about what Eclipse Lyo provides and why this matters to you.",
+        "author": {
+          "name": "Kartik Kanakasabesan",
+          "url": "#"
+        }
       }
       
     ]

@@ -4,7 +4,7 @@
 var tabCount = 0;
 
 var Whirligig = _.create( OSLC, {
-
+  name: "Whirligig",
   classes: {
     active: 'active'
   },
@@ -35,6 +35,7 @@ var Whirligig = _.create( OSLC, {
   },
   
   init: function( element ){
+    console.log('Initializing Whirligig for #' + element.id);
     
     var whirligig = this;
     
@@ -207,18 +208,16 @@ var Whirligig = _.create( OSLC, {
   
 });
 
+OSLC.modules.whirligig = Whirligig;
+
 $(function(){
   
-  $('[data-whirligig]').each(function(){
-    
+  $('[data-whirligig]').each(function(){    
     $(this)
-      .data( 'whirligig', _.create(Whirligig) )
-      .data( 'whirligig' ).init( this );
-    
+      .data('whirligig', _.create(Whirligig))
+      .data('whirligig').init(this);
   });
   
 });
-
-OSLC.modules.whirligig = Whirligig;
 
 }(jQuery, this, this.document));

@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'css/',
           src: [ '*.css', '!*.min.css' ],
-          dest: 'css/',
+          dest: 'css/build/',
           ext: '.min.css'
         }
       },
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
       
       watch: {
         styles: {
-          files: [ 'css/*.css', '!css/*.min.css' ],
+          files: [ 'css/*.css', '!css/build/*.min.css' ],
           tasks: ['cssmin']
         },
         grunticon: {

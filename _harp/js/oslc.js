@@ -1,28 +1,29 @@
+/* Build process prefixes this with modernizr.js */
+
+/* Catch console.log errors. You are welcome. */
+if (! window.console) { window.console = {log: function () {}}; }
+
+// Additional Flexbox detection for IE10/11 with 'tweener' flexbox implementations
+// https://github.com/Modernizr/Modernizr/issues/812
+Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign', 'end', true));
+
 /* 
-  Catch console.log errors. You are welcome. 
+  add .mustard/.no-mustard css classes 
+  http://responsivenews.co.uk/post/18948466399/cutting-the-mustard
 */
-if (! window.console) {
-  window.console = {
-    log: function () {}
-  };
-}
+Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window );
 
-window.site_url = window.site_url || '/';
-
+/*
+  Load "enhanced" experience
+  + Enhanced OSLC CSS
+  + JS libraries: jQuery, lo-dash, animations, etc.
+  + Enhanced OSLC scripts and modules
+*/
 Modernizr.load({
-  // Cut the mustard
-  test: ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window),
-  
-  //
-  // Load oslc_enhanced 
-  //
-  // Includes libraries:
-  //  - jQuery ($)
-  //  - lodash (_)
-  //  - Vein CSS injection (vein)
-  //
+  test: Modernizr.mustard,
   yep: [
-    window.site_url + 'js/libraries.js',
+    window.site_url + 'css/build/oslc_enhanced.min.css',
+    window.site_url + 'js/build/libraries.js',
     window.site_url + 'js/build/oslc_enhanced.min.js'
   ],
   callback: function(url) {

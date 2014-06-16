@@ -1696,6 +1696,24 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_harp\/css\/build\/oslc.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/css\/build\/oslc.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/css\/build\/oslc_enhanced.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/css\/build\/oslc_enhanced.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/css\/oslc.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -1705,29 +1723,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/_harp\/css\/oslc.min.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/css\/oslc.min.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/_harp\/css\/oslc_enhanced.css": {
 		"fileType": 16,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/css\/oslc_enhanced.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/_harp\/css\/oslc_enhanced.min.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/css\/oslc_enhanced.min.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1934,6 +1934,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/icons\/_grunticon\/png\/menu-author.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 787,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/menu-author.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/menu-author.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/icons\/_grunticon\/png\/menu-filter.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1952,6 +1963,17 @@
 		"initialSize": 936,
 		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/menu-sort.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/menu-sort.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/_grunticon\/png\/menu-tag.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 517,
+		"inputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/menu-tag.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/_grunticon\/png\/menu-tag.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2364,6 +2386,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/icons\/output\/png\/menu-author.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 457,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/menu-author.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/menu-author.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/icons\/output\/png\/menu-filter.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2382,6 +2415,17 @@
 		"initialSize": 501,
 		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/menu-sort.png",
 		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/menu-sort.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/icons\/output\/png\/menu-tag.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 408,
+		"inputAbbreviatedPath": "\/_harp\/icons\/output\/png\/menu-tag.png",
+		"outputAbbreviatedPath": "\/_harp\/icons\/output\/png\/menu-tag.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2612,9 +2656,20 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/js\/_libraries.js",
-		"outputAbbreviatedPath": "\/_harp\/js\/libraries.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/build\/libraries.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/build\/libraries.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/js\/build\/libraries.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/build\/min\/libraries-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
@@ -2673,23 +2728,23 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/js\/lib\/jquery-2.1.0.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/_harp\/js\/lib\/jquery-2.1.0.js",
-		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/jquery-2.1.0-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/_harp\/js\/lib\/jquery-2.1.1.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/jquery-2.1.1.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/jquery-2.1.1-ck.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/lib\/jquery-custom.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/js\/lib\/jquery-custom.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/jquery-custom-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -2717,12 +2772,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/js\/lib\/lodash.compat.js": {
+	"\/_harp\/js\/lib\/lodash.mobile.js": {
 		"fileType": 64,
 		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/js\/lib\/lodash.compat.js",
-		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/lodash.compat-ck.js",
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/js\/lib\/lodash.mobile.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/lodash.mobile-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -2789,17 +2844,6 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/js\/lib\/velocity.ui.js",
 		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/velocity.ui-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/_harp\/js\/libraries.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/js\/libraries.js",
-		"outputAbbreviatedPath": "\/_harp\/js\/min\/libraries-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -4518,7 +4562,7 @@
 	"\/_harp\/js\/_libraries.js": [
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/jquery-2.1.1.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/jquery-custom.js",
 			"position": 0,
 			"type": 0
 			},
@@ -4542,7 +4586,7 @@
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/lodash.compat.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/lodash.mobile.js",
 			"position": 4,
 			"type": 0
 			},
@@ -4562,6 +4606,14 @@
 			"followForSyntaxChecking": 0,
 			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/drop.js",
 			"position": 7,
+			"type": 0
+			}
+		],
+	"\/_harp\/js\/oslc.js": [
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/modernizr.js",
+			"position": 0,
 			"type": 0
 			}
 		],

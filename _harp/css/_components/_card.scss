@@ -53,22 +53,21 @@ $card-border-radius: 4px;
   > .deck {
     color: palette(gray, mid-dark);
     line-height: 1;
-    @include rem(padding, 0 $card-padding-sides);
+    @include rem(padding, 0 $card-padding-sides 8px);
+    
     border-bottom: 1px solid palette(gray, light);    
   }
-  
-  .tags, .byline {
-    margin-top: 8px;
-  }
-      
+        
   .byline {
     @extend %inline-block;
     @extend %copy-links;
     @extend %text-size-s;
   }
   
-  .tag { margin-bottom: 8px; }
-  
+  .tag, .byline {
+    margin-top: 8px;
+  }
+    
   // vertical-align: middle (see .tag) isn't really perfectly centered. This is.
   .flexbox & .tags {
     display: flex;
@@ -83,15 +82,15 @@ $card-border-radius: 4px;
     background-color: tint(palette(gray, x-light), 60%);
     border-radius: 0 0 $card-border-radius $card-border-radius;
     
-    .byline { 
-      margin-left: $card-padding-sides;
+    > .meta, > .pagination {
+      @include rem(padding, 0 $card-padding-sides 8px);
     }
+    
+    .byline { @include rem(margin-right, $font-size-xs); }
     
     .tags { 
       @extend %inline-block;
       vertical-align: middle;
-      @include rem(margin-left, $font-size-xs);
-      @include rem(margin-right, $card-padding-sides);
     }
     
   }

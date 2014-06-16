@@ -8,9 +8,10 @@
         section.content
           div.copy
             p #{post.desc}
-        footer.footer
-          span.byline
-            time(datetime="#{ new Date(post.date) }") #{post.date} 
-            if post.author
-              | by 
-              a(href="#") #{post.author.name}
+        div.footer
+          footer.meta
+            span.byline
+              time(datetime="#{ new Date(post.date) }") #{post.date} 
+              if post.author
+                | by 
+                a(href="#") #{post.author.name}

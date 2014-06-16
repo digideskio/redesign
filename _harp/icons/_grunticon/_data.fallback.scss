@@ -131,6 +131,18 @@
 }
 
 
+.grunticon-menu-author {
+  background-image: url('png/menu-author.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-menu-filter {
   background-image: url('png/menu-filter.png');
   @include icon;
@@ -145,6 +157,18 @@
 
 .grunticon-menu-sort {
   background-image: url('png/menu-sort.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-menu-tag {
+  background-image: url('png/menu-tag.png');
   @include icon;
   height: 20px;
   width: 20px;

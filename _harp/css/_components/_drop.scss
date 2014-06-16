@@ -1,7 +1,7 @@
-
 .drop-element {
   //http://github.hubspot.com/drop/overview/styling/
   display: none;
+  position: absolute;
   opacity: 0;
   transition: opacity .15s $ease-out-cubic;
 
@@ -32,4 +32,8 @@
       }
     }
   }
+}
+
+[data-tether-id] {
+  display: none;
 }

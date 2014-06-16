@@ -12,9 +12,10 @@
               if page.description
                 p #{page.description}
           if page.date
-            footer.footer
-              span.byline
-                time(datetime="#{ new Date(page.date) }") #{page.date} 
-                if page.author
-                  | by 
-                  a(href="#{page.author.url}") #{page.author.name}
+            div.footer
+              footer.meta
+                span.byline
+                  time(datetime="#{ new Date(page.date) }") #{page.date} 
+                  if page.author
+                    | by 
+                    a(href="#{page.author.url}") #{page.author.name}

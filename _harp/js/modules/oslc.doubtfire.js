@@ -2,6 +2,7 @@
 'use strict';
 
 var Doubtfire = _.create(OSLC, {
+  name: "Doubtfire",
 
   els: {
     nav: $('#nav')
@@ -9,6 +10,8 @@ var Doubtfire = _.create(OSLC, {
   
   init: function(){
   
+    console.log('Initialize Doubtfire nanny class');
+    
     this.bindings();
   
   },
@@ -21,6 +24,8 @@ var Doubtfire = _.create(OSLC, {
     
     if ( sextant && whirligig ) {
      
+      console.log('DOUBTFIRE: Initialize Sextant + Whirligig interactions');
+
       // This is the important one:
       // When the carousel changes, match the slide distance to the .active panel
       this.els.nav.on('slideStart', function(e) {
@@ -64,7 +69,7 @@ var Doubtfire = _.create(OSLC, {
   }
 });
 
-Doubtfire.init();
+$(document).ready(function(){ Doubtfire.init(); });
 
 
 })(jQuery, this, this.document);

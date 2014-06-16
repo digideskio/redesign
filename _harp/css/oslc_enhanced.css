@@ -480,10 +480,7 @@ meta.oslc-mq-neckbeard-only {
   background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(102, 102, 102, 0.4) 0%, rgba(102, 102, 102, 0.4) 5%, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0) 100%);
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0)), color-stop(0%, rgba(102, 102, 102, 0.4)), color-stop(5%, rgba(102, 102, 102, 0.4)), color-stop(5%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
   background-image: linear-gradient(to top,rgba(255, 255, 255, 0) 0%, rgba(102, 102, 102, 0.4) 0%, rgba(102, 102, 102, 0.4) 5%, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0) 100%); }
-@media only screen and (min-width: 40.0625em) {
-  .card .byline {
-    margin-bottom: 8px; } }
-.flexbox .card .footer {
+.flexbox .card .meta {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -493,20 +490,16 @@ meta.oslc-mq-neckbeard-only {
   -webkit-align-items: center;
   -moz-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
-  .flexbox .card .footer .byline {
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .flexbox .card .meta .byline {
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
+    -webkit-flex: 1 1 auto;
     -moz-box-flex: 1;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto; }
-  .flexbox .card .footer .tags {
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
 @media only screen and (min-width: 64.0625em) {
   .card.primary > .header > .title {
     font-size: 32px;
@@ -786,6 +779,7 @@ meta.oslc-mq-neckbeard-only {
 
 .drop-element {
   display: none;
+  position: absolute;
   opacity: 0;
   -webkit-transition: opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1); }
@@ -805,3 +799,6 @@ meta.oslc-mq-neckbeard-only {
       .drop-element.drop-theme-oslc .drop-content .current,
       .drop-element.drop-theme-oslc .drop-content .item:hover {
         background-color: #ffe2b3; }
+
+[data-tether-id] {
+  display: none; }

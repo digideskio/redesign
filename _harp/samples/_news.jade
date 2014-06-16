@@ -5,15 +5,16 @@ html.no-js(lang="en")
     != partial('../_head', {site_url: site_url})
     
   body
-    != partial('../_banner', {site_url: site_url})
+    .sticky-footer
+      != partial('../_banner', {site_url: site_url})
     
-    .sticky-footer-body.off-canvas-wrap
+      .sticky-footer-body.off-canvas-wrap
 
-      != partial('../_main', {site_url: site_url, has_secondary: false})
+        != partial('../_main', {site_url: site_url, has_secondary: false})
       
-      != partial('../_nav', {site_url: site_url, has_secondary: false})
+        != partial('../_nav', {site_url: site_url, has_secondary: false})
       
       
-    != partial('../_footer', {site_url: site_url})
+      != partial('../_footer', {site_url: site_url})
 
   != partial('../_enhance', {site_url: site_url})

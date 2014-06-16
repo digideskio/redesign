@@ -5,8 +5,7 @@
     }
   }
   
-  &.secondary {
-    
+  &.secondary { 
     @include respond-to( hand-only ) {
       .heading { display: none; }
     } 

@@ -51,7 +51,7 @@
 /*
  * Reset UL/OLs
  */
-.menu .items, .links, .slats {
+.menu .items, .links, .pagination, .slats {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -1003,11 +1003,13 @@ img {
  * 
  * http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * https://github.com/philipwalton/solved-by-flexbox/blob/master/_sass/components/_site.scss
+ *
+ * I've made a modification here to account for some performance issues with scripts adding elements to the <body>, especially on longer pages in Firefox
+ * Basically, don't set display:flex on the <body> element directly.
+ * My fix is to move the whole shebang one layer deeper (html -> body -> .sticky-footer)
+ * See: http://jsbin.com/todajate/3/edit
  */
-html {
-  height: 100%; }
-
-.flexbox body, .flexbox .sticky-footer-body {
+.flexbox .sticky-footer, .flexbox .sticky-footer-body {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1028,8 +1030,17 @@ html {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto; }
 
-.flexbox body {
-  min-height: 100%; }
+.flexbox .sticky-footer {
+  min-height: 100vh; }
+
+/*
+  "IE10 needs an explicitly declared height on both the <body> and <html> elements to trigger correct calculation of heights for flexible containers along the vertical axis of the page. I haven't found any other properties that trigger the correct behavior so far. It doesn't seem to matter which height you set, but 100% seems sensible."
+  
+  src: http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
+  see also: http://jsbin.com/ERELezu/24/edit
+*/
+.flexboxtweener, .flexboxtweener > body, .flexboxtweener .sticky-footer {
+  height: 100%; }
 
 html {
   font-size: 100%; }
@@ -1301,45 +1312,40 @@ a.tag {
     font-weight: bold;
     color: #444444; }
 
-.pagination {
-  list-style: none;
-  margin: 0;
-  padding: 0 16px 5px;
-  padding: 0 1rem 0.3125rem; }
-  .flexbox .pagination {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-  .pagination > li {
-    vertical-align: top;
-    line-height: 20px; }
-  .pagination a {
-    text-decoration: none; }
-  .pagination a, .pagination .item {
-    padding: .5em .8125em; }
-  .pagination > li:first-child a {
-    padding-left: 0; }
-  .pagination > li:last-child a {
-    padding-right: 0; }
-  .pagination .item {
-    border-top: 2px solid #444444;
-    padding-top: .375em; }
-    .boxshadow .pagination .item {
-      border-top: none;
-      padding-top: .5em;
-      -webkit-box-shadow: inset 0 3px 0 #444444;
-      box-shadow: inset 0 3px 0 #444444; }
-  .pagination .previous .icon, .pagination .first .icon {
-    margin-right: 5px; }
-  .pagination .next .icon, .pagination .last .icon {
-    margin-left: 5px; }
+.flexbox .pagination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+.pagination > li {
+  vertical-align: top;
+  line-height: 20px; }
+.pagination a {
+  text-decoration: none; }
+.pagination a, .pagination .item {
+  padding: .5em .8125em; }
+.pagination > li:first-child a {
+  padding-left: 0; }
+.pagination > li:last-child a {
+  padding-right: 0; }
+.pagination .item {
+  border-top: 2px solid #444444;
+  padding-top: .375em; }
+  .boxshadow .pagination .item {
+    border-top: none;
+    padding-top: .5em;
+    -webkit-box-shadow: inset 0 3px 0 #444444;
+    box-shadow: inset 0 3px 0 #444444; }
+.pagination .previous .icon, .pagination .first .icon {
+  margin-right: 5px; }
+.pagination .next .icon, .pagination .last .icon {
+  margin-left: 5px; }
 
 .card, .notice {
   background-color: white;
@@ -1374,13 +1380,11 @@ a.tag {
 .card > .deck {
   color: #666666;
   line-height: 1;
-  padding: 0 16px;
-  padding: 0 1rem;
+  padding: 0 16px 8px;
+  padding: 0 1rem 0.5rem;
   border-bottom: 1px solid #cccccc; }
-.card .tags, .card .byline {
+.card .tag, .card .byline {
   margin-top: 8px; }
-.card .tag {
-  margin-bottom: 8px; }
 .flexbox .card .tags {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1397,14 +1401,14 @@ a.tag {
 .card > .footer {
   background-color: #f7f7f7;
   border-radius: 0 0 4px 4px; }
+  .card > .footer > .meta, .card > .footer > .pagination {
+    padding: 0 16px 8px;
+    padding: 0 1rem 0.5rem; }
   .card > .footer .byline {
-    margin-left: 16px; }
+    margin-right: 11px;
+    margin-right: 0.6875rem; }
   .card > .footer .tags {
-    vertical-align: middle;
-    margin-left: 11px;
-    margin-left: 0.6875rem;
-    margin-right: 16px;
-    margin-right: 1rem; }
+    vertical-align: middle; }
 .card.primary {
   margin-bottom: 19px;
   margin-bottom: 1.1875rem; }

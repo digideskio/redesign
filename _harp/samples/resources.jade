@@ -9,29 +9,30 @@
           div.copy
             p #{post.desc}
         if post.date || post.channel_tag
-          footer.footer
-            if post.date
-              span.byline
-                time(datetime="#{ new Date(post.date) }") #{post.date} 
-                if post.author
-                  | by 
-                  a(href="#{post.author.url}") #{post.author.name}
-            if post.channel_tag
-              .tags
-                a.tag(href="#") 
-                  .flag
-                    .image
-                      i.icon(class="#{'grunticon-channel-' + post.channel_tag.toLowerCase()}")
-                    .body #{post.channel_tag}
-                if post.featured
-                  span.tag.success
+          div.footer
+            footer.meta
+              if post.date
+                span.byline
+                  time(datetime="#{ new Date(post.date) }") #{post.date} 
+                  if post.author
+                    | by 
+                    a(href="#{post.author.url}",data-filter-on="author") #{post.author.name}
+              if post.channel_tag
+                .tags
+                  a.tag(href="#",data-filter-on="tag") 
                     .flag
                       .image
-                        i.icon.grunticon-tag-favorite
-                      .body Featured
-                if post.upcoming
-                  span.tag.info
-                    .flag
-                      .image
-                        i.icon.grunticon-tag-upcoming
-                      .body Upcoming
+                        i.icon(class="#{'grunticon-channel-' + post.channel_tag.toLowerCase()}")
+                      .body #{post.channel_tag}
+                  if post.featured
+                    span.tag.success(data-filter-on="tag")
+                      .flag
+                        .image
+                          i.icon.grunticon-tag-favorite
+                        .body Featured
+                  if post.upcoming
+                    span.tag.info(data-filter-on="tag")
+                      .flag
+                        .image
+                          i.icon.grunticon-tag-upcoming
+                        .body Upcoming

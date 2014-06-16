@@ -13,5 +13,9 @@
   "fluid-vids": {
     "title": "Fluid videos",
     "description": "Testing my script to make sure videos do not escape their parent container"
+  },
+  "sticky-footer":{
+    "title": "Sticky footer",
+    "description": "Does the body grow appropriately?"
   }
 }

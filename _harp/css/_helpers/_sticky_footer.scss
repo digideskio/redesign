@@ -5,33 +5,36 @@
  * 
  * http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
  * https://github.com/philipwalton/solved-by-flexbox/blob/master/_sass/components/_site.scss
+ *
+ * I've made a modification here to account for some performance issues with scripts adding elements to the <body>, especially on longer pages in Firefox
+ * Basically, don't set display:flex on the <body> element directly.
+ * My fix is to move the whole shebang one layer deeper (html -> body -> .sticky-footer)
+ * See: http://jsbin.com/todajate/3/edit
  */
-
-html { height: 100%; }
 
 %sticky-footer-flexcolumns {
   display: flex;
   flex-direction: column;
+  
 }
 
 // use this for the elements that have to grow to body height
 %sticky-footer-body-elements {
-  // *should* just be flex(1) but (1 0 auto) fixes an issue in IE10
+  // theoretically *should* just be flex:1 
+  // but explicit flex:1 0 auto; fixes an issue in IE10
   // http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
 	flex: 1 0 auto;
 }
 
 .flexbox {
-  body {
-    // http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+  .sticky-footer {
     @extend %sticky-footer-flexcolumns;
-    min-height: 100%;
+    min-height: 100vh;
   }
 
   // Additional markup for sticky footer. 
   // This is the element that Will expand to body height. 
-  // Must be a direct child of <body>
-
+  // Must be a direct child of .sticky-footer
   .sticky-footer-body {
     @extend %sticky-footer-body-elements;
 
@@ -44,3 +47,10 @@ html { height: 100%; }
 
 } 
 
+/*
+  "IE10 needs an explicitly declared height on both the <body> and <html> elements to trigger correct calculation of heights for flexible containers along the vertical axis of the page. I haven't found any other properties that trigger the correct behavior so far. It doesn't seem to matter which height you set, but 100% seems sensible."
+  
+  src: http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
+  see also: http://jsbin.com/ERELezu/24/edit
+*/
+.flexboxtweener,.flexboxtweener>body,.flexboxtweener .sticky-footer { height: 100%; }

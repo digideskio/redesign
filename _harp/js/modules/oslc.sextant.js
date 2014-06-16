@@ -6,7 +6,7 @@
 'use strict';
   
 var Sextant = _.create( OSLC, {
-  
+  name: "Sextant",
   els: {
    nav: $('#nav'),
    main: $('#main'),
@@ -24,6 +24,7 @@ var Sextant = _.create( OSLC, {
   },
   
   init: function(){
+    console.log('Initializing Sextant global navigation');
   
     // In markup order, #nav comes after #main 
     // This doesn't make much of a difference for most layouts
@@ -114,9 +115,9 @@ var Sextant = _.create( OSLC, {
   }
 });
 
-Sextant.init();
-
 // Tack a reference to the global OSLC object
 OSLC.modules.sextant = Sextant;
+
+$(document).ready(function(){ Sextant.init(); });
 
 }(jQuery, this, this.document));

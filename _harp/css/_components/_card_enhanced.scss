@@ -42,25 +42,12 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
     }
   }
   
-  .byline {
-    @include respond-to(knee-up) {
-      margin-bottom: 8px;
-    }
-  }
-  
-  .footer {
-    .flexbox & {
-      display: flex;
-      align-items: center;
-      //flex-wrap: wrap;
-      
-      .byline { flex: 1 0 auto; }
-      
-      .tags {
-        display: inline-flex;
-        flex-wrap: wrap;
-      }
-    }
+  .flexbox & .meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    .byline { flex: 1 1 auto; }
   }
   
   &.primary {
