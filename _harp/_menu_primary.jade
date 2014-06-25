@@ -1,5 +1,5 @@
 .panel#main_menu
-  .menu.primary
+  .menu.primary(data-prospectus,data-focusable="true")
     .item.flush.desk-up
       a.image-link(href="#{ site_url }")
         i.icon.grunticon-logo-med
@@ -10,7 +10,7 @@
     ul.items
       for page, slug in public._data
         if page.draft!=='true' || environment==='development'
-          li(class='#{ current.path[0] === slug ? "current" : "" }' role="presentation")
+          li(class='#{ current.path[0] === slug ? "current" : "" }')
             a.item(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '/') }") #{ page.menu_title || page.title }
       li(role="presentation")
         a.item(href="http://open-services.net/") open-services.net

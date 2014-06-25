@@ -799,6 +799,3 @@ meta.oslc-mq-neckbeard-only {
       .drop-element.drop-theme-oslc .drop-content .current,
       .drop-element.drop-theme-oslc .drop-content .item:hover {
         background-color: #ffe2b3; }
-
-[data-tether-id] {
-  display: none; }

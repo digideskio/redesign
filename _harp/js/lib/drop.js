@@ -1542,7 +1542,6 @@ return this.Tether;
     }
     drop.updateBodyClasses = function() {
       var anyOpen, _drop, _i, _len, _ref1;
-      console.log("updating body classes");
       anyOpen = false;
       _ref1 = allDrops[drop.classPrefix];
       for (_i = 0, _len = _ref1.length; _i < _len; _i++) {

@@ -1,4 +1,7 @@
 ;(function ($, window, document, undefined) {
+'use strict';
+
+var bartenderID = 0;
 
 var Bartender = _.create(OSLC, {
   name: 'Bartender',
@@ -14,16 +17,28 @@ var Bartender = _.create(OSLC, {
     }
   },
   
-  bartenderItemTemplate: _.template('<a href="#" class="item hasFlagInline"><div class="flag"><div class="image"><i class="icon grunticon-menu-<%= name %>"></i></div><div class="body"><span id="<%= name %>Body" data-text="<%= _.capitalize(name) %>"><%= _.capitalize(name) %></span> &#9662;</div></div></a>'),
+  bartenderItemTemplate: _.template(
+  '<a href="#" class="item hasFlagInline" id="bartender-<%= id %>-<%= name %>-control" '+
+    'aria-haspopup="true" aria-controls="bartender-<%= id %>-<%= name %>-dropdown">' +
+    '<div class="flag">' +
+      '<div class="image"><i class="icon grunticon-menu-<%= name %>"></i></div>'+
+      '<div class="body">'+
+        '<span id="bartender-<%= id %>-<%= name %>-label" data-text="<%= _.capitalize(name) %>"><%= _.capitalize(name) %></span> &#9662;'+
+      '</div>'+
+    '</div>'+
+  '</a>'),
   
   init: function( el ){
+    
+    bartenderID++;
+    this.id = bartenderID;
     
     this.els = {
       menu: $(el),
       listing: $('#main').find('.listing').first()
     };
     
-    this.constructMenu();    
+    this.constructMenu();
     
     // todo: allow default state to be overridden by GET in the url
     this.bindings();
@@ -43,9 +58,11 @@ var Bartender = _.create(OSLC, {
         .removeClass('current')
         .filter('[data-label="'+val.label+'"]')
         .addClass('current');
-        
-      $('#'+key+'Body').html(
-        $('#'+key+'Body').data('text') + 
+      
+      var labelId = '#bartender-'+bartender.id+'-'+key+'-label';
+
+      $(labelId).html(
+        $(labelId).data('text') + 
         (_.contains( ['All','Original order'], val.label ) ? '' : ': <span class="activeFilter">'+val.label+'</span>' )
       );
     });
@@ -120,6 +137,8 @@ var Bartender = _.create(OSLC, {
     }
     
     _.forEach(controls.split(','), this.buildControl, this);
+    
+    $.fn.prospectus && this.els.menu.prospectus();
   },
   
   buildControl: function(control) {
@@ -134,7 +153,7 @@ var Bartender = _.create(OSLC, {
     }
     
     // Add the main menu item
-    $bartenderItem = $( this.bartenderItemTemplate({name:control}) ).appendTo(this.els.menu);
+    $bartenderItem = $( this.bartenderItemTemplate({name:control,id:this.id}) ).appendTo(this.els.menu);
     
     // Set up default state for the control.
     // "sort" has a special one; otherwise, copy defaultStates.filter
@@ -154,7 +173,7 @@ var Bartender = _.create(OSLC, {
     }
 
     
-    this.drops[control] = new Drop({
+    $bartenderItem.data('drop',this.drops[control] = new Drop({
       target: $bartenderItem[0],
       classes: 'drop-theme-oslc',
       toggleBodyClass: false,
@@ -165,12 +184,22 @@ var Bartender = _.create(OSLC, {
           moveElement: false
         }
       }
-    });
+    }));
     
+    // Builds the menu items, activates Prospectus and inserts them into the appropriate Drop
     this.buildDropMenu(control, dropdownItems);
     
     this.drops[control].on('open', function(){
-      $(this.content).find('.current').velocity('callout.pulse', {duration: 400});
+      //$(this.content).find('.current').velocity('callout.pulse', {duration: 400});
+      var prospectus = $(this.content).find('.menu')
+        .attr({'aria-hidden':'false','aria-expanded':'true'})
+        .data('prospectus');
+      
+      prospectus && prospectus.focus();
+    });
+    
+    this.drops[control].on('close', function(){
+      $(this.content).find('.menu').attr({'aria-hidden':'true','aria-expanded':'false'});
     });
 
   },
@@ -210,7 +239,15 @@ var Bartender = _.create(OSLC, {
   
   buildDropMenu: function(control,items){
     var 
-      menu = $('<div>').addClass('menu tensed'),
+      menu = $('<div>').addClass('menu tensed')
+        .attr({
+          'aria-expanded':'false',
+          'aria-hidden':'true',
+          'data-focusable':'false',
+          'aria-labelledby': 'bartender-'+this.id+'-'+control+'-label',
+          'aria-owns': 'bartender-'+this.id+'-'+control+'-control',
+          'id': 'bartender-'+this.id+'-'+control+'-dropdown'
+      }),
       itemTemplateFold = this.templateFold('<a class="item" href="<%= href %>" ' + 
         'data-update="'+control+'" ' +
         '<% _.each(data, function(val,key) { %>data-<%= key %>="<%= val %>" <% }); %>>' +
@@ -232,6 +269,8 @@ var Bartender = _.create(OSLC, {
       if ( control !== 'sort' ) {
         menu.find('.item').tsort({data:'count',order:'desc'},{data:'label'});
       }
+      
+      $.fn.prospectus && menu.prospectus();
 
       $(this.drops[control].content).html(menu);
       this.drops[control].position();
