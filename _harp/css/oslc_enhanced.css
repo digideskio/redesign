@@ -793,7 +793,8 @@ meta.oslc-mq-neckbeard-only {
     .drop-element.drop-theme-oslc .drop-content {
       background-color: #fff;
       -webkit-box-shadow: 1px 2px 3px rgba(153, 153, 153, 0.5);
-      box-shadow: 1px 2px 3px rgba(153, 153, 153, 0.5); }
+      box-shadow: 1px 2px 3px rgba(153, 153, 153, 0.5);
+      min-width: 8em; }
       .drop-element.drop-theme-oslc .drop-content .count {
         color: #999999; }
       .drop-element.drop-theme-oslc .drop-content .current,

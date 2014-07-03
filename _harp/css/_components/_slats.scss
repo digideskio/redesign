@@ -23,3 +23,55 @@
     color: palette(gray, mid-dark);
   }
 }
+
+// Progress bars
+// see: http://css-tricks.com/html5-progress-element/
+.status[value] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border: none;
+  background: palette(gray,x-light);
+  -webkit-appearance: none; // Autoprefix doesn't catch this
+  -moz-appearance: none;
+  appearance: none;
+  
+  // webkit has a separate selector for the container
+  &::-webkit-progress-bar {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  // modern browsers will ignore anything between <progress></progress>
+  // So I stick a fallback <span> in there to fake the bar
+  .fallback {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: palette(blue,mid-dark);    
+  }
+  
+  /* With these Shadow DOM selectors, they have to be on their own. You can't combine them. */
+  &::-webkit-progress-value { background-color: palette(blue,mid-dark);}
+  &::-moz-progress-bar { background-color: palette(blue,mid-dark); }
+  color: palette(blue,mid-dark); // IE 10+ bar color
+  
+  &.finalize {
+    &::-webkit-progress-value { background-color: palette(gold,mid-dark); }
+    &::-moz-progress-bar { background-color: palette(gold,mid-dark);}
+    .fallback { background-color: palette(gold,mid-dark); }
+    color: palette(gold,mid-dark); // IE 10 bar color    
+  }
+  
+  &.final {
+    &::-webkit-progress-value { background-color: palette(green,mid-dark); }
+    &::-moz-progress-bar { background-color: palette(green,mid-dark);}
+    .fallback { background-color: palette(green,mid-dark); }
+    color: palette(green,mid-dark); // IE 10 bar color    
+  }
+  
+}

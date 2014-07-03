@@ -107,6 +107,18 @@
 }
 
 
+.grunticon-js-infotip {
+  background-image: url('png/js-infotip.png');
+  @include icon;
+  height: 14px;
+  width: 14px;
+    
+  &.intrinsic {
+    padding-top: 14px / 14px * 100%;
+  }
+}
+
+
 .grunticon-logo-med {
   background-image: url('png/logo-med.png');
   @include icon;
@@ -167,8 +179,32 @@
 }
 
 
+.grunticon-menu-status {
+  background-image: url('png/menu-status.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-menu-tag {
   background-image: url('png/menu-tag.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-menu-workgroup {
+  background-image: url('png/menu-workgroup.png');
   @include icon;
   height: 20px;
   width: 20px;
@@ -205,6 +241,30 @@
 
 .grunticon-meta-presenters {
   background-image: url('png/meta-presenters.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-status {
+  background-image: url('png/meta-status.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-workgroup {
+  background-image: url('png/meta-workgroup.png');
   @include icon;
   height: 20px;
   width: 20px;

@@ -1038,6 +1038,7 @@ img {
   
   src: http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
   see also: http://jsbin.com/ERELezu/24/edit
+  and: http://jsbin.com/todajate/3/edit
 */
 .flexboxtweener, .flexboxtweener > body, .flexboxtweener .sticky-footer {
   height: 100%; }
@@ -1180,15 +1181,15 @@ html {
 .menu .image {
   padding-right: 3px; }
 
+.links.tightened .item {
+  margin-bottom: 5px;
+  margin-bottom: 0.3125rem; }
 .links .item {
   margin-bottom: 8px;
   margin-bottom: 0.5rem;
   line-height: 1.3; }
   .links .item:last-child {
     margin-bottom: 0; }
-.links.tightened .item {
-  margin-bottom: 5px;
-  margin-bottom: 0.3125rem; }
 
 .breadcrumbs {
   padding-top: 2px; }
@@ -1450,6 +1451,51 @@ a.tag {
     margin-bottom: .2em;
     font-weight: bold;
     color: #666666; }
+
+.status[value] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border: none;
+  background: #ebebeb;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* With these Shadow DOM selectors, they have to be on their own. You can't combine them. */
+  color: #0083a3; }
+  .status[value]::-webkit-progress-bar {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .status[value] .fallback {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #0083a3; }
+  .status[value]::-webkit-progress-value {
+    background-color: #0083a3; }
+  .status[value]::-moz-progress-bar {
+    background-color: #0083a3; }
+  .status[value].finalize {
+    color: #ffa83d; }
+    .status[value].finalize::-webkit-progress-value {
+      background-color: #ffa83d; }
+    .status[value].finalize::-moz-progress-bar {
+      background-color: #ffa83d; }
+    .status[value].finalize .fallback {
+      background-color: #ffa83d; }
+  .status[value].final {
+    color: #00bd94; }
+    .status[value].final::-webkit-progress-value {
+      background-color: #00bd94; }
+    .status[value].final::-moz-progress-bar {
+      background-color: #00bd94; }
+    .status[value].final .fallback {
+      background-color: #00bd94; }
 
 .banner,
 .footer[role="contentinfo"] {

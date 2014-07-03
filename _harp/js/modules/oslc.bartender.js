@@ -105,8 +105,8 @@ var Bartender = _.create(OSLC, {
       }, 
       velocityDefaults);
 
-    // --- Sort --- //      
-    $targets.tsort({data:this.state.sort.on, order: this.state.sort.direction});
+    // --- Sort --- //
+    this.state.sort && $targets.tsort({data:this.state.sort.on, order: this.state.sort.direction});
   },
   
   bindings: function(){

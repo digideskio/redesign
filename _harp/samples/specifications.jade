@@ -1,0 +1,16 @@
+.grid.pulled.blocks
+  for spec in specifications
+    .column.hand-full.desk-half(data-date="#{Date.parse( new Date(spec.date) )}")
+      .card
+        header.header
+          h1.title 
+            a(href="#{spec.url}",rel="bookmark") #{ spec.title }
+        section.content
+          if spec.meta_before_body
+            != partial('../_slats', {meta_block : spec.meta_before_body})
+        div.footer
+          footer.meta
+            if spec.tags
+              .tags
+                for tag in spec.tags
+                  span.tag(data-filter-on="tag") #{tag}

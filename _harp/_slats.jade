@@ -1,7 +1,14 @@
 ul.slats
   for links, name in meta_block
-    li.slat 
-      if name !== 'Link'
+    li.slat(class="#{name === 'Status' ? 'pos-rel' : ''}")
+      if name === 'Link'
+        for link in links
+          a.action(href="#{link.url || '#'}") 
+            .flag.reversed
+              .body #{link.title || link}
+              .image
+                i.icon.grunticon-action-outgoing
+      else
         .flag
           .image
             i.icon(class="#{'grunticon-meta-' + name.toLowerCase()}")
@@ -10,11 +17,17 @@ ul.slats
             ul.links.tightened
               for link in links
                 li.item
-                  a(href="#{link.url || '#'}") #{link.title || link}
-      else
-        for link in links
-          a.action(href="#{link.url || '#'}") 
-            .flag.reversed
-              .body #{link.title || link}
-              .image
-                i.icon.grunticon-action-outgoing
+                  if name === "Status"
+                    span(data-filter-on="status") #{link.title || link}
+                  else if name === "Workgroup"
+                    a(href="#{link.url || '#'}",data-filter-on="workgroup") #{link.title || link}
+                  else
+                    a(href="#{link.url || '#'}") #{link.title || link}
+
+                  //if name === "Status"
+                    a(href="#")
+                      i.icon.grunticon-js-infotip
+                  
+                  if link.value
+                    progress.status(max="100",value="#{link.value}",class="#{  link.title.toLowerCase()}")
+                      span.fallback(style="width:#{link.value}%;")

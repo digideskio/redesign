@@ -342,8 +342,35 @@
     "draft": "true"
   },
   "specifications": {
-    "title": "All Specs",
-    "draft": "true"
+    "menu_title": "All Specs",
+    "title": "[Sample] Specifications",
+    "layout": "_specifications",
+    "specifications": [
+      {
+        "title": "Core 3.0",
+        "url": "http://open-services.net/wiki/core/Specification-3.0/",
+        "tags": ["OASIS","Common"],
+        "meta_before_body": {
+          "Workgroup":["Core TC"],
+          "Status": [{
+            "title":"Draft",
+            "value": "25"
+          }]
+        }
+      },
+      {
+        "title": "Core 2.0",
+        "url": "http://open-services.net/bin/view/Main/OslcCoreSpecification",
+        "tags": ["Common"],
+        "meta_before_body": {
+          "Workgroup":["Core"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
+      }
+    ]
   },
   "software": {
     "title": "Software",
