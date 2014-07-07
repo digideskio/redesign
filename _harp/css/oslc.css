@@ -1290,6 +1290,10 @@ html {
     background-color: #ff852e; }
   .tag.danger {
     background-color: #dc3235; }
+  .tag.OASIS {
+    background-color: #51247c; }
+  .tag.Inactive {
+    background-color: #e85b59; }
 
 a.tag {
   background-color: #0083a3;
@@ -1480,6 +1484,15 @@ a.tag {
     background-color: #0083a3; }
   .status[value]::-moz-progress-bar {
     background-color: #0083a3; }
+  .status[value].inactive {
+    color: #dc3235; }
+    .status[value].inactive::-webkit-progress-value {
+      background: -webkit-repeating-linear-gradient(left, #dc3235, #dc3235 14px, transparent 14px, transparent 20px);
+      background: repeating-linear-gradient(to right, #dc3235, #dc3235 14px, transparent 14px, transparent 20px); }
+    .status[value].inactive::-moz-progress-bar {
+      background: repeating-linear-gradient(to right, #dc3235, #dc3235 14px, transparent 14px, transparent 20px); }
+    .status[value].inactive .fallback {
+      background-color: #dc3235; }
   .status[value].finalize {
     color: #ffa83d; }
     .status[value].finalize::-webkit-progress-value {

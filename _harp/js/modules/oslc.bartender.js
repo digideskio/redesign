@@ -171,7 +171,6 @@ var Bartender = _.create(OSLC, {
           }, 'All');
         });
     }
-
     
     $bartenderItem.data('drop',this.drops[control] = new Drop({
       target: $bartenderItem[0],
@@ -262,7 +261,7 @@ var Bartender = _.create(OSLC, {
         if ( ! temp.data.label ) { temp.data.label = temp.html; }
         return temp;
       };
-      
+            
       menu.html( _.reduce(items.map(zipToItemObj),itemTemplateFold,'') );
       
       // Sort on item count for filter dropdowns

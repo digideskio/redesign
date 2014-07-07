@@ -25,6 +25,12 @@
   
   &.danger { background-color: palette(red, mid-dark); }
   
+  &.OASIS { 
+    background-color: #51247c; 
+    //color: #ffcc35;
+  }
+  &.Inactive { background-color: palette(red); }
+  
 }
 
 a.tag {

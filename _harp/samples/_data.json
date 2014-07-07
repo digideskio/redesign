@@ -369,6 +369,188 @@
             "value": "100"
           }]
         }
+      },
+      {
+        "title": "Reporting 1.0",
+        "url": "http://open-services.net/bin/view/Main/ReportingSpecifications",
+        "tags": ["Common","Inactive"],
+        "meta_before_body": {
+          "Workgroup":["Reporting"],
+          "Status": [{
+            "title":"Inactive",
+            "value": "70"
+          }]
+        }
+      },
+      {
+        "title": "Product Definition 1.1",
+        "url": "http://open-services.net/bin/view/Main/PlmSpecExtensions",
+        "meta_before_body": {
+          "Workgroup":["ALM-PLM Interoperability"],
+          "Status": [{
+            "title":"Draft",
+            "value": "25"
+          }]
+        }
+      },
+      {
+        "title": "Core 2.0 Extension for PLM",
+        "url": "http://open-services.net/bin/view/Main/CoreExtensionForPlm",
+        "meta_before_body": {
+          "Workgroup":["ALM-PLM Interoperability"],
+          "Status": [{
+            "title":"Draft",
+            "value": "40"
+          }]
+        }
+      },
+      {
+        "title": "Architecture Management 3.0",
+        "url": "http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-3.0/",
+        "meta_before_body": {
+          "Workgroup":["Architecture Management"],
+          "Status": [{
+            "title":"Draft",
+            "value": "25"
+          }]
+        }
+      },
+      {
+        "title": "Architecture Management 2.0",
+        "url": "http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-2.0/",
+        "meta_before_body": {
+          "Workgroup":["Architecture Management"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
+      },
+      {
+        "title": "Asset Management 2.0",
+        "url": "http://open-services.net/wiki/asset-management/OSLC-Asset-Management-2.0-Specification/",
+        "tags": ["Inactive"],
+        "meta_before_body": {
+          "Workgroup":["Asset Management"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
+      },
+      {
+        "title": "Automation 2.1",
+        "url": "http://open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.1",
+        "tags": ["OASIS"],
+        "meta_before_body": {
+          "Workgroup":["Architecture Management TC"],
+          "Status": [{
+            "title":"Scope",
+            "value": "5"
+          }]
+        }
+      },
+      {
+        "title": "Automation 2.0",
+        "url": "http://open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.0/",
+        "meta_before_body": {
+          "Workgroup":["Automation"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
+      },
+      {
+        "title": "Change Management 3.0",
+        "url": "http://open-services.net/wiki/change-management/Specification-3.0",
+        "tags": ["OASIS"],
+        "meta_before_body": {
+          "Workgroup":["Change and Configuration Management TC"],
+          "Status": [{
+            "title":"Draft",
+            "value": "33"
+          }]
+        }
+      },
+      {
+        "title": "Change Management 2.0",
+        "url": "http://open-services.net/bin/view/Main/CmSpecificationV2",
+        "meta_before_body": {
+          "Workgroup":["Change Management"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
+      },
+      {
+        "title": "Configuration Management 1.0",
+        "url": "#",
+        "tags": ["OASIS"],
+        "meta_before_body": {
+          "Workgroup":["Change and Configuration Management TC"],
+          "Status": [{
+            "title":"Scope",
+            "value": "10"
+          }]
+        }
+      },
+      {
+        "title": "Estimation and Measurement 2.0",
+        "url": "http://open-services.net/wiki/estimation-and-measurement/Estimation-and-Measurement-Service-Version-1.0:-REST-API/",
+        "tags": ["Inactive"],
+        "meta_before_body": {
+          "Workgroup":["Estimation and Measurement"],
+          "Status": [{
+            "title":"Converge",
+            "value": "60"
+          }]
+        }
+      },
+      {
+        "title": "Performance Monitoring 2.0",
+        "url": "http://open-services.net/wiki/performance-monitoring/OSLC-Performance-Monitoring-Specification-Version-2.0/",
+        "meta_before_body": {
+          "Workgroup":["Performance Monitoring"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
+      },
+      {
+        "title": "Quality Management 2.0",
+        "url": "http://open-services.net/bin/view/Main/QmSpecificationV2",
+        "meta_before_body": {
+          "Workgroup":["Quality Management"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
+      },
+      {
+        "title": "Reconciliation 2.0",
+        "url": "http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/",
+        "meta_before_body": {
+          "Workgroup":["Reconciliation"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
+      },
+      {
+        "title": "Requirements Management",
+        "url": "http://open-services.net/bin/view/Main/RmSpecificationV2",
+        "meta_before_body": {
+          "Workgroup":["Requirements Management"],
+          "Status": [{
+            "title":"Final",
+            "value": "100"
+          }]
+        }
       }
     ]
   },
