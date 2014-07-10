@@ -347,22 +347,15 @@
     "layout": "_specifications",
     "specifications": [
       {
-        "title": "Core 3.0",
-        "url": "http://open-services.net/wiki/core/Specification-3.0/",
-        "microdesc": "A collection of specifications that defines the basic patterns and protocols that any OSLC software must implement and that can be independently adopted with minimal interdependencies.", 
-        "tags": ["OASIS","Common","W3C"],
-        "meta_before_body": {
-          "Workgroup":["Core TC", "W3C Linked Data Profile"],
-          "Status": [{
-            "title":"Draft",
-            "value": "25"
-          }]
-        },
+        "title": "Linked Data Platform 1.0",
+        "url": "http://www.w3.org/TR/ldp/",
+        "microdesc": "Simple read-write Linked Data architecture using HTTP access and RDF data.",
+        "tags": ["W3C"],
         "subspecs":{
           "Resources Definitions and Operations": {
             "url": "http://www.w3.org/2012/ldp/hg/lbp.html#linked-data-platform-resources",
             "meta_before_body": {
-              "Workgroup":["W3C Linked Data Profile"],
+              "Workgroup":["W3C Linked Data Platform"],
               "Status": [{
                 "title":"Draft",
                 "value": "35"
@@ -370,21 +363,10 @@
             },
             "tags": ["W3C"]
           },
-          "Partial update": {
-            "url": "http://open-services.net/wiki/core/Specification-3.0/OSLC-Core-Partial-Update",
-            "meta_before_body": {
-              "Workgroup":["W3C Linked Data Profile"],
-              "Status": [{
-                "title":"Draft",
-                "value": "49"
-              }]
-            },
-            "tags": ["W3C"]
-          },
           "Containers": {
             "url": "http://www.w3.org/2012/ldp/hg/ldp.html#linked-data-platform--container",
             "meta_before_body": {
-              "Workgroup":["W3C Linked Data Profile"],
+              "Workgroup":["W3C Linked Data Platform"],
               "Status": [{
                 "title":"Draft",
                 "value": "30"
@@ -395,35 +377,55 @@
           "Paging": {
             "url": "http://www.w3.org/2012/ldp/hg/ldbp.html#basic-profile-container",
             "meta_before_body": {
-              "Workgroup":["W3C Linked Data Profile"],
+              "Workgroup":["W3C Linked Data Platform"],
               "Status": [{
                 "title":"Draft",
                 "value": "33"
               }]
             },
             "tags": ["W3C"]
-          },
-          "Shapes and Validation": {
-            "url": "http://open-services.net/wiki/core/Validation-3.0/",
+          }
+        },
+        "meta_before_body": {
+          "Workgroup":["W3C Linked Data Platform"],
+          "Status": [{
+            "title":"Candidate Recommendation",
+            "value": "90"
+          }]
+        }
+      },
+      {
+        "title": "Core 3.0",
+        "url": "http://open-services.net/wiki/core/Specification-3.0/",
+        "microdesc": "A collection of specifications that defines the basic patterns and protocols that any OSLC software must implement and that can be independently adopted with minimal interdependencies.", 
+        "tags": ["OASIS","Common","W3C"],
+        "meta_before_body": {
+          "Workgroup":["Core TC", "W3C Linked Data Platform"],
+          "Status": [{
+            "title":"Draft",
+            "value": "25"
+          }]
+        },
+        "subspecs":{
+          "Partial update": {
+            "url": "http://open-services.net/wiki/core/OSLC-Core-Partial-Update",
             "meta_before_body": {
-              "Workgroup":["W3C Linked Data Profile"],
+              "Workgroup":["W3C Linked Data Platform"],
               "Status": [{
-                "title":"Scope",
-                "value": "5"
+                "title":"Draft",
+                "value": "49"
               }]
-            },
-            "tags": ["W3C"]
+            }
           },
-          "Tracked Resource Set": {
+          "Tracked Resource Set 2.0": {
             "url": "http://open-services.net/wiki/core/TrackedResourceSet-2.0/",
             "meta_before_body": {
-              "Workgroup":["W3C Linked Data Profile"],
+              "Workgroup":["W3C Linked Data Platform"],
               "Status": [{
                 "title":"Finalize",
                 "value": "95"
               }]
-            },
-            "tags": ["W3C"]
+            }
           },
           "Filtering":{
             "url": "http://open-services.net/wiki/core/Filtering-3.0/",
@@ -493,6 +495,20 @@
           }
         }
       },
+      {
+        "title": "Resource Shapes and Validation",
+        "url": "#",
+        "microdesc": "Simple read-write Linked Data architecture using HTTP access and RDF data.",
+        "tags": ["W3C"],
+        "meta_before_body": {
+          "Workgroup":["W3C Linked Data Platform"],
+          "Status": [{
+            "title":"Scope",
+            "value": "5"
+          }]
+        }
+      },
+
       {
         "title": "Core 2.0",
         "url": "http://open-services.net/bin/view/Main/OslcCoreSpecification",
