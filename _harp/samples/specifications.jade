@@ -1,6 +1,6 @@
 .grid.pulled.blocks
   for spec in specifications
-    .column.hand-full(data-date="#{Date.parse( new Date(spec.date) )}",class="#{(spec.title === 'Core 3.0' || spec.title === 'Linked Data Platform 1.0')  ? 'desk-full' : 'desk-half'}")
+    .column.hand-full(data-date="#{Date.parse( new Date(spec.date) )}",class="#{(spec.title === 'Core 3.0')  ? 'desk-full' : 'desk-half'}")
       .card
         header.header
           h1.title 

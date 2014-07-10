@@ -347,54 +347,6 @@
     "layout": "_specifications",
     "specifications": [
       {
-        "title": "Linked Data Platform 1.0",
-        "url": "http://www.w3.org/TR/ldp/",
-        "microdesc": "Simple read-write Linked Data architecture using HTTP access and RDF data.",
-        "tags": ["W3C"],
-        "subspecs":{
-          "Resources Definitions and Operations": {
-            "url": "http://www.w3.org/2012/ldp/hg/lbp.html#linked-data-platform-resources",
-            "meta_before_body": {
-              "Workgroup":["W3C Linked Data Platform"],
-              "Status": [{
-                "title":"Draft",
-                "value": "35"
-              }]
-            },
-            "tags": ["W3C"]
-          },
-          "Containers": {
-            "url": "http://www.w3.org/2012/ldp/hg/ldp.html#linked-data-platform--container",
-            "meta_before_body": {
-              "Workgroup":["W3C Linked Data Platform"],
-              "Status": [{
-                "title":"Draft",
-                "value": "30"
-              }]
-            },
-            "tags": ["W3C"]
-          },
-          "Paging": {
-            "url": "http://www.w3.org/2012/ldp/hg/ldbp.html#basic-profile-container",
-            "meta_before_body": {
-              "Workgroup":["W3C Linked Data Platform"],
-              "Status": [{
-                "title":"Draft",
-                "value": "33"
-              }]
-            },
-            "tags": ["W3C"]
-          }
-        },
-        "meta_before_body": {
-          "Workgroup":["W3C Linked Data Platform"],
-          "Status": [{
-            "title":"Candidate Recommendation",
-            "value": "90"
-          }]
-        }
-      },
-      {
         "title": "Core 3.0",
         "url": "http://open-services.net/wiki/core/Specification-3.0/",
         "microdesc": "A collection of specifications that defines the basic patterns and protocols that any OSLC software must implement and that can be independently adopted with minimal interdependencies.", 
@@ -496,9 +448,23 @@
         }
       },
       {
-        "title": "Resource Shapes and Validation",
-        "url": "#",
+        "title": "Linked Data Platform 1.0",
+        "url": "http://www.w3.org/TR/ldp/",
         "microdesc": "Simple read-write Linked Data architecture using HTTP access and RDF data.",
+        "tags": ["W3C"],
+        "meta_before_body": {
+          "Workgroup":["W3C Linked Data Platform"],
+          "Status": [{
+            "title":"Candidate Recommendation",
+            "value": "90"
+          }]
+        }
+      },
+
+      {
+        "title": "Resource Shapes and Validation",
+        "url": "http://www.w3.org/Submission/2014/SUBM-shapes-20140211/",
+        "microdesc": "Describing resources so that they can be validated or created programmatically.",
         "tags": ["W3C"],
         "meta_before_body": {
           "Workgroup":["W3C Linked Data Platform"],
