@@ -113,5 +113,7 @@ $card-border-radius: 4px;
 
   .card {
     @include rem(margin-bottom, $font-size-xxl);
+    
+    .cards {background-color: tint( palette(gray,x-light), 60% );}
   }
 }

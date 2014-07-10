@@ -1,6 +1,6 @@
 .grid.pulled.blocks
   for spec in specifications
-    .column.hand-full.desk-half(data-date="#{Date.parse( new Date(spec.date) )}")
+    .column.hand-full(data-date="#{Date.parse( new Date(spec.date) )}",class="#{spec.title === 'Core 3.0' ? 'desk-full' : 'desk-half'}")
       .card
         header.header
           h1.title 
@@ -8,6 +8,24 @@
         section.content
           if spec.meta_before_body
             != partial('../_slats', {meta_block : spec.meta_before_body})
+          if spec.microdesc
+            .copy
+              p #{spec.microdesc}
+        if spec.subspecs
+          section.content.cards
+            .grid.pulled.blocks
+              for subspec, title in spec.subspecs
+                .column.hand-full.knee-half
+                  .card
+                    header.header
+                      h2.title
+                        a(href="#{subspec.url}") #{title}
+                    if subspec.tags
+                      div.footer
+                        footer.meta
+                          .tags
+                            for tag in subspec.tags
+                              span.tag(data-filter-on="tag",class="#{tag}") #{tag}
         div.footer
           footer.meta
             if spec.tags
