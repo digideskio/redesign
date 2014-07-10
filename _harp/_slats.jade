@@ -1,6 +1,6 @@
-ul.slats
+ul.slats(class="#{solo ? 'solo' : ''}")
   for links, name in meta_block
-    li.slat(class="#{name === 'Status' ? 'pos-rel' : ''}")
+    li.slat(class="#{name === 'Status' ? 'pos-rel' : ''} #{hidden && hidden.indexOf(name) !== -1 ? 'sr-only' : ''}")
       if name === 'Link'
         for link in links
           a.action(href="#{link.url || '#'}") 

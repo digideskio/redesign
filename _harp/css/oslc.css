@@ -1443,6 +1443,8 @@ a.tag {
 .slats {
   margin-bottom: 16px;
   margin-bottom: 1rem; }
+  .slats.solo {
+    margin-bottom: 0; }
 
 .copy + .slats {
   margin-top: 11px; }

@@ -1,6 +1,9 @@
 .slats {
   @extend %list-reset;
   @include rem(margin-bottom, $font-size-m);
+  &.solo {
+    margin-bottom: 0;
+  }
 }
 
 .copy + .slats { margin-top: $font-size-xs; }
