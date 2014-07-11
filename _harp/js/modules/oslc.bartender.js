@@ -213,7 +213,7 @@ var Bartender = _.create(OSLC, {
       ];
     } else {
       items = _(this.els.listing.find('[data-filter-on="'+control+'"]'))
-        .groupBy('textContent')
+        .groupBy(function(item){ return _.trim($(item).text()); })
         .map(function(arr,key){
           var el = arr[0], text = _.trim(key);
           
@@ -232,7 +232,6 @@ var Bartender = _.create(OSLC, {
       // Add an "All" object
       items.push( [{count: this.els.cards.length, on: 'All'}, 'All'] );
     }
-    
     return items;
   },
   

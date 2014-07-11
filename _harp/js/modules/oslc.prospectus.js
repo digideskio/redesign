@@ -125,14 +125,10 @@ $(document).on('keydown', '[role="menuitem"]', function(e){
       // perfect is the enemy of good enough here
       // http://stackoverflow.com/a/10730308
       $targets = $('input,select,textarea,button,object,a[href],[tabindex]')
-        .not(':disabled')
-        .filter(':visible')
-        .not('[tabindex="-1"]');
+        .not(':disabled').filter(':visible').not('[tabindex="-1"]')
+        .not($dropOwner.siblings()) // don't want to tab back into the menu bar
+        .add($dropOwner); // in a menubar, the link that owns the current popup might have tabindex="-1". This makes sure it's in $targets so we can get its index
 
-      if ( $dropOwner.is('[tabindex="-1"]') ) {
-        $dropOwner = $menuBar.find('[tabindex="0"]').first();
-      }
-      
       $newTarget = getNewFocusTarget($targets, $targets.index($dropOwner), e.shiftKey ? 37 : 39);
     }
       
@@ -154,11 +150,16 @@ $(document).on('keydown', '[role="menuitem"]', function(e){
     try { $newTarget[0].focus(); } catch(err) {}
   }
     
-}).on('mouseover focus', '[role="menuitem"]', function(){
+}).on('mouseover focus', '[role="menuitem"]', function(e){
   var 
     $menu = $(this).closest('[role="menu"],[role="menubar"]'),
     prospectus = $menu.data('prospectus');
-
+  
+  // Don't set a new active descendent on mouseover if you're focused on a sibling menu item
+  if (e.type === 'mouseover' && $menu.find('[role="menuitem"]').is(document.activeElement)) {
+    return;
+  }
+  
   $menu.attr('aria-activedescendant', this.id || '');
   prospectus && prospectus.setFocusable();
 

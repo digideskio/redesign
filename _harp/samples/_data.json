@@ -367,7 +367,8 @@
                 "title":"Draft",
                 "value": "49"
               }]
-            }
+            },
+            "tags": ["Common"]
           },
           "Tracked Resource Set 2.0": {
             "url": "http://open-services.net/wiki/core/TrackedResourceSet-2.0/",
@@ -377,7 +378,8 @@
                 "title":"Finalize",
                 "value": "95"
               }]
-            }
+            },
+            "tags": ["Common"]
           },
           "Filtering":{
             "url": "http://open-services.net/wiki/core/Filtering-3.0/",
@@ -388,7 +390,7 @@
                 "value": "2"
               }]
             },
-            "tags": ["OASIS"]
+            "tags": ["OASIS","Common"]
           },
           "Error Responses": {
             "url": "http://open-services.net/wiki/core/Error-Responses-3.0/",
@@ -399,7 +401,7 @@
                 "value": "2"
               }]
             },
-            "tags": ["OASIS","W3C"]
+            "tags": ["OASIS","W3C","Common"]
           },
           "Delegated UI Dialogs": {
             "url": "http://open-services.net/wiki/core/Delegated-User-Interface-Dialogs-3.0/",
@@ -410,7 +412,7 @@
                 "value": "30"
               }]
             },
-            "tags": ["OASIS"]
+            "tags": ["OASIS","Common"]
           },
           "UI Previews": {
             "url": "http://open-services.net/wiki/core/User-Interface-Previews-3.0/",
@@ -421,7 +423,7 @@
                 "value": "20"
               }]
             },
-            "tags": ["OASIS"]
+            "tags": ["OASIS","Common"]
           },
           "Discovery": {
             "url": "http://open-services.net/wiki/core/Discovery-3.0/",
@@ -432,7 +434,7 @@
                 "value": "2"
               }]
             },
-            "tags": ["OASIS"]
+            "tags": ["OASIS","Common"]
           },
           "Compatibility with Core 2.0": {
             "url": "http://open-services.net/wiki/core/Compatibility-3.0/",
@@ -443,7 +445,7 @@
                 "value": "5"
               }]
             },
-            "tags": ["OASIS"]
+            "tags": ["OASIS","Common"]
           }
         }
       },
@@ -453,7 +455,7 @@
         "microdesc": "Simple read-write Linked Data architecture using HTTP access and RDF data.",
         "tags": ["W3C"],
         "meta_before_body": {
-          "Workgroup":["W3C Linked Data Platform"],
+          "Workgroup":["W3C RDF Data Shapes"],
           "Status": [{
             "title":"Candidate Recommendation",
             "value": "90"
@@ -462,7 +464,7 @@
       },
 
       {
-        "title": "Resource Shapes and Validation",
+        "title": "RDF Data Shapes",
         "url": "http://www.w3.org/Submission/2014/SUBM-shapes-20140211/",
         "microdesc": "Describing resources so that they can be validated or created programmatically.",
         "tags": ["W3C"],
@@ -505,6 +507,7 @@
         "title": "Product Definition 1.1",
         "url": "http://open-services.net/bin/view/Main/PlmSpecExtensions",
         "microdesc": "Defining a 'Product' for OSLC Core",
+        "tags": ["Common"],
         "meta_before_body": {
           "Workgroup":["ALM-PLM Interoperability"],
           "Status": [{
@@ -517,6 +520,7 @@
         "title": "Core 2.0 Extension for PLM",
         "url": "http://open-services.net/bin/view/Main/CoreExtensionForPlm",
         "microdesc": "Adding versioning to OSLC Core",
+        "tags": ["Common"],
         "meta_before_body": {
           "Workgroup":["ALM-PLM Interoperability"],
           "Status": [{
@@ -529,6 +533,7 @@
         "title": "Architecture Management 3.0",
         "url": "http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-3.0/",
         "microdesc": "Modeling, diagrams, and use cases for software development",
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Architecture Management"],
           "Status": [{
@@ -541,6 +546,7 @@
         "title": "Architecture Management 2.0",
         "url": "http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-2.0/",
         "microdesc": "Modeling, diagrams, and use cases for software development",
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Architecture Management"],
           "Status": [{
@@ -553,7 +559,7 @@
         "title": "Asset Management 2.0",
         "url": "http://open-services.net/wiki/asset-management/OSLC-Asset-Management-2.0-Specification/",
         "microdesc": "Reusable components, documentation, and representations",
-        "tags": ["Inactive"],
+        "tags": ["Inactive","Domain"],
         "meta_before_body": {
           "Workgroup":["Asset Management"],
           "Status": [{
@@ -566,7 +572,7 @@
         "title": "Automation 2.1",
         "url": "http://open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.1",
         "microdesc": "Plans, requests, and results for builds and deployments",
-        "tags": ["OASIS"],
+        "tags": ["OASIS","Domain"],
         "meta_before_body": {
           "Workgroup":["Automation TC"],
           "Status": [{
@@ -579,6 +585,7 @@
         "title": "Automation 2.0",
         "url": "http://open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.0/",
         "microdesc": "Plans, requests, and results for builds and deployments",
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Automation"],
           "Status": [{
@@ -591,7 +598,7 @@
         "title": "Change Management 3.0",
         "url": "http://open-services.net/wiki/change-management/Specification-3.0",
         "microdesc": "Defects, enhancements, changes, and tasks",
-        "tags": ["OASIS"],
+        "tags": ["OASIS","Domain"],
         "meta_before_body": {
           "Workgroup":["Change and Configuration Management TC"],
           "Status": [{
@@ -604,6 +611,7 @@
         "title": "Change Management 2.0",
         "url": "http://open-services.net/bin/view/Main/CmSpecificationV2",
         "microdesc": "Defects, enhancements, changes, and tasks",
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Change Management"],
           "Status": [{
@@ -616,7 +624,7 @@
         "title": "Configuration Management 1.0",
         "url": "#",
         "microdesc": "Snapshots, baselines, and versions",
-        "tags": ["OASIS"],
+        "tags": ["OASIS","Domain"],
         "meta_before_body": {
           "Workgroup":["Change and Configuration Management TC"],
           "Status": [{
@@ -629,7 +637,7 @@
         "title": "Estimation and Measurement 2.0",
         "url": "http://open-services.net/wiki/estimation-and-measurement/Estimation-and-Measurement-Service-Version-1.0:-REST-API/",
         "microdesc": "Size, quality, time, and effort for making software",
-        "tags": ["Inactive"],
+        "tags": ["Inactive","Domain"],
         "meta_before_body": {
           "Workgroup":["Estimation and Measurement"],
           "Status": [{
@@ -642,6 +650,7 @@
         "title": "Performance Monitoring 2.0",
         "url": "http://open-services.net/wiki/performance-monitoring/OSLC-Performance-Monitoring-Specification-Version-2.0/",
         "microdesc": "Availability, performance, and capacity",
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Performance Monitoring"],
           "Status": [{
@@ -654,6 +663,7 @@
         "title": "Quality Management 2.0",
         "url": "http://open-services.net/bin/view/Main/QmSpecificationV2",
         "microdesc": "Needs and how to meet them",
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Quality Management"],
           "Status": [{
@@ -666,6 +676,7 @@
         "title": "Reconciliation 2.0",
         "url": "http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/",
         "microdesc": "Are we talking about the same thing?",
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Reconciliation"],
           "Status": [{
@@ -678,6 +689,7 @@
         "title": "Requirements Management",
         "url": "http://open-services.net/bin/view/Main/RmSpecificationV2",
         "microdesc": "Stakeholder needs and how to meet them",
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Requirements Management"],
           "Status": [{

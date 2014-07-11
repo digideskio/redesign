@@ -9,7 +9,7 @@
 .copy + .slats { margin-top: $font-size-xs; }
 
 .slat {
-  @include rem(padding, 8px $font-size-xs);
+  @include rem(padding, 8px 2px);
   @extend %text-size-s;
   
   &+& {

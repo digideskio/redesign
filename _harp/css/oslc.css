@@ -122,7 +122,7 @@
   font-size: 1rem;
   line-height: 1.1875; }
 
-.copy > h5, .card > .header > .title {
+.copy > h5, .card > .header .title {
   font-size: 19px;
   font-size: 1.1875rem;
   line-height: 1.21053; }
@@ -1133,8 +1133,8 @@ html {
     border-top: solid 2px #ffe2b3; }
 
 .menu .item {
-  padding: 11px 16px;
-  padding: 0.6875rem 1rem;
+  padding: 11px;
+  padding: 0.6875rem;
   display: block;
   color: #444444; }
   .menu .item.flush {
@@ -1276,7 +1276,7 @@ html {
   color: #fff;
   background-color: #666666;
   text-decoration: none;
-  margin-right: 5px; }
+  margin-right: 2px; }
   .tag:last-child {
     margin-right: 0; }
   .tag .image {
@@ -1369,7 +1369,7 @@ a.tag {
     border-bottom: 1px solid #cccccc;
     padding: 10px 16px 11px;
     padding: 0.625rem 1rem 0.6875rem; }
-    .card > .header > .title, .notice > .header > .title {
+    .card > .header .title, .notice > .header .title {
       margin: 0;
       font-weight: bold;
       line-height: 1.25;
@@ -1390,8 +1390,12 @@ a.tag {
   padding: 0 16px 8px;
   padding: 0 1rem 0.5rem;
   border-bottom: 1px solid #cccccc; }
-.card .tag, .card .byline {
+.card .byline {
   margin-top: 8px; }
+.card .tags {
+  margin-top: 6px; }
+.card .tags .tag {
+  margin-top: 2px; }
 .flexbox .card .tags {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1408,14 +1412,21 @@ a.tag {
 .card > .footer {
   background-color: #f7f7f7;
   border-radius: 0 0 4px 4px; }
-  .card > .footer > .meta, .card > .footer > .pagination {
-    padding: 0 16px 8px;
-    padding: 0 1rem 0.5rem; }
+  .card > .footer > .meta,
+  .card > .footer > .pagination {
+    padding: 0 16px;
+    padding: 0 1rem; }
+  .card > .footer > .meta {
+    padding-bottom: 8px;
+    padding-bottom: 0.5rem; }
   .card > .footer .byline {
     margin-right: 11px;
     margin-right: 0.6875rem; }
   .card > .footer .tags {
     vertical-align: middle; }
+.card.small > .header .tags {
+  margin-left: 11px;
+  margin-left: 0.6875rem; }
 .card.primary {
   margin-bottom: 19px;
   margin-bottom: 1.1875rem; }
@@ -1430,6 +1441,9 @@ a.tag {
   .cards .card {
     margin-bottom: 27px;
     margin-bottom: 1.6875rem; }
+    .cards .card.small {
+      margin-bottom: 19px;
+      margin-bottom: 1.1875rem; }
     .cards .card .cards {
       background-color: #f7f7f7; }
 
@@ -1450,8 +1464,8 @@ a.tag {
   margin-top: 11px; }
 
 .slat {
-  padding: 8px 11px;
-  padding: 0.5rem 0.6875rem; }
+  padding: 8px 2px;
+  padding: 0.5rem 0.125rem; }
   .slat + .slat {
     border-top: 1px solid #cccccc; }
   .slat > .flag > .image {

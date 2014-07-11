@@ -16,19 +16,26 @@
             .grid.pulled.blocks
               for subspec, title in spec.subspecs
                 .column.hand-full.knee-half
-                  .card
+                  .card.small
                     header.header
-                      h2.title
-                        a(href="#{subspec.url}") #{title}
+                      if subspec.tags
+                        .flag.reversed
+                          .body
+                            h2.title
+                              a(href="#{subspec.url}") #{title}
+                          .image
+                            .tags
+                              for tag in subspec.tags
+                                if tag == 'Common'
+                                  span.tag(hidden,data-filter-on="tag",class="#{tag}") #{tag}
+                                else
+                                  span.tag(data-filter-on="tag",class="#{tag}") #{tag} 
+                      else
+                        h2.title
+                          a(href="#{subspec.url}") #{title}
                     if subspec.meta_before_body
                       section.content
-                        != partial('../_slats', {meta_block : subspec.meta_before_body, hidden: ['Workgroup'], solo: 1})
-                    if subspec.tags
-                      div.footer
-                        footer.meta
-                          .tags
-                            for tag in subspec.tags
-                              span.tag(data-filter-on="tag",class="#{tag}") #{tag}
+                        != partial('../_slats', {meta_block : subspec.meta_before_body, hidden: ['Workgroup'], solo: 1})                          
         div.footer
           footer.meta
             if spec.tags
