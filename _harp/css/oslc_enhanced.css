@@ -789,7 +789,8 @@ meta.oslc-mq-neckbeard-only {
     opacity: 1; }
   .drop-element.drop-theme-oslc {
     max-width: 100%;
-    max-height: 100%; }
+    max-height: 100%;
+    overflow: scroll; }
     .drop-element.drop-theme-oslc .drop-content {
       background-color: #fff;
       -webkit-box-shadow: 1px 2px 3px rgba(153, 153, 153, 0.5);

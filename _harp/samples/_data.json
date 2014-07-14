@@ -333,6 +333,11 @@
     "title": "Workgroup",
     "draft": "true"
   },
+  "steering-committee": {
+    "title": "Steering Committee",
+    "note-to-self": "needs to be more-kick-assy per Steve eg http://www.eclipse.org/org/foundation/directors.php which isn't particularly kick-assy but better than what we have",
+    "draft": "true"
+  },
   "workgroups": {
     "title": "All Workgroups",
     "draft": "true"
@@ -349,8 +354,9 @@
       {
         "title": "Core 3.0",
         "url": "http://open-services.net/wiki/core/Specification-3.0/",
-        "microdesc": "A collection of specifications that defines the basic patterns and protocols that any OSLC software must implement and that can be independently adopted with minimal interdependencies.", 
-        "tags": ["OASIS","Common","W3C"],
+        "microdesc": "A collection of specifications that defines the basic patterns and protocols that any OSLC software must implement and that can be independently adopted with minimal interdependencies.",
+        "orgs": ["OASIS","W3C"],
+        "tags": ["Common"],
         "meta_before_body": {
           "Workgroup":["Core TC", "W3C Linked Data Platform"],
           "Status": [{
@@ -390,7 +396,8 @@
                 "value": "2"
               }]
             },
-            "tags": ["OASIS","Common"]
+            "orgs": ["OASIS"],
+            "tags": ["Common"]
           },
           "Error Responses": {
             "url": "http://open-services.net/wiki/core/Error-Responses-3.0/",
@@ -401,7 +408,8 @@
                 "value": "2"
               }]
             },
-            "tags": ["OASIS","W3C","Common"]
+            "orgs": ["OASIS","W3C"],
+            "tags": ["Common"]
           },
           "Delegated UI Dialogs": {
             "url": "http://open-services.net/wiki/core/Delegated-User-Interface-Dialogs-3.0/",
@@ -412,7 +420,8 @@
                 "value": "30"
               }]
             },
-            "tags": ["OASIS","Common"]
+            "orgs": ["OASIS"],
+            "tags": ["Common"]
           },
           "UI Previews": {
             "url": "http://open-services.net/wiki/core/User-Interface-Previews-3.0/",
@@ -423,7 +432,8 @@
                 "value": "20"
               }]
             },
-            "tags": ["OASIS","Common"]
+            "orgs": ["OASIS"],
+            "tags": ["Common"]
           },
           "Discovery": {
             "url": "http://open-services.net/wiki/core/Discovery-3.0/",
@@ -434,7 +444,8 @@
                 "value": "2"
               }]
             },
-            "tags": ["OASIS","Common"]
+            "orgs": ["OASIS"],
+            "tags": ["Common"]
           },
           "Compatibility with Core 2.0": {
             "url": "http://open-services.net/wiki/core/Compatibility-3.0/",
@@ -445,7 +456,8 @@
                 "value": "5"
               }]
             },
-            "tags": ["OASIS","Common"]
+            "orgs": ["OASIS"],
+            "tags": ["Common"]
           }
         }
       },
@@ -453,7 +465,8 @@
         "title": "Linked Data Platform 1.0",
         "url": "http://www.w3.org/TR/ldp/",
         "microdesc": "Simple read-write Linked Data architecture using HTTP access and RDF data.",
-        "tags": ["W3C"],
+        "orgs": ["W3C"],
+        "tags": ["Common"],
         "meta_before_body": {
           "Workgroup":["W3C RDF Data Shapes"],
           "Status": [{
@@ -462,12 +475,12 @@
           }]
         }
       },
-
       {
         "title": "RDF Data Shapes",
         "url": "http://www.w3.org/Submission/2014/SUBM-shapes-20140211/",
         "microdesc": "Describing resources so that they can be validated or created programmatically.",
-        "tags": ["W3C"],
+        "orgs": ["W3C"],
+        "tags": ["Common"],
         "meta_before_body": {
           "Workgroup":["W3C Linked Data Platform"],
           "Status": [{
@@ -476,7 +489,6 @@
           }]
         }
       },
-
       {
         "title": "Core 2.0",
         "url": "http://open-services.net/bin/view/Main/OslcCoreSpecification",
@@ -572,7 +584,8 @@
         "title": "Automation 2.1",
         "url": "http://open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.1",
         "microdesc": "Plans, requests, and results for builds and deployments",
-        "tags": ["OASIS","Domain"],
+        "orgs": ["OASIS"],
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Automation TC"],
           "Status": [{
@@ -598,7 +611,8 @@
         "title": "Change Management 3.0",
         "url": "http://open-services.net/wiki/change-management/Specification-3.0",
         "microdesc": "Defects, enhancements, changes, and tasks",
-        "tags": ["OASIS","Domain"],
+        "orgs": ["OASIS"],
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Change and Configuration Management TC"],
           "Status": [{
@@ -624,7 +638,8 @@
         "title": "Configuration Management 1.0",
         "url": "#",
         "microdesc": "Snapshots, baselines, and versions",
-        "tags": ["OASIS","Domain"],
+        "orgs": ["OASIS"],
+        "tags": ["Domain"],
         "meta_before_body": {
           "Workgroup":["Change and Configuration Management TC"],
           "Status": [{

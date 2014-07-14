@@ -1,10 +1,20 @@
 .grid.pulled.blocks
   for spec in specifications
     .column.hand-full(data-date="#{Date.parse( new Date(spec.date) )}",class="#{(spec.title === 'Core 3.0')  ? 'desk-full' : 'desk-half'}")
-      .card
-        header.header
-          h1.title 
-            a(href="#{spec.url}",rel="bookmark") #{ spec.title }
+      article.card
+        .header
+          if spec.orgs
+            .flag.reversed
+              header.body
+                h1.title 
+                  a(href="#{spec.url}",rel="bookmark") #{ spec.title }
+              .image
+                .tags
+                  for org in spec.orgs
+                    span.tag(data-filter-on="organization",class="#{org}") #{org}
+          else
+            h1.title 
+              a(href="#{spec.url}",rel="bookmark") #{ spec.title }
         section.content
           if spec.meta_before_body
             != partial('../_slats', {meta_block : spec.meta_before_body})
@@ -16,26 +26,29 @@
             .grid.pulled.blocks
               for subspec, title in spec.subspecs
                 .column.hand-full.knee-half
-                  .card.small
-                    header.header
-                      if subspec.tags
+                  article.card.small
+                    .header
+                      if subspec.orgs
                         .flag.reversed
-                          .body
+                          header.body
                             h2.title
                               a(href="#{subspec.url}") #{title}
                           .image
                             .tags
-                              for tag in subspec.tags
-                                if tag == 'Common'
-                                  span.tag(hidden,data-filter-on="tag",class="#{tag}") #{tag}
-                                else
-                                  span.tag(data-filter-on="tag",class="#{tag}") #{tag} 
+                              for org in subspec.orgs
+                                span.tag(data-filter-on="organization",class="#{org}") #{org} 
                       else
                         h2.title
                           a(href="#{subspec.url}") #{title}
                     if subspec.meta_before_body
                       section.content
-                        != partial('../_slats', {meta_block : subspec.meta_before_body, hidden: ['Workgroup'], solo: 1})                          
+                        != partial('../_slats', {meta_block : subspec.meta_before_body, hidden: ['Workgroup'], solo: 1})
+                    if subspec.tags
+                      .footer.hidden
+                        footer.meta
+                          .tags
+                            for tag in subspec.tags
+                              span.tag(data-filter-on="tag",class="#{tag}") #{tag}
         div.footer
           footer.meta
             if spec.tags

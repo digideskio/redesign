@@ -16,6 +16,7 @@
   &.drop-theme-oslc {
     max-width: 100%;
     max-height: 100%;
+    overflow: scroll;
     
     .drop-content {
       background-color: #fff;

@@ -64,10 +64,13 @@ $card-border-radius: 4px;
     @extend %text-size-s;
   }
   
-  .byline { margin-top: 8px; }
-  .tags {margin-top: 6px;}
-  .tags .tag { margin-top: 2px; }
-    
+  > .deck, 
+  > .footer {
+    .byline { margin-top: 8px; }
+    .tags {margin-top: 6px;}
+    .tags .tag { margin-top: 2px; }
+  }
+  
   // vertical-align: middle (see .tag) isn't really perfectly centered. This is.
   .flexbox & .tags {
     display: flex;

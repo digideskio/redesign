@@ -1133,8 +1133,8 @@ html {
     border-top: solid 2px #ffe2b3; }
 
 .menu .item {
-  padding: 11px;
-  padding: 0.6875rem;
+  padding: 11px 8px;
+  padding: 0.6875rem 0.5rem;
   display: block;
   color: #444444; }
   .menu .item.flush {
@@ -1390,11 +1390,14 @@ a.tag {
   padding: 0 16px 8px;
   padding: 0 1rem 0.5rem;
   border-bottom: 1px solid #cccccc; }
-.card .byline {
+.card > .deck .byline,
+.card > .footer .byline {
   margin-top: 8px; }
-.card .tags {
+.card > .deck .tags,
+.card > .footer .tags {
   margin-top: 6px; }
-.card .tags .tag {
+.card > .deck .tags .tag,
+.card > .footer .tags .tag {
   margin-top: 2px; }
 .flexbox .card .tags {
   display: -webkit-box;

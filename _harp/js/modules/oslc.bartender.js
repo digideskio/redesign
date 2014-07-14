@@ -181,7 +181,12 @@ var Bartender = _.create(OSLC, {
         targetAttachment: 'top left',
         optimizations: {
           moveElement: false
-        }
+        },
+        constraints: [{
+          to: 'window',
+          attachment: 'none together',
+          pin: true
+        }]
       }
     }));
     

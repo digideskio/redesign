@@ -5,7 +5,7 @@
   }
   
   .item {
-    @include rem(padding, $font-size-xs);
+    @include rem(padding, $font-size-xs $font-size-m/2);
     display: block;
     color: palette(gray, dark);
     
