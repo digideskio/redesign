@@ -45,16 +45,14 @@ $card-border-radius: 4px;
   @extend %card-basis;
   
   > .header {
-    .title {
-      @extend %text-size-l;
-    }
+    .title { @extend %text-size-l; }
+    .tags { @include rem(margin-left, $font-size-xs); }
   }
   
   > .deck {
     color: palette(gray, mid-dark);
     line-height: 1;
     @include rem(padding, 0 $card-padding-sides 8px);
-    
     border-bottom: 1px solid palette(gray, light);    
   }
         
@@ -68,8 +66,9 @@ $card-border-radius: 4px;
   > .footer {
     .byline { margin-top: 8px; }
     .tags {margin-top: 6px;}
-    .tags .tag { margin-top: 2px; }
   }
+
+  .tags .tag { margin-top: 1px;}
   
   // vertical-align: middle (see .tag) isn't really perfectly centered. This is.
   .flexbox & .tags {
@@ -100,8 +99,6 @@ $card-border-radius: 4px;
     }
     
   }
-  
-  &.small >.header .tags { @include rem(margin-left, $font-size-xs); }
   
   &.primary {
     @include rem(margin-bottom, $font-size-l);

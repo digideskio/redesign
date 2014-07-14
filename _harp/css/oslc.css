@@ -1384,6 +1384,9 @@ a.tag {
     padding: 13px 16px;
     padding: 0.8125rem 1rem; }
 
+.card > .header .tags {
+  margin-left: 11px;
+  margin-left: 0.6875rem; }
 .card > .deck {
   color: #666666;
   line-height: 1;
@@ -1396,9 +1399,8 @@ a.tag {
 .card > .deck .tags,
 .card > .footer .tags {
   margin-top: 6px; }
-.card > .deck .tags .tag,
-.card > .footer .tags .tag {
-  margin-top: 2px; }
+.card .tags .tag {
+  margin-top: 1px; }
 .flexbox .card .tags {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1427,9 +1429,6 @@ a.tag {
     margin-right: 0.6875rem; }
   .card > .footer .tags {
     vertical-align: middle; }
-.card.small > .header .tags {
-  margin-left: 11px;
-  margin-left: 0.6875rem; }
 .card.primary {
   margin-bottom: 19px;
   margin-bottom: 1.1875rem; }
