@@ -185,7 +185,7 @@ var Bartender = _.create(OSLC, {
         constraints: [{
           to: 'scrollParent',
           attachment: 'together',
-          pin: ['right','top']
+          pin: ['right']
         }]
       }
     }));
