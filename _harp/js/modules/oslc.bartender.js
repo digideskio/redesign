@@ -28,7 +28,7 @@ var Bartender = _.create(OSLC, {
     '</div>'+
   '</a>'),
   
-  init: function( el ){
+  init: function(el){
     
     bartenderID++;
     this.id = bartenderID;
@@ -183,9 +183,9 @@ var Bartender = _.create(OSLC, {
           moveElement: false
         },
         constraints: [{
-          to: 'window',
-          attachment: 'none together',
-          pin: true
+          to: 'scrollParent',
+          attachment: 'together',
+          pin: ['right','top']
         }]
       }
     }));
@@ -242,6 +242,7 @@ var Bartender = _.create(OSLC, {
   
   buildDropMenu: function(control,items){
     var 
+      drop = this.drops[control],
       menu = $('<div>').addClass('menu tensed')
         .attr({
           'aria-expanded':'false',
@@ -264,7 +265,9 @@ var Bartender = _.create(OSLC, {
             );
         if ( ! temp.data.label ) { temp.data.label = temp.html; }
         return temp;
-      };
+      },
+      // http://www.nczonline.net/blog/2013/04/01/making-accessible-icon-buttons/
+      close = $('<button type="button" tabindex="-1" class="close"><span class="sr-only">Close</span><i class="icon grunticon-js-close"></i></button>').data('dismiss',drop);
             
       menu.html( _.reduce(items.map(zipToItemObj),itemTemplateFold,'') );
       
@@ -275,8 +278,9 @@ var Bartender = _.create(OSLC, {
       
       $.fn.prospectus && menu.prospectus();
 
-      $(this.drops[control].content).html(menu);
-      this.drops[control].position();
+      $(drop.content).html(menu).append(close);
+        
+      drop.position();
   }
 });
 

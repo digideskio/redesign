@@ -11,7 +11,6 @@ $.fn.toggleAria = function( attr ) {
 
 };
 
-
 var OSLC = {
   dasherize: function(str){
     // via http://modernizr.com/docs/#prefixed

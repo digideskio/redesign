@@ -1,3 +1,5 @@
+$drop-shadow-spread: 4px;
+
 .drop-element {
   //http://github.hubspot.com/drop/overview/styling/
   display: none;
@@ -15,12 +17,14 @@
   
   &.drop-theme-oslc {
     max-width: 100%;
-    max-height: 100%;
-    overflow: scroll;
+    // Leave some room on the sides for a drop shadow 
+    // to be visible without adding more scroll bars
+    padding-right: $drop-shadow-spread*1.5;
+    padding-left: $drop-shadow-spread*1.5;
     
     .drop-content {
       background-color: #fff;
-      box-shadow: 1px 2px 3px transparentize(palette(gray), .5);
+      box-shadow: 0 2px $drop-shadow-spread transparentize(palette(gray), .5);
       min-width: 8em;
       
       .count { 
@@ -28,10 +32,28 @@
         color: palette(gray);
       }
       
+      .item:hover,
+      .item:focus {
+        background-color: palette(gold,x-light);
+      }
+      
       .current,
-      .item:hover {
+      .current:hover,
+      .current:focus {
         background-color: palette(gold,light);
       }
     }
   }
+}
+
+.close {
+  position: absolute;
+  right: -6px + $drop-shadow-spread*1.5;
+  top: -6px;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: none;
 }
