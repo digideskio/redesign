@@ -1,0 +1,22 @@
+/* 
+ * Spacing Helpers
+ * OOCSS style, based on your $font-sizes
+ 
+ */
+@each $name,$size in $font-sizes {  
+$properties: (
+  p: padding,
+  m: margin
+);
+$directions: (t top v) (r right h) (b bottom v) (l left h);
+
+  @each $prop, $property in $properties {
+    @each $d, $direction, $paired in $directions {
+  
+      .#{$prop}#{$d}#{$name}, .#{$prop}#{$paired}#{$name}, .#{$prop}a#{$name} { 
+        #{$property}-#{$direction}: $size !important; 
+      }
+
+    }
+  }
+}

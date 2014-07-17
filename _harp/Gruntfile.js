@@ -104,10 +104,26 @@ module.exports = function(grunt) {
         }
       },
       
+      bytesize: {
+        css: {
+          src: ['css/build/*.css']
+        },
+        js: {
+          src: ['js/build/*.js']
+        },
+        grunticon: {
+          src: ['icons/output/*.css']
+        }
+      },
+      
       watch: {
         styles: {
-          files: [ 'css/*.css', '!css/build/*.min.css' ],
-          tasks: ['cssmin']
+          files: [ 'css/*.css'],
+          tasks: ['cssmin','bytesize:css']
+        },
+        js: {
+          files: 'js/build/*.js',
+          tasks: ['bytesize:js']
         },
         grunticon: {
           files: 'icons/_svgs/*.svg',
@@ -115,7 +131,7 @@ module.exports = function(grunt) {
         },
         grunticon_sass: {
           files: 'icons/_grunticon/*.scss',
-          tasks: ['sass:grunticon']
+          tasks: ['sass:grunticon','bytesize:grunticon']
         }
       }
     });
@@ -129,6 +145,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
+    grunt.loadNpmTasks( 'grunt-bytesize' );
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['autoprefixer', 'svgmin', 'grunticon:foo', 'copy:grunticonToSass']);

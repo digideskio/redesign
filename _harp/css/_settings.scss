@@ -62,7 +62,20 @@ $palettes: (
 // http://24ways.org/2011/composing-the-new-canon/
 // unison; minor third; diminished fifth; major sixth; octave
 //
-
+$font-sizes: (
+  n:       0,
+  xxxxs:   5px,
+  xxs:     8px,
+  xs:      11px, // Diminished Fifth; 16px * 70.71%
+  s:       13px, // 5:6 Minor Third; 16px * 83.33%
+  m:       16px, // Unison (base); 
+  l:       19px, // 5:6 Minor Third; 16px * 120%
+  xl:      23px, // 1:1.441 Diminished Fifth; 16px * 141%
+  xxl:     27px, // 3:5 Major Sixth; 16px * 166.67%
+  xxxl:    32px, // 1:2 Octave; 16px * 200%
+  xxxxl:   38px, // 5:6 Minor Third; 32px * 120%
+  xxxxxl:  48px // 1:3 Major Twelfth; 16px * 300%
+);
 $font-size-xs:      11px; // Diminished Fifth; 16px * 70.71%
 $font-size-s:       13px; // 5:6 Minor Third; 16px * 83.33%
 $font-size-m:       16px; // Unison (base); 
