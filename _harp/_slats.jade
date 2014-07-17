@@ -11,7 +11,11 @@ ul.slats
       else
         .flag
           .image
-            i.icon(class="#{'grunticon-meta-' + name.toLowerCase()}")
+            if name !== "Status"
+              i.icon(class="#{'grunticon-meta-' + name.toLowerCase()}")
+            else
+              for link in links
+                i.icon.grunticon-meta-status(class="grunticon-meta-status#{link.title}",style="transform:rotate(#{link.value*3.6}deg);-webkit-transform:rotate(#{link.value*3.6}deg)")
           .body 
             .header #{name}
             ul.links.tightened

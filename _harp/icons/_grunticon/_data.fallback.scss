@@ -167,18 +167,6 @@
 }
 
 
-.grunticon-menu-filter {
-  background-image: url('png/menu-filter.png');
-  @include icon;
-  height: 20px;
-  width: 20px;
-    
-  &.intrinsic {
-    padding-top: 20px / 20px * 100%;
-  }
-}
-
-
 .grunticon-menu-organization {
   background-image: url('png/menu-organization.png');
   @include icon;
@@ -277,6 +265,42 @@
 
 .grunticon-meta-status {
   background-image: url('png/meta-status.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-statusFinal {
+  background-image: url('png/meta-statusFinal.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-statusFinalize {
+  background-image: url('png/meta-statusFinalize.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-statusInactive {
+  background-image: url('png/meta-statusInactive.png');
   @include icon;
   height: 20px;
   width: 20px;
