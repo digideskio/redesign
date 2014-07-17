@@ -19,7 +19,9 @@ var Bartender = _.create(OSLC, {
   
   bartenderItemTemplate: _.template(
   '<a href="#" class="item hasFlagInline" id="bartender-<%= id %>-<%= name %>-control" '+
-    'aria-haspopup="true" aria-controls="bartender-<%= id %>-<%= name %>-dropdown">' +
+    'aria-haspopup="true" '+
+    'aria-owns="bartender-<%= id %>-<%= name %>-dropdown" '+
+    'aria-controls="bartender-<%= id %>-<%= name %>-dropdown">' +
     '<div class="flag">' +
       '<div class="image"><i class="icon grunticon-menu-<%= name %>"></i></div>'+
       '<div class="body">'+
@@ -249,7 +251,6 @@ var Bartender = _.create(OSLC, {
           'aria-hidden':'true',
           'data-focusable':'false',
           'aria-labelledby': 'bartender-'+this.id+'-'+control+'-label',
-          'aria-owns': 'bartender-'+this.id+'-'+control+'-control',
           'id': 'bartender-'+this.id+'-'+control+'-dropdown'
       }),
       itemTemplateFold = this.templateFold('<a class="item" href="<%= href %>" ' + 

@@ -69,13 +69,9 @@ var Sextant = _.create( OSLC, {
     
   },
   
-  open: function() {
-    this.toggle('open');
-  },
+  open: function() { this.toggle('open'); },
   
-  close: function() {
-    this.toggle('close');
-  },
+  close: function() { this.toggle('close'); },
   
   toggle: function( dir ) {
   

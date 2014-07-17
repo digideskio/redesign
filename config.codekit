@@ -496,6 +496,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_harp\/css\/_helpers\/_spacing.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/css\/_helpers\/_spacing.scss",
+		"outputAbbreviatedPath": "\/_harp\/css\/css\/_spacing.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_harp\/css\/_helpers\/_sticky_footer.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -3900,6 +3916,17 @@
 		"initialSize": 297,
 		"inputAbbreviatedPath": "\/icons\/output\/png\/channel-whitepaper.png",
 		"outputAbbreviatedPath": "\/icons\/output\/png\/channel-whitepaper.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/icons\/output\/png\/js-close.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 828,
+		"inputAbbreviatedPath": "\/icons\/output\/png\/js-close.png",
+		"outputAbbreviatedPath": "\/icons\/output\/png\/js-close.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

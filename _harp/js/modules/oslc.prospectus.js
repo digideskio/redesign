@@ -7,23 +7,27 @@ var Prospectus = _.create(OSLC, {
 
   name: 'Prospectus',
   
-  init: function(menu,focusable) {
+  init: function(menu,manageFocus) {
     this.els = {menu:$(menu)};
-    this.focusable = focusable;
+    this.focusable = manageFocus;
 
     var menuItemID = 0;
     menuID++;
     
     // set WAI-ARIA roles
     this.els.menu.attr({
-      'role': this.els.menu.hasClass('horizontal') ? 'menubar' : 'menu',
+      'role': manageFocus ? (this.els.menu.hasClass('horizontal') ? 'menubar' : 'menu') : null,
+      'data-prospectus': 'true',
       'id': this.els.menu[0].id || 'prospectus-'+menuID
     });
     this.els.menu.find('ul,li').attr('role','presentation');
-    this.els.menu.find('a').attr({role:'menuitem', 'tabIndex': '-1','id':function(){
-      menuItemID++;
-      return this.id || 'prospectus-'+menuID+'-'+menuItemID;
-    }});
+    this.els.menu.find('a').attr({
+      role: manageFocus ? 'menuitem' : null,
+      'id':function(){
+        menuItemID++;
+        return this.id || 'prospectus-'+menuID+'-'+menuItemID;
+      }
+    });
   
     this.setFocusable();
     
@@ -36,6 +40,7 @@ var Prospectus = _.create(OSLC, {
     return $activeDescendant.length ? $activeDescendant : $menu.find('a').first();
   },
   clearFocusable: function(){
+    if (!this.focusable) {return;}
     this.els.menu.find('a').attr('tabIndex','-1');
   },
   setFocusable: function(){
@@ -59,12 +64,12 @@ var Prospectus = _.create(OSLC, {
 
 // jQuery plugin definition
 // -------------------------------
-$.fn.prospectus = function(focusable){
+$.fn.prospectus = function(manageFocus){
   return this.each(function(){
-    focusable = (focusable || $(this).attr('data-focusable') || 'true').toString() === 'true';
+    manageFocus = (manageFocus || $(this).attr('data-manage-focus') || 'true').toString() === 'true';
     $(this)
       .data('prospectus', _.create(Prospectus))
-      .data('prospectus').init(this,focusable);
+      .data('prospectus').init(this,manageFocus);
   });
 };
 
@@ -74,14 +79,14 @@ $(document).ready(function(){
   $('[data-prospectus]').prospectus();
 });
 
-$(document).on('keydown', '[role="menuitem"]', function(e){
+$(document).on('keydown', '[role="menuitem"], [data-prospectus] :focusable', function(e){
   var
     keycode = e.which || e.keyCode,
     alphabet = _.range(65,91),
     validKey = _.contains(_.union([9,27,37,38,39,40], alphabet), keycode),
     $this = $(this),
     hasDrop = $this.data('drop'),
-    $menu = $this.closest('[role="menu"],[role="menubar"]'),
+    $menu = $this.closest('[data-prospectus]'),
     isDrop = $menu.attr('aria-owns'),
     $dropOwner, $menuBar,
     $targets,
@@ -98,7 +103,7 @@ $(document).on('keydown', '[role="menuitem"]', function(e){
   
   if (isDrop && _.contains([9,27,37,39],keycode)) {
     $dropOwner = $('#'+isDrop);
-    $menuBar = $dropOwner.closest('[role="menubar"]');
+    $menuBar = $dropOwner.closest('[data-prospectus]');
     
     $dropOwner.data('drop') && $dropOwner.data('drop').close();
 
@@ -121,11 +126,7 @@ $(document).on('keydown', '[role="menuitem"]', function(e){
     
     // TAB: find the next/previous item in the taborder to focus on
     if (keycode === 9) {
-      // get all elements that should be in the tab order
-      // perfect is the enemy of good enough here
-      // http://stackoverflow.com/a/10730308
-      $targets = $('input,select,textarea,button,object,a[href],[tabindex]')
-        .not(':disabled').filter(':visible').not('[tabindex="-1"]')
+      $targets = $(':tabbable')
         .not($dropOwner.siblings()) // don't want to tab back into the menu bar
         .add($dropOwner); // in a menubar, the link that owns the current popup might have tabindex="-1". This makes sure it's in $targets so we can get its index
 
@@ -133,7 +134,7 @@ $(document).on('keydown', '[role="menuitem"]', function(e){
     }
       
   } else {
-    $targets = $menu.find('[role="menuitem"]');
+    $targets = $menu.find('a');
     
     // return only elements that start with the character
     if ( _.contains(alphabet,keycode) ) {
@@ -150,13 +151,13 @@ $(document).on('keydown', '[role="menuitem"]', function(e){
     try { $newTarget[0].focus(); } catch(err) {}
   }
     
-}).on('mouseover focus', '[role="menuitem"]', function(e){
+}).on('mouseenter focus', '[role="menuitem"], [data-prospectus] :focusable', function(e){
   var 
-    $menu = $(this).closest('[role="menu"],[role="menubar"]'),
+    $menu = $(this).closest('[data-prospectus]'),
     prospectus = $menu.data('prospectus');
   
   // Don't set a new active descendent on mouseover if you're focused on a sibling menu item
-  if (e.type === 'mouseover' && $menu.find('[role="menuitem"]').is(document.activeElement)) {
+  if (e.type === 'mouseenter' && $menu.find(':tabbable').is(document.activeElement)) {
     return;
   }
   
