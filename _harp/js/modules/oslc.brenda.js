@@ -5,15 +5,24 @@
 
   $(document).on('click','.close',function(e){
 
-   e.preventDefault();
+     e.preventDefault();
 
-   var dismiss = $(this).data('dismiss');
+     var dismiss = $(this).data('dismiss');
 
-   if (! dismiss) {return;}
+     if (! dismiss) {return;}
 
-   // Drop instance?
-   dismiss.close && dismiss.close();
+     // Drop instance?
+     dismiss.close && dismiss.close();
 
+  })
+  // Speed up targeted touch events
+  // https://gist.github.com/adamcbrewer/4994466
+  .on('touchend','.close',function(e){
+    // prevent the built-in delay and simulated mouse events
+    e.preventDefault();
+    
+    // trigger the click that we defined above
+    e.target.click();
   });
 
 })(jQuery, this, this.document);
