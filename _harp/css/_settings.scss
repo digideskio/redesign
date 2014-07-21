@@ -64,7 +64,7 @@ $palettes: (
 //
 $font-sizes: (
   n:       0,
-  xxxxs:   5px,
+  xxxs:    5px,
   xxs:     8px,
   xs:      11px, // Diminished Fifth; 16px * 70.71%
   s:       13px, // 5:6 Minor Third; 16px * 83.33%
@@ -76,6 +76,8 @@ $font-sizes: (
   xxxxl:   38px, // 5:6 Minor Third; 32px * 120%
   xxxxxl:  48px // 1:3 Major Twelfth; 16px * 300%
 );
+$font-size-xxxs:    5px; 
+$font-size-xxs:     8px; 
 $font-size-xs:      11px; // Diminished Fifth; 16px * 70.71%
 $font-size-s:       13px; // 5:6 Minor Third; 16px * 83.33%
 $font-size-m:       16px; // Unison (base); 

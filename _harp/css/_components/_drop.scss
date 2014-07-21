@@ -44,16 +44,24 @@ $drop-shadow-spread: 4px;
       }
     }
   }
+  
+  &.drop-theme-deepthroat {
+    padding-bottom: map-get($font-sizes,xxxs);
+    
+    .drop-content {
+      max-width: 225px;
+      @include rem(padding,map-get($font-sizes,xxs));
+    }
+  }
 }
 
 .close {
+  @extend %button-reset;
   position: absolute;
   right: -6px + $drop-shadow-spread*1.5;
   top: -6px;
-  -webkit-appearance: none;
-  appearance: none;
-  padding: 0;
-  border: 0;
-  cursor: pointer;
-  background: none;
+}
+
+.tooltip-btn {
+  @extend %button-reset;
 }

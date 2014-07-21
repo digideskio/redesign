@@ -22,15 +22,11 @@ ul.slats
               for link in links
                 li.item
                   if name === "Status"
-                    span(data-filter-on="status") #{link.title || link}
+                    span(data-filter-on="status",data-tooltip,title="Some more detailed text that I will bother to flesh out on the real site") #{link.title || link}
                   else if name === "Workgroup"
                     a(href="#{link.url || '#'}",data-filter-on="workgroup") #{link.title || link}
                   else
                     a(href="#{link.url || '#'}") #{link.title || link}
-
-                  //if name === "Status"
-                    a(href="#")
-                      i.icon.grunticon-js-infotip
                   
                   if link.value
                     progress.status(max="100",value="#{link.value}",class="#{  link.title.toLowerCase()}")

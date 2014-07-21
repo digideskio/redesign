@@ -41,6 +41,14 @@
 /*
  * Reset UL/OLs
  */
+.close, .tooltip-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: none; }
+
 /*
  * Prevent flicker on transitions on mobile webkit
  */
@@ -802,14 +810,14 @@ meta.oslc-mq-neckbeard-only {
       .drop-element.drop-theme-oslc .drop-content .current:hover,
       .drop-element.drop-theme-oslc .drop-content .current:focus {
         background-color: #ffe2b3; }
+  .drop-element.drop-theme-deepthroat {
+    padding-bottom: 5px; }
+    .drop-element.drop-theme-deepthroat .drop-content {
+      max-width: 225px;
+      padding: 8px;
+      padding: 0.5rem; }
 
 .close {
   position: absolute;
   right: 0px;
-  top: -6px;
-  -webkit-appearance: none;
-  appearance: none;
-  padding: 0;
-  border: 0;
-  cursor: pointer;
-  background: none; }
+  top: -6px; }
