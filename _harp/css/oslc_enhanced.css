@@ -821,3 +821,6 @@ meta.oslc-mq-neckbeard-only {
   position: absolute;
   right: 0px;
   top: -6px; }
+
+.tooltip-btn {
+  cursor: help; }

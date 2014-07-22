@@ -250,7 +250,7 @@ var Bartender = _.create(OSLC, {
           'aria-expanded':'false',
           'aria-hidden':'true',
           'data-focusable':'false',
-          'aria-labelledby': 'bartender-'+this.id+'-'+control+'-label',
+          'aria-labelledby': 'bartender-'+this.id+'-'+control+'-control',
           'id': 'bartender-'+this.id+'-'+control+'-dropdown'
       }),
       itemTemplateFold = this.templateFold('<a class="item" href="<%= href %>" ' + 

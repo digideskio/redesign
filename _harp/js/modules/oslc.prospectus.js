@@ -87,7 +87,7 @@ $(document).on('keydown', '[role="menuitem"], [data-prospectus] :focusable', fun
     $this = $(this),
     hasDrop = $this.data('drop'),
     $menu = $this.closest('[data-prospectus]'),
-    isDrop = $menu.attr('aria-owns'),
+    isDrop = $menu.attr('aria-labelledby'),
     $dropOwner, $menuBar,
     $targets,
     $newTarget;
@@ -100,7 +100,7 @@ $(document).on('keydown', '[role="menuitem"], [data-prospectus] :focusable', fun
     hasDrop.open();
     return;
   }
-  
+    
   if (isDrop && _.contains([9,27,37,39],keycode)) {
     $dropOwner = $('#'+isDrop);
     $menuBar = $dropOwner.closest('[data-prospectus]');

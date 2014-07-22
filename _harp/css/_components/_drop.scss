@@ -64,4 +64,5 @@ $drop-shadow-spread: 4px;
 
 .tooltip-btn {
   @extend %button-reset;
+  cursor: help;
 }

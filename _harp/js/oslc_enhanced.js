@@ -3,7 +3,7 @@ $.fn.toggleAria = function( attr ) {
   
   return this.each( function() {
     var $el = $(this);
-    var ariaAttr = 'aria-' + attr;
+    var ariaAttr = 'aria-' + attr.replace('aria-','');
     var current = $el.attr(ariaAttr);
   
     $el.attr(ariaAttr, ( current === 'true' ? 'false' : 'true' ));
