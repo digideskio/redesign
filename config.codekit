@@ -3831,6 +3831,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/build\/oslc.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/build\/oslc.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/css\/build\/oslc_enhanced.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/build\/oslc_enhanced.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/icons\/output\/icons.data.png.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -4331,6 +4349,28 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/js\/build\/libraries.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/build\/libraries.js",
+		"outputAbbreviatedPath": "\/js\/build\/min\/libraries-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/build\/oslc.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/build\/oslc.min.js",
+		"outputAbbreviatedPath": "\/js\/build\/min\/oslc.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/posts\/cruft.html": {
 		"fileType": 8192,
@@ -4969,19 +5009,19 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.deepthroat.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.prospectus.js",
 			"position": 2,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.prospectus.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.bartender.js",
 			"position": 3,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.bartender.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.deepthroat.js",
 			"position": 4,
 			"type": 1
 			},

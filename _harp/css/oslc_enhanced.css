@@ -41,7 +41,7 @@
 /*
  * Reset UL/OLs
  */
-.close, .tooltip-btn {
+.close {
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -450,9 +450,6 @@ meta.oslc-mq-neckbeard-only {
       -ms-flex-align: stretch;
           align-items: stretch; }
   .flexbox .menu.horizontal .item, .flexbox .menu.horizontal > .items .item {
-    -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-            flex-shrink: 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -822,5 +819,6 @@ meta.oslc-mq-neckbeard-only {
   right: 0px;
   top: -6px; }
 
-.tooltip-btn {
-  cursor: help; }
+.tooltip-wrap {
+  cursor: help;
+  border-bottom: 2px dotted #7ed2dd; }

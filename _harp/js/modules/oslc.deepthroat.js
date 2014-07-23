@@ -22,27 +22,23 @@ var DeepThroat = _.create(OSLC,{
     
     var
       $el = $(el),
-      $btn,
       data = {
         header: $el.text(),
         tip: $el.attr('title') || $el.attr('data-tooltip') || 'You did not define tooltip text, silly!', 
         id: this.id
       };
-        
-    $el.attr('title',null);
-
-    if ( ! $el.is(':focusable')) {
-      $btn = $el.wrap('<button role="presentation" type="button" class="tooltip-btn"></button>')
-        .parent().append(' <i class="icon grunticon-js-infotip"></i>').data('deepthroat',this); 
-    } else {
-      $btn = $el;
-    }
     
-    $btn
-      .addClass('js-activates-tooltip')
-      .attr({'aria-describedby': this.id})
+    ! $el.is(':tabbable') && $el.attr('tabindex','0');
+    
+    $el
+      .addClass('js-activates-tooltip tooltip-wrap')
+      .append(' <i class="icon grunticon-js-infotip"></i>') // TODO: make this optional?
+      .attr({
+        'aria-describedby': this.id, 
+        title: null
+      })
       .data('drop', this.drop = new Drop({
-        target: $btn[0],
+        target: $el[0],
         classes: 'drop-theme-oslc drop-theme-deepthroat',
         content: _.template('<div id="<%= id %>" class="copy"><%- tip %></div>',data),
         position: 'top center',

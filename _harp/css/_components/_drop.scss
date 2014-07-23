@@ -62,7 +62,7 @@ $drop-shadow-spread: 4px;
   top: -6px;
 }
 
-.tooltip-btn {
-  @extend %button-reset;
+.tooltip-wrap {
   cursor: help;
+  border-bottom: 2px dotted palette(blue,light);
 }

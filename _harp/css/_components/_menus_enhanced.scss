@@ -24,7 +24,7 @@
     align-items: stretch;
     
     .item {
-      flex-shrink: 0;
+      //flex-shrink: 0; <-- removed to resolve an issue in Webkit where the text could overflow
       display: flex;
       align-items: center;
     }
