@@ -950,23 +950,27 @@ img {
 .flexbox .body,
 .flexbox .media {
   overflow: visible; }
-.flexbox .media, .flexbox .flag {
+.flexbox .media,
+.flexbox .flag {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex; }
   .flexbox .media > .image,
-  .flexbox .media > .body, .flexbox .flag > .image,
+  .flexbox .media > .body,
+  .flexbox .flag > .image,
   .flexbox .flag > .body {
     width: auto; }
-  .flexbox .media > .body, .flexbox .flag > .body {
+  .flexbox .media > .body,
+  .flexbox .flag > .body {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
        -moz-box-flex: 1;
         -ms-flex: 1;
             flex: 1; }
-  .flexbox .media.reversed > .image, .flexbox .flag.reversed > .image {
+  .flexbox .media.reversed > .image,
+  .flexbox .flag.reversed > .image {
     float: none;
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;

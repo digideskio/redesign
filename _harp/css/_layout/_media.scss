@@ -78,7 +78,8 @@
   .body, 
   .media { overflow: visible; }
   
-  .media, .flag {
+  .media, 
+  .flag {
     display: flex;
     
     // flex items don't care about floats, display table, vertical-align, whatever
@@ -90,7 +91,12 @@
     }
     
     > .body { 
-      flex: 1; 
+      flex: 1;
+      // flex: 1 auto; <-- TODO consider setting flex-basis explicitly to auto
+      // http://css-tricks.com/almanac/properties/f/flex-basis/
+      //   "When omitted from the flex shorthand, its specified value is the length zero."
+      //   not auto, as I thought. "flex: 0 1 auto" is the DEFAULT, but shorthand changes it
+      // If you change this, patch up _card_enhanced -> .card > .header > .flag > .body
     }
     
     &.reversed > .image {
