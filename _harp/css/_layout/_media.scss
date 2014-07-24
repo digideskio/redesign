@@ -96,7 +96,7 @@
       // http://css-tricks.com/almanac/properties/f/flex-basis/
       //   "When omitted from the flex shorthand, its specified value is the length zero."
       //   not auto, as I thought. "flex: 0 1 auto" is the DEFAULT, but shorthand changes it
-      // If you change this, patch up _card_enhanced -> .card > .header > .flag > .body
+      // If you change this, fix _card_enhanced -> .card > .header > .flag > .body
     }
     
     &.reversed > .image {
