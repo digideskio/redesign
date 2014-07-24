@@ -42,12 +42,25 @@ $second-shadow: $second-shadow-direction $second-shadow-color;
     }
   }
   
-  .flexbox & .meta {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  .flexbox & { 
+  
+    .meta,
+    .tags {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     
-    .byline { flex: 1 1 auto; }
+    .meta .byline { flex: 1 1 auto; }
+    
+    .tags .tag { flex-shrink: 0; }
+
+    .header > .flag > .body { 
+      // appears to resolve an issue where tags
+      // would overlap the header title
+      flex-basis: auto; 
+    }
+
   }
   
   &.primary {

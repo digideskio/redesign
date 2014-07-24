@@ -1387,8 +1387,8 @@ a.tag {
     padding: 0.8125rem 1rem; }
 
 .card > .header .tags {
-  margin-left: 11px;
-  margin-left: 0.6875rem; }
+  margin-left: 5px;
+  margin-left: 0.3125rem; }
 .card > .deck {
   color: #666666;
   line-height: 1;
@@ -1403,17 +1403,6 @@ a.tag {
   margin-top: 6px; }
 .card .tags .tag {
   margin-top: 1px; }
-.flexbox .card .tags {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
 .card .menu {
   background-color: #f7f7f7; }
 .card > .footer {
