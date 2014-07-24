@@ -52,7 +52,7 @@ var Bartender = _.create(OSLC, {
       bartender = this,
       $targets = this.els.listing.find('[data-filter-target]'),
       $matches,
-      velocityDefaults = { duration: 200, easing: 'easeOutCubic' };
+      velocityDefaults = { duration: 250, drag: true };
     
     // update the menus
     _.forEach(this.state, function(val,key){
@@ -82,29 +82,13 @@ var Bartender = _.create(OSLC, {
     });
     
     // hide
-    $targets.not($matches).filter(':visible').velocity({
-        opacity: [0,1],
-        transformOriginX: ['50%','50%'],
-        transformOriginY: ['50%','50%'],
-        transformOriginZ: [0,0],
-        scaleX: 0.5,
-        scaleY: 0.5,
-        translateZ: 0      
-      }, 
+    $targets.not($matches).filter(':visible').velocity('transition.expandOut', 
       _.defaults(
         {complete: function(){ $(this).addClass('hidden'); }},
         velocityDefaults
       ));
 
-    $matches.filter(':hidden').removeClass('hidden').velocity({
-        opacity: [1,0],
-        transformOriginX: ['50%','50%'],
-        transformOriginY: ['50%','50%'],
-        transformOriginZ: [0,0],
-        scaleX: [ 1, 0.625 ],
-        scaleY: [ 1, 0.625 ],
-        translateZ: [0,0]
-      }, 
+    $matches.filter(':hidden').removeClass('hidden').velocity('transition.expandIn', 
       velocityDefaults);
 
     // --- Sort --- //
