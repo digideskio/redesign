@@ -1,12 +1,21 @@
 
-$.fn.toggleAria = function( attr ) {
+$.fn.toggleAria = function() {
+  
+  var 
+    attributes = arguments,
+    toggle = function(el,attr) {
+    var 
+      $el = $(el),
+      ariaAttr = 'aria-' + attr.replace('aria-',''),
+      current = $el.attr(ariaAttr);
+    $el.attr(ariaAttr, ( current === 'true' ? 'false' : 'true' ));
+  };
   
   return this.each( function() {
-    var $el = $(this);
-    var ariaAttr = 'aria-' + attr.replace('aria-','');
-    var current = $el.attr(ariaAttr);
-  
-    $el.attr(ariaAttr, ( current === 'true' ? 'false' : 'true' ));
+    var el = this;
+    _.forEach(attributes, function(att){
+      toggle(el,att);
+    });  
   });
 
 };
