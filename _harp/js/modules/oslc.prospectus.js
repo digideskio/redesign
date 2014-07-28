@@ -1,36 +1,54 @@
 ;(function ($, window, document, undefined) {
 'use strict';
 
+OSLC.dropdowns = []; // store these so we can do mass _.invokes later
+
 var menuID = 0;
 
 var Prospectus = _.create(OSLC, {
 
   name: 'Prospectus',
   
-  init: function(menu,manageFocus) {
+  DEFAULTS: {
+    isDropdown: null,
+    manageFocus: true,
+  },
+  
+  init: function(menu,options) {
     this.els = {menu:$(menu)};
-    this.focusable = manageFocus;
+    this.options = options;
+    if (this.options.isDropdown) { this.isOpened = false; }
 
     var menuItemID = 0;
     menuID++;
     
     // set WAI-ARIA roles
     this.els.menu.attr({
-      'role': manageFocus ? (this.els.menu.hasClass('horizontal') ? 'menubar' : 'menu') : null,
+      'role': this.options.manageFocus ? (this.els.menu.hasClass('horizontal') ? 'menubar' : 'menu') : 'group',
       'data-prospectus': 'true',
       'id': this.els.menu[0].id || 'prospectus-'+menuID
-    });
-    this.els.menu.find('ul,li').attr('role','presentation');
-    this.els.menu.find('a').attr({
-      role: manageFocus ? 'menuitem' : null,
+    })
+    .find('ul,li').attr('role','presentation')
+    .end() // back to the $menu
+    .find('a').addClass('js-prospectus-focusable').attr({
+      role: this.options.manageFocus ? 'menuitem' : null,
       'id':function(){
         menuItemID++;
         return this.id || 'prospectus-'+menuID+'-'+menuItemID;
       }
     });
   
-    this.setFocusable();
-    
+    if (this.options.isDropdown) {
+
+      OSLC.dropdowns.push(this);
+
+      $('<button type="button" tabindex="-1" class="close"><span class="sr-only">Close</span><i class="icon grunticon-js-close"></i></button>')
+        .data('dismiss',this)
+        .appendTo( this.els.menu.find('.items') );
+    }
+
+    this.setFocusable();    
+
   },
   findFocusableItem: function(){
     var 
@@ -40,12 +58,12 @@ var Prospectus = _.create(OSLC, {
     return $activeDescendant.length ? $activeDescendant : $menu.find('a').first();
   },
   clearFocusable: function(){
-    if (!this.focusable) {return;}
+    if (!this.options.manageFocus) {return;}
     this.els.menu.find('a').attr('tabIndex','-1');
   },
   setFocusable: function(){
     
-    if (!this.focusable) {return;}
+    if (!this.options.manageFocus) {return;}
     
     var $activeDescendant = this.findFocusableItem();
 
@@ -59,17 +77,64 @@ var Prospectus = _.create(OSLC, {
       try { $activeDescendant[0].focus(); } catch (err) {}
     }
     return true;
+  },
+  open: function(){
+  
+    if ( ! this.options.isDropdown || this.isOpened ) { return; }
+    
+    // Initial status is NOT inserted into the DOM
+    this.tether = this.tether || new Tether({
+      element: this.els.menu.appendTo('body')[0],
+      target: this.options.isDropdown.control,
+      attachment: 'top left',
+      targetAttachment: 'top left',
+      constraints: [{
+        to: 'scrollParent',
+        attachment: 'together',
+        pin: ['right']
+      }]
+    });
+    
+    var 
+      tether = this.tether,
+      prospectus = this;
+    
+    this.els.menu.removeClass('hidden').toggleAria('expanded','hidden')
+      .find('.items').velocity('transition.expandIn',{
+        duration: 200,
+        begin: function(){ tether.position(); },
+        complete: function() { prospectus.focus(); }
+      });
+    
+    this.isOpened = true;
+  },
+  close: function(){
+    if ( ! this.options.isDropdown || ! this.isOpened ) { return; }
+    
+    var menu = this.els.menu;
+    
+    menu.toggleAria('expanded','hidden')
+      .find('.items').velocity('transition.expandOut', {
+        duration: 100,
+        display: 'block',
+        complete: function(){ menu.addClass('hidden'); }
+      });
+    
+    this.isOpened = false;
   }
 });
 
 // jQuery plugin definition
 // -------------------------------
-$.fn.prospectus = function(manageFocus){
-  return this.each(function(){
-    manageFocus = (manageFocus || $(this).attr('data-manage-focus') || 'true').toString() === 'true';
-    $(this)
+$.fn.prospectus = function(option){
+  return this.each(function(){    
+    var 
+      $this = $(this),
+      options = _.extend({}, Prospectus.DEFAULTS, $this.data(), typeof option === 'object' && option);
+
+    $this
       .data('prospectus', _.create(Prospectus))
-      .data('prospectus').init(this,manageFocus);
+      .data('prospectus').init(this,options);
   });
 };
 
@@ -79,58 +144,84 @@ $(document).ready(function(){
   $('[data-prospectus]').prospectus();
 });
 
-$(document).on('keydown', '[role="menuitem"], [data-prospectus] :focusable', function(e){
+$(document).on('click touchend', '.js-prospectus-focusable', function(e){
+  var hasDrop = $(this).data('hasDropdown');
+  
+  if (!hasDrop) {return;}
+  
+  e.preventDefault();
+  _.invoke(OSLC.dropdowns,'close');
+  hasDrop.open();
+
+})
+.on('click touchend',function(e){
+  var 
+    openDropdowns = _.filter(OSLC.dropdowns,'isOpened'),
+    firstDropdown = _.first(openDropdowns);
+  
+  if (!firstDropdown) {return;}
+  
+  var control = firstDropdown.options.isDropdown.control;
+  
+  if ( $(e.target).is(control) || $.contains(control,e.target) ) { return; }
+  
+  if ( ! $.contains(firstDropdown.els.menu[0],e.target) ) {
+    _.invoke(openDropdowns,'close');
+  }
+  
+})
+.on('keydown', '.js-prospectus-focusable', function(e){
   var
     keycode = e.which || e.keyCode,
     alphabet = _.range(65,91),
     validKey = _.contains(_.union([9,27,37,38,39,40], alphabet), keycode),
     $this = $(this),
-    hasDrop = $this.data('drop'),
+    hasDrop = $this.data('hasDropdown'),
     $menu = $this.closest('[data-prospectus]'),
-    isDrop = $menu.attr('aria-labelledby'),
-    $dropOwner, $menuBar,
+    isDrop = $menu.data('prospectus').options.isDropdown,
+    $dropdownControl, $menuBar,
     $targets,
     $newTarget;
   
   if ( ! validKey || (keycode === 9 && ! isDrop)) {return;}
   
   e.preventDefault();
-
+  
   if (keycode === 40 && hasDrop) {
     hasDrop.open();
     return;
   }
     
   if (isDrop && _.contains([9,27,37,39],keycode)) {
-    $dropOwner = $('#'+isDrop);
-    $menuBar = $dropOwner.closest('[data-prospectus]');
+    $dropdownControl = $(isDrop.control);
+    $menuBar = $dropdownControl.closest('[data-prospectus]');
     
-    $dropOwner.data('drop') && $dropOwner.data('drop').close();
+    $dropdownControl.data('hasDropdown').close();
 
     // left/right
     if (/(37|39)/.test(keycode)) {
-      $newTarget = getNewFocusTarget($menuBar.find('[role="menuitem"]'), $dropOwner.index(), keycode);
+      $newTarget = getNewFocusTarget($menuBar.find('[role="menuitem"]'), $dropdownControl.index(), keycode);
       
       // update focus target on the parent menubar
-      $menuBar.attr('aria-activedescendant', $newTarget[0].id);
-      $menuBar.data('prospectus') && $menuBar.data('prospectus').setFocusable();
+      $menuBar.attr('aria-activedescendant', $newTarget[0].id)
+        .data('prospectus').setFocusable();
       
-      $newTarget.data('drop') && $newTarget.data('drop').open();
+      $newTarget.data('hasDropdown').open();
       return;
     }
     
     // ESC: set focus on the owner element in the menubar
     if (keycode === 27) {
-      $newTarget = $dropOwner;
+      $newTarget = $dropdownControl;
     }
     
     // TAB: find the next/previous item in the taborder to focus on
     if (keycode === 9) {
       $targets = $(':tabbable')
-        .not($dropOwner.siblings()) // don't want to tab back into the menu bar
-        .add($dropOwner); // in a menubar, the link that owns the current popup might have tabindex="-1". This makes sure it's in $targets so we can get its index
+        .not($dropdownControl.siblings()) // don't want to tab back into the menu bar
+        .add($dropdownControl); // in a menubar, the link that owns the current popup might have tabindex="-1". This makes sure it's in $targets so we can get its index
 
-      $newTarget = getNewFocusTarget($targets, $targets.index($dropOwner), e.shiftKey ? 37 : 39);
+      $newTarget = getNewFocusTarget($targets, $targets.index($dropdownControl), e.shiftKey ? 37 : 39);
     }
       
   } else {
@@ -151,7 +242,7 @@ $(document).on('keydown', '[role="menuitem"], [data-prospectus] :focusable', fun
     try { $newTarget[0].focus(); } catch(err) {}
   }
     
-}).on('mouseenter focus', '[role="menuitem"], [data-prospectus] :focusable', function(e){
+}).on('mouseenter focus', '.js-prospectus-focusable', function(e){
   var 
     $menu = $(this).closest('[data-prospectus]'),
     prospectus = $menu.data('prospectus');

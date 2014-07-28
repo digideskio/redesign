@@ -1,68 +1,66 @@
 $drop-shadow-spread: 4px;
 
-.drop-element {
-  //http://github.hubspot.com/drop/overview/styling/
-  display: none;
+%dropdown {
+  // Leave some room on the sides for a drop shadow 
+  // to be visible without adding more scroll bars
   position: absolute;
-  opacity: 0;
-  transition: opacity .15s $ease-out-cubic;
+  padding-right: $drop-shadow-spread*1.5;
+  padding-left: $drop-shadow-spread*1.5;
+}
 
-  &.drop-open-transitionend {
-    display: block;
-  }
+%dropdown-body {
+  min-width: 8em;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px $drop-shadow-spread transparentize(palette(gray), .5);
+  opacity: 0; // initial setting
+}
+
+.dropdown {
+  @extend %dropdown;
+  max-width: 100%;
   
-  &.drop-after-open {
-    opacity: 1;
-  }
-  
-  &.drop-theme-oslc {
-    max-width: 100%;
-    // Leave some room on the sides for a drop shadow 
-    // to be visible without adding more scroll bars
-    padding-right: $drop-shadow-spread*1.5;
-    padding-left: $drop-shadow-spread*1.5;
+  .items {
+    @extend %dropdown-body;
     
-    .drop-content {
-      background-color: #fff;
-      box-shadow: 0 2px $drop-shadow-spread transparentize(palette(gray), .5);
-      min-width: 8em;
-      
-      .count { 
-        @extend %text-size-s; 
-        color: palette(gray);
-      }
-      
-      .item:hover,
-      .item:focus {
-        background-color: palette(gold,x-light);
-      }
-      
-      .current,
-      .current:hover,
-      .current:focus {
-        background-color: palette(gold,light);
-      }
+    .count { 
+      @extend %text-size-s; 
+      color: palette(gray);
     }
-  }
-  
-  &.drop-theme-deepthroat {
-    padding-bottom: map-get($font-sizes,xxxs);
     
-    .drop-content {
-      max-width: 225px;
-      @include rem(padding,map-get($font-sizes,xxs));
+    .item:hover,
+    .item:focus {
+      background-color: palette(gold,x-light);
     }
+    
+    .current,
+    .current:hover,
+    .current:focus {
+      background-color: palette(gold,light);
+    }
+
   }
 }
 
-.close {
-  @extend %button-reset;
-  position: absolute;
-  right: -6px + $drop-shadow-spread*1.5;
-  top: -6px;
+.tooltip {
+  @extend %dropdown;
+  padding-bottom: map-get($font-sizes,xxxs);
+  
+  .body {
+    @extend %dropdown-body;
+    max-width: 225px;
+    @include rem(padding,map-get($font-sizes,xxs));
+  }
 }
 
 .tooltip-wrap {
   cursor: help;
   border-bottom: 2px dotted palette(blue,light);
+}
+
+.close {
+  @extend %button-reset;
+  position: absolute;
+  right: -6px;
+  top: -6px;
 }

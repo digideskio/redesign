@@ -56,7 +56,7 @@ var Bartender = _.create(OSLC, {
     
     // update the menus
     _.forEach(this.state, function(val,key){
-      $(bartender.drops[key].content).find('.item')
+      $(bartender.dropdowns[key]).find('.item')
         .removeClass('current')
         .filter('[data-label="'+val.label+'"]')
         .addClass('current');
@@ -112,7 +112,8 @@ var Bartender = _.create(OSLC, {
   
   constructMenu: function(){
     this.state = {};
-    this.drops = {};
+    this.dropdowns = {};
+    this.menuItems = {};
     this.els.cards = this.els.listing.find('.card').closest('.column');
     
     var controls = this.els.menu.data('controls');
@@ -131,7 +132,7 @@ var Bartender = _.create(OSLC, {
     var 
       cards = this.els.cards,
       $bartenderItem,
-      dropdownItems = this.listFilterMenuItems(control);
+      dropdownItems = this.getMenuItems(control,true);
     
     if ( dropdownItems.length < 2 ) {
       console.log('Control for ',control,' did not have enough items. Bailing.');
@@ -158,44 +159,33 @@ var Bartender = _.create(OSLC, {
         });
     }
     
-    $bartenderItem.data('drop',this.drops[control] = new Drop({
-      target: $bartenderItem[0],
-      classes: 'drop-theme-oslc',
-      toggleBodyClass: false,
-      tetherOptions: {
-        attachment: 'top left',
-        targetAttachment: 'top left',
-        optimizations: {
-          moveElement: false
-        },
-        constraints: [{
-          to: 'scrollParent',
-          attachment: 'together',
-          pin: ['right']
-        }]
-      }
-    }));
+    this.dropdowns[control] = this.buildDropdownMenu(control);
     
-    // Builds the menu items, activates Prospectus and inserts them into the appropriate Drop
-    this.buildDropMenu(control, dropdownItems);
-    
-    this.drops[control].on('open', function(){
-      //$(this.content).find('.current').velocity('callout.pulse', {duration: 400});
-      var prospectus = $(this.content).find('.menu')
-        .attr({'aria-hidden':'false','aria-expanded':'true'})
-        .data('prospectus');
+    if ($.fn.prospectus) {
+      this.dropdowns[control].prospectus({
+        isDropdown: {
+          control: $bartenderItem[0]
+        }
+      });
       
-      prospectus && prospectus.focus();
-    });
-    
-    this.drops[control].on('close', function(){
-      $(this.content).find('.menu').attr({'aria-hidden':'true','aria-expanded':'false'});
-    });
+      $bartenderItem.data('hasDropdown', this.dropdowns[control].data('prospectus'));
+    } 
 
   },
   
-  listFilterMenuItems: function(control) {
-    var items = [];
+  getMenuItems: function(control,cache) {
+    var 
+      items = [],
+      zipToItemObj = function(arr) {
+        var keys = ['data', 'html', 'href', 'classes'],
+            temp = _.defaults( 
+              _.zipObject( keys, arr ),
+              _.zipObject( keys, [{},'Label not found','#',''] ) // <-- defaults
+            );
+        if ( ! temp.data.label ) { temp.data.label = temp.html; }
+        return temp;
+      };
+
     if (control === 'sort') {
       items = [
         [{on:'date',direction:'desc'}, 'Newest'],
@@ -223,49 +213,36 @@ var Bartender = _.create(OSLC, {
       // Add an "All" object
       items.push( [{count: this.els.cards.length, on: 'All'}, 'All'] );
     }
-    return items;
+    
+    items = _.map(items,zipToItemObj);
+    
+    if (cache) { this.menuItems[control] = items; }
+    
+    return items;  
   },
   
-  buildDropMenu: function(control,items){
+  buildDropdownMenu: function(control) {
     var 
-      drop = this.drops[control],
-      menu = $('<div>').addClass('menu tensed')
-        .attr({
-          'aria-expanded':'false',
-          'aria-hidden':'true',
-          'data-focusable':'false',
-          'aria-labelledby': 'bartender-'+this.id+'-'+control+'-control',
-          'id': 'bartender-'+this.id+'-'+control+'-dropdown'
-      }),
-      itemTemplateFold = this.templateFold('<a class="item" href="<%= href %>" ' + 
+      menu = $('<div class="items">'),
+      itemTemplate = '<a class="item" href="<%= href %>" ' + 
         'data-update="'+control+'" ' +
         '<% _.each(data, function(val,key) { %>data-<%= key %>="<%= val %>" <% }); %>>' +
         //'<% if (data.count) { %><span class="count"><%= data.count %> &times;</span> <% } %>' +
-        '<span class="<%= classes %>"><%= html %></span></a>'),
-      zipToItemObj = function(arr) {
-        var keys = ['data', 'html', 'href', 'classes'],
-            temp = _.defaults( 
-              _.zipObject( keys, arr ),
-              _.zipObject( keys, [{},'Label not found','#',''] ) // <-- defaults
-            );
-        if ( ! temp.data.label ) { temp.data.label = temp.html; }
-        return temp;
-      },
-      // http://www.nczonline.net/blog/2013/04/01/making-accessible-icon-buttons/
-      close = $('<button type="button" tabindex="-1" class="close"><span class="sr-only">Close</span><i class="icon grunticon-js-close"></i></button>').data('dismiss',drop);
-            
-      menu.html( _.reduce(items.map(zipToItemObj),itemTemplateFold,'') );
-      
-      // Sort on item count for filter dropdowns
-      if ( control !== 'sort' ) {
-        menu.find('.item').tsort({data:'count',order:'desc'},{data:'label'});
-      }
-      
-      $.fn.prospectus && menu.prospectus();
-
-      $(drop.content).html(menu).append(close);
+        '<span class="<%= classes %>"><%= html %></span></a>';
         
-      drop.position();
+    menu.html( _.reduce(this.menuItems[control], this.templateFold(itemTemplate),'') );
+    
+    // Sort on item count for filter dropdowns
+    if ( control !== 'sort' ) {
+      menu.find('.item').tsort({data:'count',order:'desc'},{data:'label'});
+    }
+    
+    return $('<div>').append(menu).addClass('hidden dropdown menu tensed').attr({
+      'aria-expanded':'false',
+      'aria-hidden':'true',
+      'aria-labelledby': 'bartender-'+this.id+'-'+control+'-control',
+      'id': 'bartender-'+this.id+'-'+control+'-dropdown'
+    });
   }
 });
 

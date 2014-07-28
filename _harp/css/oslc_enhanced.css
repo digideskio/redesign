@@ -71,7 +71,7 @@
 /*
  * Text size mixins / placeholders
  */
-.activeFilter, .drop-element.drop-theme-oslc .drop-content .count {
+.activeFilter, .dropdown .items .count {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
@@ -788,46 +788,43 @@ meta.oslc-mq-neckbeard-only {
             -ms-transform: scale(1);
                 transform: scale(1); } }
 
-.drop-element {
-  display: none;
+.dropdown, .tooltip {
   position: absolute;
-  opacity: 0;
-  -webkit-transition: opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-          transition: opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1); }
-  .drop-element.drop-open-transitionend {
-    display: block; }
-  .drop-element.drop-after-open {
-    opacity: 1; }
-  .drop-element.drop-theme-oslc {
-    max-width: 100%;
-    padding-right: 6px;
-    padding-left: 6px; }
-    .drop-element.drop-theme-oslc .drop-content {
-      background-color: #fff;
-      -webkit-box-shadow: 0 2px 4px rgba(153, 153, 153, 0.5);
-              box-shadow: 0 2px 4px rgba(153, 153, 153, 0.5);
-      min-width: 8em; }
-      .drop-element.drop-theme-oslc .drop-content .count {
-        color: #999999; }
-      .drop-element.drop-theme-oslc .drop-content .item:hover,
-      .drop-element.drop-theme-oslc .drop-content .item:focus {
-        background-color: #fff6e5; }
-      .drop-element.drop-theme-oslc .drop-content .current,
-      .drop-element.drop-theme-oslc .drop-content .current:hover,
-      .drop-element.drop-theme-oslc .drop-content .current:focus {
-        background-color: #ffe2b3; }
-  .drop-element.drop-theme-deepthroat {
-    padding-bottom: 5px; }
-    .drop-element.drop-theme-deepthroat .drop-content {
-      max-width: 225px;
-      padding: 8px;
-      padding: 0.5rem; }
+  padding-right: 6px;
+  padding-left: 6px; }
 
-.close {
-  position: absolute;
-  right: 0px;
-  top: -6px; }
+.dropdown .items, .tooltip .body {
+  min-width: 8em;
+  position: relative;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 4px rgba(153, 153, 153, 0.5);
+          box-shadow: 0 2px 4px rgba(153, 153, 153, 0.5);
+  opacity: 0; }
+
+.dropdown {
+  max-width: 100%; }
+  .dropdown .items .count {
+    color: #999999; }
+  .dropdown .items .item:hover,
+  .dropdown .items .item:focus {
+    background-color: #fff6e5; }
+  .dropdown .items .current,
+  .dropdown .items .current:hover,
+  .dropdown .items .current:focus {
+    background-color: #ffe2b3; }
+
+.tooltip {
+  padding-bottom: 5px; }
+  .tooltip .body {
+    max-width: 225px;
+    padding: 8px;
+    padding: 0.5rem; }
 
 .tooltip-wrap {
   cursor: help;
   border-bottom: 2px dotted #7ed2dd; }
+
+.close {
+  position: absolute;
+  right: -6px;
+  top: -6px; }

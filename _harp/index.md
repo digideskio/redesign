@@ -2,10 +2,15 @@ I'm taking another whack at the website for the [Open Services for Lifecycle Col
 
 ## What I'm up to
 
-- [The need for a redesign](./posts/why.html)
-- [Sketches and wireframes](./posts/wireframes.html)
-- [Concepts for a new logo](./posts/logo.html)
-- [The main menu in a mobile-first world](./posts/mobile-first.html)
+- [**2014 10 March** The need for a redesign](./posts/why.html)
+- [**2014 March 11** Sketches and wireframes](./posts/wireframes.html)
+- [**2014 March 12** Concepts for a new logo](./posts/logo.html)
+- [**2014 March 18** The main menu in a mobile-first world](./posts/mobile-first.html)
+- [**2014 March 20** All the old site's dirty laundry](./posts/cruft.html)
+- [**2014 April 15** Responsive primary menus](./posts/main-menus.html)
+- [**2014 May 12** News and listing samples](./posts/main-menus.html)
+- **2014 June**: [Single resource example](./samples/resource.html) and [All Resources sample](./samples/resources.html) pages
+- **2014 July**: [Specifications (all) sample page](./samples/specifications.html)
 
 I'm going have discussions for all the big things in [Github Issues](https://github.com/OSLC/redesign/issues) so you all can have your say.
 

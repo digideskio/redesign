@@ -1,7 +1,7 @@
 /* 
 because it gives hot tips
 
-hat-tip: 
+Hat tips: 
 http://hanshillen.github.io/jqtest/#
 http://accessibility.athena-ict.com/aria/examples/tooltip.shtml
 http://msdn.microsoft.com/en-us/library/ie/jj152135(v=vs.85).aspx (but aria-haspopup is explicitly *not* for tooltips)
@@ -19,14 +19,16 @@ var DeepThroat = _.create(OSLC,{
     this.el = el;
     this.id = 'deepthroat-tooltip-'+tooltipID;
     tooltipID++;
+    this.isOpen = false;
+    this.mouseOver = false;
     
     var
       $el = $(el),
       data = {
         header: $el.text(),
         tip: $el.attr('title') || $el.attr('data-tooltip') || 'You did not define tooltip text, silly!', 
-        id: this.id
-      };
+        id: this.id },
+      tip = _.template('<div class="hidden tooltip" id="<%= id %>" role="tooltip" aria-hidden="true"><div class="body copy"><%- tip%></div></div>', data);
     
     ! $el.is(':tabbable') && $el.attr('tabindex','0');
     
@@ -35,34 +37,61 @@ var DeepThroat = _.create(OSLC,{
       .append(' <i class="icon grunticon-js-infotip"></i>') // TODO: make this optional?
       .attr({
         'aria-describedby': this.id, 
-        title: null
-      })
-      .data('drop', this.drop = new Drop({
-        target: $el[0],
-        classes: 'drop-theme-oslc drop-theme-deepthroat',
-        content: _.template('<div id="<%= id %>" class="copy"><%- tip %></div>',data),
-        position: 'top center',
-        openOn: 'hover', // hover is the expected action for tooltips; I cover other events below
-        tetherOptions: {
-          constraints: [{
-            to: 'scrollParent',
-            attachment: 'together',
-            pin: ['right','left']
-          }]
-        }
-      }));
-      
-    $(this.drop.content).attr({'role':'tooltip','aria-hidden':'true'});
-    
-    this.drop.on('open',function(){ $(this.content).toggleAria('hidden'); });
-    this.drop.on('close',function(){ $(this.content).toggleAria('hidden'); });
+        title: null });
+
+    this.tip = $(tip).data('deepthroat',this);
     
     $('<button type="button" tabindex="-1" class="close"><span class="sr-only">Close</span><i class="icon grunticon-js-close"></i></button>')
-      .data('dismiss',this.drop)
-      .appendTo(this.drop.content);
+      .data('dismiss',this)
+      .appendTo($(this.tip).find('.body'));
+    
   },
-  open: function() { this.drop && this.drop.open(); },
-  close: function() { this.drop && this.drop.close(); },
+  open: function() { 
+  
+    if (this.isOpen) { return; }
+
+    // definition inserts into the DOM
+    this.tether = this.tether || new Tether({
+      element: this.tip[0],
+      target: this.el,
+      attachment: 'bottom center',
+      targetAttachment: 'top center',
+      constraints: [{
+        to: 'scrollParent',
+        attachment: 'together',
+        pin: ['right','left']
+      }]
+    });
+    
+    var tether = this.tether;
+    
+    this.tip.removeClass('hidden').toggleAria('hidden')
+      .find('.body').velocity('transition.flipYIn',{
+        duration: 250,
+        begin: function(){ 
+          tether.position(); 
+        }
+      });
+    
+    this.isOpen = true;
+    
+  },
+  close: function() { 
+    
+    if (!this.isOpen) { return; }
+    
+    var tooltip = this;
+
+    this.tip.toggleAria('hidden').find('.body').velocity('transition.flipYOut',{
+      duration: 150,
+      display: 'block', // this is the trick. maintain visibility so Tether can position accurately when (re)opening
+      complete: function(){
+        tooltip.tip.addClass('hidden');
+      }
+    });
+    
+    this.isOpen = false;
+  },
   show: function() { this.open(); },
   hide: function() { this.close(); }
 });
@@ -83,15 +112,28 @@ $(document).ready(function(){
   $('[data-tooltip]').deepthroat();
 });
 
-$(document).on('focusin focusout keydown touchend', '.js-activates-tooltip', function(e){  
-  var 
-    drop = $(this).data('drop'),
-    keycode = e.which || e.keyCode;
+// Event handlers
+// -------------------------------
+$(document).on('focusin focusout mouseenter keydown touchend', '.js-activates-tooltip', function(e){  
+  var tooltip = $(this).data('deepthroat');
 
-  if (e.type === 'keydown' && keycode !== 27) { return; }
+  if (e.type === 'keydown' && (e.which || e.keyCode) !== 27) { return; }
+  if (e.type === 'mouseenter') { tooltip.mouseOver = true; }
+  if (e.type === 'touchend') { e.preventDefault(); } // mostly stops the artificial delayed click on mobile/iOS 
 
-  e.preventDefault(); // mostly stops the artificial delayed click on mobile/iOS
-  drop && drop[/focusout|keydown/.test(e.type) ? 'close' : 'open']();
+  tooltip && tooltip[/focusout|keydown/.test(e.type) ? 'close' : 'open']();
+}).on('mouseenter', '.tooltip', function(){
+  var tooltip = $(this).data('deepthroat');
+  if (tooltip) { tooltip.mouseOver = true; }
+}).on('mouseleave', '.tooltip, .js-activates-tooltip', function(){
+  var tooltip = $(this).data('deepthroat');
+  if (!tooltip) { return; }
+  
+  tooltip.mouseOver = false;
+  
+  _.delay( function(){
+    if (!tooltip.mouseOver) { tooltip.close(); }
+  }, 500);
 });
 
 })(jQuery, this, this.document);
