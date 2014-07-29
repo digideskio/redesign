@@ -71,11 +71,7 @@ var Prospectus = _.create(OSLC, {
     $activeDescendant.length && $activeDescendant.attr('tabIndex', '0');
   },
   focus: function(){
-    var $activeDescendant = this.findFocusableItem();
-    
-    if ($activeDescendant.length) {
-      try { $activeDescendant[0].focus(); } catch (err) {}
-    }
+    this.findFocusableItem().attemptFocus();
     return true;
   },
   open: function(){
@@ -175,20 +171,20 @@ $(document).on('click touchend', '.js-prospectus-focusable', function(e){
     keycode = e.which || e.keyCode,
     alphabet = _.range(65,91),
     validKey = _.contains(_.union([9,27,37,38,39,40], alphabet), keycode),
+    direction = /37|38/.test(keycode) ? 'prev' : 'next', // most likely
     $this = $(this),
-    hasDrop = $this.data('hasDropdown'),
+    hasDropdown = $this.data('hasDropdown'),
     $menu = $this.closest('[data-prospectus]'),
     isDrop = $menu.data('prospectus').options.isDropdown,
-    $dropdownControl, $menuBar,
-    $targets,
-    $newTarget;
+    $dropdownControl, $menuBar, $otherDropdownControl,
+    $targets;
   
   if ( ! validKey || (keycode === 9 && ! isDrop)) {return;}
   
   e.preventDefault();
   
-  if (keycode === 40 && hasDrop) {
-    hasDrop.open();
+  if (keycode === 40 && hasDropdown) {
+    hasDropdown.open();
     return;
   }
     
@@ -200,48 +196,44 @@ $(document).on('click touchend', '.js-prospectus-focusable', function(e){
 
     // left/right
     if (/(37|39)/.test(keycode)) {
-      $newTarget = getNewFocusTarget($menuBar.find('[role="menuitem"]'), $dropdownControl.index(), keycode);
+      $otherDropdownControl = $menuBar.find(':focusable').traverse(direction,$dropdownControl);
       
       // update focus target on the parent menubar
-      $menuBar.attr('aria-activedescendant', $newTarget[0].id)
+      $menuBar.attr('aria-activedescendant', $otherDropdownControl[0].id)
         .data('prospectus').setFocusable();
       
-      $newTarget.data('hasDropdown').open();
+      $otherDropdownControl.data('hasDropdown') && $otherDropdownControl.data('hasDropdown').open();
       return;
     }
     
     // ESC: set focus on the owner element in the menubar
     if (keycode === 27) {
-      $newTarget = $dropdownControl;
+      $dropdownControl.attemptFocus();
+      return;
     }
     
     // TAB: find the next/previous item in the taborder to focus on
     if (keycode === 9) {
-      $targets = $(':tabbable')
+      $(':tabbable')
         .not($dropdownControl.siblings()) // don't want to tab back into the menu bar
-        .add($dropdownControl); // in a menubar, the link that owns the current popup might have tabindex="-1". This makes sure it's in $targets so we can get its index
-
-      $newTarget = getNewFocusTarget($targets, $targets.index($dropdownControl), e.shiftKey ? 37 : 39);
+        .add($dropdownControl) // in a menubar, the link that owns the current popup might have tabindex="-1". This makes sure it's in the collection so we can get the index
+        .attemptFocus(e.shiftKey ? 'prev':'next', $dropdownControl);
+      return;
     }
       
-  } else {
-    $targets = $menu.find('a');
-    
-    // return only elements that start with the character
-    if ( _.contains(alphabet,keycode) ) {
-      $targets = $targets.filter(function(){
-        return _( $(this).text() ).trim().capitalize().startsWith( String.fromCharCode(keycode).toUpperCase() ).value();
-      });
-    }
-    
-    $newTarget = getNewFocusTarget($targets,$targets.index(this),keycode);
-    
+  } 
+  
+  $targets = $menu.find('a'); // TODO: maybe ':focusable'? will have to exclude .close
+  
+  // return only elements that start with the character
+  if ( _.contains(alphabet,keycode) ) {
+    $targets = $targets.filter(function(){
+      return _( $(this).text() ).trim().capitalize().startsWith( String.fromCharCode(keycode).toUpperCase() ).value();
+    });
   }
   
-  if ($newTarget.length) {
-    try { $newTarget[0].focus(); } catch(err) {}
-  }
-    
+  $targets.attemptFocus(direction, this);
+  
 }).on('mouseenter focus', '.js-prospectus-focusable', function(e){
   var 
     $menu = $(this).closest('[data-prospectus]'),
@@ -256,16 +248,5 @@ $(document).on('click touchend', '.js-prospectus-focusable', function(e){
   prospectus && prospectus.setFocusable();
 
 });
-
-var getNewFocusTarget = function($menuItems,currentIndex,keycode){  
-  /(37|38)/.test(keycode) && currentIndex--; // left/up. go back one (-1 is OK)
-  /(39|40)/.test(keycode) && currentIndex++; // right/down. go forward one
-  _.contains(_.range(65,91),keycode) && currentIndex++; // a-z. go forward
-  
-  // too far! go to the first
-  if (currentIndex === $menuItems.length) { currentIndex = 0; }
-  
-  return $menuItems.eq(currentIndex);
-};
 
 })(jQuery, this, this.document);

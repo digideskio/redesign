@@ -2982,6 +2982,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/js\/lib\/jquery.tabbable.focusable.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/js\/lib\/jquery.tabbable.focusable.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/lib\/min\/jquery.tabbable.focusable-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/js\/lib\/jquery.tinysort.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -3092,6 +3103,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/js\/modules\/min\/oslc.jquery.attemptfocus-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/js\/modules\/min\/oslc.jquery.attemptfocus-min.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/modules\/min\/min\/oslc.jquery.attemptfocus-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/js\/modules\/oslc.bartender.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -3145,6 +3167,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/modules\/oslc.jquery.attemptfocus.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/js\/modules\/oslc.jquery.attemptfocus.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/modules\/min\/oslc.jquery.attemptfocus-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/js\/modules\/oslc.jquery.togglearia.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/js\/modules\/oslc.jquery.togglearia.js",
+		"outputAbbreviatedPath": "\/_harp\/js\/modules\/min\/oslc.jquery.togglearia-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/js\/modules\/oslc.prospectus.js": {
@@ -4985,44 +5029,50 @@
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/jquery.velocity.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/jquery.tabbable.focusable.js",
 			"position": 1,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/velocity.ui.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/jquery.velocity.js",
 			"position": 2,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/jquery.tinysort.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/velocity.ui.js",
 			"position": 3,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/lodash.mobile.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/jquery.tinysort.js",
 			"position": 4,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/underscore.string.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/lodash.mobile.js",
 			"position": 5,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/vein.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/underscore.string.js",
 			"position": 6,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/tether.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/vein.js",
 			"position": 7,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/lib\/tether.js",
+			"position": 8,
 			"type": 0
 			}
 		],
@@ -5037,56 +5087,68 @@
 	"\/_harp\/js\/oslc_enhanced.js": [
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.toggler.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.jquery.togglearia.js",
 			"position": 0,
-			"type": 1
+			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.fluidvideos.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.jquery.attemptfocus.js",
 			"position": 1,
-			"type": 1
+			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.prospectus.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.toggler.js",
 			"position": 2,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.bartender.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.fluidvideos.js",
 			"position": 3,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.deepthroat.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.prospectus.js",
 			"position": 4,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.sextant.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.bartender.js",
 			"position": 5,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.whirligig.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.deepthroat.js",
 			"position": 6,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.brenda.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.sextant.js",
 			"position": 7,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.doubtfire.js",
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.whirligig.js",
 			"position": 8,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.brenda.js",
+			"position": 9,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/_harp\/js\/modules\/oslc.doubtfire.js",
+			"position": 10,
 			"type": 1
 			}
 		]
