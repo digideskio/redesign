@@ -103,6 +103,10 @@
       float: none;
       order: 1;
     }
+    
+    &.collapsible {
+      flex-wrap: wrap;
+    }
   }
   
   .media {

@@ -4,7 +4,7 @@
       article.card
         .header
           if spec.orgs
-            .flag.reversed
+            .flag.reversed.collapsible
               header.body
                 h1.title 
                   a(href="#{spec.url}",rel="bookmark") #{ spec.title }
@@ -29,7 +29,7 @@
                   article.card.small
                     .header
                       if subspec.orgs
-                        .flag.reversed
+                        .flag.reversed.collapsible
                           header.body
                             h2.title
                               a(href="#{subspec.url}") #{title}

@@ -977,6 +977,11 @@ img {
        -moz-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1; }
+  .flexbox .media.collapsible,
+  .flexbox .flag.collapsible {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
 .flexbox .media {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
