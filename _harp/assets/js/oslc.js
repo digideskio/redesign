@@ -22,9 +22,9 @@ Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in w
 Modernizr.load({
   test: Modernizr.mustard,
   yep: [
-    window.site_url + 'css/build/oslc_enhanced.min.css',
-    window.site_url + 'js/build/libraries.js',
-    window.site_url + 'js/build/oslc_enhanced.min.js'
+    window.site_url + 'assets/css/build/oslc_enhanced.min.css',
+    window.site_url + 'assets/js/build/libraries.js',
+    window.site_url + 'assets/js/build/oslc_enhanced.min.js'
   ],
   callback: function(url) {
     console.log(url + ' loaded');

@@ -17,9 +17,9 @@ module.exports = function(grunt) {
       cssmin: {
         minify: {
           expand: true,
-          cwd: 'css/',
+          cwd: 'assets/css/',
           src: [ '*.css', '!*.min.css' ],
-          dest: 'css/build/',
+          dest: 'assets/css/build/',
           ext: '.min.css'
         }
       },
@@ -34,9 +34,9 @@ module.exports = function(grunt) {
         dist: {
           files: [{
             expand: true,
-            cwd: 'icons/_svgs',
+            cwd: 'assets/icons/_svgs',
             src: ['*.svg'],
-            dest: 'icons/_source'
+            dest: 'assets/icons/_source'
           }]
         }
       },
@@ -47,13 +47,13 @@ module.exports = function(grunt) {
         foo: {
           files: [{
               expand: true,
-              cwd: 'icons/_source',
+              cwd: 'assets/icons/_source',
               src: ['*.svg', '*.png'],
-              dest: "icons/_grunticon"
+              dest: "assets/icons/_grunticon"
           }],
           options: {
             loadersnippet: 'grunticon.loader.js',
-            template: 'icons/_css.hbs',
+            template: 'assets/icons/_css.hbs',
             cssprefix: '.grunticon-',
             datasvgcss: '_data.svg.scss',
             datapngcss: '_data.png.scss',
@@ -67,9 +67,9 @@ module.exports = function(grunt) {
       copy: {
         grunticonToSass: {
           expand: true,
-          cwd: 'icons/_grunticon/',
+          cwd: 'assets/icons/_grunticon/',
           src: ['*.html'],
-          dest: 'icons/output/'
+          dest: 'assets/icons/build/'
         }
       },
       
@@ -82,9 +82,9 @@ module.exports = function(grunt) {
           },
           files: [{
             expand: true,
-            cwd: 'icons/_grunticon/png/',
+            cwd: 'assets/icons/_grunticon/png/',
             src: ['*.png'],
-            dest: 'icons/output/png/'
+            dest: 'assets/icons/build/png/'
           }]
         }
       },
@@ -97,40 +97,40 @@ module.exports = function(grunt) {
             style: 'compressed'
           },
           files: {
-            'icons/output/icons.data.png.css': 'icons/output/icons.data.png.scss',
-            'icons/output/icons.data.svg.css': 'icons/output/icons.data.svg.scss',
-            'icons/output/icons.fallback.css': 'icons/output/icons.fallback.scss'
+            'assets/icons/build/icons.data.png.css': 'assets/icons/build/icons.data.png.scss',
+            'assets/icons/build/icons.data.svg.css': 'assets/icons/build/icons.data.svg.scss',
+            'assets/icons/build/icons.fallback.css': 'assets/icons/build/icons.fallback.scss'
           }
         }
       },
       
       bytesize: {
         css: {
-          src: ['css/build/*.css']
+          src: ['assets/css/build/*.css']
         },
         js: {
-          src: ['js/build/*.js']
+          src: ['assets/js/build/*.js']
         },
         grunticon: {
-          src: ['icons/output/*.css']
+          src: ['assets/icons/build/*.css']
         }
       },
       
       watch: {
         styles: {
-          files: [ 'css/*.css'],
+          files: [ 'assets/css/*.css'],
           tasks: ['cssmin','bytesize:css']
         },
         js: {
-          files: 'js/build/*.js',
+          files: 'assets/js/build/*.js',
           tasks: ['bytesize:js']
         },
         grunticon: {
-          files: 'icons/_svgs/*.svg',
+          files: 'assets/icons/_svgs/*.svg',
           tasks: ['svgmin', 'grunticon:foo', 'copy:grunticonToSass', 'imagemin:grunticon']
         },
         grunticon_sass: {
-          files: 'icons/_grunticon/*.scss',
+          files: 'assets/icons/_grunticon/*.scss',
           tasks: ['sass:grunticon','bytesize:grunticon']
         }
       }
