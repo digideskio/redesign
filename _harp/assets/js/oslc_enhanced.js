@@ -1,3 +1,5 @@
+// @codekit-prepend "./modules/oslc.jquery.attemptfocus.js";
+// @codekit-prepend "./modules/oslc.jquery.togglearia.js";
 
 var OSLC = {
   dasherize: function(str){
@@ -71,3 +73,14 @@ OSLC.supportsTransitions = Modernizr && "csstransitions" in Modernizr && Moderni
 // This is an imperfect test, but 3D Transforms are a good sign
 //
 OSLC.supportsAcceleratedTransitions = Modernizr && "csstransforms3d" in Modernizr && Modernizr.csstransforms3d;
+
+
+// @codekit-append "./modules/oslc.toggler.js";
+// @codekit-append "./modules/oslc.fluidvideos.js";
+// @codekit-append "./modules/oslc.prospectus.js";
+// @codekit-append "./modules/oslc.sextant.js";
+// @codekit-append "./modules/oslc.whirligig.js";
+// @codekit-append "./modules/oslc.brenda.js";
+// @codekit-append "./modules/oslc.bartender.js";
+// @codekit-append "./modules/oslc.deepthroat.js";
+// @codekit-append "./modules/oslc.doubtfire.js";

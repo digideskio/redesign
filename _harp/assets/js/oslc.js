@@ -1,4 +1,4 @@
-/* Build process prefixes this with modernizr.js */
+// @codekit-prepend "./lib/modernizr.js";
 
 /* Catch console.log errors. You are welcome. */
 if (! window.console) { window.console = {log: function () {}}; }
