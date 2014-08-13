@@ -45,11 +45,13 @@ $drop-shadow-spread: 4px;
 .tooltip {
   @extend %dropdown;
   padding-bottom: map-get($font-sizes,xxxs);
+  z-index: 1;
   
   .body {
     @extend %dropdown-body;
     max-width: 225px;
-    @include rem(padding,map-get($font-sizes,xxs));
+    border-radius: 2px;
+    @include rem(padding,map-get($font-sizes,xs));
   }
 }
 

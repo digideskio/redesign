@@ -810,11 +810,13 @@ meta.oslc-mq-neckbeard-only {
     background-color: #ffe2b3; }
 
 .tooltip {
-  padding-bottom: 5px; }
+  padding-bottom: 5px;
+  z-index: 1; }
   .tooltip .body {
     max-width: 225px;
-    padding: 8px;
-    padding: 0.5rem; }
+    border-radius: 2px;
+    padding: 11px;
+    padding: 0.6875rem; }
 
 .tooltip-wrap {
   cursor: help;
