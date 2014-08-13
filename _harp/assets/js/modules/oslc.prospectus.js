@@ -217,7 +217,7 @@ $(document).on('click touchend', '.js-prospectus-focusable', function(e){
       $(':tabbable')
         .not($dropdownControl.siblings()) // don't want to tab back into the menu bar
         .add($dropdownControl) // in a menubar, the link that owns the current popup might have tabindex="-1". This makes sure it's in the collection so we can get the index
-        .attemptFocus(e.shiftKey ? 'prev':'next', $dropdownControl);
+        .traverseAndFocus(e.shiftKey ? 'prev':'next', $dropdownControl);
       return;
     }
       
@@ -232,7 +232,7 @@ $(document).on('click touchend', '.js-prospectus-focusable', function(e){
     });
   }
   
-  $targets.attemptFocus(direction, this);
+  $targets.traverseAndFocus(direction, this);
   
 }).on('mouseenter focus', '.js-prospectus-focusable', function(e){
   var 

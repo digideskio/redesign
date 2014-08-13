@@ -90,8 +90,12 @@
       width: auto;
     }
     
+    > .image {
+      flex-shrink: 0;
+    }
+    
     > .body { 
-      flex: 1;
+      flex-grow: 1;
       // flex: 1 auto; <-- TODO consider setting flex-basis explicitly to auto
       // http://css-tricks.com/almanac/properties/f/flex-basis/
       //   "When omitted from the flex shorthand, its specified value is the length zero."

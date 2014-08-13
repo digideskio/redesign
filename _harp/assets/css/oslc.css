@@ -245,10 +245,19 @@
  * by Nicolas Gallagher, co-created with Jonathan Neal.
  * http://necolas.github.io/normalize.css/
  */
-*, *:before, *:after {
+/* ==========================================================================
+   Border box all the things
+   see: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+   ========================================================================== */
+html {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit; }
 
 /* ==========================================================================
    HTML5 display definitions
@@ -962,13 +971,18 @@ img {
   .flexbox .flag > .image,
   .flexbox .flag > .body {
     width: auto; }
+  .flexbox .media > .image,
+  .flexbox .flag > .image {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0; }
   .flexbox .media > .body,
   .flexbox .flag > .body {
     -webkit-box-flex: 1;
-    -webkit-flex: 1;
+    -webkit-flex-grow: 1;
        -moz-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1; }
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
   .flexbox .media.reversed > .image,
   .flexbox .flag.reversed > .image {
     float: none;

@@ -4,8 +4,8 @@
 
 /*!
 * Velocity.js: Accelerated JavaScript animation.
-* @version 0.9.0
-* @docs http://velocityjs.org
+* @version 0.10.1
+* @docs http://VelocityJS.org
 * @license Copyright 2014 Julian Shapiro. MIT License: http://en.wikipedia.org/wiki/MIT_License
 */
 
@@ -24,8 +24,6 @@ Velocity's structure:
 - tick(): The single requestAnimationFrame loop responsible for tweening all in-progress calls.
 - completeCall(): Handles the cleanup process for each Velocity call.
 */
-
-/* NOTICE: Despite the ensuing code indicating that Velocity works *without* jQuery and *with* Zepto, this support has not yet landed. */
 
 /******************
     Velocity.js
@@ -83,7 +81,7 @@ Velocity's structure:
         };
     })();
 
-    var rAF = window.requestAnimationFrame || rAFPollyfill;
+    var ticker = window.requestAnimationFrame || rAFPollyfill;
 
     /* Array compacting. Copyright Lo-Dash. MIT License: https://github.com/lodash/lodash/blob/master/LICENSE.txt */
     function compactSparseArray (array) {
@@ -134,6 +132,16 @@ Velocity's structure:
 
         isSVG: function (variable) {
             return window.SVGElement && (variable instanceof SVGElement);
+        },
+
+        isEmptyObject: function (variable) {
+            var name;
+
+            for (name in variable) {
+                return false;
+            }
+
+            return true;
         }
     };
 
@@ -188,7 +196,7 @@ Velocity's structure:
        DOM elements and stand alone for targeting raw DOM elements. */
     /* Note: The global object also doubles as a publicly-accessible data store for the purposes of unit testing. */
     /* Note: Alias the lowercase and uppercase variants of "velocity" to minimize user confusion due to the lowercase nature of the $.fn extension. */
-    var Velocity = global.Velocity = global.velocity = {
+    var Velocity = global.Velocity = global.velocity = $.extend({
         /* Container for page-wide Velocity state data. */
         State: {
             /* Detect mobile devices to determine if mobileHA should be turned on. */
@@ -244,10 +252,10 @@ Velocity's structure:
         animate: function () { /* Defined below. */ },
         /* Set to true to force a duration of 1ms for all animations so that UI testing can be performed without waiting on animations to complete. */
         mock: false,
-        version: { major: 0, minor: 9, patch: 0 },
+        version: { major: 0, minor: 10, patch: 1 },
         /* Set to 1 or 2 (most verbose) to output debug info to console. */
         debug: false
-    };
+    }, window.Velocity);
 
     /* Retrieve the appropriate scroll anchor and property name for the browser: https://developer.mozilla.org/en-US/docs/Web/API/Window.scrollY */
     if (window.pageYOffset !== undefined) {
@@ -272,15 +280,15 @@ Velocity's structure:
         document.addEventListener("visibilitychange", function() {
             /* Reassign the rAF function (which the global tick() function uses) based on the tab's focus state. */
             if (document.hidden) {
-                rAF = function(callback) { 
-                    /* The tick function needs a truthy first argument to pass its internal timestamp check. */
+                ticker = function(callback) { 
+                    /* The tick function needs a truthy first argument in order to pass its internal timestamp check. */
                     return setTimeout(function() { callback(true) }, 16);
                 };
 
                 /* The rAF loop has been paused by the browser, so we manually restart the tick. */
                 tick();
             } else {
-                rAF = window.requestAnimationFrame || rAFPollyfill;
+                ticker = window.requestAnimationFrame || rAFPollyfill;
             }
         });
     }
@@ -1676,7 +1684,7 @@ Velocity's structure:
                    regardless of the element's current queue state. */
                 $.each(Velocity.State.calls, function(i, activeCall) {
                     /* Inactive calls are set to false by the logic inside completeCall(). Skip them. */
-                    if (activeCall !== false) {
+                    if (activeCall) {
                         /* If we're operating on a single element, wrap it in an array so that $.each() can iterate over it. */
                         $.each(Type.isNode(activeCall[1]) ? [ activeCall[1] ] : activeCall[1], function(k, activeElement) {
                             $.each(Type.isNode(elements) ? [ elements ] : elements, function(l, element) {
@@ -1732,7 +1740,7 @@ Velocity's structure:
 
             default:
                 /* Treat a non-empty plain object as a literal properties map. */
-                if ($.isPlainObject(propertiesMap) && !$.isEmptyObject(propertiesMap)) {
+                if ($.isPlainObject(propertiesMap) && !Type.isEmptyObject(propertiesMap)) {
                     action = "start";
 
                 /****************
@@ -2141,7 +2149,7 @@ Velocity's structure:
                                 /* Easing is the only option that embeds into the individual tween data (since it can be defined on a per-property basis).
                                    Accordingly, every property's easing value must be updated when an options object is passed in with a reverse call.
                                    The side effect of this extensibility is that all per-property easing values are forcefully reset to the new value. */
-                                if (!$.isEmptyObject(options)) {
+                                if (!Type.isEmptyObject(options)) {
                                     lastTweensContainer[lastTween].easing = opts.easing;
                                 }
 
@@ -2218,7 +2226,9 @@ Velocity's structure:
                         }
 
                         /* Default to the call's easing if a per-property easing type was not defined. */
-                        easing = easing || opts.easing;
+                        if (!skipResolvingEasing) {
+                            easing = easing || opts.easing;
+                        }
 
                         /* If functions were passed in as values, pass the function the current element as its context,
                            plus the element's index and the element set's size as arguments. Then, assign the returned value. */
@@ -2237,26 +2247,28 @@ Velocity's structure:
                     /* Cycle through each property in the map, looking for shorthand color properties (e.g. "color" as opposed to "colorRed"). Inject the corresponding
                        colorRed, colorGreen, and colorBlue RGB component tweens into the propertiesMap (which Velocity understands) and remove the shorthand property. */
                     $.each(propertiesMap, function(property, value) {
-                        /* Parse the value data for each shorthand. */
-                        var valueData = parsePropertyValue(value, true),
-                            endValue = valueData[0],
-                            easing = valueData[1],
-                            startValue = valueData[2];
-
                         /* Find shorthand color properties that have been passed a hex string. */
-                        if (RegExp(CSS.Lists.colors.join("|")).test(property) && CSS.RegEx.isHex.test(endValue)) {
-                            /* Convert the hex strings into their RGB component arrays. */
-                            var colorComponents = [ "Red", "Green", "Blue" ],
-                                endValueRGB = CSS.Values.hexToRgb(endValue),
-                                startValueRGB = startValue ? CSS.Values.hexToRgb(startValue) : undefined;
+                        if (RegExp("^" + CSS.Lists.colors.join("$|^") + "$").test(property)) {
+                            /* Parse the value data for each shorthand. */
+                            var valueData = parsePropertyValue(value, true),
+                                endValue = valueData[0],
+                                easing = valueData[1],
+                                startValue = valueData[2];
 
-                            /* Inject the RGB component tweens into propertiesMap. */
-                            for (var i = 0; i < colorComponents.length; i++) {
-                                propertiesMap[property + colorComponents[i]] = [ endValueRGB[i], easing, startValueRGB ? startValueRGB[i] : startValueRGB ]; 
+                            if (CSS.RegEx.isHex.test(endValue)) {
+                                /* Convert the hex strings into their RGB component arrays. */
+                                var colorComponents = [ "Red", "Green", "Blue" ],
+                                    endValueRGB = CSS.Values.hexToRgb(endValue),
+                                    startValueRGB = startValue ? CSS.Values.hexToRgb(startValue) : undefined;
+
+                                /* Inject the RGB component tweens into propertiesMap. */
+                                for (var i = 0; i < colorComponents.length; i++) {
+                                    propertiesMap[property + colorComponents[i]] = [ endValueRGB[i], easing, startValueRGB ? startValueRGB[i] : startValueRGB ]; 
+                                }
+
+                                /* Remove the intermediary shorthand property entry now that we've processed it. */
+                                delete propertiesMap[property];
                             }
-
-                            /* Remove the intermediary shorthand property entry now that we've processed it. */
-                            delete propertiesMap[property];
                         }                        
                     });
 
@@ -2849,7 +2861,9 @@ Velocity's structure:
 
                 /* If a complete callback was passed into this call, transfer it to the loop sequence's final "reverse" call
                    so that it's triggered when the entire sequence is complete (and not when the very first animation is complete). */
-                if (opts.complete && (x === reverseCallsCount - 1)) {
+                if (x === reverseCallsCount - 1) {
+                    reverseOptions.display = opts.display;
+                    reverseOptions.visibility = opts.visibility;
                     reverseOptions.complete = opts.complete;
                 }
 
@@ -3084,7 +3098,8 @@ Velocity's structure:
 
         /* Note: completeCall() sets the isTicking flag to false when the last call on Velocity.State.calls has completed. */
         if (Velocity.State.isTicking) {
-            rAF(tick);
+            /* If mock is on (http://VelocityJS.org/#mock), use synchronous code (with mock's forced duration of 0) to immediately toggle end values. */
+            Velocity.mock ? tick(true) : ticker(tick);
         }
     }
 
@@ -3116,7 +3131,7 @@ Velocity's structure:
 
             /* If the user set display to "none" (intending to hide the element), set it now that the animation has completed. */
             /* Note: display:none isn't set when calls are manually stopped (via Velocity.animate("stop"). */
-            /* Note: Display is ignored with "reverse" calls, which is what loops are composed of, since this behavior would be undesirable. */
+            /* Note: Display gets ignored with "reverse" calls and infinite loops, since this behavior would be undesirable. */
             if (!isStopped && !opts.loop) {
                 if (opts.display === "none") {
                     CSS.setPropertyValue(element, "display", opts.display);
@@ -3173,7 +3188,6 @@ Velocity's structure:
 
             /* Complete is fired once per call (not once per element) and is passed the full raw DOM element set as both its context and its first argument. */
             /* Note: Callbacks aren't fired when calls are manually stopped (via Velocity.animate("stop"). */
-            /* Note: If this is a loop, complete callback firing is only triggered on the loop's final reverse call. */
             if (!isStopped && opts.complete && !opts.loop && (i === callLength - 1)) {
                 /* We throw callbacks in a setTimeout so that thrown errors don't halt the execution of Velocity itself. */
                 try {
@@ -3189,8 +3203,17 @@ Velocity's structure:
                Promise Resolving
             **********************/
 
-            if (resolver) {
+            /* Note: Infinite loops don't return promises. */
+            if (resolver && opts.loop !== true) {
                 resolver(elements);
+            }
+
+            /****************************
+               Option: Loop (Infinite)
+            ****************************/
+
+            if (opts.loop === true && !isStopped) {
+                Velocity.animate(element, "reverse", { loop: true, delay: opts.delay });
             }
 
             /***************
@@ -3262,7 +3285,7 @@ Velocity's structure:
 
     /* slideUp, slideDown */
     $.each([ "Down", "Up" ], function(i, direction) {
-        Velocity.Sequences["slide" + direction] = function (element, options) {
+        Velocity.Sequences["slide" + direction] = function (element, options, elementsIndex, elementsSize, elements, promiseData) {
             var opts = $.extend({}, options),
                 originalValues = {
                     height: null,
@@ -3384,6 +3407,8 @@ Velocity's structure:
                 if (complete) {
                     complete.call(element, element);
                 }
+
+                promiseData && promiseData.resolver(elements || element);
             };
 
             /* Animation triggering. */
@@ -3393,7 +3418,7 @@ Velocity's structure:
 
     /* fadeIn, fadeOut */
     $.each([ "In", "Out" ], function(i, direction) {
-        Velocity.Sequences["fade" + direction] = function (element, options, elementsIndex, elementsSize) {
+        Velocity.Sequences["fade" + direction] = function (element, options, elementsIndex, elementsSize, elements, promiseData) {
             var opts = $.extend({}, options),
                 propertiesMap = {
                     opacity: (direction === "In") ? 1 : 0
@@ -3403,6 +3428,16 @@ Velocity's structure:
                callbacks by firing them only when the final element has been reached. */
             if (elementsIndex !== elementsSize - 1) {
                 opts.complete = opts.begin = null;
+            } else {
+                var originalComplete = opts.complete;
+
+                opts.complete = function() {
+                    if (originalComplete) {
+                        originalComplete.call(element, element);
+                    }
+
+                    promiseData && promiseData.resolver(elements || element);
+                }
             }
 
             /* If a display was passed in, use it. Otherwise, default to "none" for fadeOut or the element-specific default for fadeIn. */

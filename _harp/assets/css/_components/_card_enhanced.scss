@@ -51,12 +51,6 @@
     
     .tags .tag { flex-shrink: 0; }
 
-    .header > .flag > .body { 
-      // appears to resolve an issue where tags
-      // would overlap the header title
-      flex-basis: auto;
-    }
-
   }
   
   &.primary {
