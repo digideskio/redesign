@@ -1055,18 +1055,32 @@ img {
       -ms-flex: 1 0 auto;
           flex: 1 0 auto; }
 
-.flexbox .sticky-footer {
-  min-height: 100vh; }
-
-/*
-  "IE10 needs an explicitly declared height on both the <body> and <html> elements to trigger correct calculation of heights for flexible containers along the vertical axis of the page. I haven't found any other properties that trigger the correct behavior so far. It doesn't seem to matter which height you set, but 100% seems sensible."
+.flexbox {
+  /*
+   "IE10 needs an explicitly declared height on both the <body> and <html> elements to trigger correct calculation of heights for flexible containers along the vertical axis of the page. I haven't found any other properties that trigger the correct behavior so far. It doesn't seem to matter which height you set, but 100% seems sensible."
   
-  src: http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
-  see also: http://jsbin.com/ERELezu/24/edit
-  and: http://jsbin.com/todajate/3/edit
-*/
-.flexboxtweener, .flexboxtweener > body, .flexboxtweener .sticky-footer {
-  height: 100%; }
+   src: http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
+   see also: http://jsbin.com/ERELezu/24/edit
+   and: http://jsbin.com/todajate/3/edit
+   
+   can target IE10 (and 11?) with .flexboxtweener if needed with this test:
+   
+   Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign', 'end', true));
+   
+  */ }
+  .flexbox, .flexbox > body {
+    height: 100%; }
+  .flexbox .sticky-footer {
+    /*
+    min-height: 100vh;
+    
+     This was Phil Walton's solution.
+     I found "100vh" didn't play well with Tether (jitter-y scrolling)
+     (min)-height 100% seems better
+     
+     This requires height: 100% on html/body because of course why not
+    */
+    min-height: 100%; }
 
 html {
   font-size: 100%; }
