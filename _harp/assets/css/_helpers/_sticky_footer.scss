@@ -36,6 +36,7 @@
    can target IE10 (and 11?) with .flexboxtweener if needed with this test:
    
    Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign', 'end', true));
+   (via https://github.com/Modernizr/Modernizr/issues/812 )
    
   */
   &,>body {

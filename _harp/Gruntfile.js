@@ -97,8 +97,8 @@ module.exports = function(grunt) {
             style: 'compressed'
           },
           files: {
-            'assets/icons/build/icons.data.png.css': 'assets/icons/build/icons.data.png.scss',
-            'assets/icons/build/icons.data.svg.css': 'assets/icons/build/icons.data.svg.scss',
+            'assets/icons/build/icons.png.css': 'assets/icons/build/icons.png.scss',
+            'assets/icons/build/icons.svg.css': 'assets/icons/build/icons.svg.scss',
             'assets/icons/build/icons.fallback.css': 'assets/icons/build/icons.fallback.scss'
           }
         }
@@ -113,6 +113,18 @@ module.exports = function(grunt) {
         },
         grunticon: {
           src: ['assets/icons/build/*.css']
+        }
+      },
+      
+      criticalcss: {
+        home: {
+          options: {
+            url: "http://localhost:9000/",
+            width: 1200,
+            height: 800,
+            outputfile: "./assets/css/critical.css",
+            filename: "oslc.min.css"
+          }
         }
       },
       
@@ -146,6 +158,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
     grunt.loadNpmTasks( 'grunt-bytesize' );
+    grunt.loadNpmTasks( 'grunt-criticalcss' );
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['autoprefixer', 'svgmin', 'grunticon:foo', 'copy:grunticonToSass']);
