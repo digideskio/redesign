@@ -39,4 +39,8 @@
   color: #fff;
   padding: 5px 4px;
   background-color: palette(gold,dark);
+  max-width: 120px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

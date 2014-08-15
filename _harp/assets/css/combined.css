@@ -2184,7 +2184,11 @@ meta.oslc-mq-neckbeard-only {
   line-height: 1;
   color: #fff;
   padding: 5px 4px;
-  background-color: #ff852e; }
+  background-color: #ff852e;
+  max-width: 120px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
 
 .card, .notice {
   border: none;
