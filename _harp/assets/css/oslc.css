@@ -200,15 +200,11 @@
  *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
  */
 .js .nojs-only,
-.mustard .nomustard-only,
 .enhanced .base-only {
   display: none !important; }
 
 .no-js .js-only,
-.no-js .mustard-only,
-.no-js .enhanced-only,
-.no-mustard .mustard-only,
-.no-mustard .enhanced-only {
+.base .enhanced-only {
   display: none !important; }
 
 .image-link {

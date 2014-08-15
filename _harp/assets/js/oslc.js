@@ -1,19 +1,14 @@
-// @codekit-prepend "./lib/modernizr.js";
-
-/* Catch console.log errors. You are welcome. */
-if (! window.console) { window.console = {log: function () {}}; }
-
-/* 
-  add .mustard/.no-mustard css classes 
-  http://responsivenews.co.uk/post/18948466399/cutting-the-mustard
-*/
-Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window );
+// @codekit-prepend "../bower_components/html5shiv/dist/html5shiv-printshiv.js;"
 
 /*! EnhanceJS: a progressive enhancement boilerplate. Copyright 2014 @scottjehl, Filament Group, Inc. Licensed MIT */
 (function( window, undefined ) {
 
 	// Enable JS strict mode
 	"use strict";
+	
+	// Catch console.log errors. You are welcome.
+  if (! window.console) { window.console = {log: function () {}}; }
+  
 
 	// expose the 'enhance' object globally. Use it to expose anything in here that's useful to other parts of your application.
 	window.enhance = {};
@@ -29,7 +24,7 @@ Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in w
 		fullJSKey = "enhancedjs",
 		// classes to be added to the HTML element in qualified browsers
 		htmlClasses = [ "enhanced" ];
-
+		
 	// loadJS: load a JS file asynchronously. Included from https://github.com/filamentgroup/loadJS/
 	function loadJS( src ){
 		var ref = window.document.getElementsByTagName( "script" )[ 0 ];
@@ -169,7 +164,7 @@ Modernizr.addTest( 'mustard', 'querySelector' in document && 'localStorage' in w
 	// From here on we're dealing with qualified browsers.
 
 	// Add scoping classes to HTML element: useful for upgrading the presentation of elements that will be enhanced with JS behavior
-	docElem.className += " " + htmlClasses.join(" ");
+	docElem.className = docElem.className.replace(/(^|\s)base(\s|$)/, '$1$2') + " " + htmlClasses.join(" ");
 
   /* Load enhanced CSS async */
 	var enhancedCSS = getMeta( enhancedCSSKey );

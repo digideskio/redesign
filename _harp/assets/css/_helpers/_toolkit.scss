@@ -10,16 +10,12 @@
 // JavaScript-driven visibility
 //
 .js .nojs-only,
-.mustard .nomustard-only,
 .enhanced .base-only {
 	display: none !important;
 }
 
 .no-js .js-only,
-.no-js .mustard-only,
-.no-js .enhanced-only,
-.no-mustard .mustard-only,
-.no-mustard .enhanced-only {
+.base .enhanced-only {
 	display: none !important;
 }
 

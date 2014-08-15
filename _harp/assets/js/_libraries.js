@@ -1,3 +1,4 @@
+// @codekit-prepend "./lib/modernizr.js";
 // @codekit-prepend "./lib/lodash.mobile.js";
 // @codekit-prepend "./lib/underscore.string.js";
 // @codekit-prepend "./lib/jquery-custom.js";
