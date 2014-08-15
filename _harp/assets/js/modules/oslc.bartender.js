@@ -18,14 +18,14 @@ var Bartender = _.create(OSLC, {
   },
   
   bartenderItemTemplate: _.template(
-  '<a href="#" class="item hasFlagInline" id="bartender-<%= id %>-<%= name %>-control" '+
+  '<a href="#" class="item hasFlagInline" id="bartender-${ id }-${ name }-control" '+
     'aria-haspopup="true" '+
-    'aria-owns="bartender-<%= id %>-<%= name %>-dropdown" '+
-    'aria-controls="bartender-<%= id %>-<%= name %>-dropdown">' +
+    'aria-owns="bartender-${ id }-${ name }-dropdown" '+
+    'aria-controls="bartender-${ id }-${ name }-dropdown">' +
     '<div class="flag">' +
-      '<div class="image"><i class="icon grunticon-menu-<%= name %>"></i></div>'+
+      '<div class="image"><i class="icon grunticon-menu-${ name }"></i></div>'+
       '<div class="body">'+
-        '<span id="bartender-<%= id %>-<%= name %>-label" data-text="<%= _.capitalize(name) %>"><%= _.capitalize(name) %></span> &#9662;'+
+        '<span id="bartender-${ id }-${ name }-label" data-text="${ _.capitalize(name) }">${ _.capitalize(name) }</span> &#9662;'+
       '</div>'+
     '</div>'+
   '</a>'),
@@ -61,12 +61,17 @@ var Bartender = _.create(OSLC, {
         .filter('[data-label="'+val.label+'"]')
         .addClass('current');
       
-      var labelId = '#bartender-'+bartender.id+'-'+key+'-label';
+      var $label = $('#bartender-'+bartender.id+'-'+key+'-label');
 
-      $(labelId).html(
-        $(labelId).data('text') + 
-        (_.contains( ['All','Original order'], val.label ) ? '' : ': <span class="activeFilter">'+val.label+'</span>' )
+      $label.html(
+        (_.contains( ['All','Original order'], val.label ) ? '' : _.template('<button class="activeFilter" ${ update } ${ data }>${ icon } ${ label }</button> ', {
+          icon: '<i class="icon grunticon-menu-remove-filter"><span class="sr-only">Remove filter: </span></i>',
+          label: val.label,
+          update: 'data-update="'+key+'"',
+          data: _.reduce( bartender.defaultStates[key==='sort' ? 'sort' : 'filter'], function(sum, val, key) {return sum + ' data-'+key+'="'+val+'"';},'')
+        })) + $label.data('text')
       );
+
     });
 
     // --- Filters --- //
@@ -102,6 +107,8 @@ var Bartender = _.create(OSLC, {
         e.preventDefault();
       
         var $el = $(this), data = $el.data();
+        
+        $el.hasClass('activeFilter') && e.stopPropagation();
       
         if ($el.hasClass('current')) {return;}
       
@@ -224,11 +231,11 @@ var Bartender = _.create(OSLC, {
   buildDropdownMenu: function(control) {
     var 
       menu = $('<div class="items">'),
-      itemTemplate = '<a class="item" href="<%= href %>" ' + 
+      itemTemplate = '<a class="item" href="${ href }" ' + 
         'data-update="'+control+'" ' +
-        '<% _.each(data, function(val,key) { %>data-<%= key %>="<%= val %>" <% }); %>>' +
-        //'<% if (data.count) { %><span class="count"><%= data.count %> &times;</span> <% } %>' +
-        '<span class="<%= classes %>"><%= html %></span></a>';
+        '<% _.each(data, function(val,key) { %>data-${ key }="${ val }" <% }); %>>' +
+        //'<% if (data.count) { %><span class="count">${ data.count } &times;</span> <% } %>' +
+        '<span class="${ classes }">${ html }</span></a>';
         
     menu.html( _.reduce(this.menuItems[control], this.templateFold(itemTemplate),'') );
     

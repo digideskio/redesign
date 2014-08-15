@@ -24,7 +24,6 @@
     align-items: stretch;
     
     .item {
-      //flex-shrink: 0; <-- removed to resolve an issue in Webkit where the text could overflow
       display: flex;
       align-items: center;
     }
@@ -33,6 +32,11 @@
 }
 
 .activeFilter {
-  color: palette(gold,mid-dark);  
+  @extend %inline-block;
   @extend %text-size-s;
+  @extend %button-reset;
+  line-height: 1;
+  color: #fff;
+  padding: 5px 4px;
+  background-color: palette(gold,dark);
 }

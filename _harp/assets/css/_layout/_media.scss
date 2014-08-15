@@ -9,15 +9,15 @@
 // https://github.com/stubbornella/oocss/blob/master/core/module/mod.css
 .body, 
 .media,
-.no-display-table .flag { 
+.ltie8 .flag { 
   overflow:hidden; 
   *overflow:visible; 
   zoom:1; 
-}	
+}
 
 //	https://github.com/stubbornella/oocss/tree/master/core/media
-.media, 
-.no-display-table .flag {
+.media,
+.ltie8 .flag {
  .image { float:left; }
  &.reversed .image { float:right; }  
 }
@@ -31,28 +31,21 @@
 // Requires display-table, so we're at IE8+
 //
 
-// fallback to .media (above)
-
 .flag {
   display: table;
-  // force the flag to go full-width
-  width: 100%;
   
   > .image, 
-  > .body { 
+  > .body {
     display: table-cell;
     vertical-align: middle;
   }
 
-  > .image {
-    // fixes an issue with very old FF table layouts
-    // forces .image cells to collapse to fit content
-    // appears to have no consequences elsewhere other than having to un-do it
-    width: 0; 
+  // Force the body to take up the remaining space
+  > .body { 
+    width: 100%; 
+    .ltie8 & { width: auto; }
   }
   
-  // Force the body to take up the remaining space
-  > .body { width: 100%; }
   
   //
   // Bottom alignment (also not possible with .media)
@@ -85,7 +78,6 @@
     // flex items don't care about floats, display table, vertical-align, whatever
     // don't need to un-do those bits
     
-    > .image,
     > .body {
       width: auto;
     }

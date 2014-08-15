@@ -31,7 +31,7 @@
 .tabs .indicator {
   display: block; }
 
-.tabs, .tab {
+.tabs, .tab, .activeFilter {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -41,7 +41,7 @@
 /*
  * Reset UL/OLs
  */
-.close {
+.activeFilter, .close {
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -462,7 +462,10 @@ meta.oslc-mq-neckbeard-only {
             align-items: center; }
 
 .activeFilter {
-  color: #ffa83d; }
+  line-height: 1;
+  color: #fff;
+  padding: 5px 4px;
+  background-color: #ff852e; }
 
 .card {
   border: none;

@@ -179,6 +179,18 @@
 }
 
 
+.grunticon-menu-remove-filter {
+  background-image: url('png/menu-remove-filter.png');
+  @include icon;
+  height: 12px;
+  width: 12px;
+    
+  &.intrinsic {
+    padding-top: 12px / 12px * 100%;
+  }
+}
+
+
 .grunticon-menu-sort {
   background-image: url('png/menu-sort.png');
   @include icon;

@@ -41,7 +41,7 @@
 .block.icon, .links .item, .sequence, .sequence .label, .pagination a, .pagination .item, .project-name, .tabs .indicator {
   display: block; }
 
-.icon, .menu.horizontal .item, .tag, .pagination > li, .card .byline, .card > .footer .tags, .tabs, .tab {
+.icon, .menu.horizontal .item, .tag, .pagination > li, .card .byline, .card > .footer .tags, .tabs, .tab, .activeFilter {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -56,7 +56,7 @@
   padding: 0;
   list-style: none; }
 
-.close {
+.activeFilter, .close {
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -936,29 +936,28 @@ img {
  */
 .body,
 .media,
-.no-display-table .flag {
+.ltie8 .flag {
   overflow: hidden;
   *overflow: visible;
   zoom: 1; }
 
 .media .image,
-.no-display-table .flag .image {
+.ltie8 .flag .image {
   float: left; }
 .media.reversed .image,
-.no-display-table .flag.reversed .image {
+.ltie8 .flag.reversed .image {
   float: right; }
 
 .flag {
-  display: table;
-  width: 100%; }
+  display: table; }
   .flag > .image,
   .flag > .body {
     display: table-cell;
     vertical-align: middle; }
-  .flag > .image {
-    width: 0; }
   .flag > .body {
     width: 100%; }
+    .ltie8 .flag > .body {
+      width: auto; }
   .flag.bottom > .image,
   .flag.bottom > .body {
     vertical-align: bottom; }
@@ -973,9 +972,7 @@ img {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex; }
-  .flexbox .media > .image,
   .flexbox .media > .body,
-  .flexbox .flag > .image,
   .flexbox .flag > .body {
     width: auto; }
   .flexbox .media > .image,
@@ -1650,7 +1647,7 @@ abbr.grunticon-wordmark-med {
 .block.icon, .links .item, .sequence, .sequence .label, .pagination a, .pagination .item, .project-name, .tabs .indicator {
   display: block; }
 
-.icon, .menu.horizontal .item, .tag, .pagination > li, .card .byline, .card > .footer .tags, .tabs, .tab {
+.icon, .menu.horizontal .item, .tag, .pagination > li, .card .byline, .card > .footer .tags, .tabs, .tab, .activeFilter {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -1665,7 +1662,7 @@ abbr.grunticon-wordmark-med {
   padding: 0;
   list-style: none; }
 
-.close {
+.activeFilter, .close {
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -2184,7 +2181,10 @@ meta.oslc-mq-neckbeard-only {
             align-items: center; }
 
 .activeFilter {
-  color: #ffa83d; }
+  line-height: 1;
+  color: #fff;
+  padding: 5px 4px;
+  background-color: #ff852e; }
 
 .card, .notice {
   border: none;
