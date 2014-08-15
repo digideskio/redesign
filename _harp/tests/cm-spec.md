@@ -93,7 +93,7 @@ HTML Representations | SHOULD | OSLC services SHOULD provide HTML representation
 
 
 
-### Specification Versioning {#Spec_Versioning}
+### Specification Versioning
 
 **NEEDS UPDATE**: Do we still need an OSLC-Core-Version header? Need guidance from OSLC Core. Compatibility with Core V2 is planned for Core V3.
 
