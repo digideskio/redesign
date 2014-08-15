@@ -3,25 +3,24 @@ meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
 meta(name="viewport", content="width=device-width, initial-scale=1")
 title #{ title || 'OSLC Public Redesign'}
 
-meta(name="basecss", content="#{ site_url }assets/css/build/oslc.min.css")
-meta(name="enhancedcss", content="#{ site_url }assets/css/build/oslc_enhanced.min.css")
-meta(name="enhancedjs", content="#{ site_url }assets/js/build/oslc_enhanced.min.js")
+meta(name="basecss", content="#{ site_url }assets/css/build/base.min.css")
+meta(name="enhancedcss", content="#{ site_url }assets/css/build/enhanced.min.css")
+meta(name="enhancedjs", content="#{ site_url }assets/js/build/enhanced.min.js")
 meta(name="grunticons", content="#{ site_url }assets/icons/build/icons.svg.css,#{ site_url }assets/icons/build/icons.png.css,#{ site_url }assets/icons/build/icons.fallback.css")
 
 if environment === 'production'
   include ./assets/css/build/critical.min.css
 else
-  link(rel="stylesheet" href="#{ site_url }assets/css/build/oslc.min.css")
-  link(rel="stylesheet" href="#{ site_url }assets/css/build/oslc_enhanced.min.css")
+  link(rel="stylesheet" href="#{ site_url }assets/css/build/base.min.css")
+  link(rel="stylesheet" href="#{ site_url }assets/css/build/enhanced.min.css")
   link(rel="stylesheet" href="#{ site_url }assets/icons/build/icons.svg.css")
 
 script.
   window.site_url = '#{site_url}' || '/';
   window.environment = '#{environment}';
 
-script(src="#{ site_url }assets/js/build/oslc.min.js")
+script(src="#{ site_url }assets/js/build/base.min.js")
 
 noscript
-  link(rel="stylesheet" href="#{ site_url }assets/css/build/oslc.min.css")
+  link(rel="stylesheet" href="#{ site_url }assets/css/build/base.min.css")
   link(rel="stylesheet" href="#{ site_url }assets/icons/build/icons.fallback.css")
-

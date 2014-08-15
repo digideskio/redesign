@@ -7,7 +7,7 @@
 .block.icon, .project-name{ display: block; }
  .icon{ display: inline-block; vertical-align: baseline; zoom: 1; }
  .menu .items{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; list-style-type: none; list-style-position: initial; list-style-image: initial; }
-.boxshadow .btn{ -webkit-backface-visibility: hidden; }
+
 .icon{ vertical-align: top; }
 .banner .btn{ text-align: center; }
 .banner .btn > .text{ display: block; }
@@ -103,14 +103,14 @@ abbr[title]{ border-bottom-width: 1px; border-bottom-style: dotted; border-botto
 
 
 
-
+ .no-js .desk-up{ display: none !important; }
 .body{ overflow-x: hidden; overflow-y: hidden; zoom: 1; }
 
 
-.flag{ display: table; width: 100%; }
+.flag{ display: table; }
 .flag > .body, .flag > .image{ display: table-cell; vertical-align: middle; }
-.flag > .image{ width: 0px; }
 .flag > .body{ width: 100%; }
+
 
 
 
@@ -174,7 +174,7 @@ html{ font-size: 100%; }
 
 .btn > .text{ vertical-align: middle; }
 .btn > *{ pointer-events: none; }
-.boxshadow .btn{ border-bottom-width: 0px; border-bottom-style: initial; border-bottom-color: initial; padding-top: 0.3125em; padding-right: 0.5em; padding-bottom: 0.375em; padding-left: 0.5em; -webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 0.15em 0.15em, rgba(0, 0, 0, 0.199219) 0px -0.1875em 0px inset; box-shadow: rgba(0, 0, 0, 0.0976562) 0px 0.15em 0.15em, rgba(0, 0, 0, 0.199219) 0px -0.1875em 0px inset; -webkit-transition-duration: 0.1s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-property: background-color, -webkit-transform, padding, margin; }
+
 
 
 
