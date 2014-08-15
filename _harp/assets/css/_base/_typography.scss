@@ -2,83 +2,39 @@
  * Text size mixins / placeholders
  */
 
+@mixin font-size($size: m, $line-height: l) {
+  $font-size: map-get($font-sizes,$size); 
+
+  @include rem(font-size, $font-size);
+
+  @if type-of($line-height) == string {
+    $line-height: (map-get($font-sizes, $line-height) / $font-size);
+  }
+  
+  line-height: $line-height;
+}
+
+@each $name, $size in map-remove($font-sizes,n) {
+  $index: index(map-keys($font-sizes),$name)+1;
+  $line: 1.05;
+  
+  @if $index <= length($font-sizes) {
+    $line: nth(map-keys($font-sizes),$index);
+  }
+  
+  %text-size-#{$name},
+  %font-size-#{$name} {
+    @include font-size($name,$line)
+  }
+}
+
 // 11px
-@mixin text-size-xs {
-  @include rem(font-size, $font-size-xs);
-  line-height: $font-size-m / $font-size-xs;
-}
-%text-size-xs {
-  @include text-size-xs;
-}
-
-// 13px
-@mixin text-size-s {
-  @include rem(font-size, $font-size-s);
-  line-height: $font-size-m / $font-size-s;
-}
-%text-size-s {
-  @include text-size-s;
-}
-
-// 16px
-@mixin text-size-m {
-  @include rem(font-size, $font-size-m);
-  line-height: $font-size-l / $font-size-m;
-}
-%text-size-m {
-  @include text-size-m;
-}
-
-// 19px
-@mixin text-size-l {
-  @include rem(font-size, $font-size-l);
-  line-height: $font-size-xl / $font-size-l;
-}
-%text-size-l {
-  @include text-size-l;
-}
-
-// 23px
-@mixin text-size-xl {
-  @include rem(font-size, $font-size-xl);
-  line-height: $font-size-xxl / $font-size-xl;
-}
-%text-size-xl {
-  @include text-size-xl;
-}
-
-// 27px
-@mixin text-size-xxl {
-  @include rem(font-size, $font-size-xxl);
-  line-height: $font-size-xxxl / $font-size-xxl;
-}
-%text-size-xxl {
-  @include text-size-xxl;
-}
-
-// 32px
-@mixin text-size-xxxl {
-  @include rem(font-size, $font-size-xxxl);
-  line-height: $font-size-xxxxl / $font-size-xxxl;
-}
-%text-size-xxxl {
-  @include text-size-xxxl;
-}
-
-// 38px
-@mixin text-size-xxxxl {
-  @include rem(font-size, $font-size-xxxxl);
-  line-height: $font-size-xxxxxl / $font-size-xxxxl;
-}
-%text-size-xxxxl {
-  @include text-size-xxxxl;
-}
-
-// 48px
-@mixin text-size-xxxxxl {
-  @include rem(font-size, $font-size-xxxxxl);
-  line-height: 1.05;
-}
-%text-size-xxxxxl {
-  @include text-size-xxxxxl;
-}
+@mixin text-size-xs { @include font-size(xs,s); }
+@mixin text-size-s { @include font-size(s,m); }
+@mixin text-size-m { @include font-size(m,l); }
+@mixin text-size-l { @include font-size(l,xl); }
+@mixin text-size-xl { @include font-size(xl,xxl); }
+@mixin text-size-xxl { @include font-size(xxl,xxxl); }
+@mixin text-size-xxxl { @include font-size(xxxl,xxxxl); }
+@mixin text-size-xxxxl { @include font-size(xxxxl,xxxxxl); }
+@mixin text-size-xxxxxl { @include font-size(xxxxxl,1.05); }

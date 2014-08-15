@@ -120,12 +120,12 @@
 /*
  * Text size mixins / placeholders
  */
-.breadcrumbs, .tag, .sequence .label, .card .byline, .slat, .activeFilter, .dropdown .items .count {
+.breadcrumbs, .sequence .label, .card .byline, .slat, .dropdown .items .count {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
 
-.copy > h6 {
+.copy > h6, .notice .header > .title {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.1875; }
@@ -140,7 +140,7 @@
   font-size: 1.4375rem;
   line-height: 1.17391; }
 
-.copy > h3, .card.primary > .header > .title {
+.copy > h3 {
   font-size: 27px;
   font-size: 1.6875rem;
   line-height: 1.18519; }
@@ -1132,7 +1132,10 @@ html {
   .copy > h6 {
     font-weight: 500;
     margin-top: .71em;
-    margin-bottom: .6em; }
+    margin-bottom: .6em;
+    border-left: 8px solid;
+    padding-left: 8px;
+    margin-left: -16px; }
     .copy > h1 > small,
     .copy > h2 > small,
     .copy > h3 > small,
@@ -1314,8 +1317,10 @@ html {
     padding-left: 5px; }
 
 .tag {
-  vertical-align: middle;
+  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1;
+  vertical-align: middle;
   padding: 8px;
   color: #fff;
   background-color: #666666;
@@ -1466,6 +1471,8 @@ a.tag {
   margin-bottom: 19px;
   margin-bottom: 1.1875rem; }
   .card.primary > .header > .title {
+    font-size: 27px;
+    font-size: 1.6875rem;
     line-height: 1.05; }
   .card.primary .relationships {
     padding: 13px 0;
@@ -1482,10 +1489,6 @@ a.tag {
     .cards .card .cards {
       background-color: #f7f7f7; }
 
-.notice .header > .title {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.1875; }
 .copy > .notice {
   margin-bottom: 1em; }
 
@@ -1726,12 +1729,12 @@ abbr.grunticon-wordmark-med {
 /*
  * Text size mixins / placeholders
  */
-.breadcrumbs, .tag, .sequence .label, .card .byline, .slat, .activeFilter, .dropdown .items .count {
+.breadcrumbs, .sequence .label, .card .byline, .slat, .dropdown .items .count {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
 
-.copy > h6 {
+.copy > h6, .notice .header > .title {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.1875; }
@@ -1746,7 +1749,7 @@ abbr.grunticon-wordmark-med {
   font-size: 1.4375rem;
   line-height: 1.17391; }
 
-.copy > h3, .card.primary > .header > .title {
+.copy > h3 {
   font-size: 27px;
   font-size: 1.6875rem;
   line-height: 1.18519; }
@@ -2181,6 +2184,8 @@ meta.oslc-mq-neckbeard-only {
             align-items: center; }
 
 .activeFilter {
+  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1;
   color: #fff;
   padding: 5px 4px;

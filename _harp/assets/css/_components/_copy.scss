@@ -63,7 +63,8 @@
     margin-bottom: 0;
   }
 
-  
+  $copy-header-border-width: 8px;
+
   > h1,
   > h2,
   > h3,
@@ -73,6 +74,9 @@
     font-weight: 500; // semibold
     margin-top: .71em;
     margin-bottom: .6em;
+    border-left: $copy-header-border-width solid;
+    padding-left: $card-padding-sides - $copy-header-border-width;
+    margin-left: -$card-padding-sides;
     
     //
     // Inline subheads
@@ -90,30 +94,37 @@
   //
   > h6 {
     @extend %text-size-m;
+    border-color: palette(blue,x-light);
   }
   
   > h5 {
     @extend %text-size-l;
+    border-color: palette(blue,light);
   }
   
   > h4 {
     @extend %text-size-xl;
+    border-color: palette(blue,mid-light);
   }
   
   > h3 {
     @extend %text-size-xxl;
+    border-color: palette(blue);
   }
   
   > h2 {
     @extend %text-size-xxxl;
+    border-color: palette(blue,mid-dark);
   }
   
   > h1 {
     @extend %text-size-xxxxl;
+    border-color: palette(blue,dark);
   }
   
   > .godzilla {
     @extend %text-size-xxxxxl;
+    border-color: palette(blue,dark);
   }
       
   > table {

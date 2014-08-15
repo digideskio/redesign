@@ -33,9 +33,8 @@
 
 .activeFilter {
   @extend %inline-block;
-  @extend %text-size-s;
   @extend %button-reset;
-  line-height: 1;
+  @include font-size(s,1);
   color: #fff;
   padding: 5px 4px;
   background-color: palette(gold,dark);

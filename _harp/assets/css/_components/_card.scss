@@ -98,8 +98,7 @@ $card-border-radius: 4px;
     @include rem(margin-bottom, $font-size-l);
 
     > .header > .title {
-      @extend %text-size-xxl;
-      line-height: 1.05;
+      @include font-size(xxl, 1.05);
     }
     
     .relationships { @include rem(padding, 13px 0); }

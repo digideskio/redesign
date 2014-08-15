@@ -71,7 +71,7 @@
 /*
  * Text size mixins / placeholders
  */
-.activeFilter, .dropdown .items .count {
+.dropdown .items .count {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
@@ -462,6 +462,8 @@ meta.oslc-mq-neckbeard-only {
             align-items: center; }
 
 .activeFilter {
+  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1;
   color: #fff;
   padding: 5px 4px;

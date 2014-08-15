@@ -17,5 +17,9 @@
   "sticky-footer":{
     "title": "Sticky footer",
     "description": "Does the body grow appropriately?"
+  },
+  "cm-spec":{
+    "title": "Sample Specification",
+    "description": "The ultimate stress test for body copy"
   }
 }

@@ -1,9 +1,8 @@
 .tag {
   @extend %inline-block;
   @extend %fixFlagContainerInline;
+  @include font-size(s,1);
   vertical-align: middle;
-  @extend %text-size-s;
-  line-height: 1;
   padding: 8px;
   
   color: #fff;
