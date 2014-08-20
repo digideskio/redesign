@@ -14,21 +14,11 @@
     letter-spacing: -1em; 
     //And this covers the remaining browsers that don't understand "rem" units
     word-spacing: -1em;
-  
-    position: relative;
-    transition: left .4s $ease-out-cubic;
-  
-    .csstransforms & {
-      position: static;
-      transition-property: transform;
-    }
-  
   }
 
   .panel {
     @include inline-block;
     vertical-align: top;
-
     width: 100%;
 
     // Re-instate text wrapping (which is inherited from parents)
@@ -100,15 +90,5 @@
   width: 0;
   background-color: palette(blue, mid-light);
   @include rem( padding, 0 24px );
-  
-  transition-property: transform, width;
-  transition-duration: .3s, .12s;
-  transition-timing-function: $ease-out-cubic;
-  
-  // pop it smaller while moving
-  // will pop back up to the calculated width after shrinking
-  &.moving {
-    width: 8px !important;
-    transition-duration: .3s, .04s;
-  }
+
 }

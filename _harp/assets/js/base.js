@@ -1,4 +1,4 @@
-// @codekit-prepend "../bower_components/html5shiv/dist/html5shiv-printshiv.js;"
+// @codekit-prepend "../bower_components/html5shiv/dist/html5shiv-printshiv.js";
 
 /*! EnhanceJS: a progressive enhancement boilerplate. Copyright 2014 @scottjehl, Filament Group, Inc. Licensed MIT */
 (function( window, undefined ) {
@@ -136,8 +136,9 @@
         t = window,
         n = !(!t.document.createElementNS || !t.document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || window.opera && -1 === navigator.userAgent.indexOf("Chrome")),
         o = function(o) {
-          loadCSS( e[o && n ? 0 : o ? 1 : 2] );
-          cookie('grunticons',(o && n ? 'svg' : o ? 'png' : 'fallback'),7);
+          var url = e[o && n ? 0 : o ? 1 : 2];
+          loadCSS( url );
+          cookie('grunticons', url, 7);
         },
         r = new t.Image();
       r.onerror = function() { o(!1); };

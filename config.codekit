@@ -200,6 +200,87 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/assets\/bower_components\/matchmedia\/matchMedia.addListener.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/matchMedia.addListener.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/min\/matchMedia.addListener-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/assets\/bower_components\/matchmedia\/matchMedia.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/matchMedia.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/min\/matchMedia-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/assets\/bower_components\/matchmedia\/README.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/README.md",
+		"outputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/README.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/assets\/bower_components\/matchmedia\/test\/body.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/test\/body.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/assets\/bower_components\/matchmedia\/test\/head.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/test\/head.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/assets\/bower_components\/matchmedia\/test\/iframe_body.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/test\/iframe_body.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/assets\/bower_components\/matchmedia\/test\/iframe_head.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/test\/iframe_head.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/assets\/bower_components\/matchmedia\/test\/lib\/JSLitmus.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/test\/lib\/JSLitmus.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/bower_components\/matchmedia\/test\/lib\/min\/JSLitmus-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/css\/_base.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -2936,7 +3017,7 @@
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/base.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/assets\/js\/build\/base.min.js": {
@@ -2980,37 +3061,15 @@
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/enhanced.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/assets\/js\/lib\/$.js": {
+	"\/_harp\/assets\/js\/lib\/enquire.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/$.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/$-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/_harp\/assets\/js\/lib\/delegate.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/delegate.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/delegate-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/_harp\/assets\/js\/lib\/drop.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/drop.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/drop-min.js",
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/enquire.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/enquire-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3060,17 +3119,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/assets\/js\/lib\/jquery.velocity.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/jquery.velocity.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/jquery.velocity-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/_harp\/assets\/js\/lib\/lodash.mobile.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -3115,17 +3163,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/assets\/js\/lib\/underscore.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/underscore.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/underscore-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/_harp\/assets\/js\/lib\/underscore.string.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -3139,10 +3176,21 @@
 		},
 	"\/_harp\/assets\/js\/lib\/vein.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/vein.js",
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/vein-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/assets\/js\/lib\/velocity.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/velocity.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/velocity-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3999,6 +4047,24 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
+	"\/assets\/css\/build\/base.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/css\/build\/base.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/assets\/css\/build\/combined.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/css\/build\/combined.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/assets\/css\/build\/critical.min.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -4008,38 +4074,20 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/assets\/css\/build\/oslc.min.css": {
+	"\/assets\/css\/build\/enhanced.min.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/css\/build\/oslc.min.css",
+		"inputAbbreviatedPath": "\/assets\/css\/build\/enhanced.min.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/assets\/css\/build\/oslc_all.min.css": {
+	"\/assets\/css\/build\/legacy.min.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/css\/build\/oslc_all.min.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/assets\/css\/build\/oslc_enhanced.min.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/css\/build\/oslc_enhanced.min.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/assets\/css\/build\/oslc_legacy.min.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/css\/build\/oslc_legacy.min.css",
+		"inputAbbreviatedPath": "\/assets\/css\/build\/legacy.min.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -4232,6 +4280,17 @@
 		"initialSize": 417,
 		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/menu-organization.png",
 		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/menu-organization.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/icons\/build\/png\/menu-remove-filter.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 194,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/menu-remove-filter.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/menu-remove-filter.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4500,34 +4559,34 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/js\/build\/base.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/build\/base.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/build\/min\/base.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/assets\/js\/build\/enhanced.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/build\/enhanced.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/build\/min\/enhanced.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/assets\/js\/build\/libraries.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/build\/libraries.js",
 		"outputAbbreviatedPath": "\/assets\/js\/build\/min\/libraries-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/js\/build\/oslc.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/build\/oslc.min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/build\/min\/oslc.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/js\/build\/oslc_enhanced.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/build\/oslc_enhanced.min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/build\/min\/oslc_enhanced.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -5101,6 +5160,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/tests\/cm-spec.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/tests\/cm-spec.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/tests\/copy.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -5142,14 +5210,6 @@
 	],
 "lastSavedByUser": "Lee Reamsnyder",
 "manualImportLinks": {
-	"\/_harp\/assets\/js\/base.js": [
-		{
-			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/_harp\/assets\/bower_components\/html5shiv\/dist\/html5shiv-printshiv.js",
-			"position": 0,
-			"type": 0
-			}
-		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "_harp\/assets",
@@ -5321,7 +5381,7 @@
 	"javascriptCreateSourceMap": 1,
 	"javascriptOutputStyle": 1,
 	"javascriptSyntaxCheckerStyle": 1,
-	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon",
+	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,

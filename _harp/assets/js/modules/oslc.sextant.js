@@ -4,110 +4,133 @@
 
 ;(function ($, window, document, undefined) {
 'use strict';
-  
+
 var Sextant = _.create( OSLC, {
   name: "Sextant",
   els: {
    nav: $('#nav'),
    main: $('#main'),
    toggle: $('#navToggle'),
-   allToggled: $( '#nav,#main,#navToggle,.close-nav' ),
-   close: $('.close-nav')
+   close: $('.close-nav'),
+   allToggled: $('#nav,#main,#navToggle,.close-nav')
   },
   
-  classes: {
-    open: 'nav-is-open'
+  moves: [],
+  
+  openClass:  'nav-is-open',
+  
+  isOpen: function() {
+    return this.els.main.hasClass( this.openClass );
   },
   
-  is_open: function(){
-    return this.els.main.hasClass( this.classes.open );
-  },
-  
-  init: function(){
+  init: function() {
     console.log('Initializing Sextant global navigation');
   
     // In markup order, #nav comes after #main 
     // This doesn't make much of a difference for most layouts
     // as #nav gets positioned absolutely
     // but for mobile (slide-down) it matters
-    this.els.nav.insertBefore( this.els.main );
-    
-    this.set_main_slide_distance();
+    this.els.nav.insertBefore(this.els.main);
     
     this.bindings();
   },
   
-  bindings: function(){
+  bindings: function() {
     
-    var sextant = this;
+    var 
+      sextant = this;
     
     this.els.toggle
       .add( this.els.close )
-      .on('click.oslc.sextant', function(e){
+      .on('click.oslc.sextant touchend.oslc.sextant', function(e){
         e.preventDefault();
         sextant.toggle();
       });
     
-    //
-    // When the window is resized, check if we need to insert the is_open styles
-    // 
-    // see: http://blogorama.nerdworks.in/entry-JavaScriptfunctionthrottlingan.aspx
-    // and: http://drupalmotion.com/article/debounce-and-throttle-visual-explanation
-    // 
-    // Ahem. I thought maybe this should be debounced, but in reality you
-    // only need to run it once: when you're at hand size
-    var fixOnce = _.once( function(){
-      console.log('doing the one-time injection in case we started too large');
-      sextant.set_main_slide_distance();
-      $(window).trigger('lateStyleInjected.oslc.sextant');
-    });
+    enquire.register(this.mediaQueries['hand-only'], {
+      deferSetup: true,
+      match: function(){
+        sextant.moves = {
+          main: {
+            props: { 
+              translateY: sextant.els.nav.height(), 
+              translateX: 0
+            }
+          },
+          nav: {
+            props: {translateX: 0},
+            options: {duration: 100}
+          }
+        };
+        
+        sextant.isOpen() && sextant._doAnimations();
+      }
+    })
+    .register(this.mediaQueries['knee-only'], {
+      deferSetup: true,
+      match: function(){
+        sextant.moves = {
+          main: {
+            props: {
+              translateY: 0,
+              translateX: sextant.els.nav.width()
+            }
+          },
+          nav: {
+            props: { translateX: '100%' },
+            options: {'delay': 125}
+          }
+        };
 
-    // Only add the listener if we started too large
-    ! Modernizr.mq( sextant.mediaQueries['hand-only'] ) && $(window).on( 'resize.oslc.sextant orientationchange.oslc.sextant', function(){
-      Modernizr.mq(sextant.mediaQueries['hand-only']) && fixOnce();
+        sextant.isOpen() && sextant._doAnimations();
+      }
+    })
+    .register(this.mediaQueries['desk-up'], {
+      deferSetup: true,
+      match: function(){
+        // just close it
+        sextant.isOpen() && sextant.close();
+      }
     });
     
   },
-  
+
   open: function() { this.toggle('open'); },
   
   close: function() { this.toggle('close'); },
   
-  toggle: function( dir ) {
+  toggle: function(dir) {
   
-    dir = dir || ( this.is_open() ? 'close' : 'open' );
+    dir = dir || (this.isOpen() ? 'close' : 'open');
     var open = dir === 'open';
 
     console.log( dir );
     
     $(window).trigger(dir + '.oslc.sextant');
     
-    this.els.allToggled[ open ? 'addClass' : 'removeClass' ]( this.classes.open );
-      
+    this.els.allToggled[ open ? 'addClass' : 'removeClass' ]( this.openClass );
+    
+    this._doAnimations(open);
+    
+    this.els.close.velocity('fade' + (open ? 'In' : 'Out'), 250);
+
   },
   
-  set_main_slide_distance: function( explicit_height ){
-      
-    var handOnly = this.mediaQueries['hand-only'];
+  _doAnimations: function(open) {
+    open = _.isUndefined(open) ? true : open;
     
-    if ( Modernizr.mq( handOnly ) ) {
+    _.forEach( this.moves,function(val,el){
+      var options = _.assign({
+        easing: 'easeOutCubic',
+        duration: 225
+      }, val.options);
       
-      var mq = '@media ' + handOnly;
-      var selector = {};
-      selector[ mq ] = ['#main.' +  this.classes.open]; // stupid syntax tricks
-      var height = explicit_height || this.els.nav.outerHeight() + 'px';
-      var prop = Modernizr.csstransforms ? Modernizr.prefixed('transform') : 'top';
-      prop = this.dasherize(prop);
-      var property = {};
-      property[ prop ] = Modernizr.csstransforms ? 'translate(0,'+ height +')' : height;
-      
-      // We use style injection instead of applying it directly to #nav
-      // (1) You can inject the style with the appropriate media query
-      // (2) You can inject it with the appropriate is_open class too
-      // (3) Highly performant this way
-      vein.inject( [selector], property );
-      console.log( 'injecting distance of ' + height );
-    }
+      this.els[el].velocity(
+        open ? val.props : {translateX: 0, translateY: 0}, 
+        open ? options : $.extend({},options,{delay:false})
+      );
+    }, this);
+
   }
 });
 

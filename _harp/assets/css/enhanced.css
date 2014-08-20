@@ -52,9 +52,6 @@
 /*
  * Prevent flicker on transitions on mobile webkit
  */
-.main, .csstransforms3d .close-nav {
-  -webkit-backface-visibility: hidden; }
-
 /*
  * SVG Icons
  */
@@ -347,14 +344,7 @@ meta.oslc-mq-neckbeard-only {
     white-space: nowrap;
     font-size: 0rem;
     letter-spacing: -1em;
-    word-spacing: -1em;
-    position: relative;
-    -webkit-transition: left 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-            transition: left 0.4s cubic-bezier(0.215, 0.61, 0.355, 1); }
-    .csstransforms .panels {
-      position: static;
-      -webkit-transition-property: -webkit-transform;
-              transition-property: transform; }
+    word-spacing: -1em; }
 
   .panel {
     display: inline-block;
@@ -414,17 +404,7 @@ meta.oslc-mq-neckbeard-only {
   width: 0;
   background-color: #51c1d2;
   padding: 0 24px;
-  padding: 0 1.5rem;
-  -webkit-transition-property: -webkit-transform, width;
-          transition-property: transform, width;
-  -webkit-transition-duration: .3s, .12s;
-          transition-duration: .3s, .12s;
-  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
-  .tabs .indicator.moving {
-    width: 8px !important;
-    -webkit-transition-duration: .3s, .04s;
-            transition-duration: .3s, .04s; }
+  padding: 0 1.5rem; }
 
 @media only screen and (min-width: 64.0625em) {
   .menu.primary {
@@ -593,19 +573,10 @@ meta.oslc-mq-neckbeard-only {
       font-size: 2.375rem;
       line-height: 1.26316; } }
 
-.off-canvas-wrap {
-  /*
-  .flexbox & {
-    @include respond-to(knee-up) {
-      flex-direction: row;
-    }
-  }
-  */ }
-  @media only screen and (min-width: 40.0625em) {
-    .off-canvas-wrap {
-      -webkit-backface-visibility: hidden;
-      position: relative;
-      overflow: hidden; } }
+@media only screen and (min-width: 40.0625em) {
+  .off-canvas-wrap {
+    position: relative;
+    overflow: hidden; } }
 
 .swapper {
   display: block;
@@ -651,60 +622,23 @@ meta.oslc-mq-neckbeard-only {
     bottom: 0;
     z-index: 1;
     background-color: white;
-    overflow: auto;
-    -webkit-transition-delay: 0s;
-            transition-delay: 0s;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
-    /*
-    .flexbox & {
-      position: static;
-      display: flex;
-    }
-    
-    .flexbox & .window {
-      display: flex;
-    }
-    */ }
+    overflow: auto; }
     .nav.has-secondary {
       width: 396px; }
     .nav .panels {
-      -webkit-transform: none !important;
-          -ms-transform: none !important;
-              transform: none !important;
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      /*
-      .flexbox & {
-        position: static;
-        display: flex;
-        flex: 1;
-      }
-      */ }
+      bottom: 0; }
     .nav .panel {
       position: absolute;
       top: 0;
       bottom: 0;
-      z-index: 1;
-      /*
-      .flexbox & {
-        position: static;
-        flex: 1;
-      }
-      */ } }
+      z-index: 1; } }
 @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
   .nav {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0); }
-    .nav.nav-is-open {
-      -webkit-transform: none;
-          -ms-transform: none;
-              transform: none;
-      -webkit-transition-delay: 0.2s;
-              transition-delay: 0.2s; } }
+    right: 100%; } }
 .nav .logo-text {
   text-align: center;
   margin-top: 11px;
@@ -727,49 +661,14 @@ meta.oslc-mq-neckbeard-only {
 
 .main {
   position: relative;
-  z-index: 0;
-  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s; }
-  .csstransforms .main {
-    -webkit-transition-property: -webkit-transform;
-            transition-property: transform; }
-  @media only screen and (max-width: 40em) {
-    .main {
-      -webkit-transition-delay: 0.2s;
-              transition-delay: 0.2s;
-      -webkit-transition-property: top;
-              transition-property: top; } }
-  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
-    .main.nav-is-open {
-      -webkit-transition-delay: 0s;
-              transition-delay: 0s;
-      position: relative;
-      left: 216px; }
-      .csstransforms .main.nav-is-open {
-        left: auto;
-        -webkit-transform: translate3d(216px, 0, 0);
-                transform: translate3d(216px, 0, 0); }
-      .main.nav-is-open.has-secondary {
-        left: 396px; }
-        .csstransforms .main.nav-is-open.has-secondary {
-          left: auto;
-          -webkit-transform: translate3d(396px, 0, 0);
-                  transform: translate3d(396px, 0, 0); } }
+  z-index: 0; }
   @media only screen and (min-width: 64.0625em) {
     .main {
       padding-left: 19px;
       padding-left: 1.1875rem;
       padding-right: 19px;
       padding-right: 1.1875rem;
-      margin-left: 216px;
-      /*
-      .flexbox & {
-        margin-left: 0 !important;
-        flex: 1;
-      }
-      */ }
+      margin-left: 216px; }
       .main.has-secondary {
         margin-left: 396px; } }
 
@@ -777,26 +676,10 @@ meta.oslc-mq-neckbeard-only {
   top: 0;
   right: 0;
   left: 0;
-  bottom: 100%;
+  height: 100%;
+  display: none;
   background-color: rgba(0, 0, 0, 0.35);
-  cursor: pointer;
-  -webkit-transition: opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-          transition: opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-  opacity: 0; }
-  .csstransforms3d .close-nav {
-    bottom: 0;
-    -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-            transform: scale(0); }
-  @media only screen and (max-width: 64em) {
-    .close-nav.nav-is-open {
-      bottom: 0;
-      opacity: 1;
-      cursor: pointer; }
-      .csstransforms3d .close-nav.nav-is-open {
-        -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-                transform: scale(1); } }
+  cursor: pointer; }
 
 .dropdown, .tooltip {
   position: absolute;

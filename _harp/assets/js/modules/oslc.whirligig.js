@@ -25,11 +25,11 @@ var Whirligig = _.create( OSLC, {
     tabpanel: {
       off: {
         'aria-hidden': 'true',
-        'tabindex': '-1'
+        'aria-expanded': 'false'
       },
       on: {
         'aria-hidden': 'false',
-        'tabindex': '0'
+        'aria-expanded': 'false'
       }
     }
   },
@@ -45,12 +45,15 @@ var Whirligig = _.create( OSLC, {
     // Cache the controls and set initial ARIA roles for tabs and tabpanels
     this.controls = $('.tab', this.el).each(function(){
     
-      var controls = this.getAttribute('href'), newID = 'whirligig-tab-' + tabCount++;
+      var 
+        controls = this.getAttribute('href'), 
+        newID = 'whirligig-tab-' + tabCount++;
 
       $(this).attr( _.extend({
         'role': 'tab',
         id: newID,
-        'aria-controls': controls.replace('#','')
+        'aria-controls': controls.replace('#',''),
+        'aria-owns': controls.replace('#','')
       }, whirligig.aria.tab.off) );
       
       $( controls ).attr(
@@ -69,7 +72,9 @@ var Whirligig = _.create( OSLC, {
     this.controls_area = $( '.controls', this.el );
     
     // Selected tab indicator
-    this.indicator = $('<ins class="indicator"></ins>').attr('role','presentation').appendTo( this.control_wrap );
+    this.indicator = $('<ins class="indicator"></ins>')
+      .attr('role','presentation')
+      .appendTo( this.control_wrap );
 
     this.wrapper = $('.panels', this.el);
     this.panels = $('.panel', this.el);
@@ -79,10 +84,6 @@ var Whirligig = _.create( OSLC, {
       this.controls.first().addClass(this.classes.active);
     }
     
-    // Go to the active one
-    // But don't set focus
-    this.to( this.controls.filter( '.' + this.classes.active ).attr('href'), false );
-    
     this.bindings();
   },
   
@@ -90,7 +91,7 @@ var Whirligig = _.create( OSLC, {
     
     var whirligig = this;
     
-    this.controls.on('click.oslc.whirligig', function(e){
+    this.controls.on('click.oslc.whirligig touchend.oslc.whirligig', function(e){
       
       e.preventDefault();
       
@@ -111,15 +112,30 @@ var Whirligig = _.create( OSLC, {
       (e.keyCode === 39 || e.keyCode === 40) && whirligig.next( true );
       
     });
+    
+    enquire
+    .register( whirligig.mediaQueries['knee-up'], {
+      deferSetup: true,
+      match: function(){
+        // when you're out of the hand zone, undo the panel shifts
+        whirligig.wrapper.velocity({translateX: 0}, 125, [0.4,0,0.2,1]);
+      }
+    })
+    .register( whirligig.mediaQueries['hand-only'], {
+      deferSetup: true,
+      match: function() { 
+        // this solves 2 issues
+        // (1) It defers initialization until needed, which helps properly position the indicator (the controls / indicator are hidden at knee-up size)
+        // (2) It RE-inits if you go large-to-small
+        whirligig.to( whirligig.controls.filter('.active').attr('href'), false);
+      }
+    });
         
   },
   
   next: function(setFocus) {
     
-    var current = this.panels.filter('.' + this.classes.active);
-    var next = current.is( this.panels.last() ) ? this.panels.first() : current.next();
-    
-    this.to( '#' + next[0].id, setFocus );
+    this.to(this.panels.traverse( 'next', this.panels.filter('.' + this.classes.active) ), setFocus);
     
     return false;
     
@@ -127,26 +143,18 @@ var Whirligig = _.create( OSLC, {
   
   prev: function(setFocus) {
   
-    var current = this.panels.filter('.' + this.classes.active);
-    var prev = current.is( this.panels.first() ) ? this.panels.last() : current.prev();
-    
-    this.to( '#' + prev[0].id, setFocus );
+    this.to(this.panels.traverse('prev', this.panels.filter('.' + this.classes.active)), setFocus);
     
     return false;
   
   },
   
-  to: function( id, setFocus ) {
-    var $target, index, position, attr, val;
-    
-    $target = $(id);
-    index = $target.index();
-    position = '-' + (index*100) + '%';
-    attr = this.supportsAcceleratedTransitions ? Modernizr.prefixed('transform') : 'left';
-    val = this.supportsAcceleratedTransitions ? 'translate3d('+ position +',0,0)' : position;
-    
-    // Already active? Bail.
-    if ( $target.hasClass( this.classes.active ) ) { return; }
+  to: function( target, setFocus ) {
+    var 
+      $target = $(target), // could be either an #href string or DOM or jQuery. Same result either way.
+      id = $target[0].id, 
+      index = $target.index(),
+      active = this.classes.active;
 
     // Trigger an event if anyone cares
     this.el.trigger({
@@ -158,52 +166,43 @@ var Whirligig = _.create( OSLC, {
     // (2) Find the currently active panel
     // (3) Set it inactive
     this.wrapper
-      .css( attr, val ) // (1)
-      .find('> .' + this.classes.active) // (2)
-        .removeClass(this.classes.active) // (3)
+      .velocity( {translateX: '-' + (index*100) + '%'}, {easing: [0.4,0,0.2,1], duration: 250} ) // (1)
+      .find('> .' + active) // (2)
+        .removeClass(active) // (3)
         .attr( this.aria.tabpanel.off ); // (3)
     
     // Set the new target panel as the active one
     $target
-      .addClass( this.classes.active )
+      .addClass( active )
       .attr( this.aria.tabpanel.on );
     
     // (1) Set all controls inactive
     // (2) Find the new control that should be active
     // (3) Set as the active tab
     this.controls
-      .removeClass( this.classes.active ) // (1)
-      .attr( this.aria.tab.off ) // (1)
-      .filter('[href="'+ id +'"]') // (2)
-        .addClass( this.classes.active ) // (3)
-        .attr( this.aria.tab.on ); // (3)
+      .removeClass(active) // (1)
+      .attr(this.aria.tab.off) // (1)
+      .filter('[aria-controls="'+ id +'"]') // (2)
+        .addClass(active) // (3)
+        .attr(this.aria.tab.on); // (3)
     
     this.move_indicator();
     
-    setFocus && this.controls.filter('.' + this.classes.active ).focus();
+    setFocus && this.controls.filter('.'+active).attemptFocus();
     
   },
   
   move_indicator: function(){
-    var $active, pos, width, shift_attr, shift_val;
+    var 
+      $active = this.controls.filter('.' + this.classes.active),
+      width = $active.width() - ( $active.is(':first-child') ? 0 : 4 );
     
-    $active = this.controls.filter('.' + this.classes.active);
-    pos = $active.position().left + 'px';
-    width = $active.width() - ( $active.is(':first-child') ? 0 : 4 )  + 'px';
-    
-    shift_attr = this.supportsAcceleratedTransitions ? Modernizr.prefixed('transform') : 'left';
-    shift_val = this.supportsAcceleratedTransitions ? 'translate3d('+ pos +',0,0)' : pos;
-    
-    // This adds a class ('moving') that snaps the width down for a few ticks
-    // Once there, it removes that class so the indicator can grow
-    // to the newly calculated width
-    this.supportsTransitions && this.indicator
-      .filter(':visible') // only do this if it's visible, otherwise it'll never get removed
-      .one( this.supportsTransitions.end, function(){ $(this).removeClass('moving'); })
-      .addClass('moving');
-    
-    this.indicator.css('width', width).css( shift_attr, shift_val );
-    
+    this.indicator.velocity({
+        width: [width, [1,-1,0.6,1]], 
+        translateX: [$active.position().left, [0.4,0,0.2,1]]
+      }, 
+      {duration: 300}
+    );
   }
   
 });
