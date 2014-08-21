@@ -43,6 +43,11 @@
   background-color: palette(gold,dark);
   max-width: 120px;
   white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  
+  .icon { padding-right: 2px; }
+  
+  .body {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

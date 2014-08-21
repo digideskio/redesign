@@ -6,41 +6,7 @@
   }
 }
 
-.swapper {
-  display: block;
-  width: 28px;
-  height: 25px;
-  margin: 0 auto;
-  position: relative;
-
-  > .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition-timing-function: cubic-bezier(0,0,.7,1.9);
-    transition-duration: $navburger-transition-time;
-    transition-property: opacity, transform;
-    transform-origin: 50% 50%;
-
-  }
-  
-}
-
-.banner .btn {
-  
-  &.nav-is-open .icon:first-child,
-  .icon:last-child {
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  .icon:first-child,
-  &.nav-is-open .icon:last-child {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-}
+.banner .btn > .icon { transform-origin: 50% 50%; }
 
 .nav {
 

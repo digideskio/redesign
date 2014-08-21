@@ -64,7 +64,7 @@ var Bartender = _.create(OSLC, {
       var $label = $('#bartender-'+bartender.id+'-'+key+'-label');
 
       $label.html(
-        (_.contains( ['All','Original order'], val.label ) ? '' : _.template('<button class="activeFilter" ${ update } ${ data }><div class="flag"><div class="image">${ icon }</div><div class="body"> ${ label }</div></button> ', {
+        (_.contains( ['All','Original order'], val.label ) ? '' : _.template('<button class="activeFilter" ${ update } ${ data }><div class="flag"><div class="image">${ icon }</div><div class="body">${ label }</div></button> ', {
           icon: '<i class="icon grunticon-menu-remove-filter"><span class="sr-only">Remove filter: </span></i>',
           label: val.label,
           update: 'data-update="'+key+'"',

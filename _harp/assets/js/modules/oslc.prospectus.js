@@ -127,10 +127,17 @@ $.fn.prospectus = function(option){
     var 
       $this = $(this),
       options = _.extend({}, Prospectus.DEFAULTS, $this.data(), typeof option === 'object' && option);
-
-    $this
-      .data('prospectus', _.create(Prospectus))
-      .data('prospectus').init(this,options);
+    
+    // If not initialized already, init it.
+    if (! _.has($this.data('prospectus'), 'els') ) {
+      $this
+        .data('prospectus', _.create(Prospectus))
+        .data('prospectus').init(this,options);
+    }
+      
+    if (typeof option === 'string') {
+      $this.data('prospectus')[option]();
+    } 
   });
 };
 

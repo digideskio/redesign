@@ -48,7 +48,6 @@ var Sextant = _.create( OSLC, {
       });
     
     enquire.register(this.mediaQueries['hand-only'], {
-      deferSetup: true,
       match: function(){
         sextant.moves = {
           main: {
@@ -67,7 +66,6 @@ var Sextant = _.create( OSLC, {
       }
     })
     .register(this.mediaQueries['knee-only'], {
-      deferSetup: true,
       match: function(){
         sextant.moves = {
           main: {
@@ -109,6 +107,19 @@ var Sextant = _.create( OSLC, {
     $(window).trigger(dir + '.oslc.sextant');
     
     this.els.allToggled[ open ? 'addClass' : 'removeClass' ]( this.openClass );
+    
+    this.els.toggle
+      .find('.icon')
+      .velocity({scale: 0.1}, {
+        duration: 100, 
+        easing: 'easeOutCubic', 
+        complete: function(){ 
+          $(this)
+            .removeClass(open ? 'grunticon-navtoggle-menu' : 'grunticon-navtoggle-close')
+            .addClass(open ? 'grunticon-navtoggle-close' : 'grunticon-navtoggle-menu'); 
+        }}
+      )
+      .velocity({scale:1}, 200, 'spring');
     
     this._doAnimations(open);
     
