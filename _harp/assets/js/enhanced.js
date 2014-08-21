@@ -17,7 +17,22 @@ var OSLC = {
   templateFold: function(templateStr) {
     return function(sum, el) { return sum+_.template(templateStr,el); };
   },
-  mediaQueries: {},
+  mediaQueries: {
+    screen: "only screen",
+    portrait: "only screen and (orientation: portrait)",
+    landscape: "only screen and (orientation: landscape)",
+    'hand-up': "only screen",
+    'hand-only': "only screen and (max-width: 40em)",
+    'knee-up': "only screen and (min-width:40.0625em)",
+    'knee-only': "only screen and (min-width:40.0625em) and (max-width:64em)",
+    'desk-up': "only screen and (min-width:64.0625em)",
+    'desk-only': "only screen and (min-width:64.0625em) and (max-width:90em)",
+    'workstation-up': "only screen and (min-width:90.0625em)",
+    'workstation-only': "only screen and (min-width:90.0625em) and (max-width:120em)",
+    'neckbeard-up': "only screen and (min-width:120.0625em)",
+    'neckbeard-only': "only screen and (min-width:120.0625em)"
+  },
+
   modules: {},
   
   //
@@ -31,35 +46,6 @@ var OSLC = {
   'transition'       : 'transitionend'
   }
 };
-
-
-//
-// Insert Media Query-based meta tags 
-//
-_.forEach( [
-  'screen',
-  'landscape',
-  'portrait',
-  'hand-up',
-  'hand-only',
-  'knee-up',
-  'knee-only',
-  'desk-up',
-  'desk-only',
-  'workstation-up',
-  'workstation-only',
-  'neckbeard-up',
-  'neckbeard-only'
-], function( query ){
-  $('head').append('<meta class="oslc-mq-' + query + '" />');
-  
-  // I have the strings wrapped in "/" so that there's no way they'll be read as a valid font-family
-  // different browsers put different quote styles around the font-family strings
-  // Chrome does '
-  // FF does "
-  // Sometimes there's "\"??
-  OSLC.mediaQueries[ query ] = $('.oslc-mq-' + query).css('font-family').split(/\/|\\|'|"/g).join('');
-});
 
 
 //

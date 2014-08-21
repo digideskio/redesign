@@ -169,7 +169,7 @@
 
   /* Load enhanced CSS async */
 	var enhancedCSS = getMeta( enhancedCSSKey );
-	if( enhancedCSS && window.environment === 'production' ){
+	if( enhancedCSS && production ) {
 		loadCSS( enhancedCSS.content );
 	}
 

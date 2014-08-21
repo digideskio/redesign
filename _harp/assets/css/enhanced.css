@@ -92,55 +92,6 @@
  *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
  */
 /*
- * Outputs media queries in font-family declaration
- * 
- * 'font-family' is the only place you can put free-entry text and have it still be valid
- * So we can access it with JavaScript and 'read' the media queries
- * 
- */
-meta.oslc-mq-screen {
-  font-family: "/only screen/"; }
-
-meta.oslc-mq-landscape {
-  font-family: "/only screen and (orientation: landscape)/"; }
-
-meta.oslc-mq-portrait {
-  font-family: "/only screen and (orientation: portrait)/"; }
-
-meta.oslc-mq-hand-up {
-  font-family: "/only screen/"; }
-
-meta.oslc-mq-hand-only {
-  font-family: "/only screen and (max-width: 40em)/"; }
-
-meta.oslc-mq-knee-up {
-  font-family: "/only screen and (min-width:40.0625em)/"; }
-
-meta.oslc-mq-knee-only {
-  font-family: "/only screen and (min-width:40.0625em) and (max-width:64em)/"; }
-
-meta.oslc-mq-knee-down {
-  font-family: "/only screen and (max-width:64em)/"; }
-
-meta.oslc-mq-desk-up {
-  font-family: "/only screen and (min-width:64.0625em)/"; }
-
-meta.oslc-mq-desk-only {
-  font-family: "/only screen and (min-width:64.0625em) and (max-width:90em)/"; }
-
-meta.oslc-mq-workstation-up {
-  font-family: "/only screen and (min-width:90.0625em)/"; }
-
-meta.oslc-mq-workstation-only {
-  font-family: "/only screen and (min-width:90.0625em) and (max-width:120em)/"; }
-
-meta.oslc-mq-neckbeard-up {
-  font-family: "/only screen and (min-width:120.0625em)/"; }
-
-meta.oslc-mq-neckbeard-only {
-  font-family: "/only screen and (min-width:120.0625em)/"; }
-
-/*
  * "Knee" classes
  */
 @media only screen and (min-width: 40.0625em) {
