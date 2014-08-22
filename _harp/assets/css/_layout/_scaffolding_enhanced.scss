@@ -6,7 +6,21 @@
   }
 }
 
-.banner .btn > .icon { transform-origin: 50% 50%; }
+.js-icon-swapper {
+  @extend %pos-rel;
+  @extend %block;
+  height: 25px;  // Magic number alert. Precise height/width of the icons
+  width: 28px;
+
+  .icon {
+    @extend %pos-abs;
+    top: 0;
+    left: 0;
+    transform-origin: 50% 50%;
+    
+    &:last-child { opacity: 0; }
+  }
+}
 
 .nav {
 

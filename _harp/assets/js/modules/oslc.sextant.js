@@ -32,6 +32,11 @@ var Sextant = _.create( OSLC, {
     // but for mobile (slide-down) it matters
     this.els.nav.insertBefore(this.els.main);
     
+    // insert "close" menu icon and wrapping element to contain them
+    this.els.toggle.find('.icon').wrap('<span class="js-icon-swapper"></span>')
+      .parent() // the wrapper
+      .append('<i class="icon grunticon-navtoggle-close"></i>');
+    
     this.bindings();
   },
   
@@ -53,11 +58,15 @@ var Sextant = _.create( OSLC, {
           main: {
             props: { 
               translateY: sextant.els.nav.height(), 
-              translateX: 0
+              translateX: 0,
+              translateZ: 0
             }
           },
           nav: {
-            props: {translateX: 0},
+            props: {
+              translateX: 0, 
+              translateZ: 0
+            },
             options: {duration: 100}
           }
         };
@@ -71,11 +80,15 @@ var Sextant = _.create( OSLC, {
           main: {
             props: {
               translateY: 0,
-              translateX: sextant.els.nav.width()
+              translateX: sextant.els.nav.width(),
+              translateZ: 0,
             }
           },
           nav: {
-            props: { translateX: '100%' },
+            props: { 
+              translateX: '100%',
+              translateZ: 0
+            },
             options: {'delay': 125}
           }
         };
@@ -84,7 +97,6 @@ var Sextant = _.create( OSLC, {
       }
     })
     .register(this.mediaQueries['desk-up'], {
-      deferSetup: true,
       match: function(){
         // just close it
         sextant.isOpen() && sextant.close();
@@ -100,7 +112,9 @@ var Sextant = _.create( OSLC, {
   toggle: function(dir) {
   
     dir = dir || (this.isOpen() ? 'close' : 'open');
-    var open = dir === 'open';
+    var 
+      open = dir === 'open',
+      sextant = this;
 
     console.log( dir );
     
@@ -109,21 +123,16 @@ var Sextant = _.create( OSLC, {
     this.els.allToggled[ open ? 'addClass' : 'removeClass' ]( this.openClass );
     
     this.els.toggle
-      .find('.icon')
-      .velocity({scale: 0.1}, {
-        duration: 100, 
-        easing: 'easeOutCubic', 
-        complete: function(){ 
-          $(this)
-            .removeClass(open ? 'grunticon-navtoggle-menu' : 'grunticon-navtoggle-close')
-            .addClass(open ? 'grunticon-navtoggle-close' : 'grunticon-navtoggle-menu'); 
-        }}
-      )
-      .velocity({scale:1}, 200, 'spring');
+      .find( '.icon' )[ open ? 'first' : 'last' ]()
+      .velocity({ scale: 0.3, opacity: 0 }, 120, 'easeOutCubic', function(){ 
+          sextant.els.toggle.find( '.icon' )[ open ? 'last' : 'first' ]()
+            .velocity( { scale: [1, 0.3], opacity: 1 }, 180, 'spring' );
+        }
+      );
     
     this._doAnimations(open);
     
-    this.els.close.velocity('fade' + (open ? 'In' : 'Out'), 250);
+    this.els.close.velocity('fade' + (open ? 'In' : 'Out'), 240);
 
   },
   

@@ -115,14 +115,12 @@ var Whirligig = _.create( OSLC, {
     
     enquire
     .register( whirligig.mediaQueries['knee-up'], {
-      deferSetup: true,
       match: function(){
         // when you're out of the hand zone, undo the panel shifts
         whirligig.wrapper.velocity({translateX: 0}, 125, [0.4,0,0.2,1]);
       }
     })
     .register( whirligig.mediaQueries['hand-only'], {
-      deferSetup: true,
       match: function() { 
         // this solves 2 issues
         // (1) It defers initialization until needed, which helps properly position the indicator (the controls / indicator are hidden at knee-up size)
