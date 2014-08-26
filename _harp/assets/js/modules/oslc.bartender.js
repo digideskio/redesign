@@ -117,6 +117,8 @@ var Bartender = _.create(OSLC, {
       
         bartender.state[data.update] = _.omit(data,'update');
         bartender.update();
+        
+        ! $el.hasClass('activeFilter') && $el.closest('[data-prospectus]').prospectus('close');
     });
   },
   
@@ -135,7 +137,7 @@ var Bartender = _.create(OSLC, {
     
     _.forEach(controls.split(','), this.buildControl, this);
     
-    $.fn.prospectus && this.els.menu.prospectus();
+    this.els.menu.prospectus();
   },
   
   buildControl: function(control) {
@@ -170,16 +172,14 @@ var Bartender = _.create(OSLC, {
     }
     
     this.dropdowns[control] = this.buildDropdownMenu(control);
+  
+    this.dropdowns[control].prospectus({
+      isDropdown: {
+        control: $bartenderItem[0]
+      }
+    });
     
-    if ($.fn.prospectus) {
-      this.dropdowns[control].prospectus({
-        isDropdown: {
-          control: $bartenderItem[0]
-        }
-      });
-      
-      $bartenderItem.data('hasDropdown', this.dropdowns[control].data('prospectus'));
-    } 
+    $bartenderItem.data('hasDropdown', this.dropdowns[control].data('prospectus'));
 
   },
   
