@@ -29,7 +29,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                         i.icon(class="#{'grunticon-channel-' + channel.toLowerCase()}")
                       .body #{channel}
     if has_menu
-      .menu#bartender.horizontal(data-bartender,data-controls="#{has_menu}")
+      .menu#bartender.horizontal.bartender(data-bartender,data-controls="#{has_menu}")
     .grid
       section(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
         if is_listing

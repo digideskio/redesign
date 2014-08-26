@@ -32,19 +32,40 @@
     }
   }
   
+  &.bartender, 
+  &.bartender > .items {
+    .item {
+      position: relative;
+      // on very small screens, usability suffers here. Make them block.
+      @media only screen and (max-width: 40em) {
+        display: block;
+        
+        .flexbox & { flex-basis: 50%; }
+      }
+    
+    }
+  }
+  
 }
 
+
 .activeFilter {
-  @extend %inline-block;
+  @extend %block;
+  @extend %pos-abs;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   @extend %button-reset;
+  text-align: left; // considering adding this to the button-reset?
   @include font-size(s,1);
   color: #fff;
   padding: 5px 4px;
-  background-color: palette(gold,dark);
-  max-width: 120px;
   white-space: nowrap;
-  
-  .icon { padding-right: 2px; }
+  background-color: palette(gold,dark);
+  &:hover {
+    background-color: palette(gold,mid-dark);
+  }
   
   .body {
     text-overflow: ellipsis;

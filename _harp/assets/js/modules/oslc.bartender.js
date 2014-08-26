@@ -61,16 +61,19 @@ var Bartender = _.create(OSLC, {
         .filter('[data-label="'+val.label+'"]')
         .addClass('current');
       
-      var $label = $('#bartender-'+bartender.id+'-'+key+'-label');
+      var $control = $('#bartender-'+bartender.id+'-'+key+'-control');
 
-      $label.html(
-        (_.contains( ['All','Original order'], val.label ) ? '' : _.template('<button class="activeFilter" ${ update } ${ data }><div class="flag"><div class="image">${ icon }</div><div class="body">${ label }</div></button> ', {
+      if ( _.contains( ['All','Original order'], val.label ) ) {
+        $control.find('.activeFilter').remove();
+      } else {
+        $control.append( _.template('<button class="activeFilter" ${ update } ${ data }><div class="flag"><div class="image">${ icon }</div><div class="body">${ label }</div></button>', {
           icon: '<i class="icon grunticon-menu-remove-filter"><span class="sr-only">Remove filter: </span></i>',
           label: val.label,
           update: 'data-update="'+key+'"',
           data: _.reduce( bartender.defaultStates[key==='sort' ? 'sort' : 'filter'], function(sum, val, key) {return sum + ' data-'+key+'="'+val+'"';},'')
-        })) + $label.data('text')
-      );
+        }) 
+        );
+      }
 
     });
 
@@ -103,7 +106,7 @@ var Bartender = _.create(OSLC, {
   bindings: function(){
     var bartender = this;
 
-    $(document).on('click','[data-update]', function(e){
+    $(document).on('click.oslc.bartender touchend.oslc.bartender','[data-update]', function(e){
         e.preventDefault();
       
         var $el = $(this), data = $el.data();
