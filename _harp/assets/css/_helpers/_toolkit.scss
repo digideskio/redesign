@@ -73,3 +73,11 @@
  */
 
 .sr-only { @extend %visuallyhidden; }
+
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ * Also removes contents from tab order!
+ */
+
+.invisible { visibility: hidden; }

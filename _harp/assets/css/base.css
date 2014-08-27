@@ -240,6 +240,13 @@
  * Add .focusable if it should become visible on focus/active
  */
 /*
+ * Hide visually and from screenreaders, but maintain layout
+ * Also removes contents from tab order!
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
  * Modified version of Normalize.css
  * by Nicolas Gallagher, co-created with Jonathan Neal.
  * http://necolas.github.io/normalize.css/

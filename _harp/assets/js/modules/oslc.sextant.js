@@ -17,7 +17,7 @@ var Sextant = _.create( OSLC, {
   
   moves: [],
   
-  openClass:  'nav-is-open',
+  openClass: 'nav-is-open',
   
   isOpen: function() {
     return this.els.main.hasClass( this.openClass );
@@ -31,6 +31,8 @@ var Sextant = _.create( OSLC, {
     // as #nav gets positioned absolutely
     // but for mobile (slide-down) it matters
     this.els.nav.insertBefore(this.els.main);
+
+    this.toggleVisibility('close');
     
     // insert "close" menu icon and wrapping element to contain them
     this.els.toggle.find('.icon').wrap('<span class="js-icon-swapper"></span>')
@@ -38,6 +40,20 @@ var Sextant = _.create( OSLC, {
       .append('<i class="icon grunticon-navtoggle-close"></i>');
     
     this.bindings();
+  },
+  
+  toggleVisibility: function(dir) {
+    var large = matchMedia( this.mediaQueries['desk-up'] ).matches;
+
+    // Only want the menu invisible IF we call 'close' explicitly
+    // AND we're on a small screen. With Large, the menu is always visible
+    if ( dir === 'close' && ! large ) {
+      this.els.nav.addClass('invisible');
+    } else {
+      this.els.nav.removeClass('invisible');
+    }
+    
+    return this;
   },
   
   bindings: function() {
@@ -98,8 +114,13 @@ var Sextant = _.create( OSLC, {
     })
     .register(this.mediaQueries['desk-up'], {
       match: function(){
-        // just close it
-        sextant.isOpen() && sextant.close();
+        sextant.close();
+      },
+      unmatch: function(){
+        // the whole menu system should be closed,
+        // but the menu was visible
+        // so now we need to make sure you can't tab into it
+        sextant.toggleVisibility('close');
       }
     });
     
@@ -116,8 +137,6 @@ var Sextant = _.create( OSLC, {
       open = dir === 'open',
       sextant = this;
 
-    console.log( dir );
-    
     $(window).trigger(dir + '.oslc.sextant');
     
     this.els.allToggled[ open ? 'addClass' : 'removeClass' ]( this.openClass );
@@ -130,27 +149,44 @@ var Sextant = _.create( OSLC, {
         }
       );
     
-    this._doAnimations(open);
+    this
+      .toggleVisibility('open')
+      ._doAnimations(dir)
+      .els
+        .close.velocity('fade' + (open ? 'In' : 'Out'), 240);
     
-    this.els.close.velocity('fade' + (open ? 'In' : 'Out'), 240);
-
   },
   
-  _doAnimations: function(open) {
-    open = _.isUndefined(open) ? true : open;
+  _doAnimations: function(dir) {
+    var open = (dir || 'open') === 'open';
     
-    _.forEach( this.moves,function(val,el){
+    var sextant = this;
+    
+    _.forEach( this.moves, function(val,el){
       var options = _.assign({
         easing: 'easeOutCubic',
         duration: 225
       }, val.options);
       
-      this.els[el].velocity(
-        open ? val.props : {translateX: 0, translateY: 0}, 
-        open ? options : $.extend({},options,{delay:false})
-      );
-    }, this);
-
+      if (open) {
+        this.els[el].velocity(val.props, options);
+      } else {
+        this.els[el].velocity({
+            translateX: 0, 
+            translateY: 0
+          },
+          $.extend({},options,{
+            delay: false,
+            complete: function() { 
+              sextant.toggleVisibility('close');
+            }
+          })
+        );
+      }
+      
+    }, sextant);
+    
+    return this;
   }
 });
 

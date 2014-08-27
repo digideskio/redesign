@@ -96,7 +96,7 @@ var Prospectus = _.create(OSLC, {
       prospectus = this;
     
     this.els.menu.removeClass('hidden').toggleAria('expanded','hidden')
-      .find('.items').velocity('transition.expandIn',{
+      .find('.items').velocity('transition.slideUpIn',{
         duration: 200,
         begin: function(){ tether.position(); },
         complete: function() { prospectus.focus(); }
@@ -110,8 +110,8 @@ var Prospectus = _.create(OSLC, {
     var menu = this.els.menu;
     
     menu.toggleAria('expanded','hidden')
-      .find('.items').velocity('transition.expandOut', {
-        duration: 100,
+      .find('.items').velocity('transition.slideUpOut', {
+        duration: 150,
         display: 'block',
         complete: function(){ menu.addClass('hidden'); }
       });

@@ -81,7 +81,7 @@ var Whirligig = _.create( OSLC, {
     
     // If there's no "active" tab, set one
     if ( ! this.controls.hasClass( this.classes.active ) ) {
-      this.controls.first().addClass(this.classes.active);
+      this.controls.first().addClass( this.classes.active );
     }
     
     this.bindings();
@@ -113,11 +113,11 @@ var Whirligig = _.create( OSLC, {
       
     });
     
-    enquire
-    .register( whirligig.mediaQueries['knee-up'], {
+    enquire.register( whirligig.mediaQueries['knee-up'], {
       match: function(){
         // when you're out of the hand zone, undo the panel shifts
         whirligig.wrapper.velocity({translateX: 0}, 125, [0.4,0,0.2,1]);
+        whirligig.panels.removeClass('invisible');
       }
     })
     .register( whirligig.mediaQueries['hand-only'], {
@@ -125,7 +125,7 @@ var Whirligig = _.create( OSLC, {
         // this solves 2 issues
         // (1) It defers initialization until needed, which helps properly position the indicator (the controls / indicator are hidden at knee-up size)
         // (2) It RE-inits if you go large-to-small
-        whirligig.to( whirligig.controls.filter('.active').attr('href'), false);
+        whirligig.to( whirligig.controls.filter('.'+whirligig.classes.active).attr('href'), false);
       }
     });
         
@@ -149,6 +149,7 @@ var Whirligig = _.create( OSLC, {
   
   to: function( target, setFocus ) {
     var 
+      whirligig = this,
       $target = $(target), // could be either an #href string or DOM or jQuery. Same result either way.
       id = $target[0].id, 
       index = $target.index(),
@@ -160,14 +161,27 @@ var Whirligig = _.create( OSLC, {
       relatedTarget: $target[0]
     });
     
-    // (1) Shift the wrapper over
-    // (2) Find the currently active panel
-    // (3) Set it inactive
-    this.wrapper
-      .velocity( {translateX: '-' + (index*100) + '%'}, {easing: [0.4,0,0.2,1], duration: 250} ) // (1)
-      .find('> .' + active) // (2)
-        .removeClass(active) // (3)
-        .attr( this.aria.tabpanel.off ); // (3)
+    // (1) Make sure all panels are visible (and tabbable!)
+    // (2) Find the currently active one
+    // (3) Disable (class and ARIA)
+    this.panels
+      .removeClass('invisible') // (1)
+      .filter( '.'+active ) // (2)
+      .removeClass(active) // (3)
+      .attr( this.aria.tabpanel.off ); // (3)
+    
+    // Shift the wrapper over
+    this.wrapper.velocity( 
+      {translateX: '-' + (index*100) + '%'}, {
+        easing: [0.4,0,0.2,1], 
+        duration: 250,
+        complete: function(){
+          // When done, make all non-active panels invisible
+          // (this removes them from the tab order)
+          whirligig.panels.not($target).addClass('invisible');
+        }
+      } 
+    );
     
     // Set the new target panel as the active one
     $target
