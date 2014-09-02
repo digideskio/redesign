@@ -30,6 +30,5 @@
   > .godzilla {
     @include respond-to(hand-only) { @include text-size-xxxxl; }
   }
-
+  
 }
-

@@ -431,6 +431,18 @@
 }
 
 
+.grunticon-sextant-menu {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Asketch%3D%22http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%2Fns%22%3E%3Ctitle%3Esextant-menu%3C%2Ftitle%3E%3Cpath%20d%3D%22M0%2024h3.429v-3.429h-3.429v3.429zm5.143%200h18.857v-3.429h-18.857v3.429zm-5.143-5.143h3.429v-3.429h-3.429v3.429zm5.143%200h18.857v-3.429h-18.857v3.429zm-5.143-5.143h3.429v-3.429h-3.429v3.429zm5.143%200h18.857v-3.429h-18.857v3.429zm-5.143-5.143h3.429v-3.429h-3.429v3.429zm5.143%200h18.857v-3.429h-18.857v3.429zm-5.143-5.143h3.429v-3.429h-3.429v3.429zm5.143%200h18.857v-3.429h-18.857v3.429z%22%20sketch%3Atype%3D%22MSShapeGroup%22%20fill%3D%22%23009DD4%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
+  @include icon;
+  height: 24px;
+  width: 24px;
+    
+  &.intrinsic {
+    padding-top: 24px / 24px * 100%;
+  }
+}
+
+
 .grunticon-tag-favorite {
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Asketch%3D%22http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%2Fns%22%3E%3Ctitle%3Etag-favorite%3C%2Ftitle%3E%3Cpath%20d%3D%22M10.001%201.25l2.703%205.76%206.046.924-4.375%204.485%201.034%206.331-5.408-2.989-5.408%202.989%201.032-6.331-4.375-4.485%206.046-.924%202.704-5.76m0-1.25c-.484%200-.925.28-1.132.719l-2.421%205.156-5.388.824c-.463.071-.847.394-.996.839-.149.444-.037.934.29%201.269l3.934%204.033-.931%205.708c-.077.473.122.948.513%201.223.216.151.468.228.721.228.207%200%20.416-.052.604-.156l4.804-2.655%204.804%202.655c.189.104.397.156.605.156.252%200%20.505-.077.72-.228.391-.276.591-.751.513-1.223l-.932-5.708%203.934-4.033c.327-.335.439-.826.291-1.269-.149-.444-.534-.768-.997-.839l-5.387-.824-2.42-5.156c-.206-.439-.648-.719-1.132-.719%22%20sketch%3Atype%3D%22MSShapeGroup%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E');
   @include icon;

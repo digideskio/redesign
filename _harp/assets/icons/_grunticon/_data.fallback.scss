@@ -431,6 +431,18 @@
 }
 
 
+.grunticon-sextant-menu {
+  background-image: url('png/sextant-menu.png');
+  @include icon;
+  height: 24px;
+  width: 24px;
+    
+  &.intrinsic {
+    padding-top: 24px / 24px * 100%;
+  }
+}
+
+
 .grunticon-tag-favorite {
   background-image: url('png/tag-favorite.png');
   @include icon;

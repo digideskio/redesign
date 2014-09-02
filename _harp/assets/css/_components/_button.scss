@@ -13,7 +13,22 @@
   padding: .3125em .5em .3125em;
   
   border-radius: 4px;
+
+  /* 
+   OMG this was driving me NUTS
+    So here's the story: a "click" event requires a mouseDown AND mouseUp
+    If you transform an element so that you mousedown in one element
+      and mouseup in another, "click" doesn't fire.
       
+    This prevents that 'glitch' by telling child elements to send pointer events to the parent
+    (You could also change your event handlers to mousedown)
+    
+    Solution and explanation here: http://stackoverflow.com/questions/15786891/browser-sometimes-ignores-a-jquery-click-event-during-a-css3-transform
+   */
+  > * {
+    pointer-events: none;
+  }
+  
 }
 
 // Easily define button colors. 
@@ -49,21 +64,6 @@
   > .text {
     vertical-align: middle;
   } 
-
-  /* 
-   OMG this was driving me NUTS
-    So here's the story: a "click" event requires a mouseDown AND mouseUp
-    If you transform an element so that you mousedown in one element
-      and mouseup in another, "click" doesn't fire.
-      
-    This prevents that 'glitch' by telling child elements to send pointer events to the parent
-    (You could also change your event handlers to mousedown)
-    
-    Solution and explanation here: http://stackoverflow.com/questions/15786891/browser-sometimes-ignores-a-jquery-click-event-during-a-css3-transform
-   */
-  > * {
-    pointer-events: none;
-  }
 
 }
 
@@ -109,4 +109,16 @@
   
   .reversed .image { padding-left: 5px; }
   
+}
+
+.outlined {
+  @extend %btn;
+  color: palette(blue, mid-dark);
+  border: 2px solid palette(blue,light);
+  background-color: #fff;
+  transition: background-color .3s $ease-out-cubic;
+  
+  &:hover {
+    background-color: tint(palette(blue,x-light), 70%);
+  }
 }

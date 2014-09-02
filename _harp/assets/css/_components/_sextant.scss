@@ -1,0 +1,32 @@
+.sextant-toggler {
+  margin-left: 10px;
+  text-align: center; 
+  
+  .text {
+    font-size: $font-size-xs;
+    @include rem(margin-top, 3px);
+  }
+}
+
+.js-in-sextant {
+  .back-to-top {
+    @extend %font-size-s;
+    text-decoration: none;
+    margin-left: 5px;
+    visibility: hidden;
+  }
+  
+  &:hover .back-to-top { visibility: visible; }
+}  
+
+.toc .item {
+  border-left: 8px solid #ccc;
+  
+  &.h6 { border-left-color: palette(blue,x-light); }
+  &.h5 { border-left-color: palette(blue,light); }
+  &.h4 { border-left-color: palette(blue,mid-light); }
+  &.h3 { border-left-color: palette(blue); }
+  &.h2 { border-left-color: palette(blue, mid-dark); }
+  &.h1 { border-left-color: palette(blue, dark); }
+  &.godzilla { border-left-color: palette(blue, x-dark); }
+}

@@ -71,7 +71,8 @@
 /*
  * Text size mixins / placeholders
  */
-.dropdown .items .count {
+.dropdown .items .count,
+.js-in-sextant .back-to-top {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
@@ -475,7 +476,7 @@
       -ms-flex-negative: 0;
           flex-shrink: 0; }
 @media only screen and (min-width: 64.0625em) {
-  .card.primary > .header > .title {
+  .card.primary > .header .title {
     font-size: 32px;
     font-size: 2rem;
     line-height: 1.1875; } }
@@ -542,6 +543,38 @@
       font-size: 38px;
       font-size: 2.375rem;
       line-height: 1.26316; } }
+
+.sextant-toggler {
+  margin-left: 10px;
+  text-align: center; }
+  .sextant-toggler .text {
+    font-size: 11px;
+    margin-top: 3px;
+    margin-top: 0.1875rem; }
+
+.js-in-sextant .back-to-top {
+  text-decoration: none;
+  margin-left: 5px;
+  visibility: hidden; }
+.js-in-sextant:hover .back-to-top {
+  visibility: visible; }
+
+.toc .item {
+  border-left: 8px solid #ccc; }
+  .toc .item.h6 {
+    border-left-color: #d7f1f4; }
+  .toc .item.h5 {
+    border-left-color: #7ed2dd; }
+  .toc .item.h4 {
+    border-left-color: #51c1d2; }
+  .toc .item.h3 {
+    border-left-color: #00a7bd; }
+  .toc .item.h2 {
+    border-left-color: #0083a3; }
+  .toc .item.h1 {
+    border-left-color: #00668f; }
+  .toc .item.godzilla {
+    border-left-color: #004175; }
 
 @media only screen and (min-width: 40.0625em) {
   .off-canvas-wrap {

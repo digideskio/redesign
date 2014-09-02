@@ -19,7 +19,8 @@
     "description": "Does the body grow appropriately?"
   },
   "cm-spec":{
-    "title": "Sample Specification",
+    "title": "Change Management v3 Specification",
+    "menu_title": "Sample Specification",
     "description": "The ultimate stress test for body copy"
   }
 }

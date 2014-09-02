@@ -585,6 +585,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_harp\/assets\/css\/_components\/_sextant.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/css\/_components\/_sextant.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/css\/css\/_sextant.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_harp\/assets\/css\/_components\/_slats.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -2383,6 +2399,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/sextant-menu.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 394,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/sextant-menu.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/sextant-menu.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/tag-favorite.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2945,6 +2972,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/build\/png\/sextant-menu.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 263,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/sextant-menu.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/sextant-menu.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/build\/png\/tag-favorite.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3224,6 +3262,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.brenda.js",
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.brenda-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/assets\/js\/modules\/oslc.checkov.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.checkov.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.checkov-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

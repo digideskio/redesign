@@ -116,7 +116,10 @@ var Whirligig = _.create( OSLC, {
     enquire.register( whirligig.mediaQueries['knee-up'], {
       match: function(){
         // when you're out of the hand zone, undo the panel shifts
-        whirligig.wrapper.velocity({translateX: 0}, 125, [0.4,0,0.2,1]);
+        whirligig.wrapper
+          .velocity('stop', true)
+          .velocity({translateX: 0}, 125, [0.4,0,0.2,1]);
+        
         whirligig.panels.removeClass('invisible');
       }
     })
@@ -171,7 +174,9 @@ var Whirligig = _.create( OSLC, {
       .attr( this.aria.tabpanel.off ); // (3)
     
     // Shift the wrapper over
-    this.wrapper.velocity( 
+    this.wrapper
+      .velocity('stop', true)
+      .velocity( 
       {translateX: '-' + (index*100) + '%'}, {
         easing: [0.4,0,0.2,1], 
         duration: 250,
@@ -209,7 +214,8 @@ var Whirligig = _.create( OSLC, {
       $active = this.controls.filter('.' + this.classes.active),
       width = $active.width() - ( $active.is(':first-child') ? 0 : 4 );
     
-    this.indicator.velocity({
+    this.indicator.velocity('stop', true)
+      .velocity({
         width: [width, [1,-1,0.6,1]], 
         translateX: [$active.position().left, [0.4,0,0.2,1]]
       }, 

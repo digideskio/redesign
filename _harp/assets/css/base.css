@@ -38,7 +38,7 @@
 /*
  * Blocks
  */
-.block.icon, .links .item, .sequence, .sequence .label, .pagination a, .pagination .item, .project-name {
+.block.icon, .block, .links .item, .sequence, .sequence .label, .pagination a, .pagination .item, .project-name {
   display: block; }
 
 .icon, .menu.horizontal .item, .tag, .pagination > li, .card .byline, .card > .footer .tags {
@@ -1157,7 +1157,7 @@ html {
   .copy > h1 {
     border-color: #00668f; }
   .copy > .godzilla {
-    border-color: #00668f; }
+    border-color: #004175; }
   .copy > ul,
   .copy > ol {
     padding-left: 24px;
@@ -1256,7 +1256,7 @@ html {
   .breadcrumbs a {
     text-decoration: none; }
 
-.btn, .action {
+.btn, .action, .outlined {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -1268,14 +1268,7 @@ html {
   white-space: nowrap;
   line-height: 1;
   padding: .3125em .5em .3125em;
-  border-radius: 4px; }
-
-.btn {
-  color: #fff;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  background-color: #cccccc;
-  border-bottom-color: #a3a3a3;
+  border-radius: 4px;
   /* 
    OMG this was driving me NUTS
     So here's the story: a "click" event requires a mouseDown AND mouseUp
@@ -1287,14 +1280,21 @@ html {
     
     Solution and explanation here: http://stackoverflow.com/questions/15786891/browser-sometimes-ignores-a-jquery-click-event-during-a-css3-transform
    */ }
+  .btn > *, .action > *, .outlined > * {
+    pointer-events: none; }
+
+.btn {
+  color: #fff;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  background-color: #cccccc;
+  border-bottom-color: #a3a3a3; }
   .btn:hover, .btn:focus {
     background-color: #dadada; }
   .btn:active, .btn[active] {
     border-bottom: 0; }
   .btn > .text {
     vertical-align: middle; }
-  .btn > * {
-    pointer-events: none; }
 
 .boxshadow .btn {
   border-bottom: 0;
@@ -1328,6 +1328,15 @@ html {
     border-color: #7ed2dd; }
   .action .reversed .image {
     padding-left: 5px; }
+
+.outlined {
+  color: #0083a3;
+  border: 2px solid #7ed2dd;
+  background-color: #fff;
+  -webkit-transition: background-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition: background-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .outlined:hover {
+    background-color: #f3fafb; }
 
 .tag {
   font-size: 13px;

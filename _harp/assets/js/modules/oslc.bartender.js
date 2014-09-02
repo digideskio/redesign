@@ -18,10 +18,7 @@ var Bartender = _.create(OSLC, {
   },
   
   bartenderItemTemplate: _.template(
-  '<a href="#" class="item hasFlagInline" id="bartender-${ id }-${ name }-control" '+
-    'aria-haspopup="true" '+
-    'aria-owns="bartender-${ id }-${ name }-dropdown" '+
-    'aria-controls="bartender-${ id }-${ name }-dropdown">' +
+  '<a href="#" class="item hasFlagInline" id="bartender-${ id }-${ name }-control">'+
     '<div class="flag">' +
       '<div class="image"><i class="icon grunticon-menu-${ name }"></i></div>'+
       '<div class="body">'+
@@ -178,8 +175,6 @@ var Bartender = _.create(OSLC, {
         control: $bartenderItem[0]
       }
     });
-    
-    $bartenderItem.data('hasDropdown', this.dropdowns[control].data('prospectus'));
 
   },
   
@@ -247,12 +242,10 @@ var Bartender = _.create(OSLC, {
       menu.find('.item').tsort({data:'count',order:'desc'},{data:'label'});
     }
     
-    return $('<div>').append(menu).addClass('hidden dropdown menu tensed').attr({
-      'aria-expanded':'false',
-      'aria-hidden':'true',
-      'aria-labelledby': 'bartender-'+this.id+'-'+control+'-control',
-      'id': 'bartender-'+this.id+'-'+control+'-dropdown'
-    });
+    return $('<div>').addClass('hidden dropdown menu tensed')
+      .attr( 'id','bartender-'+this.id+'-'+control+'-dropdown' )
+      .append(menu);
+      
   }
 });
 

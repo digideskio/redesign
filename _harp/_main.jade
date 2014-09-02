@@ -6,7 +6,8 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
           for crumb, idx in breadcrumbs
             a.breadcrumb(href="#") #{crumb}
             &nbsp;/&nbsp;
-      h1.title #{ title }
+      #pagetitle
+        h1.title #{ title }
     if date || tags
       footer.deck
         .grid.pulled.middle
@@ -31,7 +32,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
     if has_menu
       .menu#bartender.horizontal.bartender(data-bartender,data-controls="#{has_menu}")
     .grid
-      section(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
+      section#content(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
         if is_listing
           .listing
             != yield

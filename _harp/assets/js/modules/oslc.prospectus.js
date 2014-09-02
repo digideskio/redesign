@@ -14,37 +14,58 @@ var Prospectus = _.create(OSLC, {
     manageFocus: true,
   },
   
-  init: function(menu,options) {
+  init: function( menu, options ) {
     this.els = {menu:$(menu)};
     this.options = options;
     if (this.options.isDropdown) { this.isOpened = false; }
 
-    var menuItemID = 0;
+    var 
+      $menu = this.els.menu,
+      menuItemID = 0;
+
     menuID++;
     
     // set WAI-ARIA roles
-    this.els.menu.attr({
-      'role': this.options.manageFocus ? (this.els.menu.hasClass('horizontal') ? 'menubar' : 'menu') : 'group',
+    $menu.attr({
+      'role': this.options.manageFocus ? ($menu.hasClass('horizontal') ? 'menubar' : 'menu') : 'group',
       'data-prospectus': 'true',
-      'id': this.els.menu[0].id || 'prospectus-'+menuID
-    })
+      'id': $menu.attr('id') || 'prospectus-'+menuID
+      })
     .find('ul,li').attr('role','presentation')
     .end() // back to the $menu
-    .find('a').addClass('js-prospectus-focusable').attr({
-      role: this.options.manageFocus ? 'menuitem' : null,
-      'id':function(){
-        menuItemID++;
-        return this.id || 'prospectus-'+menuID+'-'+menuItemID;
-      }
-    });
+      .find('a').addClass('js-prospectus-focusable')
+        .attr({
+          role: this.options.manageFocus ? 'menuitem' : null,
+          'id':function(){
+            menuItemID++;
+            return this.id || 'prospectus-'+menuID+'-'+menuItemID;
+          }
+        });
   
-    if (this.options.isDropdown) {
+    if (this.options.isDropdown && this.options.isDropdown.control) {
+      var control = this.options.isDropdown.control;
+    
+      $menu.attr({
+        'aria-hidden': 'true',
+        'aria-expanded': 'false',
+        'aria-labelledby': control.id
+      });
+      
+      $(control).addClass('has-popup')
+        .data('hasDropdown', this) // Stick a data flag on the control that it has a dropdown
+        .attr({
+        'aria-haspopup': 'true',
+        'aria-owns': $menu.attr('id'),
+        'aria-controls': $menu.attr('id')
+        });
 
       OSLC.dropdowns.push(this);
 
       $('<button type="button" tabindex="-1" class="close"><span class="sr-only">Close</span><i class="icon grunticon-js-close"></i></button>')
         .data('dismiss',this)
-        .appendTo( this.els.menu.find('.items') );
+        .appendTo( $menu.find('.items') );
+        
+      
     }
 
     this.setFocusable();    
@@ -147,7 +168,7 @@ $(document).ready(function(){
   $('[data-prospectus]').prospectus();
 });
 
-$(document).on('click touchend', '.js-prospectus-focusable', function(e){
+$(document).on('click touchend', '.js-prospectus-focusable, .has-popup', function(e){
   var hasDrop = $(this).data('hasDropdown');
   
   if (!hasDrop) {return;}

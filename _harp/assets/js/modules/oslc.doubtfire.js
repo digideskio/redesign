@@ -18,39 +18,44 @@ var Doubtfire = _.create(OSLC, {
   
   bindings: function(){
   
-    var sextant = this.modules.sextant;
+    var checkov = this.modules.checkov;
     var whirligig = this.els.nav.data('whirligig');
     var doubtfire = this;
     
-    if ( sextant && whirligig ) {
+    if ( checkov && whirligig ) {
      
-      console.log('DOUBTFIRE: Initialize Sextant + Whirligig interactions');
+      console.log('DOUBTFIRE: Initialize Checkov + Whirligig interactions');
 
       // This is the important one:
       // When the carousel changes, match the preset slide distance to the .active panel
       this.els.nav.on('slideStart', function(e) {
-        doubtfire.setSextantHandSlideDistance( e.relatedTarget );
+        doubtfire.setCheckovHandSlideDistance( e.relatedTarget );
         
-        // If sextant is open, do the appropriate shift
-        sextant.isOpen() && sextant._doAnimations();
+        // If checkov is open, do the appropriate shift
+        checkov.isOpen() && checkov._doAnimations();
       });
       
+      enquire.register(this.mediaQueries['hand-only'], function(){
+        doubtfire.setCheckovHandSlideDistance();
+      });
     }
   
   },
   
-  setSextantHandSlideDistance: function(activePanel) {
+  setCheckovHandSlideDistance: function(activePanel) {
+    
+    console.log('setting slide distance to active panel');
     
     var 
       whirligig = this.els.nav.data('whirligig'),
-      sextant = this.modules.sextant;
+      checkov = this.modules.checkov;
 
     activePanel = activePanel ? $(activePanel) : whirligig.panels.filter('.' + whirligig.classes.active);
     
     var height = whirligig.controls_area.outerHeight() + activePanel.outerHeight();
     
     // set how far to move in the future directly
-    sextant.moves.main.props.translateY = height; 
+    checkov.moves.main.props.translateY = height; 
     
   }
 });
