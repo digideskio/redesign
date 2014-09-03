@@ -13,10 +13,12 @@
     @extend %font-size-s;
     text-decoration: none;
     margin-left: 5px;
-    visibility: hidden;
+    
+    .no-touch & { visibility: hidden; }
+    
   }
   
-  &:hover .back-to-top { visibility: visible; }
+  .no-touch &:hover .back-to-top { visibility: visible; }
 }  
 
 .toc .item {

@@ -554,9 +554,10 @@
 
 .js-in-sextant .back-to-top {
   text-decoration: none;
-  margin-left: 5px;
-  visibility: hidden; }
-.js-in-sextant:hover .back-to-top {
+  margin-left: 5px; }
+  .no-touch .js-in-sextant .back-to-top {
+    visibility: hidden; }
+.no-touch .js-in-sextant:hover .back-to-top {
   visibility: visible; }
 
 .toc .item {

@@ -1,5 +1,5 @@
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-boxshadow-flexbox-flexboxlegacy-opacity-rgba-cssanimations-generatedcontent-cssgradients-csstransforms-csstransforms3d-csstransitions-history-input-inputtypes-localstorage-webworkers-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-css_displaytable-css_mediaqueries
+ * Build: http://modernizr.com/download/#-boxshadow-flexbox-flexboxlegacy-opacity-rgba-cssanimations-generatedcontent-cssgradients-csstransforms-csstransforms3d-csstransitions-history-input-inputtypes-localstorage-webworkers-touch-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-css_displaytable-css_mediaqueries
  */
 ;
 
@@ -226,6 +226,19 @@ window.Modernizr = (function( window, document, undefined ) {
 
 
 
+    tests['touch'] = function() {
+        var bool;
+
+        if(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+          bool = true;
+        } else {
+          injectElementWithStyles(['@media (',prefixes.join('touch-enabled),('),mod,')','{#modernizr{top:9px;position:absolute}}'].join(''), function( node ) {
+            bool = node.offsetTop === 9;
+          });
+        }
+
+        return bool;
+    };
     tests['history'] = function() {
       return !!(window.history && history.pushState);
     };    tests['rgba'] = function() {
@@ -435,7 +448,9 @@ window.Modernizr = (function( window, document, undefined ) {
     return Modernizr;
 
 })(this, this.document);
-// display: table and table-cell test. (both are tested under one name "table-cell" )
+
+
+Modernizr.addTest('mediaqueries', Modernizr.mq('only all'));// display: table and table-cell test. (both are tested under one name "table-cell" )
 // By @scottjehl
 
 // all additional table display values are here: http://pastebin.com/Gk9PeVaQ though Scott has seen some IE false positives with that sort of weak detection.
@@ -462,6 +477,4 @@ Modernizr.addTest( "display-table",function(){
   return ret; 
 });
 
-
-
-Modernizr.addTest('mediaqueries', Modernizr.mq('only all'));;
+;
