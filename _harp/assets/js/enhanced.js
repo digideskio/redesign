@@ -2,7 +2,9 @@
 // @codekit-prepend "./modules/oslc.jquery.attemptfocus.js";
 // @codekit-prepend "./modules/oslc.jquery.togglearia.js";
 
-
+$(function() {
+  FastClick.attach(document.body);
+});
 
 var OSLC = {
   dasherize: function(str){

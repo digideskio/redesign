@@ -63,7 +63,7 @@ var Checkov = _.create( OSLC, {
     
     this.els.toggle
       .add( this.els.close )
-      .on('click.oslc.checkov touchend.oslc.checkov', function(e){
+      .on('click.oslc.checkov', function(e){
         e.preventDefault();
         checkov.toggle();
       });

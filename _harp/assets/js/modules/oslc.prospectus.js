@@ -168,7 +168,7 @@ $(document).ready(function(){
   $('[data-prospectus]').prospectus();
 });
 
-$(document).on('click touchend', '.js-prospectus-focusable, .has-popup', function(e){
+$(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
   var hasDrop = $(this).data('hasDropdown');
   
   if (!hasDrop) {return;}
@@ -178,7 +178,7 @@ $(document).on('click touchend', '.js-prospectus-focusable, .has-popup', functio
   hasDrop.open();
 
 })
-.on('click touchend',function(e){
+.on('click',function(e){
   var 
     openDropdowns = _.filter(OSLC.dropdowns,'isOpened'),
     firstDropdown = _.first(openDropdowns);

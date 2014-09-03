@@ -91,7 +91,7 @@ var Whirligig = _.create( OSLC, {
     
     var whirligig = this;
     
-    this.controls.on('click.oslc.whirligig touchend.oslc.whirligig', function(e){
+    this.controls.on('click.oslc.whirligig', function(e){
       
       e.preventDefault();
       

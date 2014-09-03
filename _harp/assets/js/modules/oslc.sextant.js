@@ -78,9 +78,9 @@ var Sextant = _.create(OSLC, {
   },
   
   bindings: function() {
-    $(document).on('click.oslc.sextant touchend.oslc.sextant', '#table-of-contents .item, .back-to-top', function(e) {
-      e.preventDefault();
-      
+    
+    $(document).on('click.oslc.sextant', '#table-of-contents .item, .back-to-top', function() {
+    
       var isBackToTop = this.hash === '#content';
       
       ! isBackToTop && $(this).closest('[data-prospectus]').prospectus('close');
@@ -89,12 +89,12 @@ var Sextant = _.create(OSLC, {
         duration: 1000,
         easing: [0.4,0,0.2,1],
         complete: function() { 
-          window.location.hash = $(this)[0].id; 
           ! isBackToTop && $.Velocity( this, 'callout.flash', 800 );
         }
       });
       
     });
+    
   }
 });
 

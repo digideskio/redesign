@@ -10,6 +10,7 @@
 // @codekit-prepend "./lib/velocity.js";
 // @codekit-prepend "./lib/velocity.ui.js";
 // @codekit-prepend "./lib/tether.js";
+// @codekit-prepend "./lib/fastclick.js";
 
 // Mix in underscore.string to lodash
 _.mixin(_.string);

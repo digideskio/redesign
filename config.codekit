@@ -3113,6 +3113,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/assets\/js\/lib\/fastclick.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/fastclick.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/fastclick-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/js\/lib\/jquery-2.1.1.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -5428,7 +5439,7 @@
 	"javascriptCreateSourceMap": 1,
 	"javascriptOutputStyle": 1,
 	"javascriptSyntaxCheckerStyle": 1,
-	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire",
+	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire, FastClick",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,
