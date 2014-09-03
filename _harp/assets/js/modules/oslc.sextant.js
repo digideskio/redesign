@@ -12,6 +12,7 @@ var Sextant = _.create(OSLC, {
 
   init: function() {
     
+    // Bail if there are only a few headings
     if ( this.els.content.find('h1, h2, h3, h4, h5, h6').length < 4 ) { return; }
     
     this
@@ -81,12 +82,21 @@ var Sextant = _.create(OSLC, {
     
     $(document).on('click.oslc.sextant', '#table-of-contents .item, .back-to-top', function() {
     
-      var isBackToTop = this.hash === '#content';
+      var 
+        isBackToTop = this.hash === '#content',
+        target = $(this.hash),        
+        duration = Math.abs( $(window).scrollTop() - target.offset().top ) / 18;
+      
+      if (duration < 250) {
+        duration = 250;
+      } else if ( duration > 2250 ) {
+        duration = 2250;
+      }
       
       ! isBackToTop && $(this).closest('[data-prospectus]').prospectus('close');
-      
-      $(this.hash).velocity('scroll', {
-        duration: 1000,
+
+      target.velocity('scroll', {
+        duration: duration,
         easing: [0.4,0,0.2,1],
         complete: function() { 
           ! isBackToTop && $.Velocity( this, 'callout.flash', 800 );
