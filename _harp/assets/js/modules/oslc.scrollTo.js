@@ -32,6 +32,15 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
   // could be a name=""
   target = target.length ? target : $('[name="'+this.hash.slice(1)+'"]');
   
+  // iOS Safari has a bug where if you tap the status bar, window.scrollTo (and, accordingly, $.Velocity('scroll') ) just fails
+  // See https://github.com/julianshapiro/velocity/issues/282
+  // and http://blog.b123400.net/window-scrollto-and-ios-status-bar/
+  // This IS in an onClick event, so we can just fire a worthless scrollTo here
+  // even if it's (0,0) that seems to snap iOS out of its funk
+  if ( currentScroll === 0 && /iPhone|iPad|iPod/.test(navigator.userAgent) ) {
+    window.scrollTo(0,0);
+  }
+  
   // UPDATE HASH?
   // The trick is to do it BEFORE you move anything
   // That way when the history is updated it stores where you *were*
@@ -49,12 +58,9 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
     duration: normalizeDurationByDistance( currentScroll - target.offset().top ),
     easing: [0.4,0,0.2,1],
     complete: function() {
-      
-      if ( currentScroll === 0 && $(window).scrollTop() === 0 && /iPhone|iPad|iPod/.test(navigator.userAgent) ) {
-        alert('Hey, so iOS has a bug where I can’t scroll the page for you after you tap the status bar. Please scroll a tiny bit and try again and it’ll be cool.');
-      }
-    
+
       _.contains(validCallouts, data.scrollTo) && target.velocity( 'callout.'+data.scrollTo, 800 );
+
     }
   });
   

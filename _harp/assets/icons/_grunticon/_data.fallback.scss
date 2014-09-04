@@ -335,6 +335,18 @@
 }
 
 
+.grunticon-nag-close {
+  background-image: url('png/nag-close.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-navtoggle-close {
   background-image: url('png/navtoggle-close.png');
   @include icon;

@@ -13,7 +13,7 @@
 
      // Drop instance?
      dismiss.close && dismiss.close();
-
+     
   })
   .on('click', '[data-close]', function() {
     

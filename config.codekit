@@ -521,6 +521,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_harp\/assets\/css\/_components\/_messages.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/css\/_components\/_messages.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/css\/css\/_messages.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_harp\/assets\/css\/_components\/_navburger.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -2311,6 +2327,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/nag-close.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 310,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/nag-close.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/nag-close.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/navtoggle-close.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2891,6 +2918,17 @@
 		"initialSize": 456,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-workgroup.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-workgroup.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/build\/png\/nag-close.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 273,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/nag-close.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/nag-close.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

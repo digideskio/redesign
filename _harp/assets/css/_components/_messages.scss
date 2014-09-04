@@ -1,0 +1,60 @@
+.messages {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  right: 0;
+}
+
+.message {
+  padding: map-get($font-sizes, xs) map-get($font-sizes, xxxxxl) map-get($font-sizes, xs) map-get($font-sizes, xs);
+  background: transparentize( palette(blue, dark), .04 );
+  color: #fafafa;
+  position: relative;
+  
+  // start hidden
+  // JS will take of the rest
+  display: none;
+  
+  &.error {
+    background: transparentize( palette(red, mid-dark), .04 );
+  }
+  
+  &.warning {
+    background: transparentize( palette(gold, dark), .04 );
+  }
+  
+  &.success {
+    background: transparentize( palette(green, dark), .04 );
+  }
+  
+  &.info {
+    background: transparentize( palette(blue, light), .04 );
+    color: palette(gray,dark);
+  }
+  
+  &.secondary {
+    background: transparentize( palette(gray, light), .04 );
+    color: palette(gray,dark);  
+  }
+  
+  .close {
+    right: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    opacity: .6;
+    transition: opacity .3s $ease-out-cubic;
+    padding: 10px;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  &+& {
+    border-top: 1px solid rgba(255,255,255,.6);
+  }
+  
+  &:last-child {
+    box-shadow: 0 2px 3px rgba(0,0,0,.2)
+  }
+}
