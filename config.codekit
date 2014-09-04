@@ -2399,6 +2399,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/sextant-backToTop.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 534,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/sextant-backToTop.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/sextant-backToTop.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/sextant-menu.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2972,6 +2983,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/build\/png\/sextant-backToTop.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 435,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/sextant-backToTop.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/sextant-backToTop.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/build\/png\/sextant-menu.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3344,12 +3366,34 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/assets\/js\/modules\/oslc.nag.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.nag.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.nag-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/js\/modules\/oslc.prospectus.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.prospectus.js",
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.prospectus-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/assets\/js\/modules\/oslc.scrollTo.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.scrollTo.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.scrollTo-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

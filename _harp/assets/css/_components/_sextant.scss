@@ -13,13 +13,19 @@
     @extend %font-size-s;
     text-decoration: none;
     margin-left: 5px;
+    white-space: nowrap;
     
     .no-touch & { visibility: hidden; }
     
   }
   
   .no-touch &:hover .back-to-top { visibility: visible; }
-}  
+}
+
+.grunticon-sextant-backToTop { 
+  vertical-align: baseline; 
+  margin-right: 2px;
+}
 
 .toc .item {
   border-left: 8px solid #ccc;

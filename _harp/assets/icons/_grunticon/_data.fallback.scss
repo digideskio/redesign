@@ -431,6 +431,18 @@
 }
 
 
+.grunticon-sextant-backToTop {
+  background-image: url('png/sextant-backToTop.png');
+  @include icon;
+  height: 10px;
+  width: 10px;
+    
+  &.intrinsic {
+    padding-top: 10px / 10px * 100%;
+  }
+}
+
+
 .grunticon-sextant-menu {
   background-image: url('png/sextant-menu.png');
   @include icon;
