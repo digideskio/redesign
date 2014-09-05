@@ -6,6 +6,7 @@ $drop-shadow-spread: 4px;
   position: absolute;
   padding-right: $drop-shadow-spread*1.5;
   padding-left: $drop-shadow-spread*1.5;
+  z-index: 1;
 }
 
 %dropdown-body {
@@ -45,7 +46,6 @@ $drop-shadow-spread: 4px;
 .tooltip {
   @extend %dropdown;
   padding-bottom: map-get($font-sizes,xxxs);
-  z-index: 1;
   
   .body {
     @extend %dropdown-body;

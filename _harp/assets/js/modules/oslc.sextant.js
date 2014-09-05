@@ -80,5 +80,5 @@ var Sextant = _.create(OSLC, {
 });
 
 $(document).ready(function(){ Sextant.init(); });
-
+ 
 }(jQuery, this, this.document));

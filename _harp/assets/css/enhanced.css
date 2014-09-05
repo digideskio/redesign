@@ -715,7 +715,8 @@
 .dropdown, .tooltip {
   position: absolute;
   padding-right: 6px;
-  padding-left: 6px; }
+  padding-left: 6px;
+  z-index: 1; }
 
 .dropdown .items, .tooltip .body {
   min-width: 8em;
@@ -738,8 +739,7 @@
     background-color: #ffe2b3; }
 
 .tooltip {
-  padding-bottom: 5px;
-  z-index: 1; }
+  padding-bottom: 5px; }
   .tooltip .body {
     max-width: 225px;
     border-radius: 2px;
