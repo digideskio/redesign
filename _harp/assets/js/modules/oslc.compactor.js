@@ -1,3 +1,5 @@
+// hat-tip: https://github.com/mrmrs/fluidity
+
 ;(function ($, window, document, undefined) {
 
 var compactElements = function(){
