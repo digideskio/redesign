@@ -71,7 +71,8 @@
   > h4,
   > h5,
   > h6 {
-    font-weight: 500; // semibold
+    //font-weight: 500; // semibold
+    font-weight: 400; // normal
     margin-top: .71em;
     margin-bottom: .6em;
     border-left: $copy-header-border-width solid;
@@ -184,15 +185,17 @@
   pre, code, tt {
     font-family: monospace;
     white-space: pre; 
-    white-space: pre-wrap; 
+    // UPDATE: going to try overflow instead
+    //white-space: pre-wrap; 
     
     background-color: tint( palette(gold, x-light), 25% );
   }
   
   pre {
     // These last two make sure things that aren't very word-like, like URLs, break
-    word-wrap: break-word;
-    word-break: break-all;
+    // UPDATE: with JS Compactor and overflow, gonna skip this
+    //word-wrap: break-word;
+    //word-break: break-all;
     
     @extend %copy-margins;
     overflow: auto;

@@ -2,7 +2,9 @@
 .off-canvas-wrap {
   @include respond-to(knee-up) {
     position: relative;
-    overflow: hidden;
+    // Hmm, with transforms only, I don't believe I need this
+    // Also, this is quite damaging if tables or other large bits in the main copy get too large
+    //overflow: hidden; 
   }
 }
 

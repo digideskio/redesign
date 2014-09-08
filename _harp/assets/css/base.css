@@ -159,7 +159,7 @@
   border-spacing: 0;
   empty-cells: show;
   border: none;
-  border-top: 2px solid #cccccc;
+  border-top: 2px solid #ccc;
   background: #fff; }
   .ltie8 .copy > table {
     border-collapse: collapse; }
@@ -175,11 +175,11 @@
     vertical-align: bottom;
     background-color: #fafafa; }
   .copy > table th + th {
-    border-left: 1px solid #cccccc; }
+    border-left: 1px solid #ccc; }
   .copy > table td {
     vertical-align: top; }
   .copy > table tbody tr + tr td {
-    border-top: 1px solid #cccccc; }
+    border-top: 1px solid #ccc; }
 
 /**
  * Define the ranges
@@ -256,14 +256,12 @@
    see: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
    ========================================================================== */
 html {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box; }
+  -moz-box-sizing: border-box;
+       box-sizing: border-box; }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-     -moz-box-sizing: inherit;
-          box-sizing: inherit; }
+  -moz-box-sizing: inherit;
+       box-sizing: inherit; }
 
 /* ==========================================================================
    HTML5 display definitions
@@ -407,8 +405,7 @@ dfn {
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0; }
 
 /**
@@ -433,10 +430,12 @@ samp {
  * www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/
  * https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
  */
+/*
 pre, code {
   word-wrap: break-word;
-  white-space: pre-wrap; }
-
+  white-space: pre-wrap; 
+}
+*/
 /**
  * If for some reason <code> blocks don't wrap, allow overflow
  */
@@ -585,9 +584,8 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -601,7 +599,6 @@ input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -787,7 +784,7 @@ img {
     .flexbox .blocks > .column > * {
       width: 100%; }
   .divided > .column {
-    border-right: 1px solid #333333; }
+    border-right: 1px solid #333; }
   .divided > .column:last-child {
     border-right: 0; }
 
@@ -1129,7 +1126,7 @@ html {
   .copy > h4,
   .copy > h5,
   .copy > h6 {
-    font-weight: 500;
+    font-weight: 400;
     margin-top: .71em;
     margin-bottom: .6em;
     border-left: 8px solid;
@@ -1174,19 +1171,16 @@ html {
     margin-top: 0.375rem; }
   .copy > blockquote {
     margin-left: 0;
-    border-left: 3px solid #cccccc;
+    border-left: 3px solid #ccc;
     font-style: italic;
     padding-left: 1em; }
   .copy img {
-    border: 2px solid #cccccc; }
+    border: 2px solid #ccc; }
   .copy pre, .copy code, .copy tt {
     font-family: monospace;
     white-space: pre;
-    white-space: pre-wrap;
     background-color: #fff8eb; }
   .copy pre {
-    word-wrap: break-word;
-    word-break: break-all;
     overflow: auto;
     padding: 8px;
     padding: 0.5rem;
@@ -1196,7 +1190,7 @@ html {
   padding: 11px 8px;
   padding: 0.6875rem 0.5rem;
   display: block;
-  color: #444444; }
+  color: #444; }
   .menu .item.flush {
     padding-left: 0;
     padding-right: 0; }
@@ -1216,13 +1210,13 @@ html {
 .menu a.item:focus {
   background-color: #d8d8d8; }
 .menu.primary {
-  background-color: white; }
+  background-color: #fff; }
 .menu .heading {
   font-size: 94%;
   text-transform: uppercase;
   letter-spacing: 1px; }
 .menu.inverted {
-  background-color: #666666; }
+  background-color: #666; }
   .menu.inverted .item {
     color: #ebebeb; }
   .menu.inverted .current a,
@@ -1231,7 +1225,7 @@ html {
   .menu.inverted a.current,
   .menu.inverted a.item:hover,
   .menu.inverted a.item:focus {
-    background-color: #444444; }
+    background-color: #444; }
   .menu.inverted .heading {
     border-bottom: 1px solid #ee7e7c; }
 .menu.horizontal .item {
@@ -1287,7 +1281,7 @@ html {
   color: #fff;
   border-bottom-style: solid;
   border-bottom-width: 3px;
-  background-color: #cccccc;
+  background-color: #ccc;
   border-bottom-color: #a3a3a3; }
   .btn:hover, .btn:focus {
     background-color: #dadada; }
@@ -1299,8 +1293,7 @@ html {
 .boxshadow .btn {
   border-bottom: 0;
   padding: .3125em .5em .375em;
-  -webkit-box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1), inset 0 -0.1875em 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1), inset 0 -0.1875em 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1), inset 0 -0.1875em 0 rgba(0, 0, 0, 0.2);
   -webkit-transition-duration: .1s;
           transition-duration: .1s;
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -1308,8 +1301,7 @@ html {
   -webkit-transition-property: background-color, -webkit-transform, padding, margin;
           transition-property: background-color, transform, padding, margin; }
   .boxshadow .btn:active, .boxshadow .btn[active] {
-    -webkit-box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1);
     padding-bottom: .1875em;
     margin-bottom: .1875em;
     -webkit-transform: translate(0, 0.1875em);
@@ -1345,7 +1337,7 @@ html {
   vertical-align: middle;
   padding: 8px;
   color: #fff;
-  background-color: #666666;
+  background-color: #666;
   text-decoration: none;
   margin-right: 2px; }
   .tag:last-child {
@@ -1388,7 +1380,7 @@ a.tag {
     padding-right: 8px; }
   .sequence .label {
     font-weight: bold;
-    color: #444444; }
+    color: #444; }
 
 .flexbox .pagination {
   display: -webkit-box;
@@ -1413,42 +1405,40 @@ a.tag {
 .pagination > li:last-child a {
   padding-right: 0; }
 .pagination .item {
-  border-top: 2px solid #444444;
+  border-top: 2px solid #444;
   padding-top: .375em; }
   .boxshadow .pagination .item {
     border-top: none;
     padding-top: .5em;
-    -webkit-box-shadow: inset 0 3px 0 #444444;
-            box-shadow: inset 0 3px 0 #444444; }
+    box-shadow: inset 0 3px 0 #444; }
 .pagination .previous .icon, .pagination .first .icon {
   margin-right: 5px; }
 .pagination .next .icon, .pagination .last .icon {
   margin-left: 5px; }
 
 .card, .notice {
-  background-color: white;
+  background-color: #fff;
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   border-top: none;
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box; }
+  background-clip: padding-box; }
   .card > .header, .notice > .header {
     border-radius: 4px 4px 0 0;
     border-top-width: 3px;
     border-top-style: solid;
-    border-top-color: #666666;
-    border-bottom: 1px solid #cccccc;
+    border-top-color: #666;
+    border-bottom: 1px solid #ccc;
     padding: 10px 16px 11px;
     padding: 0.625rem 1rem 0.6875rem; }
     .card > .header .title, .notice > .header .title {
       margin: 0;
       font-weight: bold;
       line-height: 1.25;
-      color: #666666; }
+      color: #666; }
     .card > .header a, .notice > .header a {
       color: #0083a3; }
       .card > .header a:visited, .notice > .header a:visited {
-        color: #666666; }
+        color: #666; }
       .card > .header a:hover, .notice > .header a:hover, .card > .header a:focus, .notice > .header a:focus {
         color: #00a7bd; }
   .card .content, .notice .content {
@@ -1459,11 +1449,11 @@ a.tag {
   margin-left: 5px;
   margin-left: 0.3125rem; }
 .card > .deck {
-  color: #666666;
+  color: #666;
   line-height: 1;
   padding: 0 16px 8px;
   padding: 0 1rem 0.5rem;
-  border-bottom: 1px solid #cccccc; }
+  border-bottom: 1px solid #ccc; }
 .card > .deck .byline,
 .card > .footer .byline {
   margin-top: 8px; }
@@ -1522,14 +1512,14 @@ a.tag {
   padding: 8px 2px;
   padding: 0.5rem 0.125rem; }
   .slat + .slat {
-    border-top: 1px solid #cccccc; }
+    border-top: 1px solid #ccc; }
   .slat > .flag > .image {
     padding-right: 8px;
     padding-right: 0.5rem; }
   .slat .header {
     margin-bottom: .2em;
     font-weight: bold;
-    color: #666666; }
+    color: #666; }
 
 .status[value] {
   position: absolute;
@@ -1546,8 +1536,7 @@ a.tag {
   color: #0083a3; }
   .status[value]::-webkit-progress-bar {
     background-color: transparent;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    box-shadow: none; }
   .status[value] .fallback {
     display: block;
     position: absolute;
@@ -1587,7 +1576,7 @@ a.tag {
 
 .banner,
 .footer[role="contentinfo"] {
-  background-color: white;
+  background-color: #fff;
   padding: 4px 8px 5px;
   padding: 0.25rem 0.5rem 0.3125rem; }
 
@@ -1609,7 +1598,7 @@ a.tag {
 
 .logo-text {
   display: block;
-  color: #666666; }
+  color: #666; }
 
 abbr.grunticon-wordmark-small,
 abbr.grunticon-wordmark-med {
