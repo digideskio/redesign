@@ -58,6 +58,8 @@
   height: 100%;
   @extend %button-reset;
   text-align: left; // considering adding this to the button-reset?
+  overflow: hidden;
+  text-overflow: ellipsis;
   @include font-size(s,1);
   color: #fff;
   padding: 5px 4px;
@@ -67,8 +69,4 @@
     background-color: palette(gold,mid-dark);
   }
   
-  .body {
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
 }

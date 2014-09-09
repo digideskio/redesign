@@ -339,11 +339,12 @@
     "draft": "true"
   },
   "workgroups": {
-    "title": "Workgroups",
+    "title": "[Sample] Workgroups",
     "menu_title": "All Workgroups",
     "has_secondary": 0,
     "has_menu": "tag,organization",
     "is_listing": "true",
+    "listing_description": "We have a variety of working groups—here and at various standards organizations—with different and occasionally overlapping interests, roles, and responsibilities.",
     "workgroups": [
       {
         "title": "Sterring Committee",
@@ -360,6 +361,12 @@
       {
         "title": "Linked Data Platform",
         "microdesc": "Integrating software with linked data at OASIS",
+        "orgs": ["W3C"],
+        "tags": ["Specification", "Common"]
+      },
+      {
+        "title": "RDF Data Shapes",
+        "microdesc": "Defining and validating the structure of RDF data",
         "orgs": ["W3C"],
         "tags": ["Specification", "Common"]
       },

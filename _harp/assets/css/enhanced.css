@@ -414,6 +414,8 @@
   width: 100%;
   height: 100%;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1;
@@ -423,9 +425,6 @@
   background-color: #ff852e; }
   .activeFilter:hover {
     background-color: #ffa83d; }
-  .activeFilter .body {
-    text-overflow: ellipsis;
-    overflow: hidden; }
 
 .card {
   border: none;
@@ -720,6 +719,7 @@
   min-width: 8em;
   position: relative;
   background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 4px rgba(153, 153, 153, 0.5);
   opacity: 0; }
 

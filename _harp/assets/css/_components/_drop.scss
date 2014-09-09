@@ -13,6 +13,7 @@ $drop-shadow-spread: 4px;
   min-width: 8em;
   position: relative;
   background-color: #fff;
+  border: 1px solid rgba(0,0,0,.2);
   box-shadow: 0 2px $drop-shadow-spread transparentize(palette(gray), .5);
   opacity: 0; // initial setting
 }

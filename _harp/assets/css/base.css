@@ -968,9 +968,6 @@ img {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex; }
-  .flexbox .media > .body,
-  .flexbox .flag > .body {
-    width: auto; }
   .flexbox .media > .image,
   .flexbox .flag > .image {
     -webkit-flex-shrink: 0;

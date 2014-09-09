@@ -63,7 +63,7 @@ var Bartender = _.create(OSLC, {
       if ( _.contains( ['All','Original order'], val.label ) ) {
         $control.find('.activeFilter').remove();
       } else {
-        $control.append( _.template('<button class="activeFilter" ${ update } ${ data }><div class="flag"><div class="image">${ icon }</div><div class="body">${ label }</div></button>', {
+        $control.append( _.template('<button class="activeFilter" ${ update } ${ data }>${ icon } ${ label }</button>', {
           icon: '<i class="icon grunticon-menu-remove-filter"><span class="sr-only">Remove filter: </span></i>',
           label: val.label,
           update: 'data-update="'+key+'"',
