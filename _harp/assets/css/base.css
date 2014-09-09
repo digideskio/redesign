@@ -1345,18 +1345,16 @@ html {
   .tag .image {
     padding-right: 5px;
     padding-right: 0.3125rem; }
-  .tag.success {
+  .tag.success, .tag.Specification {
     background-color: #00bd94; }
   .tag.info {
     background-color: #51c1d2; }
-  .tag.warning {
+  .tag.warning, .tag[class~="transition"] {
     background-color: #ff852e; }
-  .tag.danger {
+  .tag.danger, .tag.Inactive {
     background-color: #dc3235; }
   .tag.OASIS {
     background-color: #51247c; }
-  .tag.Inactive {
-    background-color: #e85b59; }
   .tag.W3C {
     background-color: #005a9c; }
 

@@ -16,16 +16,24 @@
     @include rem(padding-right, 5px );
   }
   
-  &.success { background-color: palette(green, mid-dark); }
+  &.success,
+  &.Specification { 
+    background-color: palette(green, mid-dark); 
+  }
   
   &.info { background-color: palette(blue, mid-light); }
   
-  &.warning { background-color: palette(gold, dark); }
+  &.warning,
+  &[class~="transition"] { 
+    background-color: palette(gold, dark); 
+  }
   
-  &.danger { background-color: palette(red, mid-dark); }
+  &.danger,
+  &.Inactive { 
+    background-color: palette(red, mid-dark); 
+  }
   
   &.OASIS { background-color: #51247c; }
-  &.Inactive { background-color: palette(red); }
   &.W3C { background-color: #005a9c; }
   
 }
