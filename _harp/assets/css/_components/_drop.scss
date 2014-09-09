@@ -19,7 +19,15 @@ $drop-shadow-spread: 4px;
 
 .dropdown {
   @extend %dropdown;
+  // this makes sure it doesn't get wider than the screen 
+  // without having to know how wide that screen is
   max-width: 100%;
+  
+  @include respond-to(knee-up) {
+    // but at this point we know the screen is 600+ pixels wide,
+    // so we can put a sensible limit here
+    max-width: 450px;
+  }
   
   .items {
     @extend %dropdown-body;

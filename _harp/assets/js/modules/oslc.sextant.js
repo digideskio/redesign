@@ -64,7 +64,12 @@ var Sextant = _.create(OSLC, {
       $el
         .attr('id', this.id || slug)
         .addClass('js-in-sextant')
-        .append('<a class="back-to-top" data-scroll-to="true" href="#toc-button"><i class="icon grunticon-sextant-backToTop"></i>Top</a>');
+        .append(function(){
+          // only do this for .copy headers
+          if ( ! $(this).closest('.copy').length ) { return; } 
+          
+          return '<a class="back-to-top" data-scroll-to="true" href="#toc-button"><i class="icon grunticon-sextant-backToTop"></i>Top</a>';
+        });
       
       return {
         text: text,

@@ -339,8 +339,128 @@
     "draft": "true"
   },
   "workgroups": {
-    "title": "All Workgroups",
-    "draft": "true"
+    "title": "Workgroups",
+    "menu_title": "All Workgroups",
+    "has_secondary": 0,
+    "has_menu": "tag,organization",
+    "is_listing": "true",
+    "workgroups": [
+      {
+        "title": "Sterring Committee",
+        "microdesc": "Governing body that approves new workgroups, specifications",
+        "orgs": ["OASIS"],
+        "tags": ["Governance"]
+      },
+      {
+        "title": "Core TC",
+        "microdesc": "Integrating software with linked data at OASIS",
+        "orgs": ["OASIS"],
+        "tags": ["Specification", "Common"]
+      },
+      {
+        "title": "Linked Data Platform",
+        "microdesc": "Integrating software with linked data at OASIS",
+        "orgs": ["W3C"],
+        "tags": ["Specification", "Common"]
+      },
+      {
+        "title": "Automation TC",
+        "microdesc": "Reducing manual interactions in all phases of software development and operations",
+        "orgs": ["OASIS"],
+        "tags": ["Specification"]
+      },
+      {
+        "title": "Change and Configuration Management TC",
+        "microdesc": "Tasks, defects, assets, and configurations at OASIS",
+        "orgs": ["OASIS"],
+        "tags": ["Specification"]
+      },
+      {
+        "title": "PROMCODE TC",
+        "microdesc": "Exchanging project management information across organizational boundaries",
+        "orgs": ["OASIS"]
+      },
+      {
+        "title": "Core",
+        "microdesc": "Common problems with finding, creating, and updating resources",
+        "tags": ["Specification", "Common", "Inactive"]
+      },
+      {
+        "title": "ALM-PLM Interoperability",
+        "microdesc": "Product definition and versions",
+        "tags": ["Specification", "Inactive"]
+      },
+      {
+        "title": "Architecture Management",
+        "microdesc": "Modeling, diagrams, and use cases for software development",
+        "tags": ["Specification"]
+      },
+      {
+        "title": "Automation",
+        "microdesc": "Plans, requests, and results for builds and deployments",
+        "tags": ["Specification", "In transition"]
+      },
+      {
+        "title": "Change Management",
+        "microdesc": "Defects, enhancements, changes, and tasks",
+        "tags": ["Specification", "In transition"]
+      },
+      {
+        "title": "Performance Monitoring",
+        "microdesc": "Watching availability, performance, and capacity",
+        "tags": ["Specification"]
+      },
+      {
+        "title": "Quality Management",
+        "microdesc": "Plans, cases, and results for ongoing testing",
+        "tags": ["Specification"]
+      },
+      {
+        "title": "Reconciliation",
+        "microdesc": "Are we talking about the same thing?",
+        "tags": ["Specification"]
+      },
+      {
+        "title": "Requirements Management",
+        "microdesc": "Define stakeholder needs and how to meet them",
+        "tags": ["Specification"]
+      },
+      {
+        "title": "Communications",
+        "microdesc": "Increasing awareness and visibility of OSLC",
+        "tags": ["User Group"]
+      },
+      {
+        "title": "Embedded Systems",
+        "microdesc": "Integrating dedicated components",
+        "tags": ["User Group"]
+      },
+      {
+        "title": "Mobile",
+        "microdesc": "Mobile-specific needs",
+        "tags": ["User Group"]
+      },
+      {
+        "title": "Asset Management",
+        "microdesc": "Reusable components, documentation, and representations",
+        "tags": ["Specification", "Inactive"]
+      },
+      {
+        "title": "Configuration Management",
+        "microdesc": "Snapshots, baselines, and versions",
+        "tags": ["Inactive"]
+      },
+      {
+        "title": "Estimation and Measurement",
+        "microdesc": "Size, quality, time, and effort for making software",
+        "tags": ["Specification", "Inactive"]
+      },
+      {
+        "title": "Reporting",
+        "microdesc": "Analysis, documentation, and operations",
+        "tags": ["Inactive"]
+      }
+    ]
   },
   "specification": {
     "title": "Specification",
@@ -349,7 +469,9 @@
   "specifications": {
     "menu_title": "All Specs",
     "title": "[Sample] Specifications",
-    "layout": "_specifications",
+    "has_secondary": "",
+    "is_listing": "yep",
+    "has_menu": "tag,organization,status,workgroup",
     "specifications": [
       {
         "title": "Core 3.0",
@@ -468,7 +590,7 @@
         "orgs": ["W3C"],
         "tags": ["Common"],
         "meta_before_body": {
-          "Workgroup":["W3C RDF Data Shapes"],
+          "Workgroup":["W3C Linked Data Platform"],
           "Status": [{
             "title":"Candidate Recommendation",
             "value": "90"
@@ -482,7 +604,7 @@
         "orgs": ["W3C"],
         "tags": ["Common"],
         "meta_before_body": {
-          "Workgroup":["W3C Linked Data Platform"],
+          "Workgroup":["W3C RDF Data Shapes"],
           "Status": [{
             "title":"Scope",
             "value": "5"

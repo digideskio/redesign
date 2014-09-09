@@ -1,0 +1,29 @@
+.grid.pulled.blocks
+  for wg in workgroups
+    .column.hand-full.desk-half
+      article.card
+        .header
+          if wg.orgs
+            .flag.reversed
+              header.body
+                h1.title 
+                  a(href="#{wg.url || '#'}",rel="bookmark") #{ wg.title }
+              .image
+                .tags
+                  for org in wg.orgs
+                    span.tag(data-filter-on="organization",class="#{org}") #{org}
+          else
+            h1.title 
+              a(href="#{wg.url || '#'}",rel="bookmark") #{ wg.title }
+        section.content
+          if wg.meta_before_body
+            != partial('../_slats', {meta_block : wg.meta_before_body})
+          if wg.microdesc
+            .copy
+              p #{wg.microdesc}
+        div.footer
+          footer.meta
+            if wg.tags
+              .tags
+                for tag in wg.tags
+                  span.tag(data-filter-on="tag",class="#{tag}") #{tag}
