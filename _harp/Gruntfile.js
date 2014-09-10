@@ -123,7 +123,7 @@ module.exports = function(grunt) {
             width: 1200,
             height: 800,
             outputfile: "./assets/css/critical.css",
-            filename: "base.min.css"
+            filename: "base.css"
           }
         }
       },

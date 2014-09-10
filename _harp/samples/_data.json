@@ -327,7 +327,7 @@
   },
   "tutorial": {
     "menu_title": "Tutorial page",
-    "title": "[Sample] Providing a delegated UI for selection and search",
+    "title": "[Sample tutorial page] Providing a delegated UI for selection and search",
     "has_secondary": "true",
     "secondary_menu_items": {
       "index": {

@@ -11,6 +11,8 @@ I'm taking another whack at the website for the [Open Services for Lifecycle Col
 - [**2014 May 12** News and listing samples](./posts/main-menus.html)
 - **2014 June**: [Single resource example](./samples/resource.html) and [All Resources sample](./samples/resources.html) pages
 - **2014 July**: [Specifications (all) sample page](./samples/specifications.html)
+- **2014 Sept 9**: [Workgroups (all) sample page](./samples/workgroups.html)
+- **2014 Sept 10**: [Tutorial sample page](./samples/tutorial.html)
 
 I'm going have discussions for all the big things in [Github Issues](https://github.com/OSLC/redesign/issues) so you all can have your say.
 
