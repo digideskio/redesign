@@ -37,13 +37,17 @@
   &.primary {
     background-color: $header-and-nav-bg;
   }
-  
+    
   .heading {
     font-size: 94%; // 15/16. Looks a bit nicer.
     text-transform: uppercase;
     letter-spacing: 1px;
   }
 
+  .has-children .items {
+    border-left: $font-size-m/4 solid darken( palette(gray,dark), 8%);
+  }
+  
   &.inverted {
     background-color: palette(gray,mid-dark);
     

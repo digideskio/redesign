@@ -5,7 +5,10 @@
  *
  */
 .copy > table, .copy > .fluid-video, .copy > ul,
-.copy > ol, .copy > p, .copy > blockquote, .copy pre {
+.copy > ol, .copy > p, .copy > blockquote, .copy pre, .copy > .notice, .copy >
+.callout, .copy >
+.callout-box, .copy >
+.tip {
   margin-bottom: 1.4375em;
   margin-top: 0; }
 
@@ -117,12 +120,16 @@
   font-size: 0.8125rem;
   line-height: 1.23077; }
 
-.copy > h6, .notice .header > .title {
+.copy > h6 {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.1875; }
 
-.copy > h5, .card > .header .title {
+.copy > h5, .card > .header .title,
+.notice > .header .title,
+.callout > .header .title,
+.callout-box > .header .title,
+.tip > .header .title {
   font-size: 19px;
   font-size: 1.1875rem;
   line-height: 1.21053; }
@@ -1212,6 +1219,8 @@ html {
   font-size: 94%;
   text-transform: uppercase;
   letter-spacing: 1px; }
+.menu .has-children .items {
+  border-left: 4px solid #303030; }
 .menu.inverted {
   background-color: #666; }
   .menu.inverted .item {
@@ -1411,13 +1420,13 @@ a.tag {
 .pagination .next .icon, .pagination .last .icon {
   margin-left: 5px; }
 
-.card, .notice {
+.card {
   background-color: #fff;
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   border-top: none;
   background-clip: padding-box; }
-  .card > .header, .notice > .header {
+  .card > .header {
     border-radius: 4px 4px 0 0;
     border-top-width: 3px;
     border-top-style: solid;
@@ -1425,18 +1434,18 @@ a.tag {
     border-bottom: 1px solid #ccc;
     padding: 10px 16px 11px;
     padding: 0.625rem 1rem 0.6875rem; }
-    .card > .header .title, .notice > .header .title {
+    .card > .header .title {
       margin: 0;
       font-weight: bold;
       line-height: 1.25;
       color: #666; }
-    .card > .header a, .notice > .header a {
+    .card > .header a {
       color: #0083a3; }
-      .card > .header a:visited, .notice > .header a:visited {
+      .card > .header a:visited {
         color: #666; }
-      .card > .header a:hover, .notice > .header a:hover, .card > .header a:focus, .notice > .header a:focus {
+      .card > .header a:hover, .card > .header a:focus {
         color: #00a7bd; }
-  .card .content, .notice .content {
+  .card .content {
     padding: 13px 16px;
     padding: 0.8125rem 1rem; }
 
@@ -1496,8 +1505,86 @@ a.tag {
     .cards .card .cards {
       background-color: #f7f7f7; }
 
-.copy > .notice {
-  margin-bottom: 1em; }
+.notice,
+.callout,
+.callout-box,
+.tip {
+  background-color: #ebebeb;
+  box-shadow: 4px 4px 0 #ccc; }
+  .notice > *,
+  .callout > *,
+  .callout-box > *,
+  .tip > * {
+    padding-left: 16px;
+    padding-right: 16px; }
+  .notice > :first-child,
+  .callout > :first-child,
+  .callout-box > :first-child,
+  .tip > :first-child {
+    margin-top: 0;
+    padding-top: 11px; }
+  .notice > :last-child,
+  .callout > :last-child,
+  .callout-box > :last-child,
+  .tip > :last-child {
+    margin-bottom: 0;
+    padding-bottom: 11px; }
+  .notice > .header,
+  .callout > .header,
+  .callout-box > .header,
+  .tip > .header {
+    background-color: gainsboro;
+    padding-bottom: 11px; }
+    .notice > .header .title,
+    .callout > .header .title,
+    .callout-box > .header .title,
+    .tip > .header .title {
+      margin: 0;
+      font-weight: normal; }
+  .notice.success,
+  .callout.success,
+  .callout-box.success,
+  .tip.success {
+    background-color: #def7f1;
+    box-shadow: 4px 4px 0 #9de7d8; }
+    .notice.success > .header,
+    .callout.success > .header,
+    .callout-box.success > .header,
+    .tip.success > .header {
+      background-color: #cef3ea; }
+  .notice.tip,
+  .callout.tip,
+  .callout-box.tip,
+  .tip.tip {
+    background-color: #d7f1f4;
+    box-shadow: 4px 4px 0 #7ed2dd; }
+    .notice.tip > .header,
+    .callout.tip > .header,
+    .callout-box.tip > .header,
+    .tip.tip > .header {
+      background-color: #c8ebef; }
+  .notice.error,
+  .callout.error,
+  .callout-box.error,
+  .tip.error {
+    background-color: #fbe1df;
+    box-shadow: 4px 4px 0 #f29d9c; }
+    .notice.error > .header,
+    .callout.error > .header,
+    .callout-box.error > .header,
+    .tip.error > .header {
+      background-color: #f9d0cd; }
+  .notice.warning,
+  .callout.warning,
+  .callout-box.warning,
+  .tip.warning {
+    background-color: #fff6e5;
+    box-shadow: 4px 4px 0 #ffe2b3; }
+    .notice.warning > .header,
+    .callout.warning > .header,
+    .callout-box.warning > .header,
+    .tip.warning > .header {
+      background-color: #ffefd1; }
 
 .slats + .copy,
 .copy + .slats {

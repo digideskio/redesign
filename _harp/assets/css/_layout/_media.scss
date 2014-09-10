@@ -79,6 +79,8 @@
     // don't need to un-do those bits
     
     > .body {
+      // I'm not sure they need to care about widths either
+      // at least with proper flex-shrink and flex-grow
       //width: auto;
     }
     

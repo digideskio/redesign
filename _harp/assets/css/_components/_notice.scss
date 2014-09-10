@@ -1,15 +1,57 @@
-.notice {
-  @extend %card-basis;
+.notice,
+.callout,
+.callout-box, /* legacy */
+.tip /* legacy */ {
   
-  .header {
-    
-    > .title {
-      @extend %text-size-m;
+  background-color: palette(gray,x-light);
+  box-shadow: 4px 4px 0 palette(gray, light);
+
+  .copy > & {
+    @extend %copy-margins;
+  }
+  
+  > * {
+    padding-left: $card-padding-sides;
+    padding-right: $card-padding-sides;
+  }
+  
+  > :first-child {
+    margin-top: 0;
+    padding-top: map-get($font-sizes, xs);
+  }
+  
+  > :last-child {
+    margin-bottom: 0;
+    padding-bottom: map-get($font-sizes, xs);
+  }  
+  
+  // have an alternate style with a header and content section
+  > .header {
+    background-color: darken( palette(gray,x-light), 6%);
+    padding-bottom: map-get($font-sizes, xs);
+    .title {
+      margin: 0;
+      font-weight: normal;
+      @extend %font-size-l;
     }
   }
   
-  .copy > & {
-    margin-bottom: 1em;
-  }
+  $notice-types: (
+    success: green,
+    tip: blue,
+    error: red,
+    warning: gold
+  );
   
+  @each $name, $color in $notice-types {
+    &.#{$name} {
+      background-color: palette( $color, x-light );
+      box-shadow: 4px 4px 0 palette( $color, light );
+      
+      > .header {
+        background-color: darken( palette( $color, x-light ), 4%);
+      }
+    }
+  }
+
 }

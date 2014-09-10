@@ -33,7 +33,7 @@
     "author": {
       "name": "Sean Kennedy",
       "url": "#"
-    },    
+    },
     "next": "Neither Proprietary Data Formats nor International Travel are barriers to OSLC",
     "previous": "OSLC Enables Integration for Mobility and Lean Software Lifecycles"
   },
@@ -326,8 +326,95 @@
     ]
   },
   "tutorial": {
-    "title": "Tutorial",
-    "draft": "true"
+    "menu_title": "Tutorial page",
+    "title": "[Sample] Providing a delegated UI for selection and search",
+    "has_secondary": "true",
+    "secondary_menu_items": {
+      "index": {
+        "title": "Integrating products with OSLC"
+      },
+      "overview": {
+        "menu_title": "Overview",
+        "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/"
+      },
+      "oslc-overview": {
+        "title": "Overview of OSLC",
+        "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/overview-of-oslc/"
+      },
+      "running-the-samples": {
+        "title": "Running the example applications",
+        "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/running-the-examples/"
+      },
+      "implementing-oslc-provider": {
+        "title": "Implementing an OSLC provider",
+        "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/implementing-an-oslc-provider/",
+        "children": {
+          "partial-implementation": {
+            "title": "Planning out a partial implementation of OSLC-CM",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/implementing-an-oslc-provider/planning-out-a-partial-implementation-of-oslc-cm/"
+          },
+          "providing-sps": {
+            "title": "Providing Service Providers and Catalogs",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/implementing-an-oslc-provider/providing-service-providers-and-catalogs/"
+          },
+          "providing-oslc-reps": {
+            "title": "Providing OSLC representations of Bugzilla bugs",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/implementing-an-oslc-provider/providing-oslc-representations/"
+          },
+          "providing-ui-previews": {
+            "title": "Providing UI Previews",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/implementing-an-oslc-provider/providing-ui-previews/"
+          },
+          "providing-delegated-ui": {
+            "title": "Providing a delegated UI for selection and search",
+            "current": "true",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/implementing-an-oslc-provider/providing-a-delegated-ui-for-selection/"
+          },
+          "providing-ui-for-creation": {
+            "title": "Providing a delegated UI for creating bugs",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/implementing-an-oslc-provider/providing-a-delegated-ui-for-creation/"
+          },
+          "providing-creation-factory": {
+            "title": "Providing a creation factory",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/implementing-an-oslc-provider/providing-a-creation-factory/"
+          }
+        }
+      },
+      "integrating-with-oslc-provider": {
+        "title": "Integrating with an OSLC provider",
+        "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/integrating-with-an-oslc-provider/",
+        "children": {
+          "use-cases":{
+            "title": "Sample use cases for an OSLC-CM Consumer",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/integrating-with-an-oslc-provider/sample-use-cases-for-oslc-consumers/"
+          },
+          "implementing-links-previews":{
+            "title": "Implementing links and UI previews",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/integrating-with-an-oslc-provider/implementing-links-and-previews/"
+          },
+          "implementing-oslc-delegated-uis":{
+            "title": "Implementing OSLC Delegated UIs",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/integrating-with-an-oslc-provider/making-incident-to-defect-linking-easy/"
+          },
+          "implementing-notify-customers":{
+            "title": "Implementing a \"Customers to notify\" page",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/integrating-with-an-oslc-provider/implementing-a-customers-to-notify-page/"
+          },
+          "automated-bug-creation":{
+            "title": "Implementing automated bug creation",
+            "url": "http://open-services.net/resources/tutorials/integrating-products-with-oslc/integrating-with-an-oslc-provider/automated-bug-creation/"
+          }
+        }
+      }
+    },
+    "secondary_menu_title": "Tutorial",
+    "breadcrumbs": [
+      "Home", "Resources", "Integrating products with OSLC","Implementing an OSLC provider"
+    ],
+    "previous_label": "Previous",
+    "next_label": "Next",
+    "next": "Providing UI Previews",
+    "previous": "Providing a delegated UI for creating bugs"
   },
   "workgroup": {
     "title": "Workgroup",
@@ -859,6 +946,9 @@
   "wpa": {
     "title": "Workgroup Participation Agreement",
     "draft": "true"
+  },
+  "wiki-edit": {
+    "title": "Editing a wiki page",
+    "draft": "true"
   }
-
 }

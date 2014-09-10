@@ -1,12 +1,12 @@
 if has_secondary
   - var root = current.path[0]
-  - var data = public[ root ]._data
+  - var data = secondary_menu_items != undefined ? secondary_menu_items : public[ root ]._data
   if data
     nav#nav.nav.has-secondary(role="navigation",data-whirligig)
       .controls.hand-only.enhanced-only
         .tabs
           a.tab(href="#main_menu") Main
-          a.tab.active(href="#secondary_menu") #{ data.index.title }
+          a.tab.active(href="#secondary_menu") #{secondary_menu_title || data.index.title }
       .window
         .panels
           != partial('_menu_primary', {site_url: site_url})
@@ -20,8 +20,13 @@ if has_secondary
                       span.item.heading #{page.title}
                   else 
                     if page.draft !== 'true' || environment === 'development'
-                      li(class=' #{ current.source === slug ? "current" : "" }')
-                        a.item(href="#{ site_url }#{ root + '/' + slug + '.html' }") #{ page.menu_title || page.title }
+                      li(class=' #{ current.source === slug ? "current" : "" } #{page.children ? "has-children" : ""}')
+                        a.item(href="#{ page.url || site_url+root+'/'+slug+'.html' }") #{ page.menu_title || page.title }
+                        if page.children
+                          ul.items
+                            for child, childSlug in page.children
+                              li
+                                a.item(href="#{child.url || '#' }", class="#{child.current ? 'current' : ''}") #{child.title} 
 else 
   nav#nav.nav(role="navigation")
     .panels

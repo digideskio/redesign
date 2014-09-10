@@ -107,14 +107,14 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                     .image
                       i.icon.grunticon-previous
                     .body
-                      span.label Older
+                      span.label #{previous_label || 'Older'}
                       span.title #{previous}
             if next
               .column.hand-full.knee-half
                 a.sequence.next(href="#") 
                   .flag.reversed
                     .body
-                      span.label Newer
+                      span.label #{next_label || 'Newer'}
                       span.title #{next}
                     .image
                       i.icon.grunticon-next
