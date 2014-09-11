@@ -239,6 +239,18 @@
 }
 
 
+.grunticon-meta-consumes {
+  background-image: url('png/meta-consumes.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-meta-downloads {
   background-image: url('png/meta-downloads.png');
   @include icon;
@@ -263,8 +275,32 @@
 }
 
 
+.grunticon-meta-organization {
+  background-image: url('png/meta-organization.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-meta-presenters {
   background-image: url('png/meta-presenters.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-produces {
+  background-image: url('png/meta-produces.png');
   @include icon;
   height: 20px;
   width: 20px;

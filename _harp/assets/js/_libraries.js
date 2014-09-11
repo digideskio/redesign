@@ -9,6 +9,7 @@
 // @codekit-prepend "./lib/jquery.tabbable.focusable.js";
 // @codekit-prepend "./lib/velocity.js";
 // @codekit-prepend "./lib/velocity.ui.js";
+// @codekit-prepend "./lib/d3.js";
 // @codekit-prepend "./lib/tether.js";
 // @codekit-prepend "./lib/fastclick.js";
 

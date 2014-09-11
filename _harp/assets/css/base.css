@@ -120,7 +120,7 @@
   font-size: 0.8125rem;
   line-height: 1.23077; }
 
-.copy > h6 {
+.copy > h6, .action {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.1875; }
@@ -1614,6 +1614,9 @@ a.tag {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
   /* With these Shadow DOM selectors, they have to be on their own. You can't combine them. */
   color: #0083a3; }
   .status[value]::-webkit-progress-bar {

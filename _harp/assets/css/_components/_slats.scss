@@ -39,6 +39,7 @@
   -webkit-appearance: none; // Autoprefix doesn't catch this
   -moz-appearance: none;
   appearance: none;
+  transform-origin: left center;
   
   // webkit has a separate selector for the container
   &::-webkit-progress-bar {

@@ -92,6 +92,7 @@
 }
 
 .action {
+  @extend %text-size-m; // this is first so the line height can be overridden
   @extend %btn;
   @extend %fixFlagContainerInline;
   border: 3px solid;

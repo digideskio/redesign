@@ -498,6 +498,37 @@
            -moz-box-flex: 1;
             -ms-flex: 1 0 auto;
                 flex: 1 0 auto; } }
+@-webkit-keyframes scaleIn {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0); }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); } }
+@keyframes scaleIn {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0); }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); } }
+.status[value] {
+  -webkit-animation: scaleIn 2s 1s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards;
+          animation: scaleIn 2s 1s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards; }
+
+@-webkit-keyframes rotateIn {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
+
+@keyframes rotateIn {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
+.grunticon-meta-status {
+  -webkit-animation: rotateIn 1.5s 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards;
+          animation: rotateIn 1.5s 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards; }
+
 .copy {
   /* 
    * For Hand sizes, bump headings down a level 

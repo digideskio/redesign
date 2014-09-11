@@ -561,7 +561,7 @@
     "draft": "true"
   },
   "specifications": {
-    "menu_title": "All Specs",
+    "menu_title": "All Specifications",
     "title": "[Sample] Specifications",
     "has_secondary": "",
     "is_listing": "yep",
@@ -932,8 +932,23 @@
     ]
   },
   "software": {
-    "title": "Software",
-    "draft": "true"
+    "title": "[Sample] IBM Rational Team Concert",
+    "menu_title": "Software",
+    "breadcrumbs": ["Home", "Software"],
+    "meta_before_body": {
+      "Produces": ["Change Management 2.0"],
+      "Consumes": ["Architecture Management 2.0", "Change Management 2.0", "Quality Management 2.0", "Requirements Manageer 2.0"]
+    },
+    "meta_after_body": {
+      "Link": [
+        {
+        "title": "Learn more at jazz.net",
+        "url": "https://jazz.net/downloads/rational-team-concert/releases/4.0"
+        }
+      ],
+      "Organization": ["IBM"]
+    }
+
   },
   "software-all": {
     "title": "All software",

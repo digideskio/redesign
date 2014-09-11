@@ -20,7 +20,7 @@ script.
   window.site_url = '#{site_url}' || '/';
   window.environment = '#{environment}';
 
-script(src="#{ site_url }assets/js/build/base.min.js")
+script(src="#{ site_url }assets/js/build/base.min.js" async)
 
 noscript
   link(rel="stylesheet" href="#{ site_url }assets/css/build/base.min.css")
