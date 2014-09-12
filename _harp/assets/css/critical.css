@@ -7,7 +7,7 @@
 .block.icon, .block, .project-name{ display: block; }
 .icon{ display: inline-block; vertical-align: baseline; zoom: 1; }
 .menu .items{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; list-style-type: none; list-style-position: initial; list-style-image: initial; }
- .boxshadow .btn{ -webkit-backface-visibility: hidden; }
+
 .icon{ vertical-align: top; }
 .banner .btn{ text-align: center; }
 .banner .btn > .text{ display: block; }
@@ -20,6 +20,7 @@
 
 
 .copy > h2{ font-size: 2rem; line-height: 1.1875; }
+
 
 
 
@@ -104,7 +105,7 @@ abbr[title]{ border-bottom-width: 1px; border-bottom-style: dotted; border-botto
 
 
 
-
+ .no-js .desk-up{ display: none !important; }
 .body{ overflow-x: hidden; overflow-y: hidden; zoom: 1; }
 
 
@@ -178,13 +179,14 @@ html{ font-size: 100%; }
 
 
 
+
 .btn{ display: inline-block; zoom: 1; vertical-align: middle; cursor: pointer; text-decoration: none !important; white-space: nowrap; line-height: 1; padding-top: 0.3125em; padding-right: 0.5em; padding-bottom: 0.3125em; padding-left: 0.5em; border-top-left-radius: 4px 4px; border-top-right-radius: 4px 4px; border-bottom-right-radius: 4px 4px; border-bottom-left-radius: 4px 4px; }
 .btn > *{ pointer-events: none; }
 .btn{ color: rgb(255, 255, 255); border-bottom-style: solid; border-bottom-width: 3px; background-color: rgb(204, 204, 204); border-bottom-color: rgb(163, 163, 163); }
 
 
 .btn > .text{ vertical-align: middle; }
-.boxshadow .btn{ border-bottom-width: 0px; border-bottom-style: initial; border-bottom-color: initial; padding-top: 0.3125em; padding-right: 0.5em; padding-bottom: 0.375em; padding-left: 0.5em; box-shadow: rgba(0, 0, 0, 0.0976562) 0px 0.15em 0.15em, rgba(0, 0, 0, 0.199219) 0px -0.1875em 0px inset; -webkit-transition-duration: 0.1s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-property: background-color, -webkit-transform, padding, margin; }
+
 
 
 
@@ -225,7 +227,6 @@ html{ font-size: 100%; }
 
 
 .card .content{ padding-top: 0.8125rem; padding-right: 1rem; padding-bottom: 0.8125rem; padding-left: 1rem; }
-
 
 
 
