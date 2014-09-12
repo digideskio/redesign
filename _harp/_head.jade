@@ -20,7 +20,8 @@ script.
   window.site_url = '#{site_url}' || '/';
   window.environment = '#{environment}';
 
-script(src="#{ site_url }assets/js/build/base.min.js" async)
+// inlined base JS
+include ./assets/js/build/base.min.js
 
 noscript
   link(rel="stylesheet" href="#{ site_url }assets/css/build/base.min.css")
