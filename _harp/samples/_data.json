@@ -933,22 +933,135 @@
   },
   "software": {
     "title": "[Sample] IBM Rational Team Concert",
+    "product_name": "Rational Team Concert",
     "menu_title": "Software",
+    "has_secondary": 0,
     "breadcrumbs": ["Home", "Software"],
     "meta_before_body": {
       "Produces": ["Change Management 2.0"],
-      "Consumes": ["Architecture Management 2.0", "Change Management 2.0", "Quality Management 2.0", "Requirements Manageer 2.0"]
-    },
-    "meta_after_body": {
-      "Link": [
-        {
-        "title": "Learn more at jazz.net",
-        "url": "https://jazz.net/downloads/rational-team-concert/releases/4.0"
-        }
-      ],
+      "Consumes": ["Architecture Management 2.0", "Change Management 2.0", "Quality Management 2.0", "Requirements Manageer 2.0"],
       "Organization": ["IBM"]
+    },
+    "consumes": {
+      "Architecture Management 2.0": [
+        "Context SDM",
+        "IBM Rational Software Architect Design Manager",
+        "IBM Rational System Architect"
+      ],
+      "Change Management 2.0": [
+        "Accept360",
+        "Atlassian JIRA",
+        "Borland StarTeam",
+        "Bugzilla",
+        "CA Clarity",
+        "Context SDM",
+        "Edgewall Software Trac",
+        "FusionForge Tracker",
+        "Gerrit",
+        "Git",
+        "HP Application Lifecycle Management",
+        "HP Quality Center",
+        "IBM Rational Change",
+        "IBM Rational ClearQuest",
+        "IBM Rational Quality Manager",
+        "IBM Rational Rhapsody Design Manager",
+        "IBM Rational Software Architect Design Manager",
+        "Mantis Bug Tracker",
+        "Microsoft SharePoint",
+        "Microsoft Team Foundation Server",
+        "Polarion ALM",
+        "PTC Integrity",
+        "Rally",
+        "Salesforce",
+        "Serena Dimensions CM",
+        "ThoughtWorks Mingle",
+        "VersionOne"        
+      ],
+      "Quality Management 2.0": [
+        "Atlassian JIRA",
+        "Context SDM",
+        "HP Quality Center",
+        "IBM Rational Quality Manager",
+        "IBM Rational Rhapsody Design Manager",
+        "IBM Rational Software Architect Design Manager",
+        "IBM Rational TestManager",
+        "Microsoft SharePoint",
+        "Microsoft Team Foundation Server"      
+      ],
+      "Requirements Management 2.0": [
+        "agosense.requirements",
+        "Atlassian JIRA",
+        "Context SDM",
+        "Enterprise Architect 11",
+        "HP Application Lifecycle Management",
+        "HP Quality Center",
+        "IBM Rational DOORS",
+        "IBM Rational Quality Manager",
+        "IBM Rational Requirements Composer",
+        "IBM Rational Requisite Pro",
+        "IBM Rational Rhapsody Design Manager",
+        "IBM Rational Software Architect Design Manager",
+        "Jama",
+        "Microsoft SharePoint",
+        "Microsoft Team Foundation Server",
+        "Polarion Requirements",
+        "PTC Integrity",
+        "Rally",
+        "Visure Requirements"      
+      ]
+    },
+    "produces": {
+      "Change Management 2.0": [
+        "Context SDM",
+        "IBM Rational Asset Manager",
+        "IBM Rational Change",
+        "IBM Rational ClearQuest",
+        "IBM Rational DOORS",
+        "IBM Rational Focal Point",
+        "IBM Rational Quality Manager",
+        "IBM Rational Requirements Composer",
+        "IBM Rational Rhapsody Design Manager",
+        "IBM Rational Software Architect Design Manager",
+        "IBM Rational System Architect",
+        "IBM SmartCloud Control Desk",
+        "IBM Tivoli Service Request Manager",
+        "Jenkins CI"
+      ]
+    },
+    "relationships": {
+      "Videos & presentations": [
+        "Eclipse Lyo Perl Modules (Mini-cast 3-pack!)",
+        "Getting started on implementing OSLC",
+        "Getting started on implementing OSLC (enhanced version)",
+        "SAP Connector: Join SAP Solution Manager and IBM CLM using OSLC",
+        "Using OSLC to integrate JIRA with the Rational solution for Collaborative Lifecycle Management"
+      ],
+      "Articles & whitepapers": [
+        "Integrating Operations Management and Development using OSLC",
+        "Using the Rational OSLC Adapter for Git with Rational Team Concert",
+        "Using the Rational OSLC Adapter for JIRA with the Rational solution for CLM",
+        "Using the Rational OSLC Adaptor for HP ALM with the Rational solution for CLM"
+      ],
+      "Blog posts" : [
+        "Video available for presentation: “One Month of Eclipse Lyo 1.0”",
+        "Video available for presentation: “Eclipse Lyo Perl Modules 3-pack”",
+        "Improved version of our “Getting started on implementing OSLC” video now available",
+        "Q&A about GM’s Eclipse Lyo-based Proof of Concept integration",
+        "Upcoming webcast: Eclipse Lyo Perl Modules 3-pack",
+        "Catnip for OSLC implementers: See how GM built a PoC using Eclipse Lyo",
+        "Playlist available for webcast “OSLC access and debugging using your browser”",
+        "Video available for webcast “OSLC access and debugging using your browser”",
+        "Video available for webcast “SAP Connector”",
+        "Upcoming webcast: SAP Connector - Join SAP Solution Manager and IBM CLM using OSLC",
+        "Interest and engagement at the OSLC for ALM-PLM integrations roundtable",
+        "Instantiating the OSLC Vision",
+        "Upcoming webcast: Sharing Kovair Experiences in Developing OSLC Based Integrations",
+        "New video: Steve Speicher on getting started with implementing OSLC",
+        "Upcoming webcast: Announcing the Rational OSLC Adapter for Atlassian JIRA",
+        "Now available: IBM Rational OSLC Adapter for Atlassian JIRA",
+        "Using OSLC to integrate JIRA with the Rational solution for Collaborative Lifecycle Management"
+      ]
     }
-
   },
   "software-all": {
     "title": "All software",

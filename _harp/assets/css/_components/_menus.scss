@@ -84,6 +84,11 @@
     
   }
   
+  &.page {
+    background-color: tint(palette(gray, x-light), 60%);
+    border-bottom: 1px solid palette(gray,light);
+  }
+  
   .image { padding-right: 3px; }
   
 }

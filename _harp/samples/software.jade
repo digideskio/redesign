@@ -1,1 +1,55 @@
 p IBM Rational Team Concert integrates task tracking, source control, and agile planning with continuous builds and a configurable process to adapt to the way you work.
+
+div 
+  a.action(href="https://jazz.net/downloads/rational-team-concert/releases/4.0") 
+    .flag.reversed
+      .body Learn more at jazz.net
+      .image
+        i.icon.grunticon-action-outgoing
+
+h2 Compatibility
+
+if consumes || produces
+  //div.menu.horizontal
+    span.item.heading View
+    a.item(href="#compatibility-graphic") Graphical
+    a.item.current(href="#compatibility-tables") Tables &rsquo;n&rsquo; text
+  div.copy#compatibility-tables
+    if consumes
+      h3 Compatible providers
+      table
+        caption #{product_name || title} can <strong>consume</strong> resources in accordance with the following OSLC specifications.
+        thead
+          tr
+            th(scope="col") Specification that #{product_name || 'PRODUCT'} can consume (input)
+            th(scope="col") Products that output the specification
+        tbody
+          for products, spec in consumes
+            tr
+              th(scope="row") 
+                a(href="#") #{spec}
+              td
+                ul.links.tightened
+                  for product in products
+                    li.item
+                      a(href="#") #{product}
+    if produces 
+      h3 Compatible consumers
+      table
+        caption #{product_name || title} can consume resources in accordance with the following OSLC specifications.
+        thead
+          tr
+            th(scope="col") Specification that #{product_name || 'PRODUCT'} can produce (output)
+            th(scope="col") Products that consume the specification
+        tbody
+          for products, spec in produces
+            tr
+              th(scope="row") 
+                a(href="#") #{spec}
+              td
+                ul.links.tightened
+                  for product in products
+                    li.item
+                      a(href="#") #{product}
+  .notice.warning
+    p We make no guarantees about compliance with any specification.

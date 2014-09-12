@@ -33,7 +33,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
       section.content 
         p #{listing_description}
     if has_menu
-      .menu#bartender.horizontal.bartender(data-bartender,data-controls="#{has_menu}")
+      #bartender.menu.horizontal.page.bartender(data-bartender,data-controls="#{has_menu}")
     .grid
       section#content(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
         if is_listing

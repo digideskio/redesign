@@ -135,8 +135,8 @@ $card-shadow-color: rgba(0,0,0,.10);
 //
 // Tables
 // 
-$table-header-bg: #fafafa;
-$table-border-color: #ccc;
+$table-header-bg: lighten( palette(gray,x-light), 5% );
+$table-border-color: palette(gray,light);
 
 
 //

@@ -16,7 +16,8 @@
   
   &.horizontal {
     .current {
-      box-shadow: inset 0 -2px 0 palette(gray,mid-dark);
+      background: none;
+      box-shadow: inset 0 -3px 0 palette(gray,mid-dark);
     }
   }
   
@@ -31,11 +32,7 @@
       align-items: center;
     }
   }
-  
-  &.bartender {
-    border-bottom: 1px solid palette(gray,light);
-  }
-  
+    
   &.bartender, 
   &.bartender > .items {
     .item {

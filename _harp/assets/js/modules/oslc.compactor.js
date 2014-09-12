@@ -9,11 +9,13 @@ var compactElements = function(){
   // First up, tables and pre blocks, which can be wrapped in a wrapper div
   copyBlocks.find('table, pre').each(function(){
     var 
-      $el = $(this),
-      copyWidth = $el.closest('.copy').width();
+      $el = $(this);
+      
+    // this prevents it from being wrapped multiple times
+    if ( $el.parent().is('.overflow-wrap') ) { return; }
     
-    if ( $el.width() > copyWidth ) {      
-      $el.wrap('<div class="overflow-wrap"></div>');
+    if ( $el.width() > $el.closest('.copy').width() ) {      
+      $el.wrap('<div class="overflow-wrap copy"></div>');
     }
     
   });
