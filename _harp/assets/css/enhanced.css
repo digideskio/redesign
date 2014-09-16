@@ -611,6 +611,23 @@
   word-wrap: break-word;
   word-break: break-all; }
 
+#compatibility-graphic-goes-here > svg {
+  border: 1px solid #ccc; }
+#compatibility-graphic-goes-here .node {
+  font: 13px sans-serif; }
+  #compatibility-graphic-goes-here .node circle {
+    fill: #fff;
+    stroke: #51c1d2;
+    stroke-width: 1.5px; }
+  #compatibility-graphic-goes-here .node text {
+    fill: #222; }
+  #compatibility-graphic-goes-here .node rect {
+    fill: rgba(255, 255, 255, 0.66); }
+#compatibility-graphic-goes-here .link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px; }
+
 .messages {
   position: fixed;
   top: 0;

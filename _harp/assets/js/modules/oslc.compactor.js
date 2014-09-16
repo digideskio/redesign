@@ -6,8 +6,8 @@ var compactElements = function(){
 
   var copyBlocks = $('.copy');
   
-  // First up, tables and pre blocks, which can be wrapped in a wrapper div
-  copyBlocks.find('table, pre').each(function(){
+  // First up, tables, svg, and pre blocks, which can be wrapped in a wrapper div
+  copyBlocks.find('table, pre, svg').each(function(){
     var 
       $el = $(this);
       

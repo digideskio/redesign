@@ -10,14 +10,17 @@ div
 h2 Compatibility
 
 if consumes || produces
+  span#product-name.hidden #{product_name}
   //div.menu.horizontal
     span.item.heading View
     a.item(href="#compatibility-graphic") Graphical
     a.item.current(href="#compatibility-tables") Tables &rsquo;n&rsquo; text
-  div.copy#compatibility-tables
+  .copy#compatibility-graphic
+    #compatibility-graphic-goes-here
+  .copy#compatibility-tables
     if consumes
       h3 Compatible providers
-      table
+      table#providers
         caption #{product_name || title} can <strong>consume</strong> resources in accordance with the following OSLC specifications.
         thead
           tr
@@ -32,11 +35,11 @@ if consumes || produces
                 ul.links.tightened
                   for product in products
                     li.item
-                      a(href="#") #{product}
+                      a(href="#",title="#{product} can output #{spec}, which #{product_name} can consume") #{product}
     if produces 
       h3 Compatible consumers
-      table
-        caption #{product_name || title} can consume resources in accordance with the following OSLC specifications.
+      table#consumers
+        caption #{product_name || title} can <strong>output</strong> resources in accordance with the following OSLC specifications.
         thead
           tr
             th(scope="col") Specification that #{product_name || 'PRODUCT'} can produce (output)

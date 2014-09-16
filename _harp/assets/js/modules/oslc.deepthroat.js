@@ -24,6 +24,8 @@ var DeepThroat = _.create(OSLC,{
     
     var
       $el = $(el),
+      skipIcon = $el.data('add-tooltip-icon') === false,
+      skipWrapperClass = $el.data('add-wrapper-class') === false,
       data = {
         header: $el.text(),
         tip: $el.attr('title') || $el.attr('data-tooltip') || 'You did not define tooltip text, silly!', 
@@ -33,8 +35,10 @@ var DeepThroat = _.create(OSLC,{
     ! $el.is(':tabbable') && $el.attr('tabindex','0');
     
     $el
-      .addClass('js-activates-tooltip tooltip-wrap')
-      .append(' <i class="icon grunticon-js-infotip"></i>') // TODO: make this optional?
+      .attr('class', function(){
+        return $el.attr('class') + ' js-activates-tooltip ' + (skipWrapperClass ? '' : 'tooltip-wrap');
+      })
+      .append( skipIcon ? '' : ' <i class="icon grunticon-js-infotip"></i>')
       .attr({
         'aria-describedby': this.id, 
         title: null });

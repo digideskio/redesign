@@ -1,0 +1,28 @@
+#compatibility-graphic-goes-here {
+  > svg { border: 1px solid #ccc; }
+  
+  .node {
+    font: 13px sans-serif;
+
+    circle {
+      fill: #fff;
+      stroke: palette(blue,mid-light);
+      stroke-width: 1.5px;
+    }
+    
+    text {
+      fill: palette(gray,x-dark);
+    }
+    
+    rect {
+      fill: rgba(255,255,255,.66);
+    }
+
+  }
+
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+}

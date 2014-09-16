@@ -457,6 +457,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_harp\/assets\/css\/_components\/_dendogram.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/css\/_components\/_dendogram.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/css\/css\/_dendogram.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_harp\/assets\/css\/_components\/_drop.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -3552,6 +3568,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/assets\/js\/modules\/oslc.softwareDendogram.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.softwareDendogram.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.softwareDendogram-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/js\/modules\/oslc.toggler.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -4608,6 +4635,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/icons\/build\/png\/meta-consumes.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 698,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/meta-consumes.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/meta-consumes.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/icons\/build\/png\/meta-downloads.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -4630,6 +4668,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/icons\/build\/png\/meta-organization.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 417,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/meta-organization.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/meta-organization.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/icons\/build\/png\/meta-presenters.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -4637,6 +4686,17 @@
 		"initialSize": 457,
 		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/meta-presenters.png",
 		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/meta-presenters.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/icons\/build\/png\/meta-produces.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 654,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/meta-produces.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/meta-produces.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -5453,6 +5513,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/samples\/software.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/samples\/software.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/samples\/specifications.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -5705,7 +5774,7 @@
 	"javascriptCreateSourceMap": 1,
 	"javascriptOutputStyle": 1,
 	"javascriptSyntaxCheckerStyle": 1,
-	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire, FastClick",
+	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire, FastClick, d3",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,
