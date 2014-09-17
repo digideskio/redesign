@@ -16,43 +16,38 @@ if consumes || produces
     a.item(href="#compatibility-graphic") Graphical
     a.item.current(href="#compatibility-tables") Tables &rsquo;n&rsquo; text
   .copy#compatibility-graphic
-    #compatibility-graphic-goes-here
-  .copy#compatibility-tables
-    if consumes
-      h3 Compatible providers
-      table#providers
-        caption #{product_name || title} can <strong>consume</strong> resources in accordance with the following OSLC specifications.
-        thead
-          tr
-            th(scope="col") Specification that #{product_name || 'PRODUCT'} can consume (input)
-            th(scope="col") Products that output the specification
-        tbody
-          for products, spec in consumes
-            tr
-              th(scope="row") 
-                a(href="#") #{spec}
-              td
-                ul.links.tightened
-                  for product in products
-                    li.item
-                      a(href="#",title="#{product} can output #{spec}, which #{product_name} can consume") #{product}
-    if produces 
-      h3 Compatible consumers
-      table#consumers
-        caption #{product_name || title} can <strong>output</strong> resources in accordance with the following OSLC specifications.
-        thead
-          tr
-            th(scope="col") Specification that #{product_name || 'PRODUCT'} can produce (output)
-            th(scope="col") Products that consume the specification
-        tbody
-          for products, spec in produces
-            tr
-              th(scope="row") 
-                a(href="#") #{spec}
-              td
-                ul.links.tightened
-                  for product in products
-                    li.item
-                      a(href="#") #{product}
+    
+  #compatibility-tables
+    .grid.pulled
+      if compatible_providers
+        .column.hand-full.desk-half
+          .copy
+            h3 Compatible providers
+      
+            p The following products can output one or more specifications that #{product_name} can consume.
+            
+            ul#providers
+              for specs, product in compatible_providers
+                li
+                  a(href="#",data-compatible-provider,data-specifications="#{specs.join('||')}", data-dendogram-tooltip="#{product} outputs #{specs.join(', ')}, which #{product_name} can consume") #{product}
+                  | &ensp;
+                  span(data-tooltip,title="#{product} outputs #{specs.join(', ')}, which #{product_name} can consume")
+                    span.sr-only Details
+
+      if compatible_consumers
+        .column.hand-full.desk-half
+          .copy
+            h3 Compatible consumers
+            
+            p The following products can consume one or more specifications that #{product_name} outputs.
+
+            ul#consumers
+              for specs, product in compatible_consumers
+                li
+                  a(href="#",data-compatible-consumer,data-specifications="#{specs.join('||')}", data-dendogram-tooltip="#{product} can consume #{specs.join(', ')}, which #{product_name} outputs") #{product}
+                  | &ensp;
+                  span(data-tooltip,title="#{product} can consume #{specs.join(', ')}, which #{product_name} outputs")
+                    span.sr-only Details
+      
   .notice.warning
     p We make no guarantees about compliance with any specification.

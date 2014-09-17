@@ -1252,6 +1252,8 @@ html {
 .menu .image {
   padding-right: 3px; }
 
+.copy .links {
+  padding-left: 0; }
 .links.tightened .item {
   margin-bottom: 5px;
   margin-bottom: 0.3125rem; }

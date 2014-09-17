@@ -5,14 +5,16 @@
 
 var
   productName = $('#product-name').text(),
-  providers = _.keys( _.groupBy( $('#providers').find('td a').toArray(), function(el){ return $(el).text(); }) ),
-  consumers = _.keys( _.groupBy( $('#consumers').find('td a'), function(el){ return $(el).text() } ) ),
+  providers = $('[data-compatible-provider]'),
+  consumers = $('[data-compatible-consumer]'),
   thisNode = {
-    'name': productName
+    name: productName,
+    title: null
   },
   links = [],
   providerNodes = [],
   consumerNodes = [],
+  compatibleNodes,
   allNodes,
   svg,
   margins = { top: 20, right: 20, bottom: 20, left: 20 },
@@ -20,14 +22,19 @@ var
   height
 ;
 
-_.each(providers, function(name){
-  var node = {
-    "name": name,
-    children: [{name: productName}],
-    'provider': true,
-    x: 0,
-    y: providerNodes.length * 30,
-  };
+providers.each(function(){
+  
+  var 
+    $el = $(this),
+    node = {
+      name: $el.text().trim(),
+      children: [thisNode],
+      title: $el.attr('data-dendogram-tooltip') || null,
+      specifications: $el.data('specifications').split('||'),
+      provider: true,
+      x: 0,
+      y: providerNodes.length * 40,
+    };
     
   links.push({
     source: node,
@@ -42,14 +49,18 @@ if ( ! providerNodes.length ) {
   width = width*2/3;
 }
 
-_.each(consumers, function(name){
-  var node = {
-    "name": name,
-    parent: productName,
-    'consumer': true,
-    x: width,
-    y: consumerNodes.length * 30,
-  };
+consumers.each(function(){
+  var 
+    $el = $(this),
+    node = {
+      name: $el.text().trim(),
+      parent: thisNode,
+      title: $el.attr('data-dendogram-tooltip') || null,
+      specifications: $el.data('specifications').split('||'),
+      consumer: true,
+      x: width,
+      y: consumerNodes.length * 40,
+    };
   
   links.push({
     source: thisNode,
@@ -60,13 +71,24 @@ _.each(consumers, function(name){
 
 });
 
-height = _.max([ consumers.length, providers.length ]) * 30;
+height = (_.max([ consumers.length, providers.length ])-1) * 40;
 thisNode.x = providers.length ? (width/2) : 0;
 thisNode.y = (height+ margins.top + margins.bottom)/2;
 
 allNodes = [].concat( providerNodes, thisNode, consumerNodes );
 
-svg = d3.select('#compatibility-graphic-goes-here').append('svg')
+compatibleNodes = [].concat( providerNodes, consumerNodes );
+
+var 
+  uniqueSpecs = _.uniq(_.flatten(compatibleNodes,'specifications')),
+  specClasses = _.reduce( uniqueSpecs.sort(), function(sum, spec, idx) {
+    sum[spec] = 'spec-'+idx;
+    return sum;
+  }, {});
+
+thisNode.specifications = uniqueSpecs;
+
+svg = d3.select('#compatibility-graphic').append('svg')
   .attr('width', width+ margins.left+margins.right)
   .attr('height', height+margins.top+margins.bottom)
   .append('g')
@@ -85,11 +107,32 @@ var
     .data(allNodes)
     .enter().append('g')
       .attr('class','node')
-      .attr('transform', function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+      .attr('transform', function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      // insert the circles
+      .each(function(d){
+        var g = d3.select(this);
+
+        _.forEach( d.specifications, function(spec,idx) {
+          var circle = 
+            g.append('circle')
+              .attr('r', 5 + (3*idx))
+              .attr('class', specClasses[spec] + (idx === 0 ? ' inner' : ''));
+              
+            // tooltip prep
+            if (idx+1 === d.specifications.length) {
+              circle
+                .attr('title', function(d) { return d.title || null; })
+                .attr('data-add-tooltip-icon','false')
+                .attr('data-add-wrapper-class','false');
+            }
+        });
+
+      });
       
-node.append('circle')
-  .attr('r',4.5);
   
+// activate tooltips
+$('circle[title]').deepthroat();
+
 node.append('text')
   .attr('dx', function(d) { return d.parent ? -8 : 8; })
   .attr('dy', 4)
@@ -115,13 +158,22 @@ $.Velocity.RegisterUI( 'animateStroke', {
   ]
 });
 
-$('.link').velocity( 'animateStroke', {
-  easing: 'ease-out-cubic',
-  duration: 2000,
-  delay: 1000,
-  drag: true,
-  stagger: 10
-});
+var animateStroke = function(){
+  $('.link').velocity( 'animateStroke', {
+    begin: function(){
+      d3.selectAll('.link')
+        .style('stroke-dashoffset', function(){ return this.getTotalLength(); });
+    },
+    easing: 'ease-out-cubic',
+    duration: 2000,
+    drag: true,
+    stagger: 10,
+    complete: function(){
+      setTimeout( animateStroke, 8000 );
+    }
+  });
+}
 
+setTimeout(animateStroke, 2000)
 
 }(jQuery, this, this.document, d3));

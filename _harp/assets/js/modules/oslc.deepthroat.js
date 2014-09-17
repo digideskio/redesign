@@ -35,8 +35,9 @@ var DeepThroat = _.create(OSLC,{
     ! $el.is(':tabbable') && $el.attr('tabindex','0');
     
     $el
-      .attr('class', function(){
-        return $el.attr('class') + ' js-activates-tooltip ' + (skipWrapperClass ? '' : 'tooltip-wrap');
+      .attr('class', function() {
+        // this hoop is required to add the hover classes to SVG elements
+        return ($el.attr('class') || '') + ' js-activates-tooltip ' + (skipWrapperClass ? '' : 'tooltip-wrap');
       })
       .append( skipIcon ? '' : ' <i class="icon grunticon-js-infotip"></i>')
       .attr({

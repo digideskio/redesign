@@ -1,21 +1,40 @@
-#compatibility-graphic-goes-here {
+#compatibility-graphic {
+  @extend %copy-margins;
+  
   > svg { border: 1px solid #ccc; }
   
   .node {
     font: 13px sans-serif;
 
     circle {
-      fill: #fff;
+      fill: rgba(255,255,255,0);
       stroke: palette(blue,mid-light);
-      stroke-width: 1.5px;
+      stroke-width: 3px;
+      
+      &.inner {
+        fill: #fff;
+      }
+      
+      // with tooltips
+      &[aria-describedby] {
+        cursor: help;
+      }
+      
+      // different colors for different specs
+      &.spec-1 { stroke: palette(gold,mid-light); }
+      &.spec-2 { stroke: palette(green); }
+      &.spec-3 { stroke: palette(red,mid-light); }
+      &.spec-4 { stroke: palette(gray,mid-light); }
+      
     }
     
     text {
       fill: palette(gray,x-dark);
+      text-shadow: #fff 1px 1px 0;
     }
     
     rect {
-      fill: rgba(255,255,255,.66);
+      fill: rgba(255,255,255,.4);
     }
 
   }

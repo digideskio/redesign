@@ -13,6 +13,10 @@
  * See http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
  *
  */
+#compatibility-graphic {
+  margin-bottom: 1.4375em;
+  margin-top: 0; }
+
 /*
  * The ever-important clearfix
  */
@@ -611,19 +615,32 @@
   word-wrap: break-word;
   word-break: break-all; }
 
-#compatibility-graphic-goes-here > svg {
+#compatibility-graphic > svg {
   border: 1px solid #ccc; }
-#compatibility-graphic-goes-here .node {
+#compatibility-graphic .node {
   font: 13px sans-serif; }
-  #compatibility-graphic-goes-here .node circle {
-    fill: #fff;
+  #compatibility-graphic .node circle {
+    fill: rgba(255, 255, 255, 0);
     stroke: #51c1d2;
-    stroke-width: 1.5px; }
-  #compatibility-graphic-goes-here .node text {
-    fill: #222; }
-  #compatibility-graphic-goes-here .node rect {
-    fill: rgba(255, 255, 255, 0.66); }
-#compatibility-graphic-goes-here .link {
+    stroke-width: 3px; }
+    #compatibility-graphic .node circle.inner {
+      fill: #fff; }
+    #compatibility-graphic .node circle[aria-describedby] {
+      cursor: help; }
+    #compatibility-graphic .node circle.spec-1 {
+      stroke: #ffd899; }
+    #compatibility-graphic .node circle.spec-2 {
+      stroke: #36ceb0; }
+    #compatibility-graphic .node circle.spec-3 {
+      stroke: #ee7e7c; }
+    #compatibility-graphic .node circle.spec-4 {
+      stroke: #aaa; }
+  #compatibility-graphic .node text {
+    fill: #222;
+    text-shadow: #fff 1px 1px 0; }
+  #compatibility-graphic .node rect {
+    fill: rgba(255, 255, 255, 0.4); }
+#compatibility-graphic .link {
   fill: none;
   stroke: #ccc;
   stroke-width: 1.5px; }
