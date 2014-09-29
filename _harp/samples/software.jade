@@ -15,9 +15,18 @@ if consumes || produces
     span.item.heading View
     a.item(href="#compatibility-graphic") Graphical
     a.item.current(href="#compatibility-tables") Tables &rsquo;n&rsquo; text
-  .copy#compatibility-graphic
-    
-  #compatibility-tables
+  #compatibility-graphical
+    .copy 
+      p 
+        i Hover over, focus, or tap any node for more details
+    .grid.pulled
+      .column.hand-full.workstation-major
+        #compatibility-graphic.copy
+      .column.hand-full.workstation-minor
+        strong Legend:
+        ul.legend.flat#compatibility-graphic-legend
+      
+  #compatibility-tabular
     .grid.pulled
       if compatible_providers
         .column.hand-full.desk-half

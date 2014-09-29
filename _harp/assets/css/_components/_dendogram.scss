@@ -1,7 +1,7 @@
 #compatibility-graphic {
   @extend %copy-margins;
   
-  > svg { border: 1px solid #ccc; }
+  svg { border: 1px solid #ccc; }
   
   .node {
     font: 13px sans-serif;
@@ -43,5 +43,32 @@
     fill: none;
     stroke: #ccc;
     stroke-width: 1.5px;
+    opacity: .33;
+    
+    &.directional {
+      opacity: 1;
+    }
   }
+  
+}
+
+.legend {
+  @extend %text-size-s;
+}
+
+.legend-node {
+  @extend %inline-block;
+  line-height: 1;
+  margin-right: .33em;
+  height: 13px;
+  width: 13px;
+  border: 3px solid palette(blue,mid-light);
+  border-radius: 50%;
+
+    // different colors for different specs
+    &.spec-1 { border-color: palette(gold,mid-light); }
+    &.spec-2 { border-color: palette(green); }
+    &.spec-3 { border-color: palette(red,mid-light); }
+    &.spec-4 { border-color: palette(gray,mid-light); }
+
 }

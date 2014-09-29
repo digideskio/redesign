@@ -15,7 +15,13 @@ var tooltipID = 0;
 
 var DeepThroat = _.create(OSLC,{
   name: 'DeepThroat',
-  init: function(el) {
+  
+  DEFAULTS: {
+    addTooltipIcon: true,
+    addWrapperClass: true
+  },
+  
+  init: function(el,options) {
     this.el = el;
     this.id = 'deepthroat-tooltip-'+tooltipID;
     tooltipID++;
@@ -24,8 +30,8 @@ var DeepThroat = _.create(OSLC,{
     
     var
       $el = $(el),
-      skipIcon = $el.data('add-tooltip-icon') === false,
-      skipWrapperClass = $el.data('add-wrapper-class') === false,
+      skipIcon = options.addTooltipIcon === false,
+      skipWrapperClass = options.addWrapperClass === false,
       data = {
         header: $el.text(),
         tip: $el.attr('title') || $el.attr('data-tooltip') || 'You did not define tooltip text, silly!', 
@@ -103,11 +109,22 @@ var DeepThroat = _.create(OSLC,{
 
 // jQuery plugin definition
 // -------------------------------
-$.fn.deepthroat = function(){
+$.fn.deepthroat = function(option){
   return this.each(function(){
-    $(this)
-      .data('deepthroat', _.create(DeepThroat))
-      .data('deepthroat').init(this);
+    var 
+      $this = $(this),
+      options = _.extend({}, DeepThroat.DEFAULTS, $this.data(), typeof option === 'object' && option);
+    
+    if ( ! _.has( $this.data('deepthroat'), 'el' ) ) {
+      $this
+        .data('deepthroat', _.create(DeepThroat))
+        .data('deepthroat').init(this, options);      
+    }
+    
+    if (typeof option === 'string') {
+      $this.data('deepthroat')[option]();
+    }
+    
   });
 };
 

@@ -98,9 +98,15 @@ svg.selectAll('.link')
   .data(links)
   .enter().append('path')
     .attr('class','link')
+    .attr('d', d3.svg.diagonal());
+
+// duplicate links that show directionality of connection
+svg.selectAll('.link.directional')
+  .data(links)
+  .enter().append('path')
+    .attr('class','link directional')
     .attr('d', d3.svg.diagonal())
-    .style('stroke-dasharray', function(){ return this.getTotalLength(); })
-    .style('stroke-dashoffset', function(){ return this.getTotalLength(); });
+    .style('stroke-dasharray', function(){ return this.getTotalLength(); });
     
 var 
   node = svg.selectAll('.node')
@@ -121,17 +127,24 @@ var
             // tooltip prep
             if (idx+1 === d.specifications.length) {
               circle
-                .attr('title', function(d) { return d.title || null; })
-                .attr('data-add-tooltip-icon','false')
-                .attr('data-add-wrapper-class','false');
+                .attr('title', function(d) { return d.title || null; });
             }
         });
 
       });
       
+
+$('#compatibility-graphic-legend')
+  .append( _.reduce( specClasses, function(sum, className, spec){
+    return sum + '<li><div class="flag"><div class="image"><span class="legend-node '+className+'"></span></div><div class="body">Supports '+spec+'</div></div></li>';
+  }, '') );
+
   
 // activate tooltips
-$('circle[title]').deepthroat();
+$('circle[title]').deepthroat({
+  addTooltipIcon: false,
+  addWrapperClass: false
+});
 
 node.append('text')
   .attr('dx', function(d) { return d.parent ? -8 : 8; })
@@ -159,17 +172,17 @@ $.Velocity.RegisterUI( 'animateStroke', {
 });
 
 var animateStroke = function(){
-  $('.link').velocity( 'animateStroke', {
+  $('.link.directional').velocity( 'animateStroke', {
     begin: function(){
-      d3.selectAll('.link')
+      d3.selectAll('.link.directional')
         .style('stroke-dashoffset', function(){ return this.getTotalLength(); });
     },
     easing: 'ease-out-cubic',
     duration: 2000,
     drag: true,
-    stagger: 10,
+    stagger: 20,
     complete: function(){
-      setTimeout( animateStroke, 8000 );
+      setTimeout( animateStroke, 2000 );
     }
   });
 }
