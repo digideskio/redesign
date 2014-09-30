@@ -2,59 +2,50 @@
   @extend %copy-margins;
   
   svg { border: 1px solid #ccc; }
-  
-  .node {
-    font: 13px sans-serif;
-
-    circle {
-      fill: rgba(255,255,255,0);
-      stroke: palette(blue,mid-light);
-      stroke-width: 3px;
-      
-      &.inner {
-        fill: #fff;
-      }
-      
-      // with tooltips
-      &[aria-describedby] {
-        cursor: help;
-      }
-      
-      // different colors for different specs
-      &.spec-1 { stroke: palette(gold,mid-light); }
-      &.spec-2 { stroke: palette(green); }
-      &.spec-3 { stroke: palette(red,mid-light); }
-      &.spec-4 { stroke: palette(gray,mid-light); }
-      
-    }
-    
-    text {
-      fill: palette(gray,x-dark);
-      text-shadow: #fff 1px 1px 0;
-    }
-    
-    rect {
-      fill: rgba(255,255,255,.4);
-    }
-
-  }
-
-  .link {
-    fill: none;
-    stroke: #ccc;
-    stroke-width: 1.5px;
-    opacity: .33;
-    
-    &.directional {
-      opacity: 1;
-    }
-  }
-  
 }
 
-.legend {
-  @extend %text-size-s;
+.node-link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+  opacity: .33;
+  
+  &.directional { opacity: 1; }
 }
+
+.node {
+  font: 13px sans-serif;
+
+  // with tooltips
+  &[aria-describedby] {
+    cursor: help;
+  }
+
+  circle {
+    fill: #fff;
+    stroke: palette(blue,mid-light);
+    stroke-width: 3px;
+          
+    // different colors for different specs
+    &.spec-1 { stroke: palette(gold,mid-light); }
+    &.spec-2 { stroke: palette(green); }
+    &.spec-3 { stroke: palette(red,mid-light); }
+    &.spec-4 { stroke: palette(gray,mid-light); }
+    
+  }
+  
+  text {
+    fill: palette(gray,x-dark);
+    text-shadow: #fff 1px 1px 0;
+  }
+  
+  rect {
+    fill: rgba(255,255,255,.4);
+  }
+
+}
+
+.legend { @extend %text-size-s; }
 
 .legend-node {
   @extend %inline-block;

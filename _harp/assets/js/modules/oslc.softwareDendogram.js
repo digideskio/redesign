@@ -94,17 +94,17 @@ svg = d3.select('#compatibility-graphic').append('svg')
   .append('g')
     .attr("transform", "translate("+margins.top+","+margins.left+")");
 
-svg.selectAll('.link')
+svg.selectAll('.node-link')
   .data(links)
   .enter().append('path')
-    .attr('class','link')
+    .attr('class','node-link')
     .attr('d', d3.svg.diagonal());
 
 // duplicate links that show directionality of connection
-svg.selectAll('.link.directional')
+svg.selectAll('.node-link.directional')
   .data(links)
   .enter().append('path')
-    .attr('class','link directional')
+    .attr('class','node-link directional')
     .attr('d', d3.svg.diagonal())
     .style('stroke-dasharray', function(){ return this.getTotalLength(); });
     
@@ -114,21 +114,16 @@ var
     .enter().append('g')
       .attr('class','node')
       .attr('transform', function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .attr('title', function(d){ return d.title || null; })
       // insert the circles
       .each(function(d){
         var g = d3.select(this);
 
         _.forEach( d.specifications, function(spec,idx) {
-          var circle = 
-            g.append('circle')
-              .attr('r', 5 + (3*idx))
-              .attr('class', specClasses[spec] + (idx === 0 ? ' inner' : ''));
-              
-            // tooltip prep
-            if (idx+1 === d.specifications.length) {
-              circle
-                .attr('title', function(d) { return d.title || null; });
-            }
+          g.append('circle')
+            .attr('r', 5)
+            .attr( 'cx',  idx*(d.parent ? -6 : 6) )
+            .attr('class', specClasses[spec]);              
         });
 
       });
@@ -141,14 +136,14 @@ $('#compatibility-graphic-legend')
 
   
 // activate tooltips
-$('circle[title]').deepthroat({
+$('.node[title]').deepthroat({
   addTooltipIcon: false,
   addWrapperClass: false
 });
 
 node.append('text')
-  .attr('dx', function(d) { return d.parent ? -8 : 8; })
-  .attr('dy', 4)
+  .attr('dx', function(d) { return (8 + (6 * (d.specifications.length-1))) * (d.parent ? -1 : 1); })
+  .attr('dy', 5)
   .style('text-anchor', function(d) { return d.parent ? 'end' : 'start' })
   .text(function(d) { return d.name })
   .each(function(d) {
@@ -172,9 +167,9 @@ $.Velocity.RegisterUI( 'animateStroke', {
 });
 
 var animateStroke = function(){
-  $('.link.directional').velocity( 'animateStroke', {
+  $('.node-link.directional').velocity( 'animateStroke', {
     begin: function(){
-      d3.selectAll('.link.directional')
+      d3.selectAll('.node-link.directional')
         .style('stroke-dashoffset', function(){ return this.getTotalLength(); });
     },
     easing: 'ease-out-cubic',
