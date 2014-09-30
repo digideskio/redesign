@@ -936,6 +936,7 @@
     "product_name": "Rational Team Concert",
     "menu_title": "Software",
     "has_secondary": 0,
+    "oneLastScript": "softwareDiagram.min.js", 
     "breadcrumbs": ["Home", "Software"],
     "meta_before_body": {
       "Produces": ["Change Management 2.0"],

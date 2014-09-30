@@ -76,7 +76,7 @@ OSLC.supportsAcceleratedTransitions = Modernizr && "csstransforms3d" in Moderniz
 // @codekit-append "./modules/oslc.bartender.js";
 // @codekit-append "./modules/oslc.deepthroat.js";
 // @codekit-append "./modules/oslc.sextant.js";
-// @codekit-append "./modules/oslc.softwareDendogram.js";
 // @codekit-append "./modules/oslc.nag.js";
 // @codekit-append "./modules/oslc.compactor.js";
 // @codekit-append "./modules/oslc.doubtfire.js";
+// @codekit-append "./modules/oslc.onelastthing.js";

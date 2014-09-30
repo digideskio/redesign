@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "17756",
+"creatorBuild": "17908",
 "files": {
 	"\/404.html": {
 		"fileType": 8192,
@@ -3249,6 +3249,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/assets\/js\/build\/oslc.softwareDendogram.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/build\/oslc.softwareDendogram.min.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/min\/oslc.softwareDendogram.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/js\/enhanced.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -3260,12 +3271,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/assets\/js\/lib\/d3.js": {
+	"\/_harp\/assets\/js\/lib\/d3.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/d3.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/d3-min.js",
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/d3.min.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/d3.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3535,6 +3546,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/assets\/js\/modules\/oslc.onelastthing.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.onelastthing.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.onelastthing-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/js\/modules\/oslc.prospectus.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -3570,12 +3592,12 @@
 		},
 	"\/_harp\/assets\/js\/modules\/oslc.softwareDendogram.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.softwareDendogram.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.softwareDendogram-min.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/softwareDiagram.min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},

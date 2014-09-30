@@ -9,6 +9,9 @@ meta(name="enhancedcss", content="#{ site_url }assets/css/build/enhanced.min.css
 meta(name="enhancedjs", content="#{ site_url }assets/js/build/enhanced.min.js")
 meta(name="grunticons", content="#{ site_url }assets/icons/build/icons.svg.css,#{ site_url }assets/icons/build/icons.png.css,#{ site_url }assets/icons/build/icons.fallback.css")
 
+if oneLastScript
+  meta(name="oneLastScript", content="#{ site_url }assets/js/build/#{oneLastScript}")
+
 if environment === 'production'
   include ./assets/css/build/critical.min.css
 else

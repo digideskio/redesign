@@ -1,13 +1,15 @@
-// see: http://bl.ocks.org/mbostock/4063570
+// @codekit-prepend "../lib/d3.min.js";
 
 ;(function ($, window, document, d3, undefined) {
 'use strict';
+
+// see: http://bl.ocks.org/mbostock/4063570
 
 var
   productName = $('#product-name').text(),
   providers = $('[data-compatible-provider]'),
   consumers = $('[data-compatible-consumer]'),
-  thisNode = {
+  productNode = {
     name: productName,
     title: null
   },
@@ -19,16 +21,14 @@ var
   svg,
   margins = { top: 20, right: 20, bottom: 20, left: 20 },
   width = 720,
-  height
-;
+  height;
 
 providers.each(function(){
-  
   var 
     $el = $(this),
     node = {
       name: $el.text().trim(),
-      children: [thisNode],
+      children: [productNode],
       title: $el.attr('data-dendogram-tooltip') || null,
       specifications: $el.data('specifications').split('||'),
       provider: true,
@@ -38,7 +38,7 @@ providers.each(function(){
     
   links.push({
     source: node,
-    target: thisNode
+    target: productNode
   });
   
   providerNodes.push(node);
@@ -54,7 +54,7 @@ consumers.each(function(){
     $el = $(this),
     node = {
       name: $el.text().trim(),
-      parent: thisNode,
+      parent: productNode,
       title: $el.attr('data-dendogram-tooltip') || null,
       specifications: $el.data('specifications').split('||'),
       consumer: true,
@@ -63,7 +63,7 @@ consumers.each(function(){
     };
   
   links.push({
-    source: thisNode,
+    source: productNode,
     target: node
   });
   
@@ -72,10 +72,10 @@ consumers.each(function(){
 });
 
 height = (_.max([ consumers.length, providers.length ])-1) * 40;
-thisNode.x = providers.length ? (width/2) : 0;
-thisNode.y = (height+ margins.top + margins.bottom)/2;
+productNode.x = providers.length ? (width/2) : 0;
+productNode.y = (height+ margins.top + margins.bottom)/2;
 
-allNodes = [].concat( providerNodes, thisNode, consumerNodes );
+allNodes = [].concat( providerNodes, productNode, consumerNodes );
 
 compatibleNodes = [].concat( providerNodes, consumerNodes );
 
@@ -86,7 +86,7 @@ var
     return sum;
   }, {});
 
-thisNode.specifications = uniqueSpecs;
+productNode.specifications = uniqueSpecs;
 
 svg = d3.select('#compatibility-graphic').append('svg')
   .attr('width', width+ margins.left+margins.right)
@@ -143,10 +143,10 @@ $('.node[title]').deepthroat({
 
 node.append('text')
   .attr('dx', function(d) { return (8 + (6 * (d.specifications.length-1))) * (d.parent ? -1 : 1); })
-  .attr('dy', 5)
-  .style('text-anchor', function(d) { return d.parent ? 'end' : 'start' })
-  .text(function(d) { return d.name })
-  .each(function(d) {
+  .attr('dy', 4)
+  .style('text-anchor', function(d) { return d.parent ? 'end' : 'start'; })
+  .text(function(d) { return d.name; })
+  .each(function() {
     var bbox = this.getBBox();
     var g = d3.select(this).node().parentNode;
     var padding = 2;
@@ -155,7 +155,7 @@ node.append('text')
       .attr('x', bbox.x - padding)
       .attr('y', bbox.y - padding)
       .attr('width', bbox.width + padding*2)
-      .attr('height', bbox.height + padding*2)
+      .attr('height', bbox.height + padding*2);
   });
 
 // see: http://css-tricks.com/svg-line-animation-works/
@@ -180,8 +180,8 @@ var animateStroke = function(){
       setTimeout( animateStroke, 2000 );
     }
   });
-}
+};
 
-setTimeout(animateStroke, 2000)
+setTimeout(animateStroke, 2000);
 
 }(jQuery, this, this.document, d3));
