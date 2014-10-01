@@ -1,11 +1,13 @@
+// see: http://bl.ocks.org/mbostock/4063570
 // @codekit-prepend "../lib/d3.min.js";
 
 ;(function ($, window, document, d3, undefined) {
 'use strict';
 
-// see: http://bl.ocks.org/mbostock/4063570
+$(document).ready(function(){
 
 var
+  nodeVSpacing = 30,
   productName = $('#product-name').text(),
   providers = $('[data-compatible-provider]'),
   consumers = $('[data-compatible-consumer]'),
@@ -33,7 +35,7 @@ providers.each(function(){
       specifications: $el.data('specifications').split('||'),
       provider: true,
       x: 0,
-      y: providerNodes.length * 40,
+      y: providerNodes.length * nodeVSpacing,
     };
     
   links.push({
@@ -59,7 +61,7 @@ consumers.each(function(){
       specifications: $el.data('specifications').split('||'),
       consumer: true,
       x: width,
-      y: consumerNodes.length * 40,
+      y: consumerNodes.length * nodeVSpacing,
     };
   
   links.push({
@@ -71,7 +73,7 @@ consumers.each(function(){
 
 });
 
-height = (_.max([ consumers.length, providers.length ])-1) * 40;
+height = (_.max([ consumers.length, providers.length ])-1) * nodeVSpacing;
 productNode.x = providers.length ? (width/2) : 0;
 productNode.y = (height+ margins.top + margins.bottom)/2;
 
@@ -167,21 +169,31 @@ $.Velocity.RegisterUI( 'animateStroke', {
 });
 
 var animateStroke = function(){
-  $('.node-link.directional').velocity( 'animateStroke', {
-    begin: function(){
-      d3.selectAll('.node-link.directional')
-        .style('stroke-dashoffset', function(){ return this.getTotalLength(); });
-    },
-    easing: 'ease-out-cubic',
-    duration: 2000,
-    drag: true,
-    stagger: 20,
-    complete: function(){
-      setTimeout( animateStroke, 2000 );
-    }
-  });
+  // only do this if the SVG is visible
+  if ( $('#compatibility-graphic').is(':visible') ) {
+  
+    $('.node-link.directional').velocity( 'animateStroke', {
+      begin: function(){
+        d3.selectAll('.node-link.directional')
+          .style('stroke-dashoffset', function(){ return this.getTotalLength(); });
+      },
+      easing: 'ease-out-cubic',
+      duration: 2000,
+      drag: true,
+      stagger: 20,
+      complete: function(){
+        setTimeout( animateStroke, 2000 );
+      }
+    });
+  
+  } else {
+    // otherwise check again in a while
+    setTimeout( animateStroke, 5000 );
+  }
 };
 
 setTimeout(animateStroke, 2000);
+
+});
 
 }(jQuery, this, this.document, d3));

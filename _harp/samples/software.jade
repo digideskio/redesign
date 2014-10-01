@@ -11,52 +11,53 @@ h2 Compatibility
 
 if consumes || produces
   span#product-name.hidden #{product_name}
-  //div.menu.horizontal
+  div.menu.horizontal.copy-spacing(data-manilla="true")
     span.item.heading View
-    a.item(href="#compatibility-graphic") Graphical
-    a.item.current(href="#compatibility-tables") Tables &rsquo;n&rsquo; text
-  #compatibility-graphical
-    .copy 
-      p 
-        i Hover over, focus, or tap any node for more details
-    .grid.pulled
-      .column.hand-full.workstation-major
-        #compatibility-graphic.copy
-      .column.hand-full.workstation-minor
-        strong Legend:
-        ul.legend.flat#compatibility-graphic-legend
+    a.item(href="#compatibility-graphical") Graphical
+    a.item(href="#compatibility-tabular") Tables &rsquo;n&rsquo; links
+  div.tabpanels  
+    #compatibility-graphical
+      .copy 
+        p 
+          i Hover over, focus, or tap any node for more details
+      .grid.pulled
+        .column.hand-full.workstation-major
+          #compatibility-graphic.copy
+        .column.hand-full.workstation-minor
+          strong Legend:
+          ul.legend.flat#compatibility-graphic-legend
       
-  #compatibility-tabular
-    .grid.pulled
-      if compatible_providers
-        .column.hand-full.desk-half
-          .copy
-            h3 Compatible providers
+    #compatibility-tabular
+      .grid.pulled
+        if compatible_providers
+          .column.hand-full.desk-half
+            .copy
+              h3 Compatible providers
       
-            p The following products can output one or more specifications that #{product_name} can consume.
+              p The following products can output one or more specifications that #{product_name} can consume.
             
-            ul#providers
-              for specs, product in compatible_providers
-                li
-                  a(href="#",data-compatible-provider,data-specifications="#{specs.join('||')}", data-dendogram-tooltip="#{product} outputs #{specs.join(', ')}, which #{product_name} can consume") #{product}
-                  | &ensp;
-                  span(data-tooltip,title="#{product} outputs #{specs.join(', ')}, which #{product_name} can consume")
-                    span.sr-only Details
+              ul#providers
+                for specs, product in compatible_providers
+                  li
+                    a(href="#",data-compatible-provider,data-specifications="#{specs.join('||')}", data-dendogram-tooltip="#{product} outputs #{specs.join(', ')}, which #{product_name} can consume") #{product}
+                    | &ensp;
+                    span(data-tooltip,title="#{product} outputs #{specs.join(', ')}, which #{product_name} can consume")
+                      span.sr-only Details
 
-      if compatible_consumers
-        .column.hand-full.desk-half
-          .copy
-            h3 Compatible consumers
+        if compatible_consumers
+          .column.hand-full.desk-half
+            .copy
+              h3 Compatible consumers
             
-            p The following products can consume one or more specifications that #{product_name} outputs.
+              p The following products can consume one or more specifications that #{product_name} outputs.
 
-            ul#consumers
-              for specs, product in compatible_consumers
-                li
-                  a(href="#",data-compatible-consumer,data-specifications="#{specs.join('||')}", data-dendogram-tooltip="#{product} can consume #{specs.join(', ')}, which #{product_name} outputs") #{product}
-                  | &ensp;
-                  span(data-tooltip,title="#{product} can consume #{specs.join(', ')}, which #{product_name} outputs")
-                    span.sr-only Details
-      
+              ul#consumers
+                for specs, product in compatible_consumers
+                  li
+                    a(href="#",data-compatible-consumer,data-specifications="#{specs.join('||')}", data-dendogram-tooltip="#{product} can consume #{specs.join(', ')}, which #{product_name} outputs") #{product}
+                    | &ensp;
+                    span(data-tooltip,title="#{product} can consume #{specs.join(', ')}, which #{product_name} outputs")
+                      span.sr-only Details
   .notice.warning
     p We make no guarantees about compliance with any specification.
+

@@ -3249,12 +3249,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/assets\/js\/build\/oslc.softwareDendogram.min.js": {
+	"\/_harp\/assets\/js\/build\/softwareDiagram.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/build\/oslc.softwareDendogram.min.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/min\/oslc.softwareDendogram.min-min.js",
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/build\/softwareDiagram.min.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/min\/softwareDiagram.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -3530,6 +3530,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.jquery.togglearia.js",
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.jquery.togglearia-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/assets\/js\/modules\/oslc.manilla.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.manilla.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.manilla-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

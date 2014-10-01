@@ -134,7 +134,7 @@ var Bartender = _.create(OSLC, {
     
     _.forEach(controls.split(','), this.buildControl, this);
     
-    this.els.menu.prospectus();
+    this.els.menu.prospectus( { menuRole: 'menubar' } );
   },
   
   buildControl: function(control) {

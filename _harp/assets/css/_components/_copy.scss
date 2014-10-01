@@ -47,6 +47,10 @@
   }
 }
 
+.copy-spacing {
+  @extend %copy-margins;
+}
+
 .copy {
   line-height: $copy-line-height-knee-up;
   

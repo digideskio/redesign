@@ -12,13 +12,15 @@ var Prospectus = _.create(OSLC, {
   DEFAULTS: {
     isDropdown: null,
     manageFocus: true,
+    menuRole: 'menu',
+    itemRole: 'menuitem'
   },
   
   init: function( menu, options ) {
     this.els = {menu:$(menu)};
     this.options = options;
     if (this.options.isDropdown) { this.isOpened = false; }
-
+    
     var 
       $menu = this.els.menu,
       menuItemID = 0;
@@ -27,7 +29,7 @@ var Prospectus = _.create(OSLC, {
     
     // set WAI-ARIA roles
     $menu.attr({
-      'role': this.options.manageFocus ? ($menu.hasClass('horizontal') ? 'menubar' : 'menu') : 'group',
+      'role': this.options.manageFocus ? this.options.menuRole : 'group',
       'data-prospectus': 'true',
       'id': $menu.attr('id') || 'prospectus-'+menuID
       })
@@ -35,7 +37,7 @@ var Prospectus = _.create(OSLC, {
     .end() // back to the $menu
       .find('a').addClass('js-prospectus-focusable')
         .attr({
-          role: this.options.manageFocus ? 'menuitem' : null,
+          role: this.options.manageFocus ? this.options.itemRole : null,
           'id':function(){
             menuItemID++;
             return this.id || 'prospectus-'+menuID+'-'+menuItemID;
