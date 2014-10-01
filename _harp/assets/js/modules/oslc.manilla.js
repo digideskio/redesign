@@ -38,11 +38,17 @@ var Manilla = _.create(OSLC,{
       current = tablist.find('[role="tab"]').first().addClass('current');
     }
     
+    // @todo: maybe move this into the jQuery plugin definition
     this.show( current.attr('href') );
+    
+    return this;
     
   },
   
   show: function(selector) {
+    
+    // @todo: it might be nice if this could accept a tab's index in addition to a selector
+    // eg this.show(0) -> "activate 1st tab"
     
     var
       newPanel = $(selector),
@@ -66,10 +72,12 @@ var Manilla = _.create(OSLC,{
     });
     
     oldPanel.attr('aria-hidden','true')
+      .velocity('stop')
       .velocity('transition.slideDownOut',{
         duration: 300,
         complete: function(){
           newPanel.attr('aria-hidden','false')
+            .velocity('stop')
             .velocity('transition.slideUpIn', 300);
         }
       });    
@@ -77,36 +85,54 @@ var Manilla = _.create(OSLC,{
 
 });
 
+/*
+  jQuery Plugin
+
+  Two uses: use it on a menu to initialize the whole tabular setup
+  This includes ARIA roles, keyboard navigation, etc
+  $('.menu').manilla();
+  
+  Or you can fire it on a single link to show that tabpanel immediately.
+  It'll set up the entire tablist for you if needed.
+  $('a.tab').manilla();
+*/
 $.fn.manilla = function() {
   return this.each(function() {
     
     var 
-      $this = $(this),
-      data = $this.data('manilla');
+      $el = $(this),
+      isTab = $el.is('[role="tab"]'),
+      tabList = isTab ? $el.closest('[data-manilla]') : $el,
+      manilla = tabList.data('manilla');
     
-    if ( ! _.has(data,'tablist') ) {
-      $this
+    // need to initialize the entire tablist
+    if ( ! _.has(manilla,'tablist') ) {
+      manilla = tabList
         .data('manilla', _.create(Manilla))
-        .data('manilla').init($this);
+        .data('manilla').init($el);
     }
+    
+    isTab && manilla.show( $el.attr('href') );
     
   });
 };
 
+/* DOM Ready */
 $(document).ready(function(){
+  // auto-initialize
   $('[data-manilla]').manilla();
+  
+  if ( location.hash && $(location.hash).is('[role="tabpanel"]') ) {
+    $( '#' + $(location.hash).attr('aria-labelledby') ).manilla();
+  }
+  
 });
 
+/* Click events */
 $(document).on('click.oslc.manilla', '[role="tab"]', function(e){
   e.preventDefault();
-  var 
-    tab = $(this),
-    manilla = tab.closest('[data-manilla]').data('manilla');
-    
-  if ( _.has(manilla, 'tablist') ) {
-    manilla.show( tab.attr('href') );
-  }
-
+  $(this).manilla();
 });
+
 
 })(jQuery, this, this.document);

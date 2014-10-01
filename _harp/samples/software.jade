@@ -11,12 +11,12 @@ h2 Compatibility
 
 if consumes || produces
   span#product-name.hidden #{product_name}
-  div.menu.horizontal.copy-spacing(data-manilla="true")
+  div.menu.horizontal.copy-spacing.enhanced-only(data-manilla="true")
     span.item.heading View
     a.item(href="#compatibility-graphical") Graphical
     a.item(href="#compatibility-tabular") Tables &rsquo;n&rsquo; links
   div.tabpanels  
-    #compatibility-graphical
+    #compatibility-graphical.enhanced-only
       .copy 
         p 
           i Hover over, focus, or tap any node for more details
