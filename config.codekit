@@ -3414,28 +3414,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/_harp\/assets\/js\/lib\/velocity.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/velocity.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/velocity-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/_harp\/assets\/js\/lib\/velocity.ui.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/velocity.ui.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/velocity.ui-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/_harp\/assets\/js\/modules\/oslc.bartender.js": {
 		"fileType": 64,
 		"ignore": 1,

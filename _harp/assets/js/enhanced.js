@@ -65,6 +65,11 @@ OSLC.supportsTransitions = Modernizr && "csstransitions" in Modernizr && Moderni
 //
 OSLC.supportsAcceleratedTransitions = Modernizr && "csstransforms3d" in Modernizr && Modernizr.csstransforms3d;
 
+// For browsers that do not support accelerated transitions, probably best to just do all animations instantly
+// http://julian.com/research/velocity/#mock
+// this overrides all durations and delays to 0ms
+if ( ! OSLC.supportsAcceleratedTransitions ) { $.Velocity.mock = true; }
+
 
 // @codekit-append "./modules/oslc.toggler.js";
 // @codekit-append "./modules/oslc.scrollTo.js";

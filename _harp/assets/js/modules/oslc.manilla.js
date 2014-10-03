@@ -47,7 +47,7 @@ var Manilla = _.create(OSLC,{
   
   show: function(selector) {
     
-    // @todo: it might be nice if this could accept a tab's index in addition to a selector
+    // @todo: it might be nice if this could accept a tab's index in addition to a tabpanel's selector
     // eg this.show(0) -> "activate 1st tab"
     
     var

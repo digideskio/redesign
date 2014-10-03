@@ -18,14 +18,19 @@ if consumes || produces
   div.tabpanels  
     #compatibility-graphical.enhanced-only
       .copy 
-        p 
-          i Hover over, focus, or tap any node for more details
       .grid.pulled
         .column.hand-full.workstation-major
           #compatibility-graphic.copy
         .column.hand-full.workstation-minor
-          strong Legend:
-          ul.legend.flat#compatibility-graphic-legend
+          div.legend
+            strong Legend:
+            p Hover over, focus, or tap any node for more details
+            p 
+              span(data-tooltip, title="Can output a specification that #{product_name} can consume") Compatible producers
+              |  on the left; 
+              span(data-tooltip, title="Can consume a specification that #{product_name} can output") compatible consumers
+              |  on the right.
+            ul.flat#compatibility-graphic-legend
       
     #compatibility-tabular
       .grid.pulled
