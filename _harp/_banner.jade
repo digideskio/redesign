@@ -1,12 +1,11 @@
 div
   a.sr-only.focusable(href="#main") Skip to main content
 header.banner.knee-down(role="banner")
-  .flag
-    .image
-      a#navToggle.btn(href="#nav", role="button", aria-label="Toggle Navigation") 
-        i.icon.grunticon-navtoggle-menu
-        span.text 
-          | Menu
+  .strip
+    a.toggle.image#navToggle(href="#nav", role="button", aria-label="Toggle Navigation") 
+      i.icon.grunticon-navtoggle-menu
+      span.text 
+        | Menu
     .body
       a.flag.image-link(href="#{ site_url }")
         .image

@@ -1,23 +1,42 @@
+$banner-padding-top: 4px;
+$banner-padding-bottom: 5px;
+
 .banner,
 .footer[role="contentinfo"] { 
   background-color: $header-and-nav-bg; 
-  @include rem(padding, 4px 8px 5px);
+}
+
+.toggle {
+  @extend %featurette;
+  text-decoration: none;
+  
+  .text {
+    color: #fff;
+    font-size: $font-size-xs;
+    @include rem(margin-top, 3px);
+  }
 }
 
 .banner {
-  border-top: 3px solid palette(gold, light);
+  //border-top: $header-and-nav-top-border;
+  background-color: $header-and-nav-bg;
+  box-shadow: 0 2px 3px rgba(0,0,0,.23);
+  z-index: 5;
   
-  .btn {
-    @extend %featurette;
-    
-    > .text {
-      font-size: $font-size-xs;
-      @include rem(margin-top, 3px);
+  .toggle {
+    @include rem(padding, $banner-padding-top 11px $banner-padding-bottom);
+    background-color: palette(gold);
+    border-right: 1px solid palette(gold,mid-dark);
+
+    &:hover,&:focus {
+      background-color: lighten( palette(gold), 5% );
     }
   }
   
   .image-link {
     @include rem(margin-left, 8px);
+    @include rem(padding-top, $banner-padding-top);
+    @include rem(padding-bottom, $banner-padding-bottom);
   }
   
   .logo-text { 
@@ -41,9 +60,12 @@ abbr.grunticon-wordmark-med {
   border-bottom: 0 !important;
 }
 
-
 .main {
   @include rem(padding, $font-size-xxs);
   
   background-color: $main-bg-color;
+}
+
+.footer {
+  @include rem(padding, 4px 8px 5px);
 }

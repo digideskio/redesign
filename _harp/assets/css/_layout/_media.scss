@@ -31,10 +31,12 @@
 // Requires display-table, so we're at IE8+
 //
 
-.flag {
+.flag,
+.strip {
   display: table;
   
-  > .image, 
+  > .image,
+  > .toggle,
   > .body {
     display: table-cell;
     vertical-align: middle;

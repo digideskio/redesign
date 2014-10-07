@@ -109,7 +109,8 @@ $grid-gutter: 2 * $base-font-size;
 // Header-nav settings
 //
 
-$header-and-nav-bg: #fff;
+$header-and-nav-top-border: 3px solid palette(gold);
+$header-and-nav-bg: lighten( palette(gold,x-light), 1%);
 $navburger-size: 20px;
 $navburger-transition-time: .15s;
 $navburger-rotation: 35deg;
@@ -121,7 +122,7 @@ $main-menu-slide-duration: .2s;
 $total-items: 7;
 $item-slide-duration: 0.04s;
 
-$main-bg-color: shade( palette(gray,x-light), 8% );
+$main-bg-color: #fff;
 
 //
 // Cards

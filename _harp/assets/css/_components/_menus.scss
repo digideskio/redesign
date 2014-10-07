@@ -22,20 +22,25 @@
   a, 
   .item {
     text-decoration: none;
-    transition: background-color .2s $ease-out-cubic; 
+    transition: background-color .2s $ease-out-cubic;
   }
-
-  .current a,
-  .item a:hover,
-  .item a:focus,
-  a.current,
-  a.item:hover,
-  a.item:focus {
-    background-color: $main-bg-color;    
-  }
-  
+    
   &.primary {
     background-color: $header-and-nav-bg;
+
+    .item a:hover,
+    .item a:focus,
+    a.item:hover,
+    a.item:focus {
+      background-color: lighten( palette(gold,light), 6% );
+    }
+
+    .current a,
+    a.current {
+      background-color: palette(gold,light) !important;
+      border-right: 4px solid palette(gold,mid-dark);
+    }
+
   }
     
   .heading {
@@ -44,26 +49,30 @@
     letter-spacing: 1px;
   }
 
-  .has-children .items {
-    border-left: $font-size-m/4 solid darken( palette(gray,dark), 8%);
+  .has-children .items .item {
+    padding-left: $font-size-l;
   }
   
   &.inverted {
     background-color: palette(gray,mid-dark);
     
     .item { color: palette(gray,x-light); }
-
-    .current a,
+    
     .item a:hover,
     .item a:focus,
-    a.current,
     a.item:hover,
     a.item:focus {
-      background-color: palette(gray,dark);
+      background-color: lighten( palette(gray,dark), 7% );
+    }
+
+    .current a,
+    a.current {
+      background-color: palette(gray,dark) !important;
+      border-right: 4px solid palette(gray,x-dark);
     }
     
     .heading {
-      border-bottom: 1px solid palette(red,mid-light);
+      border-bottom: 1px solid palette(gold);
     }
   } 
   
