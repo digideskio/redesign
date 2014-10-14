@@ -47,7 +47,7 @@
 /*
  * Positioning
  */
-.pos-rel {
+.pos-rel, .sticky-footer > .footer {
   position: relative; }
 
 .pos-abs {
@@ -1886,4 +1886,6 @@ abbr.grunticon-wordmark-med {
 
 .sticky-footer > .footer {
   padding: 4px 8px 5px;
-  padding: 0.25rem 0.5rem 0.3125rem; }
+  padding: 0.25rem 0.5rem 0.3125rem;
+  z-index: 2;
+  border-top: 1px solid #ffebc7; }

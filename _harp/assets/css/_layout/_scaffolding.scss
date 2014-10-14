@@ -27,7 +27,7 @@ $banner-padding-bottom: 4px;
   
   .toggle {
     @include rem(padding, $banner-padding-top 11px $banner-padding-bottom);
-    border-right: 1px solid darken( $header-and-nav-bg, 7% );;
+    border-right: 1px solid darken( $header-and-nav-bg, 7% );
 
     &:hover,&:focus {
       background-color: darken( $header-and-nav-bg, 4% );
@@ -164,4 +164,7 @@ abbr.grunticon-wordmark-med {
 
 .sticky-footer > .footer {
   @include rem(padding, 4px 8px 5px);
+  z-index: 2;
+  @extend %pos-rel;
+  border-top: 1px solid darken( $header-and-nav-bg, 7% );
 }
