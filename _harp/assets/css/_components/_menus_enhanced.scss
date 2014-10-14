@@ -1,7 +1,7 @@
 .menu {
   &.primary {
     @include respond-to( desk-up ) {
-      border-top: 3px solid palette(gold, light);
+      //border-top: $header-and-nav-top-border;
     }
   }
   

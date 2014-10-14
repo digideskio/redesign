@@ -1,121 +1,105 @@
 main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
-  .card.primary
-    header.header
-      if breadcrumbs
-        .breadcrumbs
-          for crumb, idx in breadcrumbs
-            a.breadcrumb(href="#") #{crumb}
-            &nbsp;/&nbsp;
-      #pagetitle
-        h1.title #{ title }
-    if date || tags
-      footer.deck
-        .grid.pulled.middle
-          .column.hand-full.knee-minor
-            span.byline
-              time(datetime="#{ new Date(date) }") #{date}
-              if author
-                |  by 
-                a(href="#{author.url}") #{author.name}
-          if tags || channel
-            .column.hand-full.knee-major
-              .tags
-                if tags
-                  for tag, idx in tags
-                    a.tag(href="#") #{tag}
-                if channel
-                  a.tag(href="#") 
-                    .flag
-                      .image
-                        i.icon(class="#{'grunticon-channel-' + channel.toLowerCase()}")
-                      .body #{channel}
-    if listing_description
-      section.content 
-        p #{listing_description}
-    if has_menu
-      #bartender.menu.horizontal.page.bartender(data-bartender,data-controls="#{has_menu}")
-    .grid
-      section#content(class="content #{is_listing ? 'cards' : '' } column hand-full #{relationships ? 'workstation-major' : ''}")
-        if is_listing
-          .listing
-            != yield
-        else
-          if meta_before_body
-            != partial('_slats', {meta_block : meta_before_body})
-          .copy
-            != yield
-          if meta_after_body
-            != partial('_slats', {meta_block : meta_after_body})
-      if relationships
-        aside.column.hand-full.workstation-minor.cards.relationships
-          .grid.blocks
-            for items, relationship in relationships
-              .column.hand-full.knee-half.workstation-full
-                .card
-                  header.header
-                    h3.title Related #{relationship}
-                  section.content
-                    ul.links
-                      for item in items
-                        li.item
-                          a(href="#{item.url || '#'}") #{item.title || item}
-    if next || previous || faux_paginate
-      nav.footer
-        if faux_paginate
-          ul.pagination
-            li.first
-              a(href="#")
-                .flag
-                  .image
-                    i.icon.grunticon-pagination-first
-                  .body First
-            li.previous.knee-up
-              a(href="#")
-                .flag
-                  .image
-                    i.icon.grunticon-pagination-previous
-                  .body Previous
-            li.page.knee-up
-              a(href="#") 5
-            li.page
-              a(href="#") 6
-            li.page.current
-              span.item 7
-            li.page
-              a(href="#") 8
-            li.page.knee-up
-              a(href="#") 9
-            li.next.knee-up
-              a(href="#") 
-                .flag.reversed
-                  .body Next
-                  .image
-                    i.icon.grunticon-pagination-next
-            li.last
-              a(href="#")
-                .flag.reversed
-                  .body Last
-                  .image
-                    i.icon.grunticon-pagination-last
-
-        if next || previous
-          .grid.collapsed.blocks
-            if previous
-              .column.hand-full.knee-half
-                a.sequence.prev(href="#") 
+  if breadcrumbs
+    nav.breadcrumbs
+      for crumb, idx in breadcrumbs
+        a.breadcrumb(href="#") #{crumb}
+        &nbsp;/&nbsp;
+  header.header
+    #pagetitle
+      h1.title #{ title }
+  if date || tags
+    footer.deck
+      .grid.pulled.middle
+        .column.hand-full.knee-minor
+          .byline
+            time(datetime="#{ new Date(date) }") #{date}
+            if author
+              |  by 
+              a(href="#{author.url}") #{author.name}
+        if tags || channel
+          .column.hand-full.knee-major
+            .tags
+              if tags
+                for tag, idx in tags
+                  a.tag(href="#") #{tag}
+              if channel
+                a.tag(href="#") 
                   .flag
                     .image
-                      i.icon.grunticon-previous
-                    .body
-                      span.label #{previous_label || 'Older'}
-                      span.title #{previous}
-            if next
-              .column.hand-full.knee-half
-                a.sequence.next(href="#") 
-                  .flag.reversed
-                    .body
-                      span.label #{next_label || 'Newer'}
-                      span.title #{next}
-                    .image
-                      i.icon.grunticon-next
+                      i.icon(class="#{'grunticon-channel-' + channel.toLowerCase()}")
+                    .body #{channel}
+  if listing_description
+    section.content 
+      p #{listing_description}
+  if has_menu
+    #bartender.menu.horizontal.page.bartender(data-bartender,data-controls="#{has_menu}")
+
+  section#content(class="content #{is_listing ? 'cards' : '' }")
+    if is_listing
+      .listing
+        != yield
+    else
+      if meta_before_body
+        != partial('_slats', {meta_block : meta_before_body})
+      if not_just_copy
+        != yield
+      else
+        .copy
+          != yield
+      if meta_after_body
+        != partial('_slats', {meta_block : meta_after_body})
+
+  if relationships
+    aside.cards.relationships
+      .grid.blocks
+        for items, relationship in relationships
+          .column.hand-full.knee-half
+            .card
+              header.header
+                h3.title Related #{relationship}
+              section.content
+                ul.links
+                  for item in items
+                    li.item
+                      a(href="#{item.url || '#'}") #{item.title || item}
+
+  if next || previous || faux_paginate
+    nav.footer
+      if faux_paginate
+        p.pagination Page <strong>7</strong> of 21
+        .grid.collapsed.blocks
+          .column.hand-half
+            a.sequence.prev(href="#") 
+              .flag
+                .image
+                  i.icon.grunticon-previous
+                .body
+                  span.title #{previous || 'Newer posts'}
+          .column.hand-half
+            a.sequence.next(href="#") 
+              .flag.reversed
+                .body
+                  span.title #{next || 'Older posts'}
+                .image
+                  i.icon.grunticon-next          
+      if next || previous
+        .grid.collapsed.blocks
+          if previous
+            .column.hand-full.knee-half
+              a.sequence.prev(href="#") 
+                .flag
+                  .image
+                    i.icon.grunticon-previous
+                  .body
+                    span.label #{previous_label || 'Older'}
+                    span.title #{previous}
+          if next
+            .column.hand-full.knee-half
+              a.sequence.next(href="#") 
+                .flag.reversed
+                  .body
+                    span.label #{next_label || 'Newer'}
+                    span.title #{next}
+                  .image
+                    i.icon.grunticon-next
   a.close-nav(role="button", aria-label="Close navigation")

@@ -129,7 +129,7 @@ $(document).ready(function(){
 });
 
 /* Click events */
-$(document).on('click.oslc.manilla', '[role="tab"]', function(e){
+$(document).on('click.oslc.manilla', '.item[role="tab"]', function(e){
   e.preventDefault();
   $(this).manilla();
 });

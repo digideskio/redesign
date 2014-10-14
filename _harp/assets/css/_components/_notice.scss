@@ -2,6 +2,7 @@
 .callout,
 .callout-box, /* legacy */
 .tip /* legacy */ {
+  @extend %readable;
   
   background-color: palette(gray,x-light);
   box-shadow: 4px 4px 0 palette(gray, light);

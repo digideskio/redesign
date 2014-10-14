@@ -117,6 +117,7 @@ var Whirligig = _.create( OSLC, {
       match: function(){
         // when you're out of the hand zone, undo the panel shifts
         whirligig.wrapper
+          .css('height','auto')
           .velocity('stop', true)
           .velocity({translateX: 0}, 125, [0.4,0,0.2,1]);
         
@@ -177,14 +178,18 @@ var Whirligig = _.create( OSLC, {
     this.wrapper
       .velocity('stop', true)
       .velocity( 
-      {translateX: '-' + (index*100) + '%'}, {
-        easing: [0.4,0,0.2,1], 
-        duration: 250,
-        complete: function(){
-          // When done, make all non-active panels invisible
-          // (this removes them from the tab order)
-          whirligig.panels.not($target).addClass('invisible');
-        }
+        {
+          translateX: '-' + (index*100) + '%',
+          height: $target.height()
+        }, 
+        {
+          easing: [0.4,0,0.2,1], 
+          duration: 250,
+          complete: function(){
+            // When done, make all non-active panels invisible
+            // (this removes them from the tab order)
+            whirligig.panels.not($target).addClass('invisible');
+          }
       } 
     );
     
@@ -212,12 +217,12 @@ var Whirligig = _.create( OSLC, {
   move_indicator: function(){
     var 
       $active = this.controls.filter('.' + this.classes.active),
-      width = $active.width() - ( $active.is(':first-child') ? 0 : 4 );
+      width = $active.width() - ( $active.is(':first-child') ? 0 : 3 );
     
     this.indicator.velocity('stop', true)
       .velocity({
         width: [width, [1,-1,0.6,1]], 
-        translateX: [$active.position().left, [0.4,0,0.2,1]]
+        translateX: [Math.round( $active.position().left ), [0.4,0,0.2,1]]
       }, 
       {duration: 300}
     );

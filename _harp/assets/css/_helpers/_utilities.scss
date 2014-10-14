@@ -73,9 +73,13 @@
 %featurette {
   text-align: center;
   
-  > .text {
+  .text {
     display: block;
   }
+}
+
+%readable {
+  max-width: 720px;
 }
 
 

@@ -1,3 +1,5 @@
+/*
+Considering replacing this with just _sequences. No one needs the ol' five-surrounding / first / last / prev / next link clutter 
 .pagination {
   @extend %list-reset;
   @extend %copy-links;
@@ -19,10 +21,7 @@
     @extend %block;
     padding: .5em .8125em;
   }
-  
-  > li:first-child a { padding-left: 0; }
-  > li:last-child a { padding-right: 0; }
-  
+    
   // the active one (not a link)
   .item {
     border-top: 2px solid palette(gray, dark);
@@ -44,4 +43,13 @@
   }
   
 
+}
+*/
+
+.pagination {
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+  font-style: italic;
+  @include font-size(s,1);
 }

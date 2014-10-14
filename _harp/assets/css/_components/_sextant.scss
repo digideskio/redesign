@@ -1,9 +1,16 @@
 .sextant-toggler {
-  margin-left: 10px;
-  text-align: center; 
+  @extend %button-reset;
+  text-align: center;
+  background-color: $main-header-bg;
+  border-left: 1px solid darken($main-header-bg, 5%);
+  
+  &:hover {
+    background-color: darken($main-header-bg, 2%);
+  }
   
   .text {
-    font-size: $font-size-xs;
+    color: $main-header-text-color;
+    @include font-size(xs,1);
     @include rem(margin-top, 3px);
   }
 }
@@ -26,6 +33,8 @@
   vertical-align: baseline; 
   margin-right: 2px;
 }
+
+.toc { font-size: $font-size-s; }
 
 .toc .item {
   border-left: 8px solid #ccc;
