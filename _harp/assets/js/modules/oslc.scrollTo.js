@@ -5,7 +5,7 @@
 if (! history.pushState) { return; }
 
 var 
-  validCallouts = _( $.Velocity.Sequences )
+  validCallouts = _( $.Velocity.Redirects )
     .keys()
     .filter( function(val) { return _.startsWith(val,'callout'); } )
     .map( function(val) { return val.split('.').pop(); } )

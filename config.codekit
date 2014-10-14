@@ -4161,7 +4161,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/base.js": {
 		"fileType": 64,
@@ -4226,7 +4226,7 @@
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/enhanced.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 2,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/assets\/js\/lib\/d3.min.js": {
@@ -4238,7 +4238,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/enquire.js": {
 		"fileType": 64,
@@ -4249,7 +4249,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/fastclick.js": {
 		"fileType": 64,
@@ -4260,7 +4260,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/jquery-2.1.1.js": {
 		"fileType": 64,
@@ -4271,7 +4271,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/jquery-custom.js": {
 		"fileType": 64,
@@ -4282,7 +4282,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/jquery.tabbable.focusable.js": {
 		"fileType": 64,
@@ -4293,7 +4293,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/jquery.tinysort.js": {
 		"fileType": 64,
@@ -4304,7 +4304,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/lodash.mobile.js": {
 		"fileType": 64,
@@ -4315,7 +4315,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/modernizr.js": {
 		"fileType": 64,
@@ -4326,7 +4326,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/polyfills\/classlist.js": {
 		"fileType": 64,
@@ -4337,7 +4337,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/tether.js": {
 		"fileType": 64,
@@ -4348,7 +4348,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/underscore.string.js": {
 		"fileType": 64,
@@ -4359,7 +4359,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/vein.js": {
 		"fileType": 64,
@@ -4370,7 +4370,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/velocity.js": {
 		"fileType": 64,
@@ -4381,7 +4381,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/lib\/velocity.ui.js": {
 		"fileType": 64,
@@ -4392,7 +4392,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/_harp\/assets\/js\/modules\/oslc.bartender.js": {
 		"fileType": 64,
@@ -4670,6 +4670,18 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/posts\/cruft.md",
 		"outputAbbreviatedPath": "\/_harp\/posts\/cruft.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/posts\/i-like-to-live-dangerously.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/posts\/i-like-to-live-dangerously.md",
+		"outputAbbreviatedPath": "\/_harp\/posts\/i-like-to-live-dangerously.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},

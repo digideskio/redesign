@@ -161,7 +161,7 @@ node.append('text')
   });
 
 // see: http://css-tricks.com/svg-line-animation-works/
-$.Velocity.RegisterUI( 'animateStroke', {
+$.Velocity.RegisterEffect( 'animateStroke', {
   defaultDuration: 2000,
   calls: [
     [{ 'stroke-dashoffset' : 0 }]
