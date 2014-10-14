@@ -2,6 +2,27 @@
   "index": {
     "title": "Posts"
   },
+  "i-like-to-live-dangerously": {
+    "title": "One less card", 
+    "date": "2014 October 14",
+    "description": "The consequences of removing one layer of wrapping",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    },
+    "relationships": {
+      "Issues": [
+        {
+          "title": "Create sample Software page",
+          "url": "https://github.com/OSLC/redesign/issues/21"
+        },
+        {
+          "title": "Modify layout to allow for large side-by-side elements",
+          "url": "https://github.com/OSLC/redesign/issues/24"
+        }
+      ]
+    }
+  },
   "news-and-listings": {
     "title": "Samples: news post and news listings",
     "date": "2014 May 12",

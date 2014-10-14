@@ -8,15 +8,17 @@
 .icon{ display: inline-block; vertical-align: baseline; zoom: 1; }
 .menu .items{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; list-style-type: none; list-style-position: initial; list-style-image: initial; }
 
+
 .icon{ vertical-align: top; }
-.banner .btn{ text-align: center; }
-.banner .btn > .text{ display: block; }
+.toggle{ text-align: center; }
+.toggle .text{ display: block; }
+.copy li, .copy > p{ max-width: 720px; }
 .ir{ text-indent: 100%; white-space: nowrap; overflow-x: hidden; overflow-y: hidden; }
 .sr-only{ border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; clip: rect(0px 0px 0px 0px); height: 1px; margin-top: -1px; margin-right: -1px; margin-bottom: -1px; margin-left: -1px; overflow-x: hidden; overflow-y: hidden; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; position: absolute; width: 1px; }
 
 
 
- .card > .header .title{ font-size: 1.1875rem; line-height: 1.21053; }
+
 
 
 .copy > h2{ font-size: 2rem; line-height: 1.1875; }
@@ -81,22 +83,6 @@ abbr[title]{ border-bottom-width: 1px; border-bottom-style: dotted; border-botto
 
 
 
-.grid{ font-family: FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif; letter-spacing: -0.31em; word-spacing: -0.43em; }
-
-
-
-
-
-
-.column{ font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; letter-spacing: normal; word-spacing: normal; display: inline-block; zoom: 1; vertical-align: top; padding-left: 1rem; padding-right: 1rem; }
-
-
-
-
-
-
-
-.hand-full{ width: 100%; }
 
 
 
@@ -105,13 +91,29 @@ abbr[title]{ border-bottom-width: 1px; border-bottom-style: dotted; border-botto
 
 
 
- .no-js .desk-up{ display: none !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .body{ overflow-x: hidden; overflow-y: hidden; zoom: 1; }
 
 
-.flag{ display: table; }
-.flag > .image, .flag > .body{ display: table-cell; vertical-align: middle; }
-.flag > .body{ width: 100%; }
+.flag, .strip{ display: table; }
+.flag > .image, .flag > .body, .strip > .image, .strip > .toggle, .strip > .body{ display: table-cell; vertical-align: middle; }
+.flag > .body, .strip > .body{ width: 100%; }
 
 
 
@@ -143,13 +145,23 @@ html{ font-size: 100%; }
 .copy{ line-height: 1.4375; }
 .copy > :first-child{ margin-top: 0px; }
 
- .copy > h2{ font-weight: 400; margin-top: 0.71em; margin-bottom: 0.6em; border-left-width: 8px; border-left-style: solid; border-left-color: initial; padding-left: 8px; margin-left: -16px; }
+ .copy > h2{ font-weight: 400; margin-top: 0.71em; margin-bottom: 0.6em; border-left-width: 8px; border-left-style: solid; border-left-color: initial; padding-left: 3px; margin-left: -11px; }
+@media only screen and (min-width: 64.0625em){
+ .copy > h2{ padding-left: 8px; margin-left: -16px; }
+}
+
+
+
+
 
 
 
 
 
 .copy > h2{ border-top-color: rgb(0, 131, 163); border-right-color: rgb(0, 131, 163); border-bottom-color: rgb(0, 131, 163); border-left-color: rgb(0, 131, 163); }
+
+
+
 
 
 .copy > ul{ padding-left: 1.5rem; }
@@ -163,9 +175,10 @@ html{ font-size: 100%; }
 .menu .item.flush{ padding-left: 0px; padding-right: 0px; }
 
 .menu a, .menu .item{ text-decoration: none; -webkit-transition-property: background-color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
-.menu .current a{ background-color: rgb(216, 216, 216); }
-.menu.primary{ background-color: rgb(255, 255, 255); }
+.menu.primary{ background-color: rgb(255, 248, 235); }
+.menu.primary .item{ color: rgb(102, 102, 102); }
 
+.menu.primary .current a{ background-color: rgb(255, 237, 204) !important; }
 
 
 
@@ -180,12 +193,8 @@ html{ font-size: 100%; }
 
 
 
-.btn{ display: inline-block; zoom: 1; vertical-align: middle; cursor: pointer; text-decoration: none !important; white-space: nowrap; line-height: 1; padding-top: 0.3125em; padding-right: 0.5em; padding-bottom: 0.3125em; padding-left: 0.5em; border-top-left-radius: 4px 4px; border-top-right-radius: 4px 4px; border-bottom-right-radius: 4px 4px; border-bottom-left-radius: 4px 4px; }
-.btn > *{ pointer-events: none; }
-.btn{ color: rgb(255, 255, 255); border-bottom-style: solid; border-bottom-width: 3px; background-color: rgb(204, 204, 204); border-bottom-color: rgb(163, 163, 163); }
 
 
-.btn > .text{ vertical-align: middle; }
 
 
 
@@ -220,13 +229,9 @@ html{ font-size: 100%; }
 
 
 
-.card{ background-color: rgb(255, 255, 255); border-top-left-radius: 4px 4px; border-top-right-radius: 4px 4px; border-bottom-right-radius: 4px 4px; border-bottom-left-radius: 4px 4px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgb(217, 217, 217); border-bottom-color: rgb(217, 217, 217); border-left-color: rgb(217, 217, 217); border-top-style: none; border-top-width: initial; border-top-color: initial; background-clip: padding-box; }
-.card > .header{ border-top-left-radius: 4px 4px; border-top-right-radius: 4px 4px; border-bottom-right-radius: 0px 0px; border-bottom-left-radius: 0px 0px; border-top-width: 3px; border-top-style: solid; border-top-color: rgb(102, 102, 102); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 0.625rem; padding-right: 1rem; padding-bottom: 0.6875rem; padding-left: 1rem; }
-.card > .header .title{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-weight: bold; line-height: 1.25; color: rgb(102, 102, 102); }
 
 
 
-.card .content{ padding-top: 0.8125rem; padding-right: 1rem; padding-bottom: 0.8125rem; padding-left: 1rem; }
 
 
 
@@ -237,7 +242,6 @@ html{ font-size: 100%; }
 
 
 
-.card.primary{ margin-bottom: 1.1875rem; }
 
 
 
@@ -276,16 +280,37 @@ html{ font-size: 100%; }
 
 
 
+.banner{ background-color: rgb(255, 248, 235); }
+.toggle{ text-decoration: none; -webkit-transition-property: background-color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
+.toggle .text{ color: rgb(102, 102, 102); font-size: 11px; line-height: 1; margin-top: 0.25rem; }
+.banner{ background-color: rgb(255, 248, 235); box-shadow: rgba(0, 0, 0, 0.226562) 0px 2px 3px; z-index: 5; }
+.banner .toggle{ padding-top: 0.25rem; padding-right: 0.6875rem; padding-bottom: 0.25rem; padding-left: 0.6875rem; border-right-width: 1px; border-right-style: solid; border-right-color: rgb(255, 235, 199); }
 
-
-
-
-.banner{ background-color: rgb(255, 255, 255); padding-top: 0.25rem; padding-right: 0.5rem; padding-bottom: 0.3125rem; padding-left: 0.5rem; }
-.banner{ border-top-width: 3px; border-top-style: solid; border-top-color: rgb(255, 226, 179); }
-.banner .btn > .text{ font-size: 11px; margin-top: 0.1875rem; }
-.banner .image-link{ margin-left: 0.5rem; }
+.banner .image-link{ margin-left: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
 .banner .logo-text{ margin-left: 0.625rem; }
 .banner .project-name{ margin-top: 0.125rem; }
 .logo-text{ display: block; color: rgb(102, 102, 102); }
 abbr.grunticon-wordmark-small, abbr.grunticon-wordmark-med{ border-bottom-width: 0px !important; border-bottom-style: initial !important; border-bottom-color: initial !important; }
-.main{ padding-top: 0.5rem; padding-right: 0.5rem; padding-bottom: 0.5rem; padding-left: 0.5rem; background-color: rgb(216, 216, 216); }
+ .main > .header .title, .main > .content{ padding-left: 11px; padding-right: 11px; }
+@media only screen and (min-width: 64.0625em){
+ .main > .header .title, .main > .content{ padding-left: 16px; padding-right: 16px; }
+}
+
+.main{ background-color: rgb(255, 255, 255); }
+.main > .header{ background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(242, 242, 242); }
+.main > .header .title{ padding-top: 11px; padding-bottom: 11px; }
+.main > .header .title{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-weight: normal; font-size: 1.6875rem; line-height: 1.1; }
+@media only screen and (min-width: 64.0625em){
+.main > .header .title{ font-size: 2rem; line-height: 1.1875; }
+}
+
+.main > .content{ padding-top: 13px; padding-bottom: 13px; }
+
+
+
+
+
+
+
+
+
