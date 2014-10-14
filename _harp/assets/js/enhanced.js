@@ -27,6 +27,7 @@ var OSLC = {
     'hand-only': "only screen and (max-width: 40em)",
     'knee-up': "only screen and (min-width:40.0625em)",
     'knee-only': "only screen and (min-width:40.0625em) and (max-width:64em)",
+    'knee-down': "only screen and (max-width:64em)",
     'desk-up': "only screen and (min-width:64.0625em)",
     'desk-only': "only screen and (min-width:64.0625em) and (max-width:90em)",
     'workstation-up': "only screen and (min-width:90.0625em)",
@@ -57,7 +58,6 @@ var OSLC = {
 OSLC.supportsTransitions = Modernizr && "csstransitions" in Modernizr && Modernizr.csstransitions && {
   end: OSLC.transitionEventNames[ Modernizr.prefixed('transition') ]
 };
-
 
 //
 // Return whether or not CSS transitions are GPU-accelerated

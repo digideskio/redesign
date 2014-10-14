@@ -18,28 +18,6 @@ var Doubtfire = _.create(OSLC, {
   
   bindings: function(){
   
-    var checkov = this.modules.checkov;
-    var whirligig = this.els.nav.data('whirligig');
-    var doubtfire = this;
-    
-    if ( checkov && whirligig ) {
-     
-      console.log('DOUBTFIRE: Initialize Checkov + Whirligig interactions');
-
-      // This is the important one:
-      // When the carousel changes, match the preset slide distance to the .active panel
-      this.els.nav.on('slideStart', function(e) {
-        doubtfire.setCheckovHandSlideDistance( e.relatedTarget );
-        
-        // If checkov is open, do the appropriate shift
-        checkov.isOpen() && checkov._doAnimations();
-      });
-      
-      enquire.register(this.mediaQueries['hand-only'], function(){
-        doubtfire.setCheckovHandSlideDistance();
-      });
-    }
-  
   },
   
   setCheckovHandSlideDistance: function(activePanel) {

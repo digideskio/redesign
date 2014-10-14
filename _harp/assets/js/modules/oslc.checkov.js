@@ -68,47 +68,18 @@ var Checkov = _.create( OSLC, {
         checkov.toggle();
       });
     
-    enquire.register(this.mediaQueries['hand-only'], {
+    enquire.register(this.mediaQueries['knee-down'], {
       match: function(){
         checkov.moves = {
-          main: {
-            props: { 
-              translateY: checkov.els.nav.height(), 
-              translateX: 0,
-              translateZ: 0
-            }
-          },
-          nav: {
-            props: {
-              translateX: 0, 
-              translateZ: 0
-            },
-            options: {duration: 100}
-          }
-        };
-        
-        checkov.isOpen() && checkov._doAnimations();
-      }
-    })
-    .register(this.mediaQueries['knee-only'], {
-      match: function(){
-        checkov.moves = {
-          main: {
-            props: {
-              translateY: 0,
-              translateX: checkov.els.nav.width(),
-              translateZ: 0,
-            }
-          },
           nav: {
             props: { 
               translateX: '100%',
               translateZ: 0
             },
-            options: {'delay': 125}
+            options: {duration: 175}
           }
         };
-
+        
         checkov.isOpen() && checkov._doAnimations();
       }
     })

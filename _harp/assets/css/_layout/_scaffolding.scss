@@ -1,5 +1,5 @@
 $banner-padding-top: 4px;
-$banner-padding-bottom: 5px;
+$banner-padding-bottom: 4px;
 
 .banner,
 .footer[role="contentinfo"] { 
@@ -9,11 +9,13 @@ $banner-padding-bottom: 5px;
 .toggle {
   @extend %featurette;
   text-decoration: none;
+  transition: background-color .2s $ease-out-cubic;
   
   .text {
-    color: #fff;
+    color: $header-and-nav-text-color;
     font-size: $font-size-xs;
-    @include rem(margin-top, 3px);
+    line-height: 1;
+    @include rem(margin-top, 4px);
   }
 }
 
@@ -25,11 +27,10 @@ $banner-padding-bottom: 5px;
   
   .toggle {
     @include rem(padding, $banner-padding-top 11px $banner-padding-bottom);
-    background-color: palette(gold);
-    border-right: 1px solid palette(gold,mid-dark);
+    border-right: 1px solid darken( $header-and-nav-bg, 7% );;
 
     &:hover,&:focus {
-      background-color: lighten( palette(gold), 5% );
+      background-color: darken( $header-and-nav-bg, 4% );
     }
   }
   
@@ -50,7 +51,7 @@ $banner-padding-bottom: 5px;
 
 .logo-text {
   display: block;
-  color: palette(gray, mid-dark);
+  color: $header-and-nav-text-color;
 }
 
 .project-name { @extend %block; }
@@ -60,12 +61,107 @@ abbr.grunticon-wordmark-med {
   border-bottom: 0 !important;
 }
 
-.main {
-  @include rem(padding, $font-size-xxs);
+.breadcrumbs,
+.main > .header .title,
+.main > .header .toggle,
+.deck,
+.main > .content {
+  padding-left: $main-padding-sides;
+  padding-right: $main-padding-sides;
   
-  background-color: $main-bg-color;
+  @include respond-to(desk-up) {
+    padding-left: $main-padding-sides-large;
+    padding-right: $main-padding-sides-large;
+  }
 }
 
-.footer {
+// In a few places, this shifting body margin means you have to adjust .grid.pulled spacing
+@include respond-to( knee-down ) {
+  .deck,
+  .listing {
+    > .grid.pulled {
+      margin-left: -$main-padding-sides;
+      margin-right: -$main-padding-sides;
+      > .column {
+        padding-left: $main-padding-sides;
+        padding-right: $main-padding-sides;
+      }
+    }  
+  }
+}
+
+
+.main {
+  background-color: $main-bg-color;
+  
+  > .header {
+    background-color: $main-header-bg;
+    color: $main-header-text-color;
+    border-bottom: 1px solid darken($main-header-bg, 5%);
+    
+    .title,
+    .toggle {
+      padding-top: $main-padding-sides;
+      padding-bottom: $main-padding-sides;
+    }
+  
+    .title { 
+      margin: 0;
+      font-weight: normal;
+      @include font-size(xxl, 1.1); 
+      
+      @include respond-to(desk-up) {
+        @include text-size-xxxl;
+      }
+    }
+  }
+  
+  > .deck .byline { font-size: $font-size-s; }
+  
+  > .content {
+    padding-top: $font-size-s;
+    padding-bottom: $font-size-s;
+  }
+  
+  > .menu {
+    padding-left: $font-size-xxxs;
+    padding-right: $font-size-xxxs;
+  }
+  
+  > .footer {
+    background-color: tint(palette(gray, x-light), 60%);
+    padding-bottom: $font-size-xxxs;
+  }
+  
+}
+
+.deck {
+  color: palette(gray, mid-dark);
+  line-height: 1;
+  padding-top: 0;
+  @include rem(padding-bottom, $font-size-s);
+}
+
+.byline { margin-top: 8px; }
+.tags {margin-top: 6px;}
+
+.flexbox { 
+
+  .meta,
+  .tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .meta .byline { flex: 1 1 auto; }
+  
+  .tags .tag { flex-shrink: 0; }
+
+}
+
+.relationships { @include rem(padding, 13px 0); }
+
+.sticky-footer > .footer {
   @include rem(padding, 4px 8px 5px);
 }

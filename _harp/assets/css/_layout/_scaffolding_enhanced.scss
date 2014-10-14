@@ -2,9 +2,6 @@
 .off-canvas-wrap {
   @include respond-to(knee-up) {
     position: relative;
-    // Hmm I don't believe I need this
-    // Also, this is quite damaging if tables or other large bits in the main copy get too large
-    //overflow: hidden; 
   }
 }
 
@@ -24,16 +21,20 @@
   }
 }
 
-.nav {
+.enhanced .nav {
 
   // Remove from flow
   @extend %pos-abs;
+  z-index: 2;
+
   @include respond-to(hand-only) {
-    z-index: 1;
-    left: 0;
-    right: 0; 
+    width: 100%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   }  
+  
+  @include respond-to(knee-down) {
+    right: 100%;
+  }
           
   @include respond-to(knee-up) {
     
@@ -42,12 +43,11 @@
     
     &.has-secondary { width: $both-menus-width; }
     
-    // remove from flow, take up full height
+    // still removed from flow, take up full height
     top: 0;
     bottom: 0;
-    z-index: 2;
     background-color: $header-and-nav-bg;
-    box-shadow: 2px 0 4px rgba(0,0,0,.2);
+    box-shadow: 2px 0 3px rgba(0,0,0,.2);
     
     // handle the possibility that the content isn't big enough for the nav
     overflow: auto; 
@@ -69,11 +69,7 @@
     }
     
   }
-  
-  @include respond-to(knee-only) {
-    right: 100%;
-  }
-    
+      
   .logo-text {
     text-align: center;
     @include rem(margin-top, $font-size-xs);
@@ -105,9 +101,6 @@
 
   @include respond-to(desk-up) {
 
-    @include rem(padding-left, $font-size-l);
-    @include rem(padding-right, $font-size-l);
-    
     margin-left: $main-menu-width;
     &.has-secondary {
       margin-left: $both-menus-width;

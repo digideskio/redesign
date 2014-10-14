@@ -9,6 +9,10 @@
     background-color: tint(palette(blue,x-light),50%);
   }
   
+  &.prev {
+    border-right: 1px solid palette(gray, x-light);
+  }
+  
   &.prev .body {
     padding-left: 8px;  
   }

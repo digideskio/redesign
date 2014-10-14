@@ -7,6 +7,7 @@
 // @codekit-prepend "./lib/jquery-custom.js";
 // @codekit-prepend "./lib/jquery.tinysort.js";
 // @codekit-prepend "./lib/jquery.tabbable.focusable.js";
+// @codekit-prepend "../bower_components/StickyTableHeaders/js/jquery.stickytableheaders.js";
 // @codekit-prepend "./lib/velocity.js";
 // @codekit-prepend "./lib/velocity.ui.js";
 // @codekit-prepend "./lib/tether.js";

@@ -2,10 +2,11 @@
   @extend %text-size-s;  
   @extend %copy-links;
 
-  padding-top: 2px;
+  padding-top: $font-size-xxs;
+  padding-bottom: $font-size-xxxs;
+  background-color: darken($main-header-bg, 2%);
+  border-bottom: 1px solid darken($main-header-bg, 5%);
 
-  a {
-    text-decoration: none;
-  }
+  a { text-decoration: none; }
   
 }

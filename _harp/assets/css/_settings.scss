@@ -110,19 +110,20 @@ $grid-gutter: 2 * $base-font-size;
 //
 
 $header-and-nav-top-border: 3px solid palette(gold);
-$header-and-nav-bg: lighten( palette(gold,x-light), 1%);
-$navburger-size: 20px;
-$navburger-transition-time: .15s;
-$navburger-rotation: 35deg;
-
+$header-and-nav-bg: lighten( palette(gold,x-light), 1% );
+$header-and-nav-text-color: palette(gray, mid-dark);
 $main-menu-width: 216px;
 $secondary-menu-width: 180px;
 $both-menus-width: $main-menu-width + $secondary-menu-width;
-$main-menu-slide-duration: .2s;
-$total-items: 7;
-$item-slide-duration: 0.04s;
 
+//
+// Main content
+//
 $main-bg-color: #fff;
+$main-padding-sides: $font-size-xs;
+$main-padding-sides-large: $font-size-m;
+$main-header-bg: #fff;
+$main-header-text-color: palette(gray,dark);
 
 //
 // Cards

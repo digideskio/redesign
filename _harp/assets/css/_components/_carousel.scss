@@ -1,6 +1,15 @@
 @include respond-to(hand-only) {
 
-  .window { overflow: hidden; }
+  .window { 
+    overflow: hidden; 
+    
+    // http://lea.verou.me/css3patterns/#weave
+    background:
+    linear-gradient(135deg, palette(gray,mid-dark) 22px, palette(gray,dark) 22px, palette(gray,dark) 24px, transparent 24px, transparent 67px, palette(gray,dark) 67px, palette(gray,dark) 69px, transparent 69px),
+    linear-gradient(225deg, palette(gray,mid-dark) 22px, palette(gray,dark) 22px, palette(gray,dark) 24px, transparent 24px, transparent 67px, palette(gray,dark) 67px, palette(gray,dark) 69px, transparent 69px) 0 64px;
+    background-size: 64px 128px;
+    background-color: palette(gray,mid-dark);
+  }
 
   // Aligning panels with inline-block makes for easy math
   // You don't need to calculate the width of the container
@@ -33,9 +42,10 @@
 }
 
 .controls {
-  background-color: palette(gray, light);
+  background-color: darken($header-and-nav-bg, 10%);
   @include rem( padding, 8px );
   text-align: center;
+  border-bottom: 1px solid darken($header-and-nav-bg, 18%);
 }
 
 .tabs {

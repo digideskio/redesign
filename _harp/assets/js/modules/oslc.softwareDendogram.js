@@ -22,7 +22,7 @@ var
   allNodes,
   svg,
   margins = { top: 20, right: 20, bottom: 20, left: 20 },
-  width = 720,
+  width = 810,
   height;
 
 providers.each(function(){

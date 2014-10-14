@@ -80,8 +80,13 @@
     margin-top: .71em;
     margin-bottom: .6em;
     border-left: $copy-header-border-width solid;
-    padding-left: $card-padding-sides - $copy-header-border-width;
-    margin-left: -$card-padding-sides;
+    padding-left: $main-padding-sides - $copy-header-border-width;
+    margin-left: -$main-padding-sides;
+    
+    @include respond-to(desk-up) {
+      padding-left: $main-padding-sides-large - $copy-header-border-width;
+      margin-left: -$main-padding-sides-large;
+    }
     
     //
     // Inline subheads
@@ -100,36 +105,43 @@
   > h6 {
     @extend %text-size-m;
     border-color: palette(blue,x-light);
+    @include respond-to(hand-only) { @include text-size-s; }
   }
   
   > h5 {
     @extend %text-size-l;
     border-color: palette(blue,light);
+    @include respond-to(hand-only) { @include text-size-m; }
   }
   
   > h4 {
     @extend %text-size-xl;
     border-color: palette(blue,mid-light);
+    @include respond-to(hand-only) { @include text-size-l; }
   }
   
   > h3 {
     @extend %text-size-xxl;
     border-color: palette(blue);
+    @include respond-to(hand-only) { @include text-size-xl; }
   }
   
   > h2 {
     @extend %text-size-xxxl;
     border-color: palette(blue,mid-dark);
+    @include respond-to(hand-only) {  @include text-size-xxl; }
   }
   
   > h1 {
     @extend %text-size-xxxxl;
     border-color: palette(blue,dark);
+    @include respond-to(hand-only) { @include text-size-xxxl; }
   }
   
   > .godzilla {
     @extend %text-size-xxxxxl;
     border-color: palette(blue,x-dark);
+    @include respond-to(hand-only) { @include text-size-xxxxl; }
   }
       
   > table {
@@ -164,16 +176,19 @@
   // some extra spacing between list items
   // be careful here, this selector might come back to bite you
   li { 
-     @include rem(margin-bottom, 6px); 
-     @include rem(margin-top, 6px); 
+    @include rem(margin-bottom, 6px); 
+    @include rem(margin-top, 6px);
+    @extend %readable;
   }
     
   > p {
     @extend %copy-margins;
+    @extend %readable;
   }
   
   > blockquote {
     @extend %copy-margins;
+    @extend %readable;
     margin-left: 0;
     border-left: 3px solid palette(gray,light);
     font-style: italic;
