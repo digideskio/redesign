@@ -120,8 +120,12 @@ var Prospectus = _.create(OSLC, {
       tether = this.tether,
       prospectus = this;
     
+    $(this.options.isDropdown.control).addClass('is-open');
+    
     this.els.menu.removeClass('hidden').toggleAria('expanded','hidden')
-      .find('.items').velocity( this.options.transitionIn, {
+      .find('.items')
+        .velocity('stop')
+        .velocity( this.options.transitionIn, {
         duration: 200,
         begin: function(){ tether.position(); },
         complete: function() { prospectus.focus(); }
@@ -130,12 +134,17 @@ var Prospectus = _.create(OSLC, {
     this.isOpened = true;
   },
   close: function(){
+
     if ( ! this.options.isDropdown || ! this.isOpened ) { return; }
     
     var menu = this.els.menu;
     
+    $(this.options.isDropdown.control).removeClass('is-open');
+    
     menu.toggleAria('expanded','hidden')
-      .find('.items').velocity( this.options.transitionOut, {
+      .find('.items')
+        .velocity('stop')
+        .velocity( this.options.transitionOut, {
         duration: 150,
         display: 'block',
         complete: function(){ menu.addClass('hidden'); }
@@ -175,11 +184,19 @@ $(document).ready(function(){
 $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
   var hasDrop = $(this).data('hasDropdown');
   
-  if (!hasDrop) {return;}
+  if ( ! hasDrop ) {return;}
   
   e.preventDefault();
+  
+  // so you're going to invoke a .close() on every dropdown
+  // they'll all report isOpened == false at that point
+  // so we're going to cache if it WAS opened at the time of the click
+  var wasOpened = hasDrop.isOpened;
+  
   _.invoke(OSLC.dropdowns,'close');
-  hasDrop.open();
+  
+  // only open up if it wasn't already
+  ! wasOpened && hasDrop.open();
 
 })
 .on('click',function(e){
