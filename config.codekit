@@ -4685,6 +4685,50 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/posts\/images\/discard\/cards-in-cards-in-cards.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 77634,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/discard\/cards-in-cards-in-cards.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/discard\/cards-in-cards-in-cards.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/posts\/images\/discard\/cards-in-cards.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25692,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/discard\/cards-in-cards.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/discard\/cards-in-cards.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/posts\/images\/discard\/main-content-card.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38408,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/discard\/main-content-card.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/discard\/main-content-card.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/posts\/images\/discard\/software-before.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 225284,
+		"inputAbbreviatedPath": "\/_harp\/posts\/images\/discard\/software-before.png",
+		"outputAbbreviatedPath": "\/_harp\/posts\/images\/discard\/software-before.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/posts\/images\/logos\/logo-2011-bad-stroke.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -6021,6 +6065,59 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/posts\/i-like-to-live-dangerously.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/posts\/i-like-to-live-dangerously.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/posts\/images\/discard\/cards-in-cards-in-cards.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 77634,
+		"inputAbbreviatedPath": "\/posts\/images\/discard\/cards-in-cards-in-cards.png",
+		"outputAbbreviatedPath": "\/posts\/images\/discard\/cards-in-cards-in-cards.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/discard\/cards-in-cards.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25692,
+		"inputAbbreviatedPath": "\/posts\/images\/discard\/cards-in-cards.png",
+		"outputAbbreviatedPath": "\/posts\/images\/discard\/cards-in-cards.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/discard\/main-content-card.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38408,
+		"inputAbbreviatedPath": "\/posts\/images\/discard\/main-content-card.png",
+		"outputAbbreviatedPath": "\/posts\/images\/discard\/main-content-card.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/posts\/images\/discard\/software-before.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 225284,
+		"inputAbbreviatedPath": "\/posts\/images\/discard\/software-before.png",
+		"outputAbbreviatedPath": "\/posts\/images\/discard\/software-before.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/posts\/images\/logos\/logo-2011-bad-stroke.png": {
 		"fileType": 32768,

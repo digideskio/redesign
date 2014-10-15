@@ -32,9 +32,13 @@ var Sextant = _.create(OSLC, {
     this.els.toc = $('<div>').attr('id','table-of-contents')
       .addClass('menu dropdown hidden tensed toc')
       .html( this.generateMenuItems() )
-      .prospectus( {isDropdown: {
-        control: this.els.toggler[0]
-      }} );
+      .prospectus( {
+        isDropdown: {
+          control: this.els.toggler[0]
+        },
+        transitionIn: 'transition.slideRightBigIn',
+        transitionOut: 'transition.slideRightBigOut'
+      });
       
     return this;
   },

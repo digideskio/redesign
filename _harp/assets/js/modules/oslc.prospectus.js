@@ -13,7 +13,9 @@ var Prospectus = _.create(OSLC, {
     isDropdown: null,
     manageFocus: true,
     menuRole: 'menu',
-    itemRole: 'menuitem'
+    itemRole: 'menuitem',
+    transitionIn: 'transition.slideUpIn',
+    transitionOut: 'transition.slideUpOut'
   },
   
   init: function( menu, options ) {
@@ -119,7 +121,7 @@ var Prospectus = _.create(OSLC, {
       prospectus = this;
     
     this.els.menu.removeClass('hidden').toggleAria('expanded','hidden')
-      .find('.items').velocity('transition.slideUpIn',{
+      .find('.items').velocity( this.options.transitionIn, {
         duration: 200,
         begin: function(){ tether.position(); },
         complete: function() { prospectus.focus(); }
@@ -133,7 +135,7 @@ var Prospectus = _.create(OSLC, {
     var menu = this.els.menu;
     
     menu.toggleAria('expanded','hidden')
-      .find('.items').velocity('transition.slideUpOut', {
+      .find('.items').velocity( this.options.transitionOut, {
         duration: 150,
         display: 'block',
         complete: function(){ menu.addClass('hidden'); }

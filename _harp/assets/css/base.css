@@ -1756,7 +1756,7 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
 
 .banner {
   background-color: #fff8eb;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
   z-index: 5; }
   .banner .toggle {
     padding: 4px 11px 4px;

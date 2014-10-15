@@ -29,7 +29,7 @@
 
   @include respond-to(hand-only) {
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.11);
   }  
   
   @include respond-to(knee-down) {
@@ -47,7 +47,7 @@
     top: 0;
     bottom: 0;
     background-color: $header-and-nav-bg;
-    box-shadow: 2px 0 3px rgba(0,0,0,.2);
+    box-shadow: 2px 0 3px rgba(0,0,0,.11);
     
     // handle the possibility that the content isn't big enough for the nav
     overflow: auto; 
