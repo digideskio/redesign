@@ -47,7 +47,7 @@
 /*
  * Positioning
  */
-.pos-rel, .sticky-footer > .footer {
+.pos-rel, .footer[role="contentinfo"] {
   position: relative; }
 
 .pos-abs {
@@ -88,9 +88,9 @@
 .icon {
   vertical-align: top; }
 
-.toggle {
+.featurette, .toggle {
   text-align: center; }
-  .toggle .text {
+  .featurette .text, .toggle .text {
     display: block; }
 
 .copy li, .copy > p, .copy > blockquote, .notice,
@@ -1739,8 +1739,7 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
     .status[value].final .fallback {
       background-color: #00bd94; }
 
-.banner,
-.footer[role="contentinfo"] {
+.banner {
   background-color: #fff8eb; }
 
 .toggle {
@@ -1884,8 +1883,19 @@ abbr.grunticon-wordmark-med {
   padding: 13px 0;
   padding: 0.8125rem 0; }
 
-.sticky-footer > .footer {
-  padding: 4px 8px 5px;
-  padding: 0.25rem 0.5rem 0.3125rem;
+.footer[role="contentinfo"] {
   z-index: 2;
-  border-top: 1px solid #ffebc7; }
+  padding: 23px;
+  padding: 1.4375rem;
+  background-color: #00668f;
+  border-top: 1px solid #004d6b;
+  color: #ebebeb; }
+  .footer[role="contentinfo"] a {
+    -webkit-transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+            transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    text-decoration: none;
+    color: #7ed2dd; }
+    .footer[role="contentinfo"] a:hover, .footer[role="contentinfo"] a:focus {
+      color: #51c1d2; }
+  .footer[role="contentinfo"] .social .icon {
+    margin-right: 5px; }

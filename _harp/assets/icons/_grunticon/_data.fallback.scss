@@ -131,6 +131,18 @@
 }
 
 
+.grunticon-logo-footer {
+  background-image: url('png/logo-footer.png');
+  @include icon;
+  height: 100px;
+  width: 120px;
+    
+  &.intrinsic {
+    padding-top: 100px / 120px * 100%;
+  }
+}
+
+
 .grunticon-logo-med {
   background-image: url('png/logo-med.png');
   @include icon;
@@ -493,6 +505,78 @@
 
 .grunticon-sextant-menu {
   background-image: url('png/sextant-menu.png');
+  @include icon;
+  height: 24px;
+  width: 24px;
+    
+  &.intrinsic {
+    padding-top: 24px / 24px * 100%;
+  }
+}
+
+
+.grunticon-social-facebook {
+  background-image: url('png/social-facebook.png');
+  @include icon;
+  height: 32px;
+  width: 32px;
+    
+  &.intrinsic {
+    padding-top: 32px / 32px * 100%;
+  }
+}
+
+
+.grunticon-social-github {
+  background-image: url('png/social-github.png');
+  @include icon;
+  height: 24px;
+  width: 24px;
+    
+  &.intrinsic {
+    padding-top: 24px / 24px * 100%;
+  }
+}
+
+
+.grunticon-social-googleplus {
+  background-image: url('png/social-googleplus.png');
+  @include icon;
+  height: 24px;
+  width: 24px;
+    
+  &.intrinsic {
+    padding-top: 24px / 24px * 100%;
+  }
+}
+
+
+.grunticon-social-linkedin {
+  background-image: url('png/social-linkedin.png');
+  @include icon;
+  height: 24px;
+  width: 24px;
+    
+  &.intrinsic {
+    padding-top: 24px / 24px * 100%;
+  }
+}
+
+
+.grunticon-social-twitter {
+  background-image: url('png/social-twitter.png');
+  @include icon;
+  height: 24px;
+  width: 24px;
+    
+  &.intrinsic {
+    padding-top: 24px / 24px * 100%;
+  }
+}
+
+
+.grunticon-social-youtube {
+  background-image: url('png/social-youtube.png');
   @include icon;
   height: 24px;
   width: 24px;

@@ -125,6 +125,7 @@ $main-padding-sides-large: $font-size-m;
 $main-header-bg: #fff;
 $main-header-text-color: palette(gray,dark);
 
+
 //
 // Cards
 // 
@@ -145,6 +146,5 @@ $table-border-color: palette(gray,light);
 // Body Copy
 //
 
-$copy-line-height-hand: 1.4615; // 19px/13px
-$copy-line-height-knee-up: 1.4375; // 23px/16px
-%copy-margins { margin-bottom: $copy-line-height-knee-up + 0em; margin-top: 0; }
+$copy-line-height: 1.4375; // 23px/16px
+%copy-margins { margin-bottom: $copy-line-height + 0em; margin-top: 0; }

@@ -27,6 +27,10 @@
   text-decoration: none;
 }
 
+.featurette {
+  @extend %featurette;
+}
+
 /*** 
   * Fluid video/embed wrappers
   * 

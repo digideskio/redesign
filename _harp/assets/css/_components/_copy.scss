@@ -52,7 +52,7 @@
 }
 
 .copy {
-  line-height: $copy-line-height-knee-up;
+  line-height: $copy-line-height;
   
   @extend %copy-links;
   @extend %copy-linked-images;
