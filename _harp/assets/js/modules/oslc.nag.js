@@ -17,7 +17,6 @@ var addMessage = function( html, title, level ) {
           
   $messages.append( $message );
 
-  
   $message
     .find('.close') // Make it closeable via the API for Brenda
       .data('dismiss', { 

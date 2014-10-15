@@ -7,13 +7,6 @@
 
 var Checkov = _.create( OSLC, {
   name: "Checkov",
-  els: {
-   nav: $('#nav'),
-   main: $('#main'),
-   toggle: $('#navToggle'),
-   close: $('.close-nav'),
-   allToggled: $('#nav,#main,#navToggle,.close-nav')
-  },
   
   moves: [],
   
@@ -24,6 +17,15 @@ var Checkov = _.create( OSLC, {
   },
   
   init: function() {
+  
+    this.els = {
+      nav: $('#nav'),
+      main: $('#main'),
+      toggle: $('#navToggle'),
+      close: $('.close-nav'),
+      allToggled: $('#nav,#main,#navToggle,.close-nav')
+    };
+
     console.log('Initializing Checkov global navigation');
   
     // In markup order, #nav comes after #main 
@@ -60,6 +62,8 @@ var Checkov = _.create( OSLC, {
     
     var 
       checkov = this;
+    
+    console.log('CHECKOV BINDINGS');
     
     this.els.toggle
       .add( this.els.close )

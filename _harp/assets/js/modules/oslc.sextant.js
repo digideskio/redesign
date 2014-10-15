@@ -6,12 +6,13 @@
 'use strict';
 
 var Sextant = _.create(OSLC, {
-  els: {
-    content: $('#content')
-  },
 
   init: function() {
     
+    this.els = {
+      content: $('#content')
+    };
+        
     // Bail if there are only a few headings
     if ( this.els.content.find('h1, h2, h3, h4, h5, h6').length < 4 ) { return; }
     
@@ -20,7 +21,7 @@ var Sextant = _.create(OSLC, {
   },
   
   insertMenu: function() {
-    
+  
     var titleWithTocToggle = _.template('<div class="strip reversed"><div class="body">${ title }</div><a href="#" id="toc-button" class="toggle sextant-toggler"><i class="icon grunticon-sextant-menu"></i><span class="block text">Contents</span></a></div>', {
       title: $('#pagetitle').html()
     });
