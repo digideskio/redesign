@@ -163,8 +163,8 @@ abbr.grunticon-wordmark-med {
 .footer[role="contentinfo"] {
   @extend %pos-rel;
   z-index: 2;
-  @include rem(padding, $font-size-xl);
-  background-color: palette(blue,dark);
+  @include rem(padding, $font-size-l $font-size-l $font-size-s);
+  background-color: desaturate( palette(blue,dark), 55% );
   border-top: 1px solid darken(palette(blue,dark), 7%);
   color: palette(gray,x-light);
   
@@ -180,7 +180,14 @@ abbr.grunticon-wordmark-med {
     
   }
   
+  p { margin: 0; }
+  
   .social .icon {
     margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .copyright {
+    margin-top: 8px;
   }
 }

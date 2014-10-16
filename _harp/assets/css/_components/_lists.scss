@@ -19,6 +19,14 @@
     
 }
 
+.inline {
+  @extend %list-reset;
+  li { 
+    @extend %inline-block; 
+    margin-right: $font-size-xs;
+  }
+}
+
 .flat {
   @extend %list-reset;
 }

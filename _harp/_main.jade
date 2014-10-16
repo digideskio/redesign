@@ -29,7 +29,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                       i.icon(class="#{'grunticon-channel-' + channel.toLowerCase()}")
                     .body #{channel}
   if listing_description
-    section.content 
+    section.copy.content
       p #{listing_description}
   if has_menu
     #bartender.menu.horizontal.page.bartender(data-bartender,data-controls="#{has_menu}")
