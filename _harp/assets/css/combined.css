@@ -76,7 +76,7 @@
   .copy .menu .items, .menu .copy .items, .copy .links, .copy .inline, .copy .flat, .copy .slats {
     padding-left: 0; }
 
-.activeFilter, .sextant-toggler, .close {
+.activeFilter, .close {
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -1343,9 +1343,7 @@ html {
 
 .breadcrumbs {
   padding-top: 8px;
-  padding-bottom: 5px;
-  background-color: #fafafa;
-  border-bottom: 1px solid #f2f2f2; }
+  padding-bottom: 5px; }
   .breadcrumbs a {
     text-decoration: none; }
 
@@ -1827,13 +1825,12 @@ abbr.grunticon-wordmark-med {
   .main > .header {
     background-color: #fff;
     color: #444;
-    border-bottom: 1px solid #f2f2f2; }
-    .main > .header .title,
-    .main > .header .toggle {
-      padding-top: 11px;
-      padding-bottom: 11px; }
+    margin-top: 19px;
+    margin-bottom: 19px; }
     .main > .header .title {
       margin: 0;
+      padding-top: 5.5px;
+      padding-bottom: 5.5px;
       font-weight: normal;
       font-size: 27px;
       font-size: 1.6875rem;
@@ -2004,7 +2001,7 @@ abbr.grunticon-wordmark-med {
   .copy .menu .items, .menu .copy .items, .copy .links, .copy .inline, .copy .flat, .copy .slats {
     padding-left: 0; }
 
-.activeFilter, .sextant-toggler, .close {
+.activeFilter, .close {
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -2670,6 +2667,8 @@ abbr.grunticon-wordmark-med {
 .sextant-toggler {
   text-align: center;
   background-color: #fff;
+  padding-top: 8px;
+  padding-bottom: 8px;
   border-left: 1px solid #f2f2f2; }
   .sextant-toggler:hover {
     background-color: #fafafa; }

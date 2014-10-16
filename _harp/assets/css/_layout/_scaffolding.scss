@@ -94,16 +94,13 @@ abbr.grunticon-wordmark-med {
   > .header {
     background-color: $main-header-bg;
     color: $main-header-text-color;
-    border-bottom: 1px solid darken($main-header-bg, 5%);
+    margin-top: $font-size-l;
+    margin-bottom: $font-size-l;
     
-    .title,
-    .toggle {
-      padding-top: $main-padding-sides;
-      padding-bottom: $main-padding-sides;
-    }
-  
     .title { 
       margin: 0;
+      padding-top: $main-padding-sides/2;
+      padding-bottom: $main-padding-sides/2;
       font-weight: normal;
       @include font-size(xxl, 1.1); 
       

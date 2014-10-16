@@ -1,10 +1,11 @@
 main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
-  if breadcrumbs
-    nav.breadcrumbs
-      for crumb, idx in breadcrumbs
-        a.breadcrumb(href="#") #{crumb}
-        &nbsp;/&nbsp;
   header.header
+    if breadcrumbs
+      nav.breadcrumbs
+        for crumb, idx in breadcrumbs
+          a.breadcrumb(href="#") #{crumb}
+          &nbsp;/&nbsp;
+
     #pagetitle
       h1.title #{ title }
   if date || tags

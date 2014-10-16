@@ -1,7 +1,8 @@
 .sextant-toggler {
-  @extend %button-reset;
   text-align: center;
   background-color: $main-header-bg;
+  padding-top: $font-size-xxs;
+  padding-bottom: $font-size-xxs;
   border-left: 1px solid darken($main-header-bg, 5%);
   
   &:hover {
