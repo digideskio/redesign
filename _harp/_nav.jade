@@ -12,7 +12,7 @@ if has_secondary
           != partial('_menu_primary', {site_url: site_url})
         
           .panel#secondary_menu
-            .menu.secondary.inverted
+            .menu.secondary.inverted(data-prospectus,data-manage-focus="false")
               ul.items
                 for page, slug in data
                   if slug === 'index'

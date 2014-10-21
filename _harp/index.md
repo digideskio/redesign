@@ -15,6 +15,7 @@ I'm taking another whack at the website for the [Open Services for Lifecycle Col
 - **2014 September 10**: [Tutorial sample page](./samples/tutorial.html)
 - **2014 October 10**: [Software sample page](./samples/software.html)
 - [**2014 October 14** A flatter layout](./posts/i-like-to-live-dangerously.html)
+- **2014 October 21**: [Workgroup sample page](./samples/workgroup.html)
 
 I'm going have discussions for all the big things in [Github Issues](https://github.com/OSLC/redesign/issues) so you all can have your say.
 
