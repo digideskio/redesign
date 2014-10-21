@@ -107,7 +107,7 @@ small{ font-size: 80%; }
 
 
 
-
+ .no-js .desk-up{ display: none !important; }
 .body{ overflow-x: hidden; overflow-y: hidden; zoom: 1; }
 
 
@@ -281,6 +281,18 @@ html{ font-size: 100%; }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .banner{ background-color: rgb(255, 248, 235); }
 .toggle{ text-decoration: none; -webkit-transition-property: background-color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
 .toggle .text{ color: rgb(102, 102, 102); font-size: 11px; line-height: 1; margin-top: 0.25rem; }
@@ -298,14 +310,14 @@ abbr.grunticon-wordmark-small, abbr.grunticon-wordmark-med{ border-bottom-width:
 }
 
 .main{ background-color: rgb(255, 255, 255); }
-.main > .header{ background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(242, 242, 242); }
-.main > .header .title{ padding-top: 11px; padding-bottom: 11px; }
-.main > .header .title{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-weight: normal; font-size: 1.6875rem; line-height: 1.1; }
+.main > .header{ background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); margin-top: 19px; margin-bottom: 19px; }
+.main > .header .title{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 5.5px; padding-bottom: 5.5px; font-weight: normal; font-size: 1.6875rem; line-height: 1.1; }
 @media only screen and (min-width: 64.0625em){
 .main > .header .title{ font-size: 2rem; line-height: 1.1875; }
 }
 
 .main > .content{ padding-top: 13px; padding-bottom: 13px; }
+
 
 
 

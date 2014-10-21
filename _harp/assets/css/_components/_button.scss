@@ -70,9 +70,9 @@
     vertical-align: middle;
   }
   
-  &.success { @include oslc-button-color( palette(green,mid-dark) ); }
+  &.good { @include oslc-button-color( palette(green,mid-dark) ); }
   &.primary { @include oslc-button-color( palette(blue,mid-dark) ); }
-  &.error { @include oslc-button-color( palette(red,mid-dark) ); }
+  &.bad { @include oslc-button-color( palette(red,mid-dark) ); }
   
   &.disabled, &[disabled] {
     opacity: .6;
