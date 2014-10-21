@@ -1,4 +1,4 @@
-ul.slats
+ul.slats.flexible
   for links, name in meta_block
     li.slat(class="#{name === 'Status' ? 'pos-rel' : ''} #{hidden && hidden.indexOf(name) !== -1 ? 'hidden' : ''}")
       if name === 'Link'
@@ -9,10 +9,10 @@ ul.slats
               .image
                 i.icon.grunticon-action-outgoing
       else
-        .flag
+        .media
           .image
             if name !== "Status"
-              i.icon(class="#{'grunticon-meta-' + name.toLowerCase()}")
+              i.icon(class="#{'grunticon-meta-' + name.replace(' ','-').toLowerCase()}")
             else
               for link in links
                 i.icon.grunticon-meta-status(class="grunticon-meta-status#{link.title}",style="transform:rotate(#{link.value*3.6}deg);-webkit-transform:rotate(#{link.value*3.6}deg)")
@@ -27,6 +27,10 @@ ul.slats
                     a(href="#{link.url || '#'}",data-filter-on="workgroup") #{link.title || link}
                   else
                     a(href="#{link.url || '#'}") #{link.title || link}
+                    
+                  if link.tag
+                    | &ensp;
+                    span.tag.small #{link.tag}
                   
                   if link.value
                     progress.status(max="100",value="#{link.value}",class="#{  link.title.toLowerCase()}")

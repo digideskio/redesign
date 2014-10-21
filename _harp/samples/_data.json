@@ -8,7 +8,7 @@
     "breadcrumbs": [
       "Home", "News"
     ],
-    "title": "[Sample news post] Brace Yourself: OSLC Steering Committee Elections Are Coming",
+    "title": "Brace Yourself: OSLC Steering Committee Elections Are Coming",
     "date": "2014 April 2",
     "tags": [
       "alm",
@@ -40,7 +40,7 @@
   "news-listing": {
     "layout": "_news-listing",
     "menu_title": "News listing",
-    "title": "[Sample] Latest news",
+    "title": "Latest news",
     "faux_paginate": "true",
     "posts": [
       {
@@ -150,7 +150,7 @@
     "channel": "Presentation",
     "date": "2014 February 19",
     "menu_title": "Resource",
-    "title": "[Sample resource] OSLC Community Update and An Introduction to PROMCODE",
+    "title": "OSLC Community Update and An Introduction to PROMCODE",
     "relationships": {
       "Workgroups": [
         "Change Management",
@@ -181,7 +181,7 @@
     }
   },
   "resources": {
-    "title": "[Sample] Resources",
+    "title": "Resources",
     "menu_title": "All resources",
     "layout": "_resources",
     "posts": [
@@ -327,7 +327,7 @@
   },
   "tutorial": {
     "menu_title": "Tutorial page",
-    "title": "[Sample tutorial page] Providing a delegated UI for selection and search",
+    "title": "Providing a delegated UI for selection and search",
     "has_secondary": "true",
     "secondary_menu_items": {
       "index": {
@@ -417,8 +417,101 @@
     "previous": "Providing a delegated UI for creating bugs"
   },
   "workgroup": {
-    "title": "Workgroup",
-    "draft": "true"
+    "menu_title": "Workgroup",
+    "title": "Core Workgroup",
+    "tags": ["In transition", "Specification"],
+    "meta_after_body": {
+      "Wiki": ["At open-services.net"],
+      "Meetings": ["Every other Wednesday at 12pm Eastern"],
+      "Mailing list": ["At open-services.net"],
+      "Specifications": [{
+          "title": "Core 2.0",
+          "tag": "Final"
+        },{
+          "title": "Tracked Resource Set 2.0",
+          "tag": "Finalize"
+        }
+      ],
+      "Lead": ["Steve Speicher"],
+      "Charter": ["At open-services.net"],
+      "Contributing Organizations": ["General Motors", "IBM", "Insitut TELECOM", "Oracle", "Siemens", "Tasktop"]
+    },
+    "relationships": {
+      "Tutorials": [
+        "Integrating products with OSLC",
+        "OSLC Primer"
+      ],
+      "Videos & presentations": [
+        "Concurrent Engineering for systems based on OSLC",
+        "Getting started on implementing OSLC",
+        "Getting started on implementing OSLC (enhanced version)",
+        "Governance model update",
+        "IBM Pulse 2013 Tech Talk: A Business Perspective on the Case for OSLC",
+        "Introduction to Linked Data Concepts and OSLC",
+        "Introduction to OSLC slideshow",
+        "Linked Data and RDF overview playlist",
+        "Open Services for Lifecycle Collaboration introduction",
+        "OSLC Community Update and An Introduction to PROMCODE",
+        "OSLC Transitions to OASIS",
+        "Overview of Linked Data and OSLC",
+        "Systems Engineering Tools Integration and Interoperability using OSLC in the SPRINT project",
+        "W3C Linked Data Platform and OSLC V3"      
+      ],
+      "Articles & whitepapers": [
+        "Build your own ServiceProvider (with preview!) in no time",
+        "Case Study: Open Services Lifecycle Collaboration framework based on Linked Data",
+        "Get to know Open Services for Lifecycle Collaboration Change Management",
+        "Linked Data FAQ",
+        "OSLC Enablement Roadmap",
+        "Toward a Basic Profile for Linked Data"
+      ],
+      "Blog posts": [
+        "Getting Started Developing OSLC Applications is now at Github",
+        "Upcoming presentation: Community Update and An Introduction to PROMCODE",
+        "Call for Participation: OASIS OSLC Lifecycle Integration Core (OSLC-Core) TC",
+        "Eclipse Lyo 2.0 is now available",
+        "OMG! Systems Engineers do more with OSLC",
+        "September Kickoffs",
+        "Upcoming presentation: DevOps in the Cloud",
+        "Upcoming presentation: Should I Link, or Should I Sync?",
+        "Open Lifecycle Summit: Live Tweet Round-up",
+        "What if integration came standard?",
+        "Trip report for EclipseCon 2013",
+        "Integrating products with OSLC tutorial has been updated",
+        "OSLC4Net, an OSLC toolkit for .NET",
+        "New video: Concurrent engineering for systems based on OSLC",
+        "Summary and Perspective on W3C Linked Data Platform First Face-to-Face Meeting",
+        "Video available for presentation: “W3C Linked Data Platform and OSLC V3”",
+        "Upcoming presentation: W3C Linked Data Platform and OSLC V3",
+        "Two new articles: how Linked Data formed the basis of OSLC and two sample applications",
+        "OSLC enables a RELM of possibilities",
+        "New video collection: overview of Linked Data and RDF",
+        "Improved version of our “Getting started on implementing OSLC” video now available",
+        "New video: Overview of Linked Data and OSLC",
+        "Q&A about GM’s Eclipse Lyo-based Proof of Concept integration",
+        "W3C LDP First Editor’s Draft available",
+        "Catnip for OSLC implementers: See how GM built a PoC using Eclipse Lyo",
+        "Eclipse Lyo 1.0 Official Release Coming!",
+        "Ongoing changes to the OSLC website and community",
+        "Playlist available for webcast “OSLC access and debugging using your browser”",
+        "Video available for webcast “OSLC access and debugging using your browser”",
+        "Upcoming webcast: Governance model update",
+        "Just posted updated IP policy, WPA, and Bylaws",
+        "OSLC at Innovate 2012: OSLC’s growing impact on the technology industry",
+        "Try it today: Tivoli OSLC Betas",
+        "W3C Linked Data Platform Working Group Kicking Off",
+        "Proposing a new governance model for the OSLC community",
+        "Instantiating the OSLC Vision",
+        "OSLC members at the Linked Data on the Web 2012 workshop",
+        "New video: Steve Speicher on getting started with implementing OSLC",
+        "Should we change the “S” in OSLC to “Specifications”?",
+        "Upcoming webcast: Systems Engineering Tools Integration and Interoperability",
+        "Upcoming webcast: Making ALM work across multi-vendor and open source solutions with OSLC",
+        "New developerWorks article: Toward a Basic Profile for Linked Data",
+        "Eclipse Lyo source code now available",
+        "New webcasts about OSLC at Rational User Groups"
+      ]
+    }
   },
   "steering-committee": {
     "title": "Steering Committee",
@@ -426,7 +519,7 @@
     "draft": "true"
   },
   "workgroups": {
-    "title": "[Sample] Workgroups",
+    "title": "Workgroups",
     "menu_title": "All Workgroups",
     "has_secondary": 0,
     "has_menu": "tag,organization",
@@ -562,7 +655,7 @@
   },
   "specifications": {
     "menu_title": "All Specifications",
-    "title": "[Sample] Specifications",
+    "title": "Specifications",
     "has_secondary": "",
     "is_listing": "yep",
     "has_menu": "tag,organization,status,workgroup",
@@ -932,7 +1025,7 @@
     ]
   },
   "software": {
-    "title": "[Sample] IBM Rational Team Concert",
+    "title": "IBM Rational Team Concert",
     "product_name": "Rational Team Concert",
     "menu_title": "Software",
     "has_secondary": 0,

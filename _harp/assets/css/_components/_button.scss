@@ -43,13 +43,18 @@
   &:focus {
     background-color: tint($btn-color, 28%);
   }
+  
+  &.disabled, &[disabled] {
+    background-color: lighten( desaturate($btn-color,70%), 40%) !important;
+  }
+  
 
 }
 
 .btn {
   @extend %btn;
   
-  color: #fff;
+  color: #fff !important;
   border-bottom-style: solid;
   border-bottom-width: 3px;
 
@@ -63,7 +68,16 @@
 
   > .text {
     vertical-align: middle;
-  } 
+  }
+  
+  &.success { @include oslc-button-color( palette(green,mid-dark) ); }
+  &.primary { @include oslc-button-color( palette(blue,mid-dark) ); }
+  &.error { @include oslc-button-color( palette(red,mid-dark) ); }
+  
+  &.disabled, &[disabled] {
+    opacity: .6;
+    cursor: not-allowed;
+  }
 
 }
 
@@ -73,7 +87,7 @@
 
   border-bottom: 0;
   
-  padding: .3125em .5em .375em;
+  padding: .3125em .5em .5em;
   box-shadow: 0 .15em .15em hsla(0,0%,0%,.1),
               inset 0 -.1875em 0 hsla(0,0%,0%,.20);
   transition-duration: .1s;

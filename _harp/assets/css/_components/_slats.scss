@@ -1,6 +1,4 @@
-.slats {
-  @extend %list-reset;
-}
+.slats { @extend %list-reset; }
 
 .slats + .copy, 
 .copy + .slats { 
@@ -8,14 +6,14 @@
 }
 
 .slat {
-  @include rem(padding, 8px 2px);
+  @include rem(padding, 8px 5px 8px 2px);
   @extend %text-size-s;
   
   &+& {
     border-top: 1px solid palette(gray,light);
   }
-  
-  > .flag > .image {
+    
+  > .media > .image {
     @include rem(padding-right, 8px );
   }
   
@@ -24,6 +22,7 @@
     font-weight: bold;
     color: palette(gray, mid-dark);
   }
+  
 }
 
 // Progress bars

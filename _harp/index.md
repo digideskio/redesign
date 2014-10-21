@@ -2,7 +2,7 @@ I'm taking another whack at the website for the [Open Services for Lifecycle Col
 
 ## What I'm up to
 
-- [**2014 10 March** The need for a redesign](./posts/why.html)
+- [**2014 March 10** The need for a redesign](./posts/why.html)
 - [**2014 March 11** Sketches and wireframes](./posts/wireframes.html)
 - [**2014 March 12** Concepts for a new logo](./posts/logo.html)
 - [**2014 March 18** The main menu in a mobile-first world](./posts/mobile-first.html)
@@ -11,8 +11,10 @@ I'm taking another whack at the website for the [Open Services for Lifecycle Col
 - [**2014 May 12** News and listing samples](./posts/main-menus.html)
 - **2014 June**: [Single resource example](./samples/resource.html) and [All Resources sample](./samples/resources.html) pages
 - **2014 July**: [Specifications (all) sample page](./samples/specifications.html)
-- **2014 Sept 9**: [Workgroups (all) sample page](./samples/workgroups.html)
-- **2014 Sept 10**: [Tutorial sample page](./samples/tutorial.html)
+- **2014 September 9**: [Workgroups (all) sample page](./samples/workgroups.html)
+- **2014 September 10**: [Tutorial sample page](./samples/tutorial.html)
+- **2014 October 10**: [Software sample page](./samples/software.html)
+- [**2014 October 14** A flatter layout](./posts/i-like-to-live-dangerously.html)
 
 I'm going have discussions for all the big things in [Github Issues](https://github.com/OSLC/redesign/issues) so you all can have your say.
 

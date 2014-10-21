@@ -1366,21 +1366,47 @@ html {
     pointer-events: none; }
 
 .btn {
-  color: #fff;
+  color: #fff !important;
   border-bottom-style: solid;
   border-bottom-width: 3px;
   background-color: #ccc;
   border-bottom-color: #a3a3a3; }
   .btn:hover, .btn:focus {
     background-color: #dadada; }
+  .btn.disabled, .btn[disabled] {
+    background-color: white !important; }
   .btn:active, .btn[active] {
     border-bottom: 0; }
   .btn > .text {
     vertical-align: middle; }
+  .btn.success {
+    background-color: #00bd94;
+    border-bottom-color: #009776; }
+    .btn.success:hover, .btn.success:focus {
+      background-color: #47cfb1; }
+    .btn.success.disabled, .btn.success[disabled] {
+      background-color: #b3d6ce !important; }
+  .btn.primary {
+    background-color: #0083a3;
+    border-bottom-color: #006882; }
+    .btn.primary:hover, .btn.primary:focus {
+      background-color: #47a5bc; }
+    .btn.primary.disabled, .btn.primary[disabled] {
+      background-color: #a2c4cd !important; }
+  .btn.error {
+    background-color: #dc3235;
+    border-bottom-color: #b0282a; }
+    .btn.error:hover, .btn.error:focus {
+      background-color: #e56b6d; }
+    .btn.error.disabled, .btn.error[disabled] {
+      background-color: #ededed !important; }
+  .btn.disabled, .btn[disabled] {
+    opacity: .6;
+    cursor: not-allowed; }
 
 .boxshadow .btn {
   border-bottom: 0;
-  padding: .3125em .5em .375em;
+  padding: .3125em .5em .5em;
   box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1), inset 0 -0.1875em 0 rgba(0, 0, 0, 0.2);
   -webkit-transition-duration: .1s;
           transition-duration: .1s;
@@ -1433,6 +1459,10 @@ html {
   .tag .image {
     padding-right: 5px;
     padding-right: 0.3125rem; }
+  .tag.small {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px; }
   .tag.success, .tag.Specification {
     background-color: #00bd94; }
   .tag.info {
@@ -1672,11 +1702,11 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
   margin-top: 11px; }
 
 .slat {
-  padding: 8px 2px;
-  padding: 0.5rem 0.125rem; }
+  padding: 8px 5px 8px 2px;
+  padding: 0.5rem 0.3125rem 0.5rem 0.125rem; }
   .slat + .slat {
     border-top: 1px solid #ccc; }
-  .slat > .flag > .image {
+  .slat > .media > .image {
     padding-right: 8px;
     padding-right: 0.5rem; }
   .slat .header {
@@ -1836,6 +1866,9 @@ abbr.grunticon-wordmark-med {
   .main > .content {
     padding-top: 13px;
     padding-bottom: 13px; }
+  .main .stack {
+    margin-top: 19px;
+    margin-bottom: 23px; }
   .main > .menu {
     padding-left: 5px;
     padding-right: 5px; }

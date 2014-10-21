@@ -2961,6 +2961,54 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/_data.fallback.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/_data.fallback.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/css\/_data.fallback.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/_data.png.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/_data.png.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/css\/_data.png.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/_data.svg.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/_data.svg.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/css\/_data.svg.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/action-outgoing.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3082,17 +3130,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/logo-footer.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1803,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/logo-footer.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/logo-footer.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/logo-med.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3192,6 +3229,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-ancestry.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 566,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-ancestry.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-ancestry.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-charter.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 420,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-charter.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-charter.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-consumes.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3199,6 +3258,17 @@
 		"initialSize": 870,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-consumes.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-consumes.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-contributing-organizations.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 629,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-contributing-organizations.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-contributing-organizations.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3214,6 +3284,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-forum.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 789,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-forum.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-forum.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-ghost-town.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 717,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-ghost-town.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-ghost-town.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-lead.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 830,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-lead.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-lead.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-link.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3221,6 +3324,39 @@
 		"initialSize": 928,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-link.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-link.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-links.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 928,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-links.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-links.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-mailing-list.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 538,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-mailing-list.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-mailing-list.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-meetings.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 632,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-meetings.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-meetings.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3254,6 +3390,17 @@
 		"initialSize": 897,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-produces.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-produces.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-specifications.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 606,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-specifications.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-specifications.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3298,6 +3445,17 @@
 		"initialSize": 998,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-statusInactive.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-statusInactive.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-wiki.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 813,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-wiki.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-wiki.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3430,17 +3588,6 @@
 		"initialSize": 394,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/sextant-menu.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/sextant-menu.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/social-facebook.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 542,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/social-facebook.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/social-facebook.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3787,17 +3934,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/logo-footer.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1411,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/logo-footer.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/logo-footer.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/_harp\/assets\/icons\/build\/png\/logo-med.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3908,6 +4044,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-contributing-organizations.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 417,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-contributing-organizations.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-contributing-organizations.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/build\/png\/meta-downloads.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3919,6 +4066,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-lead.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 470,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-lead.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-lead.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/build\/png\/meta-link.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -3926,6 +4084,28 @@
 		"initialSize": 500,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-link.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-link.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-mailing-list.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 501,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-mailing-list.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-mailing-list.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-meetings.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 474,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-meetings.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-meetings.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3959,6 +4139,17 @@
 		"initialSize": 654,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-produces.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-produces.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-specifications.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 437,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-specifications.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-specifications.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4003,6 +4194,17 @@
 		"initialSize": 768,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-statusInactive.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-statusInactive.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-wiki.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 464,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-wiki.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-wiki.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4135,17 +4337,6 @@
 		"initialSize": 263,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/sextant-menu.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/sextant-menu.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/_harp\/assets\/icons\/build\/png\/social-facebook.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 413,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/social-facebook.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/social-facebook.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -5427,6 +5618,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/samples\/workgroup.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/samples\/workgroup.jade",
+		"outputAbbreviatedPath": "\/_harp\/samples\/workgroup.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
 	"\/_harp\/samples\/workgroups.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -6026,6 +6228,61 @@
 		"initialSize": 275,
 		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/sextant-menu.png",
 		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/sextant-menu.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/icons\/build\/png\/social-github.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 800,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-github.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-github.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/icons\/build\/png\/social-googleplus.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 754,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-googleplus.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-googleplus.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/icons\/build\/png\/social-linkedin.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 384,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-linkedin.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-linkedin.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/icons\/build\/png\/social-twitter.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 645,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-twitter.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-twitter.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/icons\/build\/png\/social-youtube.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 289,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-youtube.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-youtube.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

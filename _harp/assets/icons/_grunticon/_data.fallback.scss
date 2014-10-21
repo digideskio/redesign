@@ -131,18 +131,6 @@
 }
 
 
-.grunticon-logo-footer {
-  background-image: url('png/logo-footer.png');
-  @include icon;
-  height: 100px;
-  width: 120px;
-    
-  &.intrinsic {
-    padding-top: 100px / 120px * 100%;
-  }
-}
-
-
 .grunticon-logo-med {
   background-image: url('png/logo-med.png');
   @include icon;
@@ -251,8 +239,44 @@
 }
 
 
+.grunticon-meta-ancestry {
+  background-image: url('png/meta-ancestry.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-charter {
+  background-image: url('png/meta-charter.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-meta-consumes {
   background-image: url('png/meta-consumes.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-contributing-organizations {
+  background-image: url('png/meta-contributing-organizations.png');
   @include icon;
   height: 20px;
   width: 20px;
@@ -275,8 +299,92 @@
 }
 
 
+.grunticon-meta-forum {
+  background-image: url('png/meta-forum.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-ghost-town {
+  background-image: url('png/meta-ghost-town.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-lead {
+  background-image: url('png/meta-lead.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-meta-link {
   background-image: url('png/meta-link.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-links {
+  background-image: url('png/meta-links.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-mailing-list {
+  background-image: url('png/meta-mailing-list.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-meetings {
+  background-image: url('png/meta-meetings.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-membership {
+  background-image: url('png/meta-membership.png');
   @include icon;
   height: 20px;
   width: 20px;
@@ -313,6 +421,18 @@
 
 .grunticon-meta-produces {
   background-image: url('png/meta-produces.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-specifications {
+  background-image: url('png/meta-specifications.png');
   @include icon;
   height: 20px;
   width: 20px;
@@ -361,6 +481,18 @@
 
 .grunticon-meta-statusInactive {
   background-image: url('png/meta-statusInactive.png');
+  @include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
+.grunticon-meta-wiki {
+  background-image: url('png/meta-wiki.png');
   @include icon;
   height: 20px;
   width: 20px;
@@ -511,18 +643,6 @@
     
   &.intrinsic {
     padding-top: 24px / 24px * 100%;
-  }
-}
-
-
-.grunticon-social-facebook {
-  background-image: url('png/social-facebook.png');
-  @include icon;
-  height: 32px;
-  width: 32px;
-    
-  &.intrinsic {
-    padding-top: 32px / 32px * 100%;
   }
 }
 

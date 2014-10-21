@@ -14,3 +14,24 @@
 .grunticon-meta-status {
   animation: rotateIn 1.5s 1.5s $ease-out-cubic 1 backwards;
 }
+
+
+.flexbox .slats.flexible {
+
+  @include respond-to(knee-up) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .slat {
+    @include respond-to( knee-up ) {
+      border-top: 1px solid palette(gray,light);
+      flex-basis: 50%;
+      flex-grow: 1;
+    }
+    
+    @include respond-to (workstation-up) {
+      flex-basis: 33%;
+    }
+  }
+}

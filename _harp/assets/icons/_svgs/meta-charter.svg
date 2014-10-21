@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>meta-charter</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="meta-charter" sketch:type="MSArtboardGroup" fill="#666666">
+            <path d="M9.9975,1.25 L12.916875,4.375 L18.75,4.375 L18.75,18.75 L1.25,18.75 L1.25,4.375 L7.080625,4.375 L9.9975,1.25 L9.9975,1.25 Z M7.999375,4.375 L11.99875,4.375 L9.9975,2.166875 L7.999375,4.375 L7.999375,4.375 Z M2.5,17.5 L17.5,17.5 L17.5,5.625 L2.5,5.625 L2.5,17.5 L2.5,17.5 Z M16.875,16.875 L3.125,16.875 L3.125,6.25 L16.875,6.25 L16.875,16.875 L16.875,16.875 Z M9.9975,0 L9.9975,0 C9.650625,0 9.32,0.14375 9.08375,0.3975 L6.5375,3.125 L1.25,3.125 C0.559375,3.125 0,3.685 0,4.375 L0,18.75 C0,19.44 0.559375,20 1.25,20 L18.75,20 C19.44,20 20,19.44 20,18.75 L20,4.375 C20,3.685 19.44,3.125 18.75,3.125 L13.459375,3.125 L10.91125,0.396875 C10.674375,0.143125 10.34375,0 9.9975,0 L9.9975,0 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

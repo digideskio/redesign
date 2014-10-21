@@ -16,6 +16,12 @@
     @include rem(padding-right, 5px );
   }
   
+  &.small {
+    font-size: $font-size-xs;
+    font-weight: bold;
+    padding: 4px;
+  }
+  
   &.success,
   &.Specification { 
     background-color: palette(green, mid-dark); 

@@ -11,18 +11,19 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
   if date || tags
     footer.deck
       .grid.pulled.middle
-        .column.hand-full.knee-minor
-          .byline
-            time(datetime="#{ new Date(date) }") #{date}
-            if author
-              |  by 
-              a(href="#{author.url}") #{author.name}
+        if date
+          .column.hand-full.knee-minor
+            .byline
+              time(datetime="#{ new Date(date) }") #{date}
+              if author
+                |  by 
+                a(href="#{author.url}") #{author.name}
         if tags || channel
           .column.hand-full.knee-major
             .tags
               if tags
                 for tag, idx in tags
-                  a.tag(href="#") #{tag}
+                  a.tag(href="#",data-filter-on="tag",class="#{tag}") #{tag}
               if channel
                 a.tag(href="#") 
                   .flag
