@@ -1,6 +1,6 @@
 .grid.pulled.blocks
   for post in posts
-    .column.hand-full.desk-half
+    .column.hand-full.desk-half(data-date="#{Date.parse( new Date(post.date) )}")
       .card
         header.header
           h1.title 
@@ -14,4 +14,4 @@
               time(datetime="#{ new Date(post.date) }") #{post.date} 
               if post.author
                 | by 
-                a(href="#") #{post.author.name}
+                a(href="#",data-filter-on="author") #{post.author.name}
