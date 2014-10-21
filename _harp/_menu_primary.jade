@@ -7,9 +7,23 @@
           abbr.icon.grunticon-wordmark-med.ir(title="#{ org_name }")
             | #{ org_abbr }
           span.project-name #{ site_name }
+    .item
+      script(async)
+        (function() {
+          var cx = '007332863250739994192:7x5ikyiembq';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//www.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      gcse:searchbox-only
+        
     ul.items
       for page, slug in public._data
-        if page.draft!=='true' || environment==='development'
+        if !page.draft || environment === 'development'
           li(class='#{ current.path[0] === slug ? "current" : "" }')
             a.item(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '/') }") #{ page.menu_title || page.title }
       li(role="presentation")

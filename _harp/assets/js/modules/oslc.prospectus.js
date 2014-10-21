@@ -37,7 +37,9 @@ var Prospectus = _.create(OSLC, {
       })
     .find('ul,li').attr('role','presentation')
     .end() // back to the $menu
-      .find('a').addClass('js-prospectus-focusable')
+      .find('a')
+      .not('.gsst_a') // google custom search
+      .addClass('js-prospectus-focusable')
         .attr({
           role: this.options.manageFocus ? this.options.itemRole : null,
           'id':function(){
@@ -272,7 +274,9 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
       
   } 
   
-  $targets = $menu.find('a'); // TODO: maybe ':focusable'? will have to exclude .close
+  // TODO: maybe ':focusable'? will have to exclude .close
+  // TODO: exclude Google Custom Search .gsst_a anchor? (appears to remove typed keywords)
+  $targets = $menu.find('a'); 
   
   // return only elements that start with the character
   if ( _.contains(alphabet,keycode) ) {

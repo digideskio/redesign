@@ -5,7 +5,7 @@
 var compactElements = function(){
 
   // First up, tables, svg, and pre blocks, which can be wrapped in a wrapper div
-  $('table, pre, svg').each(function(){
+  $('#main').find('table, pre, svg').each(function(){
     var 
       $el = $(this);
       

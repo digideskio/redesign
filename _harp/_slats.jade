@@ -1,4 +1,4 @@
-ul.slats.flexible
+ul.slats
   for links, name in meta_block
     li.slat(class="#{name === 'Status' ? 'pos-rel' : ''} #{hidden && hidden.indexOf(name) !== -1 ? 'hidden' : ''}")
       if name === 'Link'

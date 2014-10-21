@@ -1327,6 +1327,31 @@ html {
 .menu .image {
   padding-right: 3px; }
 
+form.gsc-search-box,
+table.gsc-search-box {
+  margin-bottom: 0 !important;
+  -moz-box-sizing: content-box;
+       box-sizing: content-box; }
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+  padding: 0 !important; }
+
+input.gsc-input {
+  font-size: 13px !important; }
+
+input.gsc-search-button-v2 {
+  padding: 5px 8px !important; }
+
+.gsst_b {
+  top: 3px; }
+
+.gsib_a {
+  padding-left: 5px !important; }
+
+a.gsst_a:hover,
+a.gsst_a:focus {
+  background: none !important; }
+
 .links.tightened .item {
   margin-bottom: 5px;
   margin-bottom: 0.3125rem; }
