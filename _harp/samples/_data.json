@@ -1222,8 +1222,9 @@
     "draft": "true"
   },
   "wpa": {
-    "title": "Workgroup Participation Agreement",
-    "draft": "true"
+    "title": "ALM-PLM Interoperability Workgroup Participation Agreement",
+    "menu_title": "Workgroup Participation Agreement",
+    "not_just_copy": "true"
   },
   "wiki-edit": {
     "title": "Editing a wiki page",

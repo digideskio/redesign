@@ -12,7 +12,7 @@ var compactElements = function(){
     // this prevents it from being wrapped multiple times
     if ( $el.parent().is('.overflow-wrap') ) { return; }
     
-    if ( $el.width() > $el.closest('.content').width() ) {
+    if ( $el.width() > $('#main').width() ) {
       $el.wrap('<div class="overflow-wrap copy"></div>');
     }
     
@@ -44,5 +44,8 @@ $(document).ready(function(){
 // and on resize
 // this appears to capture orientation change events as well
 $(window).on( 'resize', _.debounce(compactElements, 500) );
+
+// expose it
+OSLC.compactElements = compactElements;
 
 })(jQuery, this, this.document);

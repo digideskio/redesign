@@ -742,16 +742,11 @@ img {
          -moz-box-align: center;
           -ms-flex-align: center;
               align-items: center; }
-  .grid.pulled {
+  .grid.pulled, .grid.nested {
     margin-left: -16px;
     margin-left: -1rem;
     margin-right: -16px;
     margin-right: -1rem; }
-  .grid.relaxed.pulled {
-    margin-left: -32px;
-    margin-left: -2rem;
-    margin-right: -32px;
-    margin-right: -2rem; }
   .grid.test p {
     margin: 0;
     background-color: pink; }
@@ -802,11 +797,6 @@ img {
       max-width: none;
     }
     */ }
-  .relaxed > .column {
-    padding-left: 32px;
-    padding-left: 2rem;
-    padding-right: 32px;
-    padding-right: 2rem; }
   .collapsed > .column {
     padding-left: 0;
     padding-right: 0; }
@@ -1169,8 +1159,8 @@ html {
       .copy > h4,
       .copy > h5,
       .copy > h6 {
-        padding-left: 8px;
-        margin-left: -16px; } }
+        padding-left: 11px;
+        margin-left: -19px; } }
     .copy > h1 > small,
     .copy > h2 > small,
     .copy > h3 > small,
@@ -1478,7 +1468,8 @@ a.gsst_a:focus {
   color: #fff;
   background-color: #666;
   text-decoration: none;
-  margin-right: 2px; }
+  margin-right: 2px;
+  margin-top: 2px; }
   .tag:last-child {
     margin-right: 0; }
   .tag .image {
@@ -1617,7 +1608,7 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
   .card .tags .tag {
     margin-top: 1px; }
   .card > .footer {
-    background-color: #f7f7f7;
+    background-color: #f1f1f1;
     border-radius: 0 0 4px 4px;
     padding: 0 16px;
     padding: 0 1rem; }
@@ -1638,15 +1629,15 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
     .cards .card.small {
       margin-bottom: 19px;
       margin-bottom: 1.1875rem; }
-    .cards .card .cards {
-      background-color: #f7f7f7; }
+  .cards .cards {
+    background-color: #f7f7f7; }
 
 .notice,
 .callout,
 .callout-box,
 .tip {
   background-color: #ebebeb;
-  box-shadow: 4px 4px 0 #ccc; }
+  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75), 4px 4px 0 #ccc; }
   .notice > *,
   .callout > *,
   .callout-box > *,
@@ -1682,7 +1673,7 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
   .callout-box.success,
   .tip.success {
     background-color: #def7f1;
-    box-shadow: 4px 4px 0 #9de7d8; }
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75), 4px 4px 0 #9de7d8; }
     .notice.success > .header,
     .callout.success > .header,
     .callout-box.success > .header,
@@ -1693,7 +1684,7 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
   .callout-box.tip,
   .tip.tip {
     background-color: #d7f1f4;
-    box-shadow: 4px 4px 0 #7ed2dd; }
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75), 4px 4px 0 #7ed2dd; }
     .notice.tip > .header,
     .callout.tip > .header,
     .callout-box.tip > .header,
@@ -1704,7 +1695,7 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
   .callout-box.error,
   .tip.error {
     background-color: #fbe1df;
-    box-shadow: 4px 4px 0 #f29d9c; }
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75), 4px 4px 0 #f29d9c; }
     .notice.error > .header,
     .callout.error > .header,
     .callout-box.error > .header,
@@ -1715,16 +1706,12 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
   .callout-box.warning,
   .tip.warning {
     background-color: #fff6e5;
-    box-shadow: 4px 4px 0 #ffe2b3; }
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75), 4px 4px 0 #ffe2b3; }
     .notice.warning > .header,
     .callout.warning > .header,
     .callout-box.warning > .header,
     .tip.warning > .header {
       background-color: #ffefd1; }
-
-.slats + .copy,
-.copy + .slats {
-  margin-top: 11px; }
 
 .slat {
   padding: 8px 5px 8px 2px;
@@ -1841,38 +1828,21 @@ abbr.grunticon-wordmark-small,
 abbr.grunticon-wordmark-med {
   border-bottom: 0 !important; }
 
-.breadcrumbs,
-.main > .header .title,
-.main > .header .toggle,
-.deck,
-.main > .content {
+.main .breadcrumbs, .main > .header .title, .main > .header .toggle, .bar, .nested, .nested > .document {
   padding-left: 11px;
   padding-right: 11px; }
   @media only screen and (min-width: 64.0625em) {
-    .breadcrumbs,
-    .main > .header .title,
-    .main > .header .toggle,
-    .deck,
-    .main > .content {
-      padding-left: 16px;
-      padding-right: 16px; } }
+    .main .breadcrumbs, .main > .header .title, .main > .header .toggle, .bar, .nested, .nested > .document {
+      padding-left: 19px;
+      padding-right: 19px; } }
 
-@media only screen and (max-width: 64em) {
-  .deck > .grid.pulled,
-  .listing > .grid.pulled {
-    margin-left: -11px;
-    margin-right: -11px; }
-    .deck > .grid.pulled > .column,
-    .listing > .grid.pulled > .column {
-      padding-left: 11px;
-      padding-right: 11px; } }
 .main {
   background-color: #fff; }
   .main > .header {
     background-color: #fff;
     color: #444;
     margin-top: 19px;
-    margin-bottom: 19px; }
+    margin-bottom: 13px; }
     .main > .header .title {
       margin: 0;
       padding-top: 5.5px;
@@ -1886,14 +1856,6 @@ abbr.grunticon-wordmark-med {
           font-size: 32px;
           font-size: 2rem;
           line-height: 1.1875; } }
-  .main > .deck .byline {
-    font-size: 13px; }
-  .main > .content {
-    padding-top: 13px;
-    padding-bottom: 13px; }
-  .main .stack {
-    margin-top: 19px;
-    margin-bottom: 23px; }
   .main > .menu {
     padding-left: 5px;
     padding-right: 5px; }
@@ -1903,6 +1865,8 @@ abbr.grunticon-wordmark-med {
 
 .deck {
   color: #666;
+  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1;
   padding-top: 0;
   padding-bottom: 13px;
@@ -1936,6 +1900,32 @@ abbr.grunticon-wordmark-med {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0; }
+
+.cards, .bar, .nested, .nested > .document {
+  padding-top: 11px;
+  padding-bottom: 11px; }
+
+.nested {
+  background-color: #f1f1f1; }
+  .nested > .document {
+    background-color: #fff;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); }
+    .nested > .document .title {
+      margin: 13px 0 32px;
+      font-weight: normal;
+      font-size: 27px;
+      font-size: 1.6875rem;
+      line-height: 1.1; }
+  .nested > .document + .document {
+    margin-top: 19px; }
+
+.stack {
+  margin-top: 19px;
+  margin-bottom: 23px; }
+
+#content > * + * {
+  margin-top: 13px;
+  margin-top: 0.8125rem; }
 
 .relationships {
   padding: 13px 0;

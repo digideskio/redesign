@@ -48,7 +48,7 @@ $card-border-radius: 4px;
   .tags .tag { margin-top: 1px;}
   
   > .footer {
-    background-color: tint(palette(gray, x-light), 60%);
+    background-color: tint(palette(gray, x-light), 33%);
     border-radius: 0 0 $card-border-radius $card-border-radius;
     @include rem(padding, 0 $card-padding-sides);
     
@@ -66,6 +66,7 @@ $card-border-radius: 4px;
 }
 
 .cards {
+  @extend %bar-padding-vertical;
   background-color: tint(palette(gray,x-light), 30%);
 
   .card {
@@ -74,7 +75,8 @@ $card-border-radius: 4px;
     &.small {
       @include rem(margin-bottom, $font-size-l);
     }
-    
-    .cards {background-color: tint( palette(gray,x-light), 60% );}
   }
+  
+  .cards {background-color: tint( palette(gray,x-light), 60% );}
+
 }

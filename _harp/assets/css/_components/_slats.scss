@@ -1,8 +1,5 @@
-.slats { @extend %list-reset; }
-
-.slats + .copy, 
-.copy + .slats { 
-  margin-top: $font-size-xs; 
+.slats { 
+  @extend %list-reset;
 }
 
 .slat {

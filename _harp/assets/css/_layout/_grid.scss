@@ -60,18 +60,13 @@
    *    or cells directly
    *  - this can make the layout 
    */   
-  &.pulled {
+  &.pulled,
+  &.nested {
     @include rem( margin-left, -$gutter/2 );
     @include rem( margin-right, -$gutter/2 );
   }
   
 
-  &.relaxed.pulled {
-    @include rem( margin-left, -$gutter );
-    @include rem( margin-right, -$gutter );
-  }
-  
-      
 }
 
 
@@ -110,11 +105,6 @@
 
   @include rem( padding-left, $gutter/2 );
   @include rem( padding-right, $gutter/2 );
-  
-  .relaxed > & {
-    @include rem( padding-left, $gutter );
-    @include rem( padding-right, $gutter );
-  }
   
   .collapsed > & {
     padding-left: 0;

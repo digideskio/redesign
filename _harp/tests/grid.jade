@@ -167,15 +167,6 @@ p otherwise <abbr title="Cascading Style Sheets">CSS</abbr> inheritance get out 
       .column.hand-6
         p 1 of 2
 
-h2 relaxed
-p double gutters
-
-.grid.test.relaxed
-  .column.hand-6
-    p 1 of 2
-  .column.hand-6
-    p 1 of 2
-
 h2 divided
 
 .grid.test.divided
@@ -201,17 +192,17 @@ p
  | With <code>.blocks</code>, columns will be equal height automatically through the power of Flexbox
 
 .grid.test.blocks
-  .column.hand-6 
+  .column.hand-half
     div just put some stuff here
-  .column.hand-6 
+  .column.hand-half
     div just put some stuff here but this one is extra long but look at the other ones they're all the same size!
 
 .grid.test.blocks
-  .column.hand-3 
+  .column.hand-major
     div just put some stuff here
-  .column.hand-3 
+  .column.hand-minor
     div just put some stuff here but this one is extra long but look at the other ones they're all the same size!
-  .column.hand-3 
+  .column.hand-major
     div just put some stuff here
-  .column.hand-3 
+  .column.hand-minor
     div just put some stuff here but this one is extra long but look at the other ones they're all the same size but this one is even longer and its really out of control

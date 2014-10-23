@@ -34,7 +34,7 @@ var Bartender = _.create(OSLC, {
     
     this.els = {
       menu: $(el),
-      listing: $('#main').find('.listing').first()
+      listing: $('#listing')
     };
     
     this.constructMenu();

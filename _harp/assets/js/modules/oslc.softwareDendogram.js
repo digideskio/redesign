@@ -194,6 +194,9 @@ var animateStroke = function(){
 
 setTimeout(animateStroke, 2000);
 
+// Run the compactor script
+OSLC.compactElements();
+
 });
 
 }(jQuery, this, this.document, d3));

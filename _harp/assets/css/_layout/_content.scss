@@ -1,0 +1,127 @@
+%main-content-padding {
+  padding-left: $main-padding-sides;
+  padding-right: $main-padding-sides;
+  
+  @include respond-to(desk-up) {
+    padding-left: $main-padding-sides-large;
+    padding-right: $main-padding-sides-large;
+  }
+}
+
+// Use this for full-width bars within the above
+%nested-content {
+  margin-left: -$main-padding-sides;
+  margin-right: -$main-padding-sides;
+  @include respond-to(desk-up) {
+    margin-left: -$main-padding-sides-large;  
+    margin-right: -$main-padding-sides-large;
+  }
+}
+
+.main {
+  background-color: $main-bg-color;
+  
+  .breadcrumbs { @extend %main-content-padding; }
+  
+  > .header {
+    background-color: $main-header-bg;
+    color: $main-header-text-color;
+    margin-top: $font-size-l;
+    margin-bottom: $font-size-s;
+    
+    .title {
+      @extend %main-content-padding;
+      margin: 0;
+      padding-top: $main-padding-sides/2;
+      padding-bottom: $main-padding-sides/2;
+      font-weight: normal;
+      @include font-size(xxl, 1.1); 
+      
+      @include respond-to(desk-up) {
+        @include text-size-xxxl;
+      }
+    }
+    
+    .toggle { @extend %main-content-padding; }
+  }
+  
+  > .menu {
+    padding-left: $font-size-xxxs;
+    padding-right: $font-size-xxxs;
+  }
+  
+  > .footer {
+    background-color: tint(palette(gray, x-light), 60%);
+    padding-bottom: $font-size-xxxs;
+  }
+  
+}
+
+.deck {
+  color: palette(gray, mid-dark);
+  @include font-size(s,1);
+  padding-top: 0;
+  @include rem(padding-bottom, $font-size-s);
+}
+
+.byline { margin-top: 8px; }
+.tags {margin-top: 6px;}
+
+.flexbox { 
+
+  .meta,
+  .tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .meta .byline { flex: 1 1 auto; }
+  
+  .tags .tag { flex-shrink: 0; }
+
+}
+
+%bar-padding-vertical { 
+  padding-top: $font-size-xs;
+  padding-bottom: $font-size-xs;
+}
+
+.bar {
+  @extend %main-content-padding;
+  @extend %bar-padding-vertical;
+}
+
+.nested {
+  @extend %main-content-padding;
+  @extend %bar-padding-vertical;
+  background-color: tint(palette(gray,x-light), 30%);
+  
+  > .document {
+    background-color: $main-bg-color;
+    @extend %main-content-padding;
+    @extend %bar-padding-vertical;
+    box-shadow: 0 2px 3px rgba(0,0,0,.2);
+    
+      .title {
+        margin: $font-size-s 0 $font-size-xxxl;
+        font-weight: normal;
+        @include font-size(xxl, 1.1); 
+      }      
+  }
+  
+  > .document + .document {
+    margin-top: $font-size-l;
+  }
+}
+
+.stack {
+  margin-top: $font-size-l;
+  margin-bottom: $font-size-xl;
+}
+
+#content {
+  > * + * { @include rem(margin-top, $font-size-s); }
+}
+
+.relationships { @include rem(padding, 13px 0); }

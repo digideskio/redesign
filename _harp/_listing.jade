@@ -1,4 +1,4 @@
-.grid.pulled.blocks
+.grid.blocks
   for page, slug in public[listing_root]._data
     - var url = site_url + listing_root + '/' + slug + '.html'
     if slug !== 'index' && ! page.draft

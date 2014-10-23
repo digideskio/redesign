@@ -10,7 +10,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
       h1.title #{ title }
   if date || tags
     footer.deck
-      .grid.pulled.middle
+      .grid.middle
         if date
           .column.hand-full.knee-minor
             .byline
@@ -31,25 +31,28 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
                       i.icon(class="#{'grunticon-channel-' + channel.toLowerCase()}")
                     .body #{channel}
   if listing_description
-    section.copy.content
+    section.copy.bar
       p #{listing_description}
   if has_menu
     #bartender.menu.horizontal.page.bartender(data-bartender,data-controls="#{has_menu}")
 
-  section#content(class="content #{is_listing ? 'cards' : '' }")
+  section#content
     if is_listing
-      .listing
+      #listing.cards
         != yield
     else
       if meta_before_body
-        != partial('_slats', {meta_block : meta_before_body})
+        .bar
+          != partial('_slats', {meta_block : meta_before_body})
       if not_just_copy
         != yield
       else
-        .copy
-          != yield
+        .bar
+          .copy
+            != yield
       if meta_after_body
-        != partial('_slats', {meta_block : meta_after_body})
+        .bar
+          != partial('_slats', {meta_block : meta_after_body})
 
   if relationships
     aside.cards.relationships

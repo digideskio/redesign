@@ -1,0 +1,59 @@
+$banner-padding-top: 4px;
+$banner-padding-bottom: 4px;
+
+.banner {  background-color: $header-and-nav-bg; }
+
+.toggle {
+  @extend %featurette;
+  text-decoration: none;
+  transition: background-color .2s $ease-out-cubic;
+  
+  .text {
+    color: $header-and-nav-text-color;
+    font-size: $font-size-xs;
+    line-height: 1;
+    @include rem(margin-top, 4px);
+  }
+}
+
+.banner {
+  //border-top: $header-and-nav-top-border;
+  background-color: $header-and-nav-bg;
+  box-shadow: 0 2px 3px rgba(0,0,0,.16);
+  z-index: 5;
+  
+  .toggle {
+    @include rem(padding, $banner-padding-top 11px $banner-padding-bottom);
+    border-right: 1px solid darken( $header-and-nav-bg, 7% );
+
+    &:hover,&:focus {
+      background-color: darken( $header-and-nav-bg, 4% );
+    }
+  }
+  
+  .image-link {
+    @include rem(margin-left, 8px);
+    @include rem(padding-top, $banner-padding-top);
+    @include rem(padding-bottom, $banner-padding-bottom);
+  }
+  
+  .logo-text { 
+    @include rem(margin-left, 10px);
+  }
+  
+  .project-name {
+    @include rem(margin-top, 2px);
+  }
+}
+
+.logo-text {
+  display: block;
+  color: $header-and-nav-text-color;
+}
+
+.project-name { @extend %block; }
+
+abbr.grunticon-wordmark-small,
+abbr.grunticon-wordmark-med {
+  border-bottom: 0 !important;
+}
