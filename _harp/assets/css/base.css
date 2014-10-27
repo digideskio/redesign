@@ -743,10 +743,10 @@ img {
           -ms-flex-align: center;
               align-items: center; }
   .grid.pulled, .grid.nested {
-    margin-left: -13px;
-    margin-left: -0.8125rem;
-    margin-right: -13px;
-    margin-right: -0.8125rem; }
+    margin-left: -11px;
+    margin-left: -0.6875rem;
+    margin-right: -11px;
+    margin-right: -0.6875rem; }
   @media only screen and (min-width: 64.0625em) {
     .grid.pulled, .grid.nested {
       margin-left: -19px;
@@ -779,10 +779,10 @@ img {
    * 
    * obviously that's not how it'll work out for the inline-block fallback
    */
-  padding-left: 13px;
-  padding-left: 0.8125rem;
-  padding-right: 13px;
-  padding-right: 0.8125rem;
+  padding-left: 11px;
+  padding-left: 0.6875rem;
+  padding-right: 11px;
+  padding-right: 0.6875rem;
   /**
   * Blocks
   * Extra bonus for flexbox browsers

@@ -102,7 +102,7 @@ $grid-ratios: (
   major: 70.72%,
   minor: 29.28%
 );
-$grid-gutter: 2 * $font-size-s;
+$grid-gutter: 2 * $font-size-xs;
 $grid-gutter-large: 2 * $font-size-l;
 
 
@@ -121,8 +121,8 @@ $both-menus-width: $main-menu-width + $secondary-menu-width;
 // Main content
 //
 $main-bg-color: #fff;
-$main-padding-sides: $font-size-xs;
-$main-padding-sides-large: $font-size-l;
+$main-padding-sides: $grid-gutter/2;
+$main-padding-sides-large: $grid-gutter-large/2;
 $main-header-bg: #fff;
 $main-header-text-color: palette(gray,dark);
 
