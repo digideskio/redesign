@@ -743,10 +743,16 @@ img {
           -ms-flex-align: center;
               align-items: center; }
   .grid.pulled, .grid.nested {
-    margin-left: -16px;
-    margin-left: -1rem;
-    margin-right: -16px;
-    margin-right: -1rem; }
+    margin-left: -13px;
+    margin-left: -0.8125rem;
+    margin-right: -13px;
+    margin-right: -0.8125rem; }
+  @media only screen and (min-width: 64.0625em) {
+    .grid.pulled, .grid.nested {
+      margin-left: -19px;
+      margin-left: -1.1875rem;
+      margin-right: -19px;
+      margin-right: -1.1875rem; } }
   .grid.test p {
     margin: 0;
     background-color: pink; }
@@ -773,10 +779,10 @@ img {
    * 
    * obviously that's not how it'll work out for the inline-block fallback
    */
-  padding-left: 16px;
-  padding-left: 1rem;
-  padding-right: 16px;
-  padding-right: 1rem;
+  padding-left: 13px;
+  padding-left: 0.8125rem;
+  padding-right: 13px;
+  padding-right: 0.8125rem;
   /**
   * Blocks
   * Extra bonus for flexbox browsers
@@ -811,6 +817,12 @@ img {
     border-right: 1px solid #333; }
   .divided > .column:last-child {
     border-right: 0; }
+  @media only screen and (min-width: 64.0625em) {
+    .column {
+      padding-left: 19px;
+      padding-left: 1.1875rem;
+      padding-right: 19px;
+      padding-right: 1.1875rem; } }
 
 /*
  * "Hand" classes

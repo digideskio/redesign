@@ -142,6 +142,17 @@
 
   @include grid-row($grid-gutter);
 
+  // @todo: either totally re-use grid-column mixin or find a way to avoid copying just the gutter-specific part of this 
+  // I thought about this DRY mixin/extend technique: http://alistapart.com/article/dry-ing-out-your-sass-mixins
+  // but I think it won't work because you can't @extend in a media query
+  @include respond-to(desk-up) {
+    &.pulled,
+    &.nested {
+      @include rem( margin-left, -$grid-gutter-large/2 );
+      @include rem( margin-right, -$grid-gutter-large/2 );
+    }
+  }
+
   &.test > div {
     //background-color: lighten( $base-color, 40% );    
   }
@@ -160,6 +171,14 @@
 
 .column { 
   @include grid-column($grid-gutter, #333); 
+  
+  // @todo: either totally re-use grid-column mixin or find a way to avoid copying just the gutter-specific part of this 
+  // I thought about this DRY mixin/extend technique: http://alistapart.com/article/dry-ing-out-your-sass-mixins
+  // but I think it won't work because you can't @extend in a media query
+  @include respond-to(desk-up) {
+    @include rem( padding-left, $grid-gutter-large/2 );
+    @include rem( padding-right, $grid-gutter-large/2 );
+  }
 }
 
 /*
