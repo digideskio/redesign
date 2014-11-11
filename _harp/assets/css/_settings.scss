@@ -125,7 +125,8 @@ $main-padding-sides: $grid-gutter/2;
 $main-padding-sides-large: $grid-gutter-large/2;
 $main-header-bg: #fff;
 $main-header-text-color: palette(gray,dark);
-
+$nested-document-background-color: tint(palette(gray,x-light), 30%);
+$form-background-color: tint( palette(blue,x-light), 90% );
 
 //
 // Cards

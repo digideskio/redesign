@@ -90,8 +90,7 @@
 /*
  * Text size mixins / placeholders
  */
-.legend, .dropdown .items .count,
-.js-in-sextant .back-to-top {
+.js-in-sextant .back-to-top, .legend, .dropdown .items .count {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }

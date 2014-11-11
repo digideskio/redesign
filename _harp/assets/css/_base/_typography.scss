@@ -22,10 +22,11 @@
     $line: nth(map-keys($font-sizes),$index);
   }
   
-  %text-size-#{$name},
-  %font-size-#{$name} {
+  %text-size-#{$name} {
     @include font-size($name,$line)
   }
+  
+  %font-size-#{$name} { @extend %text-size-#{$name}; }
 }
 
 // 11px

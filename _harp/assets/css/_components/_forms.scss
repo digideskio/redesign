@@ -1,0 +1,81 @@
+.form {
+  @extend %copy-links;
+  
+  form {
+    @extend %readable;
+  }
+  
+  fieldset { 
+    border: none; 
+    @extend %mp0;
+  }
+
+  fieldset + fieldset {
+    @include rem(margin-top, $font-size-xxl);
+  }
+
+  legend { 
+    padding: 0;
+    border: 0;
+    color: palette(gray,dark);
+    @extend %font-size-xl;
+    margin: 0 0 $font-size-s;
+  }
+    
+  .help {
+    margin: 5px 0;
+    @extend %text-size-s;
+    color: palette(gray, mid-dark);
+  }
+  
+}
+
+.control {
+  > label {
+    @extend %font-size-s;
+    color: palette(gray,dark);
+    font-weight: bold;
+  }
+  
+  > .media + .media {
+    margin-top: 5px;
+  }
+  
+  &.options label {
+    @extend %block;
+    margin-left: 5px;
+  }
+  
+  .notice {
+    margin-top: $font-size-s;
+  }
+}
+
+.control + .control {
+  margin-top: $font-size-s;
+}
+
+input.text,
+textarea.text {
+  @extend %block;
+  border: 1px solid palette(gray);
+  background: #fff;
+  padding: 5px; 
+  margin: 3px 0 5px;
+  color: palette(gray,x-dark);
+  width: 290px;
+  @extend %text-size-m;
+  
+  &.disabled, 
+  &[disabled],
+  &.readonly,
+  &[readonly] {
+    background: shade(#fff,5%);
+    color: palette(gray,mid-dark);
+    cursor: not-allowed;
+  }
+  
+  &:focus {
+    border-color: palette(blue,dark);
+  }
+}

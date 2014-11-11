@@ -18,7 +18,8 @@
     padding-right: $card-padding-sides;
   }
   
-  > :first-child {
+  > :first-child,
+  > .body {
     margin-top: 0;
     padding-top: map-get($font-sizes, xs);
   }
@@ -26,7 +27,7 @@
   > :last-child {
     margin-bottom: 0;
     padding-bottom: map-get($font-sizes, xs);
-  }  
+  }
   
   // have an alternate style with a header and content section
   > .header {

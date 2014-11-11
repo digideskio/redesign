@@ -7,39 +7,44 @@ var Manilla = _.create(OSLC,{
 
   init: function(tablist) {
     
-    // lazy|smart: $.fn.prospectus handles roles, setting unique IDs on the anchors, keyboard controls
-    this.tablist = tablist.prospectus({
-      menuRole: 'tablist',
-      itemRole: 'tab'
-    });
+    this.tablist = tablist;
     
-    this.tabs = tablist.find('[role="tab"]').each(function(){
-      var 
-        tab = $(this),
-        id = tab.attr('href');
-        
-        $(id)
-          .hide()
-          .attr({
-            'role': 'tabpanel',
-            'aria-labelledby': tab[0].id,
-            'aria-hidden': 'true'
+    // lazy|smart: $.fn.prospectus handles roles, setting unique IDs on the anchors, keyboard controls
+    if ( tablist.find('input[type="radio"]').length === 0 ) {
+      tablist.prospectus( {menuRole: 'tablist', itemRole: 'tab'} );
+    }
+    
+    this.tabs = tablist
+      .find('[role="tab"], input[type="radio"]') // .prospectus() above adds the tab role
+      .each(function(){
+        var 
+          tab = $(this),
+          id = tab.attr('href') || tab.data('target');
+          
+          console.log(id);
+
+          $(id)
+            .hide()
+            .attr({
+              'role': 'tabpanel',
+              'aria-labelledby': tab[0].id,
+              'aria-hidden': 'true'
+            });
+
+          tab.attr({
+            'aria-controls': id.replace('#',''),
+            'aria-selected': 'false'
           });
-        
-        tab.attr({
-          'aria-controls': id.replace('#',''),
-          'aria-selected': 'false'
-        });
-        
-    });
+
+      });
     
     var current = tablist.find('.current');
     if ( ! current.length ) {
-      current = tablist.find('[role="tab"]').first().addClass('current');
+      current = tablist.find('[role="tab"], label').first().addClass('current');
     }
     
     // @todo: maybe move this into the jQuery plugin definition
-    this.show( current.attr('href') );
+    this.show( current.attr('href') || current.find('input').data('target') );
     
     return this;
     
@@ -52,33 +57,42 @@ var Manilla = _.create(OSLC,{
     
     var
       newPanel = $(selector),
+      tabPanels = newPanel.closest('.tabpanels'),
       oldPanel;
       
     if (newPanel.is(':visible')) { return; }
     
     this.tabs.each(function(){
       var tab = $(this),
-        href = tab.attr('href'),
+        href = tab.attr('href') || tab.data('target'),
         newCurrent = selector === href;
         
-      if ($(this).hasClass('current')) {
+      if ( tab.parent().addBack().hasClass('current') ) {
         oldPanel = $( href );
       }
       
-      tab
-        .attr('aria-selected', newCurrent)
-        [newCurrent ? 'addClass' : 'removeClass']('current');
+      tab.attr('aria-selected', newCurrent);
+      
+      if ( tab.is('a') ) {
+        tab[newCurrent ? 'addClass' : 'removeClass']('current');
+      } else { // input
+        tab.prop('checked', newCurrent )
+          .parent()[newCurrent ? 'addClass' : 'removeClass']('current');
+      }
       
     });
-    
+        
     oldPanel.attr('aria-hidden','true')
       .velocity('stop')
       .velocity('transition.slideDownOut',{
+        begin: function() { tabPanels.css( 'min-height', oldPanel.height() ); 
+        },
         duration: 300,
-        complete: function(){
+        complete: function() {
           newPanel.attr('aria-hidden','false')
             .velocity('stop')
             .velocity('transition.slideUpIn', 300);
+          tabPanels.css( 'min-height', newPanel.height() );
         }
       });    
   }
@@ -101,7 +115,7 @@ $.fn.manilla = function() {
     
     var 
       $el = $(this),
-      isTab = $el.is('[role="tab"]'),
+      isTab = $el.is('[aria-controls]'),
       tabList = isTab ? $el.closest('[data-manilla]') : $el,
       manilla = tabList.data('manilla');
     
@@ -109,10 +123,11 @@ $.fn.manilla = function() {
     if ( ! _.has(manilla,'tablist') ) {
       manilla = tabList
         .data('manilla', _.create(Manilla))
-        .data('manilla').init($el);
+        .data('manilla')
+        .init($el);
     }
     
-    isTab && manilla.show( $el.attr('href') );
+    isTab && manilla.show( $el.attr('href') || $el.data('target') );
     
   });
 };
@@ -131,6 +146,9 @@ $(document).ready(function(){
 /* Click events */
 $(document).on('click.oslc.manilla', '.item[role="tab"]', function(e){
   e.preventDefault();
+  $(this).manilla();
+})
+.on('change.oslc.manilla', 'input[aria-controls]', function(){
   $(this).manilla();
 });
 

@@ -28,9 +28,12 @@
 /*
  * Reset UL/OLs
  */
-%list-reset {
+%mp0 {
   margin: 0;
   padding: 0;
+}
+%list-reset {
+  @extend %mp0;
   list-style: none;
   
   .copy & { padding-left: 0; } // @todo: should this be .copy > &   ????

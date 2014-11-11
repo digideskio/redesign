@@ -95,7 +95,8 @@
 .nested {
   @extend %main-content-padding;
   @extend %bar-padding-vertical;
-  background-color: tint(palette(gray,x-light), 30%);
+  background-color: $nested-document-background-color;
+  border-top: 1px solid shade( mix($main-bg-color, $nested-document-background-color), 10% );
   
   > .document {
     background-color: $main-bg-color;
@@ -113,6 +114,14 @@
   > .document + .document {
     margin-top: $font-size-l;
   }
+}
+
+.form {
+  @extend %main-content-padding;
+  @extend %bar-padding-vertical;
+  background-color: $form-background-color;
+  margin-top: 0 !important; // @todo BARF. This can go away if you put the form outside of the #content area
+  border-top: 1px solid shade( mix($form-background-color, $nested-document-background-color), 11% );
 }
 
 .stack {

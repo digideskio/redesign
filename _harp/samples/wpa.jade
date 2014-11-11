@@ -310,3 +310,137 @@
       h3 Scope
       
       p etc, etc.
+
+//.form
+  form(action="#")
+    fieldset
+      legend Log in
+    
+      .control
+        label(for="login_username") Email or username
+        input.text(type="text", required, name="username", id="login_username", placeholder="eg jsmith@example.com")
+        p.help Email is a thing that we use now!
+        
+      .control
+        label(for="login_password") Password
+        input.text(type="password", required, name="password", id="login_password")
+        p.help Passwords should be 9 characters with 1000 punctuation marks
+    
+      .control
+        button.btn.primary(type="submit") Log in
+      
+    p.help
+      a(href="#") Register
+      | &ensp;
+      a(href="#") Forgot your password?
+
+.form
+  form(action="#")
+    fieldset
+      legend Your information
+      
+      .control
+        label(for="wpa_name") Your name
+        input.text#wpa_name(type="text" required placeholder="e.g. John Smith")
+        
+      .control
+        label(for="wpa_email") Email
+        input.text#wpa_email(type="email" required placeholder="e.g. jsmith@example.com")
+
+      .control
+        label(for="wpa_jerb") Job title
+        input.text#wpa_jerb(type="text" required placeholder="e.g. Software engineer")
+        
+      .control
+        label(for="wpa_phone") Phone number
+        input.text#wpa_phone(type="tel" required placeholder="e.g. +15555555555")
+        
+      .control
+        label(for="wpa_addy") Address
+        textarea.text#wpa_addy(rows="4" required placeholder="e.g. 123 Fake St, Springfield, USA 97477")
+    
+    fieldset
+      legend Are you representing anyone?
+      
+      p.help Will you be serving as a representative for a company or organization?
+      
+      .menu.horizontal(data-manilla)      
+        label.item(for="agreement_representing") 
+          input#agreement_representing(type="radio" name="representing_or_independent" value="representing someone" required data-target="#representative")
+          | &ensp;Yep
+        label.item(for="agreement_solo") 
+          input#agreement_solo(type="radio" name="representing_or_independent" value="Independent" data-target="#solo")
+          |  &ensp;Nope
+    
+    .tabpanels
+      #representative
+        div rep stuff
+      #solo
+        div solo stuff
+    
+    //fieldset
+      legend Confirm your status
+      
+      .control.options
+        .media
+          .image
+            input.radio#status_confirm(type="radio" required name="status" value="yep")
+          .body
+            label(for="status_confirm")
+              strong You are still a representative for the entity “IBM”; 
+              |  You have the authority to enter into this agreement on behalf of IBM. You agree to notify a Member of the Steering Committee if this status changes.
+        .media
+          .image
+            input.radio#status_deny(type="radio" name="status" value="nope")
+          .body
+            label(for="status_deny")
+              strong Your status has changed.
+              |  You are no longer a representative of IBM.
+
+    //fieldset
+      legend Confirm information about the entity that you represent
+      
+      .control.options
+        .media
+          .image
+            input.radio#entity_us(type="radio" required name="entity_location" value="US")
+          .body
+            label(for="entity_us") IBM is incorporated and headquartered (at the highest level) outside of the European Union
+        .media
+          .image
+            input.radio#entity_eu(type="radio" name="entity_location" value="EU")
+          .body
+            label(for="entity_eu") 
+              | IBM is incorporated and headquartered (at the highest level) in a country that is a member of the European Union
+
+    //fieldset
+      legend (Optional) Attach the Corporate Authorization Form
+        
+      .control.options
+        input.file#corporate_auth(type="file" name="corporate_auth_file")
+        p.help If you have a scanned copy of the completed Corporate Authorization Form, attach it here.
+        p.help Only attach the form if the entity that you are representing is headquartered in the European Union
+        p.help If you need a Corporate Authorization Form, click here and then print this page.
+        
+        .notice.warning
+          .header
+            .title What's going on here?
+          .body
+            .copy
+              p To complete the Workgroup Participation Agreement you must provide an electronic signature, which some countries in the European Union do not accept as a valid signature.
+              p If you are representing an entity that is headquartered in the European Union, you must print, complete, and send us a Corporate Authorization form that states that you are authorized to complete this Workgroup Participation Agreement.
+
+    //fieldset
+      legend Agree to the ALM-PLM Interoperability Workgroup Participation Agreement and Intellectual Property Policy
+      
+      .control
+        label(for="esig") Electronic signature
+        input#esig.text(type="text" required placeholder="e.g. /John Smith/" pattern="/John Smith/")
+        p.help Type a “/”, then your name 
+          em exactly as it appears
+          |  in the 
+          b Your name
+          |  field, and then another “/”
+          
+      .control
+        button.btn.primary(type="submit") You agree

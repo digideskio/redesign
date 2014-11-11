@@ -67,7 +67,7 @@ $card-border-radius: 4px;
 
 .cards {
   @extend %bar-padding-vertical;
-  background-color: tint(palette(gray,x-light), 30%);
+  background-color: $nested-document-background-color;
 
   .card {
     @include rem(margin-bottom, $font-size-xxl);

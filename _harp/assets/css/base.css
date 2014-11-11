@@ -56,7 +56,8 @@
 /*
  * Blocks
  */
-.block.icon, .block, .links .item, .sequence, .sequence .label, .project-name {
+.block.icon, .block, .links .item, .sequence, .sequence .label, .control.options label, input.text,
+textarea.text, .project-name {
   display: block; }
 
 .icon, .menu.horizontal .item, .inline li, .tag, .card .byline, .card > .footer .tags {
@@ -69,12 +70,22 @@
 /*
  * Reset UL/OLs
  */
-.menu .items, .links, .inline, .flat, .slats {
+.menu .items, .links, .inline, .flat, .slats, .form fieldset {
   margin: 0;
-  padding: 0;
+  padding: 0; }
+
+.menu .items, .links, .inline, .flat, .slats {
   list-style: none; }
   .copy .menu .items, .menu .copy .items, .copy .links, .copy .inline, .copy .flat, .copy .slats {
     padding-left: 0; }
+
+.btn, .action, .outlined {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: none; }
 
 /*
  * Prevent flicker on transitions on mobile webkit
@@ -96,7 +107,7 @@
 .copy li, .copy > p, .copy > blockquote, .notice,
 .callout,
 .callout-box,
-.tip {
+.tip, .form form {
   max-width: 720px; }
 
 /* 
@@ -138,26 +149,26 @@
 /*
  * Text size mixins / placeholders
  */
-.breadcrumbs, .sequence .label, .card .byline, .slat {
+.control > label, .breadcrumbs, .sequence .label, .card .byline, .slat, .form .help {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
 
-.copy > h6, .action {
+.copy > h6, .action, input.text,
+textarea.text {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.1875; }
 
-.copy > h5,
 .notice > .header .title,
 .callout > .header .title,
 .callout-box > .header .title,
-.tip > .header .title {
+.tip > .header .title, .copy > h5 {
   font-size: 19px;
   font-size: 1.1875rem;
   line-height: 1.21053; }
 
-.copy > h4 {
+.form legend, .copy > h4 {
   font-size: 23px;
   font-size: 1.4375rem;
   line-height: 1.17391; }
@@ -1124,15 +1135,15 @@ html {
 /*
  * Body Copy
  */
-.copy a, .links a, .breadcrumbs a, .card .byline a {
+.copy a, .links a, .breadcrumbs a, .card .byline a, .form a {
   color: #0083a3;
   -webkit-transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
           transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
-  .copy a:visited, .links a:visited, .breadcrumbs a:visited, .card .byline a:visited {
+  .copy a:visited, .links a:visited, .breadcrumbs a:visited, .card .byline a:visited, .form a:visited {
     color: #39606a; }
-  .copy a:hover, .links a:hover, .breadcrumbs a:hover, .card .byline a:hover, .copy a:focus, .links a:focus, .breadcrumbs a:focus, .card .byline a:focus {
+  .copy a:hover, .links a:hover, .breadcrumbs a:hover, .card .byline a:hover, .form a:hover, .copy a:focus, .links a:focus, .breadcrumbs a:focus, .card .byline a:focus, .form a:focus {
     color: #00a7bd; }
-  .copy a:active, .links a:active, .breadcrumbs a:active, .card .byline a:active {
+  .copy a:active, .links a:active, .breadcrumbs a:active, .card .byline a:active, .form a:active {
     color: #51c1d2; }
 
 .copy a img {
@@ -1288,7 +1299,7 @@ html {
   .menu.primary a.item:focus {
     background-color: #fff3db; }
   .menu.primary .current a,
-  .menu.primary a.current {
+  .menu.primary .current {
     background-color: #ffedcc !important; }
 .menu .heading {
   font-size: 94%;
@@ -1306,7 +1317,7 @@ html {
   .menu.inverted a.item:focus {
     background-color: #565656; }
   .menu.inverted .current a,
-  .menu.inverted a.current {
+  .menu.inverted .current {
     background-color: #444 !important; }
   .menu.inverted .heading {
     border-bottom: 1px solid #ffd485; }
@@ -1439,12 +1450,10 @@ a.gsst_a:focus {
           transition-duration: .1s;
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
           transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition-property: background-color, -webkit-transform, padding, margin;
-          transition-property: background-color, transform, padding, margin; }
+  -webkit-transition-property: background-color, -webkit-transform, box-shadow;
+          transition-property: background-color, transform, box-shadow; }
   .boxshadow .btn:active, .boxshadow .btn[active] {
     box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.1);
-    padding-bottom: .1875em;
-    margin-bottom: .1875em;
     -webkit-transform: translate(0, 0.1875em);
         -ms-transform: translate(0, 0.1875em);
             transform: translate(0, 0.1875em); }
@@ -1657,9 +1666,13 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
     padding-left: 16px;
     padding-right: 16px; }
   .notice > :first-child,
+  .notice > .body,
   .callout > :first-child,
+  .callout > .body,
   .callout-box > :first-child,
-  .tip > :first-child {
+  .callout-box > .body,
+  .tip > :first-child,
+  .tip > .body {
     margin-top: 0;
     padding-top: 11px; }
   .notice > :last-child,
@@ -1794,6 +1807,53 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
     .status[value].final .fallback {
       background-color: #00bd94; }
 
+.form fieldset {
+  border: none; }
+.form fieldset + fieldset {
+  margin-top: 27px;
+  margin-top: 1.6875rem; }
+.form legend {
+  padding: 0;
+  border: 0;
+  color: #444;
+  margin: 0 0 13px; }
+.form .help {
+  margin: 5px 0;
+  color: #666; }
+
+.control > label {
+  color: #444;
+  font-weight: bold; }
+.control > .media + .media {
+  margin-top: 5px; }
+.control.options label {
+  margin-left: 5px; }
+.control .notice {
+  margin-top: 13px; }
+
+.control + .control {
+  margin-top: 13px; }
+
+input.text,
+textarea.text {
+  border: 1px solid #999;
+  background: #fff;
+  padding: 5px;
+  margin: 3px 0 5px;
+  color: #222;
+  width: 290px; }
+  input.text.disabled, input.text[disabled], input.text.readonly, input.text[readonly],
+  textarea.text.disabled,
+  textarea.text[disabled],
+  textarea.text.readonly,
+  textarea.text[readonly] {
+    background: #f2f2f2;
+    color: #666;
+    cursor: not-allowed; }
+  input.text:focus,
+  textarea.text:focus {
+    border-color: #00668f; }
+
 .banner {
   background-color: #fff8eb; }
 
@@ -1840,11 +1900,11 @@ abbr.grunticon-wordmark-small,
 abbr.grunticon-wordmark-med {
   border-bottom: 0 !important; }
 
-.main .breadcrumbs, .main > .header .title, .main > .header .toggle, .bar, .nested, .nested > .document {
+.main .breadcrumbs, .main > .header .title, .main > .header .toggle, .bar, .nested, .nested > .document, .form {
   padding-left: 11px;
   padding-right: 11px; }
   @media only screen and (min-width: 64.0625em) {
-    .main .breadcrumbs, .main > .header .title, .main > .header .toggle, .bar, .nested, .nested > .document {
+    .main .breadcrumbs, .main > .header .title, .main > .header .toggle, .bar, .nested, .nested > .document, .form {
       padding-left: 19px;
       padding-right: 19px; } }
 
@@ -1913,12 +1973,13 @@ abbr.grunticon-wordmark-med {
       -ms-flex-negative: 0;
           flex-shrink: 0; }
 
-.cards, .bar, .nested, .nested > .document {
+.cards, .bar, .nested, .nested > .document, .form {
   padding-top: 11px;
   padding-bottom: 11px; }
 
 .nested {
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  border-top: 1px solid #dfdfdf; }
   .nested > .document {
     background-color: #fff;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); }
@@ -1930,6 +1991,11 @@ abbr.grunticon-wordmark-med {
       line-height: 1.1; }
   .nested > .document + .document {
     margin-top: 19px; }
+
+.form {
+  background-color: #fbfdfd;
+  margin-top: 0 !important;
+  border-top: 1px solid #dadbdb; }
 
 .stack {
   margin-top: 19px;

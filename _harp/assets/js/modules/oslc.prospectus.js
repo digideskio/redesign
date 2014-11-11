@@ -21,7 +21,7 @@ var Prospectus = _.create(OSLC, {
   init: function( menu, options ) {
     this.els = {menu:$(menu)};
     this.options = options;
-    if (this.options.isDropdown) { this.isOpened = false; }
+    if ( options.isDropdown ) { this.isOpened = false; }
     
     var 
       $menu = this.els.menu,
@@ -31,7 +31,7 @@ var Prospectus = _.create(OSLC, {
     
     // set WAI-ARIA roles
     $menu.attr({
-      'role': this.options.manageFocus ? this.options.menuRole : 'group',
+      'role': options.manageFocus ? options.menuRole : 'group',
       'data-prospectus': 'true',
       'id': $menu.attr('id') || 'prospectus-'+menuID
       })
@@ -41,15 +41,15 @@ var Prospectus = _.create(OSLC, {
       .not('.gsst_a') // google custom search
       .addClass('js-prospectus-focusable')
         .attr({
-          role: this.options.manageFocus ? this.options.itemRole : null,
+          role: options.manageFocus ? options.itemRole : null,
           'id':function(){
             menuItemID++;
             return this.id || 'prospectus-'+menuID+'-'+menuItemID;
           }
         });
   
-    if (this.options.isDropdown && this.options.isDropdown.control) {
-      var control = this.options.isDropdown.control;
+    if (options.isDropdown && options.isDropdown.control) {
+      var control = options.isDropdown.control;
     
       $menu.attr({
         'aria-hidden': 'true',
@@ -183,6 +183,8 @@ $(document).ready(function(){
   $('[data-prospectus]').prospectus();
 });
 
+// When you click another menu item, close all other dropdowns
+// If applicable, open the new one
 $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
   var hasDrop = $(this).data('hasDropdown');
   
@@ -201,6 +203,7 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
   ! wasOpened && hasDrop.open();
 
 })
+// If you click the document our outside a dropdown, close all open dropdowns
 .on('click',function(e){
   var 
     openDropdowns = _.filter(OSLC.dropdowns,'isOpened'),
@@ -217,6 +220,7 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
   }
   
 })
+// keycode management for menu items
 .on('keydown', '.js-prospectus-focusable', function(e){
   var
     keycode = e.which || e.keyCode,

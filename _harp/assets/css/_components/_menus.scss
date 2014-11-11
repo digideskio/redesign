@@ -38,7 +38,7 @@
     }
 
     .current a,
-    a.current {
+    .current {
       background-color: darken( $header-and-nav-bg, 6% ) !important;
     }
 
@@ -67,7 +67,7 @@
     }
 
     .current a,
-    a.current {
+    .current {
       background-color: palette(gray,dark) !important;
     }
     

@@ -1,4 +1,5 @@
 %btn {
+  @extend %button-reset;
   @include inline-block;
   vertical-align: middle;
   cursor: pointer;
@@ -92,14 +93,12 @@
               inset 0 -.1875em 0 hsla(0,0%,0%,.20);
   transition-duration: .1s;
   transition-timing-function: $ease-out-cubic;
-  transition-property: background-color, transform, padding, margin;
+  transition-property: background-color, transform, box-shadow;
 
   // "pressed" animation when active
   &:active,
   &[active] {
     box-shadow: 0 .15em .15em hsla(0,0%,0%,.1);
-    padding-bottom: .1875em;
-    margin-bottom: .1875em;
     transform: translate(0,.1875em);
   }
   
