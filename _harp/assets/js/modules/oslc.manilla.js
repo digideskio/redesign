@@ -10,7 +10,7 @@ var Manilla = _.create(OSLC,{
     this.tablist = tablist;
     
     // lazy|smart: $.fn.prospectus handles roles, setting unique IDs on the anchors, keyboard controls
-    if ( tablist.find('input[type="radio"]').length === 0 ) {
+    if ( tablist.find('a').length ) {
       tablist.prospectus( {menuRole: 'tablist', itemRole: 'tab'} );
     }
     
@@ -21,8 +21,6 @@ var Manilla = _.create(OSLC,{
           tab = $(this),
           id = tab.attr('href') || tab.data('target');
           
-          console.log(id);
-
           $(id)
             .hide()
             .attr({
@@ -143,7 +141,7 @@ $(document).ready(function(){
   
 });
 
-/* Click events */
+/* Click + change events */
 $(document).on('click.oslc.manilla', '.item[role="tab"]', function(e){
   e.preventDefault();
   $(this).manilla();
