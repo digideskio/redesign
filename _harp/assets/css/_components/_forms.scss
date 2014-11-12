@@ -10,7 +10,7 @@
     @extend %mp0;
   }
 
-  fieldset + fieldset {
+  .fieldset + .fieldset {
     @include rem(margin-top, $font-size-xxl);
   }
 
@@ -18,12 +18,16 @@
     padding: 0;
     border: 0;
     color: palette(gray,dark);
-    @extend %font-size-xl;
+    @extend %font-size-l;
     margin: 0 0 $font-size-s;
   }
-    
+  
+  p,
   .help {
     margin: 5px 0;
+  }
+  
+  .help {    
     @extend %text-size-s;
     color: palette(gray, mid-dark);
   }
@@ -56,12 +60,17 @@
 }
 
 input.text,
+textarea.text,
+.input {
+margin: 3px 0 5px;
+}
+
+input.text,
 textarea.text {
   @extend %block;
   border: 1px solid palette(gray);
   background: #fff;
   padding: 5px; 
-  margin: 3px 0 5px;
   color: palette(gray,x-dark);
   width: 290px;
   @extend %text-size-m;
@@ -78,4 +87,30 @@ textarea.text {
   &:focus {
     border-color: palette(blue,dark);
   }
+}
+
+.flexbox .prefixed {
+  display: flex;
+  max-width: 290px;
+  
+  > input {
+    margin: 0;
+    flex: 1;
+  }
+}
+
+  .prefix {
+    border: 1px solid palette(gray);
+    border-right: none;
+    padding: 8px 3px 8px 5px;
+    line-height: 1;
+    @extend %font-size-s;
+    color: palette(gray, mid-dark);
+    background: palette(gray, x-light);
+  }
+
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: $font-size-xxxs;
 }

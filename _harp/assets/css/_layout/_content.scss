@@ -83,8 +83,8 @@
 }
 
 %bar-padding-vertical { 
-  padding-top: $font-size-xs;
-  padding-bottom: $font-size-xs;
+  padding-top: $font-size-m;
+  padding-bottom: $font-size-m;
 }
 
 .bar {
@@ -99,6 +99,7 @@
   border-top: 1px solid shade( mix($main-bg-color, $nested-document-background-color), 10% );
   
   > .document {
+    @extend %readable;
     background-color: $main-bg-color;
     @extend %main-content-padding;
     @extend %bar-padding-vertical;

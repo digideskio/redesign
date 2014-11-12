@@ -107,7 +107,7 @@ textarea.text, .project-name, .tabs .indicator, .activeFilter, .js-icon-swapper 
 .copy li, .copy > p, .copy > blockquote, .notice,
 .callout,
 .callout-box,
-.tip, .form form {
+.tip, .form form, .nested > .document {
   max-width: 720px; }
 
 /* 
@@ -149,7 +149,7 @@ textarea.text, .project-name, .tabs .indicator, .activeFilter, .js-icon-swapper 
 /*
  * Text size mixins / placeholders
  */
-.control > label, .js-in-sextant .back-to-top, .breadcrumbs, .sequence .label, .card .byline, .slat, .form .help, .legend, .dropdown .items .count {
+.control > label, .prefix, .js-in-sextant .back-to-top, .breadcrumbs, .sequence .label, .card .byline, .slat, .form .help, .legend, .dropdown .items .count {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
@@ -163,12 +163,12 @@ textarea.text {
 .notice > .header .title,
 .callout > .header .title,
 .callout-box > .header .title,
-.tip > .header .title, .copy > h5 {
+.tip > .header .title, .form legend, .copy > h5 {
   font-size: 19px;
   font-size: 1.1875rem;
   line-height: 1.21053; }
 
-.form legend, .copy > h4 {
+.copy > h4 {
   font-size: 23px;
   font-size: 1.4375rem;
   line-height: 1.17391; }
@@ -1809,7 +1809,7 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
 
 .form fieldset {
   border: none; }
-.form fieldset + fieldset {
+.form .fieldset + .fieldset {
   margin-top: 27px;
   margin-top: 1.6875rem; }
 .form legend {
@@ -1817,8 +1817,10 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
   border: 0;
   color: #444;
   margin: 0 0 13px; }
+.form p,
 .form .help {
-  margin: 5px 0;
+  margin: 5px 0; }
+.form .help {
   color: #666; }
 
 .control > label {
@@ -1835,11 +1837,15 @@ Considering replacing this with just _sequences. No one needs the ol' five-surro
   margin-top: 13px; }
 
 input.text,
+textarea.text,
+.input {
+  margin: 3px 0 5px; }
+
+input.text,
 textarea.text {
   border: 1px solid #999;
   background: #fff;
   padding: 5px;
-  margin: 3px 0 5px;
   color: #222;
   width: 290px; }
   input.text.disabled, input.text[disabled], input.text.readonly, input.text[readonly],
@@ -1853,6 +1859,31 @@ textarea.text {
   input.text:focus,
   textarea.text:focus {
     border-color: #00668f; }
+
+.flexbox .prefixed {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 290px; }
+  .flexbox .prefixed > input {
+    margin: 0;
+    -webkit-flex: 1;
+       -moz-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.prefix {
+  border: 1px solid #999;
+  border-right: none;
+  padding: 8px 3px 8px 5px;
+  line-height: 1;
+  color: #666;
+  background: #ebebeb; }
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px; }
 
 .banner {
   background-color: #fff8eb; }
@@ -1974,8 +2005,8 @@ abbr.grunticon-wordmark-med {
           flex-shrink: 0; }
 
 .cards, .bar, .nested, .nested > .document, .form {
-  padding-top: 11px;
-  padding-bottom: 11px; }
+  padding-top: 16px;
+  padding-bottom: 16px; }
 
 .nested {
   background-color: #f1f1f1;
@@ -2149,7 +2180,7 @@ textarea.text, .project-name, .tabs .indicator, .activeFilter, .js-icon-swapper 
 .copy li, .copy > p, .copy > blockquote, .notice,
 .callout,
 .callout-box,
-.tip, .form form {
+.tip, .form form, .nested > .document {
   max-width: 720px; }
 
 /* 
@@ -2191,7 +2222,7 @@ textarea.text, .project-name, .tabs .indicator, .activeFilter, .js-icon-swapper 
 /*
  * Text size mixins / placeholders
  */
-.control > label, .js-in-sextant .back-to-top, .breadcrumbs, .sequence .label, .card .byline, .slat, .form .help, .legend, .dropdown .items .count {
+.control > label, .prefix, .js-in-sextant .back-to-top, .breadcrumbs, .sequence .label, .card .byline, .slat, .form .help, .legend, .dropdown .items .count {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.23077; }
@@ -2205,12 +2236,12 @@ textarea.text {
 .notice > .header .title,
 .callout > .header .title,
 .callout-box > .header .title,
-.tip > .header .title, .copy > h5 {
+.tip > .header .title, .form legend, .copy > h5 {
   font-size: 19px;
   font-size: 1.1875rem;
   line-height: 1.21053; }
 
-.form legend, .copy > h4 {
+.copy > h4 {
   font-size: 23px;
   font-size: 1.4375rem;
   line-height: 1.17391; }

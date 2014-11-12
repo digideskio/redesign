@@ -336,7 +336,7 @@
 
 .form
   form(action="#")
-    fieldset
+    fieldset.fieldset
       legend Your information
       
       .control
@@ -359,7 +359,7 @@
         label(for="wpa_addy") Address
         textarea.text#wpa_addy(rows="4" required placeholder="e.g. 123 Fake St, Springfield, USA 97477")
     
-    fieldset
+    //fieldset.fieldset
       legend Are you representing anyone?
       
       p.help Will you be serving as a representative for a company or organization?
@@ -367,18 +367,70 @@
       .menu.horizontal(data-manilla)      
         label.item(for="agreement_representing") 
           input#agreement_representing(type="radio" name="representing_or_independent" value="representing someone" required data-target="#representative")
-          | &ensp;Yep
+          | Yep
         label.item(for="agreement_solo") 
           input#agreement_solo(type="radio" name="representing_or_independent" value="Independent" data-target="#solo")
-          |  &ensp;Nope
+          | Nope
     
-    .tabpanels
+    //.tabpanels.fieldset
       #representative
-        div rep stuff
+        fieldset
+          legend Tell us about the organization you are representing
+          
+          .control
+            label(for="wpa_org") Organization name
+            input.text#wpa_org(type="text" name="oslc_org")
+            
+          .control
+            label(for="wpa_org_url") Organization URL
+            .input.prefixed
+              span.prefix http://
+              input.text#wpa_org_url(type="text" name="oslc_org_url")
+            
+            
+          .control
+            p The above &hellip;
+            .menu
+              label.item(for="agreement_representing_entity_is_employer")
+                input#agreement_representing_entity_is_employer(type="radio" name="employer_or_sponsor" value="Employer")
+                | is my employer
+              label.item(for="agreement_representing_entity_is_sponsor")
+                input#agreement_representing_entity_is_sponsor(type="radio" name="employer_or_sponsor" value="Sponsor")
+                | is not my employer but sponsors my participation in OSLC
+          .control
+            p
+              label(for="agreement_representing_primary_contact") 
+                input#agreement_representing_primary_contact(type="checkbox" name="is_pinciple" value="y")
+                | &ensp;I will be the primary contact for this organization
+                
       #solo
-        div solo stuff
+        fieldset
+          legend Tell us about your current employment
+          
+          .control
+            .menu.horizontal(data-manilla)
+              label.item(for="indy_solo")
+                input#indy_solo(type="radio" name="solo_or_employed" value="Unemployed or self-employed" data-target="#indy_and_unemployed")
+                | Unemployed or self-employed
+              label.item(for="indy_employed")
+                input#indy_employed(type="radio" name="solo_or_employed" value="Unemployed or self-employed" data-target="#indy_and_totally_employed")
+                | I am an employee
+
+          .tabpanels.control
+            #indy_and_unemployed
+            #indy_and_totally_employed
+              .control
+                label(for="indy_org_name") Employer name
+                input.text#indy_org_name(type="text" name="oslc_indy_org_name")
+            
+              .control
+                label(for="wpa_indy_org_url") Employer URL
+                .input.prefixed
+                  span.prefix http://
+                  input.text#wpa_indy_org_url(type="text" name="indy_org_url")
+            
     
-    //fieldset
+    fieldset.fieldset
       legend Confirm your status
       
       .control.options
@@ -387,17 +439,17 @@
             input.radio#status_confirm(type="radio" required name="status" value="yep")
           .body
             label(for="status_confirm")
-              strong You are still a representative for the entity “IBM”; 
-              |  You have the authority to enter into this agreement on behalf of IBM. You agree to notify a Member of the Steering Committee if this status changes.
+              strong You are still a representative for the entity “ENTITYNAME”; 
+              |  You have the authority to enter into this agreement on behalf of ENTITYNAME. You agree to notify a Member of the Steering Committee if this status changes.
         .media
           .image
             input.radio#status_deny(type="radio" name="status" value="nope")
           .body
             label(for="status_deny")
               strong Your status has changed.
-              |  You are no longer a representative of IBM.
+              |  You are no longer a representative of ENTITYNAME.
 
-    //fieldset
+    fieldset.fieldset
       legend Confirm information about the entity that you represent
       
       .control.options
@@ -405,15 +457,15 @@
           .image
             input.radio#entity_us(type="radio" required name="entity_location" value="US")
           .body
-            label(for="entity_us") IBM is incorporated and headquartered (at the highest level) outside of the European Union
+            label(for="entity_us") ENTITYNAME is incorporated and headquartered (at the highest level) outside of the European Union
         .media
           .image
             input.radio#entity_eu(type="radio" name="entity_location" value="EU")
           .body
             label(for="entity_eu") 
-              | IBM is incorporated and headquartered (at the highest level) in a country that is a member of the European Union
+              | ENTITYNAME is incorporated and headquartered (at the highest level) in a country that is a member of the European Union
 
-    //fieldset
+    fieldset.fieldset
       legend (Optional) Attach the Corporate Authorization Form
         
       .control.options
@@ -430,7 +482,7 @@
               p To complete the Workgroup Participation Agreement you must provide an electronic signature, which some countries in the European Union do not accept as a valid signature.
               p If you are representing an entity that is headquartered in the European Union, you must print, complete, and send us a Corporate Authorization form that states that you are authorized to complete this Workgroup Participation Agreement.
 
-    //fieldset
+    fieldset.fieldset
       legend Agree to the ALM-PLM Interoperability Workgroup Participation Agreement and Intellectual Property Policy
       
       .control
