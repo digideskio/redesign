@@ -280,8 +280,7 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
   }
     
   // TODO: maybe ':focusable'? will have to exclude .close
-  // TODO: exclude Google Custom Search .gsst_a anchor? (appears to remove typed keywords)
-  $targets = $menu.find('a'); 
+  $targets = $menu.find('a').not('.gsst_a'); 
   
   // return only elements that start with the character
   if ( _.contains(alphabet,keycode) ) {
