@@ -120,7 +120,7 @@ input[type="checkbox"] {
 .enhanced .form.login {
   .control { 
     @extend %pos-rel;
-    padding-top: 5px;
+    padding-top: 7px;
   }
   
   .control+.control { margin-top: 5px; }

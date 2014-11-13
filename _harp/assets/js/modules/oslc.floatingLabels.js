@@ -1,6 +1,9 @@
 ;(function ($, window, document, undefined) {
 'use strict';
 
+// http://bradfrost.com/blog/post/float-label-pattern/
+// http://clubdesign.github.io/floatlabels.js/
+
 var floatingLabels = _.create(OSLC, {
   name: "Floating Labels",
 
