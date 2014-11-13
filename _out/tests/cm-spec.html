@@ -1,0 +1,1347 @@
+<!DOCTYPE html><html lang="en" class="no-js base"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Change Management v3 Specification</title><meta name="basecss" content="http://oslc.github.io/redesign/assets/css/build/base.min.css"/><meta name="enhancedcss" content="http://oslc.github.io/redesign/assets/css/build/enhanced.min.css"/><meta name="enhancedjs" content="http://oslc.github.io/redesign/assets/js/build/enhanced.min.js"/><meta name="grunticons" content="http://oslc.github.io/redesign/assets/icons/build/icons.svg.css,http://oslc.github.io/redesign/assets/icons/build/icons.png.css,http://oslc.github.io/redesign/assets/icons/build/icons.fallback.css"/><style type="text/css">.copy>p,.copy>ul{margin-bottom:1.4375em;margin-top:0}.block,.block.icon,.project-name{display:block}.icon,.inline li{display:inline-block;vertical-align:baseline;zoom:1}.inline,.menu .items{margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;list-style-type:none;list-style-position:initial;list-style-image:initial}.icon{vertical-align:top}.toggle{text-align:center}.toggle .text{display:block}.copy li,.copy>p{max-width:720px}.ir{text-indent:100%;white-space:nowrap;overflow-x:hidden;overflow-y:hidden}.sr-only{border-top-width:0;border-right-width:0;border-bottom-width:0;border-left-width:0;border-style:initial;border-color:initial;clip:rect(0 0 0 0);height:1px;margin-top:-1px;margin-right:-1px;margin-bottom:-1px;margin-left:-1px;overflow-x:hidden;overflow-y:hidden;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;position:absolute;width:1px}.copy>h2{font-size:2rem;line-height:1.1875}.image-link{text-decoration:none}html{box-sizing:border-box}*{box-sizing:inherit}header,main,nav,section{display:block}html{font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif}body{margin-top:0;margin-right:0;margin-bottom:0;margin-left:0}a{background-image:initial;background-attachment:initial;background-origin:initial;background-clip:initial;background-color:transparent;background-position:initial initial;background-repeat:initial initial}abbr[title]{border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:initial}strong{font-weight:700}small{font-size:80%}.grid{font-family:FreeSans,Arimo,'Droid Sans',Helvetica,Arial,sans-serif;letter-spacing:-.31em;word-spacing:-.43em}.grid.pulled{margin-left:-.6875rem;margin-right:-.6875rem}@media only screen and (min-width:64.0625em){.grid.pulled{margin-left:-1.1875rem;margin-right:-1.1875rem}}.column{font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif;letter-spacing:normal;word-spacing:normal;display:inline-block;zoom:1;vertical-align:top;padding-left:.6875rem;padding-right:.6875rem}@media only screen and (min-width:64.0625em){.column{padding-left:1.1875rem;padding-right:1.1875rem}}.hand-full{width:100%}.body{overflow-x:hidden;overflow-y:hidden;zoom:1}.flag,.strip{display:table}.flag>.body,.flag>.image,.strip>.body,.strip>.image,.strip>.toggle{display:table-cell;vertical-align:middle}.flag>.body,.strip>.body{width:100%}html{font-size:100%}.sticky-footer-body{background-color:#444}.copy a{color:#0083a3;-webkit-transition-property:color;-webkit-transition-duration:.2s;-webkit-transition-timing-function:cubic-bezier(0.215,.61,.355,1);-webkit-transition-delay:initial}.copy{line-height:1.4375}.copy>:first-child{margin-top:0}.copy>h2{font-weight:400;margin-top:.71em;margin-bottom:.6em;border-left-width:8px;border-left-style:solid;padding-left:3px;margin-left:-11px;border-top-color:#0083a3;border-right-color:#0083a3;border-bottom-color:#0083a3;border-left-color:#0083a3}@media only screen and (min-width:64.0625em){.copy>h2{padding-left:11px;margin-left:-19px}}.copy>ul{padding-left:1.5rem}.copy li{margin-bottom:.375rem;margin-top:.375rem}.menu .item{padding-top:.6875rem;padding-right:.5rem;padding-bottom:.6875rem;padding-left:.5rem;display:block;color:#444}.menu .item.flush{padding-left:0;padding-right:0}.menu .item,.menu a{text-decoration:none;-webkit-transition-property:background-color;-webkit-transition-duration:.2s;-webkit-transition-timing-function:cubic-bezier(0.215,.61,.355,1);-webkit-transition-delay:initial}.menu.primary{background-color:#fff8eb}.menu.primary .item,.menu.primary a{color:#666}.menu.primary .current{background-color:#ffedcc!important}.inline li{margin-right:11px}.toggle{text-decoration:none;-webkit-transition-property:background-color;-webkit-transition-duration:.2s;-webkit-transition-timing-function:cubic-bezier(0.215,.61,.355,1);-webkit-transition-delay:initial}.toggle .text{color:#666;font-size:11px;line-height:1;margin-top:.25rem}.banner{background-color:#fff8eb;box-shadow:rgba(0,0,0,.15625)0 2px 3px;z-index:5}.banner .toggle{padding-top:.25rem;padding-right:.6875rem;padding-bottom:.25rem;padding-left:.6875rem;border-right-width:1px;border-right-style:solid;border-right-color:#ffebc7}.banner .image-link{margin-left:.5rem;padding-top:.25rem;padding-bottom:.25rem}.banner .logo-text{margin-left:.625rem}.banner .project-name{margin-top:.125rem}.logo-text{display:block;color:#666}abbr.grunticon-wordmark-med,abbr.grunticon-wordmark-small{border-bottom-width:0!important;border-bottom-style:initial!important;border-bottom-color:initial!important}.bar,.main>.header .title{padding-left:11px;padding-right:11px}@media only screen and (min-width:64.0625em){.bar,.main>.header .title{padding-left:19px;padding-right:19px}}.main{background-color:#fff}.main>.header{background-color:#fff;color:#444;margin-top:19px;margin-bottom:13px}.main>.header .title{margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:5.5px;padding-bottom:5.5px;font-weight:400;font-size:1.6875rem;line-height:1.1}@media only screen and (min-width:64.0625em){.main>.header .title{font-size:2rem;line-height:1.1875}}.bar{padding-top:16px;padding-bottom:16px}.footer[role=contentinfo] a{-webkit-transition-property:color;-webkit-transition-duration:.2s;-webkit-transition-timing-function:cubic-bezier(0.215,.61,.355,1);-webkit-transition-delay:initial;text-decoration:none;color:#7ed2dd}.footer[role=contentinfo] p{margin-top:0;margin-right:0;margin-bottom:0;margin-left:0}.footer[role=contentinfo] .social .icon{margin-right:5px;margin-bottom:5px}.footer[role=contentinfo] .copyright{margin-top:8px}</style><script>window.site_url = 'http://oslc.github.io/redesign/' || '/';
+window.environment = 'production';
+</script><!-- inlined base JS--><script type="text/javascript">
+/**
+* @preserve HTML5 Shiv 3.7.2 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+*/
+!function(e,t){function n(e,t){var n=e.createElement("p"),r=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",r.insertBefore(n.lastChild,r.firstChild)}function r(){var e=T.elements;return"string"==typeof e?e.split(" "):e}function a(e,t){var n=T.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),T.elements=n+" "+e,l(t)}function o(e){var t=N[e[S]];return t||(t={},A++,e[S]=A,N[A]=t),t}function i(e,n,r){if(n||(n=t),b)return n.createElement(e);r||(r=o(n));var a;return a=r.cache[e]?r.cache[e].cloneNode():y.test(e)?(r.cache[e]=r.createElem(e)).cloneNode():r.createElem(e),!a.canHaveChildren||v.test(e)||a.tagUrn?a:r.frag.appendChild(a)}function c(e,n){if(e||(e=t),b)return e.createDocumentFragment();n=n||o(e);for(var a=n.frag.cloneNode(),i=0,c=r(),s=c.length;s>i;i++)a.createElement(c[i]);return a}function s(e,t){t.cache||(t.cache={},t.createElem=e.createElement,t.createFrag=e.createDocumentFragment,t.frag=t.createFrag()),e.createElement=function(n){return T.shivMethods?i(n,e,t):t.createElem(n)},e.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+r().join().replace(/[\w\-:]+/g,function(e){return t.createElem(e),t.frag.createElement(e),'c("'+e+'")'})+");return n}")(T,t.frag)}function l(e){e||(e=t);var r=o(e);return!T.shivCSS||E||r.hasCSS||(r.hasCSS=!!n(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),b||s(e,r),e}function u(e){for(var t,n=e.getElementsByTagName("*"),a=n.length,o=RegExp("^(?:"+r().join("|")+")$","i"),i=[];a--;)t=n[a],o.test(t.nodeName)&&i.push(t.applyElement(m(t)));return i}function m(e){for(var t,n=e.attributes,r=n.length,a=e.ownerDocument.createElement(x+":"+e.nodeName);r--;)t=n[r],t.specified&&a.setAttribute(t.nodeName,t.nodeValue);return a.style.cssText=e.style.cssText,a}function d(e){for(var t,n=e.split("{"),a=n.length,o=RegExp("(^|[\\s,>+~])("+r().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),i="$1"+x+"\\:$2";a--;)t=n[a]=n[a].split("}"),t[t.length-1]=t[t.length-1].replace(o,i),n[a]=t.join("}");return n.join("{")}function f(e){for(var t=e.length;t--;)e[t].removeNode()}function h(e){function t(){clearTimeout(i._removeSheetTimer),r&&r.removeNode(!0),r=null}var r,a,i=o(e),c=e.namespaces,s=e.parentWindow;return!C||e.printShived?e:("undefined"==typeof c[x]&&c.add(x),s.attachEvent("onbeforeprint",function(){t();for(var o,i,c,s=e.styleSheets,l=[],m=s.length,f=Array(m);m--;)f[m]=s[m];for(;c=f.pop();)if(!c.disabled&&w.test(c.media)){try{o=c.imports,i=o.length}catch(h){i=0}for(m=0;i>m;m++)f.push(o[m]);try{l.push(c.cssText)}catch(h){}}l=d(l.reverse().join("")),a=u(e),r=n(e,l)}),s.attachEvent("onafterprint",function(){f(a),clearTimeout(i._removeSheetTimer),i._removeSheetTimer=setTimeout(t,500)}),e.printShived=!0,e)}var p="3.7.2",g=e.html5||{},v=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,y=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,E,S="_html5shiv",A=0,N={},b;!function(){try{var e=t.createElement("a");e.innerHTML="<xyz></xyz>",E="hidden"in e,b=1==e.childNodes.length||function(){t.createElement("a");var e=t.createDocumentFragment();return"undefined"==typeof e.cloneNode||"undefined"==typeof e.createDocumentFragment||"undefined"==typeof e.createElement}()}catch(n){E=!0,b=!0}}();var T={elements:g.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:p,shivCSS:g.shivCSS!==!1,supportsUnknownElements:b,shivMethods:g.shivMethods!==!1,type:"default",shivDocument:l,createElement:i,createDocumentFragment:c,addElements:a};e.html5=T,l(t);var w=/^$|\b(?:all|print)\b/,x="html5shiv",C=!b&&function(){var n=t.documentElement;return!("undefined"==typeof t.namespaces||"undefined"==typeof t.parentWindow||"undefined"==typeof n.applyElement||"undefined"==typeof n.removeNode||"undefined"==typeof e.attachEvent)}();T.type+=" print",T.shivPrint=h,h(t)}(this,document),function(e,t){"use strict";function n(t){var n=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,n.parentNode.insertBefore(r,n),r}function r(t,n,r){var a=e.document.createElement("link"),o=n||e.document.getElementsByTagName("script")[0];return a.rel="stylesheet",a.href=t,a.media="only x",o.parentNode.insertBefore(a,o),setTimeout(function(){a.media=r||"all"}),a}function a(t){for(var n=e.document.getElementsByTagName("meta"),r,a=0;a<n.length;a++)if(n[a].name&&n[a].name===t){r=n[a];break}return r}function o(n,r,a){var o;if(r===t){var i="; "+e.document.cookie,c=i.split("; "+n+"=");return 2===c.length?c.pop().split(";").shift():null}if(r===!1&&(a=-1),a){var s=new Date;s.setTime(s.getTime()+24*a*60*60*1e3),o="; expires="+s.toGMTString()}else o="";e.document.cookie=n+"="+r+o+"; path=/"}e.console||(e.console={log:function(){}}),e.enhance={};var i=e.document,c=i.documentElement,s="production"===e.environment,l="basecss",u="enhancedcss",m="enhancedjs",d=["enhanced"];enhance.loadJS=n,enhance.loadCSS=r,enhance.getMeta=a,enhance.cookie=o;var f=a(l);f&&s&&r(f.content);var h=function(t){if(t&&3===t.length){var n=e,a=!(!n.document.createElementNS||!n.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===navigator.userAgent.indexOf("Chrome")),i=function(e){var n=t[e&&a?0:e?1:2];r(n),o("grunticons",n,7)},c=new n.Image;c.onerror=function(){i(!1)},c.onload=function(){i(1===c.width&&1===c.height)},c.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};enhance.grunticon=h;var p=a("grunticons");if(p&&s&&h(p.content.split(",")),"querySelector"in document&&"localStorage"in e&&"addEventListener"in e){c.className=c.className.replace(/(^|\s)base(\s|$)/,"$1$2")+" "+d.join(" ");var g=a(u);g&&s&&r(g.content);var v=a(m);v&&n(v.content)}}(this);</script><noscript><link rel="stylesheet" href="http://oslc.github.io/redesign/assets/css/build/base.min.css"/><link rel="stylesheet" href="http://oslc.github.io/redesign/assets/icons/build/icons.fallback.css"/></noscript></head><body><div class="sticky-footer"><div><a href="#main" class="sr-only focusable">Skip to main content</a></div><header role="banner" class="banner knee-down"><div class="strip"><a id="navToggle" href="#nav" role="button" aria-label="Toggle Navigation" class="toggle image"> <i class="icon grunticon-navtoggle-menu"></i><span class="text"> 
+Menu</span></a><div class="body"><a href="http://oslc.github.io/redesign/" class="flag image-link"><div class="image"><i class="icon block grunticon-logo-small"></i></div><div class="body"><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon block grunticon-wordmark-small ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></div></a></div></div></header><div class="sticky-footer-body off-canvas-wrap"><main id="main" role="main" class="main has-secondary"><header class="header"><div id="pagetitle"><h1 class="title">Change Management v3 Specification</h1></div></header><section id="content"><div class="bar"><div class="copy"><p><strong>Status:</strong> WORKING DRAFT 3.0 Specification</p>
+<p><strong>This Version</strong></p>
+<ul>
+<li><a href="http://open-services.net/wiki/change-management/Specification-3.0/">http://open-services.net/wiki/change-management/Specification-3.0/</a></li>
+</ul>
+<p><strong>Latest Version</strong> </p>
+<ul>
+<li><a href="http://open-services.net/wiki/change-management/Specification-3.0/">http://open-services.net/wiki/change-management/Specification-3.0/</a></li>
+</ul>
+<p><strong>PreviousVersion</strong> </p>
+<ul>
+<li><a href="http://open-services.net/bin/view/Main/CmSpecificationV2">http://open-services.net/bin/view/Main/CmSpecificationV2</a></li>
+</ul>
+<p><strong>Authors</strong> </p>
+<ul>
+<li><a href="http://open-services.net/bin/view/Main/SteveSpeicher">SteveSpeicher</a></li>
+<li><a href="http://open-services.net/bin/view/Main/SamPadgett">SamPadgett</a></li>
+</ul>
+<p><strong>Contributors</strong> </p>
+<ul>
+<li>See <a href="#Contributors">Contributors section</a> below</li>
+</ul>
+<p><strong>Table of Contents</strong></p>
+<p>[TOC]</p>
+<p><strong>Notation and Conventions</strong></p>
+<p>The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC2119</a>. Domain name examples use <a href="http://tools.ietf.org/html/rfc2606">RFC2606</a>.</p>
+<h2>Example</h2>
+<p>really just needed another example</p>
+<h2>Introduction</h2>
+<p>(this section is informative)</p>
+<p>This specification defines a RESTful web services interface for Change Management, the management of product change requests, activities, tasks and relationships between those and related resources such as project, category, release and plan. To support these scenarios, this specification defines a set of HTTP-based RESTful interfaces in terms of HTTP methods: GET, POST, PUT and DELETE, HTTP response codes, content type handling and resource formats.</p>
+<p>The intent of this specification is to define the capabilities needed to support integration scenarios defined by the Change Management working group and not to provide a comprehensive interface to Change Management. The resource formats and operations may not match exactly the native models supported by change management service providers but are intended to be compatible with them. The approach to supporting these scenarios is to delegate operations, as driven by service provider contributed user interfaces, as much as possible and not require a service provider to expose its complete data model and application logic.</p>
+<p>The following figure illustrates how this CM specification relates to other OSLC specifications. It extends and restricts the OSLC Core, while referencing resources defined in other domain specifications.</p>
+<p><strong>NEEDS UPDATE</strong>: The diagram does not show new change management resource types like oslc_cm:Defect or oslc_cm:Task.</p>
+<p><img src="http://open-services.net/pub/Main/CmSpecificationV2/cm-relationships.png" alt="OSLC-CM Relationship to other OSLC Specifications"></p>
+<h3>Terminology</h3>
+<p><strong>Change Request Resource</strong> - A request for change to an application or product. Typically a product request for enhancement, a report for a resolution of a product defect or simply a bug report.</p>
+<p><strong>Consumer</strong> - an implementation of the OSLC Change Management specifications as a client. OSLC CM Consumers consume services provided by service providers</p>
+<p><strong>Service Provider</strong> - an implementation of the OSLC Change Management specifications as a server. OSLC CM clients consume these services</p>
+<h1 class="godzilla">Throw a Godzilla</h1>
+
+
+<h2>Base Requirements</h2>
+<h3>Compliance</h3>
+<p><strong>NEEDS UPDATE</strong>: Will be based on OSLC Core 3.0. Currently links to the OSLC Core 2.0 specification.</p>
+<p>This specification is based on <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core Specification</a>. OSLC CM consumers and service providers <strong>MUST</strong> be compliant with both the core specification and this CM specification, and SHOULD follow all the guidelines and recommendations in both these specifications.</p>
+<p>The following table summarizes the requirements from OSLC Core Specification as well as some additional specific to CM. Note that this specification further restricts some of the requirements for OSLC Core Specification. See further sections in this specification or the OSLC Core Specification to get further details on each of these requirements.</p>
+<p><strong>NEEDS UPDATE</strong>: Review content of this table based on what will change in OSLC Core 3.0. For instance, the requirement level for different media types will probably change. See Resource Formats below.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Level</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unknown properties and content</td>
+<td>MAY / MUST</td>
+<td>OSLC services MAY ignore unknown content and OSLC clients MUST preserve unknown content</td>
+</tr>
+<tr>
+<td>Resource Operations</td>
+<td>MUST</td>
+<td>OSLC service MUST support resource operations via standard HTTP operations</td>
+</tr>
+<tr>
+<td>Resource Paging</td>
+<td>MAY</td>
+<td>OSLC services MAY provide paging for resources but only when specifically requested by client</td>
+</tr>
+<tr>
+<td>Partial Resource Representations</td>
+<td>MAY / MUST</td>
+<td>OSLC services MUST support request for a subset of a resource&#39;s properties via the oslc.properties URL parameter retrieval via HTTP GET and MAY support via HTTP PUT</td>
+</tr>
+<tr>
+<td>Partial Update</td>
+<td>MAY</td>
+<td>OSLC services MAY support partial update of resources using patch semantics</td>
+</tr>
+<tr>
+<td>Service Provider Resources</td>
+<td>MAY / MUST</td>
+<td>OSLC service providers MAY provide a Service Provider Catalog and MUST provide a Service Provider resource</td>
+</tr>
+<tr>
+<td>Creation Factories</td>
+<td>MUST</td>
+<td>OSLC service providers MUST provide creation factories to enable resource creation via HTTP POST</td>
+</tr>
+<tr>
+<td>Query Capabilities</td>
+<td>MUST</td>
+<td>OSLC service providers MUST provide query capabilities to enable clients to query for resources</td>
+</tr>
+<tr>
+<td>Query Syntax</td>
+<td>MUST</td>
+<td>OSLC query capabilities MUST support the OSLC Core Query Syntax and MAY use other query syntax</td>
+</tr>
+<tr>
+<td>Delegated UI Dialogs</td>
+<td>MUST</td>
+<td>OSLC Services MUST offer delegated UI dialogs (creation and selections) specified via service provider resource</td>
+</tr>
+<tr>
+<td>UI Preview</td>
+<td>SHOULD</td>
+<td>OSLC Services SHOULD offer UI previews for resources that may be referenced by other resources</td>
+</tr>
+<tr>
+<td>HTTP Basic Authentication</td>
+<td>MAY</td>
+<td>OSLC Services MAY support Basic Auth and should do so only over HTTPS</td>
+</tr>
+<tr>
+<td>OAuth Authentication</td>
+<td>SHOULD</td>
+<td>OSLC Services SHOULD support OAuth and can indicate the required OAuth URLs via the service provider resource</td>
+</tr>
+<tr>
+<td>Error Responses</td>
+<td>MAY</td>
+<td>OSLC Services MAY provide error responses using Core defined error formats</td>
+</tr>
+<tr>
+<td>RDF/XML Representations</td>
+<td>MUST / SHOULD</td>
+<td>OSLC services MUST provide an RDF/XML representation for HTTP GET requests and SHOULD support RDF/XML representations on POST and PUT requests.</td>
+</tr>
+<tr>
+<td>XML Representations</td>
+<td>MUST</td>
+<td>OSLC services MUST provide a XML representation for HTTP GET, POST and PUT requests that conform to the Core Guidelines for XML.</td>
+</tr>
+<tr>
+<td>JSON Representations</td>
+<td>MUST</td>
+<td>OSLC services MUST provide JSON representations for HTTP GET, POST and PUT requests that conform to the Core Guidelines for JSON</td>
+</tr>
+<tr>
+<td>HTML Representations</td>
+<td>SHOULD</td>
+<td>OSLC services SHOULD provide HTML representations for HTTP GET requests</td>
+</tr>
+</tbody>
+</table>
+<h3>Specification Versioning</h3>
+<p><strong>NEEDS UPDATE</strong>: Do we still need an OSLC-Core-Version header? Need guidance from OSLC Core. Compatibility with Core V2 is planned for Core V3.</p>
+<p>See <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Specification_Versioning">OSLC Core Specification Versioning section</a>.</p>
+<p>Service providers that support the resource formats and services in this specification <strong>MUST</strong> use HTTP response header of <code>OSLC-Core-Version</code> with a value of <code>3.0</code>. Consumers <strong>MAY</strong> request formats and services defined in this document by providing a HTTP request header of <code>OSLC-Core-Version</code> with a value of <code>3.0</code>. See section below on Version Compatibility with OSLC CM 1.0 Specifications.</p>
+<h3>Namespaces</h3>
+<p>In addition to the namespace URIs and namespace prefixes <code>oslc</code>, <code>rdf</code>, <code>dcterms</code> and <code>foaf</code> defined in the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core specification</a>, OSLC CM defines the namespace URI of <code>http://open-services.net/ns/cm#</code> with a namespace prefix of <code>oslc_cm</code></p>
+<p>This specification also uses these namespace prefix definitions:</p>
+<ul>
+<li>oslc_rm : <code>http://open-services.net/ns/rm#</code> (Reference: OSLC RM)</li>
+<li>oslc_qm : <code>http://open-services.net/ns/qm#</code> (Reference: OSLC QM)</li>
+<li>oslc_scm : <code>http://open-services.net/ns/scm#</code> (Reference: OSLC SCM)</li>
+</ul>
+<h3>Resource Formats</h3>
+<p><strong>NEEDS UPDATE</strong>: Evaluate JSON-LD in place of OSLC JSON. Add Turtle? Remove Atom? Need guidance from OSLC Core.</p>
+<p>In addition to the requirements for <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Formats">OSLC Core Resource Formats section</a>, this section outlines further refinements and restrictions.</p>
+<p>For HTTP GET requests on all OSLC CM and OSLC Core defined resource types,</p>
+<ul>
+<li>CM Providers <strong>MUST</strong> provide RDF/XML, XML. and JSON representations. The XML and JSON representations <strong>SHOULD</strong> follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.</li>
+<li>CM Consumers requesting RDF/XML <strong>SHOULD</strong> be prepared for any valid RDF/XML document. CM Consumers requesting XML or JSON <strong>SHOULD</strong> be prepared for representations that follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.</li>
+<li>CM Providers <strong>SHOULD</strong> support an [X]HTML representation and a user interface (UI) preview as defined by <a href="http://open-services.net/bin/view/Main/OslcCoreUiPreview">UI Preview Guidance</a></li>
+</ul>
+<p>For HTTP PUT/POST request formats for resource type of !ChangeRequest:</p>
+<ul>
+<li>CM Providers <strong>MUST</strong> accept XML and JSON representations and <strong>SHOULD</strong> accept RDF/XML representations. CM Providers accepting RDF/XML <strong>SHOULD</strong> be prepared for any valid RDF/XML document. For XML or JSON, CM Providers <strong>SHOULD</strong> be prepared for representations that follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.</li>
+</ul>
+<p>For HTTP GET response formats for Query requests,</p>
+<p>CM Providers MUST provide RDF/XML, XML, Atom Syndication Format XML and JSON representations.</p>
+<p>When CM Consumers request:</p>
+<ul>
+<li><code>application/rdf+xml</code> CM Providers <strong>MUST</strong> respond with RDF/XML representation without restrictions.</li>
+<li><code>application/json</code> CM Providers <strong>MUST</strong> respond with JSON representation as defined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.</li>
+<li><code>application/xml</code> CM Provider <strong>MUST</strong> respond with OSLC-defined abbreviated XML representation as defined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a></li>
+<li><code>application/atom+xml</code> CM Provider <strong>MUST</strong> respond with Atom Syndication Format XML representation as defined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a></li>
+<li>The Atom Syndication Format XML representation <strong>SHOULD</strong> use RDF/XML representation without restrictions for the atom:content entries representing the resource representations.</li>
+</ul>
+<p>See Query Capabilities for additional information when Resource Shapes affect representation.</p>
+<h4>Content Negotiation</h4>
+<p><strong>NEEDS UPDATE</strong>: Resource formats are expected to change. Remove this section and defer to OSLC Core?</p>
+<p>OSLC Core Guidance clearly points to RDF representations (and specifically RDF/XML) as a convention that all OSLC Provider implementations minimally provide and accept. OSLC CM Provider implementations are strongly encouraged to adopt this convention. Future versions of this specification are expected to require RDF representations for all operations and relax requirements for specialized XML representations.</p>
+<p><strong>Representation</strong> - identified by the <code>application/xml</code> content type. Format representation rules are outlined in Core <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Resource Formats section</a></p>
+<p><strong>XML Representation</strong> - identified by the <code>application/xml</code> content type. Format representation rules are outlined in Core <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Resource Formats section</a></p>
+<p><strong>RDF/XML Representation</strong> - identified by the <code>application/rdf+xml</code> content type. No additional guidance is given. The OSLC Core describes an algorithm for generating consistent formats that are used as examples only.</p>
+<p><strong>JSON Representation</strong> - identified by the <code>application/json</code> content type. Format representation rules are outlined in Core <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Resource Formats section</a>.</p>
+<p><strong>Atom Syndication Format XML Representation</strong> - identified by the <code>application/atom+xml</code> content type. Format representation rules are outlined in Core <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Resource Formats section</a>.</p>
+<h3>Authentication</h3>
+<p><strong>NEEDS UPDATE</strong>: Adopt authentication requirements and recommendations from OSLC Core 3.0.</p>
+<p>See <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Authentication">OSLC Core Authentication section</a>. In addition to the OSLC Core authentication requirements, OSLC CM services providers <strong>SHOULD</strong> support OAuth.</p>
+<h3>Error Responses</h3>
+<p>See <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Error_Responses">OSLC Core Error Responses section</a>. OSLC CM puts no additional constraints on error responses.</p>
+<h3>Pagination</h3>
+<p>OSLC CM service providers <strong>SHOULD</strong> support pagination of query results and <strong>MAY</strong> support pagination of a single resource&#39;s properties as defined by the OSLC Core Specification.</p>
+<h3>Requesting and Updating Properties</h3>
+<h4>Requesting a Subset of Properties</h4>
+<p>A client <strong>MAY</strong> request a subset of a resource&#39;s properties as well as properties from a referenced resource. In order to support this behavior a service provider <strong>MUST</strong> support the <code>oslc.properties</code> and <code>oslc.prefix</code> URL parameter on a HTTP GET request on individual resource request or a collection of resources by query. If the <code>oslc.properties</code> parameter is omitted on the request, then all resource properties <strong>MUST</strong> be provided in the response.</p>
+<h4>Updating a Subset of Properties</h4>
+<p><strong>NEEDS UPDATE</strong>: Adopt partial update (PATCH) from W3C LDP.</p>
+<p>A client <strong>MAY</strong> request that a subset of a resource&#39;s properties be updated by identifying those properties to be modified using the <code>oslc.properties</code> URL parameter on a HTTP PUT request.</p>
+<p>If the parameter <code>oslc.properties</code> contains a valid resource property on the request that is not provided in the content, the server <strong>MUST</strong> set the resource&#39;s property to a null or empty value. If the parameter <code>oslc.properties</code> contains an invalid resource property, then a <code>409 Conflict</code> <strong>MUST</strong> be returned.</p>
+<h4>Updating Multi-Valued Properties</h4>
+<p>For multi-valued properties that contain a large number of values, it may be difficult and inefficient to add or remove property values. OSLC CM Service Providers <strong>SHOULD</strong> provide support for a partial update of the multi-valued properties as defined by <a href="http://open-services.net/bin/view/Main/OslcCorePartialUpdate">OSLC Core Partial Update</a>.</p>
+<h3>Labels for Relationships</h3>
+<p>Change Management relationships to other resources are represented by RDF properties. Instances of a relationship - often called links - are RDF triples whose predicate is the property, and whose value (aka object) is the URI of target resource. When a Change Management link is to be presented in a user interface, it may be helpful to display an informative and useful textual label instead of or in addition to the URI. It is recommended to use either a property from the target resource such as 
+dcterms:title or retrieve a label for presentation by retrieving the target resource&#39;s <a href="http://open-services.net/bin/view/Main/http://open-services.net/bin/view/Main/OslcCoreUiPreview">OSLCUIPreview</a>.  In the case where a relationship (a triple) requires a unique label that is not available from the target resource, only then OSLC providers <strong>MAY</strong> support a <code>dcterms:title</code> link property in Change Management resource representations, using the anchor approach outlined in the OSLC Core Links Guidance.</p>
+<p><strong>NEEDS UPDATE</strong>: Provide Turtle example.</p>
+<p>RDF/XML and XML example using reified statement:</p>
+<pre><code>&lt;rdf:RDF 
+     xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot; 
+     xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+     xmlns:oslc_cm=&quot;http://open-services.net/ns/cm#&quot;&gt;
+
+    &lt;oslc_cm:ChangeRequest rdf:about=&quot;http://example.com/bugs/4321&quot;&gt;
+         &lt;oslc_cm:relatedChangeRequest rdf:ID=&quot;link1&quot;
+             rdf:resource=&quot;http://anotherexample.com/defects/123&quot; /&gt;
+    &lt;/oslc_cm:ChangeRequest&gt;
+
+    &lt;rdf:Description rdf:about=&quot;#link1&quot;&gt;
+        &lt;dcterms:title&gt;Defect 123: Problems during install&lt;/dcterms:title&gt;
+   &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;</code></pre>
+<p><strong>NEEDS UPDATE</strong>: Will this be JSON-LD in 3.0?</p>
+<p>JSON example using reified statement:</p>
+<pre><code>{  
+   &quot;prefixes&quot; : {
+      &quot;dcterms&quot;  : &quot;http://purl.org/dc/terms/&quot;,
+      &quot;rdf&quot;      : &quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;,
+      &quot;oslc&quot;     : &quot;http://open-services.net/ns/core#&quot;,
+      &quot;oslc_cm&quot;  : &quot;http://open-services.net/ns/cm#&quot;
+   },
+   &quot;rdf:type&quot; : [ { &quot;rdf:resource&quot; : &quot;http://open-services.net/ns/cm#ChangeRequest&quot; }],
+   &quot;rdf:about&quot; : &quot;http://example.com/bugs/4321&quot;,
+   &quot;oslc_cm:relatedChangeRequest&quot; : { 
+       &quot;rdf:resource&quot;  : &quot;http://anotherexample.com/defects/123&quot;,
+       &quot;dcterms:title&quot; : &quot;Defect 123: Problems during install&quot;
+   }
+}</code></pre>
+<h3>Actions   {#Actions}</h3>
+<p><strong>NEEDS UPDATE</strong>: The following is the OSLC-CM workgroup design for actions. The workgroup is evaluating instead using the OSLC Core actions proposal, <a href="http://open-services.net/wiki/core/Exposing-arbitrary-actions-on-RDF-resources/">Exposing arbitrary actions on RDF resources</a>.</p>
+<p>Actions are read-only properties of type Resource in a Change Request resource. The URI of such a reference property (&quot;Action URI&quot;) points to the <a href="#Resource_Action">Action resource</a> that handles the state transition. A resource can be updated by a HTTP POST to the Action URI. The request body of the HTTP POST <strong>MUST</strong> contain the resource URI that the transition will be applied. The request body <strong>MAY</strong> contain additional property values to be updated along with the state transition via the action. A HTTP GET on the Action URI <strong>SHOULD</strong> return information about that action.</p>
+<p>The Change Request resource representation <strong>SHOULD</strong> only include the actions that are applicable to the current state of the resource. If an action is performed and the precondition for a state transition is not met, the request <strong>MUST</strong> respond with a 409 Conflict status code.</p>
+<p>An attempt to update an action property explicitly in a PUT or PATCH request <strong>SHOULD</strong> be answered with a 409 Conflict HTTP status code. Their presence in a resource representation used for an update via PUT <strong>MUST NOT</strong> prevent the resource from being updated.</p>
+<h4>Example</h4>
+<p>A change request resource representation with actions and predicates:</p>
+<pre><code>@prefix oslc: &lt;http://open-services.net/ns/core#&gt;.
+@prefix oslc_cm: &lt;http://open-services.net/ns/cm#&gt;.
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt;.
+&lt;http://example.com/bugs/2314&gt;
+   a oslc_cm:ChangeRequest;
+   oslc_cm:state &lt;http://open-services.net/ns/cm#Open-state&gt;;
+   dcterms:identifier &quot;2314&quot;;
+   dcterms:title &quot;Provide import&quot;;
+   oslc_cm:action &lt;http://example.com/bugs/action/resolve&gt;,
+                  &lt;http://example.com/bugs/action/start&gt;.
+
+&lt;http://example.com/bugs/action/resolve&gt;
+   a oslc_cm:Action;
+   dcterms:description &quot;Indicates work is complete on the change request.&quot;;
+   dcterms:identifier &quot;23&quot;;
+   dcterms:title &quot;Resolve&quot;;
+   oslc:resourceShape &lt;http://example.com/bugs/action/resolve/shape&gt;;
+   oslc_cm:targetState &lt;http://open-services.net/ns/cm#Resolved-state&gt;.
+
+&lt;http://example.com/bugs/action/start&gt; 
+   a oslc_cm:Action;
+   dcterms:description &quot;Indicates work is beginning on the change request.&quot;;
+   dcterms:identifier &quot;24&quot;;
+   dcterms:title &quot;Start Working&quot;;
+   oslc:resourceShape &lt;http://example.com/bugs/action/start/shape&gt;;
+   oslc_cm:targetState &lt;http://open-services.net/ns/cm#In-progress-state&gt;.</code></pre>
+<p>To change the CR&#39;s state to &#39;In Progress&#39;, you would transition the CR by POST&#39;ing to the <code>oslc_cm:action</code> URL for the right target state:</p>
+<pre><code>POST /bugs/action/start HTTP/1.1
+@prefix oslc_cm: &lt;http://open-services.net/ns/cm#&gt;.
+&lt;http://example.com/bugs/2314&gt;
+   a oslc_cm:ChangeRequest.</code></pre>
+<p>After the request, the CR resource representation will look like</p>
+<pre><code>@prefix xmlns: &lt;http://www.w3.org/2000/xmlns/&gt;.
+@prefix oslc_cm: &lt;http://open-services.net/ns/cm#&gt;.
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt;.
+&lt;http://example.com/bugs/2314&gt; 
+  a oslc_cm:ChangeRequest;
+  oslc_cm:state &lt;http://open-services.net/ns/cm#In-progress-state&gt;;
+  dcterms:identifier &quot;2314&quot;;
+  dcterms:title &quot;Provide import&quot;;
+  oslc_cm:action &lt;http://example.com/bugs/action/resolve&gt;.</code></pre>
+<p>A GET on an action URI might look like this.</p>
+<pre><code>GET /bugs/action/resolve HTTP/1.1
+@prefix oslc: &lt;http://open-services.net/ns/core#&gt;.
+@prefix oslc_cm: &lt;http://open-services.net/ns/cm#&gt;.
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt;.
+
+&lt;http://example.com/bugs/action/resolve&gt;
+   a oslc_cm:Action;
+   dcterms:description &quot;Indicates work is complete on the change request.&quot;;
+   dcterms:identifier &quot;23&quot;;
+   dcterms:title &quot;Resolve&quot;;
+   oslc:resourceShape &lt;http://example.com/bugs/action/resolve/shape&gt;;
+   oslc_cm:targetState &lt;http://open-services.net/ns/cm#Resolved-state&gt;.</code></pre>
+<h3>Attachments</h3>
+<p>An attachment is added to a ChangeRequest via a simple POST request to the appropriate LDP-Container resource. The entity body becomes the content of the attachment resource. The attachment is automatically associated with the Change Request via an <code>oslc_cm:attachment</code> statement. Statements are also automatically added to the <code>oslc_cm:AttachmentDescriptor</code> resource. The property values are assigned by the CM provider or can be determined from standard headers of the POST.  The following table maps the HTTP request headers from the POST request to create the attachment resource to what SHOULD be used as the initial values in the indicated <code>oslc_cm:AttachmentDescriptor</code> resource:</p>
+<table>
+<thead>
+<tr>
+<th><strong>HTTP Request Header</strong></th>
+<th><strong>Prefixed Name</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Slug</code> <a href="http://tools.ietf.org/html/rfc5023#section-9.7">RFC5023</a></td>
+<td><code>dcterms:title</code></td>
+</tr>
+<tr>
+<td><code>Content-Type</code></td>
+<td><code>dcterms:format</code></td>
+</tr>
+<tr>
+<td><code>Content-Length</code></td>
+<td><code>oslc_cm:attachmentSize</code></td>
+</tr>
+</tbody>
+</table>
+<p>When a CM Provider successfully creates an attachment resource, it MUST respond with an HTTP status code of 201 (created) with the URI of the newly created attachment resource in the HTTP response <code>Location</code> header.  Additional, if the CM Provider created an associated <code>oslc_cm:AttachmentDescriptor</code> resource, the URI for this resource should be listed in the HTTP response <code>Link</code> header with <code>rel= describes</code> see <a href="http://tools.ietf.org/html/rfc5988">RFC5988</a> and <a href="http://tools.ietf.org/html/rfc6892">RFC6892</a>.</p>
+<p>A CM consumer can include an <code>Slug</code> header in the attachment-creating POST to specify a hint for a name for the resource as part of that single request. This can be important as some CM systems require a name at the time the attachment is created. Different systems may have different requirements for valid attachment names, so the value of the <code>Slug</code> header should be interpreted as a hint in this context. If the given name can not be used as specified, it SHOULD be transformed into a valid name. If that is not possible or the header is not specified, an arbitrary value SHOULD be assigned. Failure due to an invalid name is undesirable because of the potentially large size of an attachment resource.</p>
+<p>An <code>Slug</code> header SHOULD also be included by a CM provider in the response to a GET on an attachment resource. If a consumer wishes to store the content as a file, this value provides a hint as to the file name to use (subject, of course, to any file system restrictions). In the absence of an <code>Slug</code> header, the consumer may use the last segment of the resource&#39;s URI as a hint, or just choose an arbitrary file name.</p>
+<h4>Example</h4>
+<h5>Retrieve an Attachment for a Change Request</h5>
+<p>This involves two GET requests (if you don&#39;t have the attachment URI available and do have the Change Request&#39;s URI): the first to find the URI of ChangeRequest, the second is it fetch the attachment itself (based on the Change Request&#39;s property values).</p>
+<p><strong>Request #1</strong></p>
+<pre><code>GET http://example.com/bugs/2314?oslc.properties=oslc_cm:attachment
+Accept: text/turtle</code></pre>
+<p><strong>Response #1</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: text/turtle
+Content-Length: 183
+ETag: &quot;_87e52ce291112&quot;
+
+@prefix oslc_cm: &lt;http://open-services.net/ns/cm#&gt; .
+@prefix ldp: &lt;http://w3.org/ns/ldp#&gt; .
+
+&lt;&gt;
+   a oslc_cm:ChangeRequest ;
+   oslc_cm:attachment
+      &lt;attachments/1&gt;,
+      &lt;attachments/2&gt; .
+
+&lt;attachments&gt;
+   a ldp:Container;
+   ldp:membershipPredicate oslc_cm:attachment;
+   ldp:membershipSubject &lt;.&gt;.</code></pre>
+<p><strong>Request #2</strong></p>
+<pre><code>GET http://example.com/bugs/2314/attachments/1
+Accept: */*</code></pre>
+<p><strong>Response #2</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: image/png
+Content-Length: 53622
+Link: &lt;http://example.com/bugs/2314/attachments/meta/1&gt;;rel=describes
+ETag: &quot;_87e52ce295556&quot;
+
+[binary content]</code></pre>
+<h5>Fetch Attachment container</h5>
+<p><strong>Request</strong></p>
+<pre><code>GET http://example.com/bugs/2314/attachments
+Accept: text/turtle</code></pre>
+<p><strong>Response</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: text/turtle
+Content-Length: 944
+ETag: &quot;_87e52ce293334&quot;
+
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix oslc_cm: &lt;http://open-services.net/ns/cm#&gt; .
+@prefix ldp: &lt;http://w3.org/ns/ldp#&gt; .
+@prefix wdrs: &lt;http://www.w3.org/2007/05/powder-s#&gt; .
+
+&lt;&gt;
+   a ldp:Container ;
+   ldp:membershipPredicate oslc_cm:attachment;
+   ldp:membershipSubject &lt;http://example.com/bugs/2314&gt;.
+
+&lt;http://example.com/bugs/2314&gt;
+   oslc_cm:attachment &lt;1&gt;, &lt;2&gt; .
+
+&lt;http://example.com/bugs/2314/attachments/meta/1&gt;
+   a oslc_cm:AttachmentDescriptor ;
+   dcterms:title &quot;screenshot.png&quot; ;
+   dcterms:identifier &quot;1&quot; ;
+   dcterms:format &lt;http://purl.org/NET/mediatypes/image/png&gt; ;
+   oslc_cm:attachmentSize &quot;53622&quot; ;
+   dcterms:creator &lt;http://example.com/users/steve&gt; ;
+   dcterms:created &quot;2011-07-18T13:22:30.45-05:00&quot; .
+
+&lt;http://example.com/bugs/2314/attachments/1&gt; wdrs:describedBy &lt;http://example.com/bugs/2314/attachments/meta/1&gt;.
+
+&lt;http://example.com/bugs/2314/attachments/meta/2&gt;
+   a oslc_cm:AttachmentDescriptor ;
+   dcterms:title &quot;fix.patch&quot; ;
+   dcterms:identifier &quot;2&quot; ;
+   dcterms:format &lt;http://purl.org/NET/mediatypes/text/x-diff&gt; ;
+   oslc_cm:attachmentSize &quot;9196&quot; ;
+   dcterms:creator &lt;http://example.com/users/dave&gt; ;
+   dcterms:created &quot;2011-07-19T15:03:54.00-05:00&quot; .
+
+&lt;http://example.com/bugs/2314/attachments/2&gt; wdrs:describedBy &lt;http://example.com/bugs/2314/attachments/meta/2&gt;.</code></pre>
+<h5>Create an Attachment</h5>
+<p>Once the attachment container URI for a Change Request is known, this is accomplished with a single POST request.</p>
+<p><strong>Request</strong></p>
+<pre><code>POST http://example.com/bugs/2314/attachments
+Slug: design.odt
+Content-Type: application/vnd.oasis.opendocument.text
+Content-Length: 18124
+
+[binary content]</code></pre>
+<p><strong>Response</strong></p>
+<pre><code>HTTP/1.1 201 CREATED
+Location: http://example.com/bugs/2314/attachments/3
+Link: &lt;http://example.com/bugs/2314/attachments/meta/3&gt;; rel=&quot;describes&quot;
+Content-Length: 0</code></pre>
+<h2>CM Resource Definitions</h2>
+<p>Property value types that are not defined in the following sections, are defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Defining_OSLC_Properties">OSLC Core - Defining OSLC Properties</a></p>
+<p><strong>NEEDS UPDATE</strong>: Define what properties belong to each type and how the new OSLC-CM types relate to ChangeRequest.</p>
+<h3>Resource: Defect</h3>
+<p>A software or product defect. Used by QM tools to report defects in testing.</p>
+<ul>
+<li><strong>Name:</strong> <code>Defect</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#Defect</code></li>
+</ul>
+<h3>Resource: Enhancement</h3>
+<p>A request for new functionality.</p>
+<ul>
+<li><strong>Name:</strong> <code>Enhancement</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#Enhancement</code></li>
+</ul>
+<h3>Resource: ReviewTask</h3>
+<p>A request to make a changes and review the change. A review task can be used by RM tools <a href="http://open-services.net/wiki/change-management/Change-Management-of-Requirements/">to request and approve changes to requirements</a>, or it might be used by QM tools to review test plans and test cases.</p>
+<ul>
+<li><strong>Name:</strong> <code>ReviewTask</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#ReviewTask</code></li>
+</ul>
+<h3>Resource: Task</h3>
+<p>An executable and trackable activity. Tasks can be used in many context. A QM tool that create tasks to write test plans and test cases is one example.</p>
+<ul>
+<li><strong>Name:</strong> <code>Task</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#Task</code></li>
+</ul>
+<h3>Resource ChangeRequest   {#Resource_ChangeRequest}</h3>
+<p>The Change Request resource is a single definition used to define many kinds of change requests such as: defect, enhancement, task, bug, activity, etc. There are a fair number of common properties between these different kinds of change requests and can use some of the properties in the follow definition to identify them.</p>
+<p>The Change Request resource properties are not limited to the ones defined in this specification, service providers may provide additional properties. It is recommended that any additional properties exist in their own unique namespace and not use the namespaces defined in these specifications.</p>
+<ul>
+<li><strong>Name:</strong> <code>ChangeRequest</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#ChangeRequest</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Prefixed Name</strong></th>
+<th><strong>Occurs</strong></th>
+<th><strong>Read-only</strong></th>
+<th><strong>Value-type</strong></th>
+<th><strong>Representation</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OSLC Core:</strong> Common Properties</td>
+</tr>
+<tr>
+<td>oslc:shortTitle</td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>XMLLiteral</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element.</td>
+</tr>
+<tr>
+<td>dcterms:description</td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>XMLLiteral</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Descriptive text (reference: Dublin Core) about resource represented as rich text in XHTML content. SHOULD include only content that is valid and suitable inside an XHTML &lt;div&gt; element.</td>
+</tr>
+<tr>
+<td>dcterms:title</td>
+<td>exactly-one</td>
+<td>unspecified</td>
+<td>XMLLiteral</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Title (reference: Dublin Core) or often a single line summary of the resource represented as rich text in XHTML content. SHOULD include only content that is valid and suitable inside an XHTML &lt;div&gt; element.</td>
+</tr>
+<tr>
+<td>dcterms:identifier</td>
+<td>exactly-one</td>
+<td>True</td>
+<td>String</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>A unique identifier for a resource. Assigned by the service provider when a resource is created. Not intended for end-user display.</td>
+</tr>
+<tr>
+<td>dcterms:subject</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>String</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Tag or keyword for a resource. Each occurrence of a dcterms:subject property denotes an additional tag for the resource.</td>
+</tr>
+<tr>
+<td>dcterms:creator</td>
+<td>zero-or-many</td>
+<td>unspecified</td>
+<td>Either Resource or Local Resource</td>
+<td>Either Reference or Inline</td>
+<td><code>any</code></td>
+<td>Creator or creators of resource (reference: Dublin Core). It is likely that the target resource will be a <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA#foaf_Person_Resource"> <code>foaf:Person</code> </a> but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td>dcterms:contributor</td>
+<td>zero-or-many</td>
+<td>unspecified</td>
+<td>Either Resource or Local Resource</td>
+<td>Either Reference or Inline</td>
+<td><code>any</code></td>
+<td>The person(s) who are responsible for the work needed to complete the change request (reference: Dublin Core). It is likely that the target resource will be a <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA#foaf_Person_Resource"> <code>foaf:Person</code> </a> but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td>dcterms:created</td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>DateTime</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Timestamp of resource creation (reference: Dublin Core).</td>
+</tr>
+<tr>
+<td>dcterms:modified</td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>DateTime</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Timestamp last latest resource modification (reference: Dublin Core).</td>
+</tr>
+<tr>
+<td>rdf:type</td>
+<td>zero-or-many</td>
+<td>unspecified</td>
+<td>Resource</td>
+<td>Reference</td>
+<td>n/a</td>
+<td>The resource type URIs. One of at least has the value of <code>http://open-services.net/ns/cm#ChangeRequest</code></td>
+</tr>
+<tr>
+<td>oslc:serviceProvider</td>
+<td>zero-or-many</td>
+<td>unspecified</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources"><code>oslc:ServiceProvider</code></a></td>
+<td>The scope of a resource is a URI for the resource&#39;s OSLC Service Provider.</td>
+</tr>
+<tr>
+<td>oslc:instanceShape</td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA#oslc_ResourceShape_Resource"> <code>oslc:ResourceShape</code> </a></td>
+<td>Resource Shape that provides hints as to resource property value-types and allowed values.</td>
+</tr>
+<tr>
+<td>oslc:discussedBy</td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>Resource</td>
+<td>Either</td>
+<td><a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA#oslc_Discussion_Resource"> <code>oslc:Discussion</code> </a></td>
+<td>A series of notes and comments about this change request.</td>
+</tr>
+<tr>
+<td><strong>Prefixed Name</strong></td>
+<td><strong>Occurs</strong></td>
+<td><strong>Read-only</strong></td>
+<td><strong>Value-type</strong></td>
+<td><strong>Representation</strong></td>
+<td><strong>Range</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><strong>OSLC CM:</strong> Start of additional properties</td>
+</tr>
+<tr>
+<td>oslc_cm:closeDate</td>
+<td>zero-or-one</td>
+<td>true</td>
+<td>DateTime</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>The date at which no further activity or work is intended to be conducted.</td>
+</tr>
+<tr>
+<td>oslc_cm:state</td>
+<td>zero-or-many</td>
+<td>false</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><a href="#Resource_State"><code>oslc_cm:State</code></a></td>
+<td>Used to indicate the status of the change request. This property is read-only, but can be changed using <a href="#Actions">Actions</a>.</td>
+</tr>
+<tr>
+<td>oslc_cm:action</td>
+<td>zero-or-many</td>
+<td>true</td>
+<td>Resource</td>
+<td>Either</td>
+<td><a href="#Resource_Action"><code>oslc_cm:Action</code></a></td>
+<td>An action to change the state of this ChangeRequest. See <a href="#Actions">Actions</a>.</td>
+</tr>
+<tr>
+<td>oslc_cm:priority</td>
+<td>at-most-one</td>
+<td>false</td>
+<td>Resource</td>
+<td>Either</td>
+<td><a href="#Resource_Priority"><code>oslc_cm:Priority</code></a></td>
+<td>Priority of this ChangeRequest</td>
+</tr>
+<tr>
+<td>oslc_cm:severity</td>
+<td>at-most-one</td>
+<td>false</td>
+<td>Resource</td>
+<td>Either</td>
+<td><a href="#Resource_Severity"><code>oslc_cm:Severity</code></a></td>
+<td>Severity or criticality of ChangeRequest</td>
+</tr>
+<tr>
+<td>oslc_cm:attachment</td>
+<td>zero-or-many</td>
+<td>true</td>
+<td>Resource</td>
+<td>Reference</td>
+<td>Resource</td>
+<td>Multi-valued property of attachments associated with the Change Request.</td>
+</tr>
+<tr>
+<td><strong>Prefixed Name</strong></td>
+<td><strong>Occurs</strong></td>
+<td><strong>Read-only</strong></td>
+<td><strong>Value-type</strong></td>
+<td><strong>Representation</strong></td>
+<td><strong>Range</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><strong>Relationship properties:</strong> This grouping of properties are used to identify relationships between resources managed by other OSLC Service Providers</td>
+</tr>
+<tr>
+<td>oslc_cm:relatedChangeRequest</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>This relationship is loosely coupled and has no specific meaning. It is likely that the target resource will be an <a href="#Resource_ChangeRequest"><code>oslc_cm:ChangeRequest</code></a> but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td>oslc_cm:affectsPlanItem</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Change request affects a plan item. It is likely that the target resource will be an <a href="#Resource_ChangeRequest"><code>oslc_cm:ChangeRequest</code></a> but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td>oslc_cm:affectedByDefect</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Change request is affected by a reported defect. It is likely that the target resource will be an <a href="#Resource_ChangeRequest"><code>oslc_cm:ChangeRequest</code></a> but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td>oslc_cm:tracksRequirement</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Tracks the associated Requirement or Requirement !ChangeSet resources. It is likely that the target resource will be an <a href="http://open-services.net/bin/view/Main/RmSpecificationV2#Resource_Requirement"><code>oslc_rm:Requirement</code></a> but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td>oslc_cm:implementsRequirement</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Implements associated Requirement. It is likely that the target resource will be an <a href="http://open-services.net/bin/view/Main/RmSpecificationV2#Resource_Requirement"><code>oslc_rm:Requirement</code></a> but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td>oslc_cm:affectsRequirement</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Change request affecting a Requirement. It is likely that the target resource will be an <a href="http://open-services.net/bin/view/Main/RmSpecificationV2#Resource_Requirement"><code>oslc_rm:Requirement</code></a> but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td>oslc_cm:tracksChangeSet</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Tracks SCM change set resource. It is likely that the target resource will be an <a href="http://open-services.net/bin/view/Main/ScmSpecV1#ChangeSet"><code>oslc_scm:ChangeSet</code></a> but that is not necessarily the case.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NEEDS UPDATE</strong>: Is oslc_cm:affectedByDefect an inverse of oslc_cm:affectsPlanItem? Should one be removed?</p>
+<p>Naming convention for relationship properties follows this pattern:</p>
+<ul>
+<li><strong>related</strong> - Identifies a loose relationship between a Change Request and referenced resource. These relationships can be used to name associated resources managed by other service providers.</li>
+<li><strong>tracks</strong> - Identifies that a Change Request is used to track the lifecycle of referenced resource. From the CM tool perspective, these relationships can be used to track work that needs to be done for referenced resources.</li>
+<li><strong>affects</strong> - Indicates that the Change Request affects, has been predetermined to have impact, related resource. These property relationships can be used to understand the potential impact of referenced resources.</li>
+</ul>
+<h3>Resource State   {#Resource_State}</h3>
+<ul>
+<li><strong>Name:</strong> <code>State</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#State</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>oslc_cm:Closed</td>
+<td>Completely done, no further fixes or fix verification is needed.</td>
+</tr>
+<tr>
+<td>oslc_cm:In-progress</td>
+<td>Active work is occurring.</td>
+</tr>
+<tr>
+<td>oslc_cm:Fixed</td>
+</tr>
+<tr>
+<td>oslc_cm:Approved</td>
+</tr>
+<tr>
+<td>oslc_cm:Reviewed</td>
+</tr>
+<tr>
+<td>oslc_cm:Verified</td>
+<td>The resolution or the fix is verified.</td>
+</tr>
+</tbody>
+</table>
+<p>If a Change Request has oslc_cm:state value oslc_cm:In-progress, it <strong>SHOULD NOT</strong> have oslc_cm:state values oslc_cm:Fixed or oslc_cm:Closed.</p>
+<h3>Resource Priority   {#Resource_Priority}</h3>
+<ul>
+<li><strong>Name:</strong> <code>Priority</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#Priority</code></li>
+</ul>
+<p><strong>NEEDS UPDATE</strong>: Improve descriptions.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>oslc_cm:High</td>
+<td>Highest priority.</td>
+</tr>
+<tr>
+<td>oslc_cm:Medium</td>
+<td>It can wait, but not forever.</td>
+</tr>
+<tr>
+<td>oslc_cm:Low</td>
+<td>OK if you never get to it.</td>
+</tr>
+<tr>
+<td>oslc_cm:PriorityUnassigned</td>
+<td>Intentionally set blank.</td>
+</tr>
+</tbody>
+</table>
+<h3>Resource Severity   {#Resource_Severity}</h3>
+<ul>
+<li><strong>Name:</strong> <code>Severity</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#Severity</code></li>
+</ul>
+<p><strong>NEEDS UPDATE</strong>: Improve descriptions.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>oslc_cm:Blocker</td>
+<td>Severe problem. No workaround. Blocks development, test, or usage. </td>
+</tr>
+<tr>
+<td>oslc_cm:Critical</td>
+<td>Severe problem. No workaround.</td>
+</tr>
+<tr>
+<td>oslc_cm:Major</td>
+<td>Prevents function from being used. There is a workaround.</td>
+</tr>
+<tr>
+<td>oslc_cm:Normal</td>
+<td>Affects non-critical functionality. There is a workaround.</td>
+</tr>
+<tr>
+<td>oslc_cm:Minor</td>
+<td>Minimal impact.</td>
+</tr>
+<tr>
+<td>oslc_cm:SeverityUnassigned</td>
+<td>Intentionally set blank.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Providers <strong>MAY</strong> have custom oslc_cm:priority and oslc_cm:severity values.</li>
+<li>Providers <strong>SHOULD</strong> use skos:narrower when custom priority or severity values refine standard values.</li>
+<li>Providers <strong>SHOULD NOT</strong> use owl:sameAs when custom priority or severity values refine standard values.</li>
+</ul>
+<p>Priority and severity example:</p>
+<pre><code>@prefix ex: &lt;http://example.com/bugtracker&gt; .
+@prefix oslc: &lt;http://open-services.net/ns/core#&gt; .
+@prefix oslc_cm: &lt;http://open-services.net/ns/cm#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core&gt; .
+
+&lt;http://example.com/bugs/2314&gt;
+   a oslc_cm:ChangeRequest ;
+   dcterms:identifier &quot;00002314&quot; ;
+   oslc:shortTitle &quot;Bug 2314&quot; ;
+   dcterms:title &quot;Invalid installation instructions&quot; ;
+   oslc_cm:priority oslc_cm:High ;
+   oslc_cm:severity &lt;http://example.com/enums#S1&gt; .
+
+&lt;http://example.com/enums#S1&gt;
+   a oslc_cm:Severity;
+   dcterms:title &quot;Severe - HOT&quot; ;
+   skos:narrower oslc_cm:Critical ;
+   ex:icon &lt;http://example.com/severity/S1.gif&gt;.</code></pre>
+<h3>Resource: Action   {#Resource_Action}</h3>
+<p>The Action resource specifies information about an action, such as a title and a description. It also can include a resource shape that can be used to give consumers hints about required field values for this action.</p>
+<ul>
+<li><strong>Name:</strong> <code>Action</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#Action</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Prefixed Name</strong></th>
+<th><strong>Occurs</strong></th>
+<th><strong>Read-only</strong></th>
+<th><strong>Value-type</strong></th>
+<th><strong>Representation</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OSLC Core</strong>: Common Properties</td>
+</tr>
+<tr>
+<td>dcterms:title</td>
+<td>exactly-one</td>
+<td>true</td>
+<td>XMLLiteral</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Title (reference: Dublin Core) of the action</td>
+</tr>
+<tr>
+<td>dcterms:description</td>
+<td>zero-or-one</td>
+<td>true</td>
+<td>XMLLiteral</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Description (reference: Dublin Core) of the action</td>
+</tr>
+<tr>
+<td>dcterms:identifier</td>
+<td>zero-or-one</td>
+<td>true</td>
+<td>String</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>A unique identifier for an action (reference: Dublin Core). Not intended for end-user display.</td>
+</tr>
+<tr>
+<td>rdf:type</td>
+<td>zero-or-many</td>
+<td>true</td>
+<td>Resource</td>
+<td>Reference</td>
+<td>N/A</td>
+<td>The resource type URIs. One of at least has the value of <a href="http://open-services.net/ns/cm#Action">http://open-services.net/ns/cm#Action</a></td>
+</tr>
+<tr>
+<td>oslc:serviceProvider</td>
+<td>zero-or-many</td>
+<td>true</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">oslc:ServiceProvider</a></td>
+<td>The scope of a resource is a URI for the resource&#39;s OSLC Service Provider.</td>
+</tr>
+<tr>
+<td>oslc:resourceShape</td>
+<td>zero-or-many</td>
+<td>true</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA#oslc_ResourceShape_Resource">oslc:ResourceShape</a></td>
+<td>Resource Shape that provides hints as to resource property value-types and allowed values.</td>
+</tr>
+<tr>
+<td><strong>OSLC CM:</strong> Start of additional properties</td>
+</tr>
+<tr>
+<td>oslc_cm:targetState</td>
+<td>zero-or-many</td>
+<td>true</td>
+<td>Resource</td>
+<td>Reference</td>
+<td>N/A</td>
+<td>URI indicating the target state for this action.</td>
+</tr>
+</tbody>
+</table>
+<h3>Resource: AttachmentDescriptor  {#Resource_AttachmentDescriptor}</h3>
+<p>AttachmentDescriptor resource type used to describe the binary resource (or non-LDP-Resource) associated with a particular Change Request.  When a client POSTs an attachment content to a server, the server stores the attachment content and assigns a URI just like any other type of resource creation but it may also create an AttachmentDescriptor resource to contain data about the attachment.</p>
+<ul>
+<li><strong>Name:</strong> <code>AttachmentDescriptor</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/cm#AttachmentDescriptor</code></li>
+</ul>
+<p>There is no restriction on the content of each attachment resource. For example, it could be a photo of a kitten, an installation manual, a log file, or a source code patch. Since the attachment cannot be expected to contain additional client or server supplied data, a typical set of properties for each attachment is included with the AttachmentDescriptor resource itself. Thus, the object of each <code>oslc_cm:attachment</code> statement is the binary attachment.  Issuing an HTTP HEAD or GET operation on that binary attachment resource URL should produce an HTTP response with a header value of <code>Link: rel=&#39;meta&#39;</code> to indicate the URL of the oslc_cm:AttachmentDescriptor resource.  The properties for the AttachmentDescriptor resource are indicated in the table below.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Prefixed Name</strong></th>
+<th><strong>Occurs</strong></th>
+<th><strong>Read-only</strong></th>
+<th><strong>Value-type</strong></th>
+<th><strong>Representation</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dcterms:title</code></td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>String</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Client-specified file name or title.</td>
+</tr>
+<tr>
+<td><code>dcterms:identifier</code></td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>String</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>System-assigned identifier.</td>
+</tr>
+<tr>
+<td><code>dcterms:format</code></td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>Resource</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>MIME type of the attachment content. SHOULD be a <a href="http://mediatypes.appspot.com/">PURL media-type resource</a>.</td>
+</tr>
+<tr>
+<td><code>oslc_cm:attachmentSize</code></td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td><code>Integer</code></td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Size in bytes of the attachment content.</td>
+</tr>
+<tr>
+<td><code>dcterms:creator</code></td>
+<td>zero-or-many</td>
+<td>True</td>
+<td>Either Resource or Local Resource</td>
+<td>Either Reference or Inline</td>
+<td><code>any</code></td>
+<td>Creator or creators of the attachment. Likely a <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA#foaf_Person_Resource"> <code>foaf:Person</code> </a>, but not necessarily so.</td>
+</tr>
+<tr>
+<td><code>dcterms:created</code></td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>DateTime</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Timestamp of attachment creation.</td>
+</tr>
+<tr>
+<td><code>dcterms:description</code></td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>XML Literal</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Descriptive text about the attachment. SHOULD include only content that is valid and suitable inside an XHTML element.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Inverse properties:</strong> In addition to the properties listed above, whose subject is the oslc_cm:AttachmentDescriptor, the follow properties have it as the object</td>
+</tr>
+<tr>
+<td><code>wdrs:describedBy</code></td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>Either</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>to relate the information about the attachment resource.</td>
+</tr>
+</tbody>
+</table>
+<p>AttachmentDescriptor properties, that is not read-only, MAY be updated via an HTTP PUT or PATCH operation.</p>
+<h2>CM Service Provider Capabilities</h2>
+<h3>Service Provider Resources</h3>
+<p>OSLC CM service providers <strong>MUST</strong> provide a <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service Provider Resource</a> that can be retrieved at a implementation dependent URI.</p>
+<p>OSLC CM service providers <strong>MAY</strong> provide a <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Catalog_Resources">Service Provider Catalog Resource</a> that can be retrieved at a implementation dependent URI.</p>
+<p>OSLC CM service providers <strong>MAY</strong> provide a <code>oslc:serviceProvider</code> property for their defined resources that will be the URI to a <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service Provider Resource</a>.</p>
+<p>OSLC CM service providers <strong>MUST</strong> supply a value of <code>http://open-services.net/ns/cm#</code> for the property <code>oslc:domain</code> on either <code>oslc:Service</code> or <code>oslc:ServiceProviderCatalog</code> resources.</p>
+<h3>Creation Factories</h3>
+<p>OSLC CM service providers <strong>MUST</strong> support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factories</a> and list them in the Service Provider Resource as defined by OSLC Core. OSLC CM service providers <strong>SHOULD</strong> support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">Resource Shapes for Creation Factories</a> as defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">OSLC Core Specification</a></p>
+<h3>Query Capabilities</h3>
+<p><strong>NEEDS UPDATE</strong>: Decide what to do for query in 3.0.</p>
+<p>OSLC CM service providers <strong>MUST</strong> support the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Query Capabilities</a> as defined by OSLC Core. OSLC CM service providers <strong>SHOULD</strong> support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">Resource Shapes for Query Capability</a> as defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">OSLC Core Specification</a></p>
+<p>The Query Capability <strong>MUST</strong> support these parameters:</p>
+<ul>
+<li><code>oslc.where</code></li>
+<li><code>oslc.select</code></li>
+<li><code>oslc.properties</code></li>
+<li><code>oslc.prefix</code></li>
+</ul>
+<p>If shape information is NOT present with the Query Capability, service providers <strong>SHOULD</strong> use these default properties to contain the result:
+<em> For RDF/XML and XML, use <code>rdf:Description</code> and <code>rdfs:member</code> as defined in <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Specifying_the_shape_of_a_query">OSLC Core RDF/XML Examples</a>
+</em> For JSON, the query results are contained within <code>oslc:results</code> array. See <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_JSON">OSLC Core Representation Guidance for JSON</a></p>
+<h3>Delegated UIs</h3>
+<p>OSLC CM service providers <strong>MUST</strong> support the selection and creation of resources by delegated web-based user interface dialogs <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a> as defined by OSLC Core.</p>
+<p>OSLC CM service providers <strong>MAY</strong> support the pre-filling of creation dialogs based on the definition at <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a>.</p>
+<h3>Usage Identifiers</h3>
+<p>OSLC CM service provider can identify the usage of various services with additional property values for the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">OSLC Core</a> defined <code>oslc:usage</code> property on <code>oslc:Dialog</code>, <code>CreationFactory</code> and <code>QueryCapability</code>. The <code>oslc:usage</code> property value of <code>http://open-services.net/ns/core#default</code> will be used to designate the default or primary service to be used by consumers when multiple entries are found.</p>
+<p>The additional property values for <code>oslc:usage</code> are:</p>
+<ul>
+<li><code>http://open-services.net/ns/cm#defect</code> - primarily used by QM tools to report defects in testing.</li>
+<li><code>http://open-services.net/ns/cm#planItem</code> - used by QM and PPM tools for associating change requests into plans (project, release, sprint, etc).</li>
+<li><code>http://open-services.net/ns/cm#task</code> - used by QM and PPM tools for associating change requests into executable and track-able items.</li>
+<li><code>http://open-services.net/ns/cm#requirementsChangeRequest</code> - used by RM tools for associating a change request for usage in tracking changes to a Requirements resource</li>
+</ul>
+<h2>Version Compatibility with 2.0 Specifications</h2>
+<p><strong>NEEDS UPDATE</strong>: Need guidance from OSLC Core. (See <a href="#Spec_Versioning">Specification Versioning</a>.)</p>
+<p>For additional guidance, a CM 3.0 consumer or provider may reference the <code>OSLC-Core-Version</code> HTTP header with a value of <code>3.0</code>.</p>
+<h3>Deprecated terms</h3>
+<p><strong>NEEDS UPDATE</strong>: Move into an appendix.</p>
+<p>Since the initial development of the OSLC CM 2.0 specification, there have been a number of properties that are no longer recommended for use and therefore marked as deprecated.  Details about the reason for being marked as such and backwards compatibility items, refer to the <a href="http://open-services.net/wiki/change-management/Issues-2.0/">CM 2.0 Issues page</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Prefixed Name</strong></th>
+<th><strong>Occurs</strong></th>
+<th><strong>Read-only</strong></th>
+<th><strong>Value-type</strong></th>
+<th><strong>Representation</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>deprecated</em> dcterms:type</td>
+<td>zero-or-more</td>
+<td>unspecified</td>
+<td>String</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>A short string representation for the type, example &#39;Defect&#39;.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:status</td>
+<td>zero-or-one</td>
+<td>unspecified</td>
+<td>String</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Used to indicate the status of the change request based on values defined by the service provider. Most often a read-only property. Some possible values may include: &#39;Submitted&#39;, &#39;Done&#39;, &#39;InProgress&#39;, etc.</td>
+</tr>
+<tr>
+<td><strong>State predicate properties:</strong> This grouping of properties define a set of computed state predicates, see section on State Predicates for more information. The only restriction on valid state predicate combinations is that if <code>oslc_cm:inprogress</code> is <code>true</code>, then <code>oslc_cm:fixed</code> and <code>oslc_cm:closed</code> must also be <code>false</code></td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:closed</td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>Boolean</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Whether or not the Change Request is completely done, no further fixes or fix verification is needed.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:inprogress</td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>Boolean</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Whether or not the Change Request in a state indicating that active work is occurring. If <code>oslc_cm:inprogress</code> is <code>true</code>, then <code>oslc_cm:fixed</code> and <code>oslc_cm:closed</code> must also be <code>false</code></td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:fixed</td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>Boolean</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Whether or not the Change Request has been fixed.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:approved</td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>Boolean</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Whether or not the Change Request has been approved.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:reviewed</td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>Boolean</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Whether or not the Change Request has been reviewed.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:verified</td>
+<td>zero-or-one</td>
+<td>True</td>
+<td>Boolean</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Whether or not the resolution or fix of the Change Request has been verified.</td>
+</tr>
+<tr>
+<td><strong>Relationship properties:</strong> This grouping of properties are used to identify relationships between resources managed by other OSLC Service Providers</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:testedByTestCase</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Test case by which this change request is tested. It is likely that the target resource will be an <code>oslc_qm:TestCase</code>, but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:affectsTestResult</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Associated QM resource that is affected by this Change Request. It is likely that the target resource will be an <code>oslc_qm:TestResult</code>, but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:blocksTestExecutionRecord</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Associated QM resource that is blocked by this Change Request. It is likely that the target resource will be an oslc_cm:TestExecutionRecord, but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:relatedTestExecutionRecord</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Related to a QM test execution resource. It is likely that the target resource will be an <code>oslc_qm:TestExecutionRecord</code>, but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:relatedTestCase</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Related QM test case resource. It is likely that the target resource will be an <code>oslc_qm:TestCase</code>, but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:relatedTestPlan</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Related QM test plan resource. It is likely that the target resource will be an <code>oslc_qm:TestPlan</code>, but that is not necessarily the case.</td>
+</tr>
+<tr>
+<td><em>deprecated</em> oslc_cm:relatedTestScript</td>
+<td>zero-or-many</td>
+<td>False</td>
+<td>Resource</td>
+<td>Reference</td>
+<td><code>any</code></td>
+<td>Related QM test script resource. It is likely that the target resource will be an <code>oslc_qm:TestScript</code>, but that is not necessarily the case.</td>
+</tr>
+</tbody>
+</table>
+<h2>Appendix A: Samples</h2>
+<p>(this section is informative)</p>
+<p>See [[Specification 3.0 Samples]]</p>
+<h2>Appendix B: Resource Shapes</h2>
+<p>(this section is informative)</p>
+<p>See [[Specification 3.0 Shapes]]</p>
+<h2>Appendix C: Notices and References</h2>
+<h3>Contributors</h3>
+<ul>
+<li><a href="http://open-services.net/bin/view/Main/SteveSpeicher">SteveSpeicher</a> (IBM, OSLC-CM Lead)</li>
+<li><a href="http://open-services.net/bin/view/Main/SamPadgett">SamPadgett</a> (IBM, OSLC-CM Lead)</li>
+<li><a href="http://open-services.net/bin/view/Main/OlivierBerger">OlivierBerger</a> (Institut TELECOM)</li>
+<li><a href="http://open-services.net/bin/view/Main/ScottBosworth">ScottBosworth</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/GaryDang">GaryDang</a> (Accenture)</li>
+<li><a href="http://open-services.net/bin/view/Main/SusanDuncan">SusanDuncan</a> (Oracle)</li>
+<li><a href="http://open-services.net/bin/view/Main/RobertElves">RobertElves</a> (Tasktop)</li>
+<li><a href="http://open-services.net/bin/view/Main/MatsGothe">MatsGothe</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/DaveJohnson">DaveJohnson</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/MikKersten">MikKersten</a> (Tasktop)</li>
+<li><a href="http://open-services.net/bin/view/Main/SamLee">SamLee</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/MarkRinger">MarkRinger</a> (Rally)</li>
+<li><a href="http://open-services.net/bin/view/Main/EricSink">EricSink</a> (!SourceGear)</li>
+<li><a href="http://open-services.net/bin/view/Main/PatrickStreule">PatrickStreule</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/MattThomas">MattThomas</a> (BSD Group)</li>
+<li><a href="http://open-services.net/bin/view/Main/DenisTyrell">DenisTyrell</a> (Oracle)</li>
+<li><a href="http://open-services.net/bin/view/Main/RandyVogel">RandyVogel</a> (Accenture)</li>
+<li><a href="http://open-services.net/bin/view/Main/AndreWeinand">AndreWeinand</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/SofiaYeung">SofiaYeung</a> (Oracle)</li>
+</ul>
+<h3>Reporting Issues on the Specification</h3>
+<p>The working group participants who author and maintain this working draft specification, monitor a distribution list where issues or questions can be raised, see <a href="http://open-services.net/mailman/listinfo/oslc-cm_open-services.net">Change Management Mailing List</a></p>
+<p>Also the issues found with this specification and their resolution can be found at [[Specification 3.0 issues]]</p>
+<h3>Intellectual Property Covenant</h3>
+<p><strong>NEEDS UPDATE</strong></p>
+<p>The members of the Working Group (or as appropriate, their employers) have documented a Patent Non-Assertion Covenant for implementations of the CM 2.0 Specification, as described in the open-services.net <a href="http://open-services.net/terms/">Terms of Use</a>. Details of the Covenant may be found <a href="http://open-services.net/bin/view/Main/CmSpecificationCovenantV2">here</a>.</p>
+<h3>References</h3>
+<ul>
+<li>OSLC-CM 1.0 - <a href="http://open-services.net/bin/view/Main/CmSpecificationV1">OSLC Change Management Specification 1.0</a></li>
+<li>OSLC-CM 2.0 - <a href="http://open-services.net/bin/view/Main/CmSpecificationV2">OSLC Change Management Specification 2.0</a></li>
+<li>OSLC Core - <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core Specification 2.0</a></li>
+<li>OSLC-SCM 1.0 - <a href="http://open-services.net/bin/view/Main/ScmSpecV1">OSLC Software Configuration Management Specification 1.0</a></li>
+<li>OSLC-QM 2.0 - <a href="http://open-services.net/bin/view/Main/QmSpecificationV2">OSLC Quality Management Specification 2.0</a></li>
+<li>OSLC-RM 2.0 - <a href="http://open-services.net/bin/view/Main/RmSpecificationV2">OSLC Requirements Management Specification 2.0</a></li>
+<li>ATOM - <a href="http://tools.ietf.org/html/rfc4287">RFC4287 - Atom Syndication Format</a></li>
+<li>Dublin Core 1.1 - <a href="http://dublincore.org/documents/2010/10/11/dces/">Dublin Core Metadata Element Set, Version 1.1</a></li>
+<li>FOAF - <a href="http://xmlns.com/foaf/spec/20100809.html">Friend of a Friend (FOAF) v0.98</a></li>
+<li>SKOS - <a href="http://www.w3.org/TR/skos-reference/">SKOS Simple Knowledge Organization System Reference</a></li>
+<li>HTTP 1.1 - <a href="http://tools.ietf.org/html/rfc2616">Hyper-text Transfer Protocol (HTTP/1.1)</a></li>
+<li>JSON - <a href="http://json.org/">JavaScript Object Notation</a></li>
+<li>OAuth 1.0a - <a href="http://tools.ietf.org/html/rfc5849">RFC5849 - The OAuth 1.0 Protocol</a></li>
+<li>RDF/XML Concepts - <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">RDF/XML Concepts and Abstract Syntax</a></li>
+<li>RDF/XML Syntax - <a href="http://www.w3.org/TR/2004/REC-rdf-syntax-grammar-20040210/">RDF / XML Syntax Specification (Revised)</a></li>
+<li>URI Syntax - <a href="http://tools.ietf.org/html/rfc3986">URI Generic Syntax</a></li>
+<li>XML Namespaces - <a href="http://www.w3.org/TR/REC-xml-names/">Namespaces in XML 1.0 (Third Edition)</a></li>
+<li>XSD Datatypes - <a href="http://www.w3.org/TR/xmlschema-2">XML Schema Part 2: Datatypes Second Edition</a></li>
+</ul>
+<h2>Appendix D: Changes from 2.0</h2>
+<ul>
+<li>Added oslc_cm:priority and oslc_cm:severity</li>
+<li>Added state transitions (oslc_cm:action property, oslc_cm:Action resource)</li>
+<li>Added oslc_cm:state. Deprecated oslc_cm:status and state predicates.</li>
+<li>Added Attachments section, oslc_cm:attachment property, and oslc_cm:AttachmentDescriptor</li>
+<li>Added new change management types</li>
+</ul>
+</div></div></section><a role="button" aria-label="Close navigation" class="close-nav"></a></main><nav id="nav" role="navigation" data-whirligig="data-whirligig" class="nav has-secondary"><div class="controls hand-only enhanced-only"><div class="tabs"><a href="#main_menu" class="tab">Main</a><a href="#secondary_menu" class="tab active">Tests</a></div></div><div class="window"><div class="panels"><div id="main_menu" class="panel"><div data-prospectus="data-prospectus" data-manage-focus="false" class="menu primary"><div class="item flush desk-up"><a href="http://oslc.github.io/redesign/" class="image-link"><i class="icon grunticon-logo-med"></i><span class="logo-text"><abbr title="Open Services for Lifecycle Collaboration" class="icon grunticon-wordmark-med ir">OSLC</abbr><span class="project-name">Public Redesign</span></span></a></div><div class="item"><gcse:searchbox-only></gcse:searchbox-only></div><ul class="items"><li><a href="http://oslc.github.io/redesign/" class="item">Home</a></li><li><a href="http://oslc.github.io/redesign/posts/" class="item">Posts</a></li><li><a href="http://oslc.github.io/redesign/samples/" class="item">Sample pages</a></li><!--li.item<div class="form login"><form action="#"><div class="control floatingLabels"><label for="login_username">Email or username</label><input type="text" required="required" name="username" id="login_username" class="text"/></div><div class="control floatingLabels"><label for="login_password">Password</label><input type="password" required="required" name="password" id="login_password" class="text"/></div><div class="actions"><button type="submit">Log in</button><div class="links"><a href="http://open-services.net/forums/member/register">Join us!</a><a href="http://open-services.net/forums/member/forgot_password">Forgot password?</a></div></div></form></div>--><!--li<a href="http://open-services.net/forums/member/profile" class="profile item"><span class="info">Hello,</span>Lee Reamsnyder</a>--><!--li<a href="http://open-services.net/?ACT=16" class="item">Log out</a>--></ul></div></div><div id="secondary_menu" class="panel"><div data-prospectus="data-prospectus" data-manage-focus="false" class="menu secondary inverted"><ul class="items"><li role="presentation"><span class="item heading">Tests</span></li><li class="  "><a href="http://oslc.github.io/redesign/tests/grid.html" class="item">Grid layout</a></li><li class="  "><a href="http://oslc.github.io/redesign/tests/copy.html" class="item">Body copy</a></li><li class="  "><a href="http://oslc.github.io/redesign/tests/fluid-vids.html" class="item">Fluid videos</a></li><li class="  "><a href="http://oslc.github.io/redesign/tests/sticky-footer.html" class="item">Sticky footer</a></li><li class=" current "><a href="http://oslc.github.io/redesign/tests/cm-spec.html" class="item">Sample Specification</a></li></ul></div></div></div></div></nav></div><footer role="contentinfo" class="footer"><div class="grid pulled"><div class="column hand-full knee-minor"><p class="social"><a href="http://twitter.com/oslcNews"><i class="icon grunticon-social-twitter"><span class="sr-only">Follow us on Twitter</span></i></a><a href="http://www.youtube.com/user/OpenServicesDotNet"><i class="icon grunticon-social-youtube"><span class="sr-only">Watch our videos on YouTube</span></i></a><a href="http://oslc.github.io/redesign/"><i class="icon grunticon-social-github"><span class="sr-only">Report issues on Github</span></i></a><a href="http://www.linkedin.com/groups/OSLC-Open-Services-Lifecycle-Collaboration-3957829"><i class="icon grunticon-social-linkedin"><span class="sr-only">Follow us on LinkedIn</span></i></a><a href="https://plus.google.com/u/0/107747465325293070028/posts"><i class="icon grunticon-social-googleplus"><span class="sr-only">Add us on Google Plus</span></i></a></p></div><div class="column hand-full knee-major"><ul class="inline"><li class="item"><a href="https://github.com/OSLC/redesign/issues">Issues</a></li><li class="item"><a href="http://open-services.net">OSLC Home</a></li><li class="item"><a href="mailto:webmaster@open-services.net">Feedback</a></li></ul></div></div><p class="copyright"><small>All content <a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/")>Creative Commons Attribution 3.0 US</a> except where noted otherwise.</small></p></footer></div></body><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24416914-4', 'oslc.github.io');
+ga('send', 'pageview');
+</script></html>

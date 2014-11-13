@@ -23,6 +23,7 @@
 
 
 
+
 .copy > h2{ font-size: 2rem; line-height: 1.1875; }
 
 
@@ -182,9 +183,9 @@ html{ font-size: 100%; }
 
 .menu a, .menu .item{ text-decoration: none; -webkit-transition-property: background-color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
 .menu.primary{ background-color: rgb(255, 248, 235); }
-.menu.primary .item{ color: rgb(102, 102, 102); }
+.menu.primary .item, .menu.primary a{ color: rgb(102, 102, 102); }
 
-.menu.primary .current a, .menu.primary .current{ background-color: rgb(255, 237, 204) !important; }
+.menu.primary .current{ background-color: rgb(255, 237, 204) !important; }
 
 
 
@@ -207,6 +208,18 @@ html{ font-size: 100%; }
 
 
 .inline li{ margin-right: 11px; }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
