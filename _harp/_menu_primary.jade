@@ -15,7 +15,7 @@
         if !page.draft || environment === 'development'
           li(class='#{ current.path[0] === slug ? "current" : "" }')
             a.item(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '/') }") #{ page.menu_title || page.title }
-      li.item
+      //li.item
         .form.login
           form(action="#")
             .control.floatingLabels
