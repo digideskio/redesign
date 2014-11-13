@@ -70,7 +70,27 @@ var Checkov = _.create( OSLC, {
       .on('click.oslc.checkov', function(e){
         e.preventDefault();
         checkov.toggle();
+      })
+      .on('keydown.oslc.checkov', function(e){
+        var keyCode = e.keyCode || e.which;
+        
+        if ( ! e.shiftKey || 9 !== keyCode || ! checkov.isOpen() ) { return; }
+        
+        e.preventDefault(); // this keeps the shift+tab from jumping backwards an additional step
+        $('#nav :focusable').traverse('prev').attemptFocus();
+        
       });
+    
+    // this works because the menus become in/visible, which adjusts what elements are :focusable
+    $(document).on('keydown.oslc.checkov', '#nav :focusable:last', function(e){
+      var keyCode = e.keyCode || e.which;
+      
+      if (e.shiftKey || 9 !== keyCode) { return; }
+
+      e.preventDefault();
+      checkov.els.toggle.attemptFocus();
+      
+    });
     
     enquire.register(this.mediaQueries['knee-down'], {
       match: function(){
