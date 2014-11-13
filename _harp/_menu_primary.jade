@@ -15,3 +15,25 @@
         if !page.draft || environment === 'development'
           li(class='#{ current.path[0] === slug ? "current" : "" }')
             a.item(href="#{ site_url }#{ slug === 'index' ? '' : (slug + '/') }") #{ page.menu_title || page.title }
+      li.item
+        .form.login
+          form(action="#")
+            .control.floatingLabels
+              label(for="login_username") Email or username
+              input.text(type="text" required name="username" id="login_username")
+            .control.floatingLabels
+              label(for="login_password") Password
+              input.text(type="password", required, name="password", id="login_password")
+            .actions
+              button(type="submit") Log in
+              div.links
+                a(href="http://open-services.net/forums/member/register") Join us!
+                a(href="http://open-services.net/forums/member/forgot_password") Forgot password?
+
+        
+      //li
+        a.profile.item(href="http://open-services.net/forums/member/profile")
+          span.info Hello,
+          | Lee Reamsnyder
+      //li
+        a.item(href="http://open-services.net/?ACT=16") Log out

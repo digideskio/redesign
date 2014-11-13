@@ -28,18 +28,25 @@
   &.primary {
     background-color: $header-and-nav-bg;
     
-    .item { color: $header-and-nav-text-color; }
+    .item, 
+    a { 
+      color: $header-and-nav-text-color; 
+    }
 
-    .item a:hover,
-    .item a:focus,
     a.item:hover,
     a.item:focus {
       background-color: darken( $header-and-nav-bg, 3% );
     }
 
-    .current a,
     .current {
       background-color: darken( $header-and-nav-bg, 6% ) !important;
+    }
+    
+    .profile {
+      .info {
+        @extend %block;
+        @extend %text-size-xs;
+      }
     }
 
   }

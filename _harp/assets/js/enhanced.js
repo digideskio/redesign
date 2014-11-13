@@ -77,6 +77,7 @@ if ( ! OSLC.supportsAcceleratedTransitions ) { $.Velocity.mock = true; }
 // @codekit-append "./modules/oslc.prospectus.js";
 // @codekit-append "./modules/oslc.checkov.js";
 // @codekit-append "./modules/oslc.whirligig.js";
+// @codekit-append "./modules/oslc.floatingLabels.js";
 // @codekit-append "./modules/oslc.brenda.js";
 // @codekit-append "./modules/oslc.bartender.js";
 // @codekit-append "./modules/oslc.deepthroat.js";

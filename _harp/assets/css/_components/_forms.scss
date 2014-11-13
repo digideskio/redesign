@@ -36,9 +36,10 @@
 
 .control {
   > label {
-    @extend %font-size-s;
     color: palette(gray,dark);
     font-weight: bold;
+    @extend %font-size-s;
+        
   }
   
   > .media + .media {
@@ -57,6 +58,7 @@
 
 .control + .control {
   margin-top: $font-size-s;
+  
 }
 
 input.text,
@@ -72,7 +74,7 @@ textarea.text {
   background: #fff;
   padding: 5px; 
   color: palette(gray,x-dark);
-  width: 290px;
+  max-width: 290px;
   @extend %text-size-m;
   
   &.disabled, 
@@ -113,4 +115,76 @@ textarea.text {
 input[type="radio"],
 input[type="checkbox"] {
   margin-right: $font-size-xxxs;
+}
+
+.enhanced .form.login {
+  .control { 
+    @extend %pos-rel;
+    padding-top: 5px;
+  }
+  
+  .control+.control { margin-top: 5px; }
+  
+  .floatingLabels label {
+    @extend %pos-abs;
+    left: 5px;
+    top: 50%;
+    color: palette(gray, mid-light);
+    transform: translate( 0, -50% );
+    transform-origin: 0% 50%;
+    transition-property: color, transform;
+    transition-duration: .1s;
+    transition-timing-function: $ease-out-cubic;
+    
+    &.is-focused {
+      color: palette(blue, mid-light);
+    }
+    
+  }
+    
+  .text { 
+    width: 100%;
+    max-width: auto;
+    background: none;
+    border: 0;
+    margin: 0;
+    border-bottom: 1px solid palette(gray, light);
+    transition: border-bottom-color .2s $ease-out-cubic;
+    
+    &:focus { 
+      outline: 0; 
+      border-bottom-color: palette(blue,light);
+    }
+  }
+  
+  .actions {
+    display: flex;
+    
+    .links, button {
+      padding: 5px;
+    }
+    
+    button {
+      @extend %button-reset;
+      flex-grow: 1;
+      text-align: left;
+      font-weight: bold;
+      @extend %text-size-s;
+      color: palette(gray, mid-dark);
+      background-color: darken($header-and-nav-bg, 7%);
+      transition: background-color .2s $ease-out-cubic;
+      
+      &:hover {
+        background-color: darken($header-and-nav-bg, 11%);
+      }
+    }
+    
+    .links {
+      @extend %text-size-xs;
+      a {
+        display: block;
+      }
+      a+a { margin-top: 3px; }
+    }
+  }
 }

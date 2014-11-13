@@ -4648,7 +4648,7 @@
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/enhanced.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/assets\/js\/lib\/d3.min.js": {
@@ -4803,7 +4803,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
+		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/assets\/js\/lib\/velocity.ui.js": {
 		"fileType": 64,
@@ -4814,7 +4814,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
+		"syntaxCheckerStyle": 1
 		},
 	"\/_harp\/assets\/js\/modules\/oslc.bartender.js": {
 		"fileType": 64,
@@ -4877,6 +4877,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.doubtfire.js",
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.doubtfire-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/assets\/js\/modules\/oslc.floatingLabels.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.floatingLabels.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.floatingLabels-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -6643,6 +6654,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/assets\/js\/build\/min\/enhanced.min-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/build\/min\/enhanced.min-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/build\/min\/min\/enhanced.min-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/assets\/js\/build\/softwareDiagram.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -7311,6 +7333,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/samples\/wpa.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/samples\/wpa.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/tests\/cm-spec.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -7334,6 +7365,24 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/tests\/fluid-vids.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/tests\/grid.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/tests\/grid.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/tests\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/tests\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

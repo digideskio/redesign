@@ -117,7 +117,7 @@
   }
 }
 
-.form {
+.form.primary {
   @extend %main-content-padding;
   @extend %bar-padding-vertical;
   background-color: $form-background-color;

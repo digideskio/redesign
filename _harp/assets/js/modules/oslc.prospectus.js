@@ -221,7 +221,7 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
   
 })
 // keycode management for menu items
-.on('keydown', '.js-prospectus-focusable', function(e){
+.on('keydown', '.js-prospectus-focusable, .has-popup', function(e){
   var
     keycode = e.which || e.keyCode,
     alphabet = _.range(65,91),
@@ -230,11 +230,12 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
     $this = $(this),
     hasDropdown = $this.data('hasDropdown'),
     $menu = $this.closest('[data-prospectus]'),
-    isDrop = $menu.data('prospectus').options.isDropdown,
+    isDrop = $menu.length && $menu.data('prospectus').options.isDropdown,
     $dropdownControl, $menuBar, $otherDropdownControl,
     $targets;
   
-  if ( ! validKey || (keycode === 9 && ! isDrop)) {return;}
+  if ( ! validKey ) { return; }
+  if ( ! isDrop && _.contains([9,27], keycode) ) { return; }
   
   e.preventDefault();
   
@@ -276,8 +277,8 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
       return;
     }
       
-  } 
-  
+  }
+    
   // TODO: maybe ':focusable'? will have to exclude .close
   // TODO: exclude Google Custom Search .gsst_a anchor? (appears to remove typed keywords)
   $targets = $menu.find('a'); 

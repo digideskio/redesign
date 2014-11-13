@@ -183,7 +183,7 @@ var Whirligig = _.create( OSLC, {
           height: $target.height()
         }, 
         {
-          easing: [0.4,0,0.2,1], 
+          easing: [0.4,0,0.2,1],
           duration: 250,
           complete: function(){
             // When done, make all non-active panels invisible
