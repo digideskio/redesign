@@ -372,11 +372,11 @@
     letter-spacing: normal;
     word-spacing: normal; } }
 .controls {
-  background-color: #ffe6b8;
+  background-color: #f6be7e;
   padding: 8px;
   padding: 0.5rem;
   text-align: center;
-  border-bottom: 1px solid #ffd88f; }
+  border-bottom: 1px solid #f3ab58; }
 
 .tabs {
   background-color: #f3f3f3;
@@ -402,7 +402,7 @@
     padding-left: 20px;
     padding-left: 1.25rem; }
   .tab:hover, .tab:focus {
-    color: #00a7bd; }
+    color: #4178b4; }
   .tab.active {
     color: #fff !important;
     cursor: default; }
@@ -415,7 +415,7 @@
   bottom: 0;
   z-index: 0;
   width: 0;
-  background-color: #51c1d2;
+  background-color: #6595c8;
   padding: 0 24px;
   padding: 0 1.5rem; }
 
@@ -475,9 +475,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #fff;
-  background-color: #ff852e; }
+  background-color: #774308; }
   .activeFilter:hover {
-    background-color: #ffa83d; }
+    background-color: #94540a; }
 
 .boxshadow .card {
   border: none;
@@ -594,14 +594,14 @@
     cursor: help; }
   .node circle {
     fill: #fff;
-    stroke: #51c1d2;
+    stroke: #6595c8;
     stroke-width: 3px; }
     .node circle.spec-1 {
-      stroke: #ffd899; }
+      stroke: #ef8915; }
     .node circle.spec-2 {
-      stroke: #36ceb0; }
+      stroke: #2e8469; }
     .node circle.spec-3 {
-      stroke: #ee7e7c; }
+      stroke: #da745d; }
     .node circle.spec-4 {
       stroke: #aaa; }
   .node text {
@@ -615,14 +615,14 @@
   margin-right: .33em;
   height: 13px;
   width: 13px;
-  border: 3px solid #51c1d2;
+  border: 3px solid #6595c8;
   border-radius: 50%; }
   .legend-node.spec-1 {
-    border-color: #ffd899; }
+    border-color: #ef8915; }
   .legend-node.spec-2 {
-    border-color: #36ceb0; }
+    border-color: #2e8469; }
   .legend-node.spec-3 {
-    border-color: #ee7e7c; }
+    border-color: #da745d; }
   .legend-node.spec-4 {
     border-color: #aaa; }
 
@@ -635,18 +635,18 @@
 
 .message {
   padding: 11px 48px 11px 11px;
-  background: rgba(0, 102, 143, 0.96);
+  background: rgba(32, 60, 90, 0.96);
   color: #fafafa;
   position: relative;
   display: none; }
   .message.error {
-    background: rgba(220, 50, 53, 0.96); }
+    background: rgba(175, 64, 40, 0.96); }
   .message.warning {
-    background: rgba(255, 133, 46, 0.96); }
+    background: rgba(119, 67, 8, 0.96); }
   .message.success {
-    background: rgba(0, 153, 94, 0.96); }
+    background: rgba(32, 91, 72, 0.96); }
   .message.info {
-    background: rgba(126, 210, 221, 0.96);
+    background: rgba(143, 177, 214, 0.96);
     color: #444; }
   .message.secondary {
     background: rgba(204, 204, 204, 0.96);
@@ -704,19 +704,19 @@
 .toc .item {
   border-left: 8px solid #ccc; }
   .toc .item.h6 {
-    border-left-color: #d7f1f4; }
+    border-left-color: #dae5f1; }
   .toc .item.h5 {
-    border-left-color: #7ed2dd; }
+    border-left-color: #8fb1d6; }
   .toc .item.h4 {
-    border-left-color: #51c1d2; }
+    border-left-color: #6595c8; }
   .toc .item.h3 {
-    border-left-color: #00a7bd; }
+    border-left-color: #4178b4; }
   .toc .item.h2 {
-    border-left-color: #0083a3; }
+    border-left-color: #315a87; }
   .toc .item.h1 {
-    border-left-color: #00668f; }
+    border-left-color: #203c5a; }
   .toc .item.godzilla {
-    border-left-color: #004175; }
+    border-left-color: #172b40; }
   .toc .item.h1 {
     padding-left: 3px; }
   .toc .item.h2 {
@@ -753,11 +753,11 @@
     color: #999; }
   .dropdown .items .item:hover,
   .dropdown .items .item:focus {
-    background-color: #fff6e5; }
+    background-color: #f9d4a9; }
   .dropdown .items .current,
   .dropdown .items .current:hover,
   .dropdown .items .current:focus {
-    background-color: #ffe2b3; }
+    background-color: #f3ab58; }
 
 .tooltip {
   padding-bottom: 5px; }
@@ -769,7 +769,7 @@
 
 .tooltip-wrap {
   cursor: help;
-  border-bottom: 2px dotted #7ed2dd; }
+  border-bottom: 2px dotted #8fb1d6; }
 
 .close {
   position: absolute;
@@ -806,7 +806,7 @@
       width: 216px;
       top: 0;
       bottom: 0;
-      background-color: #fff8eb;
+      background-color: #f9d6ae;
       box-shadow: 2px 0 3px rgba(0, 0, 0, 0.11);
       overflow: auto; }
       .enhanced .nav.has-secondary {
@@ -833,7 +833,7 @@
 @media only screen and (min-width: 40.0625em) {
   #main_menu {
     width: 216px;
-    background-color: #fff8eb; } }
+    background-color: #f9d6ae; } }
 
 @media only screen and (min-width: 40.0625em) {
   #secondary_menu {

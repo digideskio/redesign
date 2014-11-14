@@ -24,7 +24,7 @@ I'm going have discussions for all the big things in [Github Issues](https://git
 
 In the end, I'd like this site to remain as a style guide, a test site, and a bit of history available to anyone. And, in the process, you all can keep me honest. 
 
-And it'll be fun. 
+And it'll be fun!
 
 In ["Designing in the Open"](http://bradfrostweb.com/blog/post/designing-in-the-open/), Brad Frost spells out some of the benefits of redesigning in the open:
 

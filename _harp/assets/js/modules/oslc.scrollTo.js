@@ -52,6 +52,8 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
   // and now https://gist.github.com/leereamsnyder/33504ae18b58d25646b6
   // This IS in an onClick event, so we can just fire a worthless scrollTo here
   // even if it's (0,0) that seems to snap iOS out of its funk
+  //
+  // UPDATE this is fixed in iOS 8+
   if ( currentScroll === 0 && /iPhone|iPad|iPod/.test(navigator.userAgent) ) {
     window.scrollBy(0,0);
   }
