@@ -14,22 +14,6 @@
   line-height: $line-height;
 }
 
-@each $name, $size in map-remove($font-sizes,n) {
-  $index: index(map-keys($font-sizes),$name)+1;
-  $line: 1.05;
-  
-  @if $index <= length($font-sizes) {
-    $line: nth(map-keys($font-sizes),$index);
-  }
-  
-  %text-size-#{$name} {
-    @include font-size($name,$line)
-  }
-  
-  %font-size-#{$name} { @extend %text-size-#{$name}; }
-}
-
-// 11px
 @mixin text-size-xs { @include font-size(xs,s); }
 @mixin text-size-s { @include font-size(s,m); }
 @mixin text-size-m { @include font-size(m,l); }
@@ -39,3 +23,23 @@
 @mixin text-size-xxxl { @include font-size(xxxl,xxxxl); }
 @mixin text-size-xxxxl { @include font-size(xxxxl,xxxxxl); }
 @mixin text-size-xxxxxl { @include font-size(xxxxxl,1.05); }
+
+@include exports('typography-placeholders') {
+  /* TYPOGRAPHY PLACEHOLDERS */
+  
+  @each $name, $size in map-remove($font-sizes,n) {
+    $index: index(map-keys($font-sizes),$name)+1;
+    $line: 1.05;
+  
+    @if $index <= length($font-sizes) {
+      $line: nth(map-keys($font-sizes),$index);
+    }
+  
+    %text-size-#{$name} {
+      @include font-size($name,$line)
+    }
+  
+    %font-size-#{$name} { @extend %text-size-#{$name}; }
+  }
+
+}

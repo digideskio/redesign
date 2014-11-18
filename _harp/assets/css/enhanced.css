@@ -32,6 +32,34 @@
   margin-bottom: 1.4375em;
   margin-top: 0; }
 
+/**
+ * Define the ranges
+ * Borrowed the idea shamelessly from http://foundation.zurb.com/docs/media-queries.html
+ * Modified with some different terms
+ */
+/**
+ * Set up some Media Queries
+ * And get them in a SASS map (3.3+) for easy reference
+ */
+/**
+ * Mixin for bubbling up media queries
+ * Syntax sugar for the MQs defined above
+ * 
+ * See:
+ *  - http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+ *  - http://jeffcroft.com/blog/2012/mar/02/implementing-responsive-design/
+ *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ */
+/*
+ * Reset Buttons
+ */
+/*
+ * Prevent flicker on transitions on mobile webkit
+ */
+/*
+ * Placeholders! 
+ * Should be included only once! (via the exports function in sass-import-once)
+ */
 /*
  * The ever-important clearfix
  */
@@ -72,9 +100,6 @@
   background: none; }
 
 /*
- * Prevent flicker on transitions on mobile webkit
- */
-/*
  * SVG Icons
  */
 /* 
@@ -90,6 +115,7 @@
 /*
  * Text size mixins / placeholders
  */
+/* TYPOGRAPHY PLACEHOLDERS */
 .js-in-sextant .back-to-top, .legend, .dropdown .items .count {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -131,24 +157,6 @@
   .table tbody tr + tr th {
     border-top: 1px solid #ccc; }
 
-/**
- * Define the ranges
- * Borrowed the idea shamelessly from http://foundation.zurb.com/docs/media-queries.html
- * Modified with some different terms
- */
-/**
- * Set up some Media Queries
- * And get them in a SASS map (3.3+) for easy reference
- */
-/**
- * Mixin for bubbling up media queries
- * Syntax sugar for the MQs defined above
- * 
- * See:
- *  - http://css-tricks.com/media-queries-sass-3-2-and-codekit/
- *  - http://jeffcroft.com/blog/2012/mar/02/implementing-responsive-design/
- *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
- */
 /*
  * "Knee" classes
  */

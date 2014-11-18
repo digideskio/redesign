@@ -27,6 +27,34 @@
   margin-bottom: 1.4375em;
   margin-top: 0; }
 
+/**
+ * Define the ranges
+ * Borrowed the idea shamelessly from http://foundation.zurb.com/docs/media-queries.html
+ * Modified with some different terms
+ */
+/**
+ * Set up some Media Queries
+ * And get them in a SASS map (3.3+) for easy reference
+ */
+/**
+ * Mixin for bubbling up media queries
+ * Syntax sugar for the MQs defined above
+ * 
+ * See:
+ *  - http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+ *  - http://jeffcroft.com/blog/2012/mar/02/implementing-responsive-design/
+ *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ */
+/*
+ * Reset Buttons
+ */
+/*
+ * Prevent flicker on transitions on mobile webkit
+ */
+/*
+ * Placeholders! 
+ * Should be included only once! (via the exports function in sass-import-once)
+ */
 /*
  * The ever-important clearfix
  */
@@ -87,9 +115,6 @@ textarea.text, .project-name {
   cursor: pointer;
   background: none; }
 
-/*
- * Prevent flicker on transitions on mobile webkit
- */
 .prevent-flicker, .boxshadow .btn {
   -webkit-backface-visibility: hidden; }
 
@@ -149,6 +174,7 @@ textarea.text, .project-name {
 /*
  * Text size mixins / placeholders
  */
+/* TYPOGRAPHY PLACEHOLDERS */
 .menu.primary .profile .info, .enhanced .form.login .actions .links {
   font-size: 11px;
   font-size: 0.6875rem;
@@ -235,24 +261,6 @@ textarea.text {
   .copy > table tbody tr + tr th {
     border-top: 1px solid #ccc; }
 
-/**
- * Define the ranges
- * Borrowed the idea shamelessly from http://foundation.zurb.com/docs/media-queries.html
- * Modified with some different terms
- */
-/**
- * Set up some Media Queries
- * And get them in a SASS map (3.3+) for easy reference
- */
-/**
- * Mixin for bubbling up media queries
- * Syntax sugar for the MQs defined above
- * 
- * See:
- *  - http://css-tricks.com/media-queries-sass-3-2-and-codekit/
- *  - http://jeffcroft.com/blog/2012/mar/02/implementing-responsive-design/
- *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
- */
 .js .nojs-only,
 .enhanced .base-only {
   display: none !important; }
@@ -1462,11 +1470,11 @@ a.gsst_a:focus {
             transform: translate(0, 0.1875em); }
 
 .action {
-  border: 3px solid;
-  padding: .6em;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1;
+  border: 3px solid;
+  padding: .6em;
   color: #315a87;
   -webkit-transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
           transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }

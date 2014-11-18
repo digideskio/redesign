@@ -448,9 +448,7 @@ window.Modernizr = (function( window, document, undefined ) {
     return Modernizr;
 
 })(this, this.document);
-
-
-Modernizr.addTest('mediaqueries', Modernizr.mq('only all'));// display: table and table-cell test. (both are tested under one name "table-cell" )
+// display: table and table-cell test. (both are tested under one name "table-cell" )
 // By @scottjehl
 
 // all additional table display values are here: http://pastebin.com/Gk9PeVaQ though Scott has seen some IE false positives with that sort of weak detection.
@@ -477,4 +475,6 @@ Modernizr.addTest( "display-table",function(){
   return ret; 
 });
 
-;
+
+
+Modernizr.addTest('mediaqueries', Modernizr.mq('only all'));;

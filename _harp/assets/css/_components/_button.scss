@@ -107,10 +107,9 @@
 .action {
   @extend %btn;
   @extend %fixFlagContainerInline;
-  border: 3px solid;
-  padding: .6em;
   @include font-size(m,1);
-  
+  border: 3px solid;
+  padding: .6em;  
   color: palette(blue, mid-dark);
   
   transition: border-color .2s $ease-out-cubic;

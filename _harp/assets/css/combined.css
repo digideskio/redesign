@@ -27,6 +27,34 @@
   margin-bottom: 1.4375em;
   margin-top: 0; }
 
+/**
+ * Define the ranges
+ * Borrowed the idea shamelessly from http://foundation.zurb.com/docs/media-queries.html
+ * Modified with some different terms
+ */
+/**
+ * Set up some Media Queries
+ * And get them in a SASS map (3.3+) for easy reference
+ */
+/**
+ * Mixin for bubbling up media queries
+ * Syntax sugar for the MQs defined above
+ * 
+ * See:
+ *  - http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+ *  - http://jeffcroft.com/blog/2012/mar/02/implementing-responsive-design/
+ *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ */
+/*
+ * Reset Buttons
+ */
+/*
+ * Prevent flicker on transitions on mobile webkit
+ */
+/*
+ * Placeholders! 
+ * Should be included only once! (via the exports function in sass-import-once)
+ */
 /*
  * The ever-important clearfix
  */
@@ -87,9 +115,6 @@ textarea.text, .project-name, .tabs .indicator, .activeFilter, .js-icon-swapper 
   cursor: pointer;
   background: none; }
 
-/*
- * Prevent flicker on transitions on mobile webkit
- */
 .prevent-flicker, .boxshadow .btn {
   -webkit-backface-visibility: hidden; }
 
@@ -149,6 +174,7 @@ textarea.text, .project-name, .tabs .indicator, .activeFilter, .js-icon-swapper 
 /*
  * Text size mixins / placeholders
  */
+/* TYPOGRAPHY PLACEHOLDERS */
 .menu.primary .profile .info, .enhanced .form.login .actions .links {
   font-size: 11px;
   font-size: 0.6875rem;
@@ -235,24 +261,6 @@ textarea.text {
   .copy > table tbody tr + tr th {
     border-top: 1px solid #ccc; }
 
-/**
- * Define the ranges
- * Borrowed the idea shamelessly from http://foundation.zurb.com/docs/media-queries.html
- * Modified with some different terms
- */
-/**
- * Set up some Media Queries
- * And get them in a SASS map (3.3+) for easy reference
- */
-/**
- * Mixin for bubbling up media queries
- * Syntax sugar for the MQs defined above
- * 
- * See:
- *  - http://css-tricks.com/media-queries-sass-3-2-and-codekit/
- *  - http://jeffcroft.com/blog/2012/mar/02/implementing-responsive-design/
- *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
- */
 .js .nojs-only,
 .enhanced .base-only {
   display: none !important; }
@@ -1462,11 +1470,11 @@ a.gsst_a:focus {
             transform: translate(0, 0.1875em); }
 
 .action {
-  border: 3px solid;
-  padding: .6em;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1;
+  border: 3px solid;
+  padding: .6em;
   color: #315a87;
   -webkit-transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
           transition: border-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
@@ -2155,222 +2163,6 @@ abbr.grunticon-wordmark-med {
   @return $type-gradient;
 }
 */
-.copy-spacing, .copy > table, .copy > .fluid-video, .copy > ul,
-.copy > ol, .copy > p, .copy > blockquote, .copy pre, .copy > .notice, .copy >
-.callout, .copy >
-.callout-box, .copy >
-.tip, #compatibility-graphic {
-  margin-bottom: 1.4375em;
-  margin-top: 0; }
-
-/*
- * The ever-important clearfix
- */
-.cf:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-/*
- * Floats
- */
-.left {
-  float: left; }
-
-.right {
-  float: right; }
-
-/*
- * Positioning
- */
-.pos-rel, .enhanced .form.login .control, .footer[role="contentinfo"], .js-icon-swapper {
-  position: relative; }
-
-.pos-abs, .enhanced .form.login .floatingLabels label, .activeFilter, .js-icon-swapper .icon, .enhanced .nav, .close-nav {
-  position: absolute; }
-
-/*
- * Blocks
- */
-.block.icon, .block, .menu.primary .profile .info, .links .item, .sequence, .sequence .label, .control.options label, input.text,
-textarea.text, .project-name, .tabs .indicator, .activeFilter, .js-icon-swapper {
-  display: block; }
-
-.icon, .menu.horizontal .item, .inline li, .tag, .card .byline, .card > .footer .tags, .tabs, .tab, .legend-node {
-  display: inline-block;
-  vertical-align: baseline;
-  zoom: 1;
-  *display: inline;
-  *vertical-align: auto; }
-
-/*
- * Reset UL/OLs
- */
-.menu .items, .links, .inline, .flat, .slats, .form fieldset {
-  margin: 0;
-  padding: 0; }
-
-.menu .items, .links, .inline, .flat, .slats {
-  list-style: none; }
-  .copy .menu .items, .menu .copy .items, .copy .links, .copy .inline, .copy .flat, .copy .slats {
-    padding-left: 0; }
-
-.btn, .action, .enhanced .form.login .actions button, .activeFilter, .close {
-  -webkit-appearance: none;
-  appearance: none;
-  padding: 0;
-  border: 0;
-  cursor: pointer;
-  background: none; }
-
-/*
- * Prevent flicker on transitions on mobile webkit
- */
-.prevent-flicker, .boxshadow .btn {
-  -webkit-backface-visibility: hidden; }
-
-/*
- * SVG Icons
- */
-.icon {
-  vertical-align: top; }
-
-.featurette, .toggle {
-  text-align: center; }
-  .featurette .text, .toggle .text {
-    display: block; }
-
-.copy li, .copy > p, .copy > blockquote, .notice,
-.callout,
-.callout-box,
-.tip, .form form, .nested > .document {
-  max-width: 720px; }
-
-/* 
- * Latest hotness in image replacement
- * http://www.sitepoint.com/new-css-image-replacement-technique/
- * 
- * Shoves text out of the element's visible frame with less rendering work than -9999px
- * Still need additional classes to provide width/height and the background image
- */
-.ir {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden; }
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-.sr-only {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  /*
-   * Extends the .visuallyhidden class to allow the element to be focusable
-   * when navigated to via the keyboard: h5bp.com/p
-   */ }
-  .focusable.sr-only:active, .focusable.sr-only:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto; }
-
-/*
- * Text size mixins / placeholders
- */
-.menu.primary .profile .info, .enhanced .form.login .actions .links {
-  font-size: 11px;
-  font-size: 0.6875rem;
-  line-height: 1.18182; }
-
-.control > label, .prefix, .js-in-sextant .back-to-top, .breadcrumbs, .sequence .label, .card .byline, .slat, .form .help, .enhanced .form.login .actions button, .legend, .dropdown .items .count {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  line-height: 1.23077; }
-
-.copy > h6, input.text,
-textarea.text {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.1875; }
-
-.notice > .header .title,
-.callout > .header .title,
-.callout-box > .header .title,
-.tip > .header .title, .form legend, .copy > h5 {
-  font-size: 19px;
-  font-size: 1.1875rem;
-  line-height: 1.21053; }
-
-.copy > h4 {
-  font-size: 23px;
-  font-size: 1.4375rem;
-  line-height: 1.17391; }
-
-.copy > h3 {
-  font-size: 27px;
-  font-size: 1.6875rem;
-  line-height: 1.18519; }
-
-.copy > h2 {
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 1.1875; }
-
-.copy > h1 {
-  font-size: 38px;
-  font-size: 2.375rem;
-  line-height: 1.26316; }
-
-.copy > .godzilla {
-  font-size: 48px;
-  font-size: 3rem;
-  line-height: 1.05; }
-
-.table, .copy > table {
-  width: 100%;
-  padding: 0;
-  border-collapse: separate;
-  border-spacing: 0;
-  empty-cells: show;
-  border: none;
-  border-top: 3px solid #ccc;
-  background: #fff;
-  /*
-  th + th {
-    border-left: 1px solid $table-border-color;
-  }
-  */ }
-  .ltie8 .table, .ltie8 .copy > table {
-    border-collapse: collapse; }
-  .table th, .copy > table th, .table td, .copy > table td, .table caption, .copy > table caption {
-    padding: 10px;
-    text-align: left; }
-  .table caption, .copy > table caption {
-    font-style: italic; }
-  .table [align="right"], .copy > table [align="right"] {
-    text-align: right; }
-  .table [align="center"], .copy > table [align="center"] {
-    text-align: center; }
-  .table th, .copy > table th {
-    font-weight: bold; }
-  .table thead th, .copy > table thead th {
-    vertical-align: bottom;
-    background-color: #f8f8f8; }
-  .table td, .copy > table td {
-    vertical-align: top; }
-  .table tbody tr + tr td, .copy > table tbody tr + tr td,
-  .table tbody tr + tr th,
-  .copy > table tbody tr + tr th {
-    border-top: 1px solid #ccc; }
-
 /**
  * Define the ranges
  * Borrowed the idea shamelessly from http://foundation.zurb.com/docs/media-queries.html
@@ -2388,6 +2180,15 @@ textarea.text {
  *  - http://css-tricks.com/media-queries-sass-3-2-and-codekit/
  *  - http://jeffcroft.com/blog/2012/mar/02/implementing-responsive-design/
  *  - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ */
+/*
+ * Reset Buttons
+ */
+/*
+ * Prevent flicker on transitions on mobile webkit
+ */
+/*
+ * Text size mixins / placeholders
  */
 /*
  * "Knee" classes

@@ -1,87 +1,91 @@
-.cf { @extend %clearfix; }
-.left { @extend %left; }
-.right { @extend %right; }
-.pos-rel { @extend %pos-rel; }
-.pos-abs { @extend %pos-abs; }
-.prevent-flicker { @extend %prevent-flicker; }
-.block { @extend %block; }
+@include exports('toolkit') {
 
-//
-// JavaScript-driven visibility
-//
-.js .nojs-only,
-.enhanced .base-only {
-	display: none !important;
-}
+  .cf { @extend %clearfix; }
+  .left { @extend %left; }
+  .right { @extend %right; }
+  .pos-rel { @extend %pos-rel; }
+  .pos-abs { @extend %pos-abs; }
+  .prevent-flicker { @extend %prevent-flicker; }
+  .block { @extend %block; }
 
-.no-js .js-only,
-.base .enhanced-only {
-	display: none !important;
-}
-
-//
-// Quickie remove underline and inline images for an image in a link
-//
-
-.image-link {
-  text-decoration: none;
-}
-
-.featurette {
-  @extend %featurette;
-}
-
-/*** 
-  * Fluid video/embed wrappers
-  * 
-  * adapted from http://www.netmagazine.com/tutorials/create-fluid-width-videos
-  * and http://alistapart.com/article/creating-intrinsic-ratios-for-videol
-  */
-.fluid-video { 
-  position: relative;
-  height: 0;
-  
-  // Height determined entirely by padding
-  // Set a 16:9 aspect ratio
-  padding-bottom: 56.25%; 
-  // plus a little more for video player chrome
-  padding-top: 25px; 
-  
-  // make video fill the wrapper
-  > iframe {
-    position: absolute;
-		top: 0;
-		left: 0;
-    // override height/width on the element
-		width: 100% !important;
-		height: 100% !important;
+  //
+  // JavaScript-driven visibility
+  //
+  .js .nojs-only,
+  .enhanced .base-only {
+    display: none !important;
   }
+
+  .no-js .js-only,
+  .base .enhanced-only {
+    display: none !important;
+  }
+
+  //
+  // Quickie remove underline and inline images for an image in a link
+  //
+
+  .image-link {
+    text-decoration: none;
+  }
+
+  .featurette {
+    @extend %featurette;
+  }
+
+  /*** 
+    * Fluid video/embed wrappers
+    * 
+    * adapted from http://www.netmagazine.com/tutorials/create-fluid-width-videos
+    * and http://alistapart.com/article/creating-intrinsic-ratios-for-videol
+    */
+  .fluid-video { 
+    position: relative;
+    height: 0;
+  
+    // Height determined entirely by padding
+    // Set a 16:9 aspect ratio
+    padding-bottom: 56.25%; 
+    // plus a little more for video player chrome
+    padding-top: 25px; 
+  
+    // make video fill the wrapper
+    > iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      // override height/width on the element
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  /* 
+   * Image replacement
+   */
+
+  .ir { @extend %ir; }
+
+  /* 
+   * Grunticon helper class
+   */
+  .icon { @extend %icon; }
+
+
+  /* 
+   * Screen-Reader only
+   * Extension of HTML5 Boilerplate .visuallyhidden
+   * Add .focusable if it should become visible on focus/active
+   */
+
+  .sr-only { @extend %visuallyhidden; }
+
+
+  /*
+   * Hide visually and from screenreaders, but maintain layout
+   * Also removes contents from tab order!
+   */
+
+  .invisible { visibility: hidden; }
+
 }
-
-/* 
- * Image replacement
- */
-
-.ir { @extend %ir; }
-
-/* 
- * Grunticon helper class
- */
-.icon { @extend %icon; }
-
-
-/* 
- * Screen-Reader only
- * Extension of HTML5 Boilerplate .visuallyhidden
- * Add .focusable if it should become visible on focus/active
- */
-
-.sr-only { @extend %visuallyhidden; }
-
-
-/*
- * Hide visually and from screenreaders, but maintain layout
- * Also removes contents from tab order!
- */
-
-.invisible { visibility: hidden; }

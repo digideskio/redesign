@@ -173,4 +173,7 @@ $table-border-color: palette(gray,light);
 //
 
 $copy-line-height: 1.4375; // 23px/16px
-%copy-margins { margin-bottom: $copy-line-height + 0em; margin-top: 0; }
+
+@include exports('settings-derived-placeholders') {
+  %copy-margins { margin-bottom: $copy-line-height + 0em; margin-top: 0; }
+}

@@ -17,9 +17,8 @@
 	var doc = window.document,
 		docElem = doc.documentElement,
 		production = window.environment === 'production',
-		baseCSSKey = 'basecss',
-		// this references a meta tag's name whose content attribute should define the path to the enhanced CSS file for the site
-		enhancedCSSKey = "enhancedcss",
+		// this references a meta tag's name whose content attribute should define the path to the CSS file for the site
+		fullCSSKey = 'combinedcss',
 		// this references a meta tag's name whose content attribute should define the path to the enhanced JS file for the site (delivered to qualified browsers)
 		fullJSKey = "enhancedjs",
 		// classes to be added to the HTML element in qualified browsers
@@ -30,7 +29,7 @@
 		var ref = window.document.getElementsByTagName( "script" )[ 0 ];
 		var script = window.document.createElement( "script" );
 		script.src = src;
-		script.async = true;
+		//script.async = true;
 		ref.parentNode.insertBefore( script, ref );
 		return script;
 	}
@@ -116,9 +115,9 @@
 		If no cookie is set to specify that the full CSS has already been fetched, load it asynchronously and set the cookie.
 		Once the cookie is set, the full CSS is assumed to be in cache, and the server-side templates should reference the full CSS directly from the head of the page with a link element, in place of inline critical styles.
 		*/
-	var baseCSS = getMeta( baseCSSKey );
-	if (baseCSS && production) { 
-	  loadCSS( baseCSS.content ); 
+	var fullCSS = getMeta( fullCSSKey );
+	if (fullCSS && production) { 
+	  loadCSS( fullCSS.content ); 
 	}
   // 	if( fullCSS && !cookie( fullCSSKey ) ){
   // 		loadCSS( fullCSS.content );
@@ -167,12 +166,6 @@
 
 	// Add scoping classes to HTML element: useful for upgrading the presentation of elements that will be enhanced with JS behavior
 	docElem.className = docElem.className.replace(/(^|\s)base(\s|$)/, '$1$2') + " " + htmlClasses.join(" ");
-
-  /* Load enhanced CSS async */
-	var enhancedCSS = getMeta( enhancedCSSKey );
-	if( enhancedCSS && production ) {
-		loadCSS( enhancedCSS.content );
-	}
 
 	/* Load JavaScript enhancements in one request.
 		Your DOM framework and dependent component scripts should be concatenated and minified into one file that we'll load dynamically (keep that file as small as possible!)

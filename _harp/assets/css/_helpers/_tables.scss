@@ -1,52 +1,54 @@
 // SUPER USEFUL: http://webaim.org/techniques/tables/data
 
-%table {
-  width: 100%;
-  padding: 0;
-  border-collapse: separate;
-  border-spacing: 0;
-  empty-cells: show;
-  border: none;
-  border-top: 3px solid $table-border-color;
-  background: #fff;
+@include exports('tables') {
+  %table {
+    width: 100%;
+    padding: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    empty-cells: show;
+    border: none;
+    border-top: 3px solid $table-border-color;
+    background: #fff;
   
-  .ltie8 & { border-collapse: collapse; }
+    .ltie8 & { border-collapse: collapse; }
   
-  th, td, caption {
-    padding: 10px;
-		text-align: left;
+    th, td, caption {
+      padding: 10px;
+      text-align: left;
+    }
+  
+    caption { font-style: italic; }
+  
+    //
+    // Alignment changes for markdown extra tables
+    // 
+    [align="right"] { text-align: right; }
+  
+    [align="center"] { text-align: center; }
+  
+    th { font-weight: bold; }
+  
+    thead th {
+      vertical-align: bottom;
+      background-color: $table-header-bg;
+    }
+  
+    /*
+    th + th {
+      border-left: 1px solid $table-border-color;
+    }
+    */
+  
+    td { vertical-align: top; }
+  
+    tbody tr + tr td,
+    tbody tr + tr th {
+      border-top: 1px solid $table-border-color;
+    }
   }
-  
-  caption { font-style: italic; }
-  
-  //
-  // Alignment changes for markdown extra tables
-  // 
-  [align="right"] { text-align: right; }
-  
-  [align="center"] { text-align: center; }
-  
-  th { font-weight: bold; }
-  
-  thead th {
-    vertical-align: bottom;
-    background-color: $table-header-bg;
-  }
-  
-  /*
-  th + th {
-    border-left: 1px solid $table-border-color;
-  }
-  */
-  
-  td { vertical-align: top; }
-  
-  tbody tr + tr td,
-  tbody tr + tr th {
-    border-top: 1px solid $table-border-color;
-  }
-}
 
-.table {
-  @extend %table;
+  .table {
+    @extend %table;
+  }
 }
