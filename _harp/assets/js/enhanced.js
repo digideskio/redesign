@@ -63,12 +63,14 @@ OSLC.supportsTransitions = Modernizr && "csstransitions" in Modernizr && Moderni
 // Return whether or not CSS transitions are GPU-accelerated
 // This is an imperfect test, but 3D Transforms are a good sign
 //
-OSLC.supportsAcceleratedTransitions = Modernizr && "csstransforms3d" in Modernizr && Modernizr.csstransforms3d;
+// REMOVED 18 Nov 2014; Modernizr seems to false negative on "csstransforms3d" in Webkit. Maybe revisit when Modernizr 3.0 hits?
+// It could also only be an issue when Modernizr is loaded ASYNC (as it is prefixed to this file). Or not? I dunno, it's very random!
+//OSLC.supportsAcceleratedTransitions = Modernizr && "csstransforms3d" in Modernizr && Modernizr.csstransforms3d;
 
 // For browsers that do not support accelerated transitions, probably best to just do all animations instantly
 // http://julian.com/research/velocity/#mock
 // this overrides all durations and delays to 0ms
-if ( ! OSLC.supportsAcceleratedTransitions ) { $.Velocity.mock = true; }
+//if ( ! OSLC.supportsAcceleratedTransitions ) { $.Velocity.mock = true; }
 
 // @codekit-append "./modules/oslc.google-cse.js";
 // @codekit-append "./modules/oslc.toggler.js";

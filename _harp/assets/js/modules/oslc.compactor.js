@@ -4,31 +4,43 @@
 
 var compactElements = function(){
 
+  var 
+    $main = $('#main'),
+    mainWidth = $main.width();
+
   // First up, tables, svg, and pre blocks, which can be wrapped in a wrapper div
-  $('#main').find('table, pre, svg').each(function(){
+  $main.find('table, pre, svg').each(function(){
     var 
       $el = $(this);
       
     // this prevents it from being wrapped multiple times
     if ( $el.parent().is('.overflow-wrap') ) { return; }
     
-    if ( $el.width() > $('#main').width() ) {
+    var width = $el.width();
+    
+    // Duo was saying SVGs had a negative width?
+    // try using the width attribute
+    if (width < 0) { width = $el.attr('width'); }
+    
+    if ( width > mainWidth ) {
       $el.wrap('<div class="overflow-wrap copy"></div>');
     }
     
   });
   
-  // Second up: some <code> and <a> (especially auto URLs eg <http:somethingreallylong.org>) can get too long and don't necessarily break
-  $('.content').find('code, a').each(function(){
+  // Second up: some <code> and <a> and headers (especially auto URLs eg <http:somethingreallylong.org>) can get too long and don't necessarily break
+  $main.find('code, a, h1, h2, h3, h4, h5, h6').each(function(){
     
     var 
       $el = $(this),
       $parent = $el.parent();
     
+    if ($el.hasClass('line-break-all-the-things')) {return;}
+    
     // <code> in <pre> has overflow. We're good
     if ( $parent.is('pre') ) { return; }
     
-    if ( $el.width() > $parent.width() ) {
+    if ( $el.outerWidth() > $parent.width() ) {
       $el.addClass('line-break-all-the-things');
     }
     
