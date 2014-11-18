@@ -141,7 +141,7 @@ small{ font-size: 80%; }
 
 html{ font-size: 100%; }
 .sticky-footer-body{ background-color: rgb(68, 68, 68); }
-.copy a{ color: rgb(0, 131, 163); -webkit-transition-property: color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
+.copy a{ color: rgb(65, 120, 180); -webkit-transition-property: color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
 
 
 
@@ -165,7 +165,7 @@ html{ font-size: 100%; }
 
 
 
-.copy > h2{ border-top-color: rgb(0, 131, 163); border-right-color: rgb(0, 131, 163); border-bottom-color: rgb(0, 131, 163); border-left-color: rgb(0, 131, 163); }
+.copy > h2{ border-top-color: rgb(49, 90, 135); border-right-color: rgb(49, 90, 135); border-bottom-color: rgb(49, 90, 135); border-left-color: rgb(49, 90, 135); }
 
 
 
@@ -179,13 +179,13 @@ html{ font-size: 100%; }
 
 
 .menu .item{ padding-top: 0.6875rem; padding-right: 0.5rem; padding-bottom: 0.6875rem; padding-left: 0.5rem; display: block; color: rgb(68, 68, 68); }
-.menu .item.flush{ padding-left: 0px; padding-right: 0px; }
+
 
 .menu a, .menu .item{ text-decoration: none; -webkit-transition-property: background-color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
-.menu.primary{ background-color: rgb(255, 248, 235); }
-.menu.primary .item, .menu.primary a{ color: rgb(102, 102, 102); }
+.menu.primary{ background-color: rgb(62, 75, 91); }
+.menu.primary .item, .menu.primary a{ color: rgb(255, 255, 255); }
 
-.menu.primary .current{ background-color: rgb(255, 237, 204) !important; }
+.menu.primary .current{ background-color: rgb(50, 60, 73) !important; }
 
 
 
@@ -334,18 +334,16 @@ html{ font-size: 100%; }
 
 
 
-
-
-.banner{ background-color: rgb(255, 248, 235); }
+.banner{ background-color: rgb(62, 75, 91); }
 .toggle{ text-decoration: none; -webkit-transition-property: background-color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
-.toggle .text{ color: rgb(102, 102, 102); font-size: 11px; line-height: 1; margin-top: 0.25rem; }
-.banner{ background-color: rgb(255, 248, 235); box-shadow: rgba(0, 0, 0, 0.15625) 0px 2px 3px; z-index: 5; }
-.banner .toggle{ padding-top: 0.25rem; padding-right: 0.6875rem; padding-bottom: 0.25rem; padding-left: 0.6875rem; border-right-width: 1px; border-right-style: solid; border-right-color: rgb(255, 235, 199); }
+.toggle .text{ color: rgb(255, 255, 255); font-size: 11px; line-height: 1; margin-top: 0.25rem; }
+.banner{ background-color: rgb(62, 75, 91); box-shadow: rgba(0, 0, 0, 0.15625) 0px 2px 3px; z-index: 5; }
+.banner .toggle{ padding-top: 0.25rem; padding-right: 0.6875rem; padding-bottom: 0.25rem; padding-left: 0.6875rem; border-right-width: 1px; border-right-style: solid; border-right-color: rgb(76, 92, 112); }
 
 .banner .image-link{ margin-left: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
 .banner .logo-text{ margin-left: 0.625rem; }
-.banner .project-name{ margin-top: 0.125rem; }
-.logo-text{ display: block; color: rgb(102, 102, 102); }
+.logo-text{ display: block; color: rgb(255, 255, 255); }
+.project-name{ margin-top: 0.25rem; }
 abbr.grunticon-wordmark-small, abbr.grunticon-wordmark-med{ border-bottom-width: 0px !important; border-bottom-style: initial !important; border-bottom-color: initial !important; }
  .main > .header .title, .bar{ padding-left: 11px; padding-right: 11px; }
 @media only screen and (min-width: 64.0625em){
@@ -375,7 +373,7 @@ abbr.grunticon-wordmark-small, abbr.grunticon-wordmark-med{ border-bottom-width:
 
 
 
-.footer[role="contentinfo"] a{ -webkit-transition-property: color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; text-decoration: none; color: rgb(126, 210, 221); }
+.footer[role="contentinfo"] a{ -webkit-transition-property: color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; text-decoration: none; color: rgb(32, 60, 90); }
 
 .footer[role="contentinfo"] p{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; }
 .footer[role="contentinfo"] .social .icon{ margin-right: 5px; margin-bottom: 5px; }

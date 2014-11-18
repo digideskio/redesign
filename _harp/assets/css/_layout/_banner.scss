@@ -17,17 +17,16 @@ $banner-padding-bottom: 4px;
 }
 
 .banner {
-  //border-top: $header-and-nav-top-border;
   background-color: $header-and-nav-bg;
   box-shadow: 0 2px 3px rgba(0,0,0,.16);
   z-index: 5;
   
   .toggle {
     @include rem(padding, $banner-padding-top 11px $banner-padding-bottom);
-    border-right: 1px solid darken( $header-and-nav-bg, 7% );
+    border-right: 1px solid lighten( $header-and-nav-bg, 7% );
 
     &:hover,&:focus {
-      background-color: darken( $header-and-nav-bg, 4% );
+      background-color: lighten( $header-and-nav-bg, 4% );
     }
   }
   
@@ -40,10 +39,7 @@ $banner-padding-bottom: 4px;
   .logo-text { 
     @include rem(margin-left, 10px);
   }
-  
-  .project-name {
-    @include rem(margin-top, 2px);
-  }
+
 }
 
 .logo-text {
@@ -51,7 +47,10 @@ $banner-padding-bottom: 4px;
   color: $header-and-nav-text-color;
 }
 
-.project-name { @extend %block; }
+.project-name {
+  @extend %block; 
+  @include rem(margin-top, 4px);
+}
 
 abbr.grunticon-wordmark-small,
 abbr.grunticon-wordmark-med {

@@ -14,7 +14,7 @@
     @include rem(margin-top, $font-size-xxl);
   }
 
-  legend { 
+  legend {
     padding: 0;
     border: 0;
     color: palette(gray,dark);
@@ -74,8 +74,11 @@ textarea.text {
   background: #fff;
   padding: 5px; 
   color: palette(gray,x-dark);
-  max-width: 290px;
+  width: 290px;
   @extend %text-size-m;
+  transition-property: color, border-color;
+  transition-duration: .2s;
+  transition-timing-function: $ease-out-cubic;
   
   &.disabled, 
   &[disabled],
@@ -129,7 +132,7 @@ input[type="checkbox"] {
     @extend %pos-abs;
     left: 5px;
     top: 50%;
-    color: palette(gray, mid-light);
+    color: palette(gray, light);
     transform: translate( 0, -50% );
     transform-origin: 0% 50%;
     transition-property: color, transform;
@@ -137,7 +140,7 @@ input[type="checkbox"] {
     transition-timing-function: $ease-out-cubic;
     
     &.is-focused {
-      color: palette(blue, mid-light);
+      color: palette(blue, light);
     }
     
   }
@@ -170,7 +173,7 @@ input[type="checkbox"] {
       text-align: left;
       font-weight: bold;
       @extend %text-size-s;
-      color: palette(gray, mid-dark);
+      color: #fff;
       background-color: darken($header-and-nav-bg, 7%);
       transition: background-color .2s $ease-out-cubic;
       

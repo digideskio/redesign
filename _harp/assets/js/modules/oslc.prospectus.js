@@ -280,7 +280,7 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
   }
     
   // TODO: maybe ':focusable'? will have to exclude .close
-  $targets = $menu.find('a').not('.gsst_a'); 
+  $targets = $menu.find('a:focusable'); 
   
   // return only elements that start with the character
   if ( _.contains(alphabet,keycode) ) {

@@ -85,7 +85,7 @@ var Checkov = _.create( OSLC, {
     $(document).on('keydown.oslc.checkov', '#nav :focusable:last', function(e){
       var keyCode = e.keyCode || e.which;
       
-      if (e.shiftKey || 9 !== keyCode) { return; }
+      if (e.shiftKey || 9 !== keyCode || ! checkov.isOpen() ) { return; }
 
       e.preventDefault();
       checkov.els.toggle.attemptFocus();

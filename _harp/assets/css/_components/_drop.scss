@@ -40,13 +40,13 @@ $drop-shadow-spread: 4px;
     
     .item:hover,
     .item:focus {
-      background-color: palette(gold,x-light);
+      background-color: lighten( palette(gold,x-light), 4% );
     }
     
     .current,
     .current:hover,
     .current:focus {
-      background-color: palette(gold,light);
+      background-color: palette(green,x-light);
     }
 
   }

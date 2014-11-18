@@ -6,18 +6,18 @@
   @extend %pos-rel;
   z-index: 2;
   @include rem(padding, $font-size-l $font-size-l $font-size-s);
-  background-color: desaturate( palette(blue,dark), 55% );
-  border-top: 1px solid darken(palette(blue,dark), 7%);
-  color: palette(gray,x-light);
+  background-color: palette(gray,light);
+  border-top: 1px solid darken( palette(gray,light), 8% );
+  color: palette(gray,dark);
   
   a {
     transition: color .2s $ease-out-cubic;
     text-decoration: none;
-    color: palette(blue,light);
+    color: palette(blue,dark);
     
     &:hover,
     &:focus {
-      color: palette(blue,mid-light);
+      color: palette(blue,mid-dark);
     }
     
   }

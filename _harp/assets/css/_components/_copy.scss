@@ -6,20 +6,20 @@
 
 %copy-links {
   a {
-    color: palette(blue, mid-dark);
+    color: palette(blue);
     transition: color .2s $ease-out-cubic;
     
     &:visited {
-      color: desaturate( palette(blue, mid-dark), 70%);
+      color: desaturate( palette(blue), 50%);
     }
     
     &:hover, 
     &:focus {
-      color: palette(blue);
+      color: palette(blue, mid-light);
     }
     
     &:active {
-      color: palette(blue, mid-light); 
+      color: palette(blue, light); 
     }
   }
 }
@@ -29,20 +29,20 @@
 %copy-linked-images {
   a {
     img {
-      border-color: palette(blue, mid-dark);
+      border-color: palette(blue);
       transition: border-color .2s $ease-out-cubic;   
     }
     
     &:visited img {
-      border-color: desaturate( palette(blue, mid-dark), 70%);
+      border-color: desaturate( palette(blue), 50%);
     }
     
     &:hover, &:focus {
-      img { border-color: palette(blue); }
+      img { border-color: palette(blue, mid-light); }
     }
     
     &:active img {
-      border-color: palette(blue, mid-light);
+      border-color: palette(blue, light);
     }
   }
 }
@@ -207,7 +207,7 @@
     // UPDATE: going to try overflow instead
     //white-space: pre-wrap; 
     
-    background-color: tint( palette(gold, x-light), 25% );
+    background-color: lighten( palette(gold, x-light), 4%);
   }
   
   pre {

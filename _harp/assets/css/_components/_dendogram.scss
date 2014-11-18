@@ -28,9 +28,10 @@
           
     // different colors for different specs
     &.spec-1 { stroke: palette(gold,mid-light); }
-    &.spec-2 { stroke: palette(green); }
+    &.spec-2 { stroke: palette(green,mid-light); }
     &.spec-3 { stroke: palette(red,mid-light); }
     &.spec-4 { stroke: palette(gray,mid-light); }
+    &.spec-5 { stroke: palette(yellow-green,mid-light); }
     
   }
   
@@ -58,8 +59,9 @@
 
     // different colors for different specs
     &.spec-1 { border-color: palette(gold,mid-light); }
-    &.spec-2 { border-color: palette(green); }
+    &.spec-2 { border-color: palette(green, mid-light); }
     &.spec-3 { border-color: palette(red,mid-light); }
     &.spec-4 { border-color: palette(gray,mid-light); }
+    &.spec-4 { border-color: palette(yellow-green,mid-light); }
 
 }

@@ -372,14 +372,14 @@
     letter-spacing: normal;
     word-spacing: normal; } }
 .controls {
-  background-color: #465362;
+  background-color: #29323d;
   padding: 8px;
   padding: 0.5rem;
   text-align: center;
-  border-bottom: 1px solid #353f4b; }
+  border-bottom: 1px solid #191e24; }
 
 .tabs {
-  background-color: #f3f3f3;
+  background-color: #ebebeb;
   position: relative; }
   .tabs, .tabs > .indicator {
     border-radius: 24px; }
@@ -392,7 +392,7 @@
   line-height: 1;
   cursor: pointer;
   text-decoration: none;
-  color: #666;
+  color: #444;
   -webkit-transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
           transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
   .tab:first-child {
@@ -415,7 +415,7 @@
   bottom: 0;
   z-index: 0;
   width: 0;
-  background-color: #6595c8;
+  background-color: #4178b4;
   padding: 0 24px;
   padding: 0 1.5rem; }
 
@@ -599,11 +599,13 @@
     .node circle.spec-1 {
       stroke: #f19d3b; }
     .node circle.spec-2 {
-      stroke: #2e8469; }
+      stroke: #42bd96; }
     .node circle.spec-3 {
       stroke: #da745d; }
     .node circle.spec-4 {
       stroke: #aaa; }
+    .node circle.spec-5 {
+      stroke: #8cab63; }
   .node text {
     fill: #222;
     text-shadow: #fff 1px 1px 0; }
@@ -620,11 +622,13 @@
   .legend-node.spec-1 {
     border-color: #f19d3b; }
   .legend-node.spec-2 {
-    border-color: #2e8469; }
+    border-color: #42bd96; }
   .legend-node.spec-3 {
     border-color: #da745d; }
   .legend-node.spec-4 {
     border-color: #aaa; }
+  .legend-node.spec-4 {
+    border-color: #8cab63; }
 
 .messages {
   position: fixed;
@@ -753,11 +757,11 @@
     color: #999; }
   .dropdown .items .item:hover,
   .dropdown .items .item:focus {
-    background-color: #fce7cf; }
+    background-color: #fdf1e2; }
   .dropdown .items .current,
   .dropdown .items .current:hover,
   .dropdown .items .current:focus {
-    background-color: #f6c183; }
+    background-color: #d2efe6; }
 
 .tooltip {
   padding-bottom: 5px; }
@@ -806,7 +810,7 @@
       width: 216px;
       top: 0;
       bottom: 0;
-      background-color: #5b6c80;
+      background-color: #3e4b5b;
       box-shadow: 2px 0 3px rgba(0, 0, 0, 0.11);
       overflow: auto; }
       .enhanced .nav.has-secondary {
@@ -833,7 +837,7 @@
 @media only screen and (min-width: 40.0625em) {
   #main_menu {
     width: 216px;
-    background-color: #5b6c80; } }
+    background-color: #3e4b5b; } }
 
 @media only screen and (min-width: 40.0625em) {
   #secondary_menu {

@@ -50,7 +50,7 @@
 
 .tabs {
   @extend %inline-block;
-  background-color: tint( palette(gray, x-light), 40%);
+  background-color: palette(gray, x-light);
   position: relative;
   
   &, & > .indicator {
@@ -68,7 +68,7 @@
   line-height: 1;
   cursor: pointer;
   text-decoration: none;
-  color: palette(gray, mid-dark);
+  color: palette(gray, dark);
   transition: color .2s $ease-out-cubic;
   
   &:first-child {
@@ -98,7 +98,7 @@
   bottom: 0;
   z-index: 0;
   width: 0;
-  background-color: palette(blue, mid-light);
+  background-color: palette(blue);
   @include rem( padding, 0 24px );
 
 }

@@ -25,14 +25,14 @@
   
   &.success,
   &.Specification { 
-    background-color: palette(green, mid-dark); 
+    background-color: palette(green); 
   }
   
   &.info { background-color: palette(blue, mid-light); }
   
   &.warning,
   &[class~="transition"] { 
-    background-color: palette(gold, dark); 
+    background-color: palette(gold); 
   }
   
   &.danger,

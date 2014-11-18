@@ -51,13 +51,13 @@
     top: 0;
     bottom: 0;
     left: 0;
-    background-color: palette(blue,mid-dark);    
+    background-color: palette(blue);    
   }
   
   /* With these Shadow DOM selectors, they have to be on their own. You can't combine them. */
-  &::-webkit-progress-value { background-color: palette(blue,mid-dark);}
-  &::-moz-progress-bar { background-color: palette(blue,mid-dark); }
-  color: palette(blue,mid-dark); // IE 10+ bar color
+  &::-webkit-progress-value { background-color: palette(blue);}
+  &::-moz-progress-bar { background-color: palette(blue); }
+  color: palette(blue); // IE 10+ bar color
   
   &.inactive {
     &::-webkit-progress-value { background: repeating-linear-gradient(to right, palette(red,mid-dark), palette(red,mid-dark) 14px, transparent 14px, transparent 20px); }
@@ -67,17 +67,17 @@
   }
   
   &.finalize {
-    &::-webkit-progress-value { background-color: palette(gold,mid-dark); }
-    &::-moz-progress-bar { background-color: palette(gold,mid-dark);}
-    .fallback { background-color: palette(gold,mid-dark); }
-    color: palette(gold,mid-dark); // IE 10 bar color    
+    &::-webkit-progress-value { background-color: palette(gold,mid-light); }
+    &::-moz-progress-bar { background-color: palette(gold,mid-light);}
+    .fallback { background-color: palette(gold,mid-light); }
+    color: palette(gold,mid-light); // IE 10 bar color    
   }
   
   &.final {
-    &::-webkit-progress-value { background-color: palette(green,mid-dark); }
-    &::-moz-progress-bar { background-color: palette(green,mid-dark);}
-    .fallback { background-color: palette(green,mid-dark); }
-    color: palette(green,mid-dark); // IE 10 bar color    
+    &::-webkit-progress-value { background-color: palette(green,mid-light); }
+    &::-moz-progress-bar { background-color: palette(green,mid-light);}
+    .fallback { background-color: palette(green,mid-light); }
+    color: palette(green,mid-light); // IE 10 bar color    
   }
   
 }
