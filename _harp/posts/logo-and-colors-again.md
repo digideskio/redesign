@@ -27,9 +27,9 @@ But that didn't get a lot of love from the community or from the OSLC Steering C
 
 ### An evolutionary alternative
 
-After discussing the logo situation with the Steering Committee and other folks, I decided to try a different approach: **could we evolve our current logo instead of throwing it out?**
+After discussing the logo situation with the Steering Committee and other folks, I decided to try a different approach: **could we evolve our current logo?**
 
-After all, we've been using our current logo for several years; why throw all of that way?
+After all, we've been using our current logo for several years; why throw all of that away?
 
 After a few hours in Illustrator ([this tutorial was *super* helpful](http://veerle.duoh.com/design/article/how_to_create_a_shutter_shape_in_illustrator)), here's where I've ended up:
 
