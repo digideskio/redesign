@@ -2,6 +2,27 @@
   "index": {
     "title": "Posts"
   },
+  "logo-and-colors-again": {
+    "title": "Logos and Colors Part Two: Electric Boogaloo", 
+    "date": "2014 November 19",
+    "description": "An update on the oldest standing issues",
+    "author": {
+      "name": "Lee Reamsnyder",
+      "url": "http://leereamsnyder.com"
+    },
+    "relationships": {
+      "Issues": [
+        {
+          "title": "Investigate a simpler logo",
+          "url": "https://github.com/OSLC/redesign/issues/1"
+        },
+        {
+          "title": "Revise and update color scheme",
+          "url": "https://github.com/OSLC/redesign/issues/29"
+        }
+      ]
+    }  
+  },
   "i-like-to-live-dangerously": {
     "title": "One less card", 
     "date": "2014 October 14",
