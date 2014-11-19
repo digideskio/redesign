@@ -79,6 +79,7 @@
     @extend %inline-block;
     // eliminates additional vertical spacing due to baseline alignment
     vertical-align: top;
+    background-repeat: no-repeat;
 
     &.block {
       @extend %block;

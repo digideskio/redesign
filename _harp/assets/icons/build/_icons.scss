@@ -1,8 +1,10 @@
 @mixin icon {
-  background-repeat: no-repeat;
+  // HANDLED by .icon in utilities/toolkit
+  //background-repeat: no-repeat;
 }
 
 %icon {
+  // placeholder isn't a great idea; you're just writing the class names twice
   @include icon;
 }
 

@@ -9,7 +9,9 @@ header.banner.knee-down(role="banner")
     .body
       a.flag.image-link(href="#{ site_url }")
         .image
-          i.icon.block.grunticon-logo-small
+          include ./assets/icons/_source/logo-small.svg
+          .base-only
+            img(src="#{ site_url }assets/icons/build/png/logo-small.png")
         .body
           span.logo-text
             abbr.icon.block.grunticon-wordmark-small.ir(title="#{ org_name }")

@@ -122,7 +122,8 @@ textarea.text, .project-name, .tabs .indicator, .activeFilter, .js-icon-swapper 
  * SVG Icons
  */
 .icon {
-  vertical-align: top; }
+  vertical-align: top;
+  background-repeat: no-repeat; }
 
 .featurette, .toggle {
   text-align: center; }

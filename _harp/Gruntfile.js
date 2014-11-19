@@ -28,7 +28,8 @@ module.exports = function(grunt) {
       svgmin: {
         options: { // Configuration that will be passed directly to SVGO
           plugins: [
-            { removeUselessStrokeAndFill: false } // preserves some *not* useless paths
+            { removeUselessStrokeAndFill: false }, // preserves some *not* useless paths
+            { removeTitle: true }
           ]
         },
         dist: {
@@ -44,7 +45,7 @@ module.exports = function(grunt) {
       // Next step: run the minified SVGs through grunticon
       // This will trigger the .scss files in the final output folder
       grunticon: {
-        foo: {
+        full: {
           files: [{
               expand: true,
               cwd: 'assets/icons/_source',
@@ -70,6 +71,17 @@ module.exports = function(grunt) {
           cwd: 'assets/icons/_grunticon/',
           src: ['*.html'],
           dest: 'assets/icons/build/'
+        },
+        toEE: {
+          expand: true,
+          cwd: 'assets/',
+          src: [
+            'css/build/*', 
+            'js/build/*', 
+            'icons/build/*.css', 
+            'icons/build/png/*'
+          ],
+          dest: '/Users/leereamsnyder/Documents/workspace/open-services.net/assets/'
         }
       },
       
@@ -139,7 +151,7 @@ module.exports = function(grunt) {
         },
         grunticon: {
           files: 'assets/icons/_svgs/*.svg',
-          tasks: ['svgmin', 'grunticon:foo', 'copy:grunticonToSass', 'imagemin:grunticon']
+          tasks: ['svgmin', 'grunticon:full', 'copy:grunticonToSass', 'imagemin:grunticon']
         },
         grunticon_sass: {
           files: 'assets/icons/_grunticon/*.scss',
@@ -161,7 +173,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks( 'grunt-criticalcss' );
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    //grunt.registerTask('default', ['autoprefixer', 'svgmin', 'grunticon:foo', 'copy:grunticonToSass']);
-    grunt.registerTask('default', ['cssmin', 'svgmin', 'grunticon:foo', 'copy:grunticonToSass', 'imagemin:grunticon', 'sass']);
+    //grunt.registerTask('default', ['autoprefixer', 'svgmin', 'grunticon:full', 'copy:grunticonToSass']);
+    grunt.registerTask('default', ['cssmin', 'svgmin', 'grunticon:full', 'copy:grunticonToSass', 'imagemin:grunticon', 'sass']);
 
 };
