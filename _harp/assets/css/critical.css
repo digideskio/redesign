@@ -37,7 +37,7 @@
 
 
 
- .enhanced .base-only{ display: none !important; }
+
 
 .image-link{ text-decoration: none; }
 
@@ -47,7 +47,7 @@ html{ box-sizing: border-box; }
 *{ box-sizing: inherit; }
  header, main, nav, section{ display: block; }
 
- img, svg{ vertical-align: middle; }
+
 
 
 
@@ -67,8 +67,6 @@ small{ font-size: 80%; }
 
 
 
-img{ border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; }
-svg:not(:root){ overflow-x: hidden; overflow-y: hidden; }
 
 
 
@@ -84,8 +82,10 @@ svg:not(:root){ overflow-x: hidden; overflow-y: hidden; }
 
 
 
-img{ max-width: 100% !important; }
-img{ height: auto !important; }
+
+
+
+
 .grid{ font-family: FreeSans, Arimo, 'Droid Sans', Helvetica, Arial, sans-serif; letter-spacing: -0.31em; word-spacing: -0.43em; }
 
 
