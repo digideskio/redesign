@@ -56,7 +56,7 @@ If you take the four colors from the logo, you'll have this wheel:
 
 ![Color wheel with the four colors from the logo](https://cloud.githubusercontent.com/assets/870668/5054030/c83eb820-6c1e-11e4-96f7-abe24b2b9056.png)
 
-Sometimes thought you do need lots more colors.
+Sometimes, though, you do need *lots* of colors.
 
 ![“lots of guns” scene from The Matrix](./images/logo-2/matrix-gun-rack-o.gif)  
 *this but for colors*
