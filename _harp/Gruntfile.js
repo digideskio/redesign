@@ -82,6 +82,12 @@ module.exports = function(grunt) {
             'icons/build/png/*'
           ],
           dest: '/Users/leereamsnyder/Documents/workspace/open-services.net/assets/'
+        },
+        fromEE: {
+          expand: true,
+          cwd: '/Users/leereamsnyder/Documents/workspace/open-services.net/assets/templates/',
+          src: '**',
+          dest: '_eeTemplates/'
         }
       },
       

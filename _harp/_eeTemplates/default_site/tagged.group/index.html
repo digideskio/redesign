@@ -1,0 +1,27 @@
+{embed="_embeds/_body"
+  pagetitle="Tagged: {exp:tag:tag_name websafe_separator="-"}{segment_2}{/exp:tag:tag_name}"
+  headtitle="Tagged: {exp:tag:tag_name websafe_separator="-"}{segment_2}{/exp:tag:tag_name}"
+}
+
+{exp:stash:set name="main_content"}
+  {exp:tag:entries 
+	  websafe_separator="-" 
+	  tag="{segment_2}"}
+	  {entry_id}{if count != total_results}|{/if}
+  {/exp:tag:entries}
+
+  {if lv:tag:{segment_2}}
+	{lv:tag:{segment_2}}
+  {/if}
+
+{/exp:stash:set}
+
+{if logged_in && logged_in_group_id == "1"}
+<h1>Global variables</h1>
+<?php $EE = get_instance(); print('<pre><code>'.print_r($EE->config->_global_vars, TRUE) . '</code></pre>');  ?>
+
+<h1>Configuration variables</h1>
+<?php
+	print('<pre><code>'. print_r($this->EE->config->config, TRUE) . '</code></pre>');
+?> 
+{/if}
