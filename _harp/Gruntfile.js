@@ -85,9 +85,9 @@ module.exports = function(grunt) {
         },
         fromEE: {
           expand: true,
-          cwd: '/Users/leereamsnyder/Documents/workspace/open-services.net/assets/templates/',
-          src: '**',
-          dest: '_eeTemplates/'
+          cwd: '/Users/leereamsnyder/Documents/workspace/open-services.net/assets/',
+          src: ['stash_templates/**', 'templates/**'],
+          dest: '_templates/'
         }
       },
       
