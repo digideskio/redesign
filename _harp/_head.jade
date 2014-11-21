@@ -14,12 +14,13 @@ if oneLastScript
 if environment === 'production'
   include ./assets/css/build/critical.min.css
 else
+  // faster local development: just include combined/SVGs
   link(rel="stylesheet" href="#{ site_url }assets/css/combined.css")
   link(rel="stylesheet" href="#{ site_url }assets/icons/build/icons.svg.css")
 
 script.
   window.site_url = '#{site_url}' || '/';
-  window.environment = '#{environment}';
+  window.environment = "#{environment === 'production' ? 'github' : 'local'}";
 
 // inlined base JS
 include ./assets/js/build/base.min.js

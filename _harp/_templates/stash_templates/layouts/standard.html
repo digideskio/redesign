@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+{!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --}
+<!--[if lt IE 7 ]> <html lang="en" class="no-js base ie6 ltie8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js base ie7 ltie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js base ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js base ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html xlmns:dc="http://purl.org/dc/elements/1.1/" lang="en" class="no-js base"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title property="dc:title">
+	  {exp:stash:block name="layout_headtitle"}{structure:page:title}{/exp:stash:block}
+	  {if segment_1 != ""} - {/if} {site_label}
+	</title>
+	
+	{!-- Queue up various CSS & JS files --}
+	{exp:minimee:css queue="critical"}
+	  <link rel="stylesheet" href="{global:assets:css}critical.min.css">
+	{/exp:minimee:css}
+	{exp:minimee:css queue="combined"}
+	  <link rel="stylesheet" href="{global:assets:css}combined.min.css">
+	{/exp:minimee:css}
+	{exp:minimee:js queue="enhanced"}
+	  <script src="{global:assets:js}enhanced.min.js"></script>
+	{/exp:minimee:js}
+	{exp:minimee:css queue="grunticon_svg"}
+	  <link rel="stylesheet" href="{global:assets:icons}icons.svg.css">
+	{/exp:minimee:css}
+	{exp:minimee:css queue="grunticon_png"}
+	  <link rel="stylesheet" href="{global:assets:icons}icons.png.css">
+	{/exp:minimee:css}
+	{exp:minimee:css queue="grunticon_fallback"}
+	  <link rel="stylesheet" href="{global:assets:icons}icons.fallback.css">
+	{/exp:minimee:css}
+	
+	{!-- Define locations of CSS and JS for the base.js to work its magic --}
+	<meta name="combinedcss" content="{exp:minimee:display css='combined' display='url'}">
+	<meta name="enhancedjs" content="{exp:minimee:display js='enhanced' display='url'}">
+	{!-- Grunticon loader expects 3 comma-delimited URLs in this order: svg, (base64-encoded) png, fallback --}
+	<meta name="grunticons" content="{exp:minimee:display css='grunticon_svg' display='url'},{exp:minimee:display css='grunticon_png' display='url'},{exp:minimee:display css='grunticon_fallback' display='url'}">
+	
+	{!-- Display base.js inline. This loads combined.css and the appropriate icons async on first load. Also loads enhanced.js always --}
+  {exp:minimee:js display="contents" attribute:type="text/javascript"}
+	  <script src="{global:assets:js}base.min.js"></script>
+	{/exp:minimee:js}
+	
+	{!-- If second load, just link to the combined CSS and appropriate icons --}
+	{if cookie:combinedcss == "true"}{exp:minimee:display css="combined"}{/if}
+	
+	{if cookie:grunticons}
+	  <!-- Load {cookie:grunticons} icons -->
+	  {exp:minimee:display css="grunticon_{cookie:grunticons}"}
+	{/if}
+	
+	<link rel="alternate" title="News feed for {site_label}" type="application/rss+xml" href="{path='rss'}/">
+</head>
+<body>
+  hard body
+  
+</body>
+</html>

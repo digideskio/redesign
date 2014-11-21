@@ -16,7 +16,7 @@
 	// Define some variables to be used throughout this file
 	var doc = window.document,
 		docElem = doc.documentElement,
-		production = window.environment === 'production',
+		github = window.environment === 'github', // github pages are static files and can't read cookies, so you'll have to always load the CSS
 		// this references a meta tag's name whose content attribute should define the path to the CSS file for the site
 		fullCSSKey = 'combinedcss',
 		// this references a meta tag's name whose content attribute should define the path to the enhanced JS file for the site (delivered to qualified browsers)
@@ -116,14 +116,10 @@
 		Once the cookie is set, the full CSS is assumed to be in cache, and the server-side templates should reference the full CSS directly from the head of the page with a link element, in place of inline critical styles.
 		*/
 	var fullCSS = getMeta( fullCSSKey );
-	if (fullCSS && production) { 
+	if (fullCSS && (!cookie( fullCSSKey ) || github)) { 
 	  loadCSS( fullCSS.content ); 
+	  cookie( fullCSSKey, "true", 7 );
 	}
-  // 	if( fullCSS && !cookie( fullCSSKey ) ){
-  // 		loadCSS( fullCSS.content );
-  // 		// set cookie to mark this file fetched
-  // 		cookie( fullCSSKey, "true", 7 );
-  // 	}
 
 	/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. 
 	  Modified by me to 
@@ -131,14 +127,15 @@
 	   + reuse loadCSS
 	*/
   var grunticon = function(e) {
+    var order = [ 'svg','png','fallback' ];
     if (e && 3 === e.length) {
       var 
         t = window,
         n = !(!t.document.createElementNS || !t.document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect || !document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") || window.opera && -1 === navigator.userAgent.indexOf("Chrome")),
         o = function(o) {
-          var url = e[o && n ? 0 : o ? 1 : 2];
-          loadCSS( url );
-          cookie('grunticons', url, 7);
+          var index = o && n ? 0 : o ? 1 : 2;
+          loadCSS( e[index] );
+          cookie('grunticons', order[index], 7);
         },
         r = new t.Image();
       r.onerror = function() { o(!1); };
@@ -146,10 +143,10 @@
       r.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
     }
   };
-  enhance.grunticon = grunticon;  
+  enhance.grunticon = grunticon;
   
   var grunticons = getMeta('grunticons');
-  if (grunticons && production) {
+  if (grunticons && (!cookie('grunticons') || github)) {
     grunticon( grunticons.content.split(',') );
   }  
 

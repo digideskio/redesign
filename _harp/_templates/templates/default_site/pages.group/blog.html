@@ -3,6 +3,13 @@
 	{exp:http_header status='301' location="/{segment_1}/{segment_2}/"}
 {/if}
 
+{stash:embed
+  context="@URI"
+  file_name="viewmodels:detail"
+  stash:_layout="standard"
+  stash:_status="open|closed"
+}
+
 {exp:channel:entries
 	require_entry="yes"
 	status="open|closed"
@@ -256,9 +263,11 @@
 
 
 {/exp:stash:set}
-
+{!-- 
 {embed="_embeds/_body"
 	js_body_class="js_details_polyfill"
 	pagetype="blog_single"
 	headtitle="{structure:page:title}"
 }
+--}
+
