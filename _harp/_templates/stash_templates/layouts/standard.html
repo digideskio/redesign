@@ -19,9 +19,6 @@
 	</title>
 	
 	{!-- Queue up various CSS & JS files --}
-	{exp:minimee:css queue="critical"}
-	  <link rel="stylesheet" href="{global:assets:css}critical.min.css">
-	{/exp:minimee:css}
 	{exp:minimee:css queue="combined"}
 	  <link rel="stylesheet" href="{global:assets:css}combined.min.css">
 	{/exp:minimee:css}
@@ -39,23 +36,33 @@
 	{/exp:minimee:css}
 	
 	{!-- Define locations of CSS and JS for the base.js to work its magic --}
-	<meta name="combinedcss" content="{exp:minimee:display css='combined' display='url'}">
-	<meta name="enhancedjs" content="{exp:minimee:display js='enhanced' display='url'}">
+	<meta name="combinedcss" content="{exp:minimee:display:url css='combined'}">
+	<meta name="enhancedjs" content="{exp:minimee:display:url js='enhanced'}">
 	{!-- Grunticon loader expects 3 comma-delimited URLs in this order: svg, (base64-encoded) png, fallback --}
-	<meta name="grunticons" content="{exp:minimee:display css='grunticon_svg' display='url'},{exp:minimee:display css='grunticon_png' display='url'},{exp:minimee:display css='grunticon_fallback' display='url'}">
+	<meta name="grunticons" content="{exp:minimee:display:url css='grunticon_svg'},{exp:minimee:display:url css='grunticon_png'},{exp:minimee:display:url css='grunticon_fallback'}">
 	
 	{!-- Display base.js inline. This loads combined.css and the appropriate icons async on first load. Also loads enhanced.js always --}
-  {exp:minimee:js display="contents" attribute:type="text/javascript"}
+  {exp:minimee:js:contents attribute:type="text/javascript"}
 	  <script src="{global:assets:js}base.min.js"></script>
-	{/exp:minimee:js}
+	{/exp:minimee:js:contents}
 	
 	{!-- If second load, just link to the combined CSS and appropriate icons --}
-	{if cookie:combinedcss == "true"}{exp:minimee:display css="combined"}{/if}
-	
-	{if cookie:grunticons}
-	  <!-- Load {cookie:grunticons} icons -->
-	  {exp:minimee:display css="grunticon_{cookie:grunticons}"}
+	{if ! cookie:combinedcss}
+    {exp:minimee:css:contents attribute:type="text/css"}
+      <link rel="stylesheet" href="{global:assets:css}critical.min.css">
+    {/exp:minimee:css:contents}
+	{if:else}
+	  {exp:minimee:display css="combined"}
 	{/if}
+	
+	{if cookie:grunticons}{exp:minimee:display css="grunticon_{cookie:grunticons}"}{/if}
+	
+	<noscript>
+	  {exp:minimee:css:tag}
+	    <link rel="stylesheet" href="{global:assets:css}base.min.css">
+	  {/exp:minimee:css:tag}
+	  {exp:minimee:display css="grunticon_fallback"}
+	</noscript>
 	
 	<link rel="alternate" title="News feed for {site_label}" type="application/rss+xml" href="{path='rss'}/">
 </head>
