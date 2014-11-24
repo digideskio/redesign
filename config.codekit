@@ -2051,6 +2051,38 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/_harp\/assets\/css\/_critical.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/assets\/css\/_critical.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/css\/critical.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_harp\/assets\/css\/_critical_generated.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/css\/_critical_generated.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/css\/_critical_generated.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/_harp\/assets\/css\/_enhanced.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -3396,7 +3428,7 @@
 		},
 	"\/_harp\/assets\/css\/critical.css": {
 		"fileType": 16,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/css\/critical.css",
 		"outputAbbreviatedPath": "No Output Path",

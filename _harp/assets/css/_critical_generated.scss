@@ -114,7 +114,7 @@ small{ font-size: 80%; }
 
 
 
- .no-js .desk-up{ display: none !important; }
+
 .body{ overflow-x: hidden; overflow-y: hidden; zoom: 1; }
 
 
@@ -338,9 +338,9 @@ html{ font-size: 100%; }
 .toggle{ text-decoration: none; -webkit-transition-property: background-color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
 .toggle .text{ color: rgb(255, 255, 255); font-size: 11px; line-height: 1; margin-top: 0.25rem; }
 .banner{ background-color: rgb(62, 75, 91); box-shadow: rgba(0, 0, 0, 0.15625) 0px 2px 3px; z-index: 5; }
-.banner .toggle{ padding-top: 0.25rem; padding-right: 0.6875rem; padding-bottom: 0.25rem; padding-left: 0.6875rem; border-right-width: 1px; border-right-style: solid; border-right-color: rgb(76, 92, 112); }
+.banner .toggle{ padding-top: 0.375rem; padding-right: 0.6875rem; padding-bottom: 0.375rem; padding-left: 0.6875rem; border-right-width: 1px; border-right-style: solid; border-right-color: rgb(76, 92, 112); }
 
-.banner .image-link{ margin-left: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.banner .image-link{ margin-left: 0.5rem; padding-top: 0.375rem; padding-bottom: 0.375rem; }
 .banner .logo-text{ margin-left: 0.625rem; }
 .logo-text{ display: block; color: rgb(255, 255, 255); }
 .project-name{ margin-top: 0.25rem; }

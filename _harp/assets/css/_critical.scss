@@ -1,0 +1,21 @@
+@import 'critical_generated';
+
+/* Manual additions go here */
+
+// this is mostly for Duo; I think there are some issues with loading two browsers simultaneously with the same cookies
+.js-icon-wrapper {
+  height: 25px;
+  width: 28px;
+  position: relative;
+  display: block;
+  
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    &:last-child {
+      opacity: 0;
+    }
+  }
+}

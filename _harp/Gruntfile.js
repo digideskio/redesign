@@ -140,7 +140,7 @@ module.exports = function(grunt) {
             url: "http://localhost:9000/",
             width: 1200,
             height: 800,
-            outputfile: "./assets/css/critical.css",
+            outputfile: "./assets/css/_critical_generated.scss",
             filename: "combined.css"
           }
         }
