@@ -35,7 +35,6 @@ var Whirligig = _.create( OSLC, {
   },
   
   init: function( element ){
-    console.log('Initializing Whirligig for #' + element.id);
     
     var whirligig = this;
     

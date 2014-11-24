@@ -6,9 +6,7 @@ var Doubtfire = _.create(OSLC, {
 
   init: function() {
     this.els = {};
-  
-    console.log('Initialize Doubtfire nanny class');
-    
+      
     this.bindings();
   
   },

@@ -9,23 +9,32 @@
 	// Catch console.log errors. You are welcome.
   if (! window.console) { window.console = {log: function () {}}; }
   
-
 	// expose the 'enhance' object globally. Use it to expose anything in here that's useful to other parts of your application.
 	window.enhance = {};
 
+	// inline SVG feature detect from Modernizr
+	// used to further "cut the mustard"
+	function supportsInlineSVG() {
+    var div = document.createElement('div');
+    div.innerHTML = '<svg/>';
+    return (div.firstChild && div.firstChild.namespaceURI) === 'http://www.w3.org/2000/svg';
+  }
+
 	// Define some variables to be used throughout this file
-	var doc = window.document,
+	var 
+	  doc = window.document,
 		docElem = doc.documentElement,
 		github = window.environment === 'github', // github pages are static files and can't read cookies, so you'll have to always load the CSS
 		// this references a meta tag's name whose content attribute should define the path to the CSS file for the site
 		fullCSSKey = 'combinedcss',
 		// this references a meta tag's name whose content attribute should define the path to the enhanced JS file for the site (delivered to qualified browsers)
 		fullJSKey = "enhancedjs",
+		mustard = 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window && supportsInlineSVG(),
 		// classes to be added to the HTML element in qualified browsers
 		htmlClasses = [ "enhanced" ];
 		
 	// loadJS: load a JS file asynchronously. Included from https://github.com/filamentgroup/loadJS/
-	function loadJS( src ){
+	function loadJS( src ) {
 		var ref = window.document.getElementsByTagName( "script" )[ 0 ];
 		var script = window.document.createElement( "script" );
 		script.src = src;
@@ -38,7 +47,7 @@
 	enhance.loadJS = loadJS;
 
 	// loadCSS: load a CSS file asynchronously. Included from https://github.com/filamentgroup/loadCSS/
-	function loadCSS( href, before, media ){
+	function loadCSS( href, before, media ) {
 		var ss = window.document.createElement( "link" );
 		var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
 		ss.rel = "stylesheet";
@@ -59,7 +68,7 @@
 
 	// getMeta function: get a meta tag by name
 	// NOTE: meta tag must be in the HTML source before this script is included in order to guarantee it'll be found
-	function getMeta( metaname ){
+	function getMeta( metaname ) {
 		var metas = window.document.getElementsByTagName( "meta" );
 		var meta;
 		for( var i = 0; i < metas.length; i ++ ){
@@ -75,7 +84,7 @@
 	enhance.getMeta = getMeta;
 
 	// cookie function from https://github.com/filamentgroup/cookie/
-	function cookie( name, value, days ){
+	function cookie( name, value, days ) {
 		// if value is undefined, get the cookie value
 		var expires;
 
@@ -148,13 +157,12 @@
   var grunticons = getMeta('grunticons');
   if (grunticons && (!cookie('grunticons') || github)) {
     grunticon( grunticons.content.split(',') );
-  }  
-
-
+  }
+  
 	/* 
 	  Enhancements for qualified browsers - “Cutting the Mustard” 
 	*/
-	if( !('querySelector' in document && 'localStorage' in window && 'addEventListener' in window) ){
+	if( ! mustard ){
 		// basic browsers: last stop here!
 		return;
 	}

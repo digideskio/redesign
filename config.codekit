@@ -133,6 +133,24 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/layouts\/standard.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/layouts\/standard.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/detail.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/templates\/default_site\/404.group\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -4990,6 +5008,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/assets\/js\/build\/base.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/build\/base.min.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/min\/base.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/js\/build\/enhanced.min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -7969,7 +7998,7 @@
 	"javascriptCreateSourceMap": 1,
 	"javascriptOutputStyle": 1,
 	"javascriptSyntaxCheckerStyle": 1,
-	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire, FastClick, d3",
+	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire, FastClick, d3, alert",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,

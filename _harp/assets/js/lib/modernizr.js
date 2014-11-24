@@ -1,5 +1,5 @@
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-boxshadow-flexbox-flexboxlegacy-opacity-rgba-cssanimations-generatedcontent-cssgradients-csstransforms-csstransforms3d-csstransitions-history-input-inputtypes-localstorage-webworkers-touch-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-css_displaytable-css_mediaqueries
+ * Build: http://modernizr.com/download/#-boxshadow-flexbox-flexboxlegacy-opacity-rgba-cssanimations-generatedcontent-cssgradients-csstransforms-csstransforms3d-csstransitions-history-input-inputtypes-localstorage-webworkers-inlinesvg-svg-touch-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-css_displaytable-css_mediaqueries
  */
 ;
 
@@ -35,6 +35,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     domPrefixes = omPrefixes.toLowerCase().split(' '),
 
+    ns = {'svg': 'http://www.w3.org/2000/svg'},
 
     tests = {},
     inputs = {},
@@ -324,6 +325,14 @@ window.Modernizr = (function( window, document, undefined ) {
 
     tests['webworkers'] = function() {
         return !!window.Worker;
+    };    tests['svg'] = function() {
+        return !!document.createElementNS && !!document.createElementNS(ns.svg, 'svg').createSVGRect;
+    };
+
+    tests['inlinesvg'] = function() {
+      var div = document.createElement('div');
+      div.innerHTML = '<svg/>';
+      return (div.firstChild && div.firstChild.namespaceURI) == ns.svg;
     };    function webforms() {
                                             Modernizr['input'] = (function( props ) {
             for ( var i = 0, len = props.length; i < len; i++ ) {
@@ -448,7 +457,9 @@ window.Modernizr = (function( window, document, undefined ) {
     return Modernizr;
 
 })(this, this.document);
-// display: table and table-cell test. (both are tested under one name "table-cell" )
+
+
+Modernizr.addTest('mediaqueries', Modernizr.mq('only all'));// display: table and table-cell test. (both are tested under one name "table-cell" )
 // By @scottjehl
 
 // all additional table display values are here: http://pastebin.com/Gk9PeVaQ though Scott has seen some IE false positives with that sort of weak detection.
@@ -475,6 +486,4 @@ Modernizr.addTest( "display-table",function(){
   return ret; 
 });
 
-
-
-Modernizr.addTest('mediaqueries', Modernizr.mq('only all'));;
+;

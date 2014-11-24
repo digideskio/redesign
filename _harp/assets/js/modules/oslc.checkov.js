@@ -26,8 +26,6 @@ var Checkov = _.create( OSLC, {
       allToggled: $('#nav,#main,#navToggle,.close-nav')
     };
 
-    console.log('Initializing Checkov global navigation');
-  
     // In markup order, #nav comes after #main 
     // This doesn't make much of a difference for most layouts
     // as #nav gets positioned absolutely
@@ -62,8 +60,6 @@ var Checkov = _.create( OSLC, {
     
     var 
       checkov = this;
-    
-    console.log('CHECKOV BINDINGS');
     
     this.els.toggle
       .add( this.els.close )
