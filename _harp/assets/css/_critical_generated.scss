@@ -182,7 +182,6 @@ html{ font-size: 100%; }
 
 
 .menu a, .menu .item{ text-decoration: none; -webkit-transition-property: background-color; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); -webkit-transition-delay: initial; }
-.menu.primary{ background-color: rgb(62, 75, 91); }
 .menu.primary .item, .menu.primary a{ color: rgb(255, 255, 255); }
 
 .menu.primary .current{ background-color: rgb(50, 60, 73) !important; }

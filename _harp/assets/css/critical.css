@@ -222,9 +222,6 @@ html {
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transition-delay: initial; }
 
-.menu.primary {
-  background-color: #3e4b5b; }
-
 .menu.primary .item, .menu.primary a {
   color: white; }
 

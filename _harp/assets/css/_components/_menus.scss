@@ -4,7 +4,9 @@
     @extend %list-reset;
   }
   
-  .item {
+  .item,
+  // structure does not let you assign classes to the LI or A elements :(
+  &.structured a {
     @include rem(padding, $font-size-xs $font-size-m/2);
     display: block;
     color: palette(gray, dark);
@@ -26,15 +28,14 @@
   }
     
   &.primary {
-    background-color: $header-and-nav-bg;
-    
+
     .item, 
     a { 
       color: $header-and-nav-text-color; 
     }
 
-    a.item:hover,
-    a.item:focus {
+    a:hover,
+    a:focus {
       background-color: darken( $header-and-nav-bg, 3% );
     }
 

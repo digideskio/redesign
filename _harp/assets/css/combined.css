@@ -1287,12 +1287,12 @@ html {
     padding: 0.5rem;
     border-top: solid 2px #f6c183; }
 
-.menu .item {
+.menu .item, .menu.structured a {
   padding: 11px 8px;
   padding: 0.6875rem 0.5rem;
   display: block;
   color: #444; }
-  .menu .item.flush {
+  .menu .item.flush, .menu.structured a.flush {
     padding-left: 0;
     padding-right: 0; }
 .menu.tensed .item {
@@ -1303,16 +1303,14 @@ html {
   text-decoration: none;
   -webkit-transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
           transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
-.menu.primary {
-  background-color: #3e4b5b; }
-  .menu.primary .item,
-  .menu.primary a {
-    color: #fff; }
-  .menu.primary a.item:hover,
-  .menu.primary a.item:focus {
-    background-color: #384352; }
-  .menu.primary .current {
-    background-color: #323c49 !important; }
+.menu.primary .item,
+.menu.primary a {
+  color: #fff; }
+.menu.primary a:hover,
+.menu.primary a:focus {
+  background-color: #384352; }
+.menu.primary .current {
+  background-color: #323c49 !important; }
 .menu .heading {
   font-size: 94%;
   text-transform: uppercase;
