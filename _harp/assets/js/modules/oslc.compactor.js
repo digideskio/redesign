@@ -28,8 +28,8 @@ var compactElements = function(){
     
   });
   
-  // Second up: some <code> and <a> and headers (especially auto URLs eg <http:somethingreallylong.org>) can get too long and don't necessarily break
-  $main.find('code, a, h1, h2, h3, h4, h5, h6').each(function(){
+  // Second up: some <code> and <a> (especially auto URLs eg <http:somethingreallylong.org>) can get too long and don't necessarily break
+  $main.find('code, a').each(function(){
     
     var 
       $el = $(this),
@@ -40,7 +40,7 @@ var compactElements = function(){
     // <code> in <pre> has overflow. We're good
     if ( $parent.is('pre') ) { return; }
     
-    if ( $el.outerWidth() > $parent.width() ) {
+    if ( $el.width() > $parent.width() ) {
       $el.addClass('line-break-all-the-things');
     }
     
