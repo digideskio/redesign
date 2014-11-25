@@ -32,7 +32,17 @@
     
     <div class="sticky-footer-body off-canvas-wrap">
       
-      body!
+      <main id="main" role="main" class="main">
+        
+        <header class="header">
+          <nav class="breadcrumbs">
+            {exp:stash:block name="layout_breadcrumbs"}
+              {exp:structure:breadcrumb inc_here="no" separator="/" } /
+            {/exp:stash:block}
+          </nav>
+        </header>
+        
+      </main>
       
       {exp:stash:embed:partials:nav}
       

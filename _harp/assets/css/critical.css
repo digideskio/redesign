@@ -222,6 +222,9 @@ html {
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transition-delay: initial; }
 
+.menu.primary {
+  background-color: #3e4b5b; }
+
 .menu.primary .item, .menu.primary a {
   color: white; }
 
@@ -348,6 +351,10 @@ html {
   .knee-down {
     display: none !important; } }
 @media only screen and (min-width: 40.0625em) {
+  .menu.primary {
+    font-size: 0.8125rem;
+    line-height: 1.23077; } }
+@media only screen and (min-width: 40.0625em) {
   .off-canvas-wrap {
     position: relative; } }
 .enhanced .nav {
@@ -355,7 +362,7 @@ html {
 
 @media only screen and (min-width: 40.0625em) {
   .enhanced .nav {
-    width: 216px;
+    width: 190px;
     top: 0px;
     bottom: 0px;
     background-color: #3e4b5b;
@@ -375,16 +382,20 @@ html {
     top: 0px;
     bottom: 0px;
     z-index: 1; } }
-.enhanced .nav .logo-text {
+.enhanced .nav .home {
   text-align: center;
-  margin-top: 0.6875rem; }
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.19922); }
 
-.enhanced .nav .project-name {
-  margin-bottom: 0.6875rem; }
+.enhanced .nav .logo-text {
+  margin-top: 0.6875rem;
+  font-size: 1rem;
+  line-height: 1; }
 
 @media only screen and (min-width: 40.0625em) {
   #main_menu {
-    width: 216px;
+    width: 190px;
     background-color: #3e4b5b; } }
 .main {
   position: relative;
@@ -392,7 +403,7 @@ html {
 
 @media only screen and (min-width: 64.0625em) {
   .main {
-    margin-left: 216px; } }
+    margin-left: 190px; } }
 .close-nav {
   top: 0px;
   right: 0px;
