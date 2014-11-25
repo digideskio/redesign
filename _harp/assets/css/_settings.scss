@@ -134,11 +134,11 @@ $grid-gutter-large: 2 * $font-size-l;
 // Header-nav settings
 //
 
-$header-and-nav-top-border: 3px solid palette(gold);
 $header-and-nav-bg: palette(blue-alt,dark);
 $header-and-nav-text-color: #fff;
-$main-menu-width: 216px;
-$secondary-menu-width: 180px;
+$secondary-menu-bg: palette(gray,dark);
+$main-menu-width: 190px;
+$secondary-menu-width: 190px;
 $both-menus-width: $main-menu-width + $secondary-menu-width;
 
 //

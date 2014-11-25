@@ -28,6 +28,7 @@
   }
     
   &.primary {
+    background-color: $header-and-nav-bg;
 
     .item, 
     a { 
@@ -63,7 +64,7 @@
   }
   
   &.inverted {
-    background-color: palette(gray,mid-dark);
+    background-color: $secondary-menu-bg;
     
     .item { color: palette(gray,x-light); }
     
@@ -71,16 +72,16 @@
     .item a:focus,
     a.item:hover,
     a.item:focus {
-      background-color: lighten( palette(gray,dark), 7% );
+      background-color: lighten( $secondary-menu-bg, 4% );
     }
 
     .current a,
     .current {
-      background-color: palette(gray,dark) !important;
+      background-color: darken( $secondary-menu-bg, 6%) !important;
     }
     
     .heading {
-      border-bottom: 1px solid darken($header-and-nav-bg, 20%);
+      border-bottom: 1px solid palette(yellow-green);
     }
   } 
   

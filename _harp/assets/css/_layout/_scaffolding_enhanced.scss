@@ -69,14 +69,16 @@
     }
     
   }
-      
-  .logo-text {
-    text-align: center;
-    @include rem(margin-top, $font-size-xs);
+  
+  .home { 
+    text-align: center; 
+    border-bottom: 1px solid rgba(255,255,255,0.2)
   }
-    
-  .project-name { @include rem(margin-bottom, $font-size-xs); }
-      
+  
+  .logo-text {
+    @include rem(margin-top, $font-size-xs);
+    @include font-size(m,1);
+  }      
 }
 
 #main_menu {
@@ -90,8 +92,8 @@
   @include respond-to(knee-up) {
     right: 0;
     width: $secondary-menu-width;
-    border-left: #444 1px solid;
-    background-color: palette(gray,mid-dark);
+    border-left: darken(mix($header-and-nav-bg, $secondary-menu-bg),5%) 1px solid;
+    background-color: $secondary-menu-bg;
   }
 }
 

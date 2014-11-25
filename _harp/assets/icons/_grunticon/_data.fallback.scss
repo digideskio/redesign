@@ -134,11 +134,11 @@
 .grunticon-logo-med {
   background-image: url('png/logo-med.png');
   //@include icon;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
     
   &.intrinsic {
-    padding-top: 200px / 200px * 100%;
+    padding-top: 100px / 100px * 100%;
   }
 }
 
