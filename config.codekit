@@ -4106,13 +4106,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/social-googleplus.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/social-google.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 870,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/social-googleplus.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/social-googleplus.png",
+		"initialSize": 930,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/social-google.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/social-google.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4921,13 +4921,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/social-googleplus.png": {
+	"\/_harp\/assets\/icons\/build\/png\/social-google.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 754,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/social-googleplus.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/social-googleplus.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/social-google.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/social-google.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

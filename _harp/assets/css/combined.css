@@ -2118,7 +2118,10 @@ abbr.grunticon-wordmark-med {
   padding: 1.1875rem 1.1875rem 0.8125rem;
   background-color: #ccc;
   border-top: 1px solid #b8b8b8;
-  color: #444; }
+  color: #444;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1.46154; }
   .footer[role="contentinfo"] a {
     -webkit-transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
             transition: color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);

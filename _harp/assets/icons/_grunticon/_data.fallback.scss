@@ -659,8 +659,8 @@
 }
 
 
-.grunticon-social-googleplus {
-  background-image: url('png/social-googleplus.png');
+.grunticon-social-google {
+  background-image: url('png/social-google.png');
   //@include icon;
   height: 24px;
   width: 24px;
@@ -673,6 +673,18 @@
 
 .grunticon-social-linkedin {
   background-image: url('png/social-linkedin.png');
+  //@include icon;
+  height: 24px;
+  width: 24px;
+    
+  &.intrinsic {
+    padding-top: 24px / 24px * 100%;
+  }
+}
+
+
+.grunticon-social-rss {
+  background-image: url('png/social-rss.png');
   //@include icon;
   height: 24px;
   width: 24px;

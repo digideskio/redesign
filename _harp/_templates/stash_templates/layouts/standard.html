@@ -18,56 +18,58 @@
 	  {if segment_1 != ""} - {/if} {site_label}
 	</title>
 	
-	{!-- Queue up various CSS & JS files --}
-	{exp:minimee:css queue="combined"}
-	  <link rel="stylesheet" href="{global:assets:css}combined.min.css">
-	{/exp:minimee:css}
-	{exp:minimee:js queue="enhanced"}
-	  <script src="{global:assets:js}enhanced.min.js"></script>
-	{/exp:minimee:js}
-	{exp:minimee:css queue="grunticon_svg"}
-	  <link rel="stylesheet" href="{global:assets:icons}icons.svg.css">
-	{/exp:minimee:css}
-	{exp:minimee:css queue="grunticon_png"}
-	  <link rel="stylesheet" href="{global:assets:icons}icons.png.css">
-	{/exp:minimee:css}
-	{exp:minimee:css queue="grunticon_fallback"}
-	  <link rel="stylesheet" href="{global:assets:icons}icons.fallback.css">
-	{/exp:minimee:css}
-	
-	{!-- Define locations of CSS and JS for the base.js to work its magic --}
-	<meta name="combinedcss" content="{exp:minimee:display:url css='combined'}">
-	<meta name="enhancedjs" content="{exp:minimee:display:url js='enhanced'}">
-	{!-- Grunticon loader expects 3 comma-delimited URLs in this order: svg, (base64-encoded) png, fallback --}
-	<meta name="grunticons" content="{exp:minimee:display:url css='grunticon_svg'},{exp:minimee:display:url css='grunticon_png'},{exp:minimee:display:url css='grunticon_fallback'}">
-	
-	{!-- Display base.js inline. This loads combined.css and the appropriate icons async on first load. Also loads enhanced.js always --}
-  {exp:minimee:js:contents attribute:type="text/javascript"}
-	  <script src="{global:assets:js}base.min.js"></script>
-	{/exp:minimee:js:contents}
-	
-	{!-- If second load, just link to the combined CSS and appropriate icons --}
-	{if ! cookie:combinedcss}
-    {exp:minimee:css:contents attribute:type="text/css"}
-      <link rel="stylesheet" href="{global:assets:css}critical.min.css">
-    {/exp:minimee:css:contents}
-	{if:else}
-	  {exp:minimee:display css="combined"}
-	{/if}
-	
-	{if cookie:grunticons}{exp:minimee:display css="grunticon_{cookie:grunticons}"}{/if}
-	
-	<noscript>
-	  {exp:minimee:css:tag}
-	    <link rel="stylesheet" href="{global:assets:css}base.min.css">
-	  {/exp:minimee:css:tag}
-	  {exp:minimee:display css="grunticon_fallback"}
-	</noscript>
+  {exp:stash:embed:partials:scripts-and-styles}
 	
 	<link rel="alternate" title="News feed for {site_label}" type="application/rss+xml" href="{path='rss'}/">
 </head>
 <body>
-  hard body
-  
+  <div class="sticky-footer">
+
+    <div>
+      <a class="sr-only focusable" href="#main">{lv-accessibility-maincontent-en}</a>
+    </div>  
+
+    <header class="banner" role="banner">
+      <div class="strip">
+        <a href="#nav" id="navToggle" class="toggle image" role="button" aria-label="Toggle navigation">
+          <i class="icon grunticon-navtoggle-menu"></i>
+          <span class="text">Menu</span>
+        </a>
+        <div class="body">
+          <a href="{site_url}" class="flag image-link">
+            <div class="image">
+              <i class="icon block grunticon-logo-small"></i>
+            </div>
+            <div class="body">
+              <span class="logo-text">
+                <abbr title="{lv-sitelabel-en}" class="icon block grunticon-wordmark-small ir">OSLC</abbr>
+                <span class="project-name">{lv-tagline-en}</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="sticky-footer-body off-canvas-wrap">
+      hard body  
+    </div>
+    
+    {exp:stash:embed:partials:footer}
+  </div>
+
+  {if global:google_analytics_key}
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '{global:google_analytics_key}', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  {/if}
+
 </body>
 </html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>social-rss</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="social-rss" sketch:type="MSArtboardGroup" fill="#305A87">
+            <g id="Shape-+-Shape" sketch:type="MSLayerGroup">
+                <path d="M1.5,0 C0.672,0 0,0.67125 0,1.5 L0,10.6515 C0,11.4795 0.672,12.1515 1.5,12.1515 C7.29,12.1515 12,16.8615 12,22.6515 C12,23.4795 12.672,24.1515 13.5,24.1515 L22.5,24.1515 C23.328,24.1515 24,23.4795 24,22.6515 C24,10.16175 13.9065,0 1.5,0 L1.5,0 Z M13.5,22.6515 C13.5,16.035 8.1165,10.6515 1.5,10.6515 L1.5,6.9015 C10.19925,6.9015 17.25,13.9515 17.25,22.6515 L13.5,22.6515 L13.5,22.6515 Z M18.75,22.6515 C18.75,13.13925 11.01225,5.4015 1.5,5.4015 L1.5,1.5 C13.10025,1.5 22.5,10.9665 22.5,22.6515 L18.75,22.6515 L18.75,22.6515 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+                <path d="M3.9375,15.75 C1.76625,15.75 0,17.51625 0,19.6875 C0,21.85875 1.76625,23.625 3.9375,23.625 C6.10875,23.625 7.875,21.85875 7.875,19.6875 C7.875,17.51625 6.10875,15.75 3.9375,15.75 M3.9375,22.125 C2.592,22.125 1.5,21.033 1.5,19.6875 C1.5,18.34125 2.592,17.25 3.9375,17.25 C5.283,17.25 6.375,18.34125 6.375,19.6875 C6.375,21.033 5.283,22.125 3.9375,22.125" id="Shape" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

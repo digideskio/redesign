@@ -144,7 +144,7 @@
         o = function(o) {
           var index = o && n ? 0 : o ? 1 : 2;
           loadCSS( e[index] );
-          cookie('grunticons', order[index], 7);
+          ! github && cookie('grunticons', order[index], 7);
         },
         r = new t.Image();
       r.onerror = function() { o(!1); };
