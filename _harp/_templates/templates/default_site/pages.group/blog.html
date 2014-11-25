@@ -18,9 +18,12 @@
 	{!-- If Structure/Channel modules can't find an entry, 404 it --}
 	{if no_results}{redirect="404"}{/if}
 	
+	{exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
+	{exp:stash:set name="layout_deck_date_w3c"}{entry_date format="{DATE_W3C}"}{/exp:stash:set}
+	{exp:stash:set name="layout_deck_author"}{encode="{email}" title="{author}"}{/exp:stash:set}
+	
 	{exp:stash:set name="blog_main_column"}
-		<p class="mtn mbm deemph">Posted on <strong><time property="dc:date" pubdate datetime="{entry_date format="{DATE_W3C}"}">{entry_date format="{lv-blogdateformat}"}</time></strong> by <span property="creator">{encode="{email}" title="{author}"}</span></p>
-		
+
 		<div class="body-text blogbody ptm" property="dc:description">
 			{cf-blog-w-body}
 		</div>
@@ -271,3 +274,12 @@
 }
 --}
 
+{if logged_in && logged_in_group_id == "1"}
+<h1>Global variables</h1>
+<?php $EE = get_instance(); print('<pre><code>'.print_r($EE->config->_global_vars, TRUE) . '</code></pre>');  ?>
+
+<h1>Configuration variables</h1>
+<?php
+	print('<pre><code>'. print_r($this->EE->config->config, TRUE) . '</code></pre>');
+?> 
+{/if}

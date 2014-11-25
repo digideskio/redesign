@@ -36,11 +36,11 @@
         
         <header class="header">
           {if structure:page:entry_id || {exp:stash:not_empty name="layout_breadcrumbs"} }
-            <nav class="breadcrumbs">
-              {exp:stash:block name="layout_breadcrumbs"}
-                {exp:structure:breadcrumb inc_here="no" separator="/" } /
-              {/exp:stash:block}
-            </nav>
+          <nav class="breadcrumbs">
+            {exp:stash:block name="layout_breadcrumbs"}
+              {exp:structure:breadcrumb inc_here="no" separator="/" } /
+            {/exp:stash:block}
+          </nav>
           {/if}
           <div id="pagetitle">
             <h1 class="title">
@@ -48,6 +48,25 @@
             </h1>
           </div>
         </header>
+        
+        {if {exp:stash:not_empty name="layout_deck_date"} || {exp:stash:not_empty name="layout_deck_tags"}}
+        <footer class="deck">
+          <div class="grid middle">
+            {if {exp:stash:not_empty name="layout_deck_date"}}
+              <div 
+                class="column hand-full {if {exp:stash:not_empty name='layout_deck_tags'} }knee-minor{/if}">
+                <div class="byline">
+                  <time property="dc:date" pubdate datetime="{exp:stash:layout_deck_date_w3c}">{exp:stash:layout_deck_date}</time>
+                  {if {exp:stash:not_empty name="layout_deck_author"}}
+                  | <span property="creator">{exp:stash:layout_deck_author}</span>
+                  {/if}
+                </div>
+              
+              </div>
+            {/if}
+          </div>
+        </footer>
+        {/if}
         
       </main>
       
