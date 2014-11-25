@@ -21,19 +21,9 @@
 	{exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
 	{exp:stash:set name="layout_deck_date_w3c"}{entry_date format="{DATE_W3C}"}{/exp:stash:set}
 	{exp:stash:set name="layout_deck_author"}{encode="{email}" title="{author}"}{/exp:stash:set}
-		
-	{exp:stash:set name="blog_main_column"}
-
-		<div class="body-text blogbody ptm" property="dc:description">
-			{cf-blog-w-body}
-		</div>
-		
-		<div class="blogcomments mvl body-text">
-			
-		</div>
-
-	{/exp:stash:set}
 	
+	{exp:stash:set name="layout_body_copy"}{cf-blog-w-body}{/exp:stash:set}
+
 	{exp:stash:set name="blog_aside_comments"}
 		<h3 class="mbn">{lv-commenting-heading-en}</h3>
 		

@@ -77,6 +77,16 @@
         </footer>
         {/if}
         
+        <section id="content">
+          {if {exp:stash:not_empty name="layout_body_copy"}}
+          <div class="bar">
+            <div class="copy" property="dc:description">
+              {exp:stash:layout_body_copy}
+            </div>
+          </div>
+          {/if}
+        </section>
+        
       </main>
       
       {exp:stash:embed:partials:nav}
