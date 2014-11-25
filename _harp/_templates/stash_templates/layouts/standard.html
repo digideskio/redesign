@@ -49,19 +49,28 @@
           </div>
         </header>
         
-        {if {exp:stash:not_empty name="layout_deck_date"} || {exp:stash:not_empty name="layout_deck_tags"}}
+        {if {exp:stash:not_empty name="layout_deck_date"} || {exp:stash:list_count name="layout_tags"} > 0}
         <footer class="deck">
           <div class="grid middle">
             {if {exp:stash:not_empty name="layout_deck_date"}}
               <div 
-                class="column hand-full {if {exp:stash:not_empty name='layout_deck_tags'} }knee-minor{/if}">
+                class="column hand-full {if {exp:stash:list_count name='layout_tags'} > 0}knee-minor{/if}">
                 <div class="byline">
                   <time property="dc:date" pubdate datetime="{exp:stash:layout_deck_date_w3c}">{exp:stash:layout_deck_date}</time>
-                  {if {exp:stash:not_empty name="layout_deck_author"}}
+                  {if {exp:stash:not_empty name="layout_deck_author"} }
                   | <span property="creator">{exp:stash:layout_deck_author}</span>
                   {/if}
                 </div>
               
+              </div>
+            {/if}
+            {if {exp:stash:list_count name="layout_tags"} > 0 }
+              <div class="column hand-full knee-major">
+                <div class="tags">
+                  {exp:stash:get_list name="layout_tags"}
+                  <a href="{href}" rel="tag" class="tag">{text}</a>
+                  {/exp:stash:get_list}
+                </div>
               </div>
             {/if}
           </div>

@@ -21,7 +21,7 @@
 	{exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
 	{exp:stash:set name="layout_deck_date_w3c"}{entry_date format="{DATE_W3C}"}{/exp:stash:set}
 	{exp:stash:set name="layout_deck_author"}{encode="{email}" title="{author}"}{/exp:stash:set}
-	
+		
 	{exp:stash:set name="blog_main_column"}
 
 		<div class="body-text blogbody ptm" property="dc:description">
@@ -73,24 +73,19 @@
 		
 {/exp:channel:entries}
 
-{exp:stash:append name="blog_aside_taxonomy"}
-	{exp:tag:tags 
-		entry_id="{structure:page:entry_id}"
-		websafe_separator="-"
-		}
-		
-		{if count=="1"}
-			<h3 class="mbn">{lv-tagged-en}</h3>
-			<ul class="inline-list nospacing">										
-		{/if}
-			
-			<li class="{if count==1}mts{/if}"><a rel="tag" href="/blog/tag/{websafe_tag}">{tag}</a>{if count != total_results && total_results > 1},{/if}</li>
+{exp:tag:tags 
+  entry_id="{structure:page:entry_id}"
+  websafe_separator="-"
+  }
+  
+  {exp:stash:append_list name="layout_tags"}
+    {stash:href}/blog/tag/{websafe_tag}{/stash:href}
+    {stash:text}{tag}{/stash:text}
+  {/exp:stash:append_list}  
+{/exp:tag:tags}
 
-		{if count==total_results}
-			</ul>
-		{/if}
-	
-	{/exp:tag:tags}
+
+{exp:stash:append name="blog_aside_taxonomy"}
 {/exp:stash:append}
 
 {exp:channel:next_entry channel="{structure:child_listing:short_name}"}
