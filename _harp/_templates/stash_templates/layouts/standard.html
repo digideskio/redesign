@@ -35,11 +35,18 @@
       <main id="main" role="main" class="main">
         
         <header class="header">
-          <nav class="breadcrumbs">
-            {exp:stash:block name="layout_breadcrumbs"}
-              {exp:structure:breadcrumb inc_here="no" separator="/" } /
-            {/exp:stash:block}
-          </nav>
+          {if structure:page:entry_id || {exp:stash:not_empty name="layout_breadcrumbs"} }
+            <nav class="breadcrumbs">
+              {exp:stash:block name="layout_breadcrumbs"}
+                {exp:structure:breadcrumb inc_here="no" separator="/" } /
+              {/exp:stash:block}
+            </nav>
+          {/if}
+          <div id="pagetitle">
+            <h1 class="title">
+              {exp:stash:block name="layout_pagetitle"}{structure:page:title}{/exp:stash:block}
+            </h1>
+          </div>
         </header>
         
       </main>
