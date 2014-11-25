@@ -1999,9 +1999,8 @@ input[type="checkbox"] {
   margin-top: 4px;
   margin-top: 0.25rem; }
 
-abbr.grunticon-wordmark-small,
-abbr.grunticon-wordmark-med {
-  border-bottom: 0 !important; }
+.banner abbr, #nav abbr {
+  border-bottom: 0; }
 
 .main .breadcrumbs, .main > .header .title, .main > .header .toggle, .bar, .nested, .nested > .document, .form.primary {
   padding-left: 11px;

@@ -2,6 +2,14 @@
 
 /* Manual additions go here */
 
+.js .nojs-only,
+.enhanced .base-only {
+  display: none !important; }
+
+.no-js .js-only,
+.base .enhanced-only {
+  display: none !important; }
+
 // this is mostly for Duo; I think there are some issues with loading two browsers simultaneously with the same cookies
 .js-icon-wrapper {
   height: 25px;
@@ -19,3 +27,5 @@
     }
   }
 }
+
+.sticky-footer-body { background-color: #444; }
