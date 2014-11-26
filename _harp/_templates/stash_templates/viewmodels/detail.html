@@ -17,6 +17,23 @@
 	
 	  {case value="blog"}
 	    {exp:stash:set name="layout_copy"}{cf-blog-w-body}{/exp:stash:set}
+	    
+      {exp:stash:append_list name="layout_meta_after" parse_conditionals="yes"}
+        {stash:name}Forum{/stash:name}
+        {stash:slug}forum{/stash:slug}
+
+        {if forum_topic}
+          {stash:link}{path='forums/viewthread'}/{forum_topic_id}/{/stash:link}
+          {stash:text}Discuss in the forums{/stash:text}
+        {/if}
+        
+        {if not_forum_topic}
+          {stash:link}{if logged_in}{path='/forums/newtopic/18/'}{if:else}/forums/member/login/{/if}{/stash:link}
+          {stash:text}{if logged_out}Log in and start{if:else}Start{/if} a discussion in the forums{/stash:text}
+        {/if}
+        
+      {/exp:stash:append_list}
+
 	  {/case}
 	
 	{/exp:switchee}

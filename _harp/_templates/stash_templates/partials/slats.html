@@ -1,0 +1,23 @@
+<div class="bar">
+  <ul class="slats">
+    {exp:stash:get_list name="{stash:list}"}
+      <li class="slat">
+        <div class="media">
+        	<div class="image">
+        	  <i class="icon grunticon-meta-{slug}"></i>
+        	</div>
+        	<div class="body">
+        	  <div class="header">{name}</div>
+        	  
+        	  <ul class="links tightened">
+        	    {!-- Todo: nested list of multiples --}
+        	    <li class="item">
+        	      <a href="{link}">{text}</a>
+        	    </li>
+        	  </ul>
+        	</div>
+        </div>
+      </li>
+    {/exp:stash:get_list}
+  </ul>
+</div>

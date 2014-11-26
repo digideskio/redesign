@@ -85,6 +85,11 @@
             </div>
           </div>
           {/if}
+          
+          
+          {if {exp:stash:list_count name="layout_meta_after"} > 0}
+            {exp:stash:embed:partials:slats stash:list="layout_meta_after"}
+          {/if}
         </section>
         
         <a href="#" role="button" aria-label="Close navigation" class="close-nav"></a>
