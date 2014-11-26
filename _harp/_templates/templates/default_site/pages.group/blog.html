@@ -6,6 +6,7 @@
 {stash:embed
   context="@URI"
   file_name="viewmodels:detail"
+  stash:_type="blog"
   stash:_layout="standard"
   stash:_status="open|closed"
 }
@@ -15,14 +16,6 @@
 	status="open|closed"
 	{global:disable_default}
 }
-	{!-- If Structure/Channel modules can't find an entry, 404 it --}
-	{if no_results}{redirect="404"}{/if}
-	
-	{exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
-	{exp:stash:set name="layout_deck_date_w3c"}{entry_date format="{DATE_W3C}"}{/exp:stash:set}
-	{exp:stash:set name="layout_deck_author"}{encode="{email}" title="{author}"}{/exp:stash:set}
-	
-	{exp:stash:set name="layout_body_copy"}{cf-blog-w-body}{/exp:stash:set}
 
 	{exp:stash:set name="blog_aside_comments"}
 		<h3 class="mbn">{lv-commenting-heading-en}</h3>
@@ -62,18 +55,6 @@
 	{/exp:stash:prepend}
 		
 {/exp:channel:entries}
-
-{exp:tag:tags 
-  entry_id="{structure:page:entry_id}"
-  websafe_separator="-"
-  }
-  
-  {exp:stash:append_list name="layout_tags"}
-    {stash:href}/blog/tag/{websafe_tag}{/stash:href}
-    {stash:text}{tag}{/stash:text}
-  {/exp:stash:append_list}  
-{/exp:tag:tags}
-
 
 {exp:stash:append name="blog_aside_taxonomy"}
 {/exp:stash:append}
@@ -251,20 +232,4 @@
 
 
 {/exp:stash:set}
-{!-- 
-{embed="_embeds/_body"
-	js_body_class="js_details_polyfill"
-	pagetype="blog_single"
-	headtitle="{structure:page:title}"
-}
---}
 
-{if logged_in && logged_in_group_id == "1"}
-<h1>Global variables</h1>
-<?php $EE = get_instance(); print('<pre><code>'.print_r($EE->config->_global_vars, TRUE) . '</code></pre>');  ?>
-
-<h1>Configuration variables</h1>
-<?php
-	print('<pre><code>'. print_r($this->EE->config->config, TRUE) . '</code></pre>');
-?> 
-{/if}

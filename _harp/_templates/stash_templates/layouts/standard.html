@@ -78,14 +78,16 @@
         {/if}
         
         <section id="content">
-          {if {exp:stash:not_empty name="layout_body_copy"}}
+          {if {exp:stash:not_empty name="layout_copy"}}
           <div class="bar">
             <div class="copy" property="dc:description">
-              {exp:stash:layout_body_copy}
+              {exp:stash:layout_copy}
             </div>
           </div>
           {/if}
         </section>
+        
+        <a href="#" role="button" aria-label="Close navigation" class="close-nav"></a>
         
       </main>
       
