@@ -1,4 +1,4 @@
-{!-- 404 handling --}
+{!-- 301 handling for extra segment --}
 {if segment_3 != ''}
 	{exp:http_header status='301' location="/{segment_1}/{segment_2}/"}
 {/if}
@@ -10,20 +10,5 @@
   stash:_layout="standard"
   stash:_status="open|closed"
   stash:_children_relationships="workgroups|company|products|tutorials|resource_presentations|resource_videos|resource_articles|resource_whitepapers|resource_podcasts"
+  stash:_sequence="true"
 }
-
-{exp:channel:next_entry channel="{structure:child_listing:short_name}"}
-	{exp:stash:set name="newer_entry"}
-	<i class="icon-font icon-font-tinted" data-icon="&#xe08a;"></i>
-	<strong>{lv-newerpost-en}</strong>: 
-	<a rel="next" href="{exp:low_variables:single var="lv-structure-page-url" preparse:entry_id='{entry_id}'}">{title}</a>
-	{/exp:stash:set}
-{/exp:channel:next_entry}
-
-{exp:channel:prev_entry channel="{structure:child_listing:short_name}"}
-	{exp:stash:set name="older_entry"}
-	<i class="icon-font icon-font-tinted" data-icon="&#xe090;"></i>
-	<strong>{lv-olderpost-en}</strong>: 
-	<a rel="prev" href="{exp:low_variables:single var="lv-structure-page-url" preparse:entry_id='{entry_id}'}">{title}</a>
-	{/exp:stash:set}
-{/exp:channel:prev_entry}

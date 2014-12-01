@@ -8,9 +8,8 @@
 
 	{!-- If Structure/Channel modules can't find an entry, 404 it --}
 	{if no_results}{redirect="404"}{/if}
-
-  
-  {!-- Capture all relationships in one pass --}
+	
+	{!-- Capture all relationships in one pass --}
   {exp:playa:children parse="inward" var_prefix="child"}
     {exp:stash:append_list name="children"}
       {stash:channel_slug}{child:channel_short_name}{/stash:channel_slug}
@@ -71,6 +70,23 @@
 	{/exp:switchee}
 
 {/exp:channel:entries}
+
+{if {stash:_sequence}}
+  {!-- Older --}
+  {exp:channel:prev_entry channel="{structure:child_listing:short_name}"}
+    {exp:stash:set_value name="layout_prev_label" value="{lv-olderpost-en}"}
+    {exp:stash:set name="layout_prev_id"}{entry_id}{/exp:stash:set}
+    {exp:stash:set name="layout_prev_title"}{title}{/exp:stash:set}
+  {/exp:channel:prev_entry}
+  
+  {!-- Newer --}
+  {exp:channel:next_entry channel="{structure:child_listing:short_name}"}
+    {exp:stash:set_value name="layout_next_label" value="{lv-newerpost-en}"}
+    {exp:stash:set name="layout_next_id"}{entry_id}{/exp:stash:set}
+    {exp:stash:set name="layout_next_title"}{title}{/exp:stash:set}
+  {/exp:channel:next_entry}
+
+{/if}
 
 {exp:tag:tags 
   entry_id="{structure:page:entry_id}"
