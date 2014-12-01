@@ -1,0 +1,14 @@
+{exp:stash:embed name="partials:relationships" 
+  stash:list="{stash:list}"
+  stash:header="{stash:header}"
+}
+
+{exp:stash:set_list name="{stash:list}" parse_tags="yes"}
+  {exp:playa:{stash:direction}
+    entry_id="{stash:entry_id}"
+    channel="{stash:channel}"
+  }
+    {stash:url}{page_url}{/stash:url}
+    {stash:text}{title}{/stash:text}
+  {/exp:playa:{stash:direction}}
+{/exp:stash:set_list}

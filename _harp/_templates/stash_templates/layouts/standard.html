@@ -92,6 +92,14 @@
           {/if}
         </section>
         
+        {if {exp:stash:not_empty name="layout_relationships"}}
+          <aside class="cards relationships">
+            <div class="grid blocks">
+              {exp:stash:get name="layout_relationships"}
+            </div>
+          </aside>
+        {/if}
+        
         <a href="#" role="button" aria-label="Close navigation" class="close-nav"></a>
         
       </main>

@@ -68,20 +68,6 @@
 		preparse:expand_text="See all software"
 	}
 	
-	{exp:low_variables:single var="lv-relationship-list" 
-		preparse:direction="children"
-		preparse:related_channel="company"
-		preparse:related_to_entry_id="{structure:page:entry_id}"
-		preparse:heading_level="h3"
-		preparse:heading_class="mbs"
-		preparse:size="1of1"
-		preparse:heading_text="Organizations"
-		preparse:orderby="title" 
-		preparse:sort="asc"
-		preparse:collapse_limit="4"
-		preparse:expand_text="See all organizations"
-	}
-	
 	{!-- Resource relationships --}
 		{exp:low_variables:single 
 			var='lv-relationship-list'
