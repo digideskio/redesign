@@ -1,4 +1,4 @@
-{if {exp:stash:list_count name="{stash:list}"}}
+{if {exp:stash:list_count name="{stash:list}" match="{stash:match}" against="{stash:against}"} }
   {exp:stash:get_list 
     name="{stash:list}"
     match="{stash:match}"

@@ -27,7 +27,7 @@
       {stash:url}{parent:page_url}{/stash:url}
       {stash:text}{parent:title}{/stash:text}
     {/exp:stash:append_list}
-  {/exp:playa:children}
+  {/exp:playa:parents}
   
 	
 	{exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
@@ -56,20 +56,15 @@
       {/exp:stash:append_list}
       
       {exp:stash:append name="layout_relationships"}
-      
-        {exp:stash:embed:partials:relationships 
-          stash:list="children"
-          stash:match="#workgroups#"
-          stash:against="channel_slug"
-        }
-        
-        {exp:stash:embed:partials:relationships
-          stash:list="children"
-          stash:match="#company#"
-          stash:against="channel_slug"
-        }
-        
+        {exp:loopee foreach="{stash:_children_relationships}" parse="inward" as="channel_slug"}
+          {exp:stash:embed:partials:relationships 
+            stash:list="children"
+            stash:against="channel_slug"
+            stash:match="#{channel_slug}#"            
+          }        
+        {/exp:loopee}
       {/exp:stash:append}
+
       
 	  {/case} {!-- /blog --}
 	
