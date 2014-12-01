@@ -54,9 +54,9 @@
         
       {/exp:stash:append_list}
       
-      {exp:stash:append name="layout_relationships"}
+      {exp:stash:append name="layout_relationships" parse_depth="2" parse_tags="yes" match="#\S#"}
         {exp:loopee foreach="{stash:_children_relationships}" parse="inward" as="channel_slug"}
-          {exp:stash:embed:partials:relationships 
+          {exp:stash:embed:partials:relationships
             stash:list="children"
             stash:against="channel_slug"
             stash:match="#{channel_slug}#"            
