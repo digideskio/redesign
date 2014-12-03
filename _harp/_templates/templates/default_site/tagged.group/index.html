@@ -1,27 +1,22 @@
-{embed="_embeds/_body"
-  pagetitle="Tagged: {exp:tag:tag_name websafe_separator="-"}{segment_2}{/exp:tag:tag_name}"
-  headtitle="Tagged: {exp:tag:tag_name websafe_separator="-"}{segment_2}{/exp:tag:tag_name}"
-}
-
-{exp:stash:set name="main_content"}
-  {exp:tag:entries 
-	  websafe_separator="-" 
-	  tag="{segment_2}"}
-	  {entry_id}{if count != total_results}|{/if}
-  {/exp:tag:entries}
-
-  {if lv:tag:{segment_2}}
-	{lv:tag:{segment_2}}
-  {/if}
-
-{/exp:stash:set}
-
-{if logged_in && logged_in_group_id == "1"}
-<h1>Global variables</h1>
-<?php $EE = get_instance(); print('<pre><code>'.print_r($EE->config->_global_vars, TRUE) . '</code></pre>');  ?>
-
-<h1>Configuration variables</h1>
-<?php
-	print('<pre><code>'. print_r($this->EE->config->config, TRUE) . '</code></pre>');
-?> 
+{!-- 301 handling for extra segment --}
+{if segment_3 != ''}
+	{exp:http_header status='301' location="/{segment_1}/{segment_2}/"}
 {/if}
+
+{!-- Check for no results --}
+{exp:tag:entries websafe_separator='-' tag='{segment_2}'}
+{if no_results}{redirect="404"}{/if}
+{/exp:tag:entries}
+
+{stash:embed
+  context="@URI"
+  file_name="viewmodels:listing"
+  parse_stage="both"
+  stash:_layout="standard"
+
+  stash:_type="tagged"
+  stash:_listing_style="cards"
+  stash:_status="open"
+  stash:_listing_ids="{exp:tag:entries websafe_separator='-' tag='{segment_2}' backspace='1' }{entry_id}|{/exp:tag:entries}"
+  stash:_disable="categories|member_data"
+}

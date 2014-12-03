@@ -17,7 +17,7 @@
 	  {if segment_1 != ""} - {/if} {site_label}
 	</title>
 	
-  {exp:stash:embed:partials:scripts-and-styles}
+  {stash:embed:partials:scripts-and-styles}
 	
 	<link rel="alternate" title="News feed for {site_label}" type="application/rss+xml" href="{path='rss'}/">
 </head>
@@ -28,7 +28,7 @@
       <a class="sr-only focusable" href="#main">{lv-accessibility-maincontent-en}</a>
     </div>  
 
-    {exp:stash:embed:partials:banner}
+    {stash:embed:partials:banner}
     
     <div class="sticky-footer-body off-canvas-wrap">
       
@@ -77,7 +77,18 @@
         </footer>
         {/if}
         
+        {if {exp:stash:not_empty name="layout_listing_description"}}
+          <section class="copy bar">
+            {exp:stash:layout_listing_description}
+          </section>
+        {/if}
+        
         <section id="content">
+          {if {exp:stash:not_empty name="layout_listing"}}
+            <div id="listing" class="cards">
+              {exp:stash:layout_listing}
+            </div>
+          {/if}
           {if {exp:stash:not_empty name="layout_copy"}}
           <div class="bar">
             <div class="copy" property="dc:description">
@@ -88,7 +99,7 @@
           
           
           {if {exp:stash:list_count name="layout_meta_after"} > 0}
-            {exp:stash:embed:partials:slats stash:list="layout_meta_after"}
+            {stash:embed:partials:slats stash:list="layout_meta_after"}
           {/if}
         </section>
         
@@ -136,11 +147,11 @@
         
       </main>
       
-      {exp:stash:embed:partials:nav}
+      {stash:embed:partials:nav}
       
     </div>
     
-    {exp:stash:embed:partials:footer}
+    {stash:embed:partials:footer}
   </div>
 
 </body>

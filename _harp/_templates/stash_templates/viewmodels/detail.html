@@ -1,4 +1,4 @@
-{stash:embed context="layouts" name="{stash:_layout}"}
+{stash:embed:layouts:{stash:_layout}}
 
 {exp:channel:entries
 	require_entry="yes"
@@ -46,10 +46,17 @@
           {stash:link}{path='forums/viewthread'}/{forum_topic_id}/{/stash:link}
           {stash:text}Discuss in the forums{/stash:text}
         {/if}
-        
         {if not_forum_topic}
-          {stash:link}{if logged_in}{path='/forums/newtopic/18/'}{if:else}/forums/member/login/{/if}{/stash:link}
-          {stash:text}{if logged_out}Log in and start{if:else}Start{/if} a discussion in the forums{/stash:text}
+          {stash:link}
+          {stash:nocache}
+          {if logged_in}{path='/forums/newtopic/18/'}{if:else}/forums/member/login/{/if}
+          {/stash:nocache}
+          {/stash:link}
+          {stash:text}
+          {stash:nocache}
+          {if logged_out}Log in and start{if:else}Start{/if} a discussion in the forums
+          {/stash:nocache}
+          {/stash:text}
         {/if}
         
       {/exp:stash:append_list}
@@ -94,7 +101,7 @@
   }
   
   {exp:stash:append_list name="layout_tags"}
-    {stash:href}/blog/tag/{websafe_tag}{/stash:href}
+    {stash:href}/tagged/{websafe_tag}{/stash:href}
     {stash:text}{tag}{/stash:text}
   {/exp:stash:append_list}  
 

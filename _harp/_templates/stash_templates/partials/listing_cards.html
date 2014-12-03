@@ -1,0 +1,36 @@
+{if {exp:stash:list_count name="listing"}}
+{exp:stash:get_list name="listing"}
+{if count == 1}
+  <div class="grid blocks">
+{/if}
+    <div class="column hand-full desk-half" data-date="{date_epoch}">
+      <div class="card">
+      	<header class="header">
+      	  <h1 class="title">
+      	    <a href="{url}" rel="bookmark">{title}</a>
+      	  </h1>
+      	</header>
+      	<section class="content">      	  
+      	  <div class="copy">
+            {summary}
+      	  </div>
+      	</section>
+      	<div class="footer">
+      	  <footer class="meta">
+      	    <span class="byline">
+              {if date || author}
+                <time datetime="{date_w3c}">{date}</time>
+                {if author}
+                | {author_link}
+                {/if}
+              {/if}
+      	    </span>      	    
+      	  </footer>
+      	</div>
+      </div>
+    </div>
+{if count == total_results}
+  </div>
+{/if}
+{/exp:stash:get_list}
+{/if}
