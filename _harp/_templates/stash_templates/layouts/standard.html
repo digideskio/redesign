@@ -83,6 +83,8 @@
           </section>
         {/if}
         
+        {exp:stash:block name="layout_bartender"}{/exp:stash:block}
+        
         <section id="content">
           {if {exp:stash:not_empty name="layout_listing"}}
             <div id="listing" class="cards">

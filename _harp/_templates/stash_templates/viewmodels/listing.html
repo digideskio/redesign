@@ -3,6 +3,7 @@
 {exp:switchee variable="{stash:_listing_style}" parse="inward"}
   {case value="cards"}
     {exp:stash:extend name="layout_listing" with="partials:listing_cards"}
+    {exp:stash:extend name="layout_bartender" with="partials:bartender"}
   {/case}
 {/exp:switchee}
 
