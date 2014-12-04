@@ -118,7 +118,7 @@
             <div class="grid collapsed blocks">
               {if {exp:stash:not_empty name="layout_prev_title"}}
                 <div class="column hand-full knee-half">
-                  <a href="{structure:page_url_for:{exp:stash:layout_prev_id}}" class="sequence prev">
+                  <a href="{exp:stash:layout_prev_url}" class="sequence prev">
                     <div class="flag">
                       <div class="image"><i class="icon grunticon-previous"></i></div>
                       <div class="body">
@@ -131,7 +131,7 @@
               {/if}
               {if {exp:stash:not_empty name="layout_next_title"}}
                 <div class="column hand-full knee-half">
-                  <a href="{structure:page_url_for:{exp:stash:layout_next_id}}" class="sequence next">
+                  <a href="{exp:stash:layout_next_url}" class="sequence next">
                     <div class="flag reversed">
                       <div class="body">
                         <span class="label">{exp:stash:layout_next_label}</span>

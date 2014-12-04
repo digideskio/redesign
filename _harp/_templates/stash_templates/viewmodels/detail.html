@@ -82,14 +82,14 @@
   {!-- Older --}
   {exp:channel:prev_entry channel="{structure:child_listing:short_name}"}
     {exp:stash:set_value name="layout_prev_label" value="{lv-olderpost-en}"}
-    {exp:stash:set name="layout_prev_id"}{entry_id}{/exp:stash:set}
+    {exp:stash:set name="layout_prev_url"}{structure:page_url_for:{entry_id}}{/exp:stash:set}
     {exp:stash:set name="layout_prev_title"}{title}{/exp:stash:set}
   {/exp:channel:prev_entry}
   
   {!-- Newer --}
   {exp:channel:next_entry channel="{structure:child_listing:short_name}"}
     {exp:stash:set_value name="layout_next_label" value="{lv-newerpost-en}"}
-    {exp:stash:set name="layout_next_id"}{entry_id}{/exp:stash:set}
+    {exp:stash:set name="layout_next_url"}{structure:page_url_for:{entry_id}}{/exp:stash:set}
     {exp:stash:set name="layout_next_title"}{title}{/exp:stash:set}
   {/exp:channel:next_entry}
 

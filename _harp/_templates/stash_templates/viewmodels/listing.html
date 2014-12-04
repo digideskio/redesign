@@ -27,16 +27,29 @@
 {exp:channel:entries
   require_entry="yes"
   dynamic="off"
-  status="{stash:_status}"
-  disable="{if stash:_disable}{stash:_disable}{if:else}{global:disable_default}{/if}"
-  {if stash:_listing_ids}
-  entry_id="{stash:_listing_ids}"
-  parse="inward"
+  
+  {if structure:child_listing:short_name != ''}
+    channel="{structure:child_listing:short_name}"
   {/if}
+  {if structure:child_listing:short_name == ''}
+    entry_id="{stash:_listing_ids}"
+  {/if}
+  
+  disable="{global:disable_default}"
+  {if stash:_disable != ''}
+    disable="{stash:_disable}"
+  {/if}
+  
+  limit="100"
+  {if stash:_limit != ''}
+    limit="{stash:_limit}"
+    paginate="bottom"
+  {/if}
+  
 }
   {if no_results}{redirect="404"}{/if}
   
-  {exp:stash:append_list name="listing"}
+  {exp:stash:append_list name="listing" parse_tags="yes" parse_conditionals="yes"}
     {stash:channel_slug}{channel_short_name}{/stash:channel_slug}
     {stash:url}{page_url}{/stash:url}
     {stash:title}{title}{/stash:title}
@@ -51,5 +64,21 @@
     {stash:summary}{cf-blog-w-summary}{/stash:summary}
   {/exp:stash:append_list}
   
+  {paginate}
+    
+    {pagination_links}
+      {previous_page}
+        {exp:stash:set_value name="layout_prev_title" value="Newer posts"}
+        {exp:stash:set name="layout_prev_url"}{pagination_url}{/exp:stash:set}
+      {/previous_page}
+      
+      {next_page}
+        {exp:stash:set_value name="layout_next_title" value="Older posts"}
+        {exp:stash:set name="layout_next_url"}{pagination_url}{/exp:stash:set}
+      {/next_page}
+      
+    {/pagination_links}
+    
+  {/paginate}
+  
 {/exp:channel:entries}
-

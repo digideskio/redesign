@@ -1,21 +1,21 @@
-{!-- News index and tag/spec filtered news --}
+{!-- News index --}
 
-{!-- 
-	This page uses the "Freebie" add-on so that I can parse archives, pages, and categories
-	See: http://www.3roadsmedia.com/blog/expressionengine-with-structure-and-categories/
---}
+{!-- 301 handling for extra segment --}
 
-{embed="_embeds/_body"
-	pagetype="blog_listing"
-	
-	{exp:switchee variable="{freebie_2}" parse="inward"}
-		
-		{!-- Listings: either the index or pagination (eg P10) --}
-		{case value="#^P(\d+)$#|''"}
-			headtitle="{structure:page:title}"
-			{!-- Activates 5-per-page pagination --}
-			listings_limit="10"
-		{/case}
-				
-	{/exp:switchee}
+{if segment_3 != ''}
+	{exp:http_header status='301' location="/{segment_1}/{segment_2}/"}
+{/if}
+
+{stash:embed
+  context="@URI"
+  file_name="viewmodels:listing"
+  parse_stage="both"
+  stash:_layout="standard"
+
+  stash:_type="blog"
+  stash:_listing_style="cards"
+  stash:_bartender_controls="tag,author,sort"
+  
+  stash:_limit="10"
+  stash:_disable="categories|member_data"
 }
