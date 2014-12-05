@@ -107,7 +107,7 @@ textarea.text, .project-name {
   .copy .menu .items, .menu .copy .items, .copy .links, .copy .inline, .copy .flat, .copy .slats {
     padding-left: 0; }
 
-.btn, .action, .enhanced .form.login .actions button {
+.btn, .action, .enhanced .form.login .actions button, form.search button {
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -1955,6 +1955,29 @@ input[type="checkbox"] {
     display: block; }
   .enhanced .form.login .actions .links a + a {
     margin-top: 3px; }
+
+.enhanced form.search {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex; }
+form.search input[type="search"] {
+  border: 0;
+  padding: 4px 5px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1; }
+  .enhanced form.search input[type="search"] {
+    border-radius: 5px 0 0 5px;
+    -webkit-flex-grow: 1;
+       -moz-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+form.search button {
+  padding: 5px;
+  background-color: #ebebeb; }
+  .enhanced form.search button {
+    border-radius: 0 5px 5px 0; }
 
 .banner {
   background-color: #3e4b5b; }

@@ -72,7 +72,6 @@ OSLC.supportsTransitions = Modernizr && "csstransitions" in Modernizr && Moderni
 // this overrides all durations and delays to 0ms
 //if ( ! OSLC.supportsAcceleratedTransitions ) { $.Velocity.mock = true; }
 
-// @codekit-append "./modules/oslc.google-cse.js";
 // @codekit-append "./modules/oslc.toggler.js";
 // @codekit-append "./modules/oslc.scrollTo.js";
 // @codekit-append "./modules/oslc.fluidvideos.js";

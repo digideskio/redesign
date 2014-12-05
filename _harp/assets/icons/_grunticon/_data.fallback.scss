@@ -623,6 +623,18 @@
 }
 
 
+.grunticon-search {
+  background-image: url('png/search.png');
+  //@include icon;
+  height: 16px;
+  width: 16px;
+    
+  &.intrinsic {
+    padding-top: 16px / 16px * 100%;
+  }
+}
+
+
 .grunticon-sextant-backToTop {
   background-image: url('png/sextant-backToTop.png');
   //@include icon;

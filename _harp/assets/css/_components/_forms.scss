@@ -191,3 +191,29 @@ input[type="checkbox"] {
     }
   }
 }
+
+form.search {
+
+  .enhanced & {
+    display: flex;
+  }
+
+  input[type="search"] {
+    border: 0;
+    padding: 4px 5px;
+    @include font-size(s,1);
+    
+    .enhanced & {
+      border-radius: 5px 0 0 5px;
+      flex-grow: 1;
+    }
+  }
+  
+  button {
+    @extend %button-reset;
+    padding: 5px;
+    background-color: palette(gray,x-light);
+    
+    .enhanced & { border-radius: 0 5px 5px 0; }
+  }
+}
