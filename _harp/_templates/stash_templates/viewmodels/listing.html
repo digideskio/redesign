@@ -67,6 +67,9 @@
   {paginate}
     
     {pagination_links}
+      {exp:stash:set name="layout_pagination_current"}{current_page}{/exp:stash:set}
+      {exp:stash:set name="layout_pagination_total"}{total_pages}{/exp:stash:set}
+
       {previous_page}
         {exp:stash:set_value name="layout_prev_title" value="Newer posts"}
         {exp:stash:set name="layout_prev_url"}{pagination_url}{/exp:stash:set}
@@ -75,8 +78,7 @@
       {next_page}
         {exp:stash:set_value name="layout_next_title" value="Older posts"}
         {exp:stash:set name="layout_next_url"}{pagination_url}{/exp:stash:set}
-      {/next_page}
-      
+      {/next_page}      
     {/pagination_links}
     
   {/paginate}
