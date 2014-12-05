@@ -22,11 +22,14 @@
           </li>
           
           {!-- Google CSE --}
-          {if global:env == 'production'}
           <li class="item">
-            <gcse:searchbox-only />
+            <form accept-charset="utf-8" action="http://www.google.com/cse" class="search">
+              <label for="site_search" class="sr-only">Search</label>
+              <input type="hidden" name="cx" value="007332863250739994192:7x5ikyiembq">
+              <input type="search" id="site_search" name="q" placeholder="Search" class="search">
+              <button type="submit"><i class="icon grunticon-search"></i><span class="sr-only">Search</span></button>
+            </form>
           </li>
-          {/if}
           
           {exp:structure:nav 
             max_depth="1"
