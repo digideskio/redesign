@@ -100,7 +100,7 @@
               {stash:name}Presenter{if total_results != 1}s{/if}{/stash:name}
               {stash:slug}presenters{/stash:slug}  
             {/if}
-            {exp:stash:append_list:presenters name="layout_meta_after_Presenters"}            
+            {exp:stash:append_list:presenters name="layout_meta_after_Presenters"}
               {stash:text}{screen_name}{/stash:text}
             {/exp:stash:append_list:presenters}
           {/cf-resource-presenters}
@@ -109,9 +109,20 @@
           {stash:slug}presenters{/stash:slug}
           {stash:text}{author}{/stash:text}
         {/if}
-        
-        
-        
+
+        {!-- Resource: downloads --}
+        {cf-resource-m-downloads}					
+					{if row_count == 1}
+					  {stash:name}Downloads{/stash:name}
+					  {stash:slug}downloads{/stash:slug}
+					{/if}
+					
+          {exp:stash:append_list:downloads name="layout_meta_after_Downloads"}
+            {stash:link}{upload_file}{/stash:link}
+            {stash:text}{if upload_description}{upload_description}{if:else}Supporting document{/if}{/stash:text}
+          {/exp:stash:append_list:downloads}
+				{/cf-resource-m-downloads}
+
       {/exp:stash:set_list}
       
       {exp:stash:append name="layout_relationships" parse_depth="2" parse_tags="yes" match="#\S#"}
