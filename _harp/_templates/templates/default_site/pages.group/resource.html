@@ -1,22 +1,15 @@
-{!-- Single resource page --}
-{embed="_embeds/_body"
-	pagetype="resource_single"
-	js_body_class="js_details_polyfill resources"
+{stash:embed
+  context="@URI"
+  file_name="viewmodels:detail"
+  parse_stage="both"
+  stash:_type="resource"
+  stash:_layout="standard"
+  stash:_status="open|closed"
+  stash:_disable="categories|pagination"
+  stash:_children_relationships="workgroups|company|products"
+  stash:_parents_relationships="blog"
+  stash:_sequence="true"
 }
-
-{exp:stash:set name='presentation_notify_callout' match="#resource_presentations#" against="{structure:page:channel_short_name}"}
-<div class="callout-box mtm">
-	Want to receive an email when we announce more presentations? <br />
-	{exp:channel:entries
-		limit="1"
-		dynamic="no"
-		entry_id="146" {!-- Not ideal --}
-	}
-	<a class="button tiny-button mts" href="{page_url}">Sign up here</a>
-	
-{/exp:channel:entries}
-</div>
-{/exp:stash:set}
 
 
 {exp:stash:set name="main_content"}
@@ -59,34 +52,6 @@
 			{if expiration_date != "0" && expiration_date < current_time}
 				<p><span class="label success">Video coming soon</span></p>
 			{/if}
-
-
-				
-				{!-- Embed --}
-				<div class="gutter">
-				{if cf-resource-cv-videos}
-					{exp:channel_videos:videos entry_id="{entry_id}" limit="1"}
-						{if video:service == "youtube"}
-							{video:embed_code_hd}
-						{if:else}
-							{video:embed_code}
-						{/if}										
-					{/exp:channel_videos:videos}
-				{if:elseif cf-resource-t-embed}
-					{cf-resource-t-embed}
-				{/if}
-				</div>
-				
-				<div class="body-text mtm gutter">
-					{if cf-resource-w-desc == "" && cf-resource-cv-videos != ""}
-						{exp:channel_videos:videos entry_id="{entry_id}" limit="1"}
-							<p class="mvn"><span class="deemph">Description from {video:service}:</span> {video:description}</p>											
-						{/exp:channel_videos:videos}
-					{if:else}
-						{cf-resource-w-desc}
-					{/if}
-														
-				</div>
 				
 				{if entry_date < current_time && (cf-resource-t-url != "" || cf-resource-cv-videos != "" || cf-resource-m-downloads != "")}
 				<p>
@@ -112,31 +77,6 @@
 			
 			<div class="unit lastUnit">
 			
-				{!-- Stashed presentation callout. Should be only on presentation pages --}
-				{if {exp:stash:not_empty name='presentation_notify_callout'}}
-					{exp:stash:get name='presentation_notify_callout'}
-				{/if}
-				
-				{!-- Presenter if multiple --}
-				{if cf-resource-presenters}
-				{cf-resource-presenters orderby="screen_name"}
-					{if count == 1}
-					<h3 class="h3 mts">Presenter{if total_results > 1}s{/if}</h3>
-					<ul class="nospacing nobullets">
-					{/if}
-						<li>{screen_name}</li>
-					{if count == total_results}
-					</ul>
-					{/if}
-				{/cf-resource-presenters}
-				{if:elseif author_id != 1 && channel_short_name == "resource_presentations"}
-					<h3 class="h3 mts">Presenter</h3>
-					<ul class="nospacing nobullets">
-						<li>{author}</li>
-					</ul>
-			
-				{/if}
-				
 				{!-- Downloadables --}
 				{cf-resource-m-downloads}					
 					{if row_count == 1}
@@ -151,62 +91,6 @@
 					{/if}
 				{/cf-resource-m-downloads}
 				
-				{!-- Relationships --}
-				{exp:low_variables:single 
-					var='lv-relationship-list'
-					preparse:direction='children'
-					preparse:related_channel='workgroups'
-					preparse:related_to_entry_id="{structure:page:entry_id}"
-					preparse:size="1of1"
-					preparse:heading_text="Workgroups"
-					preparse:heading_level="h3"
-					preparse:orderby="title"
-					preparse:sort="asc"
-					preparse:collapse_limit="2"
-					preparse:expand_text="See all workgroups"
-				}
-				
-				{exp:low_variables:single 
-					var='lv-relationship-list'
-					preparse:direction='children'
-					preparse:related_channel='products'
-					preparse:related_to_entry_id="{structure:page:entry_id}"
-					preparse:size="1of1"
-					preparse:heading_text="Software"
-					preparse:heading_level="h3"
-					preparse:orderby="title"
-					preparse:sort="asc"
-					preparse:collapse_limit="2"
-					preparse:expand_text="See all software"
-				}
-				
-				{exp:low_variables:single 
-					var='lv-relationship-list'
-					preparse:direction='children'
-					preparse:related_channel='company'
-					preparse:related_to_entry_id="{structure:page:entry_id}"
-					preparse:size="1of1"
-					preparse:heading_text="Organizations"
-					preparse:heading_level="h3"
-					preparse:orderby="title"
-					preparse:sort="asc"
-					preparse:collapse_limit="2"
-					preparse:expand_text="See all organizations"
-				}
-				
-				{exp:low_variables:single 
-					var='lv-relationship-list'
-					preparse:direction='parents'
-					preparse:related_channel='blog'
-					preparse:related_to_entry_id="{structure:page:entry_id}"
-					preparse:size="1of1"
-					preparse:heading_text="Blog posts"
-					preparse:heading_level="h3"
-					preparse:orderby="date"
-					preparse:sort="desc"
-					preparse:collapse_limit="2"
-					preparse:expand_text="See all blog posts"
-				}
 				
 							
 			</div>

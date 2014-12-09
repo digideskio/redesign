@@ -10,10 +10,27 @@
         	  <div class="header">{name}</div>
         	  
         	  <ul class="links tightened">
-        	    {!-- Todo: nested list of multiples --}
-        	    <li class="item">
-        	      <a href="{link}">{text}</a>
-        	    </li>
+        	    {if {exp:stash:list_count name="{stash:list}_{name}"}}
+                
+                {exp:stash:get_list:nested name="{stash:list}_{name}" prefix="nested"}
+                  <li class="item">
+                    {if nested:link}
+                      <a href="{nested:link}">{nested:text}</a>
+                    {if:else}
+                      {nested:text}
+                    {/if}
+                  </li>
+                {/exp:stash:get_list:nested}
+                
+              {if:else}
+                <li class="item">
+                  {if link}
+                    <a href="{link}">{text}</a>
+                  {if:else}
+                    {text}
+                  {/if}
+                </li>
+              {/if}
         	  </ul>
         	</div>
         </div>
