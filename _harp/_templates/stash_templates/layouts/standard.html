@@ -88,7 +88,11 @@
               <div class="column hand-full knee-major">
                 <div class="tags">
                   {exp:stash:get_list name="layout_tags"}
-                  <a href="{href}" rel="tag" class="tag">{text}</a>
+                    {if href}
+                    <a href="{href}" rel="tag" class="tag{if class} {class}{/if}">{text}</a>
+                    {if:else}
+                    <span class="tag{if class} {class}{/if}">{text}</span>
+                    {/if}
                   {/exp:stash:get_list}
                 </div>
               </div>
@@ -106,15 +110,15 @@
         {exp:stash:block name="layout_bartender"}{/exp:stash:block}
         
         <section id="content">
-          {if {exp:stash:list_count name="layout_meta_before"} > 0}
-            {stash:embed:partials:slats stash:list="layout_meta_before"}
-          {/if}
+
+          {stash:embed:partials:slats stash:list="layout_meta_before"}
         
           {if {exp:stash:not_empty name="layout_listing"}}
             <div id="listing" class="cards">
               {exp:stash:layout_listing}
             </div>
           {/if}
+          
           {if {exp:stash:not_empty name="layout_copy"}}
           <div class="bar">
             <div class="copy" property="dc:description">
@@ -122,11 +126,9 @@
             </div>
           </div>
           {/if}
+
+          {stash:embed:partials:slats stash:list="layout_meta_after"}
           
-          
-          {if {exp:stash:list_count name="layout_meta_after"} > 0}
-            {stash:embed:partials:slats stash:list="layout_meta_after"}
-          {/if}
         </section>
         
         {if {exp:stash:not_empty:string name="layout_relationships"}}

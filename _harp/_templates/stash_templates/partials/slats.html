@@ -1,7 +1,16 @@
+{if {exp:stash:list_count name="{stash:list}"}}
 <div class="bar">
   <ul class="slats">
     {exp:stash:get_list name="{stash:list}"}
       <li class="slat">
+        {if slug == "outgoing"}
+          <a class="action" rel="external" href="{link}">
+            <div class="flag reversed">
+              <div class="body">{text}</div>
+              <div class="image"><i class="icon grunticon-action-outgoing"></i></div>
+            </div>
+          </a>
+        {if:else}
         <div class="media">
         	<div class="image">
         	  <i class="icon grunticon-meta-{slug}"></i>
@@ -10,9 +19,9 @@
         	  <div class="header">{name}</div>
         	  
         	  <ul class="links tightened">
-        	    {if {exp:stash:list_count name="{stash:list}_{name}"}}
+        	    {if {exp:stash:list_count name="{stash:list}_{slug}"}}
                 
-                {exp:stash:get_list:nested name="{stash:list}_{name}" prefix="nested"}
+                {exp:stash:get_list:nested name="{stash:list}_{slug}" prefix="nested"}
                   <li class="item">
                     {if nested:link}
                       <a href="{nested:link}">{nested:text}</a>
@@ -34,7 +43,9 @@
         	  </ul>
         	</div>
         </div>
+        {/if}
       </li>
     {/exp:stash:get_list}
   </ul>
 </div>
+{/if}
