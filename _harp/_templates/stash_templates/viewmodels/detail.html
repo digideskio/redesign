@@ -37,7 +37,6 @@
 	
 	{exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
 	{exp:stash:set name="layout_deck_date_w3c"}{entry_date format="{DATE_W3C}"}{/exp:stash:set}
-	{exp:stash:set name="layout_deck_author"}{encode="{email}" title="{author}"}{/exp:stash:set}
 	
 	{!-- Primary body content --}
 	{exp:stash:set name="layout_copy" match="#\S#"}
@@ -177,6 +176,7 @@
 	  {/case}
 	  
 	  {case value="blog"}
+      {exp:stash:set name="layout_deck_author"}{encode="{email}" title="{author}"}{/exp:stash:set}
 	  {/case} {!-- /blog --}
 	  
 	  
@@ -201,13 +201,20 @@
       {exp:stash:set_list name="layout_tags" parse_conditionals="yes"}
         {if entry_date > current_time}
           {stash:text}Upcoming{/stash:text}
-          {stash:class}warning{/stash:class}        
+          {stash:icon}tag-upcoming{/stash:icon}
+          {stash:class}info{/stash:class}        
         {/if}
         {if expiration_date != "0" && expiration_date < current_time}
           {stash:text}Video coming soon{/stash:text}
           {stash:class}success{/stash:class}
-        {/if}
+        {/if}      
       {/exp:stash:set_list}
+      
+      {exp:stash:prepend_list name="layout_tags" parse_tags="yes"}
+        {stash:text}{channel}{/stash:text}
+        {stash:icon}channel-{exp:stringy:slug separator="-" case="lower"}{channel}{/exp:stringy:slug}{/stash:icon}
+        {stash:href}{structure:parent:uri}{/stash:href}
+      {/exp:stash:prepend_list}
 	  {/case}
 	  
 	{/exp:switchee}
