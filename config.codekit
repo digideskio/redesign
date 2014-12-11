@@ -934,6 +934,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/partials\/notice.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/partials\/notice.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/partials\/relationships.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -966,6 +975,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/detail.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail_sequence_simple.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/detail_sequence_simple.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1365,6 +1383,127 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/apple-touch-icon-114x114.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1484,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-114x114.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-114x114.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-120x120.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1522,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-120x120.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-120x120.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-144x144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1790,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-144x144.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-144x144.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-152x152.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1824,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-152x152.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-152x152.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-180x180.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2058,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-180x180.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-180x180.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-57x57.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 911,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-57x57.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-57x57.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-60x60.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 919,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-60x60.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-60x60.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-72x72.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1035,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-72x72.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-72x72.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-76x76.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1072,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-76x76.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-76x76.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon-precomposed.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2595,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon-precomposed.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon-precomposed.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/apple-touch-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2058,
+		"inputAbbreviatedPath": "\/_harp\/apple-touch-icon.png",
+		"outputAbbreviatedPath": "\/_harp\/apple-touch-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/_harp\/assets\/bower_components\/html5shiv\/dist\/html5shiv-printshiv.js": {
 		"fileType": 64,
@@ -4349,90 +4488,90 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-article.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-articles.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 400,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-article.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-article.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-articles.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-articles.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-podcast.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-podcasts.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 769,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-podcast.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-podcast.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-podcasts.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-podcasts.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-presentation.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-presentations.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 553,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-presentation.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-presentation.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-presentations.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-presentations.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-tool.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-tools.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 584,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-tool.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-tool.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-tools.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-tools.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-tutorial.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-tutorials.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1133,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-tutorial.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-tutorial.png",
+		"initialSize": 691,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-tutorials.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-tutorials.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-video.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-videos.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 631,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-video.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-video.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-videos.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-videos.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-website.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-websites.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 726,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-website.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-website.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-websites.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-websites.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-whitepaper.png": {
+	"\/_harp\/assets\/icons\/_grunticon\/png\/channel-whitepapers.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 375,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-whitepaper.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-whitepaper.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-whitepapers.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/channel-whitepapers.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4910,6 +5049,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/search.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 687,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/search.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/search.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/sextant-backToTop.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -5175,90 +5325,90 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/channel-article.png": {
+	"\/_harp\/assets\/icons\/build\/png\/channel-articles.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 363,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-article.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-article.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-articles.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-articles.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/channel-podcast.png": {
+	"\/_harp\/assets\/icons\/build\/png\/channel-podcasts.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 560,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-podcast.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-podcast.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-podcasts.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-podcasts.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/channel-presentation.png": {
+	"\/_harp\/assets\/icons\/build\/png\/channel-presentations.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 516,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-presentation.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-presentation.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-presentations.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-presentations.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/channel-tool.png": {
+	"\/_harp\/assets\/icons\/build\/png\/channel-tools.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 547,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-tool.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-tool.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-tools.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-tools.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/channel-tutorial.png": {
+	"\/_harp\/assets\/icons\/build\/png\/channel-tutorials.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 577,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-tutorial.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-tutorial.png",
+		"initialSize": 544,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-tutorials.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-tutorials.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/channel-video.png": {
+	"\/_harp\/assets\/icons\/build\/png\/channel-videos.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 431,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-video.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-video.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-videos.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-videos.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/channel-website.png": {
+	"\/_harp\/assets\/icons\/build\/png\/channel-websites.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 689,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-website.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-website.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-websites.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-websites.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/_harp\/assets\/icons\/build\/png\/channel-whitepaper.png": {
+	"\/_harp\/assets\/icons\/build\/png\/channel-whitepapers.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 297,
-		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-whitepaper.png",
-		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-whitepaper.png",
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-whitepapers.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/channel-whitepapers.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -5732,6 +5882,17 @@
 		"initialSize": 783,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/previous.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/previous.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/build\/png\/search.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 378,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/search.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/search.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -6339,6 +6500,66 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/components\/breadcrumbs.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/components\/breadcrumbs.md",
+		"outputAbbreviatedPath": "\/_harp\/components\/breadcrumbs.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/components\/buttons.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/components\/buttons.md",
+		"outputAbbreviatedPath": "\/_harp\/components\/buttons.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/components\/cards.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/components\/cards.md",
+		"outputAbbreviatedPath": "\/_harp\/components\/cards.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/components\/css-architecture.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/components\/css-architecture.md",
+		"outputAbbreviatedPath": "\/_harp\/components\/css-architecture.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/components\/fast-page-loading.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/components\/fast-page-loading.md",
+		"outputAbbreviatedPath": "\/_harp\/components\/fast-page-loading.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/components\/index.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -6349,6 +6570,73 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
+		},
+	"\/_harp\/components\/reset.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/_harp\/components\/reset.md",
+		"outputAbbreviatedPath": "\/_harp\/components\/reset.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/favicon-160x160.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2326,
+		"inputAbbreviatedPath": "\/_harp\/favicon-160x160.png",
+		"outputAbbreviatedPath": "\/_harp\/favicon-160x160.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/favicon-16x16.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 526,
+		"inputAbbreviatedPath": "\/_harp\/favicon-16x16.png",
+		"outputAbbreviatedPath": "\/_harp\/favicon-16x16.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/favicon-192x192.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2811,
+		"inputAbbreviatedPath": "\/_harp\/favicon-192x192.png",
+		"outputAbbreviatedPath": "\/_harp\/favicon-192x192.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/favicon-32x32.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 766,
+		"inputAbbreviatedPath": "\/_harp\/favicon-32x32.png",
+		"outputAbbreviatedPath": "\/_harp\/favicon-32x32.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/favicon-96x96.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1544,
+		"inputAbbreviatedPath": "\/_harp\/favicon-96x96.png",
+		"outputAbbreviatedPath": "\/_harp\/favicon-96x96.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/_harp\/Gruntfile.js": {
 		"fileType": 64,
@@ -6407,6 +6695,61 @@
 		"outputAbbreviatedPath": "\/_harp\/javascript\/utilities.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/mstile-144x144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1920,
+		"inputAbbreviatedPath": "\/_harp\/mstile-144x144.png",
+		"outputAbbreviatedPath": "\/_harp\/mstile-144x144.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/mstile-150x150.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1596,
+		"inputAbbreviatedPath": "\/_harp\/mstile-150x150.png",
+		"outputAbbreviatedPath": "\/_harp\/mstile-150x150.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/mstile-310x150.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1648,
+		"inputAbbreviatedPath": "\/_harp\/mstile-310x150.png",
+		"outputAbbreviatedPath": "\/_harp\/mstile-310x150.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/mstile-310x310.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3327,
+		"inputAbbreviatedPath": "\/_harp\/mstile-310x310.png",
+		"outputAbbreviatedPath": "\/_harp\/mstile-310x310.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/mstile-70x70.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1307,
+		"inputAbbreviatedPath": "\/_harp\/mstile-70x70.png",
+		"outputAbbreviatedPath": "\/_harp\/mstile-70x70.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/_harp\/posts\/cruft.md": {
 		"enableFootnoteSupport": 0,
@@ -7171,6 +7514,127 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
+	"\/apple-touch-icon-114x114.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1484,
+		"inputAbbreviatedPath": "\/apple-touch-icon-114x114.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-114x114.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-120x120.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1522,
+		"inputAbbreviatedPath": "\/apple-touch-icon-120x120.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-120x120.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-144x144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1790,
+		"inputAbbreviatedPath": "\/apple-touch-icon-144x144.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-144x144.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-152x152.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1824,
+		"inputAbbreviatedPath": "\/apple-touch-icon-152x152.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-152x152.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-180x180.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2058,
+		"inputAbbreviatedPath": "\/apple-touch-icon-180x180.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-180x180.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-57x57.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 911,
+		"inputAbbreviatedPath": "\/apple-touch-icon-57x57.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-57x57.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-60x60.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 919,
+		"inputAbbreviatedPath": "\/apple-touch-icon-60x60.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-60x60.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-72x72.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1035,
+		"inputAbbreviatedPath": "\/apple-touch-icon-72x72.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-72x72.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-76x76.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1072,
+		"inputAbbreviatedPath": "\/apple-touch-icon-76x76.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-76x76.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon-precomposed.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2595,
+		"inputAbbreviatedPath": "\/apple-touch-icon-precomposed.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-precomposed.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/apple-touch-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2058,
+		"inputAbbreviatedPath": "\/apple-touch-icon.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/css\/build\/base.min.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -7815,6 +8279,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/icons\/build\/png\/search.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 378,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/search.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/search.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/icons\/build\/png\/sextant-backToTop.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -7848,13 +8323,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/social-googleplus.png": {
+	"\/assets\/icons\/build\/png\/social-google.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 754,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-googleplus.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-googleplus.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-google.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-google.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -7866,6 +8341,17 @@
 		"initialSize": 384,
 		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-linkedin.png",
 		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-linkedin.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/icons\/build\/png\/social-rss.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1045,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-rss.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/social-rss.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -7936,15 +8422,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/preview.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/preview.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/assets\/js\/build\/base.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -7998,6 +8475,61 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/favicon-160x160.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2326,
+		"inputAbbreviatedPath": "\/favicon-160x160.png",
+		"outputAbbreviatedPath": "\/favicon-160x160.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/favicon-16x16.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 526,
+		"inputAbbreviatedPath": "\/favicon-16x16.png",
+		"outputAbbreviatedPath": "\/favicon-16x16.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/favicon-192x192.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2811,
+		"inputAbbreviatedPath": "\/favicon-192x192.png",
+		"outputAbbreviatedPath": "\/favicon-192x192.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/favicon-32x32.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 766,
+		"inputAbbreviatedPath": "\/favicon-32x32.png",
+		"outputAbbreviatedPath": "\/favicon-32x32.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/favicon-96x96.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1544,
+		"inputAbbreviatedPath": "\/favicon-96x96.png",
+		"outputAbbreviatedPath": "\/favicon-96x96.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -8033,6 +8565,61 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/mstile-144x144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1920,
+		"inputAbbreviatedPath": "\/mstile-144x144.png",
+		"outputAbbreviatedPath": "\/mstile-144x144.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/mstile-150x150.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1596,
+		"inputAbbreviatedPath": "\/mstile-150x150.png",
+		"outputAbbreviatedPath": "\/mstile-150x150.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/mstile-310x150.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1648,
+		"inputAbbreviatedPath": "\/mstile-310x150.png",
+		"outputAbbreviatedPath": "\/mstile-310x150.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/mstile-310x310.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3327,
+		"inputAbbreviatedPath": "\/mstile-310x310.png",
+		"outputAbbreviatedPath": "\/mstile-310x310.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/mstile-70x70.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1307,
+		"inputAbbreviatedPath": "\/mstile-70x70.png",
+		"outputAbbreviatedPath": "\/mstile-70x70.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/posts\/cruft.html": {
 		"fileType": 8192,

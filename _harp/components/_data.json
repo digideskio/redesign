@@ -1,5 +1,30 @@
 {
   "index": {
     "title": "CSS Components"
+  },
+  "css-architecture": {
+    "title": "CSS/SCSS Architecture"
+  },
+  "fast-page-loading": {
+    "title": "Loading CSS and JavaScript"
+  },
+  "icons": {
+    "title": "Icons"
+  },
+  "grid": {
+    "title": "The grid"
+  },
+  "reset": {
+    "title": "Reset/Normalize"
+  },
+  "breadcrumbs": {
+    "title": "Breadcrumbs"
+  },
+  "buttons": {
+    "title": "Buttons"
+  },
+  "cards": {
+    "title": "Cards"
   }
+
 }
