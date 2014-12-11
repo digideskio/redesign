@@ -6,13 +6,16 @@
     "title": "CSS/SCSS Architecture"
   },
   "fast-page-loading": {
-    "title": "Loading CSS and JavaScript"
+    "title": "Loading CSS and JavaScript",
+    "draft": "true"
   },
   "icons": {
-    "title": "Icons"
+    "title": "Icons",
+    "draft": "true"
   },
   "grid": {
-    "title": "The grid"
+    "title": "The grid",
+    "draft": "true"
   },
   "reset": {
     "title": "Reset/Normalize"
@@ -24,7 +27,8 @@
     "title": "Buttons"
   },
   "cards": {
-    "title": "Cards"
+    "title": "Cards",
+    "draft": "true"
   }
 
 }
