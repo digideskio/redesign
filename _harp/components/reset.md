@@ -1,6 +1,6 @@
 ### [`_base/_reset.scss`](https://github.com/OSLC/redesign/blob/gh-pages/_harp/assets/css/_base/_reset.scss)
 
-This is a heavily modified version of [normalize.css](http://necolas.github.io/normalize.css/) by Nicolas Gallagher and Jonathan Neal.
+This is a lightly modified version of [normalize.css](http://necolas.github.io/normalize.css/) by Nicolas Gallagher and Jonathan Neal.
 
 It smooths out many differences in default browser rendering.
 
