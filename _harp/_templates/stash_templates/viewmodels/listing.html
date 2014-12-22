@@ -1,13 +1,13 @@
 {stash:embed:layouts:{stash:_layout}}
 
-{exp:switchee variable="{stash:_listing_style}" parse="inward"}
+{exp:switchee variable="stash:_listing_style" parse="inward"}
   {case value="cards"}
     {exp:stash:extend name="layout_listing" with="partials:listing_cards"}
     {exp:stash:extend name="layout_bartender" with="partials:bartender"}
   {/case}
 {/exp:switchee}
 
-{exp:switchee variable="{stash:_type}" parse="inward"}
+{exp:switchee variable="stash:_type" parse="inward"}
   {case value="tagged"}
     {exp:stash:set name="layout_headtitle"}
     All content tagged &ldquo;{exp:tag:tag_name websafe_separator="-"}{segment_2}{/exp:tag:tag_name}&rdquo;
@@ -28,6 +28,7 @@
 {exp:channel:entries
   require_entry="yes"
   dynamic="off"
+  parse="inward"
   
   {if structure:child_listing:short_name != ''}
     channel="{structure:child_listing:short_name}"
@@ -36,7 +37,7 @@
     entry_id="{stash:_listing_ids}"
   {/if}
   
-  disable="{global:disable_default}"
+  {global:disable_default}
   {if stash:_disable != ''}
     disable="{stash:_disable}"
   {/if}
@@ -47,6 +48,8 @@
     paginate="bottom"
   {/if}
   
+  {stash:_listing_extra_params}
+  
 }
   {if no_results}{redirect="404"}{/if}
   
@@ -54,15 +57,40 @@
     {stash:channel_slug}{channel_short_name}{/stash:channel_slug}
     {stash:url}{page_url}{/stash:url}
     {stash:title}{title}{/stash:title}
+    {stash:entry_id}{entry_id}{/stash:entry_id}
+    {stash:hook}{channel_short_name}_{url_title}{/stash:hook}
     
     {stash:date}{entry_date format="{lv-blogdateformat}"}{/stash:date}
     {stash:date_w3c}{entry_date format="{DATE_W3C}"}{/stash:date_w3c}
     {stash:date_epoch}{entry_date format="%U"}{/stash:date_epoch}
+
+    {stash:summary}
+      {if cf-resource-cv-videos}
+        {exp:channel_videos:videos entry_id="{entry_id}" limit="1"}
+          <em>Description from {video:service}</em>: {video:description}
+        {/exp:channel_videos:videos}
+      {if:else}
+        {cf-blog-w-summary}{!-- blog --}
+        {cf-tut-w-description}{!-- tutorial --}
+        {cf-resource-w-desc}{!-- most other resources --}
+      {/if}
+    {/stash:summary}
     
-    {stash:author_link}{encode="{email}" title="{author}"}{/stash:author_link}
-    {stash:author}{author}{/stash:author}
+    {exp:switchee variable="{channel_short_name}" parse="inward"}
+      {case value="blog"}
+        {stash:author_link}{encode="{email}" title="{author}"}{/stash:author_link}
+        {stash:author}{author}{/stash:author}
+      {/case}
+    {/exp:switchee}
     
-    {stash:summary}{cf-blog-w-summary}{/stash:summary}
+    {exp:stash:set_list:tags name="tags_{entry_id}" parse_tags="yes" parse_conditionals="yes"}
+      {if channel_short_name == "resource_presentations" && entry_date > current_time}
+        {stash:text}Upcoming{/stash:text}
+        {stash:icon}tag-upcoming{/stash:icon}
+        {stash:class}info{/stash:class}        
+      {/if}
+    {/exp:stash:set_list:tags}
+    
   {/exp:stash:append_list}
   
   {paginate}
@@ -85,3 +113,8 @@
   {/paginate}
   
 {/exp:channel:entries}
+
+{!-- Sign-up for presentations --}
+{exp:stash:append name="layout_listing_description" match="#resource_presentations#" against="{structure:child_listing:short_name}"}
+  {exp:stash:embed:partials:notice stash:notice_type="tip" stash:notice_body='    Want to receive an email when we announce more presentations? <a href="{structure:page_url_for:146}" class="btn">Sign up here!</a>'}
+{/exp:stash:append}

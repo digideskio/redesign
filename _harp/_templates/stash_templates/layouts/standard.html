@@ -87,22 +87,7 @@
             {if {exp:stash:list_count name="layout_tags"} > 0 }
               <div class="column hand-full knee-major">
                 <div class="tags">
-                  {exp:stash:get_list name="layout_tags"}
-                    {if href}
-                    <a href="{href}" rel="tag" class="tag{if class} {class}{/if}">
-                    {if:else}
-                    <span class="tag{if class} {class}{/if}">
-                    {/if}
-                    {if icon}
-                      <div class="flag">
-                      	<div class="image"><i class="icon grunticon-{icon}"></i></div>
-                      	<div class="body">{text}</div>
-                      </div>
-                    {if:else}
-                    {text}
-                    {/if}
-                    {if href}</a>{if:else}</span>{/if}
-                  {/exp:stash:get_list}
+                  {stash:embed:partials:tags stash:list="layout_tags"}
                 </div>
               </div>
             {/if}

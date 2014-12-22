@@ -1,0 +1,20 @@
+{exp:stash:get_list name="{stash:list}"}
+  {if href}
+  <a href="{href}" rel="tag" class="tag{if class} {class}{/if}">
+  {if:else}
+  <span class="tag{if class} {class}{/if}">
+  {/if}
+    {if icon}
+      <div class="flag">
+        <div class="image"><i class="icon grunticon-{icon}"></i></div>
+        <div class="body">{text}</div>
+      </div>
+    {if:else}
+    {text}
+    {/if}
+  {if href}
+  </a>
+  {if:else}
+  </span>
+  {/if}
+{/exp:stash:get_list}
