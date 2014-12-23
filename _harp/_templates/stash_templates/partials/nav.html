@@ -1,5 +1,5 @@
 <nav id="nav" role="navigation" 
-  class="nav"
+  class="nav{if {exp:stash:not_empty name='layout_secondary_nav'}} has-secondary{/if}"
 >
   {!-- Whirligig controls will go here --}
   {!-- Window wrapper will go here --}
@@ -50,5 +50,22 @@
       
       </div> {!-- /.menu --}
     </div>{!-- /#main_menu --}
+    
+    {if {exp:stash:not_empty name="layout_secondary_nav"}}
+    <div id="secondary_menu" class="panel">
+      <div class="menu secondary inverted structured" data-prospectus data-manage-focus="false">
+        <ul class="items">
+          {if {exp:stash:not_empty name="layout_secondary_nav_title"}}
+          <li role="presentation">
+            <span class="item heading">{exp:stash:layout_secondary_nav_title}</span>
+          </li>
+          {/if}
+
+          {exp:stash:layout_secondary_nav}
+
+        </ul>
+      </div>
+    </div>
+    {/if}
   </div>{!-- /.panels --}
 </nav>

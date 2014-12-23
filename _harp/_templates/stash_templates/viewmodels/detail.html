@@ -2,6 +2,7 @@
 
 {exp:channel:entries
 	entry_id="{structure:page:entry_id}"
+  parse="inward"
 	show_future_entries="yes"
   show_expired="yes"
 	status="{stash:_status}"
@@ -10,7 +11,7 @@
     disable="{stash:_disable}"
   {/if}
   require_entry="yes"
-  parse="inward"
+
 }
 
 	{if no_results}{redirect="404"}{/if}
@@ -63,6 +64,15 @@
     {if:else}
       {cf-resource-w-desc}
     {/if}
+    
+    {!-- Tutorial --}
+    {if cf-tut-w-body}
+      {if cf-tut-m-altversions} 
+        <p>(<i>Download as {cf-tut-m-altversions}{if row_count > 1 && row_count == total_rows} or {/if}<a href="{altfile}">{altdescription}</a>{if row_count != total_rows && total_rows != 2},{/if}{/cf-tut-m-altversions}.</i>)</p>
+      {/if}
+      {cf-tut-w-body}
+    {/if}
+    {if cf-tutpage-w-body}{cf-tutpage-w-body}{/if}
     
 	{/exp:stash:set}{!-- /layout_copy --}
 	
@@ -224,6 +234,43 @@
 {if {stash:_sequence}}
   {stash:embed:viewmodels:detail_sequence_simple}
 {/if}
+
+{exp:switchee variable="stash:_type" parse="inward" match="all"}
+
+  {!-- Tutorials require more data re: the overview topic and secondary menu --}
+  {case value="tutorial"}
+    {exp:channel:entries
+      url_title="{segment_3}"
+      limit="1"
+      dynamic="off"}
+      {!-- 
+        Override headtitle to include the overview title 
+        The match/against here will hit only for child pages (segment_4 not empty)
+        http://stackoverflow.com/questions/4448829/regular-expression-for-not-empty
+      --}
+      {exp:stash:set name="layout_headtitle" match="#^(?=\s*\S).*$#" against="{segment_4}"}
+        {structure:page:title} - {title}
+      {/exp:stash:set}
+      
+      {exp:stash:set name="layout_secondary_nav_title"}{title}{/exp:stash:set}
+
+    {/exp:channel:entries}
+    
+    {exp:stash:set name="layout_secondary_nav"}
+      {exp:structure:nav
+        start_from="/{segment_1}/{segment_2}/{segment_3}/" 
+        show_depth="5"
+        show_overview="yes" 
+        rename_overview="{lv-tutoverviewtext-en}"
+        recursive_overview="no"
+        current_class="current"
+        include_ul="no"
+      }
+    {/exp:stash:set}
+    
+  {/case}
+
+{/exp:switchee}
 
 {exp:tag:tags 
   entry_id="{structure:page:entry_id}"

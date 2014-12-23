@@ -52,7 +52,7 @@
     
     <div class="sticky-footer-body off-canvas-wrap">
       
-      <main id="main" role="main" class="main">
+      <main id="main" role="main" class="main{if {exp:stash:not_empty name='layout_secondary_nav'}} has-secondary{/if}">
         
         <header class="header">
           {if structure:page:entry_id || {exp:stash:not_empty name="layout_breadcrumbs"} }

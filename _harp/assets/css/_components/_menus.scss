@@ -1,11 +1,12 @@
 .menu {
   
-  .items {
+  .items,
+  &.structured ul {
     @extend %list-reset;
   }
   
   .item,
-  // structure does not let you assign classes to the LI or A elements :(
+  // exp:structure does not let you assign classes to the LI or A or nested UL elements :(
   &.structured a {
     @include rem(padding, $font-size-xs $font-size-m/2);
     display: block;
@@ -59,20 +60,24 @@
     letter-spacing: 1px;
   }
 
-  .has-children .items .item {
+  .has-children .items .item,
+  &.structured .has-children ul a {
     padding-left: $font-size-l;
   }
   
   &.inverted {
     background-color: $secondary-menu-bg;
     
-    .item { color: palette(gray,x-light); }
+    .item,
+    &.structured a { 
+      color: palette(gray,x-light); 
+    }
     
-    .item a:hover,
-    .item a:focus,
-    a.item:hover,
-    a.item:focus {
-      background-color: lighten( $secondary-menu-bg, 4% );
+    .item a,
+    a.item,
+    &.structured a
+    {
+      &:hover, &:focus { background-color: lighten( $secondary-menu-bg, 4% ); }
     }
 
     .current a,
