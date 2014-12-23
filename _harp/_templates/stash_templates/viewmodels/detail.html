@@ -256,6 +256,8 @@
 
     {/exp:channel:entries}
     
+    {exp:stash:set name="layout_secondary_nav_short_title"}Tutorial{/exp:stash:set}
+    
     {exp:stash:set name="layout_secondary_nav"}
       {exp:structure:nav
         start_from="/{segment_1}/{segment_2}/{segment_3}/" 
@@ -265,6 +267,7 @@
         recursive_overview="no"
         current_class="current"
         include_ul="no"
+        has_children_class="yes"
       }
     {/exp:stash:set}
     

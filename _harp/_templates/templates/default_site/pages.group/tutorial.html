@@ -9,17 +9,6 @@
   stash:_status="open"
 }
 
-{!-- 
-	Determine whether or not this is the overview and store a slug for your custom variables
-	This saves some processing over Stash or (especially) an Embed, which is awesome.
-	http://gotolow.com/blog/snippets-and-preload-replace-variables 
---}
-{if structure:page:channel_short_name == "tutorial_page"}
-	{preload_replace:tutbodyfieldslug="tutpage"}
-{/if}
-{preload_replace:tutbodyfieldslug="tut"}
-
-{preload_replace:tut_parent_slug="{segment_3}"}
 {preload_replace:tut_parent_uri="/{segment_1}/{segment_2}/{segment_3}/"}
 {preload_replace:first_child_page_slug="{segment_4}"}
 {preload_replace:overview_text="{lv-tutoverviewtext-en}"}
@@ -27,38 +16,11 @@
 
 {exp:stash:set name="main_content"}
 	<div class="line">
-		<div class="unit size1of4" id="tutorial-nav" property="dc:tableOfContents" role="navigation">
-			
-			{!-- Don't bother with an AJAX request --}
-			{if not_ajax}
-				{exp:structure:nav 
-					start_from="{tut_parent_uri}" 
-					show_depth="5"
-					show_overview="yes" 
-					rename_overview="{overview_text}"
-					recursive_overview="no"
-					css_class="mhn pln pvm mvn tutorial-nav"
-					css_id="tutorial_navigation"
-					add_level_classes="yes"
-					has_children_class="yes"
-					current_class="active"
-				}
-			{/if}
-		</div>
 		
 		<div class="unit lastUnit">
 			
 			<div class="tutorial-body gutter body-text contain fixWebkitText">
-				
-				{!-- ID here for grabbing the content --}
-				<div id="tutorial-body" role="main">
-					{if {exp:stash:not_empty name="tutorial_section_title"}}
-						<h2 class="h2 bodytitle">{exp:stash:get name="tutorial_section_title"}</h2>
-					{/if}
-					
-					{exp:stash:get name="tutorial_body"}				
-				</div>
-				
+								
 				<div class="mvl tutorial-nav-buttons">
 					
 					{!-- ID here for grabbing the content --}

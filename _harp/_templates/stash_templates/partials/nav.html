@@ -1,8 +1,22 @@
 <nav id="nav" role="navigation" 
-  class="nav{if {exp:stash:not_empty name='layout_secondary_nav'}} has-secondary{/if}"
+  {if {exp:stash:not_empty name='layout_secondary_nav'}}
+  class="nav has-secondary" data-whirligig  
+  {if:else}
+  class="nav"
+  {/if}
 >
-  {!-- Whirligig controls will go here --}
-  {!-- Window wrapper will go here --}
+  
+  {if {exp:stash:not_empty name='layout_secondary_nav'}}
+  <div class="controls hand-only enhanced-only">
+    <div class="tabs">
+      <a href="#main_menu" class="tab">Main</a>
+      <a href="#secondary_menu" class="tab active">{exp:stash:layout_secondary_nav_short_title}</a>
+    </div>
+  </div>
+  
+  <div class="window">
+  {/if}
+
   <div class="panels">
     <div id="main_menu" class="panel">
       <div class="menu primary structured" data-prospectus data-manage-focus="false">
@@ -53,7 +67,7 @@
     
     {if {exp:stash:not_empty name="layout_secondary_nav"}}
     <div id="secondary_menu" class="panel">
-      <div class="menu secondary inverted structured" data-prospectus data-manage-focus="false">
+      <div class="menu secondary inverted structured" data-prospectus data-manage-focus="false" property="dc:tableOfContents">
         <ul class="items">
           {if {exp:stash:not_empty name="layout_secondary_nav_title"}}
           <li role="presentation">
@@ -68,4 +82,9 @@
     </div>
     {/if}
   </div>{!-- /.panels --}
+
+  {if {exp:stash:not_empty name='layout_secondary_nav'}}
+  </div>
+  {/if}
+
 </nav>
