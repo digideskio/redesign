@@ -80,8 +80,8 @@
       &:hover, &:focus { background-color: lighten( $secondary-menu-bg, 4% ); }
     }
 
-    .current a,
-    .current {
+    .current > a,
+    a.current {
       background-color: darken( $secondary-menu-bg, 6%) !important;
     }
     

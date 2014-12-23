@@ -1327,8 +1327,8 @@ html {
   .menu.inverted a.item:hover,
   .menu.inverted a.item:focus, .menu.inverted.structured a:hover, .menu.inverted.structured a:focus {
     background-color: #4e4e4e; }
-  .menu.inverted .current a,
-  .menu.inverted .current {
+  .menu.inverted .current > a,
+  .menu.inverted a.current {
     background-color: #353535 !important; }
   .menu.inverted .heading {
     border-bottom: 1px solid #657e44; }

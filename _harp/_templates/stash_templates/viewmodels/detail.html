@@ -68,7 +68,7 @@
     {!-- Tutorial --}
     {if cf-tut-w-body}
       {if cf-tut-m-altversions} 
-        <p>(<i>Download as {cf-tut-m-altversions}{if row_count > 1 && row_count == total_rows} or {/if}<a href="{altfile}">{altdescription}</a>{if row_count != total_rows && total_rows != 2},{/if}{/cf-tut-m-altversions}.</i>)</p>
+        <p>(<i>Download as {cf-tut-m-altversions}{if row_count > 1 && total_rows == 2}&nbsp;or&nbsp;{/if}<a href="{altfile}">{altdescription}</a>{if row_count != total_rows && total_rows != 2},{/if}{/cf-tut-m-altversions}.</i>)</p>
       {/if}
       {cf-tut-w-body}
     {/if}
@@ -257,6 +257,13 @@
     {/exp:channel:entries}
     
     {exp:stash:set name="layout_secondary_nav_short_title"}Tutorial{/exp:stash:set}
+    
+    {exp:stash:append name="layout_copy"}
+      {exp:stash:embed:partials:notice 
+        stash:notice_type="tip" 
+        stash:notice_title="Any problems?"
+        stash:notice_body='{lv-tutorialAnyProblems-en}' }
+    {/exp:stash:append}
     
     {exp:stash:set name="layout_secondary_nav"}
       {exp:structure:nav

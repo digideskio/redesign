@@ -7,57 +7,5 @@
   stash:_type="tutorial"
   stash:_layout="standard"
   stash:_status="open"
+  stash:_sequence="true"
 }
-
-{preload_replace:tut_parent_uri="/{segment_1}/{segment_2}/{segment_3}/"}
-{preload_replace:first_child_page_slug="{segment_4}"}
-{preload_replace:overview_text="{lv-tutoverviewtext-en}"}
-
-
-{exp:stash:set name="main_content"}
-	<div class="line">
-		
-		<div class="unit lastUnit">
-			
-			<div class="tutorial-body gutter body-text contain fixWebkitText">
-								
-				<div class="mvl tutorial-nav-buttons">
-					
-					{!-- ID here for grabbing the content --}
-					<div id="tutorial-nav-buttons" class="clearfix">
-					
-						{exp:ljr_structure_hierarchy_siblings 
-							start_from="{tut_parent_uri}" 
-							show_overview="yes"
-							rename_overview="{overview_text}"}
-							
-								{prev}
-									<a class="button mbl unit tutorial-prev" title="Go to {title}" href="{url}">{lv-tutorial-previouslink-en} {title}</a>
-								{/prev}
-								
-								{next}
-									<a class="button mbl unitRight tutorial-next" title="Go to {title}" href="{url}">{lv-tutorial-nextlink-en} {title}</a>			
-								{/next}
-							
-						{/exp:ljr_structure_hierarchy_siblings}
-											
-					</div>
-																					
-				</div>
-				
-				<div class="body-text">
-					<div class="callout-box size3of5">
-						{lv-tutorialAnyProblems-en}
-					
-					</div>
-				</div>
-				
-				
-			
-			</div>
-			
-			
-		</div>		
-						
-	</div>
-{/exp:stash:set}
