@@ -86,5 +86,6 @@ OSLC.supportsTransitions = Modernizr && "csstransitions" in Modernizr && Moderni
 // @codekit-append "./modules/oslc.manilla.js";
 // @codekit-append "./modules/oslc.nag.js";
 // @codekit-append "./modules/oslc.compactor.js";
+// @codekit-append "./modules/oslc.showmore.js";
 // @codekit-append "./modules/oslc.doubtfire.js";
 // @codekit-append "./modules/oslc.onelastthing.js";

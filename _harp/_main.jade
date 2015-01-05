@@ -63,7 +63,7 @@ main#main(role="main", class="main #{has_secondary ? 'has-secondary' : ''}")
               header.header
                 h3.title Related #{relationship}
               section.content
-                ul.links
+                ul.links(data-showmore)
                   for item in items
                     li.item
                       a(href="#{item.url || '#'}") #{item.title || item}

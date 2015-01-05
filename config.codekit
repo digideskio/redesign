@@ -970,6 +970,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/partials\/tags.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/partials\/tags.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -2972,6 +2981,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/css\/_components\/_sextant.scss",
 		"outputAbbreviatedPath": "\/_harp\/assets\/css\/css\/_sextant.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_harp\/assets\/css\/_components\/_showmore.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/css\/_components\/_showmore.scss",
+		"outputAbbreviatedPath": "\/_harp\/assets\/css\/css\/_showmore.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -6467,6 +6492,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/assets\/js\/modules\/oslc.showmore.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.showmore.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.showmore-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/js\/modules\/oslc.softwareDendogram.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -7718,90 +7754,90 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/channel-article.png": {
+	"\/assets\/icons\/build\/png\/channel-articles.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 363,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-article.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-article.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-articles.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-articles.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/channel-podcast.png": {
+	"\/assets\/icons\/build\/png\/channel-podcasts.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 560,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-podcast.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-podcast.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-podcasts.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-podcasts.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/channel-presentation.png": {
+	"\/assets\/icons\/build\/png\/channel-presentations.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 516,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-presentation.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-presentation.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-presentations.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-presentations.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/channel-tool.png": {
+	"\/assets\/icons\/build\/png\/channel-tools.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 547,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-tool.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-tool.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-tools.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-tools.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/channel-tutorial.png": {
+	"\/assets\/icons\/build\/png\/channel-tutorials.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 544,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-tutorial.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-tutorial.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-tutorials.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-tutorials.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/channel-video.png": {
+	"\/assets\/icons\/build\/png\/channel-videos.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 431,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-video.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-video.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-videos.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-videos.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/channel-website.png": {
+	"\/assets\/icons\/build\/png\/channel-websites.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 689,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-website.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-website.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-websites.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-websites.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/assets\/icons\/build\/png\/channel-whitepaper.png": {
+	"\/assets\/icons\/build\/png\/channel-whitepapers.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 297,
-		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-whitepaper.png",
-		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-whitepaper.png",
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-whitepapers.png",
+		"outputAbbreviatedPath": "\/assets\/icons\/build\/png\/channel-whitepapers.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -8422,6 +8458,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/icons\/build\/preview.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/icons\/build\/preview.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/assets\/js\/build\/base.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -8466,11 +8511,65 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/components\/breadcrumbs.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/breadcrumbs.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/buttons.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/buttons.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/cards.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/cards.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/css-architecture.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/css-architecture.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/fast-page-loading.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/fast-page-loading.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/components\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/components\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/reset.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/reset.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -8529,6 +8628,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
+		},
+	"\/Gruntfile.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/Gruntfile.js",
+		"outputAbbreviatedPath": "\/min\/Gruntfile-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/index.html": {
 		"fileType": 8192,

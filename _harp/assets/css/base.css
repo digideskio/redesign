@@ -20,7 +20,7 @@
 }
 */
 .copy-spacing, .copy > table, .copy > .fluid-video, .copy > ul,
-.copy > ol, .copy > p, .copy > blockquote, .copy pre, .copy > .notice, .copy >
+.copy > ol, .copy > p, .copy > blockquote, .copy > figure, .copy pre, .copy > .notice, .copy >
 .callout, .copy >
 .callout-box, .copy >
 .tip {
@@ -1277,6 +1277,14 @@ html {
     padding-left: 1em; }
   .copy img {
     border: 2px solid #ccc; }
+  .copy > figure > img {
+    margin-bottom: 5px;
+    margin-bottom: 0.3125rem; }
+  .copy figcaption {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 1.23077;
+    font-style: italic; }
   .copy pre, .copy code, .copy tt {
     font-family: monospace;
     white-space: pre;

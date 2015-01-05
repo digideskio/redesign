@@ -198,7 +198,19 @@
   img {
     border: 2px solid palette(gray, light);
   }
-      
+  
+  > figure {
+    @extend %copy-margins;
+    
+    > img {
+      @include rem(margin-bottom, 5px);
+    }
+  }
+  
+  figcaption {
+    @include font-size(s,m);
+    font-style: italic;
+  }
   
   // www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/
   pre, code, tt {

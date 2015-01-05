@@ -1,0 +1,13 @@
+.showmore {
+  @include inline-block;
+  @include font-size(s,1);
+  font-weight: bold;
+  padding: 0 4px 3px;
+  color: #000 !important;
+  text-decoration: none;
+  background-color: palette(gray, mid-light);
+
+  &:hover {
+    background-color: palette(gray, light);
+  }
+}
