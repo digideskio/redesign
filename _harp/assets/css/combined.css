@@ -1513,17 +1513,17 @@ a.gsst_a:focus {
     font-size: 11px;
     font-weight: bold;
     padding: 4px; }
-  .tag.success, .tag.Specification {
+  .tag.success, .tag[data-tagname~="specification"] {
     background-color: #2e8469; }
   .tag.info {
     background-color: #6595c8; }
-  .tag.warning, .tag[class~="transition"] {
+  .tag.warning, .tag[data-tagname~="transition"] {
     background-color: #b0640c; }
-  .tag.danger, .tag.Inactive {
+  .tag.danger, .tag[data-tagname~="inactive"] {
     background-color: #b53c21; }
-  .tag.OASIS {
+  .tag.OASIS, .tag[data-tagname~="oasis"] {
     background-color: #51247c; }
-  .tag.W3C {
+  .tag.W3C, .tag[data-tagname~="w3c"] {
     background-color: #005a9c; }
 
 a.tag {

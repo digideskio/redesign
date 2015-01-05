@@ -50,7 +50,7 @@ $.fn.showmore = function(){
       $items = $list.find('li, [data-showmore-item]'),
       showmore = $list.data('showmore');
       
-    if ($items.length < max) {return;}
+    if ($items.length <= max) {return;}
     
     console.log(this);
     

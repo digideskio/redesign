@@ -1,9 +1,13 @@
-{!-- Specifications index --}
-{embed="_embeds/_body"
-	pagetype="workgroup_single"
-	headtitle="{structure:page:title} Workgroup"
-	js_body_class="js_tabs js_popovers"
-	debug="TRUE"
+{!-- Single workgroup --}
+
+{stash:embed
+  context="@URI"
+  file_name="viewmodels:detail"
+  parse_stage="both"
+  stash:_type="workgroup"
+  stash:_layout="standard"
+  stash:_status="open|closed"
+  stash:_parents_relationships="blog|products|tutorials|resource_presentations|resource_videos|resource_articles|resource_whitepapers|resource_podcasts"
 }
 
 {!-- Cache all members of this workgroup --}
@@ -96,24 +100,7 @@
 	{exp:channel:entries entry_id="{structure:page:entry_id}" limit="1" {global:disable_default} }
 	
 		<div class="line mbl">
-			{if cf-wg-new-wiki != "" || cf-wg-t-wghome != ""}
-			<div class="unit size1of5">
-				<div class="gutter flag">
-					<div class="flag-image">
-						<i class="icon-font-strip-module-img icon-font-tinted mrs" data-icon="&#xe026;"></i>
-					</div>
-					<div class="flag-body">
-						{if cf-wg-new-wiki == 'y'}
-							<a href="/wiki/{url_title}/">Wiki</a>
-						{if:elseif cf-wg-t-wghome != ""}
-							<a href="{cf-wg-t-wghome}">Wiki</a>
-						{/if}
-					</div>
-				
-				</div>
-			</div>
-			{/if}
-			
+
 			{if cf-wg-t-meetings}
 			
 			<div class="unit size1of5">

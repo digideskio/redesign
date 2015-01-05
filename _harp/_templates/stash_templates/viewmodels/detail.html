@@ -74,11 +74,14 @@
     {/if}
     {if cf-tutpage-w-body}{cf-tutpage-w-body}{/if}
     
+    {!-- Workgroup --}
+    {if cf-wg-w-description-en}{cf-wg-w-description-en}{/if}
+    
 	{/exp:stash:set}{!-- /layout_copy --}
 	
 	{exp:switchee variable="stash:_type" parse="inward" match="all"}
 	
-	  {case value="blog|resource"}
+	  {case value="blog|resource|workgroup"}
       {exp:stash:set_list name="layout_meta_after" parse_conditionals="yes" parse_tags="yes"}
         
         {!-- Resource: outgoing --}
@@ -164,6 +167,27 @@
             {/stash:text}
           {/exp:stash:append_list:downloads}
         {/cf-resource-m-downloads}
+        
+        {!-- Workgroup: wiki --}
+        {if cf-wg-new-wiki != "" || cf-wg-t-wghome != ""}
+          {stash:name}Wiki{/stash:name}
+          {stash:slug}wiki{/stash:slug}
+          {stash:text}
+            {if cf-wg-new-wiki == 'y'}
+							At open-services.net
+						{if:elseif cf-wg-t-wghome != ""}
+							At {exp:parse_url parts="host"}{cf-wg-t-wghome}{/exp:parse_url}
+						{/if}
+          {/stash:text}
+          {stash:link}
+            {if cf-wg-new-wiki == 'y'}
+							/wiki/{url_title}/
+						{if:elseif cf-wg-t-wghome != ""}
+							{cf-wg-t-wghome}
+						{/if}
+          {/stash:link}
+          
+        {/if}
 				
       {/exp:stash:set_list}
       
@@ -225,6 +249,14 @@
         {stash:icon}channel-{exp:stringy:slug separator="-" case="lower"}{channel}{/exp:stringy:slug}{/stash:icon}
         {stash:href}{structure:parent:uri}{/stash:href}
       {/exp:stash:prepend_list}
+	  
+	  {/case} {!-- /resource --}
+	  
+	  
+	  {case value="workgroup"}
+	    
+	    
+	    
 	  {/case}
 	  
 	{/exp:switchee}
@@ -236,6 +268,10 @@
 {/if}
 
 {exp:switchee variable="stash:_type" parse="inward" match="all"}
+  
+  {case value="workgroup"}
+    {exp:stash:set_value name="layout_headtitle" value="{structure:page:title} Workgroup"}
+  {/case}
 
   {!-- Tutorials require more data re: the overview topic and secondary menu --}
   {case value="tutorial"}

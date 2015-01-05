@@ -24,24 +24,32 @@
   }
   
   &.success,
-  &.Specification { 
+  &[data-tagname~="specification"] { 
     background-color: palette(green); 
   }
   
   &.info { background-color: palette(blue, mid-light); }
   
   &.warning,
-  &[class~="transition"] { 
+  &[data-tagname~="transition"] { 
     background-color: palette(gold); 
   }
   
   &.danger,
-  &.Inactive { 
+  &[data-tagname~="inactive"] { 
     background-color: palette(red, mid-dark); 
   }
   
-  &.OASIS { background-color: #51247c; }
-  &.W3C { background-color: #005a9c; }
+  &.OASIS,
+  &[data-tagname~="oasis"]
+  { 
+    background-color: #51247c; 
+  }
+  
+  &.W3C,
+  &[data-tagname~="w3c"] { 
+    background-color: #005a9c; 
+  }
   
 }
 
