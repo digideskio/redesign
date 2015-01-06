@@ -127,37 +127,6 @@
       </div>		
 		{/if}
 		
-		{if cf-wg-w-description-en}
-		<div class="section-row pbm ptn">
-      <div class="line">
-        <div class="unit size3of5">
-          <div class="gutter">
-            {cf-wg-w-description-en}
-          </div>
-        </div>		
-        
-        {exp:playa:parents field="workgroup_rel_replaces" var_prefix="new_hotness" limit="1"}
-          <div class="unit lastUnit">
-            <div class="box-inset mts">
-              <div class="flag">
-                <div class="flag-image prm">
-                  <i class="icon-font icon-font-strip-module-img" data-icon="&#xe061;"></i>
-                </div>
-                <div class="flag-body">
-                  <strong>Sort of a ghost town here</strong> <br />
-                  Active specification development is now at 
-                  <a href="{new_hotness:page_url}">{new_hotness:title}</a>
-                  
-                </div>
-              </div>
-            </div>                    
-          </div>
-        {/exp:playa:parents}
-        
-      </div>      
-		</div>
-		{/if}
-		
 		<div class="section-row ptl">
 		
 			<ul role="tablist" class="line nav-tabs">

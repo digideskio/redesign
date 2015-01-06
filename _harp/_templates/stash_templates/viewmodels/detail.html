@@ -239,6 +239,13 @@
             {stash:text}{replaced:title}{/stash:text}
           {/exp:stash:append_list:ancestry}
         {/workgroup_rel_replaces}
+        
+        {exp:playa:parents field="workgroup_rel_replaces" var_prefix="new_hotness" limit="1"}
+          {stash:name}Bit of a ghost town here{/stash:name}
+          {stash:slug}ghost-town{/stash:slug}
+          {stash:link}{new_hotness:page_url}{/stash:link}
+          {stash:text}Active specification development now at {new_hotness:title}{/stash:text}
+        {/exp:playa:parents}
         {/exp:stash:parse}
 				
       {/exp:stash:set_list}
