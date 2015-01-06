@@ -23,10 +23,14 @@
                 
                 {exp:stash:get_list:nested name="{stash:list}_{slug}" prefix="nested"}
                   <li class="item">
-                    {if nested:link}
-                      <a href="{nested:link}">{nested:text}</a>
-                    {if:else}
-                      {nested:text}
+                    {if nested:link}<a href="{nested:link}">{/if}
+
+                    {nested:text}
+
+                    {if nested:link}</a>{/if}
+
+                    {if nested:tag}
+                      &nbsp;<span class="tag small">{nested:tag}</span>
                     {/if}
                   </li>
                 {/exp:stash:get_list:nested}

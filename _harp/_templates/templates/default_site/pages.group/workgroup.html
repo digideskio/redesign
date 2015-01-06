@@ -100,55 +100,6 @@
 	{exp:channel:entries entry_id="{structure:page:entry_id}" limit="1" {global:disable_default} }
 	
 		<div class="line mbl">
-
-			{if cf-wg-t-mailinglist}
-			<div class="unit size1of5">
-				<div class="gutter flag">
-					<div class="flag-image">
-						{!-- TODO: eventually this will be for Comms too: segment_2_category_group_id == 4 --}
-						{if segment_2_category_group_id == "4" && segment_2 != "communications"}
-							<i class="icon-font-strip-module-img icon-font-tinted mrs" data-icon="&#xe098;"></i>
-						{if:else}
-							<i class="icon-font-strip-module-img icon-font-tinted mrs" data-icon="&#xe04f;"></i>
-						{/if}
-					</div>
-					<div class="flag-body">
-						<a href="{cf-wg-t-mailinglist}">
-							{!-- TODO: eventually this will be for Comms too: segment_2_category_group_id == 4 --}
-							{if segment_2_category_group_id == "4" && segment_2 != "communications"}
-								Forum
-							{if:else}
-								Mailing list
-							{/if}
-						</a>
-					</div>
-				
-				</div>
-			</div>
-			{/if}
-			
-			{!-- Note the var_prefix here, just to avoid parse conflicts --}
-			{cf-wg-r-specs sort="desc" search:cf-spec-text="not IS_EMPTY" var_prefix="spec"}
-				{if "{spec:count}" == 1}
-					<div class="unit {if workgroup_grid_misc-links}size1of5{if:else}lastUnit{/if}">
-						<div class="gutter flag">
-							<div class="flag-image">
-								<i title="Specifications" class="icon-font-strip-module-img icon-font-tinted mrs" data-icon="&#xe071;"></i>
-							</div>
-							<div class="flag-body">
-				{/if}
-			
-					<p class="mvn" style="padding-bottom: 4px;">
-						<a href="{spec:cf-spec-text}">{spec:title}</a> 
-						<span class="label {if '{spec:cf-spec-pill-status}' == 'Final'}success{if:elseif '{spec:cf-spec-pill-status}' == 'Finalize'}warning{/if}">{spec:cf-spec-pill-status}</span>
-					</p>
-				
-				{if "{spec:count}" == "{spec:total_results}"}			
-							</div>
-						</div>
-					</div>
-				{/if}
-			{/cf-wg-r-specs}
 			
 			{if workgroup_grid_misc-links}
 			  <div class="unit lastUnit">
@@ -166,36 +117,6 @@
 			{/if}
 			
 		</div>{!-- .line.section-row --}
-				
-		{!-- Tags --}
-		{exp:tag:tags entry_id="{entry_id}" websafe_separator="-"}
-			{if tag_count == "1"}
-			<div class="flag">
-			  <div class="flag-image"><strong class="prs">Tagged:</strong></div>
-			  <div class="flag-body">
-          <ul class="inline-list nospacing wg-tags">
-			{/if}
-		
-          <li class="mrs"><span title="{tag}" data-tagname="{websafe_tag}" class="wg-tag wg-tag-{websafe_tag}">{tag}</span></li>
-			
-			{if tag_count == tag_total_results}
-          </ul>
-        </div>
-			</div>
-			{/if}
-		
-		{/exp:tag:tags}
-		
-		{!-- Groups being replaced --}
-    {if workgroup_rel_replaces}
-
-      <p><strong>Precursors</strong>:
-        {workgroup_rel_replaces var_prefix="replaced"}
-        <a href="{replaced:page_url}">{replaced:title}</a>&ensp;
-        {/workgroup_rel_replaces}    
-      </p>
-
-    {/if}
 
 		{if workgroup_exernal-url}
       <div class="mvm">

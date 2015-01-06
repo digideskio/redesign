@@ -196,6 +196,50 @@
           {stash:link}{cf-wg-t-meetings}{/stash:link}
           {stash:text}{if cf-wg-t-meetingtime}{cf-wg-t-meetingtime}{if:else}Schedule{/if}{/stash:text}
         {/if}
+        
+        {!-- Workgroup: mailing lists --}
+        {if cf-wg-t-mailinglist && (segment_2_category_group_id != "4" || segment_2 == "communications")}
+          {stash:name}Mailing list{/stash:name}
+          {stash:slug}mailing-list{/stash:slug}
+          {stash:link}{cf-wg-t-mailinglist}{/stash:link}
+          {stash:text}At {exp:parse_url parts="host"}{cf-wg-t-mailinglist}{/exp:parse_url}{/stash:text}
+        {/if}
+        {if cf-wg-t-mailinglist && (segment_2_category_group_id == "4" && segment_2 != "communications")}
+          {stash:name}Forum{/stash:name}
+          {stash:slug}forum{/stash:slug}
+          {stash:link}{cf-wg-t-mailinglist}{/stash:link}
+          {stash:text}At open-services.net{/stash:text}
+        {/if}
+        
+        {!-- Workgroup: specs --}
+        {exp:stash:parse}
+        {cf-wg-r-specs sort="desc" search:cf-spec-text="not IS_EMPTY" var_prefix="spec"}
+      
+          {if {spec:count} == 1}
+            {stash:name}Specification{if {spec:total_results} > 1}s{/if}{/stash:name}
+            {stash:slug}specifications{/stash:slug}
+          {/if}
+        
+          {exp:stash:append_list:specifications name="layout_meta_after_specifications"}
+            {stash:link}{spec:cf-spec-text}{/stash:link}
+            {stash:text}{spec:title}{/stash:text}
+            {stash:tag}{spec:cf-spec-pill-status}{/stash:tag}
+          {/exp:stash:append_list:specifications}
+        
+        {/cf-wg-r-specs}
+        
+        {workgroup_rel_replaces var_prefix="replaced"}
+          {if {replaced:count} == 1}
+            {stash:name}Precursors{/stash:name}
+            {stash:slug}ancestry{/stash:slug}
+          {/if}
+          
+          {exp:stash:append_list:ancestry name="layout_meta_after_ancestry"}
+            {stash:link}{replaced:page_url}{/stash:link}
+            {stash:text}{replaced:title}{/stash:text}
+          {/exp:stash:append_list:ancestry}
+        {/workgroup_rel_replaces}
+        {/exp:stash:parse}
 				
       {/exp:stash:set_list}
       
