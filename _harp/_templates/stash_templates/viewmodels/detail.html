@@ -188,6 +188,14 @@
           {/stash:link}
           
         {/if}
+        
+        {!-- Workgroup: meetings --}
+        {if cf-wg-t-meetings}
+          {stash:name}Meetings{/stash:name}
+          {stash:slug}meetings{/stash:slug}
+          {stash:link}{cf-wg-t-meetings}{/stash:link}
+          {stash:text}{if cf-wg-t-meetingtime}{cf-wg-t-meetingtime}{if:else}Schedule{/if}{/stash:text}
+        {/if}
 				
       {/exp:stash:set_list}
       
