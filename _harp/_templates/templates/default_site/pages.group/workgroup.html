@@ -151,31 +151,6 @@
 					
 					
 					<div class="line mts">
-						{if cf-wg-m-leads}
-						<div class="unit size1of4">
-							<div class="gutter body-text">
-								<i class="icon-font icon-font-module-img-med" data-icon="&#xe00d;"></i>
-								<h3 class="mtn">{if oslc:workgroup:is_at_oasis}Chair{if:else}Workgroup lead{/if}{if cf-wg-m-leads:total_rows > 1}s{/if}</h3>
-								
-								<ul class="nospacing nobullets">
-									{cf-wg-m-leads}
-									<li><a href="{path='forums/member/{lead}'}">{lead:names}</a></li>
-									{/cf-wg-m-leads}
-								</ul>
-								
-							</div>
-						</div>
-						{if:elseif cf-wg-t-wgleadname}
-						<div class="unit size1of4">
-							<div class="gutter body-text">
-								<i class="icon-font icon-font-module-img-med" data-icon="&#xe00d;"></i>
-								<h3 class="mtn">Workgroup lead</h3>
-								
-								<p>{cf-wg-t-wgleadname}</p>
-								
-							</div>
-						</div>
-						{/if}
 						
 						{if cf-wg-new-wiki}
 						
@@ -183,85 +158,6 @@
 						
 						{/if}
 						
-						{if cf-wg-r-members}
-						<div class="unit lastUnit">
-							<div class="gutter body-text">
-								<i class="icon-font icon-font-module-img-med" data-icon="&#xe06a;"></i>
-								<h3 class="mtn">Contributing organizations</h3>
-								<ul class="nospacing nobullets">
-								{cf-wg-r-members orderby="title" sort="asc"}
-									<li class="mbs"><a href="{page_url}">{title}</a></li>
-								{/cf-wg-r-members}
-								</ul>
-							</div>
-						</div>
-						{/if}
-					</div>
-					
-				</div>
-				
-				<div id="workgroup-links" class="tab-panel drop" role="tabpanel" aria-labelledby="tab1" data-tab="1">
-				
-					<h2 class="h2 onlynojs">Around the site</h2>
-					
-					<div class="line">
-						<div class="unit size1of2">
-							<div class="gutter">
-							{!-- Tuts --}
-							{exp:low_variables:single 
-								var='lv-relationship-list'
-								preparse:direction='parents'
-								preparse:related_channel='tutorial'
-								preparse:related_to_entry_id="{structure:page:entry_id}"
-								preparse:size="1of1"
-								preparse:heading_text="Tutorials"
-								preparse:heading_level="h3"
-								preparse:orderby="title"
-								preparse:sort="asc"
-							}
-							
-							{!-- Videos and presentations --}
-							{exp:low_variables:single 
-								var='lv-relationship-list'
-								preparse:direction='parents'
-								preparse:related_channel='resource_presentations|resource_videos'
-								preparse:related_to_entry_id="{structure:page:entry_id}"
-								preparse:size="1of1"
-								preparse:heading_text="Videos &amp; presentations"
-								preparse:heading_level="h3"
-								preparse:orderby="title"
-								preparse:sort="asc"
-							}
-							
-							{!-- Documents --}
-							{exp:low_variables:single 
-								var='lv-relationship-list'
-								preparse:direction='parents'
-								preparse:related_channel='resource_articles|resource_whitepapers'
-								preparse:related_to_entry_id="{structure:page:entry_id}"
-								preparse:size="1of1"
-								preparse:heading_text="Articles &amp; whitepapers"
-								preparse:heading_level="h3"
-								preparse:orderby="title"
-								preparse:sort="asc"
-							}
-							
-							</div>
-						</div>
-						
-						<div class="unit lastUnit">
-							{exp:low_variables:single 
-								var='lv-relationship-list'
-								preparse:direction='parents'
-								preparse:related_channel='blog'
-								preparse:related_to_entry_id="{structure:page:entry_id}"
-								preparse:size="1of1"
-								preparse:heading_text="Blog posts"
-								preparse:heading_level="h3"
-								preparse:orderby="date"
-								preparse:sort="desc"
-							}
-						</div>
 					</div>
 					
 				</div>

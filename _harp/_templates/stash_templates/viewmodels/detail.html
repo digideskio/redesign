@@ -211,6 +211,20 @@
           {stash:text}At open-services.net{/stash:text}
         {/if}
         
+        {!-- Workgroup: lead/chair --}
+        {cf-wg-m-leads var_prefix="leaders"}
+          {if {leaders:row_count} == 1}
+            {stash:name}{if oslc:workgroup:is_at_oasis}Chair{if:else}Workgroup lead{/if}{if leaders:total_rows > 1}s{/if}{/stash:name}
+            {stash:slug}lead{/stash:slug}
+          {/if}
+          
+          {exp:stash:append_list:leaders name="layout_meta_after_lead"}
+            {stash:link}{path='forums/member/{leaders:lead}'}{/stash:link}
+            {stash:text}{leaders:lead:names}{/stash:text}
+          {/exp:stash:append_list:leaders}
+          
+        {/cf-wg-m-leads}
+        
         {!-- Workgroup: specs --}
         {exp:stash:parse}
         {cf-wg-r-specs sort="desc" search:cf-spec-text="not IS_EMPTY" var_prefix="spec"}
@@ -228,26 +242,39 @@
         
         {/cf-wg-r-specs}
         
-        {workgroup_rel_replaces var_prefix="replaced"}
+        {exp:stash:get_list orderby="text" sort_type="lowercase" name="children" match="#company#" against="channel_slug" prefix="org"}
+          {if {org:count} == 1}
+            {stash:name}Contributing organizations{/stash:name}
+            {stash:slug}contributing-organizations{/stash:slug}
+          {/if}
+
+          {exp:stash:append_list:orgs name="layout_meta_after_contributing-organizations"}
+            {stash:link}{org:url}{/stash:link}
+            {stash:text}{org:text}{/stash:text}
+          {/exp:stash:append_list:orgs}
+        {/exp:stash:get_list}
+
+        {!-- Workgroup ancestry and replacements --}
+        {exp:stash:get_list name="children" match="#workgroups#" against="channel_slug" prefix="replaced"}
           {if {replaced:count} == 1}
             {stash:name}Precursors{/stash:name}
             {stash:slug}ancestry{/stash:slug}
           {/if}
-          
           {exp:stash:append_list:ancestry name="layout_meta_after_ancestry"}
-            {stash:link}{replaced:page_url}{/stash:link}
-            {stash:text}{replaced:title}{/stash:text}
+            {stash:link}{replaced:url}{/stash:link}
+            {stash:text}{replaced:text}{/stash:text}
           {/exp:stash:append_list:ancestry}
-        {/workgroup_rel_replaces}
+        {/exp:stash:get_list}
         
-        {exp:playa:parents field="workgroup_rel_replaces" var_prefix="new_hotness" limit="1"}
+        {exp:stash:get_list name="parents" limit="1" match="#workgroups#" against="channel_slug" prefix="new_hotness"}
           {stash:name}Bit of a ghost town here{/stash:name}
           {stash:slug}ghost-town{/stash:slug}
-          {stash:link}{new_hotness:page_url}{/stash:link}
-          {stash:text}Active specification development now at {new_hotness:title}{/stash:text}
-        {/exp:playa:parents}
+          {stash:link}{new_hotness:url}{/stash:link}
+          {stash:text}Active specification development now at {new_hotness:text}{/stash:text}
+        {/exp:stash:get_list}
+        
         {/exp:stash:parse}
-				
+
       {/exp:stash:set_list}
       
       {exp:stash:append name="layout_relationships" parse_depth="2" parse_tags="yes" match="#\S#"}

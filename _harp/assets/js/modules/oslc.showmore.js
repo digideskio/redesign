@@ -52,8 +52,6 @@ $.fn.showmore = function(){
       
     if ($items.length <= max) {return;}
     
-    console.log(this);
-    
     // not set up yet
     if ( ! _.has(showmore, 'init') ) {
       showmore = $list
