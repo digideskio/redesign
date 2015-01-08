@@ -17,23 +17,25 @@
 	{if no_results}{redirect="404"}{/if}
 	
 	{!-- Capture all relationships in one pass --}
-  {exp:playa:children parse="inward" var_prefix="child"}
-    {exp:stash:append_list name="children"}
-      {stash:channel_slug}{child:channel_short_name}{/stash:channel_slug}
-      {stash:channel}{child:channel}{/stash:channel}
-      {stash:url}{child:page_url}{/stash:url}
-      {stash:text}{child:title}{/stash:text}
-    {/exp:stash:append_list}
-  {/exp:playa:children}
+	{exp:stash:parse parse_depth="2"}
+    {exp:playa:children parse="inward" var_prefix="child"}
+      {exp:stash:append_list name="children"}
+        {stash:channel_slug}{child:channel_short_name}{/stash:channel_slug}
+        {stash:channel}{child:channel}{/stash:channel}
+        {stash:url}{child:page_url}{/stash:url}
+        {stash:text}{child:title}{/stash:text}
+      {/exp:stash:append_list}
+    {/exp:playa:children}
 
-  {exp:playa:parents parse="inward" var_prefix="parent"}
-    {exp:stash:append_list name="parents"}
-      {stash:channel_slug}{parent:channel_short_name}{/stash:channel_slug}
-      {stash:channel}{parent:channel}{/stash:channel}
-      {stash:url}{parent:page_url}{/stash:url}
-      {stash:text}{parent:title}{/stash:text}
-    {/exp:stash:append_list}
-  {/exp:playa:parents}
+    {exp:playa:parents parse="inward" var_prefix="parent"}
+      {exp:stash:append_list name="parents"}
+        {stash:channel_slug}{parent:channel_short_name}{/stash:channel_slug}
+        {stash:channel}{parent:channel}{/stash:channel}
+        {stash:url}{parent:page_url}{/stash:url}
+        {stash:text}{parent:title}{/stash:text}
+      {/exp:stash:append_list}
+    {/exp:playa:parents}
+  {/exp:stash:parse}
   
 	
 	{exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
@@ -41,64 +43,91 @@
 	
 	{!-- Primary body content --}
 	{exp:stash:set name="layout_copy" match="#\S#"}
-    {!-- blog --}
-	  {if cf-blog-w-body}{cf-blog-w-body}{/if}
-	  
-	  {!-- Resource --}
-    {if cf-resource-cv-videos}
-      {exp:channel_videos:videos entry_id="{entry_id}" limit="1"}
-        {if video:service == "youtube"}
-          {video:embed_code_hd}
+    {exp:switchee variable="stash:_type" parse="inward"}
+    
+      {case value="blog"}
+        {cf-blog-w-body}
+      {/case}
+    
+      {case value="resource"}
+        {if cf-resource-cv-videos}
+          {exp:channel_videos:videos entry_id="{entry_id}" limit="1"}
+            {if video:service == "youtube"}
+              {video:embed_code_hd}
+            {if:else}
+              {video:embed_code}
+            {/if}										
+          {/exp:channel_videos:videos}
+        {if:elseif cf-resource-t-embed}
+          {cf-resource-t-embed}
+        {/if}
+      
+        {if cf-resource-w-desc == "" && cf-resource-cv-videos != ""}
+          {exp:channel_videos:videos entry_id="{entry_id}" limit="1"}
+            Description from {video:service}: {video:description}
+          {/exp:channel_videos:videos}
         {if:else}
-          {video:embed_code}
-        {/if}										
-      {/exp:channel_videos:videos}
-    {if:elseif cf-resource-t-embed}
-      {cf-resource-t-embed}
-    {/if}
-    
-    {if cf-resource-w-desc == "" && cf-resource-cv-videos != ""}
-      {exp:channel_videos:videos entry_id="{entry_id}" limit="1"}
-        Description from {video:service}: {video:description}
-      {/exp:channel_videos:videos}
-    {if:else}
-      {cf-resource-w-desc}
-    {/if}
-    
-    {!-- Tutorial --}
-    {if cf-tut-w-body}
-      {if cf-tut-m-altversions} 
-        <p>(<i>Download as {cf-tut-m-altversions}{if row_count > 1 && total_rows == 2}&nbsp;or&nbsp;{/if}<a href="{altfile}">{altdescription}</a>{if row_count != total_rows && total_rows != 2},{/if}{/cf-tut-m-altversions}.</i>)</p>
-      {/if}
-      {cf-tut-w-body}
-    {/if}
-    {if cf-tutpage-w-body}{cf-tutpage-w-body}{/if}
-    
-    {!-- Workgroup --}
-    {if cf-wg-w-description-en}{cf-wg-w-description-en}{/if}
+          {cf-resource-w-desc}
+        {/if}
+      {/case}
+        
+      {case value="tutorial"}
+        {if cf-tut-w-body}
+          {if cf-tut-m-altversions} 
+            <p>(<i>Download as {cf-tut-m-altversions}{if row_count > 1 && total_rows == 2}&nbsp;or&nbsp;{/if}<a href="{altfile}">{altdescription}</a>{if row_count != total_rows && total_rows != 2},{/if}{/cf-tut-m-altversions}.</i>)</p>
+          {/if}
+          {cf-tut-w-body}
+        {/if}
+        {if cf-tutpage-w-body}{cf-tutpage-w-body}{/if}
+      {/case}
+
+      {case value="workgroup"}
+        {exp:playa:parents channel="charters" field="cf-wgcharter-r-workgroup" status="open" limit="1" var_prefix="charter"}
+          {!-- No charter? Just show the description --}
+          {if no_parents}{cf-wg-w-description-en}{/if}
+          
+          {exp:stash:set_list name="tabs_workgroup_body"}
+            {stash:label}Description{/stash:label}
+            {stash:id}description{/stash:id}
+            {stash:body}{cf-wg-w-description-en}{/stash:body}
+            
+            {stash:label}Charter{/stash:label}
+            {stash:id}charter{/stash:id}
+            {stash:body} 
+              {stash:embed:partials:charter process="start"}
+            {/stash:body}
+
+          {/exp:stash:set_list}
+          
+          {stash:embed:partials:tabs stash:list="tabs_workgroup_body" stash:heading="View"}
+          
+        {/exp:playa:parents}
+      {/case}
+
+    {/exp:switchee}
     
 	{/exp:stash:set}{!-- /layout_copy --}
 	
-	{exp:switchee variable="stash:_type" parse="inward" match="all"}
-	
-	  {case value="blog|resource|workgroup"}
-      {exp:stash:set_list name="layout_meta_after" parse_conditionals="yes" parse_tags="yes"}
-        
-        {!-- Resource: outgoing --}
-				{if entry_date < current_time && (cf-resource-t-url != "" || cf-resource-cv-videos != "")}
-				  {stash:name}Outgoing{/stash:name}
-				  {stash:slug}outgoing{/stash:slug}
-				  {stash:link}
+  {exp:stash:set_list name="layout_meta_after" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
+
+    {exp:switchee variable="stash:_type" parse="inward" match="all"}
+      
+      {case value="resource"}
+        {!-- Outgoing --}
+        {if entry_date < current_time && (cf-resource-t-url != "" || cf-resource-cv-videos != "")}
+          {stash:name}Outgoing{/stash:name}
+          {stash:slug}outgoing{/stash:slug}
+          {stash:link}
             {if cf-resource-cv-videos}
               {exp:channel_videos:videos entry_id="{entry_id}" limit="1"}{video:web_url}{/exp:channel_videos:videos}
             {if:else}
               {cf-resource-t-url}
             {/if}
-				  {/stash:link}
-				  
-				  {stash:text}
-				    {if cf-resource-t-url == "" && cf-resource-cv-videos == ""}
-						Download
+          {/stash:link}
+  
+          {stash:text}
+            {if cf-resource-t-url == "" && cf-resource-cv-videos == ""}
+            Download
             {if:elseif channel_short_name == "resource_videos" || channel_short_name == "resource_presentations" }
               Watch now
             {if:elseif channel_short_name == "resource_podcasts"}
@@ -106,32 +135,9 @@
             {if:else}
               Go
             {/if}
-				  {/stash:text}
-				  
-				{/if}
-
-        {if channel_short_name == "blog"}
-          {stash:name}Forum{/stash:name}
-          {stash:slug}forum{/stash:slug}
-
-          {if forum_topic}
-            {stash:link}{path='forums/viewthread'}/{forum_topic_id}/{/stash:link}
-            {stash:text}Discuss in the forums{/stash:text}
-          {/if}
-          {if not_forum_topic}
-            {stash:link}
-              {stash:nocache}
-              {if logged_in}{path='/forums/newtopic/18/'}{if:else}/forums/member/login/{/if}
-              {/stash:nocache}
-            {/stash:link}
-            {stash:text}
-              {stash:nocache}
-              {if logged_out}Log in and start{if:else}Start{/if} a discussion in the forums
-              {/stash:nocache}
-            {/stash:text}
-          {/if}
+          {/stash:text}
         {/if}
-        
+
         {!-- Resource: Presenters --}
         {if cf-resource-presenters}
           {cf-resource-presenters orderby="screen_name"}
@@ -167,28 +173,52 @@
             {/stash:text}
           {/exp:stash:append_list:downloads}
         {/cf-resource-m-downloads}
-        
-        {!-- Workgroup: wiki --}
+
+      {/case}
+      
+      {case value="blog"}
+        {stash:name}Forum{/stash:name}
+        {stash:slug}forum{/stash:slug}
+
+        {if forum_topic}
+          {stash:link}{path='forums/viewthread'}/{forum_topic_id}/{/stash:link}
+          {stash:text}Discuss in the forums{/stash:text}
+        {/if}
+        {if not_forum_topic}
+          {stash:link}
+            {stash:nocache}
+            {if logged_in}{path='/forums/newtopic/18/'}{if:else}/forums/member/login/{/if}
+            {/stash:nocache}
+          {/stash:link}
+          {stash:text}
+            {stash:nocache}
+            {if logged_out}Log in and start{if:else}Start{/if} a discussion in the forums
+            {/stash:nocache}
+          {/stash:text}
+        {/if}      
+      {/case}
+      
+      {case value="workgroup"}
         {if cf-wg-new-wiki != "" || cf-wg-t-wghome != ""}
           {stash:name}Wiki{/stash:name}
           {stash:slug}wiki{/stash:slug}
           {stash:text}
             {if cf-wg-new-wiki == 'y'}
-							At open-services.net
-						{if:elseif cf-wg-t-wghome != ""}
-							At {exp:parse_url parts="host"}{cf-wg-t-wghome}{/exp:parse_url}
-						{/if}
+              At open-services.net
+            {if:elseif cf-wg-t-wghome != ""}
+              At {exp:parse_url parts="host"}{cf-wg-t-wghome}{/exp:parse_url}
+            {/if}
           {/stash:text}
           {stash:link}
             {if cf-wg-new-wiki == 'y'}
-							/wiki/{url_title}/
-						{if:elseif cf-wg-t-wghome != ""}
-							{cf-wg-t-wghome}
-						{/if}
+              /wiki/{url_title}/
+            {if:elseif cf-wg-t-wghome != ""}
+              {cf-wg-t-wghome}
+            {/if}
           {/stash:link}
-          
+  
         {/if}
-        
+
         {!-- Workgroup: meetings --}
         {if cf-wg-t-meetings}
           {stash:name}Meetings{/stash:name}
@@ -196,7 +226,7 @@
           {stash:link}{cf-wg-t-meetings}{/stash:link}
           {stash:text}{if cf-wg-t-meetingtime}{cf-wg-t-meetingtime}{if:else}Schedule{/if}{/stash:text}
         {/if}
-        
+
         {!-- Workgroup: mailing lists --}
         {if cf-wg-t-mailinglist && (segment_2_category_group_id != "4" || segment_2 == "communications")}
           {stash:name}Mailing list{/stash:name}
@@ -210,38 +240,38 @@
           {stash:link}{cf-wg-t-mailinglist}{/stash:link}
           {stash:text}At open-services.net{/stash:text}
         {/if}
-        
+
         {!-- Workgroup: lead/chair --}
         {cf-wg-m-leads var_prefix="leaders"}
           {if {leaders:row_count} == 1}
             {stash:name}{if oslc:workgroup:is_at_oasis}Chair{if:else}Workgroup lead{/if}{if leaders:total_rows > 1}s{/if}{/stash:name}
             {stash:slug}lead{/stash:slug}
           {/if}
-          
+  
           {exp:stash:append_list:leaders name="layout_meta_after_lead"}
             {stash:link}{path='forums/member/{leaders:lead}'}{/stash:link}
             {stash:text}{leaders:lead:names}{/stash:text}
           {/exp:stash:append_list:leaders}
-          
+  
         {/cf-wg-m-leads}
         
         {!-- Workgroup: specs --}
-        {exp:stash:parse}
         {cf-wg-r-specs sort="desc" search:cf-spec-text="not IS_EMPTY" var_prefix="spec"}
-      
+
           {if {spec:count} == 1}
             {stash:name}Specification{if {spec:total_results} > 1}s{/if}{/stash:name}
             {stash:slug}specifications{/stash:slug}
           {/if}
-        
+
           {exp:stash:append_list:specifications name="layout_meta_after_specifications"}
             {stash:link}{spec:cf-spec-text}{/stash:link}
             {stash:text}{spec:title}{/stash:text}
             {stash:tag}{spec:cf-spec-pill-status}{/stash:tag}
           {/exp:stash:append_list:specifications}
-        
+
         {/cf-wg-r-specs}
         
+        {!-- Contributing organizations --}
         {exp:stash:get_list orderby="text" sort_type="lowercase" name="children" match="#company#" against="channel_slug" prefix="org"}
           {if {org:count} == 1}
             {stash:name}Contributing organizations{/stash:name}
@@ -265,7 +295,7 @@
             {stash:text}{replaced:text}{/stash:text}
           {/exp:stash:append_list:ancestry}
         {/exp:stash:get_list}
-        
+
         {exp:stash:get_list name="parents" limit="1" match="#workgroups#" against="channel_slug" prefix="new_hotness"}
           {stash:name}Bit of a ghost town here{/stash:name}
           {stash:slug}ghost-town{/stash:slug}
@@ -273,9 +303,15 @@
           {stash:text}Active specification development now at {new_hotness:text}{/stash:text}
         {/exp:stash:get_list}
         
-        {/exp:stash:parse}
+      {/case} {!-- /workgroup --}
+      
+    {/exp:switchee}
 
-      {/exp:stash:set_list}
+  {/exp:stash:set_list}
+	
+	{exp:switchee variable="stash:_type" parse="inward" match="all"}
+	
+	  {case value="blog|resource|workgroup"}
       
       {exp:stash:append name="layout_relationships" parse_depth="2" parse_tags="yes" match="#\S#"}
         {exp:loopee foreach="{stash:_children_relationships}" parse="inward" as="channel_slug"}

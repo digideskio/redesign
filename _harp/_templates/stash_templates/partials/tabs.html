@@ -1,0 +1,23 @@
+{exp:stash:get_list name="{stash:list}"}
+  {if count == 1}
+  <div class="menu horizontal enhanced-only copy-spacing" data-manilla>
+    <span class="item heading">{stash:heading}</span>
+    {exp:stash:get_list:nested name="{stash:list}" prefix="nested"}
+      <a class="item" href="#{nested:id}">{nested:label}</a>
+    {/exp:stash:get_list:nested}
+  </div>
+  
+  <div class="tabpanels">
+  {/if}
+  
+    <div id="{id}">
+      <div class="copy">
+      {body}
+      </div>
+    </div>
+  
+  {if count == total_results}
+  </div>
+  {/if}
+{/exp:stash:get_list}
+

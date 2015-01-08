@@ -162,39 +162,7 @@
 					
 				</div>
 				
-				{exp:playa:parents channel="charters" field="cf-wgcharter-r-workgroup" status="open" limit="1"}
-				<div id="workgroup-charter" class="tab-panel drop" role="tabpanel" aria-labelledby="tab3" data-tab="3">
-					<h2 class="h2 onlynojs">Charter</h2>
-				
-					<div class="line mtm">
-						<div class="unit size1of4">
-							<div class="gutter">
-								<ul class="nav-list box-inset">
-									<li class="li nav-header">Contents</li>
-									{if cf-wgcharter-w-scope}<li><a href="#{url_title}_scope">Scope</a></li>{/if}
-									{if cf-wgcharter-w-deliverables}<li><a href="#{url_title}_deliverables">Deliverables</a></li>{/if}
-									{if cf-wgcharter-w-capabilities}<li><a href="#{url_title}_capabilities">Capabilities</a></li>{/if}
-									{if cf-wgcharter-w-motivation}<li><a href="#{url_title}_motivation">Motivation</a></li>{/if}
-									{if cf-wgcharter-w-compatibility}<li><a href="#{url_title}_compatibility">Compatibility</a></li>{/if}
-									{if cf-wgcharter-w-relationships}<li><a href="#{url_title}_wg_relationships">Relationship to other activities and workgroups</a></li>{/if}
-									{if cf-wgcharter-r-sdos}<li><a href="#{url_title}_target_sdos">Target Specification Development Organizations (SDOs)</a></li>{/if}
-									{if cf-wgcharter-w-participation}<li><a href="#{url_title}_participation">Participation</a></li>{/if}
-									{if cf-wgcharter-w-meetings}<li><a href="#{url_title}_meetings">Meetings Frequency and Communications</a></li>{/if}
-									{if cf-wgcharter-w-decisions}<li><a href="#{url_title}_decisions">Decision Policy</a></li>{/if}
-									<li><a href="#{url_title}_ip">Intellectual property</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="unit lastUnit">
-							<div class="gutter body-text">
-								{!-- This LV snippet has all the basic strings and variables for a charter --}
-								{lv-charter-basis}
-							</div>
-						</div>
-					</div>
-				</div>
-				{/exp:playa:parents}
-				
+
 			</div>
 		</div>
 	{/exp:channel:entries}

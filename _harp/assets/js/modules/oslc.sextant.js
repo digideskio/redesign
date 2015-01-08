@@ -10,7 +10,7 @@ var Sextant = _.create(OSLC, {
   init: function() {
     
     this.els = {
-      content: $('#content')
+      content: $('[data-sextant]')
     };
         
     // Bail if there are only a few headings

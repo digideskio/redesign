@@ -46,6 +46,10 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
   // could be a name=""
   target = target.length ? target : $('[name="'+this.hash.slice(1)+'"]');
   
+  if ( ! target.is(':visible')) {
+    // do something?
+  }
+  
   // iOS Safari has a bug where if you tap the status bar, window.scrollTo (and, accordingly, $.Velocity('scroll') ) just fails
   // See https://github.com/julianshapiro/velocity/issues/282
   // and http://blog.b123400.net/window-scrollto-and-ios-status-bar/
