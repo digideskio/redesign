@@ -36,11 +36,7 @@
       {/exp:stash:append_list}
     {/exp:playa:parents}
   {/exp:stash:parse}
-  
-	
-	{exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
-	{exp:stash:set name="layout_deck_date_w3c"}{entry_date format="{DATE_W3C}"}{/exp:stash:set}
-	
+  	
 	{!-- Primary body content --}
 	{exp:stash:set name="layout_copy" match="#\S#"}
     {exp:switchee variable="stash:_type" parse="inward"}
@@ -311,6 +307,11 @@
 	
 	{exp:switchee variable="stash:_type" parse="inward" match="all"}
 	
+	  {case value="blog|resource"}
+      {exp:stash:set name="layout_deck_date"}{entry_date format="{lv-blogdateformat}"}{/exp:stash:set}
+      {exp:stash:set name="layout_deck_date_w3c"}{entry_date format="{DATE_W3C}"}{/exp:stash:set}
+	  {/case}
+	  
 	  {case value="blog|resource|workgroup"}
       
       {exp:stash:append name="layout_relationships" parse_depth="2" parse_tags="yes" match="#\S#"}
