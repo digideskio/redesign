@@ -15,6 +15,11 @@
 %sticky-footer-flexcolumns {
   display: flex;
   flex-direction: column;
+  
+  // you don't want anything shrinking below its default size
+  > * {
+    flex-shrink: 0;
+  }
 }
 
 // use this for the elements that have to grow to body height

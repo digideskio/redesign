@@ -1105,6 +1105,10 @@ img {
      -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+  .flexbox .sticky-footer > *, .flexbox .sticky-footer-body > * {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0; }
 
 .flexbox .sticky-footer-body, .flexbox .main {
   -webkit-flex: 1 0 auto;
