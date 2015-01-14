@@ -8,6 +8,10 @@
   stash:_layout="standard"
   stash:_status="open|closed"
   stash:_parents_relationships="blog|products|tutorials|resource_presentations|resource_videos|resource_articles|resource_whitepapers|resource_podcasts"
+  
+  {if oslc:workgroup:is_user_group}
+  stash:_one_last_script="{global:assets:js}oslc.toggleUserGroupMembership.min.js"
+  {/if}
 }
 
 

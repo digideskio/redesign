@@ -3,10 +3,11 @@
 {if logged_in && oslc:workgroup:is_not_steering_committee}
 
 <script>
-var membership = {
+var toggleMembershipOptions = {
   workgoupCategory: '{oslc:workgroup:category_id}',
   isWorkgroupMember: '{oslc:user:is_workgroup_member}',
-  changeMembershipFormUrl: '{path="utilities/member_cats_form"}'.replace(/\/?$/,'/')
+  changeMembershipFormUrl: '{path="utilities/member_cats_form"}'.replace(/\/?$/,'/'),
+  placeholder: '#swap_user_group_membership'
 };
 </script>
 
