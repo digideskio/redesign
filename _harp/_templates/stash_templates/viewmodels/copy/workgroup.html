@@ -1,0 +1,44 @@
+{cf-wg-w-description-en}
+
+{if logged_in && oslc:workgroup:is_not_steering_committee}
+
+<script>
+var membership = {
+  workgoupCategory: '{oslc:workgroup:category_id}',
+  isWorkgroupMember: '{oslc:user:is_workgroup_member}',
+  changeMembershipFormUrl: '{path="utilities/member_cats_form"}'.replace(/\/?$/,'/')
+};
+</script>
+
+  {if oslc:user:is_not_workgroup_member}
+  <div class="notice success">
+    <div class="header">
+      <h3 class="title">Join this workgroup</h3>
+    </div>
+    <div class="body">
+      <div class="copy">
+      
+        {if oslc:user:is_not_member}
+          <p><a class="btn" href="/legal-agreements/members-agreement/">Become an OSLC member</a></p>
+          <p>You must become an OSLC Member before you can contribute to any workgroup.</p>
+        {/if}
+      
+        {if oslc:user:is_member}
+          {if oslc:workgroup:is_user_group}          
+            <p>
+            <span id="swap_user_group_membership"></span>
+            <noscript>Activate JavaScript in your browser to join the User Group</noscript>
+            </p>
+          {if:else}
+            {!-- href to the WPA is in an embed because this whole thing is within playa:parents and I can't nest those. process="end" lets me parse that tag later --}
+            <p><a class="btn" href="{stash:embed context='viewmodels/copy' name='workgroup_wpa_url' process='end' parse_depth='1'}">Complete the Workgroup Participation Agreement</a></p>
+            <p>(You must complete a Workgroup Participation Agreement for any OSLC domain workgroup that you want to join.)</p>
+          {/if}
+        {/if}
+      
+      </div>
+    </div>
+  </div>
+  {/if} {!-- not a workgroup member --}
+{/if} {!-- logged in and not STC --}
+
