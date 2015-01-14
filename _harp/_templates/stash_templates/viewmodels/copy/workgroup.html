@@ -1,5 +1,5 @@
 {stash:nocache}
-{if logged_in && oslc:workgroup:is_not_steering_committee}
+{if logged_in && oslc:workgroup:is_not_steering_committee && oslc:workgroup:is_not_at_oasis}
 
 {if oslc:workgroup:is_user_group}
 <script>
@@ -28,7 +28,7 @@ var toggleMembershipOptions = {
 
         {if oslc:user:is_member}
           {if oslc:workgroup:is_user_group}          
-            <p>To edit <a href="/{wiki}/{segment_2}/">the wiki</a> for this workgroup, click here:
+            <p>To edit <a href="/wiki/{segment_2}/">the wiki</a> for this workgroup, click here:
             <span id="swap_user_group_membership"></span>
             <noscript>Activate JavaScript in your browser to join the User Group</noscript>
             </p>
