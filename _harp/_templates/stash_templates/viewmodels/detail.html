@@ -108,10 +108,6 @@
 
     {exp:switchee variable="stash:_type" parse="inward" match="all"}
       
-      {case value="resource"}
-        {stash:embed:viewmodels:meta_after:resource process="start" parse="no"}
-      {/case}
-      
       {case value="blog"}
         {stash:name}Forum{/stash:name}
         {stash:slug}forum{/stash:slug}
@@ -139,9 +135,12 @@
           {/stash:nocache}
         {/if}
         {/stash:text}
-
       {/case}
       
+      {case value="resource"}
+        {stash:embed:viewmodels:meta_after:resource process="start" parse="no"}
+      {/case}
+            
       {case value="workgroup"}
         {stash:embed:viewmodels:meta_after:workgroup process="start" parse="no"}        
       {/case} {!-- /workgroup --}
