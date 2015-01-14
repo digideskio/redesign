@@ -907,6 +907,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/partials\/charter.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/partials\/charter.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/partials\/footer.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -970,11 +979,38 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/partials\/tabs.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/partials\/tabs.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/partials\/tags.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/partials\/tags.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/copy\/workgroup.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/copy\/workgroup.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/copy\/workgroup_wpa_url.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/copy\/workgroup_wpa_url.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -6522,6 +6558,17 @@
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/min\/oslc.toggler-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/_harp\/assets\/js\/modules\/oslc.toggleUserGroupMembership.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/modules\/oslc.toggleUserGroupMembership.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/oslc.toggleUserGroupMembership.min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
