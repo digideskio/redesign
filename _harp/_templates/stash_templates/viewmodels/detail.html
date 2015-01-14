@@ -80,12 +80,12 @@
       {case value="workgroup"}
         {exp:playa:parents channel="charters" field="cf-wgcharter-r-workgroup" status="open" limit="1" var_prefix="charter"}
           {!-- No charter? Just show the description --}
-          {if no_parents}{stash:embed:viewmodels:copy:workgroup process="start" parse="no"}{/if}
+          {if no_parents}{cf-wg-w-description-en}{/if}
           
           {exp:stash:set_list name="tabs_workgroup_body"}
             {stash:label}Description{/stash:label}
             {stash:id}description{/stash:id}
-            {stash:body}{stash:embed:viewmodels:copy:workgroup process="start" parse="no"}{/stash:body}
+            {stash:body}{cf-wg-w-description-en}{/stash:body}
             
             {stash:label}Charter{/stash:label}
             {stash:id}charter{/stash:id}
@@ -377,9 +377,11 @@
 	  
 	  
 	  {case value="workgroup"}
-	    
-	    
-	    
+	    {exp:stash:append name="layout_copy"}
+	      {stash:nocache}
+        {stash:embed context="viewmodels:copy" name="workgroup" parse_stage="both"}
+        {/stash:nocache}
+	    {/exp:stash:append}
 	  {/case}
 	  
 	{/exp:switchee}
