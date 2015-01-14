@@ -109,67 +109,7 @@
     {exp:switchee variable="stash:_type" parse="inward" match="all"}
       
       {case value="resource"}
-        {!-- Outgoing --}
-        {if entry_date < current_time && (cf-resource-t-url != "" || cf-resource-cv-videos != "")}
-          {stash:name}Outgoing{/stash:name}
-          {stash:slug}outgoing{/stash:slug}
-          {stash:link}
-            {if cf-resource-cv-videos}
-              {exp:channel_videos:videos entry_id="{entry_id}" limit="1"}{video:web_url}{/exp:channel_videos:videos}
-            {if:else}
-              {cf-resource-t-url}
-            {/if}
-          {/stash:link}
-  
-          {stash:text}
-            {if cf-resource-t-url == "" && cf-resource-cv-videos == ""}
-            Download
-            {if:elseif channel_short_name == "resource_videos" || channel_short_name == "resource_presentations" }
-              Watch now
-            {if:elseif channel_short_name == "resource_podcasts"}
-              Listen now										
-            {if:else}
-              Go
-            {/if}
-          {/stash:text}
-        {/if}
-
-        {!-- Resource: Presenters --}
-        {if cf-resource-presenters}
-          {cf-resource-presenters orderby="screen_name"}
-            {if count == 1}
-              {stash:name}Presenter{if total_results != 1}s{/if}{/stash:name}
-              {stash:slug}presenters{/stash:slug}  
-            {/if}
-            {exp:stash:append_list:presenters name="layout_meta_after_presenters"}
-              {stash:text}{screen_name}{/stash:text}
-            {/exp:stash:append_list:presenters}
-          {/cf-resource-presenters}
-        {if:elseif author_id != 1 && channel_short_name == "resource_presentations"}
-          {stash:name}Presenter{/stash:name}
-          {stash:slug}presenters{/stash:slug}
-          {stash:text}{author}{/stash:text}
-        {/if}
-
-        {!-- Resource: downloads --}
-        {cf-resource-m-downloads var_prefix="download"}
-          {if download:row_count == 1}
-            {stash:name}Download{if download:total_rows > 1}s{/if}{/stash:name}
-            {stash:slug}downloads{/stash:slug}
-          {/if}
-
-          {exp:stash:append_list:downloads name="layout_meta_after_downloads" parse_conditionals="yes" parse_tags="yes"}
-            {stash:link}{download:upload_file}{/stash:link}
-            {stash:text}
-              {if download:upload_description}
-                {download:upload_description}
-              {if:else}
-                Supporting document
-              {/if}
-            {/stash:text}
-          {/exp:stash:append_list:downloads}
-        {/cf-resource-m-downloads}
-
+        {stash:embed:viewmodels:meta_after:resource process="start" parse="no"}
       {/case}
       
       {case value="blog"}
