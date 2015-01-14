@@ -40,34 +40,52 @@
   If second load, just link to the combined CSS and appropriate icons 
   This is cookie-driven, so it must be in nocache tags
 --}
-{stash:nocache}
-  
+{stash:nocache}  {!-- HAHAHAHHAHAHAHHAHAHAHA this works??? --}
+
   {!-- Switchee prevents unnecessary tag processing --}
   {exp:switchee variable="{cookie:combinedcss}" parse="inward"}
     {case value="true"}
+{/stash:nocache}
+
       <!-- link to combined CSS -->
-      {exp:minimee:css:tag}
-        <link rel="stylesheet" href="{global:assets:css}combined.min.css">
-      {/exp:minimee:css:tag}
+      {exp:minimee:display css="combined"}
+
+{stash:nocache}
     {/case}
-  
     {case default="yes"}
+{/stash:nocache}
+
       <!-- embedded critical CSS -->
       {exp:minimee:css:contents attribute:type="text/css"}
         <link rel="stylesheet" href="{global:assets:css}critical.min.css">
       {/exp:minimee:css:contents}
+
+{stash:nocache}
     {/case}
   {/exp:switchee}
+{/stash:nocache}
 
+{stash:nocache}
   {exp:switchee variable="{cookie:grunticons}" parse="inward"}
-    {case value="svg|png|fallback"}
-      <!-- link to pre-decided grunticon CSS: {cookie:grunticons} -->
-      {exp:minimee:css:tag}
-        <link rel="stylesheet" href="{global:assets:icons}icons.{cookie:grunticons}.css">
-      {/exp:minimee:css:tag}
+    {case value="svg"}
+{/stash:nocache}
+      <!-- link to pre-decided SVG grunticon CSS -->
+      {exp:minimee:display css="grunticon_svg"}
+{stash:nocache}
+    {/case}
+    {case value="png"}
+{/stash:nocache}
+      <!-- link to pre-decided PNG grunticon CSS -->
+      {exp:minimee:display css="grunticon_png"}
+{stash:nocache}
+    {/case}
+    {case value="fallback"}
+{/stash:nocache}
+      <!-- link to pre-decided FALLBACK grunticon CSS -->
+      {exp:minimee:display css="grunticon_fallback"}
+{stash:nocache}
     {/case}
   {/exp:switchee}
-
 {/stash:nocache}
 
 <noscript>
