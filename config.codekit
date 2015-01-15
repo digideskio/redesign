@@ -1042,6 +1042,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/meta_after\/resource.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/meta_after\/resource.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/meta_after\/workgroup.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/meta_after\/workgroup.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/viewmodels\/relationships_card_playa.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -6154,6 +6172,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/_harp\/assets\/js\/build\/oslc.toggleUserGroupMembership.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/assets\/js\/build\/oslc.toggleUserGroupMembership.min.js",
+		"outputAbbreviatedPath": "\/_harp\/assets\/js\/build\/min\/oslc.toggleUserGroupMembership.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/_harp\/assets\/js\/build\/softwareDiagram.min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -7468,17 +7497,6 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/_harp\/samples\/resources.jade",
 		"outputAbbreviatedPath": "\/_harp\/samples\/resources.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0
-		},
-	"\/_harp\/samples\/software.jade": {
-		"compileDebug": 1,
-		"fileType": 512,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/_harp\/samples\/software.jade",
-		"outputAbbreviatedPath": "\/_harp\/samples\/software.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0

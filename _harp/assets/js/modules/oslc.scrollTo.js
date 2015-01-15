@@ -39,7 +39,8 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
   e.preventDefault();
   
   var 
-    data = $(this).data(),
+    link = $(this),
+    data = link.data(),
     target = $(this.hash),
     currentScroll = $(window).scrollTop();
     
@@ -47,7 +48,20 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
   target = target.length ? target : $('[name="'+this.hash.slice(1)+'"]');
   
   if ( ! target.is(':visible')) {
-    // do something?
+    
+    // OSLC.addMessage('That heading is hidden. One moment!','','info');
+    
+    // possibility: the target is invisible because it is under a hidden tabpanel
+    var tabPanel = target.closest('[role="tabpanel"]');
+    if ( tabPanel.length ) {
+      // set up the function to fire when the tab is visible
+      tabPanel.one('show.oslc.manilla', function(){
+        link.trigger('click.oslc.scrollTo');
+      });
+      
+      tabPanel.manilla();
+    }
+    return;
   }
   
   // iOS Safari has a bug where if you tap the status bar, window.scrollTo (and, accordingly, $.Velocity('scroll') ) just fails
@@ -78,6 +92,7 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
       
   $html.velocity('stop').velocity('scroll', { 
     begin: function() {
+      // allow user input to stop the animation
       $(window).one('touchstart.scrollToTemp mousewheel.scrollToTemp', function(){
         $html.velocity('stop');
       });
@@ -86,11 +101,9 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
     duration: normalizeDurationByDistance( currentScroll - target.offset().top ),
     easing: [0.4,0,0.2,1],
     complete: function() {
-      
       $(window).off('.scrollToTemp');
 
       _.contains(validCallouts, data.scrollTo) && target.velocity( 'callout.'+data.scrollTo, 800 );
-
     }
   });
   

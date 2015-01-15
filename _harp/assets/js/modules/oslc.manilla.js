@@ -56,11 +56,11 @@ var Manilla = _.create(OSLC,{
     var
       newPanel = $(selector),
       tabPanels = newPanel.closest('.tabpanels'),
-      showEvent,
       oldPanel;
       
     if (newPanel.is(':visible')) { return; }
     
+    // loop through and update ARIA / classes on the panels
     this.tabs.each(function(){
       var tab = $(this),
         href = tab.attr('href') || tab.data('target'),
@@ -81,10 +81,6 @@ var Manilla = _.create(OSLC,{
       
     });
     
-    showEvent = $.Event('show.oslc.tab', {
-      relatedTarget: oldPanel[0]
-    });
-        
     oldPanel.attr('aria-hidden','true')
       .velocity('stop').velocity('transition.slideDownOut',{
         begin: function() { tabPanels.css( 'min-height', oldPanel.height() ); 
@@ -95,7 +91,7 @@ var Manilla = _.create(OSLC,{
             .velocity('stop').velocity('transition.slideUpIn', {
               duration: 300,
               complete: function(){
-                newPanel.trigger(showEvent);
+                newPanel.trigger('show.oslc.manilla');
               }
             });
           tabPanels.css( 'min-height', newPanel.height() );
@@ -108,13 +104,16 @@ var Manilla = _.create(OSLC,{
 /*
   jQuery Plugin
 
-  Two uses: use it on a menu to initialize the whole tabular setup
+  Three uses: use it on a menu to initialize the whole tabular setup
   This includes ARIA roles, keyboard navigation, etc
   $('.menu').manilla();
   
   Or you can fire it on a single link to show that tabpanel immediately.
   It'll set up the entire tablist for you if needed.
   $('a.tab').manilla();
+  
+  OR you can call .manilla() on a tabpanel (once instantiated) to show it immediately
+  $('.tabpanel').manilla()
 */
 $.fn.manilla = function() {
   return this.each(function() {
