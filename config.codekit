@@ -7501,6 +7501,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
 		},
+	"\/_harp\/samples\/software.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/samples\/software.jade",
+		"outputAbbreviatedPath": "\/_harp\/samples\/software.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0
+		},
 	"\/_harp\/samples\/specifications.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
