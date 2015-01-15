@@ -56,6 +56,7 @@ var Manilla = _.create(OSLC,{
     var
       newPanel = $(selector),
       tabPanels = newPanel.closest('.tabpanels'),
+      showEvent,
       oldPanel;
       
     if (newPanel.is(':visible')) { return; }
@@ -79,17 +80,24 @@ var Manilla = _.create(OSLC,{
       }
       
     });
+    
+    showEvent = $.Event('show.oslc.tab', {
+      relatedTarget: oldPanel[0]
+    });
         
     oldPanel.attr('aria-hidden','true')
-      .velocity('stop')
-      .velocity('transition.slideDownOut',{
+      .velocity('stop').velocity('transition.slideDownOut',{
         begin: function() { tabPanels.css( 'min-height', oldPanel.height() ); 
         },
         duration: 300,
         complete: function() {
           newPanel.attr('aria-hidden','false')
-            .velocity('stop')
-            .velocity('transition.slideUpIn', 300);
+            .velocity('stop').velocity('transition.slideUpIn', {
+              duration: 300,
+              complete: function(){
+                newPanel.trigger(showEvent);
+              }
+            });
           tabPanels.css( 'min-height', newPanel.height() );
         }
       });    
@@ -113,9 +121,20 @@ $.fn.manilla = function() {
     
     var 
       $el = $(this),
+      tabList = $el, // default, but could be called on a panel or tab directly
       isTab = $el.is('[aria-controls]'),
-      tabList = isTab ? $el.closest('[data-manilla]') : $el,
-      manilla = tabList.data('manilla');
+      isTabPanel = $el.is('[aria-labelledby]'),
+      manilla; 
+      
+    if (isTab) {
+      tabList = $el.closest('[data-manilla]');
+    } 
+    
+    if (isTabPanel) {
+      tabList = $( '#' + $el.attr('aria-labelledby') ).closest('[data-manilla]');
+    }
+      
+    manilla = tabList.data('manilla');
     
     // need to initialize the entire tablist
     if ( ! _.has(manilla,'tablist') ) {
@@ -125,7 +144,12 @@ $.fn.manilla = function() {
         .init($el);
     }
     
-    isTab && manilla.show( $el.attr('href') || $el.data('target') );
+    if (isTab) { 
+      manilla.show( $el.attr('href') || $el.data('target') );
+      return;
+    }
+    
+    if (isTabPanel) { manilla.show( '#' + this.id ); }
     
   });
 };
