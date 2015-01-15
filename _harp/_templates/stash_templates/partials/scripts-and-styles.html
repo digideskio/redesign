@@ -41,51 +41,44 @@
   This is cookie-driven, so it must be in nocache tags
 --}
 {stash:nocache}  {!-- HAHAHAHHAHAHAHHAHAHAHA this works??? --}
-
-  {!-- Switchee prevents unnecessary tag processing --}
-  {exp:switchee variable="{cookie:combinedcss}" parse="inward"}
-    {case value="true"}
+{if cookie:combinedcss}
+{/stash:nocache}
+    <!-- link to combined CSS -->
+    {exp:minimee:display css="combined"}
+{stash:nocache}
+{if:else}
 {/stash:nocache}
 
-      <!-- link to combined CSS -->
-      {exp:minimee:display css="combined"}
+  <!-- embedded critical CSS -->
+  {exp:minimee:css:contents attribute:type="text/css"}
+    <link rel="stylesheet" href="{global:assets:css}critical.min.css">
+  {/exp:minimee:css:contents}
 
 {stash:nocache}
-    {/case}
-    {case default="yes"}
-{/stash:nocache}
-
-      <!-- embedded critical CSS -->
-      {exp:minimee:css:contents attribute:type="text/css"}
-        <link rel="stylesheet" href="{global:assets:css}critical.min.css">
-      {/exp:minimee:css:contents}
-
-{stash:nocache}
-    {/case}
-  {/exp:switchee}
+{/if}
 {/stash:nocache}
 
 {stash:nocache}
-  {exp:switchee variable="{cookie:grunticons}" parse="inward"}
-    {case value="svg"}
+{exp:switchee variable="{cookie:grunticons}" parse="inward"}
+  {case value="svg"}
 {/stash:nocache}
-      <!-- link to pre-decided SVG grunticon CSS -->
-      {exp:minimee:display css="grunticon_svg"}
+    <!-- link to pre-decided SVG grunticon CSS -->
+    {exp:minimee:display css="grunticon_svg"}
 {stash:nocache}
-    {/case}
-    {case value="png"}
+  {/case}
+  {case value="png"}
 {/stash:nocache}
-      <!-- link to pre-decided PNG grunticon CSS -->
-      {exp:minimee:display css="grunticon_png"}
+    <!-- link to pre-decided PNG grunticon CSS -->
+    {exp:minimee:display css="grunticon_png"}
 {stash:nocache}
-    {/case}
-    {case value="fallback"}
+  {/case}
+  {case value="fallback"}
 {/stash:nocache}
-      <!-- link to pre-decided FALLBACK grunticon CSS -->
-      {exp:minimee:display css="grunticon_fallback"}
+    <!-- link to pre-decided FALLBACK grunticon CSS -->
+    {exp:minimee:display css="grunticon_fallback"}
 {stash:nocache}
-    {/case}
-  {/exp:switchee}
+  {/case}
+{/exp:switchee}
 {/stash:nocache}
 
 <noscript>

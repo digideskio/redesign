@@ -6238,17 +6238,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/_harp\/assets\/js\/lib\/jquery-2.1.1.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/jquery-2.1.1.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/jquery-2.1.1-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
-		},
 	"\/_harp\/assets\/js\/lib\/jquery-custom.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -6304,17 +6293,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/_harp\/assets\/js\/lib\/polyfills\/classlist.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/polyfills\/classlist.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/polyfills\/min\/classlist-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
-		},
 	"\/_harp\/assets\/js\/lib\/tether.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -6332,17 +6310,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/underscore.string.js",
 		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/underscore.string-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
-		},
-	"\/_harp\/assets\/js\/lib\/vein.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/vein.js",
-		"outputAbbreviatedPath": "\/_harp\/assets\/js\/lib\/min\/vein-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -9662,7 +9629,7 @@
 	"javascriptCreateSourceMap": 1,
 	"javascriptOutputStyle": 1,
 	"javascriptSyntaxCheckerStyle": 1,
-	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire, FastClick, d3, alert",
+	"jsCheckerReservedNamesString": "_, module, window, $, console, Modernizr, vein, Drop, Tether, enhance, grunticon, enquire, FastClick, d3, alert, OSLC",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,
