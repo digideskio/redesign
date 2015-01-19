@@ -15,16 +15,16 @@
             {summary}
       	  </div>
       	</section>
+      	{if date || author || {exp:stash:list_count name="tags_{entry_id}"}}
       	<div class="footer">
       	  <footer class="meta">
       	    <span class="byline">
-              {if date || author}
+              
                 <time datetime="{date_w3c}">{date}</time>
                 {if author}
                 | {author_link}
                 <span class="hidden"><span data-filter-on="author">{author}</span></span>
                 {/if}
-              {/if}
       	    </span>
       	    {if {exp:stash:list_count name="tags_{entry_id}"}}
       	      <div class="tags">
@@ -33,6 +33,7 @@
       	    {/if}
       	  </footer>
       	</div>
+      	{/if}
       </div>
     </div>
 {if count == total_results}

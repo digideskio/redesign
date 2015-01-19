@@ -60,10 +60,6 @@
     {stash:entry_id}{entry_id}{/stash:entry_id}
     {stash:hook}{channel_short_name}_{url_title}{/stash:hook}
     
-    {stash:date}{entry_date format="{lv-blogdateformat}"}{/stash:date}
-    {stash:date_w3c}{entry_date format="{DATE_W3C}"}{/stash:date_w3c}
-    {stash:date_epoch}{entry_date format="%U"}{/stash:date_epoch}
-
     {stash:summary}
       {if cf-resource-cv-videos}
         {exp:channel_videos:videos entry_id="{entry_id}" limit="1"}
@@ -76,7 +72,13 @@
       {/if}
     {/stash:summary}
     
-    {exp:switchee variable="{channel_short_name}" parse="inward"}
+    {exp:switchee variable="{channel_short_name}" parse="inward" match="all"}
+      {case value="blog|resource_articles|resource_podcasts|resource_presentations|resource_videos|resource_whitepapers"}
+        {stash:date}{entry_date format="{lv-blogdateformat}"}{/stash:date}
+        {stash:date_w3c}{entry_date format="{DATE_W3C}"}{/stash:date_w3c}
+        {stash:date_epoch}{entry_date format="%U"}{/stash:date_epoch}
+      {/case}
+      
       {case value="blog"}
         {stash:author_link}{encode="{email}" title="{author}"}{/stash:author_link}
         {stash:author}{author}{/stash:author}
