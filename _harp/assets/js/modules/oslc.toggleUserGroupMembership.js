@@ -1,14 +1,15 @@
 $(document).ready(function(){
 
-// set in the EE template
+// this is set in the EE template
 var options = window.toggleMembershipOptions;
 
 if (! options) {return;}
 
 // sugar
 var
-  cat_id = options.workgroupCategory,
-  is_member = options.isWorkgroupMember;
+  catID = options.workgroupCategory,
+  isMember = options.isWorkgroupMember,
+  getValue = function() { return $(this).val(); };
 
 
 $.ajax({
@@ -16,25 +17,18 @@ $.ajax({
   success: function(data){
     var 
       $form = $('#member_categories_form', data),
-      $input = $('input[value="' + cat_id + '"]', $form),
-      memberships = [],
-      current_cat_idx,
+      $input = $('input[value="' + catID + '"]', $form),
+      memberships = $form.find('input:checked').map(getValue).get(),
       $link,
       $placeholder = $(options.placeholder);
     
     // update the form's return value to the current page URL
     $('input[name="RET"]', $form).val(window.location.href);
     
-    // find all existing memberships
-    $form.find('input:checked').each(function(){
-      memberships.push( $(this).val() );
-    });
-    
-    // check if the current wg is part of them
-    current_cat_idx = $.inArray( cat_id, memberships);
-    
-    // if so, remove that, as the current wg will change
-    (current_cat_idx > 0) && memberships.splice( current_cat_idx, 1 );
+    // check if the current wg id is in the list of memberships
+    // and remove that, as the current wg will change
+    // (this is where underscore/lodash are great: you don't need to check if the value is there before you try to remove it. previously I had to use $.inArray, then if the element was present do an array.splice() to modify the array )
+    memberships = _.without(memberships, catID);
     
     $form
       .css({'display': 'none', 'visibility' : 'hidden' }) // make sure the form stays hidden when inevitably inserted into DOM
@@ -43,22 +37,15 @@ $.ajax({
         // validation
         // check that the list of *other* wgs has not changed
         
-        var new_memberships = [],
-          current_cat_idx,
+        var new_memberships = $form.find('input:checked').map(getValue).get(),
           valid;
-        
-        $form.find('input:checked').each(function(){
-          new_memberships.push( $(this).val() );
-        });
-        
+
         // find and remove the current wg id
-        current_cat_idx = $.inArray( cat_id, new_memberships );
-        (current_cat_idx > 0) && new_memberships.splice( current_cat_idx, 1 );
+        new_memberships = _.without(new_memberships, catID);
+
+        valid = _.isEqual( memberships, new_memberships );
         
-        // clever: http://stackoverflow.com/questions/1773069/using-jquery-to-compare-two-arrays
-        valid = $( memberships ).not( new_memberships ).length === 0 && $( new_memberships ).not( memberships ).length === 0;
-        
-        ! valid && alert('hey sneaky! whatchu doin to my form?');
+        if (! valid) { alert('hey sneaky! whatchu doin to my form?'); }
         
         return valid;
 
@@ -66,12 +53,12 @@ $.ajax({
     
     // build the action link and place it on my placeholder
     $link = $(document.createElement('a'))
-      .addClass('btn ' + (is_member ? 'bad' : 'good') )
+      .addClass('btn ' + (isMember ? 'bad' : 'good') )
       .attr( {
         'href': '#',
         'id' : 'change_user_group_membership'
         })
-      .html( (is_member ? 'Leave' : 'Join') + ' this User Group' )
+      .html( (isMember ? 'Leave' : 'Join') + ' this User Group' )
       .appendTo($placeholder);
     
     $placeholder.on('click', function(e){
