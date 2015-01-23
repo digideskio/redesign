@@ -1503,7 +1503,7 @@ a.gsst_a:focus {
   line-height: 1;
   vertical-align: middle;
   padding: 8px;
-  color: #fff;
+  color: #fff !important;
   background-color: #666;
   text-decoration: none;
   margin-right: 2px;

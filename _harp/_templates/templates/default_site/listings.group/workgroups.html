@@ -1,6 +1,13 @@
-{embed="_embeds/_body"
-	pagetype="workgroups_all"
-	js_body_class="js_popovers"
+{stash:embed
+  context="@URI"
+  file_name="viewmodels:listing"
+  parse_stage="both"
+  stash:_layout="standard"
+
+  stash:_type="workgroup"
+  stash:_listing_style="cards"
+  stash:_bartender_controls="tag,organization"
+  stash:_listing_extra_params='fixed_order="{lv:workgroup_order}"'
 }
 
 {exp:stash:parse}

@@ -4,12 +4,29 @@
   <div class="grid blocks">
 {/if}
     <div class="column hand-full desk-half" data-date="{date_epoch}">
-      <div class="card" {if hook}id="{hook}"{/if}>
+      <article class="card" {if hook}id="{hook}"{/if}>
+        {if {exp:stash:list_count name="organization_{entry_id}"} == 0}
       	<header class="header">
       	  <h1 class="title">
       	    <a href="{url}" rel="bookmark">{title}</a>
       	  </h1>
-      	</header>
+        </header>
+        {if:else}
+        <div class="header">
+        	<div class="flag reversed">
+        		<header class="body">
+              <h1 class="title">
+                <a href="{url}" rel="bookmark">{title}</a>
+              </h1>
+        		</header>
+        		<div class="image">
+        		  <div class="tags">
+        		    {stash:embed:partials:tags stash:list="organization_{entry_id}"}
+        		  </div>
+        		</div>
+        	</div>
+        </div>
+        {/if}
       	<section class="content">      	  
       	  <div class="copy">
             {summary}
@@ -18,14 +35,17 @@
       	{if date || author || {exp:stash:list_count name="tags_{entry_id}"}}
       	<div class="footer">
       	  <footer class="meta">
+      	    {if date || author}
       	    <span class="byline">
-              
+                {if date}
                 <time datetime="{date_w3c}">{date}</time>
+                {/if}
                 {if author}
                 | {author_link}
                 <span class="hidden"><span data-filter-on="author">{author}</span></span>
                 {/if}
       	    </span>
+      	    {/if}
       	    {if {exp:stash:list_count name="tags_{entry_id}"}}
       	      <div class="tags">
       	        {stash:embed:partials:tags stash:list="tags_{entry_id}"}
@@ -34,7 +54,7 @@
       	  </footer>
       	</div>
       	{/if}
-      </div>
+      </article>
     </div>
 {if count == total_results}
   </div>

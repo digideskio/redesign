@@ -53,7 +53,7 @@
 }
   {if no_results}{redirect="404"}{/if}
   
-  {exp:stash:append_list name="listing" parse_tags="yes" parse_conditionals="yes"}
+  {exp:stash:append_list name="listing" parse_tags="yes" parse_conditionals="yes" parse_depth="2"}
     {stash:channel_slug}{channel_short_name}{/stash:channel_slug}
     {stash:url}{page_url}{/stash:url}
     {stash:title}{title}{/stash:title}
@@ -84,6 +84,15 @@
         {stash:author_link}{encode="{email}" title="{author}"}{/stash:author_link}
         {stash:author}{author}{/stash:author}
       {/case}
+      
+      {case value="workgroups"}
+        {exp:stash:set_list:orgs name="organization_{entry_id}" parse_tags="yes" parse_vars="yes" parse_depth="2"}
+          {exp:tag:tags entry_id="{entry_id}" websafe_separator="-" tag_group_name="sdos"}
+            {stash:href}/tagged/{websafe_tag}/{/stash:href}
+            {stash:text}{tag}{/stash:text}
+          {/exp:tag:tags}
+        {/exp:stash:set_list:orgs}
+      {/case}
     {/exp:switchee}
     
     {exp:stash:set_list:tags name="tags_{entry_id}" parse_tags="yes" parse_conditionals="yes"}
@@ -92,8 +101,16 @@
         {stash:icon}tag-upcoming{/stash:icon}
         {stash:class}info{/stash:class}        
       {/if}
+      
+      {if channel_short_name == "workgroups"}
+        {exp:tag:tags entry_id="{entry_id}" websafe_separator="-" tag_group_name="workgroup_tags"}
+          {stash:href}/tagged/{websafe_tag}/{/stash:href}
+          {stash:text}{tag}{/stash:text}
+        {/exp:tag:tags}
+      {/if}
+      
     {/exp:stash:set_list:tags}
-    
+        
   {/exp:stash:append_list}
   
   {paginate}
