@@ -22,8 +22,21 @@
       {/exp:low_variables:parse}
     {/exp:stash:set}
   {/case}
+  
+  {case value="workgroup"}
+    {!-- Grab the listing description from the page's entry --}
+    {exp:channel:entries
+    	entry_id="{structure:page:entry_id}"
+      status="open|closed"
+      disable="{global:disable_default}"
+      require_entry="yes"
+    }
+      {exp:stash:set name="layout_listing_description" parse_tags="yes" match="#\S#"}
+        {cf-sp-w-body-en}
+      {/exp:stash:set}
+    {/exp:channel:entries}
+  {/case}
 {/exp:switchee}
-
 
 {exp:channel:entries
   require_entry="yes"
@@ -90,6 +103,7 @@
           {exp:tag:tags entry_id="{entry_id}" websafe_separator="-" tag_group_name="sdos"}
             {stash:href}/tagged/{websafe_tag}/{/stash:href}
             {stash:text}{tag}{/stash:text}
+            {stash:filter}organization{/stash:filter}
           {/exp:tag:tags}
         {/exp:stash:set_list:orgs}
       {/case}
@@ -106,6 +120,7 @@
         {exp:tag:tags entry_id="{entry_id}" websafe_separator="-" tag_group_name="workgroup_tags"}
           {stash:href}/tagged/{websafe_tag}/{/stash:href}
           {stash:text}{tag}{/stash:text}
+          {stash:filter}tag{/stash:filter}
         {/exp:tag:tags}
       {/if}
       

@@ -1,8 +1,8 @@
 {exp:stash:get_list name="{stash:list}"}
   {if href}
-  <a href="{href}" rel="tag" class="tag{if class} {class}{/if}" data-tagname="{text}">
+  <a href="{href}" rel="tag" class="tag{if class} {class}{/if}" data-tagname="{text}" {if filter}data-filter-on="{filter}"{/if}>
   {if:else}
-  <span class="tag{if class} {class}{/if}" data-tagname="{text}">
+  <span class="tag{if class} {class}{/if}" data-tagname="{text}" {if filter}data-filter-on="{filter}"{/if}>
   {/if}
     {if icon}
       <div class="flag">
