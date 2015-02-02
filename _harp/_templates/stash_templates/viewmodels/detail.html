@@ -2,6 +2,7 @@
 
 {exp:channel:entries
 	entry_id="{structure:page:entry_id}"
+	dynamic="no"
   parse="inward"
 	show_future_entries="yes"
   show_expired="yes"
@@ -11,7 +12,6 @@
     disable="{stash:_disable}"
   {/if}
   require_entry="yes"
-
 }
 
 	{if no_results}{redirect="404"}{/if}
@@ -36,6 +36,7 @@
       {/exp:stash:append_list}
     {/exp:playa:parents}
   {/exp:stash:parse}
+  
   	
 	{!-- Primary body content --}
 	{exp:stash:set name="layout_copy" match="#\S#"}
@@ -99,10 +100,63 @@
           
         {/exp:playa:parents}
       {/case}
+      
+      {case value="software"}{cf-pr-w-description-en}{/case}
 
     {/exp:switchee}
     
 	{/exp:stash:set}{!-- /layout_copy --}
+	
+	{exp:stash:set_list name="layout_meta_before" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
+	  {exp:switchee variable="stash:_type" parse="inward"}
+	    {case value="software"}
+	      {cf-pr-m-consumes-en var_prefix="consumes"}
+	        {if consumes:row_count == 1}
+	          {stash:name}Consumes{/stash:name}
+            {stash:slug}consumes{/stash:slug}
+	        {/if}
+
+	        {consumes:spec var_prefix="consumed_spec"}
+            {exp:stash:append_list:consumed name="layout_meta_before_consumes"}
+              {stash:link}{consumed_spec:cf-spec-text}{/stash:link}
+              {stash:text}{consumed_spec:title}{/stash:text}
+            {/exp:stash:append_list:consumed}
+          {/consumes:spec}
+	      {/cf-pr-m-consumes-en}
+	      
+	      {cf-pr-m-produces-en var_prefix="produces"}
+	        {if produces:row_count == 1}
+	          {stash:name}Produces{/stash:name}
+            {stash:slug}produces{/stash:slug}
+	        {/if}
+	        
+	        {produces:produces var_prefix="produced_spec"} {!-- lol shame on me --}
+	          {exp:stash:append_list:produced name="layout_meta_before_produces"}
+              {stash:link}{produced_spec:cf-spec-text}{/stash:link}
+              {stash:text}{produced_spec:title}{/stash:text}
+            {/exp:stash:append_list:produced}
+	        {/produces:produces}
+	      {/cf-pr-m-produces-en}
+
+	      {if cf-pr-r-company}
+          {stash:name}Organization{/stash:name}
+          {stash:slug}organization{/stash:slug}
+          {cf-pr-r-company var_prefix="org"}
+            {stash:link}{org:cf-co-t-url}{/stash:link}
+            {stash:text}{org:title}{/stash:text}
+          {/cf-pr-r-company}
+	      {/if}
+
+        {if cf-pr-t-produrl}
+          {stash:name}Outgoing{/stash:name}
+          {stash:slug}outgoing{/stash:slug}
+          {stash:link}{cf-pr-t-produrl}{/stash:link}
+          {stash:text}At {exp:parse_url parts="host" omit="www.|www-01.|www8.|msdn."}{cf-pr-t-produrl}{/exp:parse_url}{/stash:text}
+        {/if}
+
+	    {/case}
+	  {/exp:switchee}
+	{/exp:stash:set_list}
 	
   {exp:stash:set_list name="layout_meta_after" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
 
@@ -226,6 +280,9 @@
         {stash:embed context="viewmodels:copy" name="workgroup" parse_stage="both" process="start"}
         {/stash:nocache}
 	    {/exp:stash:append}
+	  {/case}
+	  
+	  {case value="software"}
 	  {/case}
 	  
 	{/exp:switchee}
