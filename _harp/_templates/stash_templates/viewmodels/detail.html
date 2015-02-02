@@ -210,7 +210,7 @@
       {exp:stash:set name="layout_deck_date_w3c"}{entry_date format="{DATE_W3C}"}{/exp:stash:set}
 	  {/case}
 	  
-	  {case value="blog|resource|workgroup"}
+	  {case value="blog|resource|workgroup|software"}
       
       {exp:stash:append name="layout_relationships" parse_depth="2" parse_tags="yes" match="#\S#"}
         {exp:loopee foreach="{stash:_children_relationships}" parse="inward" as="channel_slug"}

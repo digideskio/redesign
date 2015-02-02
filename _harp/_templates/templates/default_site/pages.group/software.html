@@ -5,6 +5,7 @@
   stash:_type="software"
   stash:_layout="standard"
   stash:_status="open|closed"
+  stash:_parents_relationships="blog|tutorial|resource_presentations|resource_videos|resource_articles|resource_whitepapers|resource_podcasts"
 }
 
 {exp:channel:entries entry_id="{structure:page:entry_id}" limit="1" dynamic='no'}
@@ -205,92 +206,6 @@
 	{/if}
 
 		
-	{!-- Relationships --}
-	<div class="line">
-	
-		<div class="unit size1of2">
-		<div class="gutter">
-			{exp:low_variables:single 
-				var='lv-relationship-list'
-				preparse:direction='parents'
-				preparse:related_channel='tutorial'
-				preparse:related_to_entry_id="{structure:page:entry_id}"
-				preparse:size="1of1"
-				preparse:heading_text="Tutorials"
-				preparse:heading_level="h3"
-				preparse:orderby="title"
-				preparse:sort="asc"
-				preparse:collapse_limit="4"
-				preparse:expand_text="See all tutorials"
-			}
-			
-			{exp:low_variables:single 
-				var='lv-relationship-list'
-				preparse:direction='parents'
-				preparse:related_channel='resource_presentations|resource_videos'
-				preparse:related_to_entry_id="{structure:page:entry_id}"
-				preparse:size="1of1"
-				preparse:heading_text="Videos and presentations"
-				preparse:heading_level="h3"
-				preparse:orderby="title"
-				preparse:sort="asc"
-				preparse:collapse_limit="4"
-				preparse:expand_text="See all videos and presentations"
-			}
-			
-			{exp:low_variables:single 
-				var='lv-relationship-list'
-				preparse:direction='parents'
-				preparse:related_channel='resource_articles|resource_whitepapers'
-				preparse:related_to_entry_id="{structure:page:entry_id}"
-				preparse:size="1of1"
-				preparse:heading_text="Articles and whitepapers"
-				preparse:heading_level="h3"
-				preparse:orderby="title"
-				preparse:sort="asc"
-				preparse:collapse_limit="4"
-				preparse:expand_text="See all articles and whitepapers"
-			}
-			
-			{exp:low_variables:single 
-				var='lv-relationship-list'
-				preparse:direction='parents'
-				preparse:related_channel='resource_podcasts'
-				preparse:related_to_entry_id="{structure:page:entry_id}"
-				preparse:size="1of1"
-				preparse:heading_text="Podcasts"
-				preparse:heading_level="h3"
-				preparse:orderby="title"
-				preparse:sort="asc"
-				preparse:collapse_limit="4"
-				preparse:expand_text="See all podcasts"
-			}
-			
-			{!-- 
-				That leaves: resource_sites|resource_tools
-				It is unlikely that either of those will be related to a product
-			--}
-			</div> {!-- .gutter --}
-			</div> {!-- .unit --}
-			
-			<div class="unit lastUnit">
-			{exp:low_variables:single 
-				var='lv-relationship-list'
-				preparse:direction='parents'
-				preparse:related_channel='blog'
-				preparse:related_to_entry_id="{structure:page:entry_id}"
-				preparse:size="1of1"
-				preparse:heading_text="Blog posts"
-				preparse:heading_level="h3"
-				preparse:orderby="date"
-				preparse:sort="desc"
-				preparse:collapse_limit="4"
-				preparse:expand_text="See all blog posts"
-			}
-			</div>
-
-		
-	</div>
 {/exp:stash:set}
 	
 {/exp:channel:entries}
