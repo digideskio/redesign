@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 var
   nodeVSpacing = 30,
-  productName = $('#product-name').text(),
+  productName = $('#product-name').text().trim(),
   providers = $('[data-compatible-provider]'),
   consumers = $('[data-compatible-consumer]'),
   productNode = {

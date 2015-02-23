@@ -1,0 +1,113 @@
+{!-- this is within a exp:channel:entries tag --}
+
+{cf-pr-w-description-en}
+
+<h2>Compatibility</h2>
+
+{!-- Store this for the dendogram script --}
+<script type="text/data" id="product-name">{title}</script>
+
+{exp:stash:set_list name="software_compatibility_tabs"}
+  {stash:label}Graphical{/stash:label}
+  {stash:id}compatibility-graphical{/stash:id}
+  {stash:tabpanel_class}enhanced-only{/stash:tabpanel_class}
+  {stash:body}
+    <div class="grid pulled">
+      <div class="column hand-full workstation-major">
+        {!-- Graphic goes here! --}
+        <div id="compatibility-graphic" class="copy"></div>    
+      </div>
+      <div class="column hand-full workstation-minor">
+        <div class="legend">
+          <strong>Legend</strong>
+          <p>Hover over, focus, or tap any node for more details.</p>
+          <p>
+            <span data-tooltip title="Can output a specification that {title} can consume">Compatible producers</span> on the left;
+            <span data-tooltip title="Can consume a specification that {title} can output">compatible consumers</span> on the right.
+          </p>
+          <ul class="flat" id="compatibility-graphic-legend"></ul>
+        </div>
+      </div>
+    </div>
+    
+  {/stash:body}
+
+  {stash:label}Lists{/stash:label}
+  {stash:id}compatibility-list{/stash:id}
+  {stash:body}
+    <div class="grid pulled">
+      {exp:stash:get_list name="compatible_providers" prefix="provider"}
+        {if {provider:count} == 1}
+          <div class="column hand-full desk-half">
+          	<div class="copy">
+          	  <h3>Compatible providers</h3>
+          	  <p>The following products can output one or more specifications that {title} can consume.</p>
+
+              <ul id="providers">
+        {/if}
+                {exp:stash:set:nested name="provider_tooltip" context="{provider:entry_id}" parse_tags="yes" parse_vars="yes" trim="yes"}
+                  {title} can consume the following specifications that {provider:title} outputs: 
+                  {exp:stash:get_list:nested name='providers_specs' context='{provider:entry_id}' prefix='output_spec'}
+                  {if {output_spec:count} != 1 && {output_spec:count} == {output_spec:total_results} && {output_spec:total_results} > 1}
+                  and
+                  {/if}
+                  {output_spec:title}{if {output_spec:count} != {output_spec:total_results} && {output_spec:total_results} > 1},{/if}{if {output_spec:count} == {output_spec:total_results}}.{/if}
+                  {/exp:stash:get_list:nested}
+                {/exp:stash:set:nested}
+                <li>
+                  <a data-compatible-provider
+                    data-specifications="{exp:stash:get_list:nested name='providers_specs' context='{provider:entry_id}' prefix='output_spec' backspace='2'}{output_spec:title}||{/exp:stash:get_list:nested}" data-dendogram-tooltip="{exp:stash:get name='provider_tooltip' context='{provider:entry_id}'}"
+                    href="{provider:url}">{provider:title}</a>
+                  
+                  <span data-tooltip title="{exp:stash:get name='provider_tooltip' context='{provider:entry_id}'}"><span class="sr-only">Details</span></span>
+                </li>
+
+        {if {provider:count} == {provider:total_results}}
+              </ul>
+            </div>
+          </div>
+        {/if}
+      {/exp:stash:get_list}
+      
+      {exp:stash:get_list name="compatible_consumers" prefix="consumer"}
+        {if {consumer:count} == 1}
+          <div class="column hand-full desk-half">
+          	<div class="copy">
+          	  <h3>Compatible consumers</h3>
+          	  <p>The following products can consume one or more specifications that {title} can output.</p>
+
+              <ul id="consumers">
+        {/if}
+              {exp:stash:set:nested name="consumer_tooltip" context="{consumer:entry_id}" parse_tags="yes" parse_vars="yes" trim="yes"}
+                {consumer:title} can consume the following specifications that {title} outputs:
+                  {exp:stash:get_list:nested name='consumers_specs' context='{consumer:entry_id}' prefix='output_spec'}
+                  {if {output_spec:count} != 1 && {output_spec:count} == {output_spec:total_results} && {output_spec:total_results} > 1}
+                  and
+                  {/if}
+                  {output_spec:title}{if {output_spec:count} != {output_spec:total_results} && {output_spec:total_results} > 1},{/if}{if {output_spec:count} == {output_spec:total_results}}.{/if}
+                  {/exp:stash:get_list:nested}
+                {/exp:stash:set:nested}
+                <li>
+                  <a data-compatible-consumer
+                    data-specifications="{exp:stash:get_list:nested name='consumers_specs' context='{consumer:entry_id}' prefix='output_spec' backspace='2'}{output_spec:title}||{/exp:stash:get_list:nested}"
+                    href="{consumer:url}" data-dendogram-tooltip="{exp:stash:get name='consumer_tooltip' context='{consumer:entry_id}'}">{consumer:title}</a>
+                    
+                  <span data-tooltip title="{exp:stash:get name='consumer_tooltip' context='{consumer:entry_id}'}"><span class="sr-only">Details</span></span>
+                </li>
+
+        {if {consumer:count} == {consumer:total_results}}
+              </ul>
+            </div>
+          </div>
+        {/if}
+
+        
+      {/exp:stash:get_list}
+    </div>  
+  {/stash:body}
+
+{/exp:stash:set_list}
+
+{stash:embed:partials:tabs stash:list="software_compatibility_tabs" stash:heading="View"}
+
+{stash:embed:partials:notice stash:notice_type="warning" stash:notice_body="We make no guarantees about compliance with any specification."}

@@ -101,7 +101,9 @@
         {/exp:playa:parents}
       {/case}
       
-      {case value="software"}{cf-pr-w-description-en}{/case}
+      {case value="software"}
+        {stash:embed:viewmodels:copy:software process="start" parse="no"}
+      {/case}
 
     {/exp:switchee}
     
@@ -130,12 +132,19 @@
             {stash:slug}produces{/stash:slug}
 	        {/if}
 	        
-	        {produces:produces var_prefix="produced_spec"} {!-- lol shame on me --}
-	          {exp:stash:append_list:produced name="layout_meta_before_produces"}
+          {exp:stash:set_list:produced name="layout_meta_before_produces" parse_tags="yes" parse_depth="2" parse_conditionals="yes"}
+            {produces:produces var_prefix="produced_spec"} {!-- lol shame on me --}
               {stash:link}{produced_spec:cf-spec-text}{/stash:link}
-              {stash:text}{produced_spec:title}{/stash:text}
-            {/exp:stash:append_list:produced}
-	        {/produces:produces}
+              {stash:text}{produced_spec:title}{if produces:via_adapter}*{/if}{/stash:text}            
+            {/produces:produces}
+            {if produces:via_adapter}
+              {stash:tooltip}
+                Requires an adapter:
+                {produces:via_adapter var_prefix="adapter" backspace="2"}{adapter:title}, {/produces:via_adapter}
+              {/stash:tooltip}
+            {/if}
+          {/exp:stash:set_list:produced}
+
 	      {/cf-pr-m-produces-en}
 
 	      {if cf-pr-r-company}
@@ -151,13 +160,13 @@
           {stash:name}Outgoing{/stash:name}
           {stash:slug}outgoing{/stash:slug}
           {stash:link}{cf-pr-t-produrl}{/stash:link}
-          {stash:text}At {exp:parse_url parts="host" omit="www.|www-01.|www8.|msdn."}{cf-pr-t-produrl}{/exp:parse_url}{/stash:text}
+          {stash:text}Learn more at {exp:parse_url parts="host" omit="www.|www-01.|www8.|msdn."}{cf-pr-t-produrl}{/exp:parse_url}{/stash:text}
         {/if}
 
 	    {/case}
 	  {/exp:switchee}
 	{/exp:stash:set_list}
-	
+		
   {exp:stash:set_list name="layout_meta_after" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
 
     {exp:switchee variable="stash:_type" parse="inward" match="all"}
