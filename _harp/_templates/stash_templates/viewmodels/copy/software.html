@@ -1,11 +1,64 @@
-{!-- this is within a exp:channel:entries tag --}
-
 {cf-pr-w-description-en}
+
+{if cf-pr-t-produrl}
+<div class="copy-spacing">
+  <a class="action" rel="external" href="{cf-pr-t-produrl}">
+    <div class="flag reversed">
+      <div class="body">Learn more at {exp:parse_url parts="host" omit="www.|www-01.|www8.|msdn."}{cf-pr-t-produrl}{/exp:parse_url}</div>
+      <div class="image"><i class="icon grunticon-action-outgoing"></i></div>
+    </div>
+  </a>
+</div>
+{/if}
+
+
+{cf-pr-m-produces-en search:via_adapter="not IS_EMPTY"}
+
+  {if row_count == 1}
+  <div class="notice">
+    <div class="header">
+      <h3 class="title">Adapter required</h3>
+    </div>
+    <div class="body">
+      <p>An adapter is required to output the following specifications:</p>
+      <ul>
+  {/if}
+      <li>{produces var_prefix="spec"}<b>{spec:title}</b>{/produces}: {via_adapter var_prefix="adapter" backspace="2"}<a href="{adapter:page_url}">{adapter:title}</a>, {/via_adapter}</li>  
+  {if row_count == total_rows}
+      </ul>
+    </div>
+  </div>
+  {/if}
+
+{/cf-pr-m-produces-en}
+
+{cf-pr-m-consumes-en search:via_adapter="not IS_EMPTY"}
+
+  {if row_count == 1}
+  <div class="notice">
+    <div class="header">
+      <h3 class="title">Adapter required</h3>
+    </div>
+    <div class="body">
+      <p>An adapter is required to consume the following specifications:</p>
+      <ul>
+  {/if}
+      <li>{spec}<b>{title}</b>{/spec}: {via_adapter var_prefix="adapter" backspace="2"}<a href="{adapter:page_url}">{adapter:title}</a>, {/via_adapter}</li>  
+  {if row_count == total_rows}
+      </ul>
+    </div>
+  </div>
+  {/if}
+
+{/cf-pr-m-consumes-en}
+
 
 <h2>Compatibility</h2>
 
 {!-- Store this for the dendogram script --}
 <script type="text/data" id="product-name">{title}</script>
+
+{if {exp:stash:list_count name="compatible_providers"} || {exp:stash:list_count name="compatible_consumers"}}
 
 {exp:stash:set_list name="software_compatibility_tabs"}
   {stash:label}Graphical{/stash:label}
@@ -20,12 +73,12 @@
       <div class="column hand-full workstation-minor">
         <div class="legend">
           <strong>Legend</strong>
-          <p>Hover over, focus, or tap any node for more details.</p>
+          <ul class="flat" id="compatibility-graphic-legend"></ul>
           <p>
             <span data-tooltip title="Can output a specification that {title} can consume">Compatible producers</span> on the left;
             <span data-tooltip title="Can consume a specification that {title} can output">compatible consumers</span> on the right.
           </p>
-          <ul class="flat" id="compatibility-graphic-legend"></ul>
+          <p>Hover over, focus, or tap any node for more details.</p>
         </div>
       </div>
     </div>
@@ -111,3 +164,80 @@
 {stash:embed:partials:tabs stash:list="software_compatibility_tabs" stash:heading="View"}
 
 {stash:embed:partials:notice stash:notice_type="warning" stash:notice_body="We make no guarantees about compliance with any specification."}
+
+{if:else}
+
+{exp:ifelse parse="inward"}
+  {if "{cf-pr-s-isconnector}" == "y"}
+    
+    {exp:playa:parents var_prefix="adapted" channel="products" orderby="title" sort="asc"}
+
+      {if "{adapted:count}" == 1}
+				<p>{title} adds the following capabilities to these products:</p>
+				
+				<table>
+				<thead>
+				<tr>
+					{adapted:cf-pr-m-consumes-en search:via_adapter="{url_title}" limit="1"}
+						{if row_count == 1}<th scope="col">Gains support to <em>consume</em> (input) these specifications</th>{/if}
+					{/adapted:cf-pr-m-consumes-en}
+
+						<th scope="col">Product Name</th>
+						
+					{adapted:cf-pr-m-produces-en search:via_adapter="{url_title}" limit="1"}
+						{if row_count == 1}<th scope="col">Gains support to <em>produce</em> (output) these specifications</th>{/if}
+					{/adapted:cf-pr-m-produces-en}
+										
+				</tr>
+				</thead>
+			
+				<tbody>
+      {/if}
+
+				<tr>
+					{!-- Products that can now consume a spec w/ adapter --}
+					{!-- Limit specs returned to those where the adapter is in the via_adapter cell --}
+					{adapted:cf-pr-m-consumes-en search:via_adapter="{url_title}"}
+						{if row_count == 1}
+						<td>
+							<ul class="flat">
+						{/if}
+							<li>{spec var_prefix="spec"}{spec:title}{/spec}</li>
+						{if row_count == total_rows}
+							</ul>
+						</td>
+						{/if}
+					{/cf-pr-m-consumes-en}
+
+					<th scope="row"><a href="{adapted:page_url}">{adapted:title}</a></th>
+
+					{!-- Products that can now output a spec w/ adapter --}
+					{!-- Limit specs returned to those where the adapter is in the via_adapter cell --}
+					{adapted:cf-pr-m-produces-en search:via_adapter="{url_title}"}
+						{if row_count == 1}
+						<td>
+							<ul class="flat">
+						{/if}
+							<li>{produces var_prefix="spec"}{spec:title}{/produces}</li>
+						{if row_count == total_rows}
+							</ul>
+						</td>
+						{/if}
+					{/adapted:cf-pr-m-produces-en}
+				</tr>
+
+
+      {if "{adapted:count}" == "{adapted:total_results}"}
+				</tbody>
+				</table>
+      {/if}
+
+
+    {/exp:playa:parents}
+    
+  {if:else}
+    <p>No products can currently integrate with {title}. If we&rsquo;re wrong about that, {encode="webmaster@open-services.net" title="let us know"}!</p>
+  {/if}
+{/exp:ifelse}
+
+{/if}

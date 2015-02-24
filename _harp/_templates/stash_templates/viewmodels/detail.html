@@ -121,7 +121,7 @@
 	        {consumes:spec var_prefix="consumed_spec"}
             {exp:stash:append_list:consumed name="layout_meta_before_consumes"}
               {stash:link}{consumed_spec:cf-spec-text}{/stash:link}
-              {stash:text}{consumed_spec:title}{/stash:text}
+              {stash:text}{consumed_spec:title}{if consumes:via_adapter}<span title="Adapter required">*</span>{/if}{/stash:text}
             {/exp:stash:append_list:consumed}
           {/consumes:spec}
 	      {/cf-pr-m-consumes-en}
@@ -132,19 +132,12 @@
             {stash:slug}produces{/stash:slug}
 	        {/if}
 	        
-          {exp:stash:set_list:produced name="layout_meta_before_produces" parse_tags="yes" parse_depth="2" parse_conditionals="yes"}
-            {produces:produces var_prefix="produced_spec"} {!-- lol shame on me --}
+	        {produces:produces var_prefix="produced_spec"} {!-- lol shame on me --}
+	          {exp:stash:append_list:produced name="layout_meta_before_produces"}
               {stash:link}{produced_spec:cf-spec-text}{/stash:link}
-              {stash:text}{produced_spec:title}{if produces:via_adapter}*{/if}{/stash:text}            
-            {/produces:produces}
-            {if produces:via_adapter}
-              {stash:tooltip}
-                Requires an adapter:
-                {produces:via_adapter var_prefix="adapter" backspace="2"}{adapter:title}, {/produces:via_adapter}
-              {/stash:tooltip}
-            {/if}
-          {/exp:stash:set_list:produced}
-
+              {stash:text}{produced_spec:title}{if produces:via_adapter}<span title="Adapter required">*</span>{/if}{/stash:text}
+            {/exp:stash:append_list:produced}
+	        {/produces:produces}
 	      {/cf-pr-m-produces-en}
 
 	      {if cf-pr-r-company}
@@ -155,13 +148,6 @@
             {stash:text}{org:title}{/stash:text}
           {/cf-pr-r-company}
 	      {/if}
-
-        {if cf-pr-t-produrl}
-          {stash:name}Outgoing{/stash:name}
-          {stash:slug}outgoing{/stash:slug}
-          {stash:link}{cf-pr-t-produrl}{/stash:link}
-          {stash:text}Learn more at {exp:parse_url parts="host" omit="www.|www-01.|www8.|msdn."}{cf-pr-t-produrl}{/exp:parse_url}{/stash:text}
-        {/if}
 
 	    {/case}
 	  {/exp:switchee}
