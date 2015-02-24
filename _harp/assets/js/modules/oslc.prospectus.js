@@ -234,7 +234,7 @@ $(document).on('click', '.js-prospectus-focusable, .has-popup', function(e){
     $dropdownControl, $menuBar, $otherDropdownControl,
     $targets;
   
-  if ( ! validKey ) { return; }
+  if ( e.altKey || e.ctrlKey || e.metaKey || ! validKey ) { return; }
   if ( ! isDrop && _.contains([9,27], keycode) ) { return; }
   
   e.preventDefault();

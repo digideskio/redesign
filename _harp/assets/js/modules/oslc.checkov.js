@@ -70,6 +70,7 @@ var Checkov = _.create( OSLC, {
       .on('keydown.oslc.checkov', function(e){
         var keyCode = e.keyCode || e.which;
         
+        if ( e.altKey || e.ctrlKey || e.metaKey ) { return; }
         if ( ! e.shiftKey || 9 !== keyCode || ! checkov.isOpen() ) { return; }
         
         e.preventDefault(); // this keeps the shift+tab from jumping backwards an additional step
@@ -81,6 +82,7 @@ var Checkov = _.create( OSLC, {
     $(document).on('keydown.oslc.checkov', '#nav :focusable:last', function(e){
       var keyCode = e.keyCode || e.which;
       
+      if ( e.altKey || e.ctrlKey || e.metaKey ) { return; }
       if (e.shiftKey || 9 !== keyCode || ! checkov.isOpen() ) { return; }
 
       e.preventDefault();

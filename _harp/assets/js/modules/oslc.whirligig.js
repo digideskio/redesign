@@ -102,7 +102,9 @@ var Whirligig = _.create( OSLC, {
       
     }).on( 'keydown.oslc.whirligig', function(e){
       
-      $.inArray( e.keyCode, [37,38,39,40] ) > -1 && e.preventDefault();
+      if ( e.altKey || e.ctrlKey || e.metaKey ) { return; }
+      
+      _.contains([37,38,39,40], e.keyCode) && e.preventDefault();
             
       // up/left: previous
       (e.keyCode === 37 || e.keyCode === 38) && whirligig.prev( true );
