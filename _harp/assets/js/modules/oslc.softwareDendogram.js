@@ -1,7 +1,7 @@
 // see: http://bl.ocks.org/mbostock/4063570
 // @codekit-prepend "../lib/d3.min.js";
 
-;(function ($, window, document, d3, undefined) {
+;(function (d3, undefined) {
 'use strict';
 
 $(document).ready(function(){
@@ -199,4 +199,4 @@ OSLC.compactElements();
 
 });
 
-}(jQuery, this, this.document, d3));
+}(d3));

@@ -1,5 +1,15 @@
 {stash:embed:layouts:{stash:_layout}}
 
+{exp:switchee variable="stash:_additional_data" parse="inward"}
+  {case value="yes"}
+    {stash:embed 
+      process="inline"
+      name="additional_data__{stash:_type}"
+      file_name="models:{stash:_type}"
+    }
+  {/case}
+{/exp:switchee}
+
 {exp:channel:entries
 	entry_id="{structure:page:entry_id}"
 	dynamic="no"
