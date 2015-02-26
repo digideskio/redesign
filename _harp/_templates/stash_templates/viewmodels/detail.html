@@ -122,34 +122,30 @@
 	{exp:stash:set_list name="layout_meta_before" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
 	  {exp:switchee variable="stash:_type" parse="inward"}
 	    {case value="software"}
-	      {cf-pr-m-consumes-en var_prefix="consumes"}
-	        {if consumes:row_count == 1}
+	      {exp:stash:get_list name="consumable_spec_data" prefix="consumes"}
+	        {if {consumes:count} == 1}
 	          {stash:name}Consumes{/stash:name}
             {stash:slug}consumes{/stash:slug}
 	        {/if}
-
-	        {consumes:spec var_prefix="consumed_spec"}
-            {exp:stash:append_list:consumed name="layout_meta_before_consumes"}
-              {stash:link}{consumed_spec:cf-spec-text}{/stash:link}
-              {stash:text}{consumed_spec:title}{if consumes:via_adapter}<span title="Adapter required">*</span>{/if}{/stash:text}
-            {/exp:stash:append_list:consumed}
-          {/consumes:spec}
-	      {/cf-pr-m-consumes-en}
-	      
-	      {cf-pr-m-produces-en var_prefix="produces"}
-	        {if produces:row_count == 1}
-	          {stash:name}Produces{/stash:name}
-            {stash:slug}produces{/stash:slug}
-	        {/if}
 	        
-	        {produces:produces var_prefix="produced_spec"} {!-- lol shame on me --}
-	          {exp:stash:append_list:produced name="layout_meta_before_produces"}
-              {stash:link}{produced_spec:cf-spec-text}{/stash:link}
-              {stash:text}{produced_spec:title}{if produces:via_adapter}<span title="Adapter required">*</span>{/if}{/stash:text}
-            {/exp:stash:append_list:produced}
-	        {/produces:produces}
-	      {/cf-pr-m-produces-en}
+	        {exp:stash:append_list:consumed name="layout_meta_before_consumes"}
+            {stash:link}{consumes:url}{/stash:link}
+            {stash:text}{consumes:title}{/stash:text}
+          {/exp:stash:append_list:consumed}
+	      {/exp:stash:get_list}
 
+	      {exp:stash:get_list name="output_spec_data" prefix="produces"}
+          {if {produces:count} == 1}
+            {stash:name}Produces{/stash:name}
+            {stash:slug}produces{/stash:slug}
+          {/if}
+          
+          {exp:stash:append_list:produced name="layout_meta_before_produces"}
+            {stash:link}{produces:url}{/stash:link}
+            {stash:text}{produces:title}{/stash:text}
+          {/exp:stash:append_list:produced}
+	      {/exp:stash:get_list}
+	      
 	      {if cf-pr-r-company}
           {stash:name}Organization{/stash:name}
           {stash:slug}organization{/stash:slug}

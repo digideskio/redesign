@@ -3,97 +3,83 @@
     1: Match up all other products that support the same specs
     2: When listing the specs of the compatible product, limit to the specs supported by THIS product
 --}
-{exp:stash:parse}
-  {exp:stash:set_value name="consumable_specs" parse="inward" value='{exp:playa:child_ids entry_id="{structure:page:entry_id}" field_id="21" col_id="15"}'}
 
-  {exp:stash:set_value name="output_specs" parse="inward" value='{exp:playa:child_ids entry_id="{structure:page:entry_id}" field_id="22" col_id="17"}'}
-{/exp:stash:parse}
+{exp:stash:set_value name="consumable_specs" parse="inward" value='{exp:playa:child_ids entry_id="{structure:page:entry_id}" field_id="21" col_id="15"}'}
+
+{exp:stash:set_value name="output_specs" parse="inward" value='{exp:playa:child_ids entry_id="{structure:page:entry_id}" field_id="22" col_id="17"}'}
 
 {!-- COMPATIBLE PRODUCERS --}
 {exp:switchee variable="stash:consumable_specs" parse="inward"}
 
   {!-- Only run this if you have IDs to pair up --}
   {case value="#^\d#"}
-    {exp:playa:parents
-      channel="products"
-      parse="inward"
-      child_id='{exp:stash:get name="consumable_specs"}'
-      parent_id="not {structure:page:entry_id}" {!-- Exclude the requesting product from results --}
-      field_id="22"
-      col_id="17"
-      orderby="title"
-      sort="asc"
-      search:cf-pr-s-isconnector="IS_EMPTY" {!-- Excludes adapter products --}
-      var_prefix="provider"
-    }
-      {exp:stash:append_list name="compatible_providers"}
-        {stash:title}{provider:title}{/stash:title}
-        {stash:url}{provider:page_url}{/stash:url}
-        {stash:entry_id}{provider:entry_id}{/stash:entry_id}
-      {/exp:stash:append_list}
-
-      {!-- Now fetch the MATCHING specs that the provider outputs --}
-      {exp:playa:children 
-        channel="specifications"
+    {exp:stash:set_list name="consumable_spec_data" parse_tags="yes"}
+      {exp:channel:entries dynamic="no" parse="inward" entry_id="{exp:stash:consumable_specs}" orderby="title" sort="asc"}
+        {stash:title}{title}{/stash:title}
+        {stash:url}{cf-spec-text}{/stash:url}
+        {stash:entry_id}{entry_id}{/stash:entry_id}
+      {/exp:channel:entries}    
+    {/exp:stash:set_list}
+    
+    {exp:stash:set_list name="compatible_providers" parse_tags="yes" parse_depth="2"}
+      {exp:playa:parents
+        channel="products"
         parse="inward"
-        child_id='{exp:stash:get name="consumable_specs"}'
+        child_id="{exp:stash:consumable_specs}"
+        parent_id="not {structure:page:entry_id}" {!-- Exclude the requesting product from results --}
         field_id="22"
         col_id="17"
         orderby="title"
         sort="asc"
-        var_prefix="output_spec"}
-    
-        {exp:stash:append_list name="providers_specs" context="{provider:entry_id}"}
-          {stash:title}{output_spec:title}{/stash:title}
-          {stash:url}{output_spec:page_url}{/stash:url}
-        {/exp:stash:append_list}
-    
-      {/exp:playa:children}
+        search:cf-pr-s-isconnector="IS_EMPTY" {!-- Excludes adapter products --}
+        var_prefix="provider"
+      }
+        {stash:title}{provider:title}{/stash:title}
+        {stash:url}{provider:page_url}{/stash:url}
+        {stash:entry_id}{provider:entry_id}{/stash:entry_id}
+        
+        {!-- This will let you do a match/against the list of consumable specs to show only the output specs that the main product can consume --}
+        {stash:output_specs_ids}{exp:playa:child_ids channel="specifications" field_id="22" col_id="17" orderby="title" sort="asc"}{/stash:output_specs_ids}
 
-    {/exp:playa:parents}
+      {/exp:playa:parents}
+    {/exp:stash:set_list}
+    
   {/case}
 {/exp:switchee}
 
 {!-- COMPATIBLE CONSUMERS --}
 {exp:switchee variable="stash:output_specs" parse="inward"}
   {case value="#^\d#"}
-    {exp:playa:parents 
-      channel="products"
-      parse="inward"
-      child_id='{exp:stash:get name="output_specs"}'
-      parent_id="not {structure:page:entry_id}" {!-- Exclude the requesting product from results --}
-      field_id="21"
-      col_id="15"
-      orderby="title"
-      sort="asc"
-      search:cf-pr-s-isconnector="IS_EMPTY" {!-- Excludes adapter products --}
-      var_prefix="consumer"
-    }
-
-      {exp:stash:append_list name="compatible_consumers"}
-        {stash:title}{consumer:title}{/stash:title}
-        {stash:url}{consumer:page_url}{/stash:url}
-        {stash:entry_id}{consumer:entry_id}{/stash:entry_id}
-      {/exp:stash:append_list}
   
-      {!-- Now fetch the MATCHING specs that the consumer can input --}
-      {exp:playa:children
-        channel="specifications"
+    {exp:stash:set_list name="output_spec_data" parse_tags="yes"}
+      {exp:channel:entries dynamic="no" parse="inward" entry_id="{exp:stash:output_specs}" orderby="title" sort="asc"}
+        {stash:title}{title}{/stash:title}
+        {stash:url}{cf-spec-text}{/stash:url}
+        {stash:entry_id}{entry_id}{/stash:entry_id}
+      {/exp:channel:entries}        
+    {/exp:stash:set_list}
+    
+    {exp:stash:set_list name="compatible_consumers" parse_tags="yes" parse_depth="2"}
+      {exp:playa:parents 
+        channel="products"
         parse="inward"
-        child_id='{exp:stash:get name="output_specs"}'
+        child_id="{exp:stash:output_specs}"
+        parent_id="not {structure:page:entry_id}" {!-- Exclude the requesting product from results --}
         field_id="21"
         col_id="15"
         orderby="title"
         sort="asc"
-        var_prefix="consumed_spec"}
-    
-        {exp:stash:append_list name="consumers_specs" context="{consumer:entry_id}"}
-          {stash:title}{consumed_spec:title}{/stash:title}
-          {stash:url}{consumed_spec:page_url}{/stash:url}
-        {/exp:stash:append_list}
-    
-      {/exp:playa:children}
+        search:cf-pr-s-isconnector="IS_EMPTY" {!-- Excludes adapter products --}
+        var_prefix="consumer"
+      }
 
-    {/exp:playa:parents}
+        {stash:title}{consumer:title}{/stash:title}
+        {stash:url}{consumer:page_url}{/stash:url}
+        {stash:entry_id}{consumer:entry_id}{/stash:entry_id}
+        {stash:consumed_spec_ids}{exp:playa:child_ids channel="specifications" field_id="21" col_id="15" orderby="title" sort="asc"}{/stash:consumed_spec_ids}
+
+      {/exp:playa:parents}
+    {/exp:stash:set_list}
+    
   {/case}
 {/exp:switchee}
