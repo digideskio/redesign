@@ -5,6 +5,10 @@
     {exp:stash:extend name="layout_listing" with="partials:listing_cards"}
     {exp:stash:extend name="layout_bartender" with="partials:bartender"}
   {/case}
+  
+  {case value="simple"}
+    {exp:stash:extend name="layout_copy" with="partials:listing_simple"}
+  {/case}
 {/exp:switchee}
 
 {exp:switchee variable="stash:_type" parse="inward"}
@@ -23,7 +27,7 @@
     {/exp:stash:set}
   {/case}
   
-  {case value="workgroup"}
+  {case value="workgroup|software"}
     {!-- Grab the listing description from the page's entry --}
     {exp:channel:entries
     	entry_id="{structure:page:entry_id}"
@@ -106,6 +110,10 @@
             {stash:filter}organization{/stash:filter}
           {/exp:tag:tags}
         {/exp:stash:set_list:orgs}
+      {/case}
+      
+      {case value="products"}
+        {stash:is_adapter}{cf-pr-s-isconnector}{/stash:is_adapter}
       {/case}
     {/exp:switchee}
     

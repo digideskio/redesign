@@ -755,6 +755,7 @@ img {
    *  - this can make the layout 
    */ }
   .flexbox .grid {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
@@ -763,6 +764,7 @@ img {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
     .flexbox .grid.middle {
+      -webkit-box-align: center;
       -webkit-align-items: center;
          -moz-box-align: center;
           -ms-flex-align: center;
@@ -817,6 +819,7 @@ img {
    * Grid dividers
    */ }
   .flexbox .column {
+    -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
        -moz-box-flex: 1;
         -ms-flex: 1 1 auto;
@@ -832,6 +835,7 @@ img {
     padding-left: 0;
     padding-right: 0; }
   .flexbox .blocks > .column {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
@@ -1033,6 +1037,7 @@ img {
   overflow: visible; }
 .flexbox .media,
 .flexbox .flag {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1044,6 +1049,7 @@ img {
             flex-shrink: 0; }
   .flexbox .media > .body,
   .flexbox .flag > .body {
+    -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
        -moz-box-flex: 1;
         -ms-flex-positive: 1;
@@ -1051,6 +1057,7 @@ img {
   .flexbox .media.reversed > .image,
   .flexbox .flag.reversed > .image {
     float: none;
+    -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
        -moz-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -1061,16 +1068,19 @@ img {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
 .flexbox .media {
+  -webkit-box-align: start;
   -webkit-align-items: flex-start;
      -moz-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start; }
 .flexbox .flag {
+  -webkit-box-align: center;
   -webkit-align-items: center;
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
   .flexbox .flag.bottom {
+    -webkit-box-align: end;
     -webkit-align-items: flex-end;
        -moz-box-align: end;
         -ms-flex-align: end;
@@ -1096,10 +1106,13 @@ img {
  * See: http://jsbin.com/todajate/3/edit
  */
 .flexbox .sticky-footer, .flexbox .sticky-footer-body {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
      -moz-box-orient: vertical;
      -moz-box-direction: normal;
@@ -1111,6 +1124,7 @@ img {
             flex-shrink: 0; }
 
 .flexbox .sticky-footer-body, .flexbox .main {
+  -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
      -moz-box-flex: 1;
       -ms-flex: 1 0 auto;
@@ -1392,6 +1406,12 @@ a.gsst_a:focus {
 
 .inline li {
   margin-right: 11px; }
+
+@media only screen and (min-width: 64.0625em) {
+  .multiple-columns {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2; } }
 
 .breadcrumbs {
   padding-top: 8px;
@@ -1884,6 +1904,7 @@ textarea.text {
     border-color: #203c5a; }
 
 .flexbox .prefixed {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1891,6 +1912,7 @@ textarea.text {
   max-width: 290px; }
   .flexbox .prefixed > input {
     margin: 0;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
        -moz-box-flex: 1;
         -ms-flex: 1;
@@ -1943,6 +1965,7 @@ input[type="checkbox"] {
     outline: 0;
     border-bottom-color: #8fb1d6; }
 .enhanced .form.login .actions {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1950,6 +1973,7 @@ input[type="checkbox"] {
   .enhanced .form.login .actions .links, .enhanced .form.login .actions button {
     padding: 5px; }
   .enhanced .form.login .actions button {
+    -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
        -moz-box-flex: 1;
         -ms-flex-positive: 1;
@@ -1968,6 +1992,7 @@ input[type="checkbox"] {
     margin-top: 3px; }
 
 .enhanced form.search {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1980,6 +2005,7 @@ form.search input[type="search"] {
   line-height: 1; }
   .enhanced form.search input[type="search"] {
     border-radius: 5px 0 0 5px;
+    -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
        -moz-box-flex: 1;
         -ms-flex-positive: 1;
@@ -2088,10 +2114,12 @@ form.search button {
 
 .flexbox .meta,
 .flexbox .tags {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
   -webkit-align-items: center;
      -moz-box-align: center;
       -ms-flex-align: center;
@@ -2100,6 +2128,7 @@ form.search button {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
 .flexbox .meta .byline {
+  -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
      -moz-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -2509,6 +2538,7 @@ form.search button {
   background: none;
   box-shadow: inset 0 -3px 0 #666; }
 .flexbox .menu.horizontal, .flexbox .menu.horizontal > .items {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2516,15 +2546,18 @@ form.search button {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  -webkit-box-align: stretch;
   -webkit-align-items: stretch;
      -moz-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch; }
   .flexbox .menu.horizontal .item, .flexbox .menu.horizontal > .items .item {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
        -moz-box-align: center;
         -ms-flex-align: center;
@@ -2578,16 +2611,20 @@ form.search button {
     margin-bottom: 48px;
     margin-bottom: 3rem; }
     .flexbox .cards .card {
+      display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       -webkit-flex-direction: column;
          -moz-box-orient: vertical;
          -moz-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column; }
       .flexbox .cards .card > .content {
+        -webkit-box-flex: 1;
         -webkit-flex: 1 0 auto;
            -moz-box-flex: 1;
             -ms-flex: 1 0 auto;
@@ -2625,6 +2662,7 @@ form.search button {
 
 @media only screen and (min-width: 40.0625em) {
   .flexbox .slats.flexible {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
@@ -2638,6 +2676,7 @@ form.search button {
     -webkit-flex-basis: 50%;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
+    -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
        -moz-box-flex: 1;
         -ms-flex-positive: 1;

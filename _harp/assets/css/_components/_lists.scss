@@ -30,3 +30,9 @@
 .flat {
   @extend %list-reset;
 }
+
+.multiple-columns {
+  @include respond-to(desk-up){
+    column-count: 2;
+  }
+}
