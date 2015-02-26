@@ -38,12 +38,25 @@
         {stash:url}{provider:page_url}{/stash:url}
         {stash:entry_id}{provider:entry_id}{/stash:entry_id}
         
-        {!-- This will let you do a match/against the list of consumable specs to show only the output specs that the main product can consume --}
-        {stash:output_specs_ids}{exp:playa:child_ids channel="specifications" field_id="22" col_id="17" orderby="title" sort="asc"}{/stash:output_specs_ids}
+        {exp:stash:parse}
+          {exp:stash:set_value name="produced_specs" context="{provider:entry_id}" value='{exp:playa:child_ids channel="specifications" field_id="22" col_id="17" orderby="title" sort="asc"}'}
+        {/exp:stash:parse}
+
+        {stash:specifications}{exp:stash:get_list name="consumable_spec_data" against="entry_id" parse="inward" match="#{exp:stash:get name='produced_specs' context='{provider:entry_id}'}#" prefix="output_spec" backspace="2"}{output_spec:title}||{/exp:stash:get_list}{/stash:specifications}
+        
+        {stash:tooltip}        
+          {structure:page:title} can consume the following specifications that {provider:title} outputs:
+          {exp:stash:get_list name="consumable_spec_data" against="entry_id" parse="inward" match="#{exp:stash:get name='produced_specs' context='{provider:entry_id}'}#" prefix="output_spec"}
+            {if {output_spec:count} != 1 && {output_spec:count} == {output_spec:total_results} && {output_spec:total_results} > 1}
+            and
+            {/if}
+            {output_spec:title}{if {output_spec:count} != {output_spec:total_results} && {output_spec:total_results} > 1},{/if}{if {output_spec:count} == {output_spec:total_results}}.{/if}
+          {/exp:stash:get_list}
+        {/stash:tooltip}
 
       {/exp:playa:parents}
     {/exp:stash:set_list}
-    
+
   {/case}
 {/exp:switchee}
 
@@ -76,7 +89,22 @@
         {stash:title}{consumer:title}{/stash:title}
         {stash:url}{consumer:page_url}{/stash:url}
         {stash:entry_id}{consumer:entry_id}{/stash:entry_id}
-        {stash:consumed_spec_ids}{exp:playa:child_ids channel="specifications" field_id="21" col_id="15" orderby="title" sort="asc"}{/stash:consumed_spec_ids}
+        
+        {exp:stash:parse}
+          {exp:stash:set_value name="consumed_specs" context="{consumer:entry_id}" value='{exp:playa:child_ids channel="specifications" field_id="21" col_id="15" orderby="title" sort="asc"}'}
+        {/exp:stash:parse}
+
+        {stash:specifications}{exp:stash:get_list name="output_spec_data" against="entry_id" parse="inward" match="#{exp:stash:get name='consumed_specs' context='{consumer:entry_id}'}#" prefix="consumed_spec" backspace="2"}{consumed_spec:title}||{/exp:stash:get_list}{/stash:specifications}
+        
+        {stash:tooltip}        
+          {consumer:title} can consume the following specifications that {structure:page:title} outputs:
+          {exp:stash:get_list name="output_spec_data" against="entry_id" parse="inward" match="#{exp:stash:get name='consumed_specs' context='{consumer:entry_id}'}#" prefix="consumed_spec"}
+            {if {consumed_spec:count} != 1 && {consumed_spec:count} == {consumed_spec:total_results} && {consumed_spec:total_results} > 1}
+            and
+            {/if}
+            {consumed_spec:title}{if {consumed_spec:count} != {consumed_spec:total_results} && {consumed_spec:total_results} > 1},{/if}{if {consumed_spec:count} == {consumed_spec:total_results}}.{/if}
+          {/exp:stash:get_list}
+        {/stash:tooltip}
 
       {/exp:playa:parents}
     {/exp:stash:set_list}

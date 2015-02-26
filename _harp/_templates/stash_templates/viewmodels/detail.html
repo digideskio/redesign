@@ -122,6 +122,7 @@
 	{exp:stash:set_list name="layout_meta_before" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
 	  {exp:switchee variable="stash:_type" parse="inward"}
 	    {case value="software"}
+
 	      {exp:stash:get_list name="consumable_spec_data" prefix="consumes"}
 	        {if {consumes:count} == 1}
 	          {stash:name}Consumes{/stash:name}
@@ -278,7 +279,7 @@
 	  {case value="workgroup"}
 	    {exp:stash:append name="layout_copy"}
 	      {stash:nocache}
-        {stash:embed context="viewmodels:copy" name="workgroup" parse_stage="both" process="start"}
+        {stash:embed context="viewmodels:copy" name="workgroup" parse_stage="both" process="inline"}
         {/stash:nocache}
 	    {/exp:stash:append}
 	  {/case}
