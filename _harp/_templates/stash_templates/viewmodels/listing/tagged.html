@@ -1,0 +1,32 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{exp:stash:set name="layout_headtitle"}
+All content tagged &ldquo;{exp:tag:tag_name websafe_separator="-"}{segment_2}{/exp:tag:tag_name}&rdquo;
+{/exp:stash:set}
+{exp:stash:set name="layout_pagetitle"}
+All content tagged &ldquo;{exp:tag:tag_name websafe_separator="-"}{segment_2}{/exp:tag:tag_name}&rdquo;
+{/exp:stash:set}
+
+{exp:stash:set name="layout_listing_description" parse_tags="yes" match="#\S#"}
+  {exp:low_variables:parse var="lv:tag_description" limit="1" search:name="{segment_2}"}
+    {description}
+  {/exp:low_variables:parse}
+{/exp:stash:set}
+
+{exp:stash:extend name="layout_copy" with="partials:listing_simple"}
+
+{exp:stash:set_list name="listing" parse_tags="yes" parse_conditionals="yes" parse_depth="3"}
+  {exp:channel:entries
+    require_entry="yes"
+    dynamic="off"
+    entry_id="{stash:_listing_ids}"
+    disable="categories|member_data"
+    orderby="title"
+    sort="asc"
+  }
+    {if no_results}{redirect="404"}{/if}
+    
+    {stash:embed:models:listing_common process="start" parse="no"}
+        
+  {/exp:channel:entries}
+{/exp:stash:set_list}

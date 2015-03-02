@@ -3,7 +3,20 @@
     {if count == 1}
       <ul class="flat">
     {/if}
-        <li><a rel="bookmark" href="{url}">{title}</a></li>
+        <li>
+          {if segment_1 == "tagged"}
+            <span class="tag small">
+            {if channel_slug == "blog"}
+            News
+            {if:elseif channel_slug == "workgroups"}
+            Workgroup
+            {if:elseif channel_slug == "specifications"}
+            Specification
+            {/if}
+            </span>
+          {/if}
+          <a rel="bookmark" href="{url}">{title}</a>
+        </li>
     {if count == total_results}
       </ul>
     {/if}
