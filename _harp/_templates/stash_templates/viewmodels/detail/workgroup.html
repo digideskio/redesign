@@ -10,6 +10,7 @@
 	require_entry="yes"
 }
   {if no_results}{redirect="404"}{/if}
+
   {stash:embed file_name="models:related_parents" process="start" parse="no"}
   
   {exp:stash:set name="layout_copy" match="#\S#"}

@@ -1,0 +1,397 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{!-- Store the specs (IDs) that this product supports
+  You need this for two reasons:
+    1: Match up all other products that support the same specs
+    2: When listing the specs of the compatible product, limit to the specs supported by THIS product
+--}
+
+{exp:stash:set_value name="consumable_specs" parse="inward" value='{exp:playa:child_ids entry_id="{structure:page:entry_id}" field_id="21" col_id="15"}'}
+
+{exp:stash:set_value name="output_specs" parse="inward" value='{exp:playa:child_ids entry_id="{structure:page:entry_id}" field_id="22" col_id="17"}'}
+
+{!-- COMPATIBLE PRODUCERS --}
+{exp:switchee variable="stash:consumable_specs" parse="inward"}
+
+  {!-- Only run this if you have IDs to pair up --}
+  {case value="#^\d#"}
+    {exp:stash:set_list name="consumable_spec_data" parse_tags="yes"}
+      {exp:channel:entries dynamic="no" parse="inward" entry_id="{exp:stash:consumable_specs}" orderby="title" sort="asc"}
+        {stash:title}{title}{/stash:title}
+        {stash:url}{cf-spec-text}{/stash:url}
+        {stash:entry_id}{entry_id}{/stash:entry_id}
+      {/exp:channel:entries}    
+    {/exp:stash:set_list}
+    
+    {exp:stash:set_list name="compatible_providers" parse_tags="yes" parse_depth="2"}
+      {exp:playa:parents
+        channel="products"
+        parse="inward"
+        child_id="{exp:stash:consumable_specs}"
+        parent_id="not {structure:page:entry_id}" {!-- Exclude the requesting product from results --}
+        field_id="22"
+        col_id="17"
+        orderby="title"
+        sort="asc"
+        search:cf-pr-s-isconnector="IS_EMPTY" {!-- Excludes adapter products --}
+        var_prefix="provider"
+      }
+        {stash:title}{provider:title}{/stash:title}
+        {stash:url}{provider:page_url}{/stash:url}
+        {stash:entry_id}{provider:entry_id}{/stash:entry_id}
+        
+        {exp:stash:parse}
+          {exp:stash:set_value name="produced_specs" context="{provider:entry_id}" value='{exp:playa:child_ids channel="specifications" field_id="22" col_id="17" orderby="title" sort="asc"}'}
+        {/exp:stash:parse}
+
+        {stash:specifications}{exp:stash:get_list name="consumable_spec_data" against="entry_id" parse="inward" match="#{exp:stash:get name='produced_specs' context='{provider:entry_id}'}#" prefix="output_spec" backspace="2"}{output_spec:title}||{/exp:stash:get_list}{/stash:specifications}
+        
+        {stash:tooltip}        
+          {structure:page:title} can consume the following specifications that {provider:title} outputs:
+          {exp:stash:get_list name="consumable_spec_data" against="entry_id" parse="inward" match="#{exp:stash:get name='produced_specs' context='{provider:entry_id}'}#" prefix="output_spec"}
+            {if {output_spec:count} != 1 && {output_spec:count} == {output_spec:total_results} && {output_spec:total_results} > 1}
+            and
+            {/if}
+            {output_spec:title}{if {output_spec:count} != {output_spec:total_results} && {output_spec:total_results} > 1},{/if}{if {output_spec:count} == {output_spec:total_results}}.{/if}
+          {/exp:stash:get_list}
+        {/stash:tooltip}
+
+      {/exp:playa:parents}
+    {/exp:stash:set_list}
+
+  {/case}
+{/exp:switchee}
+
+{!-- COMPATIBLE CONSUMERS --}
+{exp:switchee variable="stash:output_specs" parse="inward"}
+  {case value="#^\d#"}
+  
+    {exp:stash:set_list name="output_spec_data" parse_tags="yes"}
+      {exp:channel:entries dynamic="no" parse="inward" entry_id="{exp:stash:output_specs}" orderby="title" sort="asc"}
+        {stash:title}{title}{/stash:title}
+        {stash:url}{cf-spec-text}{/stash:url}
+        {stash:entry_id}{entry_id}{/stash:entry_id}
+      {/exp:channel:entries}        
+    {/exp:stash:set_list}
+    
+    {exp:stash:set_list name="compatible_consumers" parse_tags="yes" parse_depth="2"}
+      {exp:playa:parents 
+        channel="products"
+        parse="inward"
+        child_id="{exp:stash:output_specs}"
+        parent_id="not {structure:page:entry_id}" {!-- Exclude the requesting product from results --}
+        field_id="21"
+        col_id="15"
+        orderby="title"
+        sort="asc"
+        search:cf-pr-s-isconnector="IS_EMPTY" {!-- Excludes adapter products --}
+        var_prefix="consumer"
+      }
+
+        {stash:title}{consumer:title}{/stash:title}
+        {stash:url}{consumer:page_url}{/stash:url}
+        {stash:entry_id}{consumer:entry_id}{/stash:entry_id}
+        
+        {exp:stash:parse}
+          {exp:stash:set_value name="consumed_specs" context="{consumer:entry_id}" value='{exp:playa:child_ids channel="specifications" field_id="21" col_id="15" orderby="title" sort="asc"}'}
+        {/exp:stash:parse}
+
+        {stash:specifications}{exp:stash:get_list name="output_spec_data" against="entry_id" parse="inward" match="#{exp:stash:get name='consumed_specs' context='{consumer:entry_id}'}#" prefix="consumed_spec" backspace="2"}{consumed_spec:title}||{/exp:stash:get_list}{/stash:specifications}
+        
+        {stash:tooltip}        
+          {consumer:title} can consume the following specifications that {structure:page:title} outputs:
+          {exp:stash:get_list name="output_spec_data" against="entry_id" parse="inward" match="#{exp:stash:get name='consumed_specs' context='{consumer:entry_id}'}#" prefix="consumed_spec"}
+            {if {consumed_spec:count} != 1 && {consumed_spec:count} == {consumed_spec:total_results} && {consumed_spec:total_results} > 1}
+            and
+            {/if}
+            {consumed_spec:title}{if {consumed_spec:count} != {consumed_spec:total_results} && {consumed_spec:total_results} > 1},{/if}{if {consumed_spec:count} == {consumed_spec:total_results}}.{/if}
+          {/exp:stash:get_list}
+        {/stash:tooltip}
+
+      {/exp:playa:parents}
+    {/exp:stash:set_list}
+    
+  {/case}
+{/exp:switchee}
+
+{exp:channel:entries
+	entry_id="{structure:page:entry_id}"
+	dynamic="no"
+	{global:disable_default}
+	require_entry="yes"
+}
+  {if no_results}{redirect="404"}{/if}
+
+  {stash:embed file_name="models:related_parents" process="start" parse="no"}
+  
+  {exp:stash:set_list name="layout_meta_before" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
+
+    {exp:stash:get_list name="consumable_spec_data" prefix="consumes"}
+      {if {consumes:count} == 1}
+        {stash:name}Consumes{/stash:name}
+        {stash:slug}consumes{/stash:slug}
+      {/if}
+    
+      {exp:stash:append_list:consumed name="layout_meta_before_consumes"}
+        {stash:link}{consumes:url}{/stash:link}
+        {stash:text}{consumes:title}{/stash:text}
+      {/exp:stash:append_list:consumed}
+    {/exp:stash:get_list}
+
+    {exp:stash:get_list name="output_spec_data" prefix="produces"}
+      {if {produces:count} == 1}
+        {stash:name}Produces{/stash:name}
+        {stash:slug}produces{/stash:slug}
+      {/if}
+    
+      {exp:stash:append_list:produced name="layout_meta_before_produces"}
+        {stash:link}{produces:url}{/stash:link}
+        {stash:text}{produces:title}{/stash:text}
+      {/exp:stash:append_list:produced}
+    {/exp:stash:get_list}
+  
+    {if cf-pr-r-company}
+      {stash:name}Organization{/stash:name}
+      {stash:slug}organization{/stash:slug}
+      {cf-pr-r-company var_prefix="org"}
+        {stash:link}{org:cf-co-t-url}{/stash:link}
+        {stash:text}{org:title}{/stash:text}
+      {/cf-pr-r-company}
+    {/if}
+
+  {/exp:stash:set_list}
+  
+  {exp:stash:set name="layout_copy" match="#\S#"}
+  
+    {cf-pr-w-description-en}
+
+    {if cf-pr-t-produrl}
+    <div class="copy-spacing">
+      <a class="action" rel="external" href="{cf-pr-t-produrl}">
+        <div class="flag reversed">
+          <div class="body">Learn more at {exp:parse_url parts="host" omit="www.|www-01.|www8.|msdn."}{cf-pr-t-produrl}{/exp:parse_url}</div>
+          <div class="image"><i class="icon grunticon-action-outgoing"></i></div>
+        </div>
+      </a>
+    </div>
+    {/if}
+
+
+    {cf-pr-m-produces-en search:via_adapter="not IS_EMPTY"}
+
+      {if row_count == 1}
+      <div class="notice">
+        <div class="header">
+          <h3 class="title">Adapter required</h3>
+        </div>
+        <div class="body">
+          <p>An adapter is required to output the following specifications:</p>
+          <ul>
+      {/if}
+          <li>{produces var_prefix="spec"}<b>{spec:title}</b>{/produces}: {via_adapter var_prefix="adapter" backspace="2"}<a href="{adapter:page_url}">{adapter:title}</a>, {/via_adapter}</li>  
+      {if row_count == total_rows}
+          </ul>
+        </div>
+      </div>
+      {/if}
+
+    {/cf-pr-m-produces-en}
+
+    {cf-pr-m-consumes-en search:via_adapter="not IS_EMPTY"}
+
+      {if row_count == 1}
+      <div class="notice">
+        <div class="header">
+          <h3 class="title">Adapter required</h3>
+        </div>
+        <div class="body">
+          <p>An adapter is required to consume the following specifications:</p>
+          <ul>
+      {/if}
+          <li>{spec}<b>{title}</b>{/spec}: {via_adapter var_prefix="adapter" backspace="2"}<a href="{adapter:page_url}">{adapter:title}</a>, {/via_adapter}</li>  
+      {if row_count == total_rows}
+          </ul>
+        </div>
+      </div>
+      {/if}
+
+    {/cf-pr-m-consumes-en}
+
+
+    <h2>Compatibility</h2>
+
+    {!-- Store this for the dendogram script --}
+    <script type="text/data" id="product-name">{title}</script>
+
+    {if {exp:stash:list_count name="compatible_providers"} || {exp:stash:list_count name="compatible_consumers"}}
+
+    {exp:stash:set_list name="software_compatibility_tabs"}
+      {stash:label}Graphical{/stash:label}
+      {stash:id}compatibility-graphical{/stash:id}
+      {stash:tabpanel_class}enhanced-only{/stash:tabpanel_class}
+      {stash:body}
+        <div class="grid pulled">
+          <div class="column hand-full workstation-major">
+            {!-- Graphic goes here! --}
+            <div id="compatibility-graphic" class="copy"></div>    
+          </div>
+          <div class="column hand-full workstation-minor">
+            <div class="legend">
+              <strong>Legend</strong>
+              <ul class="flat" id="compatibility-graphic-legend"></ul>
+              <p>
+                <span data-tooltip title="Can output a specification that {title} can consume">Compatible producers</span> on the left;
+                <span data-tooltip title="Can consume a specification that {title} can output">compatible consumers</span> on the right.
+              </p>
+              <p>Hover over, focus, or tap any node for more details.</p>
+            </div>
+          </div>
+        </div>
+    
+      {/stash:body}
+
+      {stash:label}Lists{/stash:label}
+      {stash:id}compatibility-list{/stash:id}
+      {stash:body}
+        <div class="grid pulled">
+          {exp:stash:get_list name="compatible_providers" prefix="provider"}
+            {if {provider:count} == 1}
+              <div class="column hand-full desk-half">
+                <div class="copy">
+                  <h3>Compatible providers</h3>
+                  <p>The following products can output one or more specifications that {title} can consume.</p>
+
+                  <ul id="providers">
+            {/if}
+                    <li>
+                      <a data-compatible-provider
+                        data-specifications="{provider:specifications}" data-dendogram-tooltip="{provider:tooltip}"
+                        href="{provider:url}">{provider:title}</a>
+                  
+                      <span data-tooltip title="{provider:tooltip}"><span class="sr-only">Details</span></span>
+                    </li>
+
+            {if {provider:count} == {provider:total_results}}
+                  </ul>
+                </div>
+              </div>
+            {/if}
+          {/exp:stash:get_list}
+      
+          {exp:stash:get_list name="compatible_consumers" prefix="consumer"}
+            {if {consumer:count} == 1}
+              <div class="column hand-full desk-half">
+                <div class="copy">
+                  <h3>Compatible consumers</h3>
+                  <p>The following products can consume one or more specifications that {title} can output.</p>
+
+                  <ul id="consumers">
+            {/if}
+                    <li>
+                      <a data-compatible-consumer
+                        data-specifications="{consumer:specifications}"
+                        href="{consumer:url}" data-dendogram-tooltip="{consumer:tooltip}">{consumer:title}</a>
+                    
+                      <span data-tooltip title="{consumer:tooltip}"><span class="sr-only">Details</span></span>
+                    </li>
+
+            {if {consumer:count} == {consumer:total_results}}
+                  </ul>
+                </div>
+              </div>
+            {/if}
+
+        
+          {/exp:stash:get_list}
+        </div>  
+      {/stash:body}
+
+    {/exp:stash:set_list}
+
+    {stash:embed:partials:tabs stash:list="software_compatibility_tabs" stash:heading="View"}
+
+    {stash:embed:partials:notice stash:notice_type="warning" stash:notice_body="We make no guarantees about compliance with any specification."}
+
+    {if:else}
+
+    {exp:ifelse parse="inward"}
+      {if "{cf-pr-s-isconnector}" == "y"}
+    
+        {exp:playa:parents var_prefix="adapted" channel="products" orderby="title" sort="asc"}
+
+          {if "{adapted:count}" == 1}
+            <p>{title} adds the following capabilities to these products:</p>
+        
+            <table>
+            <thead>
+            <tr>
+              {adapted:cf-pr-m-consumes-en search:via_adapter="{url_title}" limit="1"}
+                {if row_count == 1}<th scope="col">Gains support to <em>consume</em> (input) these specifications</th>{/if}
+              {/adapted:cf-pr-m-consumes-en}
+
+                <th scope="col">Product Name</th>
+            
+              {adapted:cf-pr-m-produces-en search:via_adapter="{url_title}" limit="1"}
+                {if row_count == 1}<th scope="col">Gains support to <em>produce</em> (output) these specifications</th>{/if}
+              {/adapted:cf-pr-m-produces-en}
+                    
+            </tr>
+            </thead>
+      
+            <tbody>
+          {/if}
+
+            <tr>
+              {!-- Products that can now consume a spec w/ adapter --}
+              {!-- Limit specs returned to those where the adapter is in the via_adapter cell --}
+              {adapted:cf-pr-m-consumes-en search:via_adapter="{url_title}"}
+                {if row_count == 1}
+                <td>
+                  <ul class="flat">
+                {/if}
+                  <li>{spec var_prefix="spec"}{spec:title}{/spec}</li>
+                {if row_count == total_rows}
+                  </ul>
+                </td>
+                {/if}
+              {/cf-pr-m-consumes-en}
+
+              <th scope="row"><a href="{adapted:page_url}">{adapted:title}</a></th>
+
+              {!-- Products that can now output a spec w/ adapter --}
+              {!-- Limit specs returned to those where the adapter is in the via_adapter cell --}
+              {adapted:cf-pr-m-produces-en search:via_adapter="{url_title}"}
+                {if row_count == 1}
+                <td>
+                  <ul class="flat">
+                {/if}
+                  <li>{produces var_prefix="spec"}{spec:title}{/produces}</li>
+                {if row_count == total_rows}
+                  </ul>
+                </td>
+                {/if}
+              {/adapted:cf-pr-m-produces-en}
+            </tr>
+
+
+          {if "{adapted:count}" == "{adapted:total_results}"}
+            </tbody>
+            </table>
+          {/if}
+
+
+        {/exp:playa:parents}
+    
+      {if:else}
+        <p>No products can currently integrate with {title}. If we&rsquo;re wrong about that, {encode="webmaster@open-services.net" title="let us know"}!</p>
+      {/if}
+    {/exp:ifelse}
+
+    {/if}
+  
+  {/exp:stash:set}
+
+
+{/exp:channel:entries}
+
+{stash:embed file_name="viewmodels:partials:related" process="end"}
