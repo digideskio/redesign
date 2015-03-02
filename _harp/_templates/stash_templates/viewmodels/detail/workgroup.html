@@ -1,0 +1,220 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{!-- Append "Workgroup" to the TITLE, but not for the StC --}
+{exp:stash:set_value name="layout_headtitle" value="{structure:page:title} Workgroup" match="#^1$#" against="{oslc:workgroup:is_not_steering_committee}"}
+
+{exp:channel:entries
+	entry_id="{structure:page:entry_id}"
+	dynamic="no"
+	{global:disable_default}
+	require_entry="yes"
+}
+  {if no_results}{redirect="404"}{/if}
+  {stash:embed file_name="models:related_parents" process="start" parse="no"}
+  
+  {exp:stash:set name="layout_copy" match="#\S#"}
+    {exp:playa:parents channel="charters" field="cf-wgcharter-r-workgroup" status="open" limit="1" var_prefix="charter"}
+      {!-- No charter? Just show the description --}
+      {if no_parents}{cf-wg-w-description-en}{/if}
+      
+      {exp:stash:set_list name="tabs_workgroup_body"}
+        {stash:label}Description{/stash:label}
+        {stash:id}description{/stash:id}
+        {stash:body}{cf-wg-w-description-en}{/stash:body}
+        
+        {stash:label}Charter{/stash:label}
+        {stash:id}charter{/stash:id}
+        {stash:body} 
+          {stash:embed:partials:charter process="start" parse="no"}
+        {/stash:body}
+
+      {/exp:stash:set_list}
+      
+      {stash:embed:partials:tabs stash:list="tabs_workgroup_body" stash:heading="View"}
+      
+    {/exp:playa:parents}
+    
+    {stash:nocache}
+      {if logged_in && oslc:workgroup:is_not_steering_committee && oslc:workgroup:is_not_at_oasis}
+
+      {if oslc:workgroup:is_user_group}
+      <script>
+      var toggleMembershipOptions = {
+        workgroupCategory: '{oslc:workgroup:category_id}',
+        isWorkgroupMember: '{oslc:user:is_workgroup_member}',
+        changeMembershipFormUrl: '{path="utilities/member_cats_form"}'.replace(/\/?$/,'/'),
+        placeholder: '#swap_user_group_membership'
+      };
+      </script>
+      {/if}
+
+        {if oslc:user:is_not_workgroup_member}
+        <br />
+        <div class="notice">
+          <div class="header">
+            <h3 class="title">Join this workgroup</h3>
+          </div>
+          <div class="body">
+            <div class="copy">
+
+              {if oslc:user:is_not_member}
+                <p><a class="btn good" href="/legal-agreements/members-agreement/">Become an OSLC member</a></p>
+                <p>You must become an OSLC Member before you can contribute to any workgroup.</p>
+              {/if}
+
+              {if oslc:user:is_member}
+                {if oslc:workgroup:is_user_group}          
+                  <p>To edit <a href="/wiki/{segment_2}/">the wiki</a> for this workgroup, click here:
+                  <span id="swap_user_group_membership"></span>
+                  <noscript>Activate JavaScript in your browser to join the User Group</noscript>
+                  </p>
+                {if:else}
+                  <p><a class="btn good" href="{exp:playa:parents entry_id='{structure:page:entry_id}' field_id='69' channel='legal_agreements' limit='1'}{page_url}{/exp:playa:parents}">Complete the Workgroup Participation Agreement</a></p>
+                  <p>(You must complete a Workgroup Participation Agreement for any OSLC domain workgroup that you want to join.)</p>
+                {/if}
+              {/if}
+
+            </div>
+          </div>
+        </div>
+        {/if} {!-- not a workgroup member --}
+
+        {if oslc:user:is_workgroup_member && oslc:workgroup:is_user_group}
+          <p>
+          <span id="swap_user_group_membership"></span>
+          <noscript>Activate JavaScript in your browser to leave this User Group</noscript>
+          </p>
+        {/if}
+      {/if} {!-- logged in and not STC --}    
+    {/stash:nocache}
+  {/exp:stash:set}
+  
+  {exp:stash:set_list name="layout_meta_after" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
+    {if workgroup_exernal-url}
+      {stash:name}Outgoing{/stash:name}
+      {stash:slug}outgoing{/stash:slug}
+      {stash:link}{workgroup_exernal-url}{/stash:link}
+      {stash:text}At {exp:parse_url parts="host" omit="www."}{workgroup_exernal-url}{/exp:parse_url}{/stash:text}
+    {/if}
+
+    {if cf-wg-new-wiki != "" || cf-wg-t-wghome != ""}
+      {stash:name}Wiki{/stash:name}
+      {stash:slug}wiki{/stash:slug}
+      {stash:text}
+        {if cf-wg-new-wiki == 'y'}
+          At open-services.net
+        {if:elseif cf-wg-t-wghome != ""}
+          At {exp:parse_url parts="host"}{cf-wg-t-wghome}{/exp:parse_url}
+        {/if}
+      {/stash:text}
+      {stash:link}
+        {if cf-wg-new-wiki == 'y'}
+          /wiki/{url_title}/
+        {if:elseif cf-wg-t-wghome != ""}
+          {cf-wg-t-wghome}
+        {/if}
+      {/stash:link}
+
+    {/if}
+
+    {!-- Workgroup: meetings --}
+    {if cf-wg-t-meetings}
+      {stash:name}Meetings{/stash:name}
+      {stash:slug}meetings{/stash:slug}
+      {stash:link}{cf-wg-t-meetings}{/stash:link}
+      {stash:text}{if cf-wg-t-meetingtime}{cf-wg-t-meetingtime}{if:else}Schedule{/if}{/stash:text}
+    {/if}
+
+    {!-- Workgroup: mailing lists --}
+    {if cf-wg-t-mailinglist && (segment_2_category_group_id != "4" || segment_2 == "communications")}
+      {stash:name}Mailing list{/stash:name}
+      {stash:slug}mailing-list{/stash:slug}
+      {stash:link}{cf-wg-t-mailinglist}{/stash:link}
+      {stash:text}At {exp:parse_url parts="host"}{cf-wg-t-mailinglist}{/exp:parse_url}{/stash:text}
+    {/if}
+    {if cf-wg-t-mailinglist && (segment_2_category_group_id == "4" && segment_2 != "communications")}
+      {stash:name}Forum{/stash:name}
+      {stash:slug}forum{/stash:slug}
+      {stash:link}{cf-wg-t-mailinglist}{/stash:link}
+      {stash:text}At open-services.net{/stash:text}
+    {/if}
+
+    {!-- Workgroup: specs --}
+    {cf-wg-r-specs sort="desc" search:cf-spec-text="not IS_EMPTY" var_prefix="spec"}
+
+      {if {spec:count} == 1}
+        {stash:name}Specification{if {spec:total_results} > 1}s{/if}{/stash:name}
+        {stash:slug}specifications{/stash:slug}
+      {/if}
+
+      {exp:stash:append_list:specifications name="layout_meta_after_specifications"}
+        {stash:link}{spec:cf-spec-text}{/stash:link}
+        {stash:text}{spec:title}{/stash:text}
+        {stash:tag}{spec:cf-spec-pill-status}{/stash:tag}
+      {/exp:stash:append_list:specifications}
+
+    {/cf-wg-r-specs}
+
+    {workgroup_grid_misc-links var_prefix="link"}
+      {if {link:row_count} == 1}
+        {stash:name}Links{/stash:name}
+        {stash:slug}links{/stash:slug}
+      {/if}
+      {exp:stash:append_list:links name="layout_meta_after_links"}
+        {stash:link}{link:url}{/stash:link}
+        {stash:text}{link:name}{/stash:text}
+      {/exp:stash:append_list:links}
+    {/workgroup_grid_misc-links}
+
+    {!-- Workgroup: lead/chair --}
+    {cf-wg-m-leads var_prefix="leaders"}
+      {if {leaders:row_count} == 1}
+        {stash:name}{if oslc:workgroup:is_at_oasis}Chair{if:else}Workgroup lead{/if}{if leaders:total_rows > 1}s{/if}{/stash:name}
+        {stash:slug}lead{/stash:slug}
+      {/if}
+
+      {exp:stash:append_list:leaders name="layout_meta_after_lead"}
+        {stash:link}{path='forums/member/{leaders:lead}'}{/stash:link}
+        {stash:text}{leaders:lead:names}{/stash:text}
+      {/exp:stash:append_list:leaders}
+
+    {/cf-wg-m-leads}
+        
+    {!-- Contributing organizations --}
+    {exp:stash:get_list orderby="text" sort_type="lowercase" name="children" match="#company#" against="channel_slug" prefix="org"}
+      {if {org:count} == 1}
+        {stash:name}Contributing organizations{/stash:name}
+        {stash:slug}contributing-organizations{/stash:slug}
+      {/if}
+
+      {exp:stash:append_list:orgs name="layout_meta_after_contributing-organizations"}
+        {stash:link}{org:url}{/stash:link}
+        {stash:text}{org:text}{/stash:text}
+      {/exp:stash:append_list:orgs}
+    {/exp:stash:get_list}
+
+    {!-- Workgroup ancestry and replacements --}
+    {exp:stash:get_list name="children" match="#workgroups#" against="channel_slug" prefix="replaced"}
+      {if {replaced:count} == 1}
+        {stash:name}Precursors{/stash:name}
+        {stash:slug}ancestry{/stash:slug}
+      {/if}
+      {exp:stash:append_list:ancestry name="layout_meta_after_ancestry"}
+        {stash:link}{replaced:url}{/stash:link}
+        {stash:text}{replaced:text}{/stash:text}
+      {/exp:stash:append_list:ancestry}
+    {/exp:stash:get_list}
+
+    {exp:stash:get_list name="parents" limit="1" match="#workgroups#" against="channel_slug" prefix="new_hotness"}
+      {stash:name}Bit of a ghost town here{/stash:name}
+      {stash:slug}ghost-town{/stash:slug}
+      {stash:link}{new_hotness:url}{/stash:link}
+      {stash:text}Active specification development now at {new_hotness:text}{/stash:text}
+    {/exp:stash:get_list}  
+  {/exp:stash:set_list}
+
+{/exp:channel:entries}
+
+{stash:embed file_name="viewmodels:partials:related" process="end"}
+
+{stash:embed:models:tags}
