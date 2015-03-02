@@ -1,11 +1,7 @@
 {!-- Resource page --}
 {stash:embed
   context="@URI"
-  file_name="viewmodels:listing"
+  file_name="viewmodels:listing:resource"
   parse_stage="both"
   stash:_layout="standard"
-
-  stash:_type="resource"
-  stash:_listing_style="cards"
-  stash:_listing_extra_params='show_future_entries="yes" show_expired="yes" {if structure:page:entry_id == "63"}entry_id="{structure:child_ids}"{/if}'
 }
