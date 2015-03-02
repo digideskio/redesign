@@ -32,7 +32,7 @@
     {exp:channel:entries
     	entry_id="{structure:page:entry_id}"
       status="open|closed"
-      disable="{global:disable_default}"
+      {global:disable_default}
       require_entry="yes"
     }
       {exp:stash:set name="layout_listing_description" parse_tags="yes" match="#\S#"}

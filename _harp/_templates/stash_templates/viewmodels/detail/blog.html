@@ -1,0 +1,68 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{exp:channel:entries
+	entry_id="{structure:page:entry_id}"
+	dynamic="no"
+	status="open|closed"
+  {global:disable_default}
+  require_entry="yes"
+}
+  {if no_results}{redirect="404"}{/if}
+  
+  {stash:embed file_name="models:related_children" process="start" parse="no"}
+  
+  {stash:embed:models:detail_dates process="start" parse="no"}
+
+  {exp:stash:set name="layout_deck_author"}{encode="{email}" title="{author}"}{/exp:stash:set}
+  
+  {exp:stash:set name="layout_copy" match="#\S#" trim="y"}
+    {cf-blog-w-body}
+  {/exp:stash:set}
+  
+  {exp:stash:set_list name="layout_meta_after" parse_conditionals="yes" parse_tags="yes"}
+    {stash:name}Forum{/stash:name}
+    {stash:slug}forum{/stash:slug}
+
+    {stash:link}
+    {if forum_topic}
+      {path='forums/viewthread'}/{forum_topic_id}/
+    {if:else}
+      {stash:nocache}
+      {if logged_in}
+        {path='/forums/newtopic/18/'}
+      {if:else}
+        /forums/member/login/
+      {/if}
+      {/stash:nocache}
+    {/if}
+    {/stash:link}
+
+    {stash:text}
+    {if forum_topic}
+      Discuss in the forums
+    {if:else}
+      {stash:nocache}
+      {if logged_out}Log in and start{if:else}Start{/if} a discussion in the forums
+      {/stash:nocache}
+    {/if}
+    {/stash:text}
+
+  {/exp:stash:set_list}
+  
+{/exp:channel:entries}
+
+{stash:embed file_name="viewmodels:partials:related" process="end"}
+
+{stash:embed:viewmodels:detail_sequence_simple}
+
+{exp:tag:tags 
+  entry_id="{structure:page:entry_id}"
+  websafe_separator="-"
+  }
+  
+  {exp:stash:append_list name="layout_tags"}
+    {stash:href}/tagged/{websafe_tag}/{/stash:href}
+    {stash:text}{tag}{/stash:text}
+  {/exp:stash:append_list}  
+
+{/exp:tag:tags}

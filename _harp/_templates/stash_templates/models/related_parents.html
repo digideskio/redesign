@@ -1,0 +1,10 @@
+{exp:stash:parse parse_depth="2"}
+  {exp:playa:parents entry_id="{structure:page:entry_id}" var_prefix="parent"}
+    {exp:stash:append_list name="parents"}
+      {stash:channel_slug}{parent:channel_short_name}{/stash:channel_slug}
+      {stash:channel}{parent:channel}{/stash:channel}
+      {stash:url}{parent:page_url}{/stash:url}
+      {stash:text}{parent:title}{/stash:text}
+    {/exp:stash:append_list}
+  {/exp:playa:parents}
+{/exp:stash:parse}

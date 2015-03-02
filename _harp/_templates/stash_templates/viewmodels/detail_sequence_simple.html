@@ -1,43 +1,13 @@
-{exp:switchee variable="stash:_type" parse="inward"}
+{!-- Older --}
+{exp:channel:prev_entry channel="{structure:child_listing:short_name}"}
+  {exp:stash:set_value name="layout_prev_label" value="{lv-olderpost-en}"}
+  {exp:stash:set name="layout_prev_url"}{structure:page_url_for:{entry_id}}{/exp:stash:set}
+  {exp:stash:set name="layout_prev_title"}{title}{/exp:stash:set}
+{/exp:channel:prev_entry}
 
-  {case value="tutorial"}
-    {exp:ljr_structure_hierarchy_siblings 
-      start_from="/{segment_1}/{segment_2}/{segment_3}/"
-      show_overview="yes"
-      rename_overview="{lv-tutoverviewtext-en}"
-      parse="inward"
-      }
-      
-        {prev}
-          {exp:stash:set_value name="layout_prev_label" value="{lv-tutorial-previouslink-en}"}
-          {exp:stash:set_value name="layout_prev_url" value="{url}"}
-          {exp:stash:set name="layout_prev_title"}{title}{/exp:stash:set}
-        {/prev}
-        
-        {next}
-          {exp:stash:set_value name="layout_next_label" value="{lv-tutorial-nextlink-en}"}
-          {exp:stash:set_value name="layout_next_url" value="{url}"}
-          {exp:stash:set name="layout_next_title"}{title}{/exp:stash:set}
-        {/next}
-      
-    {/exp:ljr_structure_hierarchy_siblings}
-
-  {/case}
-  
-  {case default="yes"}
-    {!-- Older --}
-    {exp:channel:prev_entry channel="{structure:child_listing:short_name}"}
-      {exp:stash:set_value name="layout_prev_label" value="{lv-olderpost-en}"}
-      {exp:stash:set name="layout_prev_url"}{structure:page_url_for:{entry_id}}{/exp:stash:set}
-      {exp:stash:set name="layout_prev_title"}{title}{/exp:stash:set}
-    {/exp:channel:prev_entry}
-
-    {!-- Newer --}
-    {exp:channel:next_entry channel="{structure:child_listing:short_name}"}
-      {exp:stash:set_value name="layout_next_label" value="{lv-newerpost-en}"}
-      {exp:stash:set name="layout_next_url"}{structure:page_url_for:{entry_id}}{/exp:stash:set}
-      {exp:stash:set name="layout_next_title"}{title}{/exp:stash:set}
-    {/exp:channel:next_entry}
-  {/case}
-
-{/exp:switchee}
+{!-- Newer --}
+{exp:channel:next_entry channel="{structure:child_listing:short_name}"}
+  {exp:stash:set_value name="layout_next_label" value="{lv-newerpost-en}"}
+  {exp:stash:set name="layout_next_url"}{structure:page_url_for:{entry_id}}{/exp:stash:set}
+  {exp:stash:set name="layout_next_title"}{title}{/exp:stash:set}
+{/exp:channel:next_entry}

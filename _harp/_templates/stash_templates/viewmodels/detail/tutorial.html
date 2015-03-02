@@ -1,0 +1,83 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{!-- 
+  Override headtitle to include the overview title 
+  The match/against here will hit only for child pages (segment_4 not empty)
+  http://stackoverflow.com/questions/4448829/regular-expression-for-not-empty
+--}
+{exp:channel:entries
+  url_title="{segment_3}"
+  limit="1"
+  dynamic="off"}
+
+  {exp:stash:set name="layout_headtitle" match="#^(?=\s*\S).*$#" against="{segment_4}"}
+    {structure:page:title} - {title}
+  {/exp:stash:set}
+  
+  {exp:stash:set name="layout_secondary_nav_title"}{title}{/exp:stash:set}
+
+{/exp:channel:entries}
+
+{exp:stash:set name="layout_secondary_nav_short_title"}Tutorial{/exp:stash:set}
+
+{exp:stash:set name="layout_secondary_nav"}
+  {exp:structure:nav
+    start_from="/{segment_1}/{segment_2}/{segment_3}/" 
+    show_depth="5"
+    show_overview="yes" 
+    rename_overview="{lv-tutoverviewtext-en}"
+    recursive_overview="no"
+    current_class="current"
+    include_ul="no"
+    has_children_class="yes"
+  }
+{/exp:stash:set}
+
+{exp:channel:entries
+	entry_id="{structure:page:entry_id}"
+	dynamic="no"
+	{global:disable_default}
+	require_entry="yes"
+}
+  {if no_results}{redirect="404"}{/if}
+  
+  {exp:stash:set name="layout_copy" match="#\S#"}
+    {if cf-tut-w-body}
+      {if cf-tut-m-altversions} 
+        <p>(<i>Download as {cf-tut-m-altversions}{if row_count > 1 && total_rows == 2}&nbsp;or&nbsp;{/if}<a href="{altfile}">{altdescription}</a>{if row_count != total_rows && total_rows != 2},{/if}{/cf-tut-m-altversions}.</i>)</p>
+      {/if}
+      {cf-tut-w-body}
+    {/if}
+
+    {if cf-tutpage-w-body}{cf-tutpage-w-body}{/if}
+    
+    {exp:stash:embed:partials:notice 
+      stash:notice_type="tip" 
+      stash:notice_title="Any problems?"
+      stash:notice_body='{lv-tutorialAnyProblems-en}' }
+
+  {/exp:stash:set}
+
+{/exp:channel:entries}
+
+{!-- Sequence --}
+{exp:ljr_structure_hierarchy_siblings 
+  start_from="/{segment_1}/{segment_2}/{segment_3}/"
+  show_overview="yes"
+  rename_overview="{lv-tutoverviewtext-en}"
+  parse="inward"
+  }
+  
+    {prev}
+      {exp:stash:set_value name="layout_prev_label" value="{lv-tutorial-previouslink-en}"}
+      {exp:stash:set_value name="layout_prev_url" value="{url}"}
+      {exp:stash:set name="layout_prev_title"}{title}{/exp:stash:set}
+    {/prev}
+    
+    {next}
+      {exp:stash:set_value name="layout_next_label" value="{lv-tutorial-nextlink-en}"}
+      {exp:stash:set_value name="layout_next_url" value="{url}"}
+      {exp:stash:set name="layout_next_title"}{title}{/exp:stash:set}
+    {/next}
+  
+{/exp:ljr_structure_hierarchy_siblings}

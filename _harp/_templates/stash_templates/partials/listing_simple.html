@@ -1,53 +1,11 @@
 {if {exp:stash:list_count name="listing"}}
-{exp:switchee variable="stash:_type"}
-  {case value="software"}
-    {exp:stash:split_list
-      name="regular_products"
-      list="listing"
-      match="#^$#"
-      against="is_adapter"
-    }
-    
-    {exp:stash:split_list
-      name="adapters"
-      list="listing"
-      match="#y#"
-      against="is_adapter"
-    }
-    
-    {exp:stash:get_list name="regular_products"}
-      {if count == 1}
-        <ul class="flat multiple-columns">
-      {/if}
-          <li><a rel="bookmark" href="{url}">{title}</a></li>
-      {if count == total_results}
-        </ul>
-      {/if}    
-    {/exp:stash:get_list}
-
-    {exp:stash:get_list name="adapters"}
-      {if count == 1}
-        <h2>Adapters</h2>
-        <ul class="flat">
-      {/if}
-          <li><a rel="bookmark" href="{url}">{title}</a></li>
-      {if count == total_results}
-        </ul>
-      {/if}    
-    {/exp:stash:get_list}
-
-  {/case}
-  
-  {case default="yes"}
-    {exp:stash:get_list name="listing"}
-      {if count == 1}
-        <ul class="flat">
-      {/if}
-          <li><a rel="bookmark" href="{url}">{title}</a></li>
-      {if count == total_results}
-        </ul>
-      {/if}
-    {/exp:stash:get_list}
-  {/case}
-{/exp:switchee}
+  {exp:stash:get_list name="listing"}
+    {if count == 1}
+      <ul class="flat">
+    {/if}
+        <li><a rel="bookmark" href="{url}">{title}</a></li>
+    {if count == total_results}
+      </ul>
+    {/if}
+  {/exp:stash:get_list}
 {/if}
