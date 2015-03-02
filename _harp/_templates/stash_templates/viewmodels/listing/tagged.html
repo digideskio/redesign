@@ -13,8 +13,6 @@ All content tagged &ldquo;{exp:tag:tag_name websafe_separator="-"}{segment_2}{/e
   {/exp:low_variables:parse}
 {/exp:stash:set}
 
-{exp:stash:extend name="layout_copy" with="partials:listing_simple"}
-
 {exp:stash:set_list name="listing" parse_tags="yes" parse_conditionals="yes" parse_depth="3"}
   {exp:channel:entries
     require_entry="yes"
@@ -30,3 +28,5 @@ All content tagged &ldquo;{exp:tag:tag_name websafe_separator="-"}{segment_2}{/e
         
   {/exp:channel:entries}
 {/exp:stash:set_list}
+
+{exp:stash:extend name="layout_copy" with="partials:listing_simple"}

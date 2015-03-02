@@ -1,24 +1,22 @@
-{if {exp:stash:list_count name="listing"}}
-  {exp:stash:get_list name="listing"}
-    {if count == 1}
-      <ul class="flat">
-    {/if}
-        <li>
-          {if segment_1 == "tagged"}
-            <span class="tag small">
-            {if channel_slug == "blog"}
-            News
-            {if:elseif channel_slug == "workgroups"}
-            Workgroup
-            {if:elseif channel_slug == "specifications"}
-            Specification
-            {/if}
-            </span>
+{exp:stash:get_list name="listing"}
+  {if count == 1}
+    <ul class="flat {exp:stash:listing_list_class}">
+  {/if}
+      <li>
+        {if segment_1 == "tagged"}
+          <span class="tag small">
+          {if channel_slug == "blog"}
+          News
+          {if:elseif channel_slug == "workgroups"}
+          Workgroup
+          {if:elseif channel_slug == "specifications"}
+          Specification
           {/if}
-          <a rel="bookmark" href="{url}">{title}</a>
-        </li>
-    {if count == total_results}
-      </ul>
-    {/if}
-  {/exp:stash:get_list}
-{/if}
+          </span>
+        {/if}
+        <a rel="bookmark" href="{url}">{title}</a>
+      </li>
+  {if count == total_results}
+    </ul>
+  {/if}
+{/exp:stash:get_list}

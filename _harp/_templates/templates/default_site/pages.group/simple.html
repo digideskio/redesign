@@ -26,24 +26,6 @@
 	
 }
 
-{!-- All members listing. TODO this should really be a separate page --}
-{exp:stash:set name="main_content" match="#70#" against="{structure:page:entry_id}"}
-	
-	<ul class="nobullets nospacing columned-3 mtl">
-		{exp:channel:entries
-			dynamic="off"
-			channel="{structure:child_listing:short_name}" 
-			{global:disable_default}
-			limit="100"
-			orderby="title"
-			sort="asc"
-		}
-			<li class="mbm">{if cf-co-t-url}<a rel="external" href="{if global:env != 'production'}{page_url}{if:else}{cf-co-t-url}{/if}">{/if}{title}{if cf-co-t-url}</a>{/if}</li>
-		{/exp:channel:entries}
-	</ul>
-	
-{/exp:stash:set}
-
 {!-- Nav b/w Participate/FAQ pages --}
 {exp:stash:prepend name="stash-simple-body" match="#238#" against="{structure:page:entry_id}"}
 
