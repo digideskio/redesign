@@ -1,4 +1,3 @@
-{if {exp:stash:list_count name="listing"}}
 {exp:stash:get_list name="listing"}
 {if count == 1}
   <div class="grid blocks">
@@ -46,11 +45,11 @@
                 {/if}
       	    </span>
       	    {/if}
-      	    {if {exp:stash:list_count name="tags_{entry_id}"}}
-      	      <div class="tags">
-      	        {stash:embed:partials:tags stash:list="tags_{entry_id}"}
-      	      </div>
-      	    {/if}
+          
+            <div class="tags">
+              {stash:embed:partials:tags stash:list="tags_{entry_id}"}
+            </div>
+
       	  </footer>
       	</div>
       	{/if}
@@ -60,4 +59,3 @@
   </div>
 {/if}
 {/exp:stash:get_list}
-{/if}

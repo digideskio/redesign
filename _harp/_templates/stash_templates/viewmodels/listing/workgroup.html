@@ -1,0 +1,51 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{!-- Grab the listing description from the page's entry --}
+{exp:channel:entries
+  entry_id="{structure:page:entry_id}"
+  dynamic="off"
+  {global:disable_default}
+  require_entry="yes"
+}
+  {exp:stash:set name="layout_listing_description" parse_tags="yes" match="#\S#"}
+    {cf-sp-w-body-en}
+  {/exp:stash:set}
+{/exp:channel:entries}
+
+{exp:stash:extend name="layout_listing" with="partials:listing_cards"}
+{exp:stash:extend name="layout_bartender" with="partials:bartender"}
+
+{exp:stash:set_list name="listing" parse="yes" parse_depth="3"}
+{exp:channel:entries
+  require_entry="yes"
+  dynamic="off"
+  channel="{structure:child_listing:short_name}"
+  fixed_order="{lv:workgroup_order}"
+  {global:disable_default}
+}
+
+  {if no_results}{redirect="404"}{/if}
+  
+  {stash:embed:models:listing_common process="start" parse="no"}
+  
+  {stash:summary}{workgroup_micro-description}{/stash:summary}
+  
+  {exp:stash:set_list:tags name="tags_{entry_id}" parse_tags="yes" parse_conditionals="yes"}
+    {exp:tag:tags entry_id="{entry_id}" websafe_separator="-" tag_group_name="workgroup_tags"}
+      {stash:href}/tagged/{websafe_tag}/{/stash:href}
+      {stash:text}{tag}{/stash:text}
+      {stash:filter}tag{/stash:filter}
+    {/exp:tag:tags}
+  {/exp:stash:set_list:tags}
+  
+  {exp:stash:set_list:orgs name="organization_{entry_id}" parse_tags="yes" parse_vars="yes" parse_depth="2"}
+    {exp:tag:tags entry_id="{entry_id}" websafe_separator="-" tag_group_name="sdos"}
+      {stash:href}/tagged/{websafe_tag}/{/stash:href}
+      {stash:text}{tag}{/stash:text}
+      {stash:filter}organization{/stash:filter}
+    {/exp:tag:tags}
+  {/exp:stash:set_list:orgs}
+
+{entry_id}<br/>
+{/exp:channel:entries}
+{/exp:stash:set_list}
