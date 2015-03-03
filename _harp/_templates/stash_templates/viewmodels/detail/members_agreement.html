@@ -1,0 +1,264 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{exp:channel:entries entry_id="{structure:page:entry_id}" {global:disable_default}}
+
+  {exp:stash:layout_copy parse="yes" match="#\S#"}
+    {stash:nocache}
+      {if freebie_last != "success"}
+        {if oslc:user:is_not_member}
+      
+          {if oslc:member:name}
+          {!-- Has completed a Members Agreement (ie in limbo) --}
+            {exp:stash:embed:partials:notice
+              stash:notice_title="You have already submitted this form"
+              stash:notice_body='Your application is under review. We will get back to you soon.'
+            }
+          {if:else}
+            <p><a class="btn" href="#the_form">Scroll down to sign this form &darr;</a></p>
+          {/if}
+      
+        {if:else}
+        {!-- Is a member --}
+          {exp:stash:embed:partials:notice
+            stash:notice_title="You&rsquo;re already an OSLC Member! Yay!"
+            stash:notice_body='But, um, why are you here? Maybe you&rsquo; looking for the other <a href="{structure:parent:url}">legal agreements</a>?'
+          }
+        {/if}
+			{/if}
+			
+			{if freebie_last == "success"}
+			  {if oslc:user:is_member}
+			    {exp:stash:notice_body}
+			      <p>If you're ready to complete the WPA for a specification workgroup, here are all of our <a href="{structure:parent:url}">legal agreements</a>.</p>
+			      <p>Or perhaps join one of our User Groups:</p>
+            {exp:channel:entries url_title="user-groups" dynamic="off" limit="1" {global:disable_default}}
+					
+              {cf-sg-r-specs}
+                {if count == 1}<ul>{/if}
+                <li><a href="{page_url}">{title}</a></li>
+                {if count == total_results}</ul>{/if}
+              {/cf-sg-r-specs}
+          
+            {/exp:channel:entries}
+			    {/exp:stash:notice_body}
+			    {exp:stash:embed:partials:notice
+            process="inline"
+            stash:notice_type="success"
+            stash:notice_title="You&rsquo;re now an OSLC Member! Yay!"
+          }
+			  {/if}
+			  
+			  {!-- Less successful Members Agreement: Successful submission, but requires review --}
+			  {if oslc:user:is_not_member}
+			    {exp:stash:embed:partials:notice
+            process="inline"
+            stash:notice_type="success"
+            stash:notice_title="Thanks!"
+            stash:notice_body="We&rsquo;ll review your information and get back to you soon!"
+          }
+			  {/if}
+			{/if}
+			
+    {/stash:nocache}
+    
+    {cf-charter-m-text}							
+      {section_text}
+    {/cf-charter-m-text}
+  {/exp:stash:layout_copy}
+
+{/exp:channel:entries}
+
+{exp:stash:layout_form parse="yes"}
+{stash:nocache}
+{if freebie_last != "success" && oslc:member:name == ""}
+  {if logged_out}
+    {exp:member:login_form 
+      return="{structure:page:url}"
+      form_id="agreement_login_form"
+      form_name="agreement_login_form"
+      }
+      <fieldset>
+        <legend>Log in</legend>
+        <div class="control">
+          <label for="agreement_login_username">Email or username</label>
+          <input form="agreement_login_form" type="text" class="text" required name="username" id="agreement_login_username" value="" maxlength="32" placeholder="e.g. jsmith@example.com">  
+          <p class="help"><a href="{path='forums/member/register'}">Sign up</a></p>
+        </div>
+        <div class="control">
+          <label for="agreement_login_password">Password</label>
+          <input form="agreement_login_form" type="password" class="text" required name="password" id="agreement_login_password" value="" maxlength="32">
+          <p class="help"><a href="{path='forums/member/forgot_password'}">Forgot your password?</a></p>
+        </div>
+        <div class="control">
+          <button class="btn primary" type="submit">Log in</button>
+        </div>
+      </fieldset>
+      
+    {/exp:member:login_form}
+  {/if}{!-- /Logged out --}
+  
+  {if logged_in}
+    {exp:freeform:form
+      form_name="members-agreement"
+      required="name|email|job_title|phone1|member_address|representing_or_independent|member_id|agreement_category"
+      admin_notify="leereamsnyder@us.ibm.com"
+      return="{structure:page:uri}success/"
+      admin_notification_template="legal_agreement_template" 
+      form:id="sign_agreement_form"
+    }
+      {!-- Required for processing my custom extension: member ID and the category we want to add them to --}
+      <input type="hidden" name="member_id" value="{logged_in_member_id}" />
+      <input type="hidden" name="agreement_entry_id" value="{structure:page:entry_id}" />
+      
+      <input type="hidden" name="agreement_category" value="is-a-member" />
+      <input type="hidden" name="bylaws_entry_id_at_signing" value="{lv-current-bylaws}" />
+      
+      <fieldset class="fieldset">
+        <legend>Your information</legend>
+        
+        <div class="control">
+          <label for="agree_to_charter_name">Your name</label>
+          <input class="text" required type="text" name="name" id="agree_to_charter_name" placeholder="e.g. John Smith" value="{username}" />
+        </div>
+        <div class="control">
+          <label for="agree_to_charter_email">Email</label>
+          <input class="text" required type="email" name="email" id="agree_to_charter_email" value='{logged_in_email}' />
+        </div>
+        
+        <div class="control">
+          <label for="agree_to_charter_job_title">Job title</label>
+          <input class="text" placeholder="e.g. software developer" required type="text" name="job_title" id="agree_to_charter_job_title" />
+        </div>
+        
+        <div class="control">
+          <label for="agree_to_charter_tel">Telephone number</label>
+          <input class="text" placeholder="e.g. +15555555555" required type="tel" name="phone1" id="agree_to_charter_tel" />
+        </div>
+        
+        <div class="control">
+          <label for="agree_to_charter_address">Address</label>
+          <textarea class="text" rows="4" placeholder="e.g. 123 Fake Street, Springfield, USA 97477" required name="member_address" id="agree_to_charter_address" ></textarea>
+        </div>
+        
+      </fieldset>
+      
+      <fieldset class="fieldset">
+        <legend>Are you representing anyone?</legend>
+        <p class="help">Will you be serving as a representative for a company or organization?</p>
+        
+        <div class="menu horizontal" data-manilla>
+          <label for="agreement_representing" class="item">
+            <input id="agreement_representing" type="radio" name="representing_or_independent" required value="Representing someone" data-target="#for_representative" /> 
+            Yes
+          </label>
+          <label for="agreement_independent" class="item">
+            <input id="agreement_independent" type="radio" name="representing_or_independent" required value="Independent" data-target="#for_solo" />
+            No
+          </label>
+        </div>
+      </fieldset>
+      <div class="tabpanels fieldset">
+        <div id="for_representative">
+          <fieldset>
+            <legend>Tell us about the organization that you are representing</legend>
+            
+            <div class="control">
+              <label for="agree_to_charter_org">Organization name</label>
+              <input class="text" placeholder="e.g. ACME Widgets Inc." type="text" name="oslc_org" id="agree_to_charter_org" list="agree_to_charter_members" />
+              <datalist id="agree_to_charter_members">
+                {exp:channel:entries
+                  channel="company"
+                  dynamic="no"
+                  orderby="title"
+                  sort="asc"
+                  {global:disable_all}
+                }
+                  <option value="{title}">{title}</option>
+                {/exp:channel:entries}
+              </datalist>
+            </div>
+            
+            <div class="control">
+              <label for="agreement_entity_url">Organization URL</label>
+              <div class="input prefixed">
+                <span class="prefix">http://</span>
+                <input placeholder="e.g. acme.com" class="text" type="text" id="agreement_entity_url" name="representing_org_url" />
+              </div>
+            </div>
+            
+            <div class="control">
+              <label for="agreement_representing_entity_is_employer">The above &hellip;</label>
+              
+              <div class="menu">
+                <label for="agreement_representing_entity_is_employer" class="item">
+                  <input checked="checked" id="agreement_representing_entity_is_employer" type="radio" name="employer_or_sponsor" value="Employer" />is my employer 
+                </label>
+                <label for="agreement_representing_entity_is_sponsor" class="item">
+                  <input id="agreement_representing_entity_is_sponsor" type="radio" name="employer_or_sponsor" value="Sponsor" />is <strong>not</strong> my employer but sponsors or finances my participation in OSLC
+                </label>
+              </div>
+            </div>
+            
+            <div class="control">
+              <p>
+                <label for="agreement_representing_primary_contact">
+                  <input id="agreement_representing_primary_contact" type="checkbox" name="is_principle_contact" value="y" />
+                  I will be the primary contact for this organization</label>
+              </p>
+              <p class="help"><label for="agreement_representing_primary_contact">Check this box if we should direct any communications between OSLC and your organization to you.</label></p>
+            </div>
+          </fieldset>
+        </div>
+        
+        <div id="for_solo">
+          <fieldset>
+            <legend>Tell us about your current employment</legend>
+            
+            <div class="control">
+              <label for="agreement_independent_solo">Status</label>
+              <div class="menu horizontal" data-manilla>
+                <label for="agreement_independent_solo" class="item"><input checked="checked" id="agreement_independent_solo" type="radio" name="solo_or_employed" value="Unemployed or self-employed" data-target="#for_indy_and_unemployed" />I am unemployed or self-employed</label>
+                <label for="agreement_independent_employed" class="item"><input id="agreement_independent_employed" type="radio" name="solo_or_employed" value="Employed" data-target="#for_indy_and_totally_employed" />I am an employee</label>
+              </div>
+            </div>
+
+            <div class="tabpanels control">
+              <div id="for_indy_and_unemployed">{!-- Nothing! --}</div>
+              <div id="for_indy_and_totally_employed">
+                
+                <div class="control">
+                  <label for="agreement_independent_employer">Employer name</label>
+                  <input class="text" type="text" id="agreement_independent_employer" name="independent_employer" placeholder="e.g. ACME Widgets Inc." />
+                </div>
+                
+                <div class="control">
+                  <label for="agreement_independent_url">Employer URL</label>
+                  <div class="input prefixed">
+                    <span class="prefix">http://</span>
+                    <input placeholder="e.g. acme.com" type="text" class="text" id="agreement_independent_url" name="independent_employer_url" />
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+          </fieldset>
+          
+        </div>
+      </div>
+      
+      <fieldset class="fieldset">
+        <legend>Agree to the {structure:page:title} and Bylaws</legend>
+        
+        <div class="control">
+          <p class="help">By clicking <strong>I Agree</strong> below, you agree to the terms in the {structure:page:title} and Bylaws.</p>
+          <button class="btn primary" type="submit">I agree</button>
+          
+        </div>
+      </fieldset>
+
+    {/exp:freeform:form}
+  {/if}
+{/if}
+{/stash:nocache}
+{/exp:stash:layout_form}

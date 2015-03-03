@@ -304,23 +304,11 @@
 									form:class="form form-horizontal form-validate size4of5"
 								}
 									
-									{if freeform:no_results && logged_in_group_id == "1"}
-										<p>
-											Specified form was not found. Please make sure you have
-											specified the correct short name of the form in the
-											<b>form_name</b> parameter.
-										</p>
-									{/if}
-									
 									{!-- Required for processing my custom extension: member ID and the category we want to add them to --}
 									<input type="hidden" name="member_id" value="{logged_in_member_id}" />
 
 									<input type="hidden" name="agreement_entry_id" value="{structure:page:entry_id}" />
 
-									{if structure:page:entry_id == lv-current-ma}{!-- For general membership --}
-									<input type="hidden" name="agreement_category" value="is-a-member" />
-									<input type="hidden" name="bylaws_entry_id_at_signing" value="{lv-current-bylaws}" />
-									{/if}
 									{if embed:is_for_wpa != "" && oslc:workgroup:url_title} {!-- For WPA --}
 									<input type="hidden" name="ipr_entry_id_at_signing" value="{lv-current-ipr}" />
 									<input type="hidden" name="wpa_entry_id_at_signing" value="{lv-current-wpa}" />
@@ -393,109 +381,7 @@
 									</fieldset>
 																		
 									{if structure:page:entry_id == lv-current-ma}
-										<fieldset>
-											<legend>Are you representing anyone?</legend>
-											
-											<div class="control-group">
-												<label for="agreement_representing">Select one</label>
-												
-												<div class="controls">
-													<label for="agreement_representing" class="radio">
-														<input id="agreement_representing" type="radio" name="representing_or_independent" value="Representing someone" data-toggle="reveal" data-hide-on-init="#for_independent" data-show-selector="#for_representing" data-hide-selector="#for_independent" />I am serving in a representative capacity for the Entity named below, and I represent and warrant that I have the authority to enter into this Agreement on behalf of the Entity.
-													</label>
-													<label for="agreement_independent" class="radio">
-														<input id="agreement_independent" type="radio" name="representing_or_independent" value="Independent" data-toggle="reveal" data-show-selector="#for_independent" data-hide-selector="#for_representing" />I am joining OSLC as an Independent OSLC Member as described in the <a href="/bylaws/#independent-oslc-members">Bylaws section "Independent OSLC Members"</a>
-													</label>
-												</div>
-											</div>
-										</fieldset>
-										
-										<fieldset id="for_representing">
-											<legend>Tell us about the organization that you are representing</legend>
-											
-											<div class="control-group">
-												<label for="agree_to_charter_org">Organization name</label>
-												<div class="controls">
-													<div class="input-wrap">
-														<input placeholder="e.g. ACME Widgets Inc." type="text" name="oslc_org" id="agree_to_charter_org" list="agree_to_charter_members" />
-													</div>
-													<datalist id="agree_to_charter_members">
-														{exp:channel:entries
-															channel="company"
-															dynamic="no"
-															orderby="title"
-															sort="asc"
-															{global:disable_all}
-														}
-															<option value="{title}">{title}</option>
-														{/exp:channel:entries}
-													</datalist>
-												</div>
-											</div>
-											<div class="control-group">
-												<label for="agreement_entity_url">Organization URL</label>
-												<div class="controls">
-													<div class="input-wrap">
-														<div class="input-prepend">
-														<span class="add-on">http://</span>
-														<input placeholder="e.g. acme.com" type="text" id="agreement_entity_url" name="representing_org_url" />
-														</div>
-														
-													</div>
-												</div>
-											</div>
-											<div class="control-group">
-												<label for="agreement_representing_entity_is_employer">The above &hellip;</label>
-												<div class="controls">
-													<p></p>
-													<label for="agreement_representing_entity_is_employer" class="radio">
-														<input checked="checked" id="agreement_representing_entity_is_employer" type="radio" name="employer_or_sponsor" value="Employer" />is my employer 
-													</label>
-													<label for="agreement_representing_entity_is_sponsor" class="radio">
-														<input id="agreement_representing_entity_is_sponsor" type="radio" name="employer_or_sponsor" value="Sponsor" />is <strong>not</strong> my employer but sponsors or finances my participation in OSLC
-													</label>
-												</div>
-											</div>
-											<div class="control-group">
-												<div class="controls">
-													<label for="agreement_representing_primary_contact" class="checkbox"><input id="agreement_representing_primary_contact" type="checkbox" name="is_principle_contact" value="y" />I will be the primary contact for this organization</label>
-													<label for="agreement_representing_primary_contact" class="help-block">Check this box if we should direct any communications between OSLC and your organization to you</label>
-												</div>
-											</div>
-	
-										</fieldset>
-										
-										<fieldset id="for_independent">
-											<p class="help-block ptm">Only fill this out if you selected <strong>I am joining as an independent member</strong> above</p>
-											
-											<legend>Tell us about your current employment</legend>
-											<div class="control-group">
-												<label for="agreement_independent_solo">Status</label>
-												<div class="controls">
-												<label for="agreement_independent_solo" class="radio"><input checked="checked" id="agreement_independent_solo" type="radio" name="solo_or_employed" value="Unemployed or self-employed" data-toggle="reveal" data-hide-selector=".for_indy_employed" />I am unemployed or self-employed</label>
-												<label for="agreement_independent_employed" class="radio"><input id="agreement_independent_employed" type="radio" name="solo_or_employed" value="Employed" data-toggle="reveal" data-show-selector=".for_indy_employed" />I am an employee</label>
-												</div>
-											</div>
-											<div class="control-group for_indy_employed">
-												<label for="agreement_independent_employer">Employer name</label>
-												<div class="controls">
-													<div class="input-wrap">
-														<input type="text" id="agreement_independent_employer" name="independent_employer" placeholder="e.g. ACME Widgets Inc." />
-													</div>
-												</div>
-											</div>
-											<div class="control-group for_indy_employed">
-												<label for="agreement_independent_url">Employer URL</label>
-												<div class="controls">
-													<div class="input-wrap">
-														<div class="input-prepend">
-														<span class="add-on">http://</span>
-														<input placeholder="e.g. acme.com" type="text" id="agreement_independent_url" name="independent_employer_url" />
-														</div>
-													</div>
-												</div>
-											</div>
-										</fieldset>
+
 									{if:else}
 																		
 										<fieldset>
@@ -585,13 +471,6 @@
 										</div>
 										{/if}
 										
-										{if structure:page:entry_id == lv-current-ma}
-										<div class="control-group">
-											<div class="controls">
-												<p>By clicking <strong>I Agree</strong> below, you agree to the terms in the {embed:agreement_name}.</p>
-											</div>
-										</div>
-										{/if}
 										<div class="form-actions">
 											<button type="submit" class="button">I Agree</button>
 										</div>

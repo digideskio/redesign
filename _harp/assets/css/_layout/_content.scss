@@ -106,9 +106,11 @@
     box-shadow: 0 2px 3px rgba(0,0,0,.2);
     
       .title {
-        margin: $font-size-s 0 $font-size-xxxl;
+        margin: $font-size-s 0 $font-size-xl;
         font-weight: normal;
         @include font-size(xxl, 1.1); 
+        padding-bottom: $font-size-s;
+        border-bottom: 1px solid palette(gray);
       }      
   }
   

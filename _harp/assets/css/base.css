@@ -2149,11 +2149,13 @@ form.search button {
     background-color: #fff;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); }
     .nested > .document .title {
-      margin: 13px 0 32px;
+      margin: 13px 0 23px;
       font-weight: normal;
       font-size: 27px;
       font-size: 1.6875rem;
-      line-height: 1.1; }
+      line-height: 1.1;
+      padding-bottom: 13px;
+      border-bottom: 1px solid #999; }
   .nested > .document + .document {
     margin-top: 19px; }
 

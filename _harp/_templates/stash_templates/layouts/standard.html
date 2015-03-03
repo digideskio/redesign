@@ -123,6 +123,12 @@
 
           {stash:embed:partials:slats stash:list="layout_meta_after"}
           
+          {if {exp:stash:not_empty name="layout_form"}}
+            <div class="form primary" id="the_form">
+              {exp:stash:layout_form}
+            </div>
+          {/if}
+          
         </section>
         
         {if {exp:stash:not_empty:string name="layout_relationships"}}
