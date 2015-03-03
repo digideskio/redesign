@@ -1,0 +1,25 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{exp:channel:entries
+	entry_id="{structure:page:entry_id}"
+	dynamic="no"
+  require_entry="yes"
+  {global:disable_default}
+}
+  {stash:embed file_name="models:related_parents" process="start" parse="no"}
+  
+  {exp:stash:set_list name="layout_meta_before" parse_tags="yes"}
+    {stash:slug}outgoing{/stash:slug}
+    {stash:text}Go to the site for {title}{/stash:text}
+    {stash:link}{cf-co-t-url}{/stash:link}
+  {/exp:stash:set_list}
+  
+  {exp:stash:set name="layout_copy"}
+    {if cf-co-w-letter}
+      <h2>Letter of Support</h2>
+      {cf-co-w-letter}
+    {/if}
+  {/exp:stash:set}
+{/exp:channel:entries}
+
+{stash:embed file_name="viewmodels:partials:related" process="end"}
