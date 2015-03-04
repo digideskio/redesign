@@ -78,7 +78,7 @@
       form_name="agreement_login_form"
       }
       <fieldset>
-        <legend>Log in</legend>
+        <legend>Log in to complete the agreement</legend>
         <div class="control">
           <label for="agreement_login_username">Email or username</label>
           <input form="agreement_login_form" type="text" class="text" required name="username" id="agreement_login_username" value="" maxlength="32" placeholder="e.g. jsmith@example.com">  
@@ -103,7 +103,7 @@
       required="name|email|job_title|phone1|member_address|representing_or_independent|member_id|agreement_category"
       admin_notify="leereamsnyder@us.ibm.com"
       return="{structure:page:uri}success/"
-      admin_notification_template="legal_agreement_template" 
+      admin_notification_template="wpa_template" 
       form:id="sign_agreement_form"
     }
       {!-- Required for processing my custom extension: member ID and the category we want to add them to --}

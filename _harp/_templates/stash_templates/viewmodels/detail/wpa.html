@@ -1,0 +1,319 @@
+{if freebie_last != "corporate-auth"}
+{stash:embed:layouts:{stash:_layout} priority="1"}
+{/if}
+
+{if freebie_last == "corporate-auth"}
+{stash:nocache}
+{exp:smartdown}
+## Corporate Authorization to Execute Workgroup Participation Agreement
+
+
+{if oslc:member:organization}__{oslc:member:organization}__{if:else}`_______________________________________`{/if} ("Entity"), on behalf of itself and its Affiliates (collectively "Bound Entities"), effective as of the date of signature below (the "Effective Date"), hereby authorizes {if oslc:member:name}__{oslc:member:name}__{if:else}`_____________________________`{/if} (open-services.net site username: {logged_in_username} [ID: {logged_in_member_id}]), an employee of Entity ("Employee"), to electronically sign the Workgroup Participation Agreement ("WPA") for the workgroup "{oslc:workgroup:title}" located at <http://open-services.net/{segment_1}/{segment_2}/> on behalf of Bound Entities, and thereby bind Bound Entities to the terms and conditions of the WPA with respect to the Contributions and Other Submissions made by Employee during the term of Employee's employment with Entity.  For the avoidance of doubt, such authorization does not extend to Contributions or Other Submissions made by Employee to other Workgroups or made by Employee while not employed by Entity.
+
+Entity agrees that Bound Entities shall be bound to the terms and conditions of the electronically signed WPA as if the Employee had signed the WPA on paper, subject to the laws of the State of New York, USA, without reference to conflict-of-laws principles.
+
+Capitalized terms have the meanings set forth at <http://open-services.net/{segment_1}/{segment_2}/>, unless defined by use of parentheses and quotations above.
+
+  
+  
+Entity:  {if oslc:member:organization}__{oslc:member:organization}__{if:else}`_______________________________________`{/if}
+
+
+Authorized Signature:  `__________________________________________`	     Date: `______________`  
+
+Name:	 `____________________________`  
+
+Title:	 `____________________________`  
+
+
+  
+  
+  
+_(if Entity requires dual signatures):_
+
+Authorized Signature:  `__________________________________________`	     Date:  `______________`  
+
+Name:	 `____________________________`  
+
+Title:	 `____________________________`  
+
+{/exp:smartdown}
+{/stash:nocache}
+{/if}
+
+{exp:stash:set_value name="agreement_name" value="{structure:page:title} and Intellectual Property Policy"}
+
+{exp:stash:set_list name="layout_nested_documents" parse="yes" parse_depth="2"}
+
+  {!-- IP Policy --}
+  {exp:channel:entries 
+    entry_id="{lv-current-ipr}" 
+    dynamic="off" 
+    {global:disable_default}
+  }
+    {stash:title}{title}{/stash:title}
+    {stash:body}
+      {cf-fp-m-subsections-en}
+        {subbody}
+      {/cf-fp-m-subsections-en}
+    {/stash:body}
+  {/exp:channel:entries}
+  
+  {!-- Get the Target Workgroup charter --}
+  {exp:playa:parents 
+    channel="charters" 
+    field="cf-wgcharter-r-workgroup" 
+    status="open" 
+    entry_id="{oslc:workgroup:entry_id}"
+    var_prefix="charter"
+    limit="1" {!-- prevents fetching ALL charters on the sample/language page --}
+  }
+    {stash:title}
+      {if oslc:workgroup:entry_id}
+        {charter:title} Charter
+      {if:else}
+        [&hellip;] Charter
+      {/if}
+    {/stash:title}
+    {stash:body}
+      {if oslc:workgroup:entry_id}
+        {stash:embed:partials:charter process="start" parse="no"}
+      {if:else}
+        <p><em>[The charter for the Workgroup will appear here]</em></p>
+      {/if}
+    {/stash:body}
+    
+    {exp:stash:set_value name="charter_entry_id" value="{charter:entry_id}"}
+  {/exp:playa:parents}
+
+{/exp:stash:set_list}
+
+{exp:stash:layout_copy parse_tags="yes" parse_depth="4" match="#\S#"}
+
+  {if "{freebie_last}" != "success" && structure:page:entry_id != lv-current-wpa && oslc:user:is_member && oslc:user:is_not_workgroup_member && logged_in && oslc:user:has_not_submitted_wpa}
+		<p><a class="btn" href="#the_form">Scroll down to sign this form &darr;</a></p>
+  {/if}
+
+  {if structure:page:entry_id == lv-current-wpa}
+    {stash:embed:partials:notice 
+      stash:notice_type="warning"
+      stash:notice_body="This is the basic wording for a Workgroup Participation Agreement. When you join a workgroup, you will see the charter for the appropriate workgroup and a form to sign electronically."
+    }
+  {/if}
+  
+  {!-- WPA body text --}
+  {exp:channel:entries 
+    entry_id="{lv-current-wpa}" 
+    dynamic="off" 
+    {global:disable_default}
+  }
+    {cf-sp-w-body-en}
+  {/exp:channel:entries}
+  
+  {exp:channel:entries
+    entry_id="{structure:page:entry_id}" 
+    dynamic="off" 
+    {global:disable_default}
+    require_entry="yes"
+  }
+    
+    <h2>Workgroup{if cf-charter-r-addl-workgroups}s{/if}</h2>
+    
+    <ul>
+      {if oslc:workgroup:title}
+      <li>{oslc:workgroup:title}</li>
+      {/if}
+      {cf-charter-r-addl-workgroups}
+        <li>{title}</li>
+        
+        {exp:stash:append_list:workgroup name="additional_workgroups"}
+          {stash:slug}{url_title}{/stash:slug}
+        {/exp:stash:append_list:workgroup}
+        
+        {!-- While I'm looping through additional workgroups, let's grab the additional charters, too --}
+        {exp:playa:parents entry_id="{entry_id}" channel="charters" field="cf-wgcharter-r-workgroup" status="open" limit="1" var_prefix="charter"}
+          {!-- Now I am looping through the charters for those workgroups --}
+          {exp:stash:append_list:nested name="layout_nested_documents" parse="yes"}
+            {stash:title}{charter:title} Charter{/stash:title}
+            {stash:body}{stash:embed:partials:charter process="start" parse="no"}{/stash:body}
+          {/exp:stash:append_list:nested}   
+          
+          {exp:stash:append_list:charter_ids name="additional_charters"}
+            {stash:entry_id}{charter:entry_id}{/stash:entry_id}
+          {/exp:stash:append_list:charter_ids}
+        {/exp:playa:parents}
+                
+      {/cf-charter-r-addl-workgroups}
+      {if ! oslc:workgroup:title}
+      <li><em>[Name of Workgroup will appear here]</em></li>
+      {/if}
+    </ul>			
+  
+  {/exp:channel:entries}
+  
+{/exp:stash:layout_copy}
+
+{exp:stash:layout_form parse="yes"}
+{stash:nocache}
+
+{if logged_out}
+  {exp:member:login_form 
+    return="{structure:page:url}"
+    form_id="agreement_login_form"
+    form_name="agreement_login_form"
+    }
+    <fieldset>
+      <legend>Log in to complete the agreement</legend>
+      <div class="control">
+        <label for="agreement_login_username">Email or username</label>
+        <input form="agreement_login_form" type="text" class="text" required name="username" id="agreement_login_username" value="" maxlength="32" placeholder="e.g. jsmith@example.com">  
+        <p class="help"><a href="{path='forums/member/register'}">Sign up</a></p>
+      </div>
+      <div class="control">
+        <label for="agreement_login_password">Password</label>
+        <input form="agreement_login_form" type="password" class="text" required name="password" id="agreement_login_password" value="" maxlength="32">
+        <p class="help"><a href="{path='forums/member/forgot_password'}">Forgot your password?</a></p>
+      </div>
+      <div class="control">
+        <button class="btn primary" type="submit">Log in</button>
+      </div>
+    </fieldset>
+    
+  {/exp:member:login_form}
+{/if}{!-- /Logged out --}
+
+{if logged_in && freebie_last != "success" && oslc:user:is_member && oslc:workgroup:entry_id && oslc:user:is_not_workgroup_member && oslc:user:has_not_submitted_wpa}
+  {exp:freeform:form
+    form_name="{oslc:workgroup:url_title}-wpa"
+    required="name|email|job_title|phone1|member_address|confirm_status|member_id|agreement_category|signature"
+    admin_notify="leereamsnyder@us.ibm.com"
+    return="{structure:page:uri}success/"
+    admin_notification_template="legal_agreement_template" 
+    form:id="sign_agreement_form"
+  }
+    {!-- Required for processing my custom extension: member ID and the category we want to add them to --}
+    <input type="hidden" name="member_id" value="{logged_in_member_id}" />
+    <input type="hidden" name="agreement_entry_id" value="{structure:page:entry_id}" />
+    
+    <input type="hidden" name="ipr_entry_id_at_signing" value="{lv-current-ipr}" />
+    <input type="hidden" name="wpa_entry_id_at_signing" value="{lv-current-wpa}" />
+    {if {exp:stash:not_empty name="charter_entry_id"}}
+      <input type="hidden" name="charter_entry_id_at_signing" value="{exp:stash:get name='charter_entry_id'}{exp:stash:get_list name='additional_charters'}|{entry_id}{/exp:stash:get_list}" />
+    {/if}
+    <input type="hidden" name="agreement_category" value="{oslc:workgroup:url_title}" />
+    {if {exp:stash:list_count name="additional_workgroups"}}
+      <input type="hidden" name="extra_workgroups" value="{exp:stash:get_list name='additional_workgroups' backspace='1'}{slug}|{/exp:stash:get_list}">
+    {/if}
+    
+    <fieldset class="fieldset">
+      <legend>Your information</legend>
+    
+      <div class="control">
+        <label for="agree_to_charter_name">Your name</label>
+        <input class="text" required type="text" name="name" id="agree_to_charter_name" placeholder="e.g. John Smith" readonly value="{oslc:member:name}" />
+      </div>
+      <div class="control">
+        <label for="agree_to_charter_email">Email</label>
+        <input class="text" required type="email" name="email" id="agree_to_charter_email" readonly value='{oslc:member:email}' />
+      </div>
+    
+      <div class="control">
+        <label for="agree_to_charter_job_title">Job title</label>
+        <input class="text" placeholder="e.g. software developer" required type="text" name="job_title" id="agree_to_charter_job_title" readonly value="{oslc:member:job_title}" />
+      </div>
+    
+      <div class="control">
+        <label for="agree_to_charter_tel">Telephone number</label>
+        <input class="text" placeholder="e.g. +15555555555" required type="tel" name="phone1" id="agree_to_charter_tel" readonly value="{oslc:member:phone}" />
+      </div>
+    
+      <div class="control">
+        <label for="agree_to_charter_address">Address</label>
+        <textarea class="text" rows="4" placeholder="e.g. 123 Fake Street, Springfield, USA 97477" required name="member_address" id="agree_to_charter_address" readonly>{oslc:member:address}</textarea>
+      </div>
+    </fieldset>
+    
+    <fieldset class="fieldset">
+      <legend>Confirm your status</legend>
+      
+      {if oslc:member:is_representative}
+        <input type="hidden" name="oslc_org" value="{oslc:member:organization}" />
+      {/if}
+      
+      <div class="control options">
+        <div class="media">
+        	<div class="image"><input type="radio" required name="confirm_status" id="wpa_status_confirm" value="Unchanged"></div>
+        	<div class="body">
+        	  <label for="wpa_status_confirm">
+              {if oslc:member:is_representative}
+                <strong>You are still a representative for the Entity &ldquo;{oslc:member:organization}&rdquo;</strong>; you have the authority to enter into this agreement on behalf of {oslc:member:organization}. 
+              {if:else}
+                <strong>You are still eligible to be an Independent OSLC Member</strong> as described in the <a href="/bylaws/#independent-oslc-members">Bylaws section &ldquo;Independent OSLC Members&rdquo;</a>
+              {/if}
+              You agree to notify a member of the Steering Committee if this status changes.
+        	  </label>
+        	</div>
+        </div>
+
+        <div class="media">
+        	<div class="image"><input type="radio" name="confirm_status" id="wpa_status_changed" value="Changed"></div>
+        	<div class="body">
+        	  <label for="wpa_status_changed">
+              <strong>My status has changed</strong>;
+              {if oslc:member:is_representative}
+                I am no longer a representative for {oslc:member:organization} 
+              {if:else}
+                I am no longer eligible to be an Independent OSLC Member 
+              {/if}
+        	  </label>
+        	</div>
+        </div>
+      </div>
+      
+    </fieldset>
+    
+    {!-- EU Entity extra questions --}
+    {if oslc:member:is_representative}
+      <fieldset class="fieldset">
+        <legend>Tell us about the organization that you represent</legend>
+        
+        <p>Is {oslc:member:organization} incorporated and headquartered (at the very highest level) in the European Union?</p>
+        
+        <div class="menu horizontal" data-manilla>
+          <label for="no_entity_is_eu" class="item">
+            <input type="radio" name="entity_is_in_eu" id="no_entity_is_eu" value="n" data-target="#for_not_eu_entity" />
+            No
+          </label>
+          <label for="yes_entity_is_eu" class="item">
+            <input type="radio" name="entity_is_in_eu" id="yes_entity_is_eu" value="y" data-target="#for_eu_entity" />
+            Yes
+          </label>
+        </div>
+        <p class="help"><strong>Example:</strong> <a href="http://en.wikipedia.org/wiki/Boeing">Boeing</a> is a multinational company with subsidiaries in many counties; however, Boeing is headquartered at the highest level in the United States, which is not in the European Union. If you were representing Boeing, you would click <label for="no_entity_is_eu">No</label>.</p>
+      </fieldset>
+      
+      <div class="tabpanels fieldset">
+        <div id="for_not_eu_entity">{!-- yay nothing to do! --}</div>
+        <div id="for_eu_entity">
+          <fieldset>
+            <legend>[Optional] Attach the Corporate Authorization Form</legend>
+
+            <div class="control">
+              {freeform:field:corporate-authorization-forms}
+              <p class="help">
+                <label for="freeform_corporate-authorization-forms0">If you have a scanned copy of the completed Corporate Authorization Form, attach it here.</label>
+              </p>
+
+              <p><a target="_new" href="{structure:page:url}corporate-auth/">Click here and then print the page if you need the Corporate Authorization Form</a></p>
+            </div>          
+          </fieldset>
+          
+        </div>{!-- /#for_eu_entity --}
+      </div>{!-- /tabpanels --}
+    {/if}
+
+  {/exp:freeform:form}  
+{/if}
+
+{/stash:nocache}
+{/exp:stash:layout_form}

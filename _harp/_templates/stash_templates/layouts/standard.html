@@ -123,6 +123,21 @@
 
           {stash:embed:partials:slats stash:list="layout_meta_after"}
           
+          {if {exp:stash:list_count name="layout_nested_documents"}}
+            <div class="nested">
+              {exp:stash:get_list name="layout_nested_documents"}
+              <article class="document">
+                <header class="header">
+                  <h1 class="title">{title}</h1>
+                </header>
+                <section class="content copy">
+                  {body}
+                </section>
+              </article>
+              {/exp:stash:get_list}
+            </div>
+          {/if}
+          
           {if {exp:stash:not_empty name="layout_form"}}
             <div class="form primary" id="the_form">
               {exp:stash:layout_form}

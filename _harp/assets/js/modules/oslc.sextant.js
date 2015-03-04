@@ -14,7 +14,7 @@ var Sextant = _.create(OSLC, {
     };
         
     // Bail if there are only a few headings
-    if ( this.els.content.find('h1, h2, h3, h4, h5, h6').length < 4 ) { return; }
+    if ( this.els.content.find('h1, h2, h3, h4, h5, h6').not('[data-sextant-ignore]').length < 4 ) { return; }
     
     this.insertMenu();
 
@@ -48,7 +48,7 @@ var Sextant = _.create(OSLC, {
     var
       slugs = [],
       dupes = {},
-      headings = $('h1, h2, h3, h4, h5, h6', this.els.content),
+      headings = $('h1, h2, h3, h4, h5, h6', this.els.content).not('[data-sextant-ignore]'),
       itemTemplate = '<a data-scroll-to="flash" data-close="closest:[data-prospectus]:prospectus" class="${ classes }" href="#${ id }">${ text }</a>';
       
     var data = headings.map(function(){
