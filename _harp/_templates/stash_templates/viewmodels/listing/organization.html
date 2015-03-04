@@ -8,13 +8,14 @@
   {global:disable_default}
   require_entry="yes"
 }
+  {exp:stash:set name="layout_headtitle" parse_tags="yes" match="#\S#"}
+    {cf-sp-t-metatitle-en}
+  {/exp:stash:set}
+  
   {exp:stash:set name="layout_listing_description" parse_tags="yes" match="#\S#"}
     {cf-sp-w-body-en}
   {/exp:stash:set}
   
-  {exp:stash:set name="layout_headtitle" parse_tags="yes" match="#\S#"}
-    {cf-sp-t-metatitle-en}
-  {/exp:stash:set}
 {/exp:channel:entries}
 
 {exp:stash:set_list name="listing" parse_tags="yes"}

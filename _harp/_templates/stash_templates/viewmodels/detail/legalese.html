@@ -1,0 +1,22 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{exp:channel:entries entry_id="{structure:page:entry_id}" {global:disable_default}}
+
+  {exp:stash:set name="layout_headtitle" parse_tags="yes" match="#\S#"}
+    {cf-fp-t-metatitle-en}
+  {/exp:stash:set}
+  
+  {stash:embed:models:detail_dates process="start" parse="no"}
+  {exp:stash:set_value prepend="yes" name="layout_deck_date" value="Last revised:&nbsp;"}
+  
+  {exp:stash:layout_copy parse="yes" match="#\S#"}
+    {if cf-fp-w-body-en}
+      {cf-fp-w-body-en}
+    {/if}
+  
+    {cf-fp-m-subsections-en}									
+      {subbody}
+    {/cf-fp-m-subsections-en}
+  {/exp:stash:layout_copy}
+
+{/exp:channel:entries}
