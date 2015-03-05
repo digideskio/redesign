@@ -89,10 +89,64 @@ Title:	 `____________________________`
 {/exp:stash:set_list}
 
 {exp:stash:layout_copy parse_tags="yes" parse_depth="4" match="#\S#"}
+  {stash:nocache}
+    {if logged_in && oslc:user:is_not_member && structure:page:entry_id != lv-current-wpa}
+      {stash:embed:partials:notice
+        stash:notice_type="warning"
+        stash:notice_title="You&rsquo;re not yet an OSLC Member!"
+        stash:notice_body='{exp:channel:entries entry_id="{lv-current-ma}" {global:disable_all} }<a class="button" href="{page_url}">Review and complete the {title}</a>{/exp:channel:entries}'
+      }
+    {/if}
+    
+    {if freebie_last != "success" && oslc:user:is_workgroup_member}
+      {stash:embed:partials:notice
+        stash:notice_title="Hello again"
+        stash:notice_body='You are a member of this workgroup.'
+      }
+    {/if}
 
-  {if "{freebie_last}" != "success" && structure:page:entry_id != lv-current-wpa && oslc:user:is_member && oslc:user:is_not_workgroup_member && logged_in && oslc:user:has_not_submitted_wpa}
-		<p><a class="btn" href="#the_form">Scroll down to sign this form &darr;</a></p>
-  {/if}
+    {if oslc:user:has_submitted_wpa && oslc:user:is_not_workgroup_member && freebie_last != "success"}
+      {stash:embed:partials:notice
+        stash:notice_title="Hello again"
+        stash:notice_body='You have already submitted this Workgroup Participation Agreement. We&rsquo;re reviewing the information that you gave us and we&rsquo;ll get back to you soon!'
+      }
+    {/if}
+    
+    {if freebie_last == "success"}
+
+      {exp:stash:notice_body}
+        <p>
+          {!-- Check if there's a completed WPA form for them. --}
+          {if oslc:user:has_submitted_wpa}
+            {!-- If everything went through OK and they're now a member for this workgroup, show them this message --}
+            {if oslc:user:is_workgroup_member}
+              Now check out the <a href="{path='wiki'}">wikis</a>. You can edit the following wikis now:
+            {if:else}
+              After we verify your Corporate Authorization form, we will grant you access to the wiki for the workgroup. You can currently edit the following wikis:
+            {/if}
+          {if:else} {!-- No one should really see this, but it doesn't hurt to have a message --}
+            Err, actually I don't have a saved record. Maybe something went wrong? In the meantime, you can edit the following wikis:
+          {/if}
+        </p>
+        {exp:member_categories:categories errors="off" category_group="1|4"}
+          {if '{count}' == 1}<ul>{/if}
+          <li><a href="{path='wiki/{category_url_title}'}">{category_name}</a></li>
+          {if '{count}' == '{total_results}'}</ul>{/if}  
+        {/exp:member_categories:categories}
+
+      {/exp:stash:notice_body}
+
+      {stash:embed:partials:notice
+        process="inline"
+        stash:notice_type="success"
+        stash:notice_title="Thanks!"
+      }
+    {/if}
+  
+    {if "{freebie_last}" != "success" && structure:page:entry_id != lv-current-wpa && oslc:user:is_member && oslc:user:is_not_workgroup_member && logged_in && oslc:user:has_not_submitted_wpa}
+      <p><a class="btn" href="#the_form">Scroll down to sign this form &darr;</a></p>
+    {/if}
+  {/stash:nocache}
 
   {if structure:page:entry_id == lv-current-wpa}
     {stash:embed:partials:notice 
@@ -188,7 +242,7 @@ Title:	 `____________________________`
     required="name|email|job_title|phone1|member_address|confirm_status|member_id|agreement_category|signature"
     admin_notify="leereamsnyder@us.ibm.com"
     return="{structure:page:uri}success/"
-    admin_notification_template="legal_agreement_template" 
+    admin_notification_template="wpa_template" 
     form:id="sign_agreement_form"
   }
     {!-- Required for processing my custom extension: member ID and the category we want to add them to --}
@@ -275,9 +329,7 @@ Title:	 `____________________________`
     {!-- EU Entity extra questions --}
     {if oslc:member:is_representative}
       <fieldset class="fieldset">
-        <legend>Tell us about the organization that you represent</legend>
-        
-        <p>Is {oslc:member:organization} incorporated and headquartered (at the very highest level) in the European Union?</p>
+        <legend>Is {oslc:member:organization} incorporated and headquartered (at the very highest level) in the European Union?</legend>
         
         <div class="menu horizontal" data-manilla>
           <label for="no_entity_is_eu" class="item">
@@ -301,16 +353,40 @@ Title:	 `____________________________`
             <div class="control">
               {freeform:field:corporate-authorization-forms}
               <p class="help">
-                <label for="freeform_corporate-authorization-forms0">If you have a scanned copy of the completed Corporate Authorization Form, attach it here.</label>
+                <label for="freeform_corporate-authorization-forms0">If you have a scanned copy of the completed Corporate Authorization Form, attach it here. If you don't have that yet, that's OK; you can send it later.</label>
               </p>
 
               <p><a target="_new" href="{structure:page:url}corporate-auth/">Click here and then print the page if you need the Corporate Authorization Form</a></p>
+
+              {stash:embed:partials:notice 
+                stash:notice_type="warning"
+                stash:notice_title="What&rsquo;s going on here?"
+                stash:notice_body="<p>To complete the Workgroup Participation Agreement you must provide an electronic signature, which some countries in the European Union do not accept as a valid signature.</p>
+                <p>If you are representing an entity that is headquartered in the European Union, you must print, complete, and send us <a target='_new' href='{structure:page:url}corporate-auth/'>a Corporate Authorization form</a> that states that you are authorized to complete this Workgroup Participation Agreement.</p>
+                <p>(I'm so sorry. Blame the lawyers.)</p>"
+              }
+            
             </div>          
           </fieldset>
           
         </div>{!-- /#for_eu_entity --}
       </div>{!-- /tabpanels --}
     {/if}
+    
+    <fieldset class="fieldset">
+      <legend>Agree to the {exp:stash:agreement_name}</legend>
+      
+      <div class="control">
+        <label for="agreement_electronic_signature">Electronic signature</label>
+        <input class="text" required type="text" id="agreement_electronic_signature" name="signature" placeholder="e.g. /John Smith/" pattern="^/{oslc:member:name}/$" title="&ldquo;/&rdquo;, {oslc:member:name}, and then another &ldquo;/&rdquo;" />
+        <p class="help"><label for="agreement_electronic_signature">Type a "/", then your name <em>exactly</em> as it appears in the <b>Your name</b> field, and then another "/"</label></p>
+      </div>
+      
+      <div class="control">
+        <button class="btn primary" type="submit">I agree</button>
+      </div>
+      
+    </fieldset>
 
   {/exp:freeform:form}  
 {/if}
