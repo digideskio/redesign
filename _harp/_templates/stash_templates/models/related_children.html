@@ -1,5 +1,5 @@
 {exp:stash:parse parse_depth="2"}
-  {exp:playa:children entry_id="{structure:page:entry_id}" var_prefix="child"}
+  {exp:playa:children entry_id="{structure:page:entry_id}" var_prefix="child" {global:disable_all}}
     {exp:stash:append_list name="children"}
       {stash:channel_slug}{child:channel_short_name}{/stash:channel_slug}
       {stash:channel}{child:channel}{/stash:channel}

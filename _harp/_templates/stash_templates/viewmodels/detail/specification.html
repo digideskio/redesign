@@ -32,7 +32,7 @@
       {stash:text}Specification text at {exp:parse_url parts="host" omit="www."}{cf-spec-text}{/exp:parse_url}{/stash:text}
     {/if}
     
-    {exp:playa:parents channel="workgroups" var_prefix="workgroup"}
+    {exp:playa:parents channel="workgroups" var_prefix="workgroup" {global:disable_all}}
       {if {workgroup:count} == "1"}
         {stash:name}Workgroup{if workgroup:total_results > 1}s{/if}{/stash:name}
         {stash:slug}workgroup{/stash:slug}      
@@ -117,8 +117,7 @@
         {stash:text}{docs:doc_title}{/stash:text}
       {/exp:stash:append_list:docs}
     {/cf-spec-m-docs}
-    
-    
+
   {/exp:stash:set_list}
   
 {/exp:channel:entries}
