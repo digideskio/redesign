@@ -439,6 +439,7 @@
   background: none;
   box-shadow: inset 0 -3px 0 #666; }
 .flexbox .menu.horizontal, .flexbox .menu.horizontal > .items {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -446,15 +447,18 @@
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  -webkit-box-align: stretch;
   -webkit-align-items: stretch;
      -moz-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch; }
   .flexbox .menu.horizontal .item, .flexbox .menu.horizontal > .items .item {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
        -moz-box-align: center;
         -ms-flex-align: center;
@@ -508,16 +512,20 @@
     margin-bottom: 48px;
     margin-bottom: 3rem; }
     .flexbox .cards .card {
+      display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       -webkit-flex-direction: column;
          -moz-box-orient: vertical;
          -moz-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column; }
       .flexbox .cards .card > .content {
+        -webkit-box-flex: 1;
         -webkit-flex: 1 0 auto;
            -moz-box-flex: 1;
             -ms-flex: 1 0 auto;
@@ -540,21 +548,9 @@
   -webkit-animation: scaleIn 2s 1s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards;
           animation: scaleIn 2s 1s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards; }
 
-@-webkit-keyframes rotateIn {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
-
-@keyframes rotateIn {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
-.grunticon-meta-status {
-  -webkit-animation: rotateIn 1.5s 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards;
-          animation: rotateIn 1.5s 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards; }
-
 @media only screen and (min-width: 40.0625em) {
   .flexbox .slats.flexible {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
@@ -568,6 +564,7 @@
     -webkit-flex-basis: 50%;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
+    -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
        -moz-box-flex: 1;
         -ms-flex-positive: 1;

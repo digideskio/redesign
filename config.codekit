@@ -1123,6 +1123,33 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/legalese.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/legalese.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/members_agreement.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/members_agreement.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/organization.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/organization.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/resource.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1159,6 +1186,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/wpa.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/wpa.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail_sequence_simple.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1177,6 +1213,33 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/blog.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/blog.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/organization.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/organization.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/resource.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/resource.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/software.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1191,6 +1254,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/tagged.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/workgroup.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/listing\/workgroup.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1443,6 +1515,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_harp\/_templates\/templates\/default_site\/pages.group\/legal_agreement.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_harp\/_templates\/templates\/default_site\/pages.group\/legalese.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/templates\/default_site\/pages.group\/legalese.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -4969,6 +5050,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-connected.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 823,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-connected.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-connected.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-consumes.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -5020,6 +5112,17 @@
 		"initialSize": 717,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-ghost-town.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-ghost-town.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-issues.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1010,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-issues.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-issues.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -5806,6 +5909,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-connected.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 704,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-connected.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-connected.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/build\/png\/meta-consumes.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -5857,6 +5971,17 @@
 		"initialSize": 661,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-ghost-town.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-ghost-town.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-issues.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 565,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-issues.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-issues.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

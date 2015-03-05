@@ -1,0 +1,124 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{exp:channel:entries
+	entry_id="{structure:page:entry_id}"
+	dynamic="no"
+  {global:disable_default}
+  require_entry="yes"
+}
+  {if no_results}{redirect="404"}{/if}
+  
+  {exp:stash:set name="layout_copy" match="#\S#" trim="y"}
+    {cf-spec-w-description}
+    
+    {exp:playa:parents channel="products" var_prefix="product" {global:disable_all}}
+      {if {product:count} == 1}
+        <h3>Software that implements {title}</h3>
+        <ul class="flat multiple-columns">
+      {/if}
+        <li><a href="{product:page_url}">{product:title}</a></li>
+      {if {product:count} == {product:total_results}}
+        </ul>
+      {/if}
+    {/exp:playa:parents}
+  {/exp:stash:set}
+  
+  {exp:stash:set_list name="layout_meta_before" parse_conditionals="yes" parse_tags="yes"}
+
+    {if cf-spec-text}
+      {stash:name}Outgoing{/stash:name}
+      {stash:slug}outgoing{/stash:slug}
+      {stash:link}{cf-spec-text}{/stash:link}
+      {stash:text}Specification text at {exp:parse_url parts="host" omit="www."}{cf-spec-text}{/exp:parse_url}{/stash:text}
+    {/if}
+    
+    {exp:playa:parents channel="workgroups" var_prefix="workgroup"}
+      {if {workgroup:count} == "1"}
+        {stash:name}Workgroup{if workgroup:total_results > 1}s{/if}{/stash:name}
+        {stash:slug}workgroup{/stash:slug}      
+      {/if}
+
+      {exp:stash:append_list:workgroups name="layout_meta_before_workgroup"}
+        {stash:link}{workgroup:page_url}{/stash:link}
+        {stash:text}{workgroup:title}{/stash:text}
+      {/exp:stash:append_list:workgroups}
+    {/exp:playa:parents}
+    
+    {if cf-spec-pill-status}
+      {stash:name}Status{/stash:name}
+
+      {if cf-spec-pill-status ~ "/^Final|W3C Recommendation$/"}
+        {stash:slug}statusFinal{/stash:slug}
+        {stash:progress_class}final{/stash:progress_class}
+      {if:elseif cf-spec-pill-status ~ "/^Finalize|Proposed Recommendation$/"}
+        {stash:slug}statusFinalize{/stash:slug}
+        {stash:progress_class}finalize{/stash:progress_class}
+      {if:elseif cf-spec-pill-status == "/^Deprecated|Inactive$/"}
+        {stash:slug}statusInactive{/stash:slug}
+        {stash:progress_class}inactive{/stash:progress_class}
+      {if:else}
+        {stash:slug}status{/stash:slug}
+        {stash:progress_class}{/stash:progress_class}
+      {/if}
+      
+      {stash:text}{cf-spec-pill-status}{/stash:text}
+      
+      {if cf-spec-progress}
+        {stash:progress}{cf-spec-progress}{/stash:progress}
+      {/if}
+    {/if}
+
+    {if cf-spec-issues}
+      {stash:name}Issues{/stash:name}
+      {stash:slug}issues{/stash:slug}
+      {stash:link}{cf-spec-issues}{/stash:link}
+      {stash:text}Known issues{/stash:text}
+    {/if}
+    
+    {if cf-spec-ns}
+      {stash:name}Namespace URI{/stash:name}
+      {stash:slug}namespace{/stash:slug}
+      {stash:link}{cf-spec-ns}{/stash:link}
+      {stash:text}<code>{cf-spec-ns}</code>{/stash:text}
+    {/if}
+
+    {cf-spec-r-sources var_prefix="source"}
+      {if {source:count} == 1}
+        {stash:name}Source specifications{/stash:name}
+        {stash:slug}ancestry{/stash:slug}
+      {/if}
+      
+      {exp:stash:append_list:source name="layout_meta_before_ancestry"}
+        {stash:link}{related:page_url}{/stash:link}
+        {stash:text}{related:title}{/stash:text}
+      {/exp:stash:append_list:source}
+    {/cf-spec-r-relatedspecs}
+    
+    {cf-spec-r-relatedspecs var_prefix="related" {global:disable_all}}
+      {if {related:count} == 1}
+        {stash:name}Related specifications{/stash:name}
+        {stash:slug}connected{/stash:slug}
+      {/if}
+      
+      {exp:stash:append_list:related name="layout_meta_before_connected"}
+        {stash:link}{related:page_url}{/stash:link}
+        {stash:text}{related:title}{/stash:text}
+      {/exp:stash:append_list:related}
+    {/cf-spec-r-relatedspecs}
+    
+    {cf-spec-m-docs var_prefix="docs" {global:disable_all}}
+      {if {docs:row_count} == 1}
+        {stash:name}Documents{/stash:name}
+        {stash:slug}specifications{/stash:slug}
+      {/if}
+
+      {exp:stash:append_list:docs name="layout_meta_before_specifications"}
+        {stash:link}{docs:doc_url}{/stash:link}
+        {stash:text}{docs:doc_title}{/stash:text}
+      {/exp:stash:append_list:docs}
+    {/cf-spec-m-docs}
+    
+    
+  {/exp:stash:set_list}
+  
+{/exp:channel:entries}

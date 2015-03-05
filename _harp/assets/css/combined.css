@@ -2649,19 +2649,6 @@ form.search button {
   -webkit-animation: scaleIn 2s 1s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards;
           animation: scaleIn 2s 1s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards; }
 
-@-webkit-keyframes rotateIn {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
-
-@keyframes rotateIn {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
-.grunticon-meta-status {
-  -webkit-animation: rotateIn 1.5s 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards;
-          animation: rotateIn 1.5s 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1 backwards; }
-
 @media only screen and (min-width: 40.0625em) {
   .flexbox .slats.flexible {
     display: -webkit-box;

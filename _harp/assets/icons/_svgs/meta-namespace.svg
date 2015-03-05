@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>meta-namespace</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="meta-namespace" sketch:type="MSArtboardGroup" fill="#666666">
+            <path d="M10,1.25 C14.83125,1.25 18.75,5.1675 18.75,10 C18.75,14.83375 14.83125,18.75 10,18.75 C5.1675,18.75 1.25,14.83375 1.25,10 C1.25,5.1675 5.1675,1.25 10,1.25 M9.9825,6.92125 C10.650625,6.92125 11.25,6.36625 11.25,5.67125 C11.25,4.976875 10.685,4.42125 10.01625,4.42125 C9.34875,4.42125 8.75,4.976875 8.75,5.67125 C8.75,6.36625 9.315,6.92125 9.9825,6.92125 M8.125,10 L9.375,10 L9.375,13.75 L8.125,13.75 L8.125,15.625 L12.5,15.625 L12.5,13.75 L11.25,13.75 L11.25,8.125 L8.125,8.125 L8.125,10 M10,0 C4.48625,0 0,4.48625 0,10 C0,15.51375 4.48625,20 10,20 C15.51375,20 20,15.51375 20,10 C20,4.48625 15.51375,0 10,0" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

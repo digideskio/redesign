@@ -7,15 +7,6 @@
   animation: scaleIn 2s 1s $ease-out-cubic 1 backwards;
 }
 
-@keyframes rotateIn {
-  from { transform: rotate(0deg); }
-}
-
-.grunticon-meta-status {
-  animation: rotateIn 1.5s 1.5s $ease-out-cubic 1 backwards;
-}
-
-
 .flexbox .slats.flexible {
 
   @include respond-to(knee-up) {

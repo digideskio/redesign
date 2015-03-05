@@ -2,7 +2,7 @@
 <div class="bar">
   <ul class="slats">
     {exp:stash:get_list name="{stash:list}"}
-      <li class="slat">
+      <li class="slat {if progress} pos-rel{/if}">
         {if slug == "outgoing"}
           <a class="action" rel="external" href="{link}">
             <div class="flag reversed">
@@ -45,6 +45,11 @@
                     <a href="{link}">{text}</a>
                   {if:else}
                     {text}
+                  {/if}
+                  {if progress}
+                  <progress class="status {progress_class}" max="100" value="{progress}">
+                    <span class="fallback" style="width:{progress}%;"></span>
+                  </progress>
                   {/if}
                 </li>
               {/if}
