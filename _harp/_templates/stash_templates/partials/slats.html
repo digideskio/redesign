@@ -43,6 +43,8 @@
                 <li class="item">
                   {if link}
                     <a href="{link}">{text}</a>
+                  {if:elseif tooltip}
+                    <span data-tooltip title="{tooltip}">{text}</span>
                   {if:else}
                     {text}
                   {/if}
