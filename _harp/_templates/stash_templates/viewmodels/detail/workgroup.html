@@ -1,6 +1,6 @@
 {stash:embed:layouts:{stash:_layout} priority="1"}
 
-{stash:embed file_name="models:related_parents" process="inline" parse="yes"}
+{stash:embed:models:related_parents process="inline" parse="yes"}
 
 {!-- Append "Workgroup" to the TITLE, but not for the StC --}
 {exp:stash:set_value name="layout_headtitle" value="{structure:page:title} Workgroup" match="#^1$#" against="{oslc:workgroup:is_not_steering_committee}"}
