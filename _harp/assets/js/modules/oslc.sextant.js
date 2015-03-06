@@ -56,7 +56,11 @@ var Sextant = _.create(OSLC, {
       var 
         $el = $(this),
         text = $el.text(),
-        slug = _.trim( _.prune(text, 40) ).toLowerCase().replace(/[^a-z0-9 -]/g,'').replace(/\s+/g, '-');
+        slug = this.id || _.trim( _.prune(text, 40) ).toLowerCase();
+      
+      // only want a-z, 0-9, "-". Periods or colons (while valid) 
+      // will cause problems when using $( '#id_string' )
+      slug = slug.replace(/[^a-z0-9 -]/gi,'').replace(/\s+/g, '-');
       
       // uniquify, if needed
       if ( _.indexOf(slugs, slug) > -1 ) {
@@ -65,9 +69,8 @@ var Sextant = _.create(OSLC, {
       }
       slugs.push(slug);
       
-      // Existing ID or slugify
       $el
-        .attr('id', this.id || slug)
+        .attr('id', slug)
         .addClass('js-in-sextant')
         .append(function(){
           // only do this for .copy headers

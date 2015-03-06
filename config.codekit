@@ -1168,6 +1168,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/specification.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/specification.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/_harp\/_templates\/stash_templates\/viewmodels\/detail\/tutorial.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -5193,6 +5202,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-namespace.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 780,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-namespace.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/_grunticon\/png\/meta-namespace.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_harp\/assets\/icons\/_grunticon\/png\/meta-organization.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -6048,6 +6068,17 @@
 		"initialSize": 380,
 		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-membership.png",
 		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-membership.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_harp\/assets\/icons\/build\/png\/meta-namespace.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 576,
+		"inputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-namespace.png",
+		"outputAbbreviatedPath": "\/_harp\/assets\/icons\/build\/png\/meta-namespace.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
