@@ -202,6 +202,7 @@ form.search {
     border: 0;
     padding: 4px 5px;
     @include font-size(s,1);
+    -webkit-appearance: none;
     
     .enhanced & {
       border-radius: 5px 0 0 5px;

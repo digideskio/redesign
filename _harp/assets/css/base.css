@@ -2002,7 +2002,8 @@ form.search input[type="search"] {
   padding: 4px 5px;
   font-size: 13px;
   font-size: 0.8125rem;
-  line-height: 1; }
+  line-height: 1;
+  -webkit-appearance: none; }
   .enhanced form.search input[type="search"] {
     border-radius: 5px 0 0 5px;
     -webkit-box-flex: 1;
@@ -2049,7 +2050,9 @@ form.search button {
     padding-bottom: 0.375rem; }
   .banner .logo-text {
     margin-left: 10px;
-    margin-left: 0.625rem; }
+    margin-left: 0.625rem;
+    margin-right: 10px;
+    margin-right: 0.625rem; }
 
 .logo-text {
   display: block;
