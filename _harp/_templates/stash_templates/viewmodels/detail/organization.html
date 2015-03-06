@@ -1,12 +1,13 @@
 {stash:embed:layouts:{stash:_layout} priority="1"}
 
+{stash:embed file_name="models:related_parents" process="inline" parse="yes"}
+
 {exp:channel:entries
 	entry_id="{structure:page:entry_id}"
 	dynamic="no"
   require_entry="yes"
   {global:disable_default}
 }
-  {stash:embed file_name="models:related_parents" process="start" parse="no"}
   
   {exp:stash:set_list name="layout_meta_before" parse_tags="yes"}
     {stash:slug}outgoing{/stash:slug}
@@ -22,4 +23,4 @@
   {/exp:stash:set}
 {/exp:channel:entries}
 
-{stash:embed file_name="viewmodels:partials:related" process="end"}
+{stash:embed:partials:relationships process="end"}

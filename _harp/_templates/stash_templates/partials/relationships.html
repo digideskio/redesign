@@ -1,29 +1,66 @@
-{if {exp:stash:list_count name="{stash:list}" match="{stash:match}" against="{stash:against}"} }
-  {exp:stash:get_list 
-    name="{stash:list}"
-    match="{stash:match}"
-    against="{stash:against}"
-    orderby="text"
-  }
-    {if count == 1}
-      <div class="column hand-full knee-half">
-        <div class="card">
-          <header class="header">
-            <h3 class="title">    
-              Related {channel}
-            </h3>
-          </header>
-          <section class="content">
-            <ul class="links" data-showmore>
-    {/if}
-        
-              <li class="item"><a href="{url}">{text}</a></li>
-    
-    {if count == total_results}
-            </ul>
-          </section>
+{exp:stash:append name="layout_relationships" parse_depth="2" parse_tags="yes" match="#\S#"}
+  
+  {exp:loopee foreach="{stash:_children_relationships}" parse="inward" as="child_channel_slug"}
+  
+    {exp:stash:get_list 
+      name="children"
+      match="#{child_channel_slug}#"
+      against="channel_slug"
+      orderby="text"
+    }
+      {if count == 1}
+        <div class="column hand-full knee-half">
+          <div class="card">
+            <header class="header">
+              <h3 class="title">    
+                Related {channel}
+              </h3>
+            </header>
+            <section class="content">
+              <ul class="links" data-showmore>
+      {/if}
+      
+                <li class="item"><a href="{url}">{text}</a></li>
+  
+      {if count == total_results}
+              </ul>
+            </section>
+          </div>
         </div>
-      </div>
-    {/if}
-  {/exp:stash:get_list}
-{/if}
+      {/if}
+    {/exp:stash:get_list}
+
+  {/exp:loopee}
+
+  {exp:loopee foreach="{stash:_parents_relationships}" parse="inward" as="parents_channel_slug"}
+
+    {exp:stash:get_list 
+      name="parents"
+      match="#{parents_channel_slug}#"
+      against="channel_slug"
+      orderby="text"
+    }
+      {if count == 1}
+        <div class="column hand-full knee-half">
+          <div class="card">
+            <header class="header">
+              <h3 class="title">    
+                Related {channel}
+              </h3>
+            </header>
+            <section class="content">
+              <ul class="links" data-showmore>
+      {/if}
+      
+                <li class="item"><a href="{url}">{text}</a></li>
+  
+      {if count == total_results}
+              </ul>
+            </section>
+          </div>
+        </div>
+      {/if}
+    {/exp:stash:get_list}
+
+  {/exp:loopee}
+{/exp:stash:append}

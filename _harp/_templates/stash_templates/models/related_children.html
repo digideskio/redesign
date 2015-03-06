@@ -1,10 +1,14 @@
-{exp:stash:parse parse_depth="2"}
-  {exp:playa:children entry_id="{structure:page:entry_id}" var_prefix="child" {global:disable_all}}
-    {exp:stash:append_list name="children"}
-      {stash:channel_slug}{child:channel_short_name}{/stash:channel_slug}
-      {stash:channel}{child:channel}{/stash:channel}
-      {stash:url}{child:page_url}{/stash:url}
-      {stash:text}{child:title}{/stash:text}
-    {/exp:stash:append_list}
+{exp:stash:set_list name="children" parse="yes"}
+
+  {exp:playa:children 
+    entry_id="{structure:page:entry_id}" 
+    var_prefix="child" 
+    {global:disable_all}
+  }
+    {stash:channel_slug}{child:channel_short_name}{/stash:channel_slug}
+    {stash:channel}{child:channel}{/stash:channel}
+    {stash:url}{child:page_url}{/stash:url}
+    {stash:text}{child:title}{/stash:text}
   {/exp:playa:children}
-{/exp:stash:parse}
+
+{/exp:stash:set_list}

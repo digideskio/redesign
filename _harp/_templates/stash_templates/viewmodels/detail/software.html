@@ -1,5 +1,7 @@
 {stash:embed:layouts:{stash:_layout} priority="1"}
 
+{stash:embed file_name="models:related_parents" process="inline" parse="yes"}
+
 {!-- Store the specs (IDs) that this product supports
   You need this for two reasons:
     1: Match up all other products that support the same specs
@@ -121,8 +123,6 @@
 	require_entry="yes"
 }
   {if no_results}{redirect="404"}{/if}
-
-  {stash:embed file_name="models:related_parents" process="start" parse="no"}
   
   {exp:stash:set_list name="layout_meta_before" parse_conditionals="yes" parse_tags="yes" parse_depth="3"}
 
@@ -394,4 +394,4 @@
 
 {/exp:channel:entries}
 
-{stash:embed file_name="viewmodels:partials:related" process="end"}
+{stash:embed:partials:relationships process="end"}

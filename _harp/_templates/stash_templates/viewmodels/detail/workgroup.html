@@ -1,5 +1,7 @@
 {stash:embed:layouts:{stash:_layout} priority="1"}
 
+{stash:embed file_name="models:related_parents" process="inline" parse="yes"}
+
 {!-- Append "Workgroup" to the TITLE, but not for the StC --}
 {exp:stash:set_value name="layout_headtitle" value="{structure:page:title} Workgroup" match="#^1$#" against="{oslc:workgroup:is_not_steering_committee}"}
 
@@ -10,8 +12,6 @@
 	require_entry="yes"
 }
   {if no_results}{redirect="404"}{/if}
-
-  {stash:embed file_name="models:related_parents" process="start" parse="no"}
   
   {exp:stash:set name="layout_copy" match="#\S#"}
     {exp:playa:parents channel="charters" field="cf-wgcharter-r-workgroup" status="open" limit="1" var_prefix="charter"}
@@ -217,6 +217,6 @@
 
 {/exp:channel:entries}
 
-{stash:embed file_name="viewmodels:partials:related" process="end"}
+{stash:embed:partials:relationships process="end"}
 
 {stash:embed:models:tags}

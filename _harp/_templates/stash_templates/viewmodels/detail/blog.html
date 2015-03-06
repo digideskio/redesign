@@ -1,5 +1,7 @@
 {stash:embed:layouts:{stash:_layout} priority="1"}
 
+{stash:embed:models:related_children process="inline" parse="yes"}
+
 {exp:channel:entries
 	entry_id="{structure:page:entry_id}"
 	dynamic="no"
@@ -8,8 +10,6 @@
   require_entry="yes"
 }
   {if no_results}{redirect="404"}{/if}
-  
-  {stash:embed file_name="models:related_children" process="start" parse="no"}
   
   {stash:embed:models:detail_dates process="start" parse="no"}
 
@@ -51,7 +51,7 @@
   
 {/exp:channel:entries}
 
-{stash:embed file_name="viewmodels:partials:related" process="end"}
+{stash:embed:partials:relationships process="end"}
 
 {stash:embed:viewmodels:detail_sequence_simple}
 
