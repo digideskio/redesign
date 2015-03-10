@@ -1,5 +1,7 @@
 {if {exp:stash:list_count name="{stash:list}"}}
+{if "{stash:bar}" == "yes"}
 <div class="bar">
+{/if}
   <ul class="slats">
     {exp:stash:get_list name="{stash:list}"}
       <li class="slat {if progress} pos-rel{/if}">
@@ -25,7 +27,9 @@
                   <li class="item">
                     {if nested:link}<a href="{nested:link}">{/if}
 
+                    {if nested:filter}<span data-filter-on="{slug}">{/if}
                     {nested:text}
+                    {if nested:filter}</span>{/if}
 
                     {if nested:link}</a>{/if}
 
@@ -44,7 +48,7 @@
                   {if link}
                     <a href="{link}">{text}</a>
                   {if:elseif tooltip}
-                    <span data-tooltip title="{tooltip}">{text}</span>
+                    <span data-tooltip title="{tooltip}" {if filter}data-filter-on="{filter}"{/if}>{text}</span>
                   {if:else}
                     {text}
                   {/if}
@@ -62,5 +66,10 @@
       </li>
     {/exp:stash:get_list}
   </ul>
+{if "{stash:bar}" == "yes"}
 </div>
 {/if}
+{/if}
+
+{exp:stash:unset name="bar"}
+{exp:stash:unset name="list"}

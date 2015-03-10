@@ -1,0 +1,176 @@
+{stash:embed:layouts:{stash:_layout} priority="1"}
+
+{exp:stash:extend name="layout_listing" with="partials:listing_cards"}
+{exp:stash:extend name="layout_bartender" with="partials:bartender"}
+
+{!-- Grab the listing description from the page's entry --}
+{exp:channel:entries
+  entry_id="{structure:page:entry_id}"
+  dynamic="off"
+  status="open|closed"
+  {global:disable_default}
+  require_entry="yes"
+}
+  {exp:stash:set name="layout_listing_description" parse_tags="yes" match="#\S#"}
+    {cf-sp-w-body-en}
+  {/exp:stash:set}
+{/exp:channel:entries}
+
+{exp:stash:set_list name="listing" parse="yes" parse_depth="3"}
+{exp:channel:entries
+  dynamic="no"
+  fixed_order="{lv:specifications_order}"
+  {global:disable_default}
+}
+  {stash:embed:models:listing_common process="start" parse="no"}
+  {stash:summary}{cf-spec-microdesc}{/stash:summary}
+  
+  {exp:stash:set_list:orgs name="organization_{entry_id}" parse_tags="yes" parse_vars="yes" parse_depth="2"}
+    {exp:tag:tags entry_id="{entry_id}" websafe_separator="-" tag_group_name="sdos"}
+      {stash:href}/tagged/{websafe_tag}/{/stash:href}
+      {stash:text}{tag}{/stash:text}
+      {stash:filter}organization{/stash:filter}
+    {/exp:tag:tags}
+  {/exp:stash:set_list:orgs}
+  
+  {exp:stash:set_list:slats name="slats_{entry_id}" parse="yes" parse_depth="2"}
+    {exp:playa:parents channel="workgroups" {global:disable_all} var_prefix="workgroup"}
+      {if {workgroup:count} == 1}
+        {stash:name}Workgroup{if workgroup:total_results > 1}s{/if}{/stash:name}
+        {stash:slug}workgroup{/stash:slug}
+      {/if}
+      
+      {exp:stash:append_list:workgroup name="slats_{entry_id}_workgroup"}
+        {stash:link}{workgroup:page_url}{/stash:link}
+        {stash:text}{workgroup:title}{/stash:text}
+        {stash:filter}workgroup{/stash:filter}
+      {/exp:stash:append_list:workgroup}
+    {/exp:playa:parents}
+    
+    {if cf-spec-pill-status}
+      {stash:name}Status{/stash:name}
+      {stash:filter}status{/stash:filter}
+
+      {if cf-spec-pill-status ~ "/^(Final|W3C Recommendation)$/"}
+        {stash:slug}statusFinal{/stash:slug}
+        {stash:progress_class}final{/stash:progress_class}
+      {if:elseif cf-spec-pill-status ~ "/^(Finalize|Proposed Recommendation)$/"}
+        {stash:slug}statusFinalize{/stash:slug}
+        {stash:progress_class}finalize{/stash:progress_class}
+      {if:elseif cf-spec-pill-status ~ "/^(Deprecated|Inactive)$/"}
+        {stash:slug}statusInactive{/stash:slug}
+        {stash:progress_class}inactive{/stash:progress_class}
+      {if:else}
+        {stash:slug}status{/stash:slug}
+        {stash:progress_class}{/stash:progress_class}
+      {/if}
+      
+      {stash:text}{cf-spec-pill-status}{/stash:text}
+      
+      {exp:low_variables:parse var="lv:specification_status_descriptions" limit="1" search:status="={cf-spec-pill-status}"}
+        {stash:tooltip}{description}{/stash:tooltip}
+      {/exp:low_variables:parse}
+      
+      {if cf-spec-progress}
+        {stash:progress}{cf-spec-progress}{/stash:progress}
+      {/if}
+    {/if}
+    
+  {/exp:stash:set_list:slats}
+  
+  {if entry_id == 390}
+    {stash:full_width}yes{/stash:full_width}
+    
+    {stash:listing}
+      {cf-spec-r-subspecs var_prefix="child_spec"}
+        {if {child_spec:count} == 1}
+          <div class="grid pulled blocks">
+        {/if}
+          <div class="column hand-full knee-half">
+            <article class="card small">
+              <div class="header">
+                <div class="flag reversed">
+                  <header class="body">
+                    <h2 class="title"><a href="{child_spec:page_url}">{child_spec:title}</a></h2>  
+                  </header>
+                  <div class="image">
+                    <div class="tags">
+                      {exp:tag:tags entry_id="{child_spec:entry_id}" websafe_separator="-" tag_group_name="sdos"}
+                        <a rel="tag" class="tag" data-tagname="{tag}" href="/tagged/{websafe_tag}/" data-filter-on="organization">{tag}</a>
+                      {/exp:tag:tags}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <section class="content">
+                <ul class="slats">
+                  <li class="slat pos-rel">
+                    <div class="media">
+                    	<div class="image">
+                    	  <i class="icon
+                          {if "{child_spec:cf-spec-pill-status}" ~ "/^(Final|W3C Recommendation)$/"}
+                            grunticon-meta-statusFinal
+                          {if:elseif "{child_spec:cf-spec-pill-status}" ~ "/^(Finalize|Proposed Recommendation)$/"}
+                            grunticon-meta-statusFinalize
+                          {if:elseif "{child_spec:cf-spec-pill-status}" ~ "/^(Deprecated|Inactive)$/"}
+                            grunticon-meta-statusInactive
+                          {if:else}
+                            grunticon-meta-status
+                          {/if}                    	      
+                    	  "></i>
+                    	</div>
+                    	<div class="body">
+                        <div class="header">Status</div>
+                        <ul class="links tightened">
+                          <li class="item">
+                            <span data-filter-on="status"
+                              data-tooltip='{exp:low_variables:parse var="lv:specification_status_descriptions" limit="1" search:status="={child_spec:cf-spec-pill-status}"}{description}{/exp:low_variables:parse}'
+                            >{child_spec:cf-spec-pill-status}</span>
+
+                            <progress max="100" value="{child_spec:cf-spec-progress}" 
+                            class="status
+                              {if "{child_spec:cf-spec-pill-status}" ~ "/^(Final|W3C Recommendation)$/"}
+                                final
+                              {if:elseif "{child_spec:cf-spec-pill-status}" ~ "/^(Finalize|Proposed Recommendation)$/"}
+                                finalize
+                              {if:elseif "{child_spec:cf-spec-pill-status}" ~ "/^(Deprecated|Inactive)$/"}
+                                inactive
+                              {/if}                              
+                            ">
+                              <span style="width:{child_spec:cf-spec-progress}%;" class="fallback"></span>
+                            </progress>
+                          </li>
+                        </ul>
+                    	</div>
+                    </div>
+                  </li>
+                </ul>
+                <p class="hidden">
+                  {!-- hack for now! set some metadata that's the same as the parent spec --}
+                  {exp:stash:get_list name="slats_390_workgroup"}
+                    <span data-filter-on="workgroup">{text}</span>
+                  {/exp:stash:get_list}
+                  {exp:tag:tags entry_id="{child_spec:entry_id}" websafe_separator="-" tag_group_name="Specification-tags"}
+                    <span data-filter-on="tag">{tag}</span>
+                  {/exp:tag:tags}
+                </p>
+              </section>
+            </article>
+          </div>        
+        {if {child_spec:count} == {child_spec:total_results}}
+          </div>
+        {/if}
+      {/cf-spec-r-subspecs}
+    {/stash:listing}
+  {/if}
+
+  {exp:stash:set_list:tags name="tags_{entry_id}" parse_tags="yes" parse_conditionals="yes"}
+    {exp:tag:tags entry_id="{entry_id}" websafe_separator="-" tag_group_name="Specification-tags"}
+      {stash:href}/tagged/{websafe_tag}/{/stash:href}
+      {stash:text}{tag}{/stash:text}
+      {stash:filter}tag{/stash:filter}
+    {/exp:tag:tags}
+  {/exp:stash:set_list:tags}
+
+{/exp:channel:entries}
+{/exp:stash:set_list}

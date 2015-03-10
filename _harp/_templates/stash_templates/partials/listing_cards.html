@@ -2,7 +2,7 @@
 {if count == 1}
   <div class="grid blocks">
 {/if}
-    <div class="column hand-full desk-half" data-date="{date_epoch}">
+    <div class="column hand-full {if ! full_width}desk-half{/if}" data-date="{date_epoch}">
       <article class="card" {if hook}id="{hook}"{/if}>
         {if {exp:stash:list_count name="organization_{entry_id}"} == 0}
       	<header class="header">
@@ -26,11 +26,17 @@
         	</div>
         </div>
         {/if}
-      	<section class="content">      	  
+      	<section class="content">
+      	  {stash:embed:partials:slats stash:list="slats_{entry_id}"}
       	  <div class="copy">
             {summary}
       	  </div>
       	</section>
+      	{if listing}
+      	  <section class="content cards">
+      	    {listing}
+      	  </section>
+      	{/if}
       	{if date || author || {exp:stash:list_count name="tags_{entry_id}"}}
       	<div class="footer">
       	  <footer class="meta">

@@ -47,13 +47,13 @@
     {if cf-spec-pill-status}
       {stash:name}Status{/stash:name}
 
-      {if cf-spec-pill-status ~ "/^Final|W3C Recommendation$/"}
+      {if cf-spec-pill-status ~ "/^(Final|W3C Recommendation)$/"}
         {stash:slug}statusFinal{/stash:slug}
         {stash:progress_class}final{/stash:progress_class}
-      {if:elseif cf-spec-pill-status ~ "/^Finalize|Proposed Recommendation$/"}
+      {if:elseif cf-spec-pill-status ~ "/^(Finalize|Proposed Recommendation)$/"}
         {stash:slug}statusFinalize{/stash:slug}
         {stash:progress_class}finalize{/stash:progress_class}
-      {if:elseif cf-spec-pill-status ~ "/^Deprecated|Inactive$/"}
+      {if:elseif cf-spec-pill-status ~ "/^(Deprecated|Inactive)$/"}
         {stash:slug}statusInactive{/stash:slug}
         {stash:progress_class}inactive{/stash:progress_class}
       {if:else}
@@ -63,7 +63,7 @@
       
       {stash:text}{cf-spec-pill-status}{/stash:text}
       
-      {exp:low_variables:parse var="lv:specification_status_descriptions" limit="1" search:status="{cf-spec-pill-status}"}
+      {exp:low_variables:parse var="lv:specification_status_descriptions" limit="1" search:status="={cf-spec-pill-status}"}
         {stash:tooltip}{description}{/stash:tooltip}
       {/exp:low_variables:parse}
       
