@@ -9,7 +9,11 @@
   {if no_results}{redirect="404"}{/if}
   
   {exp:stash:set name="layout_copy" match="#\S#" trim="y"}
-    {cf-spec-w-description}
+    {if cf-spec-w-description}
+      {cf-spec-w-description}
+    {if:else}
+      {cf-spec-microdesc}
+    {/if}
     
     {exp:playa:parents channel="products" var_prefix="product" {global:disable_all}}
       {if {product:count} == 1}
@@ -23,7 +27,7 @@
     {/exp:playa:parents}
   {/exp:stash:set}
   
-  {exp:stash:set_list name="layout_meta_before" parse_conditionals="yes" parse_tags="yes"}
+  {exp:stash:set_list name="layout_meta_before" parse_conditionals="yes" parse_tags="yes" parse_depth="2"}
 
     {if cf-spec-text}
       {stash:name}Outgoing{/stash:name}
@@ -71,6 +75,19 @@
         {stash:progress}{cf-spec-progress}{/stash:progress}
       {/if}
     {/if}
+    
+    {cf-spec-r-subspecs var_prefix="component"}
+      {if {component:count} == 1}
+        {stash:name}Component specifications{/stash:name}
+        {stash:slug}components{/stash:slug}
+      {/if}
+      
+      {exp:stash:append_list:components name="layout_meta_before_components"}
+        {stash:link}{component:page_url}{/stash:link}
+        {stash:text}{component:title}{/stash:text}
+      {/exp:stash:append_list:components}
+      
+    {/cf-spec-r-subspecs}
 
     {if cf-spec-issues}
       {stash:name}Issues{/stash:name}
@@ -125,3 +142,5 @@
   {/exp:stash:set_list}
   
 {/exp:channel:entries}
+
+{stash:embed:models:tags}

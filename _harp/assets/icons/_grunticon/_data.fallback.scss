@@ -263,6 +263,18 @@
 }
 
 
+.grunticon-meta-components {
+  background-image: url('png/meta-components.png');
+  //@include icon;
+  height: 20px;
+  width: 20px;
+    
+  &.intrinsic {
+    padding-top: 20px / 20px * 100%;
+  }
+}
+
+
 .grunticon-meta-connected {
   background-image: url('png/meta-connected.png');
   //@include icon;
