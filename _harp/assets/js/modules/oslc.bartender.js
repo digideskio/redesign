@@ -182,10 +182,10 @@ var Bartender = _.create(OSLC, {
     var 
       items = [],
       zipToItemObj = function(arr) {
-        var keys = ['data', 'html', 'href', 'classes'],
+        var keys = ['data', 'html', 'href'],
             temp = _.defaults( 
               _.zipObject( keys, arr ),
-              _.zipObject( keys, [{},'Label not found','#',''] ) // <-- defaults
+              _.zipObject( keys, [{},'Label not found','#'] ) // <-- defaults
             );
         if ( ! temp.data.label ) { temp.data.label = temp.html; }
         return temp;
@@ -209,9 +209,8 @@ var Bartender = _.create(OSLC, {
               label: text,
               on: _.classify(text)
             },
-            el.innerHTML,
-            el.href,
-            el.className              
+            text,
+            el.href
           ];
         }).value();
 
@@ -233,7 +232,7 @@ var Bartender = _.create(OSLC, {
         'data-update="'+control+'" ' +
         '<% _.each(data, function(val,key) { %>data-${ key }="${ val }" <% }); %>>' +
         //'<% if (data.count) { %><span class="count">${ data.count } &times;</span> <% } %>' +
-        '<span class="${ classes }">${ html }</span></a>';
+        '${ html }</a>';
         
     menu.html( _.reduce(this.menuItems[control], this.templateFold(itemTemplate),'') );
     
