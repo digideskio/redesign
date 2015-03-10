@@ -104,6 +104,7 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
       
       console.log(target);
       
+      // good idea via http://viget.com/inspire/skip-link-primer
       target
         .attr('tabindex','-1') // set focusable
         .one('blur', function(){

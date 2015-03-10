@@ -45,14 +45,14 @@
   <div class="sticky-footer">
 
     <div>
-      <a class="sr-only focusable" href="#main">{lv-accessibility-maincontent-en}</a>
+      <a class="sr-only focusable skip-link" href="#main">{lv-accessibility-maincontent-en}</a>
     </div>  
 
     {stash:embed:partials:banner}
     
     <div class="sticky-footer-body off-canvas-wrap">
       
-      <main id="main" role="main" class="main{if {exp:stash:not_empty name='layout_secondary_nav'}} has-secondary{/if}">
+      <main id="main" role="main" tabindex="-1" class="main{if {exp:stash:not_empty name='layout_secondary_nav'}} has-secondary{/if}">
         
         <header class="header">
           {if structure:page:entry_id || {exp:stash:not_empty name="layout_breadcrumbs"} }
@@ -105,7 +105,7 @@
         
         <section id="content" {if {exp:stash:not_empty name="layout_copy"}}data-sextant{/if}>
 
-          {stash:embed:partials:slats stash:list="layout_meta_before"}
+          {stash:embed:partials:slats stash:list="layout_meta_before" stash:bar="yes"}
         
           {if {exp:stash:not_empty name="layout_listing"}}
             <div id="listing" class="cards">
@@ -121,7 +121,7 @@
           </div>
           {/if}
 
-          {stash:embed:partials:slats stash:list="layout_meta_after"}
+          {stash:embed:partials:slats stash:list="layout_meta_after" stash:bar="yes"}
           
           {if {exp:stash:list_count name="layout_nested_documents"}}
             <div class="nested">
