@@ -699,7 +699,9 @@
   white-space: nowrap; }
   .no-touch .js-in-sextant .back-to-top {
     visibility: hidden; }
-.no-touch .js-in-sextant:hover .back-to-top {
+  .no-touch .js-in-sextant .back-to-top:focus {
+    visibility: visible; }
+.no-touch .js-in-sextant:hover .back-to-top, .no-touch .js-in-sextant:focus .back-to-top {
   visibility: visible; }
 
 .grunticon-sextant-backToTop {

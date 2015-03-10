@@ -48,7 +48,8 @@ var Sextant = _.create(OSLC, {
     var
       slugs = [],
       dupes = {},
-      headings = $('h1, h2, h3, h4, h5, h6', this.els.content).not('[data-sextant-ignore]'),
+      headings = $('h1, h2, h3, h4, h5, h6', this.els.content)
+        .not('[data-sextant-ignore]'),
       itemTemplate = '<a data-scroll-to="flash" data-close="closest:[data-prospectus]:prospectus" class="${ classes }" href="#${ id }">${ text }</a>';
       
     var data = headings.map(function(){

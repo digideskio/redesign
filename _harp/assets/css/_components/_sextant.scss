@@ -24,10 +24,13 @@
     white-space: nowrap;
     
     .no-touch & { visibility: hidden; }
-    
+    .no-touch &:focus { visibility: visible; }
   }
   
-  .no-touch &:hover .back-to-top { visibility: visible; }
+  .no-touch &:hover .back-to-top, 
+  .no-touch &:focus .back-to-top { 
+    visibility: visible; 
+  }
 }
 
 .grunticon-sextant-backToTop { 

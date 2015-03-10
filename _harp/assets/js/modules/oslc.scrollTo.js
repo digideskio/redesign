@@ -41,12 +41,9 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
   var 
     link = $(this),
     data = link.data(),
-    target = $(this.hash),
+    target = $(this.hash+ ', [name="'+this.hash.slice(1)+'"]').first(), // could be a name=""
     currentScroll = $(window).scrollTop();
-    
-  // could be a name=""
-  target = target.length ? target : $('[name="'+this.hash.slice(1)+'"]');
-  
+
   if ( ! target.is(':visible')) {
     
     // OSLC.addMessage('That heading is hidden. One moment!','','info');
@@ -104,6 +101,15 @@ $(document).on('click.oslc.scrollTo', '[data-scroll-to]', function(e) {
       $(window).off('.scrollToTemp');
 
       _.contains(validCallouts, data.scrollTo) && target.velocity( 'callout.'+data.scrollTo, 800 );
+      
+      console.log(target);
+      
+      target
+        .attr('tabindex','-1') // set focusable
+        .one('blur', function(){
+          $(this).attr('tabindex',null); // remove temporary focusability
+        })
+        .attemptFocus();
     }
   });
   
