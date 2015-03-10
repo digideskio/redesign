@@ -2017,6 +2017,25 @@ form.search button {
   .enhanced form.search button {
     border-radius: 0 5px 5px 0; }
 
+.skip-link {
+  display: inline-block;
+  top: 10px;
+  left: 10px;
+  background-color: #2e8469;
+  color: #fff;
+  padding: 8px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-transition: opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition: opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  opacity: 0; }
+  .skip-link.focusable:active, .skip-link.focusable:focus {
+    position: absolute;
+    z-index: 5;
+    opacity: 1; }
+
 .banner {
   background-color: #3e4b5b; }
 
@@ -2072,6 +2091,9 @@ form.search button {
     .main .breadcrumbs, .main > .header .title, .main > .header .toggle, .bar, .nested, .nested > .document, .form.primary {
       padding-left: 19px;
       padding-right: 19px; } }
+
+#main:focus {
+  outline: none; }
 
 .main {
   background-color: #fff; }

@@ -18,6 +18,11 @@
   }
 }
 
+// remove the focus outline when skip links hit this one
+#main:focus {
+  outline:none;
+}
+
 .main {
   background-color: $main-bg-color;
   
