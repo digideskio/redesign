@@ -1,10 +1,5 @@
 {stash:embed:layouts:{stash:_layout} priority="1"}
 
-{!-- Sign-up for presentations --}
-{exp:stash:append name="layout_listing_description" match="#resource_presentations#" against="{structure:child_listing:short_name}"}
-  {exp:stash:embed:partials:notice stash:notice_type="tip" stash:notice_body='    Want to receive an email when we announce more presentations? <a href="{structure:page_url_for:146}" class="btn">Sign up here!</a>'}
-{/exp:stash:append}
-
 {exp:stash:extend name="layout_listing" with="partials:listing_cards"}
 
 {exp:stash:set_list name="listing" parse_tags="yes" parse_conditionals="yes" parse_depth="2"}

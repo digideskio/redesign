@@ -69,10 +69,6 @@
       {cf-resource-w-desc}
     {/if}
     
-    {if channel_short_name == "resource_presentations"}
-      {exp:stash:embed:partials:notice stash:notice_type="tip" stash:notice_body='Want to receive an email when we announce more presentations? <a href="{structure:page_url_for:146}" class="btn">Sign up here!</a>'}
-    {/if}
-
   {/exp:stash:set}
   
   {exp:stash:set_list name="layout_meta_after" parse_conditionals="yes" parse_tags="yes"}

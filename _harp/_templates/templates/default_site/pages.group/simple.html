@@ -5,16 +5,7 @@
 {/exp:stash:set}
 
 {embed="_embeds/_body"
-	
-	{if structure:page:entry_id == 70} {!-- All members page --}
-		pagetype="members_all"
-	{if:elseif structure:page:entry_id == 188} {!-- Legal agreement pg. Deprecated???? --}	
-		pagetype="basic_legal_agreement"
-		agreement_name="Member Agreement"
-		freeform_collection_name="Member Agreement"
-	{if:else}
-		pagetype="simple"
-	{/if}
+  pagetype="simple"
 	
 	{exp:channel:entries 
 		{if global:env != "production"}status='open|closed'{/if}
