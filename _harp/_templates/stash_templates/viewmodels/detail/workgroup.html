@@ -142,7 +142,7 @@
     {/if}
 
     {!-- Workgroup: specs --}
-    {cf-wg-r-specs sort="desc" search:cf-spec-text="not IS_EMPTY" var_prefix="spec" }
+    {cf-wg-r-specs var_prefix="spec" }
 
       {if {spec:count} == 1}
         {stash:name}Specification{if {spec:total_results} > 1}s{/if}{/stash:name}
@@ -150,7 +150,7 @@
       {/if}
 
       {exp:stash:append_list:specifications name="layout_meta_after_specifications"}
-        {stash:link}{spec:cf-spec-text}{/stash:link}
+        {stash:link}{spec:page_url}{/stash:link}
         {stash:text}{spec:title}{/stash:text}
         {stash:tag}{spec:cf-spec-pill-status}{/stash:tag}
       {/exp:stash:append_list:specifications}
