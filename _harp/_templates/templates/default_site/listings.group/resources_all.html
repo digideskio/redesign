@@ -1,4 +1,12 @@
-{embed="_embeds/_body"
+{!-- Resource page --}
+{stash:embed
+  context="@URI"
+  file_name="viewmodels:listing:resource_all"
+  parse_stage="both"
+  stash:_layout="standard"
+}
+
+{embed=""
 	pagetype="resource_all"
 	js_body_class="resources"
 
