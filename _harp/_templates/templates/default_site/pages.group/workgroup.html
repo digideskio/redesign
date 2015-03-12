@@ -1,10 +1,8 @@
 {!-- Single workgroup --}
 
 {stash:embed
-  context="@URI"
+  {global:stash_settings}
   file_name="viewmodels:detail:workgroup"
-  parse_stage="both"
-  stash:_layout="standard"
   stash:_parents_relationships="blog|products|tutorials|resource_presentations|resource_videos|resource_articles|resource_whitepapers|resource_podcasts"
   
   {if oslc:workgroup:is_user_group}

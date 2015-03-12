@@ -7,10 +7,8 @@
 {/if}
 
 {stash:embed
-  context="@URI"
+  {global:stash_settings}
   file_name="viewmodels:listing:blog"
-  parse_stage="both"
-  stash:_layout="standard"
-
+  
   stash:_bartender_controls="tag,author"  
 }

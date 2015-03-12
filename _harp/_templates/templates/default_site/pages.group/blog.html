@@ -4,9 +4,7 @@
 {/if}
 
 {stash:embed
-  context="@URI"
+  {global:stash_settings}
   file_name="viewmodels:detail:blog"
-  parse_stage="both"
-  stash:_layout="standard"
   stash:_children_relationships="workgroups|company|products|tutorials|resource_presentations|resource_videos|resource_articles|resource_whitepapers|resource_podcasts"
 }

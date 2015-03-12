@@ -22,6 +22,12 @@
     {stash:icon}channel-{exp:stringy:slug separator="-" case="lower"}{channel}{/exp:stringy:slug}{/stash:icon}
     {stash:href}{structure:parent:uri}{/stash:href}
     
+    {if entry_id ~ "/^{lv:featured_resources}$/"}
+      {stash:text}Featured{/stash:text}
+      {stash:icon}tag-favorite{/stash:icon}
+      {stash:class}success{/stash:class}
+    {/if}
+    
     {if entry_date > current_time}
       {stash:text}Upcoming{/stash:text}
       {stash:icon}tag-upcoming{/stash:icon}
